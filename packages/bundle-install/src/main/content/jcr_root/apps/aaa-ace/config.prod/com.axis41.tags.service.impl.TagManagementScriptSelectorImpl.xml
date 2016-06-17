@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          google.tag.script.url="//assets.adobedtm.com/1df760d71f4ae69b4616ac179c0b882d85b06234/satelliteLib-6760bc2f84e6618e050108aa566e3c41e86644b7.js"/>

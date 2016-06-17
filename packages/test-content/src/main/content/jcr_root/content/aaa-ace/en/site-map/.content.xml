@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-01-06T23:49:37.798-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/aaa-ace/templates/blank"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Site Map"
+        sling:resourceType="aaa-ace/components/page/blankpage">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:created="{Date}2016-01-06T23:49:14.178-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-01-06T23:49:37.795-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/text"
+                text="&lt;p>&lt;b>Site Map&lt;/b>&lt;/p>&#xa;"
+                textIsRich="true"/>
+            <sitemap
+                jcr:created="{Date}2016-01-06T23:47:20.094-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-01-06T23:47:20.094-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/sitemap"/>
+        </par>
+    </jcr:content>
+</jcr:root>
