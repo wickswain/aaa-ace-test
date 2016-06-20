@@ -1,83 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41</groupId>
-        <artifactId>aaa-ace</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <groupId>com.axis41.bundles</groupId>
-    <artifactId>bundles</artifactId>
-    <packaging>pom</packaging>
+	<parent>
+		<groupId>com.aaa</groupId>
+		<artifactId>ace-websites</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Bundles</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-            </plugin>
+	<groupId>com.aaa.ace.bundles</groupId>
+	<artifactId>bundles</artifactId>
+	<packaging>pom</packaging>
 
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-scr-plugin</artifactId>
+	<name>AAA Ace Web Sites - Bundles</name>
+	<description>AAA Ace Web Sites Bundles Module.</description>
 
-                <executions>
-                    <execution>
-                        <id>generate-scr-descriptor</id>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-                        <goals>
-                            <goal>scr</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
 
-            <plugin>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>maven-sling-plugin</artifactId>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-scr-plugin</artifactId>
 
-                <configuration>
-                    <slingUrl>${crx.serviceUrl}/system/console/install</slingUrl>
-                    <user>${crx.userId}</user>
-                    <password>${crx.password}</password>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+				<executions>
+					<execution>
+						<id>generate-scr-descriptor</id>
 
-    <profiles>
-        <profile>
-            <id>autoInstallBundle</id>
+						<goals>
+							<goal>scr</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
 
-                        <executions>
-                            <execution>
-                                <id>install-bundle</id>
-                                <phase>package</phase>
+				<configuration>
+					<slingUrl>${crx.serviceUrl}/system/console/install</slingUrl>
+					<user>${crx.userId}</user>
+					<password>${crx.password}</password>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-  <modules>
-    <module>example-name-service</module>
-    <module>example-name-servlet</module>
-  </modules>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T P R O F I L E S D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
+
+	<profiles>
+		<profile>
+			<id>autoInstallBundle</id>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.sling</groupId>
+						<artifactId>maven-sling-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>install-bundle</id>
+								<phase>package</phase>
+
+								<goals>
+									<goal>install</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>base-common</module>
+		<module>base-service</module>
+		<module>base-servlet</module>
+		<module>base-sightly-provider</module>
+	</modules>
 </project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/aaa-ace/components" />
+    <filter root="/apps/aaa-ace/templates" />
+    <filter root="/apps/aaa-ace/granite/widgets" />
+    <filter root="/etc/clientlibs/aaa-ace" />
+    <filter root="/etc/config/aaa-ace" />
+</workspaceFilter>

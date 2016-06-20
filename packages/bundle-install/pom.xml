@@ -1,101 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41.packages</groupId>
-        <artifactId>packages</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <artifactId>bundle-install</artifactId>
-    <packaging>content-package</packaging>
+	<parent>
+		<groupId>com.aaa.ace.packages</groupId>
+		<artifactId>packages</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Packages - Bundle Install</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.day.jcr.vault</groupId>
-                <artifactId>content-package-maven-plugin</artifactId>
-                
-                <configuration>
-                    <failOnError>true</failOnError>
+	<artifactId>bundle-install</artifactId>
+	<packaging>content-package</packaging>
 
-                    <filters>
-                        <filter>
-                            <root>/apps/aaa-ace/config</root>
-                        </filter>
-                        <filter>
-                            <root>/apps/aaa-ace/config.prod</root>
-                        </filter>
-                        <filter>
-                            <root>/apps/aaa-ace/config.publish</root>
-                        </filter>
-                    </filters>
+	<name>AAA Ace Web Sites - Packages - Bundle Install</name>
+	<description>AAA Ace Web Sites Packages Bundle Install Module.</description>
 
-                    <embeddedTarget>/apps/aaa-ace/install</embeddedTarget>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.day.jcr.vault</groupId>
+				<artifactId>content-package-maven-plugin</artifactId>
 
-                    <embeddeds>
+				<configuration>
+					<failOnError>true</failOnError>
 
-                        <embedded>
-                            <groupId>com.axis41.bundles</groupId>
-                            <artifactId>example-name-service</artifactId>
-                            <filter>true</filter>
-                        </embedded>
+					<filters>
+						<filter>
+							<root>/apps/aaa-ace/config</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/aaa-ace/config.prod</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/aaa-ace/config.publish</root>
+						</filter>
+					</filters>
 
-                        <embedded>
-                            <groupId>com.axis41.bundles</groupId>
-                            <artifactId>example-name-servlet</artifactId>
-                            <filter>true</filter>
-                        </embedded>
+					<embeddedTarget>/apps/aaa-ace/install</embeddedTarget>
 
-                    </embeddeds>
+					<embeddeds>
+						<embedded>
+							<groupId>com.aaa.ace.bundles</groupId>
+							<artifactId>base-common</artifactId>
+							<filter>true</filter>
+						</embedded>
 
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+						<embedded>
+							<groupId>com.aaa.ace.bundles</groupId>
+							<artifactId>base-sightly-provider</artifactId>
+							<filter>true</filter>
+						</embedded>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.axis41.bundles</groupId>
-            <artifactId>example-name-service</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.axis41.bundles</groupId>
-            <artifactId>example-name-servlet</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+						<embedded>
+							<groupId>com.aaa.ace.bundles</groupId>
+							<artifactId>base-service</artifactId>
+							<filter>true</filter>
+						</embedded>
+						
+						<embedded>
+							<groupId>com.aaa.ace.bundles</groupId>
+							<artifactId>base-servlet</artifactId>
+							<filter>true</filter>
+						</embedded>
+					</embeddeds>
 
-    </dependencies>
+					<subPackages>
+						<subPackage>
+							<groupId>com.adobe.acs</groupId>
+							<artifactId>acs-aem-commons-content</artifactId> 
+							<filter>true</filter>
+						</subPackage>
+					</subPackages>
 
-    <profiles>
-        <profile>
-            <id>autoInstallPackage</id>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.day.jcr.vault</groupId>
-                        <artifactId>content-package-maven-plugin</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>com.aaa.ace.bundles</groupId>
+			<artifactId>base-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
-                        <executions>
-                            <execution>
-                                <id>install-content-package</id>
-                                <phase>package</phase>
+		<dependency>
+			<groupId>com.aaa.ace.bundles</groupId>
+			<artifactId>base-servlet</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+		<dependency>
+			<groupId>com.aaa.ace.bundles</groupId>
+			<artifactId>base-sightly-provider</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aaa.ace.bundles</groupId>
+			<artifactId>base-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.acs</groupId>
+			<artifactId>acs-aem-commons-content</artifactId>
+			<version>${com.adobe.acs.commons.version}</version><!--$NO-MVN-MAN-VER$-->
+			<type>zip</type>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>autoInstallPackage</id>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.day.jcr.vault</groupId>
+						<artifactId>content-package-maven-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>install-content-package</id>
+								<phase>package</phase>
+
+								<goals>
+									<goal>install</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
