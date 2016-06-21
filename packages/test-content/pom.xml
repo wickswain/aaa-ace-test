@@ -37,11 +37,11 @@
 				<configuration>
 					<filters>
 						<filter>
-							<root>/content/aaa-ace</root>
+							<root>/content/ace-www</root>
 						</filter>
 						
 						<filter>
-							<root>/etc/designs/aaa-ace</root>
+							<root>/etc/designs/ace-www</root>
 						</filter>
 					</filters>
 				</configuration>
