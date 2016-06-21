@@ -39,19 +39,19 @@
 
 					<filters>
 						<filter>
-							<root>/apps/aaa-ace/config</root>
+							<root>/apps/ace-www/config</root>
 						</filter>
 						
 						<filter>
-							<root>/apps/aaa-ace/config.prod</root>
+							<root>/apps/ace-www/config.prod</root>
 						</filter>
 						
 						<filter>
-							<root>/apps/aaa-ace/config.publish</root>
+							<root>/apps/ace-www/config.publish</root>
 						</filter>
 					</filters>
 
-					<embeddedTarget>/apps/aaa-ace/install</embeddedTarget>
+					<embeddedTarget>/apps/ace-www/install</embeddedTarget>
 
 					<embeddeds>
 						<embedded>

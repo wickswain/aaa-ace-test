@@ -37,23 +37,23 @@
 				<configuration>
 					<filters>
 						<filter>
-							<root>/apps/aaa-ace/components</root>
+							<root>/apps/ace-www/components</root>
 						</filter>
 						
 						<filter>
-							<root>/apps/aaa-ace/templates</root>
+							<root>/apps/ace-www/templates</root>
 						</filter>
 						
 						<filter>
-							<root>/apps/aaa-ace/granite/widgets</root>
+							<root>/apps/ace-www/granite/widgets</root>
 						</filter>
 						
 						<filter>
-							<root>/etc/clientlibs/aaa-ace</root>
+							<root>/etc/clientlibs/ace-www</root>
 						</filter>
 						
 						<filter>
-							<root>/etc/config/aaa-ace</root>
+							<root>/etc/config/ace-www</root>
 						</filter>
 					</filters>
 				</configuration>

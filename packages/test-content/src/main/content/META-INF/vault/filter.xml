@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/content/aaa-ace" />
-	<filter root="/etc/designs/aaa-ace" />
+    <filter root="/content/ace-www" />
+	<filter root="/etc/designs/ace-www" />
 </workspaceFilter>

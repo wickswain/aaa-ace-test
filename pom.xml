@@ -8,8 +8,8 @@
 	<!-- P R O J E C T D E S C R I P T I O N -->
 	<!-- ====================================================================== -->
 
-	<groupId>com.aaa</groupId>
-	<artifactId>ace-websites</artifactId>
+	<groupId>com.aaa.ace</groupId>
+	<artifactId>ace-www</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -24,7 +24,7 @@
 		<crx.userId>admin</crx.userId>
 		<crx.password>admin</crx.password>
 		<crx.host>localhost</crx.host>
-		<crx.port>4504</crx.port>
+		<crx.port>4502</crx.port>
 		<crx.serviceUrl>http://${crx.host}:${crx.port}</crx.serviceUrl>
 		<jcrRoot>src/main/content/jcr_root</jcrRoot>
 
