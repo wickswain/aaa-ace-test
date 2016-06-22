@@ -1,59 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41.packages</groupId>
-        <artifactId>packages</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <artifactId>test-content</artifactId>
-    <packaging>content-package</packaging>
+	<parent>
+		<groupId>com.aaa.ace.packages</groupId>
+		<artifactId>packages</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Packages - Test Content</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.day.jcr.vault</groupId>
-                <artifactId>content-package-maven-plugin</artifactId>
-                
-                <configuration>
-                    <filters>
-                        <filter>
-                            <root>/content/aaa-ace</root>
-                        </filter>
-                    </filters>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<artifactId>test-content</artifactId>
+	<packaging>content-package</packaging>
 
-    <profiles>
-        <profile>
-            <id>autoInstallPackage</id>
+	<name>AAA Ace Web Sites - Packages - Test Content</name>
+	<description>AAA Ace Web Sites Packages Test Content Module.</description>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.day.jcr.vault</groupId>
-                        <artifactId>content-package-maven-plugin</artifactId>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-                        <executions>
-                            <execution>
-                                <id>install-content-package</id>
-                                <phase>package</phase>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.day.jcr.vault</groupId>
+				<artifactId>content-package-maven-plugin</artifactId>
 
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+				<configuration>
+					<filters>
+						<filter>
+							<root>/content/ace-www</root>
+						</filter>
+						
+						<filter>
+							<root>/etc/designs/ace-www</root>
+						</filter>
+					</filters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>autoInstallPackage</id>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.day.jcr.vault</groupId>
+						<artifactId>content-package-maven-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>install-content-package</id>
+								<phase>package</phase>
+
+								<goals>
+									<goal>install</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
