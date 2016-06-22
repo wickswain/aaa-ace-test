@@ -26,6 +26,49 @@
 	<description>AAA Ace Web Sites Bundles Module.</description>
 
 	<!-- ====================================================================== -->
+	<!-- P R O J E C T R E P O R T S D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+		          	<configLocation>aaa/google_checkstyle.xml</configLocation>
+		        </configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.6</version>
+				<configuration>
+		          	<rulesets>
+						<ruleset>aaa/pmd_ruleset.xml</ruleset>
+					</rulesets>
+		        </configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>pmd</report>
+							<report>cpd</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	
+	<!-- ====================================================================== -->
 	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
 	<!-- ====================================================================== -->
 
@@ -62,6 +105,62 @@
 					<password>${crx.password}</password>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<dependencies>
+		          	<dependency>
+		            	<groupId>com.aaa.ace</groupId>
+						<artifactId>build-tools</artifactId>
+						<version>${project.version}</version>
+		          	</dependency>
+		        </dependencies>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<configuration>
+							<failOnViolation>true</failOnViolation>
+							<failsOnError>true</failsOnError>
+							<configLocation>aaa/google_checkstyle.xml</configLocation>
+							<consoleOutput>true</consoleOutput>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.1</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<configuration>
+							<rulesets>
+								<ruleset>aaa/pmd_ruleset.xml</ruleset>
+							</rulesets>
+							<failOnViolation>true</failOnViolation>
+							<failurePriority>4</failurePriority>
+							<verbose>true</verbose>
+							<aggregate>true</aggregate>
+							<linkXref>false</linkXref>
+							<sourceEncoding>utf-8</sourceEncoding>
+							<minimumTokens>100</minimumTokens>
+							<targetJdk>1.7</targetJdk>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+							<goal>cpd-check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
 		</plugins>
 	</build>
 

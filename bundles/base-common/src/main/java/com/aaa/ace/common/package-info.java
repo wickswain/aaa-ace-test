@@ -1,7 +1,7 @@
 /**
- * This package consists all the common functionality like 
- * constants and utilities found across the project. 
- * 
+ * This package consists all the common functionality like
+ * constants and utilities found across the project.
+ *
  */
 /**
  * @author bharath.kambam

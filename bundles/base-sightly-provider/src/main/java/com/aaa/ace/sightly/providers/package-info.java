@@ -1,6 +1,7 @@
 /**
- * This package consists all the sightly providers source and it's relevant jUnit classes.
- * 
+ * This package consists all the sightly providers source and
+ * it's relevant jUnit classes.
+ *
  */
 /**
  * @author bharath.kambam

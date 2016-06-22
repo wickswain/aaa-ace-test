@@ -462,6 +462,7 @@
 		</pluginRepository> </pluginRepositories> -->
 
 	<modules>
+		<module>build-tools</module>
 		<module>bundles</module>
 		<module>packages</module>
 	</modules>

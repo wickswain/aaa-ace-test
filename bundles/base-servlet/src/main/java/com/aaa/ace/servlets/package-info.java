@@ -1,6 +1,7 @@
 /**
- * This package consists all the servlet source and it's relevant jUnit test classes
- * 
+ * This package consists all the servlet source and
+ * it's relevant jUnit test classes.
+ *
  */
 /**
  * @author bharath.kambam
