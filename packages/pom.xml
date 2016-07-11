@@ -1,68 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41</groupId>
-        <artifactId>aaa-ace</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <groupId>com.axis41.packages</groupId>
-    <artifactId>packages</artifactId>
-    <packaging>pom</packaging>
+	<parent>
+		<groupId>com.aaa.ace</groupId>
+		<artifactId>ace-www</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Packages</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/content/jcr_root</directory>
+	<groupId>com.aaa.ace.packages</groupId>
+	<artifactId>packages</artifactId>
+	<packaging>pom</packaging>
 
-                <excludes>
-                    <exclude>**/.vlt</exclude>
-                    <exclude>**/.vltignore</exclude>
-                </excludes>
-            </resource>
-        </resources>
+	<name>AAA Ace Web Sites - Packages</name>
+	<description>AAA Ace Web Sites Packages Module.</description>
 
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-                <configuration>
-                    <includeEmptyDirs>true</includeEmptyDirs>
-                </configuration>
-            </plugin>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/content/jcr_root</directory>
 
-            <plugin>
-                <groupId>com.day.jcr.vault</groupId>
-                <artifactId>content-package-maven-plugin</artifactId>
-                <extensions>true</extensions>
+				<excludes>
+					<exclude>**/.vlt</exclude>
+					<exclude>**/.vltignore</exclude>
+				</excludes>
+			</resource>
+		</resources>
 
-                <configuration>
-                    <name>aaa-ace-${project.artifactId}</name>
-                    <targetURL>${crx.serviceUrl}/crx/packmgr/service.jsp</targetURL>
-                    <userId>${crx.userId}</userId>
-                    <password>${crx.password}</password>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
 
-    <profiles>
-        <profile>
-            <id>includeTestContent</id>
+				<configuration>
+					<includeEmptyDirs>true</includeEmptyDirs>
+				</configuration>
+			</plugin>
 
-            <modules>
-                <module>test-content</module>
-            </modules>
-        </profile>
-    </profiles>
-  <modules>
-    <module>application</module>
-    <module>bundle-install</module>
-  </modules>
+			<plugin>
+				<groupId>com.day.jcr.vault</groupId>
+				<artifactId>content-package-maven-plugin</artifactId>
+				<extensions>true</extensions>
+
+				<configuration>
+					<name>ace-www-${project.artifactId}</name>
+					<targetURL>${crx.serviceUrl}/crx/packmgr/service.jsp</targetURL>
+					<userId>${crx.userId}</userId>
+					<password>${crx.password}</password>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>includeTestContent</id>
+
+			<modules>
+				<module>test-content</module>
+			</modules>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>application</module>
+		<module>bundle-install</module>
+	</modules>
 </project>

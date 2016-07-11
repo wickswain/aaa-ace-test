@@ -1,83 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41</groupId>
-        <artifactId>aaa-ace</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <groupId>com.axis41.bundles</groupId>
-    <artifactId>bundles</artifactId>
-    <packaging>pom</packaging>
+	<parent>
+		<groupId>com.aaa.ace</groupId>
+		<artifactId>ace-www</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Bundles</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-            </plugin>
+	<groupId>com.aaa.ace.bundles</groupId>
+	<artifactId>bundles</artifactId>
+	<packaging>pom</packaging>
 
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-scr-plugin</artifactId>
+	<name>AAA Ace Web Sites - Bundles</name>
+	<description>AAA Ace Web Sites Bundles Module.</description>
 
-                <executions>
-                    <execution>
-                        <id>generate-scr-descriptor</id>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T R E P O R T S D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-                        <goals>
-                            <goal>scr</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+		          	<configLocation>aaa/google_checkstyle.xml</configLocation>
+		        </configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.6</version>
+				<configuration>
+		          	<rulesets>
+						<ruleset>aaa/pmd_ruleset.xml</ruleset>
+					</rulesets>
+		        </configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>pmd</report>
+							<report>cpd</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-            <plugin>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>maven-sling-plugin</artifactId>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
 
-                <configuration>
-                    <slingUrl>${crx.serviceUrl}/system/console/install</slingUrl>
-                    <user>${crx.userId}</user>
-                    <password>${crx.password}</password>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-scr-plugin</artifactId>
 
-    <profiles>
-        <profile>
-            <id>autoInstallBundle</id>
+				<executions>
+					<execution>
+						<id>generate-scr-descriptor</id>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
+						<goals>
+							<goal>scr</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-                        <executions>
-                            <execution>
-                                <id>install-bundle</id>
-                                <phase>package</phase>
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
 
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-  <modules>
-    <module>example-name-service</module>
-    <module>example-name-servlet</module>
-  </modules>
+				<configuration>
+					<slingUrl>${crx.serviceUrl}/system/console/install</slingUrl>
+					<user>${crx.userId}</user>
+					<password>${crx.password}</password>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<dependencies>
+		          	<dependency>
+		            	<groupId>com.aaa.ace</groupId>
+						<artifactId>build-tools</artifactId>
+						<version>${project.version}</version>
+		          	</dependency>
+		        </dependencies>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<configuration>
+							<failOnViolation>true</failOnViolation>
+							<failsOnError>true</failsOnError>
+							<configLocation>aaa/google_checkstyle.xml</configLocation>
+							<consoleOutput>true</consoleOutput>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.1</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<configuration>
+							<rulesets>
+								<ruleset>aaa/pmd_ruleset.xml</ruleset>
+							</rulesets>
+							<failOnViolation>true</failOnViolation>
+							<failurePriority>4</failurePriority>
+							<verbose>true</verbose>
+							<aggregate>true</aggregate>
+							<linkXref>false</linkXref>
+							<sourceEncoding>utf-8</sourceEncoding>
+							<minimumTokens>100</minimumTokens>
+							<targetJdk>1.7</targetJdk>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+							<goal>cpd-check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T P R O F I L E S D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
+
+	<profiles>
+		<profile>
+			<id>autoInstallBundle</id>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.sling</groupId>
+						<artifactId>maven-sling-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>install-bundle</id>
+								<phase>package</phase>
+
+								<goals>
+									<goal>install</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>base-common</module>
+		<module>base-service</module>
+		<module>base-servlet</module>
+		<module>base-sightly-provider</module>
+	</modules>
 </project>

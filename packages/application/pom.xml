@@ -1,114 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.axis41.packages</groupId>
-        <artifactId>packages</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <artifactId>application</artifactId>
-    <packaging>content-package</packaging>
+	<parent>
+		<groupId>com.aaa.ace.packages</groupId>
+		<artifactId>packages</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-    <name>AAA Ace Web Sites - Packages - Application</name>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.day.jcr.vault</groupId>
-                <artifactId>content-package-maven-plugin</artifactId>
-                
-                <configuration>
-                    <filters>
-                        <filter>
-                            <root>/apps/aaa-ace/components</root>
-                        </filter>
-                        
-                        <filter>
-                            <root>/apps/aaa-ace/templates</root>
-                        </filter>                        
-                        <filter>
-                            <root>/etc/clientlibs/aaa-ace</root>
-                        </filter>
-                        <filter>
-                            <root>/etc/designs/aaa-ace</root>
-                        </filter>
-                    </filters>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.lesscss</groupId>
-                <artifactId>lesscss-maven-plugin</artifactId>
-                <version>1.7.0.1.1</version>
-                <configuration>
-                    <sourceDirectory>${jcrRoot}</sourceDirectory>
-                    <outputDirectory>${jcrRoot}</outputDirectory>
-                    <excludes />
-                    <compress>true</compress>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	<artifactId>application</artifactId>
+	<packaging>content-package</packaging>
 
-    <dependencies>
+	<name>AAA Ace Web Sites - Packages - Application</name>
+	<description>AAA Ace Web Sites Packages Application Module.</description>
 
-        <!-- Apache Sling Dependencies -->
-<!--
-        <dependency>
-            <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-        </dependency>
--->
-        <!-- apache sling api in AEM 6.x -->
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.api</artifactId>
-        </dependency>
-        <!-- apache sling jcr api in AEM 6.x -->
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.jcr.api</artifactId>
-        </dependency>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.http.servlet-api</artifactId>
-        </dependency>
-    
-    </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.day.jcr.vault</groupId>
+				<artifactId>content-package-maven-plugin</artifactId>
 
-    <profiles>
-        <profile>
-            <id>autoInstallPackage</id>
+				<configuration>
+					<filters>
+						<filter>
+							<root>/apps/ace-www/components</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/templates</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/granite/widgets</root>
+						</filter>
+						
+						<filter>
+							<root>/etc/clientlibs/ace-www</root>
+						</filter>
+						
+						<filter>
+							<root>/etc/config/ace-www</root>
+						</filter>
+					</filters>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>1.7.0.1.1</version>
+				<configuration>
+					<sourceDirectory>${jcrRoot}</sourceDirectory>
+					<outputDirectory>${jcrRoot}</outputDirectory>
+					<excludes />
+					<compress>true</compress>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.day.jcr.vault</groupId>
-                        <artifactId>content-package-maven-plugin</artifactId>
+	<dependencies>
+		<!-- apache sling api in AEM 6.x -->
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.api</artifactId>
+		</dependency>
+		
+		<!-- apache sling jcr api in AEM 6.x -->
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.jcr.api</artifactId>
+		</dependency>
 
-                        <executions>
-                            <execution>
-                                <id>install-content-package</id>
-                                <phase>package</phase>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.servlet-api</artifactId>
+		</dependency>
+	</dependencies>
 
-                                <goals>
-                                    <goal>install</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+	<profiles>
+		<profile>
+			<id>autoInstallPackage</id>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.day.jcr.vault</groupId>
+						<artifactId>content-package-maven-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>install-content-package</id>
+								<phase>package</phase>
+								<goals>
+									<goal>install</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
