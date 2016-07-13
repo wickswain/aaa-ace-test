@@ -79,6 +79,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.aem</groupId>
+			<artifactId>uber-jar</artifactId>
+			<classifier>obfuscated-apis</classifier>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>commons-collections</groupId>
