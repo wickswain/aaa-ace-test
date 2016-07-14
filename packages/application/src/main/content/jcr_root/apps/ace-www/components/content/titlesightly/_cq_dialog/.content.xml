@@ -50,6 +50,17 @@
                                 value="large"/>
                         </items>
                     </type>
+                    <multilinks
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/multifield"
+                            fieldLabel="Title example List">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="items"
+                                name="./titlelistItems"
+                                showFieldLabels="{Boolean}true"/>
+                    </multilinks>>
                 </items>
             </column>
         </items>
