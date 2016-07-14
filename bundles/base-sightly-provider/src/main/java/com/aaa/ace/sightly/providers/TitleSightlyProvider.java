@@ -13,10 +13,12 @@ public class TitleSightlyProvider extends WCMUsePojo {
 		ValueMap properties = getProperties();
 
 		jcrtitle=properties.get("jcr:title",String.class);
+		//logic stuff to title
+		jcrtitle+=" that is really awesome";
 
 	}
 
-	public String getJcrtitle(){
+	public String getJcrTitle(){
 		return jcrtitle;
 	}
 
