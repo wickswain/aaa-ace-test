@@ -26,6 +26,12 @@
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         fieldLabel="Link"
                         name="./href"/>
+                    <rootparent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Parent Page"
+                        rootPath="/content/ace-www/"
+                        name="./rootparent"/>
                     <type
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/select"
