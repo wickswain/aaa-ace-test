@@ -4,7 +4,6 @@
     <jcr:content
         cq:lastModified="{Date}2016-01-06T10:53:15.459-07:00"
         cq:lastModifiedBy="admin"
-        jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
         jcr:title="AAA Ace Web Sites"
         sling:resourceType="/apps/ace-www/components/page/homepage">
