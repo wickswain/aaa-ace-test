@@ -1,0 +1,37 @@
+/*****************************************
+    Template : Page Template
+    Created Date:28-July-2016
+    Modified Date:28-July-2016
+    Version:0.1
+*****************************************/
+/*Global Variables*/
+/*Font Vartions*/
+/*Colors*/
+/*Basic CSS Style*/
+html,
+body {
+  font: 'robotoregular';
+  color: #000;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  color: #dff0d8;
+  text-decoration: none;
+}
+/*****************************************
+    Template : Responsive
+    Created Date:28-July-2016
+    Modified Date:28-July-2016
+    Version:0.1
+*****************************************/
+/*Desktop Device*/
+/*Tablet Device*/
+/*Mobile Device*/
