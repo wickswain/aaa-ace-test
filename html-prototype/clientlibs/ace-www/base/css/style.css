@@ -1,12 +1,9 @@
 /*****************************************
-    Template : Page Template
+    Template : AAA StyleSheet / UI Guide
     Created Date:28-July-2016
-    Modified Date:28-July-2016
-    Version:0.1
+    Modified Date:29-July-2016
+    Version:0.2
 *****************************************/
-/*Global Variables*/
-/*Font Vartions*/
-/*Colors*/
 /*Basic CSS Style*/
 html,
 body {
@@ -26,12 +23,5 @@ a:hover {
   color: #dff0d8;
   text-decoration: none;
 }
-/*****************************************
-    Template : Responsive
-    Created Date:28-July-2016
-    Modified Date:28-July-2016
-    Version:0.1
-*****************************************/
-/*Desktop Device*/
-/*Tablet Device*/
-/*Mobile Device*/
+
+/*Responsive Styles*/
