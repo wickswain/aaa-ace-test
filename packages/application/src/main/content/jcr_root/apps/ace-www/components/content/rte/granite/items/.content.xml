@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <text
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+        enableFont="{Boolean}true"
+        enableParaFormat="{Boolean}true"
+        enableParagraphFormat="{Boolean}true"
+        enableStyle="{Boolean}true"
+        externalStyleSheets="[/etc/clientlibs/ace-www/base/css/style.css]"
+        hideLabel="{Boolean}true"
+        key="text"
+        name="./text"
+        removeSingleParagraphContainer="{Boolean}true"
+        useFixedInlineToolbar="{Boolean}true">
+        <rtePlugins jcr:primaryType="nt:unstructured">
+            <format
+                jcr:primaryType="nt:unstructured"
+                features="[bold,italic]"/>
+            <paraformat
+                jcr:primaryType="nt:unstructured"
+                features="*">
+                <formats jcr:primaryType="cq:WidgetCollection">
+                    <h1
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 1"
+                        tag="h1"/>
+                    <h2
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 2"
+                        tag="h2"/>
+                    <h3
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 3"
+                        tag="h3"/>
+                    <h4
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 4"
+                        tag="h4"/>
+                    <h5
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 5"
+                        tag="h5"/>
+                    <h6
+                        jcr:primaryType="nt:unstructured"
+                        description="heading 6"
+                        tag="h6"/>
+                    <p
+                        jcr:primaryType="nt:unstructured"
+                        description="Paragraph"
+                        tag="p"/>
+                </formats>
+            </paraformat>
+            <links
+                jcr:primaryType="nt:unstructured"
+                features="*"/>
+            <styles
+                jcr:primaryType="nt:unstructured"
+                features="*">
+                <styles jcr:primaryType="nt:unstructured">
+                    <paragraph1
+                        jcr:primaryType="nt:unstructured"
+                        cssName="paragraph1"
+                        text="Paragraph1"/>
+                    <paragraph2
+                        jcr:primaryType="nt:unstructured"
+                        cssName="paragraph2"
+                        text="Paragraph2"/>
+                </styles>
+            </styles>
+        </rtePlugins>
+        <uiSettings jcr:primaryType="nt:unstructured">
+            <cui jcr:primaryType="nt:unstructured">
+                <inline
+                    jcr:primaryType="nt:unstructured"
+                    toolbar="[format#bold,format#italic,#paraformat,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    <popovers jcr:primaryType="nt:unstructured">
+                        <styles
+                            jcr:primaryType="nt:unstructured"
+                            items="styles:getStyles:styles-pulldown"
+                            ref="styles"/>
+                        <paraformat
+                            jcr:primaryType="nt:unstructured"
+                            items="paraformat:getFormats:paraformat-pulldown"
+                            ref="paraformat"/>
+                    </popovers>
+                </inline>
+                <fullscreen
+                    jcr:primaryType="nt:unstructured"
+                    toolbar="[format#bold,format#italic,#paraformat,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    <popovers jcr:primaryType="nt:unstructured">
+                        <styles
+                            jcr:primaryType="nt:unstructured"
+                            items="styles:getStyles:styles-pulldown"
+                            ref="styles"/>
+                        <paraformat
+                            jcr:primaryType="nt:unstructured"
+                            items="paraformat:getFormats:paraformat-pulldown"
+                            ref="paraformat"/>
+                    </popovers>
+                </fullscreen>
+            </cui>
+        </uiSettings>
+    </text>
+</jcr:root>
