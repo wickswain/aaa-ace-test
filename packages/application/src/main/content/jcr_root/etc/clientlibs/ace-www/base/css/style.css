@@ -1,0 +1,39 @@
+/*****************************************
+    Template : AAA StyleSheet / UI Guide
+    Created Date:28-July-2016
+    Modified Date:29-July-2016
+    Version:0.2
+*****************************************/
+/*Basic CSS Style*/
+html,
+body {
+    font: 'robotoregular';
+    color: #000;
+    background: #ccc none;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:focus,
+a:hover {
+    color: #1C76BC;
+    text-decoration: none;
+}
+#page-container {
+    background: #fff none;
+}
+
+/*Responsive Styles*/
+/*Desktop Device*/
+
+@media (min-width: 769px) {
+    .container-custom {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+}
