@@ -1,0 +1,125 @@
+/*****************************************
+    Template : Touch UI Widgets Template
+    Created Date:28-July-2016
+    Modified Date:28-July-2016
+    Version:0.1
+*****************************************/
+
+/*************************************
+Typography
+**************************************/
+
+h1,
+.a-d,
+.a-t,
+.a-m {
+  color: #000;
+  font-family: 'robotomedium';
+}
+h2,
+.b-d,
+.b-t,
+.b-m {
+  color: #000;
+  font-family: 'robotolight';
+}
+h3,
+.c-d,
+.c-t,
+.c-m {
+  color: #000;
+  font-family: 'robotoregular';
+  letter-spacing: .16em;
+}
+h4,
+.d-d,
+.d-t,
+.d-m {
+  color: #000;
+  font-family: 'robotoregular';
+  letter-spacing: .14em;
+}
+h5,
+.e-d,
+.e-t,
+.e-m {
+  color: #000;
+  font-family: 'robotoregular';
+  letter-spacing: .02em;
+}
+h6,
+.f-d,
+.f-t,
+.f-m {
+  color: #000;
+  font-family: 'robotomedium';
+}
+p,
+.g-d,
+.g-t,
+.g-m {
+  color: #000;
+  font-family: 'robotolight';
+}
+.p-sm,
+.h-d,
+.h-t,
+.h-m {
+  color: #000;
+  font-family: 'robotolight';
+}
+
+/*Responsive Styles*/
+/*Desktop Device*/
+
+@media (min-width: 769px) {
+    .container-custom {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+    /*************************************
+    Typography
+    **************************************/
+    h1,
+    .a-d {
+      font-size: 54px;
+      line-height: 58px;
+    }
+    h2,
+    .b-d {
+      font-size: 36px;
+      line-height: 40px;
+    }
+    h3,
+    .c-d {
+      font-size: 13px;
+      line-height: 16px;
+    }
+    h4,
+    .d-d {
+      font-size: 12px;
+      line-height: 14px;
+    }
+    .h5,
+    e-d {
+      font-size: 15px;
+      line-height: 18px;
+    }
+    h6,
+    .f-d {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    p,
+    .g-d {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .p-sm,
+    .h-d {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+}
+/*Tablet Device*/
