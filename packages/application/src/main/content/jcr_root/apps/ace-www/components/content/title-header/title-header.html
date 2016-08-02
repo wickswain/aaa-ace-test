@@ -1,0 +1,21 @@
+<!--
+
+Title Header Component
+======================
+
+-->
+
+<!-- ##placeholder -->
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}"
+	data-emptytext="Author Title Component Here."
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="Title Component" />
+<!-- ##placeholder -->
+
+
+<div class="container" data-sly-test="${properties.title}">
+	<div class="row" style="background-color:${properties.sectionBgColor @ context='styleToken'};">
+		<h1 class="text-center" style="color:${properties.textColor @ context='styleToken'}">${properties.title @ context='html'}</h1>
+	</div>
+</div>
