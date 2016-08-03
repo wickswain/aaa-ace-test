@@ -15,7 +15,6 @@ Title Header Component
 
 
 <div class="container" data-sly-test="${properties.title}">
-	<div class="row" style="background-color:${properties.sectionBgColor @ context='styleToken'};">
-		<h1 class="text-center" style="color:${properties.textColor @ context='styleToken'}">${properties.title @ context='html'}</h1>
-	</div>
+	<div class="text-center" style="background-color:${properties.sectionBgColor @ context='styleToken'};color:${properties.textColor @ context='styleToken'}">
+		<h2 class="horizontal-component-space font-b" title="${properties.title @ context='html'}">${properties.title @ context='html'}</h2> </div>
 </div>
