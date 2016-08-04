@@ -14,7 +14,11 @@ Title Header Component
 <!-- ##placeholder -->
 
 
-<div class="container" data-sly-test="${properties.title}">
-	<div class="text-center" style="background-color:${properties.sectionBgColor @ context='styleToken'};color:${properties.textColor @ context='styleToken'}">
-		<h2 class="horizontal-component-space font-b" title="${properties.title @ context='html'}">${properties.title @ context='html'}</h2> </div>
+<div 
+	class="dark-bg text-center horizontal-component-space roboto-slab-light font-b" 
+    data-sly-test="${properties.title}" 
+	style="background-color:${properties.sectionBgColor @ context='styleToken'};">
+
+     <h2 class="" style="color:${properties.textColor @ context='styleToken'};" title="Title Header Stand Alone">${properties.title @ context='html'}</h2> 
+
 </div>
