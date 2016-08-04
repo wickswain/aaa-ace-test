@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <ctatypetab
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Type Selector"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <isbutton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+                        fieldDescription="Please check box to enable button tabs"
+                        name="./isButton"
+                        text="Enable Button Tabs?"
+                        value="{Boolean}true"/>
+                    <islink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".link-option-enable-showhide-target"
+                        fieldDescription="Please check box to enable link tabs"
+                        name="./isLink"
+                        text="Enable Link Tabs?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctatypetab>
+    <ctalinktab-1
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Link-1"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide link-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Link Style"
+                        fieldLabel="Link-1 Style"
+                        name="./link1/linkStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <textlinkregular
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Link Regular"
+                                value="textlinkregular"/>
+                            <textlinkreversed
+                                jcr:primaryType="nt:unstructured"
+                                text="TextLink Reversed"
+                                value="textlinkreversed"/>
+                        </items>
+                    </linkstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Link-1 Label"
+                        name="./link1/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Link-1 URL"
+                        name="./link1/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"
+                        suffix=".html"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Link-1 Query String Key"
+                        name="./link1/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./link1/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./link1/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctalinktab-1>
+    <ctalinktab-2
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Link-2"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide link-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Link Style"
+                        fieldLabel="Link-2 Style"
+                        name="./link2/linkStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <textlinkregular
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Link Regular"
+                                value="textlinkregular"/>
+                            <textlinkreversed
+                                jcr:primaryType="nt:unstructured"
+                                text="TextLink Reversed"
+                                value="textlinkreversed"/>
+                        </items>
+                    </linkstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Link-2 Label"
+                        name="./link2/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Link-2 URL"
+                        name="./link2/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Link-2 Query String Key"
+                        name="./link2/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./link2/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./link2/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctalinktab-2>
+    <ctalinktab-3
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Link-3"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide link-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Link Style"
+                        fieldLabel="Link-3 Style"
+                        name="./link3/linkStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <textlinkregular
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Link Regular"
+                                value="textlinkregular"/>
+                            <textlinkreversed
+                                jcr:primaryType="nt:unstructured"
+                                text="TextLink Reversed"
+                                value="textlinkreversed"/>
+                        </items>
+                    </linkstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Link-3 Label"
+                        name="./link3/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Link-3 URL"
+                        name="./link3/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Link-3 Query String Key"
+                        name="./link3/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./link3/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./link3/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctalinktab-3>
+    <ctalinktab-4
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Link-4"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide link-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Link Style"
+                        fieldLabel="Link-4 Link Style"
+                        name="./link4/linkStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <textlinkregular
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Link Regular"
+                                value="textlinkregular"/>
+                            <textlinkreversed
+                                jcr:primaryType="nt:unstructured"
+                                text="TextLink Reversed"
+                                value="textlinkreversed"/>
+                        </items>
+                    </linkstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Link-4 Label"
+                        name="./link4/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Link-4 URL"
+                        name="./link4/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Link-4 Query String Key"
+                        name="./link4/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./link4/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./link4/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctalinktab-4>
+    <ctalinktab-5
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Link-5"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide link-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Link Style"
+                        fieldLabel="Link-5 Style"
+                        name="./link5/linkStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <textlinkregular
+                                jcr:primaryType="nt:unstructured"
+                                text="Text Link Regular"
+                                value="textlinkregular"/>
+                            <textlinkreversed
+                                jcr:primaryType="nt:unstructured"
+                                text="TextLink Reversed"
+                                value="textlinkreversed"/>
+                        </items>
+                    </linkstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Link-5 Label"
+                        name="./link5/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Link-5 URL"
+                        name="./link5/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Link-5 Query String Key"
+                        name="./link5/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./link5/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./link5/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctalinktab-5>
+    <ctabuttontab-1
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Button-1"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <buttonstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Button Style"
+                        fieldLabel="Button-1 Style"
+                        name="./button1/buttonStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <simplebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Simple Button"
+                                value="simplebutton"/>
+                            <reversedbutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Reversed Button"
+                                value="reversedbutton"/>
+                            <outlinebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Outline Button"
+                                value="outlinebutton"/>
+                            <reversedoutlinebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Reversed Outline Button"
+                                value="reversedoutlinebutton"/>
+                        </items>
+                    </buttonstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Button-1 Label"
+                        name="./button1/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Button-1 URL"
+                        name="./button1/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Button-1 Query String Key"
+                        name="./button1/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./button1/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./button1/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctabuttontab-1>
+    <ctabuttontab-2
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CTA Button-2"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="true">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <buttonstyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Button Style"
+                        fieldLabel="Button-1 Style"
+                        name="./button2/buttonStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <simplebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Simple Button"
+                                value="simplebutton"/>
+                            <reversedbutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Reversed Button"
+                                value="reversedbutton"/>
+                            <outlinebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Outline Button"
+                                value="outlinebutton"/>
+                            <reversedoutlinebutton
+                                jcr:primaryType="nt:unstructured"
+                                text="Reversed Outline Button"
+                                value="reversedoutlinebutton"/>
+                        </items>
+                    </buttonstyle>
+                    <cta-label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter label for Button/Link"
+                        fieldLabel="Button-2 Label"
+                        name="./button2/ctaLabel"
+                        required="{Boolean}false"
+                        text="Label"/>
+                    <url-path
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Browse The Link Path or URL"
+                        fieldLabel="Button-2 URL"
+                        name="./button2/urlPath"
+                        rootPath="/content"
+                        showhidetargetvalue="linkstyle"/>
+                    <queryStringKey
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Query String Key"
+                        fieldLabel="Button-2 Query String Key"
+                        name="./button2/queryStringKey"/>
+                    <phone-dial-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it is phone number"
+                        name="./button2/phonedialFlag"
+                        text="Is Phone Number?"
+                        value="{Boolean}false"/>
+                    <open-in-new-tab-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please check box if it has to open in new Tab"
+                        name="./button2/openNewTabFlag"
+                        text="Open in new windowr?"
+                        value="{Boolean}true"/>
+                </items>
+            </columns>
+        </items>
+    </ctabuttontab-2>
+</jcr:root>

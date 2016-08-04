@@ -1,0 +1,87 @@
+<!-- Placeholder Content
+============================================= -->
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && (!properties.isButton && !properties.isLink)}"
+	data-emptytext="Author CTA Button-Large Component Here."
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="CTA Button-Large Component" />
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && (!properties.isButton && !properties.isLink)}"
+	src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder"
+	alt="CTA Button-Large Component" />
+<!-- #placeholder-content end -->
+
+<sly data-sly-list.property="${resource.listChildren}">
+
+    <sly
+        data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = property.queryStringKey, url = property.urlPath, env = 'uat', regionName = 'calif'}"/>
+
+	<div data-sly-test="${properties.isButton}" data-sly-unwrap>
+
+        <div data-sly-test="${property.buttonStyle=='simplebutton' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}"
+				class="btn-style btn-lg">${property.ctaLabel} </a>
+			<div data-sly-test="${property.phonedialFlag}">
+				<a href="tel:${property.ctaLabel}" class="btn-style btn-lg"> <i
+					class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${property.ctaLabel}
+				</a>
+			</div>
+		</div>
+	
+		<div data-sly-test="${property.buttonStyle=='reversedbutton' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}"
+				class="btn-style btn-lg btn-reversed">${property.ctaLabel} </a>
+			<div data-sly-test="${property.phonedialFlag}">
+				<a href="tel:${property.ctaLabel}"
+					class="btn-style btn-lg btn-reversed"> <i
+					class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${property.ctaLabel}
+				</a>
+			</div>
+		</div>
+
+		<div data-sly-test="${property.buttonStyle=='outlinebutton' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}"
+				class="btn-style btn-lg btn-border">${property.ctaLabel} </a>
+			<div data-sly-test="${property.phonedialFlag}">
+				<a href="tel:${property.ctaLabel}"
+					class="btn-style btn-lg btn-border"> <i
+					class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${property.ctaLabel}
+				</a>
+			</div>
+		</div>
+	
+		<div data-sly-test="${property.buttonStyle=='reversedoutlinebutton' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}"
+				class="btn-style btn-lg btn-border btn-border-reversed">${property.ctaLabel}
+			</a>
+			<div data-sly-test="${property.phonedialFlag}">
+				<a href="tel:${property.ctaLabel}"
+					class="btn-style btn-lg btn-border btn-border-reversed"> <i
+					class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${property.ctaLabel}
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sly-test="${properties.isLink}">
+		<div data-sly-test="${property.linkStyle=='textlinkregular' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}" class="link-btn link-lg"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}">${property.ctaLabel} </a>
+		</div>
+	
+		<div data-sly-test="${property.linkStyle=='textlinkreversed' && property.ctaLabel}"
+			data-sly-unwrap>
+			<a href="${result.url}" class="link-btn link-lg link-reversed"
+				target="${property.openNewTabFlag=='true'?'_blank':'_self'}">${property.ctaLabel}</a>
+		</div>
+	</div>
+</sly>
