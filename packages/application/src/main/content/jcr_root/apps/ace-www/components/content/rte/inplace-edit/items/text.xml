@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Widget"
+    enableFont="{Boolean}true"
     enableFormat="{Boolean}true"
-    enableParaFormat="{Boolean}false"
-    enableParagraphFormat="{Boolean}true"
     enableStyle="{Boolean}true"
     externalStyleSheets="[/etc/clientlibs/ace-www/base/css/style.css]"
     hideLabel="{Boolean}true"
@@ -63,38 +62,38 @@
             jcr:primaryType="nt:unstructured"
             features="*">
             <styles jcr:primaryType="cq:WidgetCollection">
-                <heading1
+                <font-a
                     jcr:primaryType="nt:unstructured"
-                    cssName="a-d a-t a-m"
-                    text="Heading1"/>
-                <heading2
+                    cssName="roboto-regular font-a"
+                    text="Font Style A"/>
+                <font-b
                     jcr:primaryType="nt:unstructured"
-                    cssName="b-d b-t b-m"
-                    text="Heading2"/>
-                <heading3
+                    cssName="roboto-light font-b"
+                    text="Font Style B"/>
+                <font-c
                     jcr:primaryType="nt:unstructured"
-                    cssName="c-d c-t c-m"
-                    text="Heading3"/>
-                <heading4
+                    cssName="roboto-regular font-c"
+                    text="Font Style C"/>
+                <font-d
                     jcr:primaryType="nt:unstructured"
-                    cssName="d-d d-t d-m"
-                    text="Heading4"/>
-                <heading5
+                    cssName="roboto-regular font-d"
+                    text="Font Style D"/>
+                <font-e
                     jcr:primaryType="nt:unstructured"
-                    cssName="e-d e-t e-m"
-                    text="Heading5"/>
-                <heading6
+                    cssName="roboto-regular font-e"
+                    text="Font Style E"/>
+                <font-f
                     jcr:primaryType="nt:unstructured"
-                    cssName="f-d f-t f-m"
-                    text="Heading6"/>
-                <paragraph
+                    cssName="roboto-medium font-f"
+                    text="Font Style F"/>
+                <font-g
                     jcr:primaryType="nt:unstructured"
-                    cssName="g-d g-t g-m"
-                    text="Paragraph"/>
-                <paragraphsmall
+                    cssName="roboto-light font-g"
+                    text="Font Style G"/>
+                <font-h
                     jcr:primaryType="nt:unstructured"
-                    cssName="h-d h-t h-m"
-                    text="Small Paragraph"/>
+                    cssName="roboto-light font-h"
+                    text="Font Style H"/>
             </styles>
         </styles>
         <justify
