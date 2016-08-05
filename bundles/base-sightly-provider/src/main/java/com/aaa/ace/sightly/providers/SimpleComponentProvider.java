@@ -14,9 +14,10 @@ public class SimpleComponentProvider extends WCMUsePojo {
     @Override
     public void activate() throws Exception {
 
-        //ExampleService es = getSlingScriptHelper().getService(ExampleService.class);
-        this.getResourceResolver().getResource("authored/path/to/page");
+        ExampleService es = getSlingScriptHelper().getService(ExampleService.class);
 
+
+        names = es.getNames();
 
 
 
