@@ -12,10 +12,9 @@
 <!-- #placeholder-content end -->
 
 <sly data-sly-list.property="${resource.listChildren}">
+	<sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = property.queryStringKey, url = property.urlPath}" />
 	<div data-sly-test="${properties.ctaType=='buttons'}" data-sly-unwrap>
-	    <sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = property.queryStringKey, url = property.urlPath}" />
-	
-		<div data-sly-test="${property.buttonStyle=='simplebutton' && property.ctaLabel}"
+	    <div data-sly-test="${property.buttonStyle=='simplebutton' && property.ctaLabel}"
 			data-sly-unwrap>
 			<a data-sly-test="${!property.phonedialFlag}" href="${result.url}"
 				target="${property.openNewTabFlag=='true'?'_blank':'_self'}"
