@@ -13,24 +13,28 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <isbutton
+                    <cta-type
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        class="cq-dialog-checkbox-showhide"
-                        cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
-                        fieldDescription="Please check box to enable button tabs"
-                        name="./isButton"
-                        text="Enable Button Tabs?"
-                        value="{Boolean}true"/>
-                    <islink
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        class="cq-dialog-checkbox-showhide"
-                        cq-dialog-checkbox-showhide-target=".link-option-enable-showhide-target"
-                        fieldDescription="Please check box to enable link tabs"
-                        name="./isLink"
-                        text="Enable Link Tabs?"
-                        value="{Boolean}true"/>
+                        sling:resourceType="granite/ui/components/foundation/form/radiogroup">
+                        <items jcr:primaryType="nt:unstructured">
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+                                name="./ctaType"
+                                text="Enable Buttons"
+                                value="buttons"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+                                name="./ctaType"
+                                text="Enable Links"
+                                value="links"/>
+                        </items>
+                    </cta-type>
                 </items>
             </columns>
         </items>
@@ -39,8 +43,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="CTA Link-1"
         sling:resourceType="granite/ui/components/foundation/container"
-        class="hide link-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="links">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -81,8 +85,7 @@
                         fieldLabel="Link-1 URL"
                         name="./link1/urlPath"
                         rootPath="/content"
-                        showhidetargetvalue="linkstyle"
-                        suffix=".html"/>
+                        showhidetargetvalue="linkstyle"/>
                     <queryStringKey
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -103,6 +106,14 @@
                         name="./link1/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./link1/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -111,8 +122,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="CTA Link-2"
         sling:resourceType="granite/ui/components/foundation/container"
-        class="hide link-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="links">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -174,6 +185,14 @@
                         name="./link2/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./link2/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -182,8 +201,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="CTA Link-3"
         sling:resourceType="granite/ui/components/foundation/container"
-        class="hide link-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="links">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -245,6 +264,14 @@
                         name="./link3/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./link3/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -253,8 +280,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="CTA Link-4"
         sling:resourceType="granite/ui/components/foundation/container"
-        class="hide link-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="links">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -316,6 +343,14 @@
                         name="./link4/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./link4/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -324,8 +359,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="CTA Link-5"
         sling:resourceType="granite/ui/components/foundation/container"
-        class="hide link-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        class="hide button-option-enable-showhide-target"
+        showhidetargetvalue="links">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -387,6 +422,14 @@
                         name="./link5/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./link5/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -396,7 +439,7 @@
         jcr:title="CTA Button-1"
         sling:resourceType="granite/ui/components/foundation/container"
         class="hide button-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        showhidetargetvalue="buttons">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -458,7 +501,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./button1/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -466,6 +509,14 @@
                         name="./button1/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./button1/ctaColor"/>
                 </items>
             </columns>
         </items>
@@ -475,7 +526,7 @@
         jcr:title="CTA Button-2"
         sling:resourceType="granite/ui/components/foundation/container"
         class="hide button-option-enable-showhide-target"
-        showhidetargetvalue="true">
+        showhidetargetvalue="buttons">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -488,7 +539,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select Button Style"
-                        fieldLabel="Button-1 Style"
+                        fieldLabel="Button-2 Style"
                         name="./button2/buttonStyle">
                         <items jcr:primaryType="nt:unstructured">
                             <simplebutton
@@ -537,7 +588,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./button2/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -545,6 +596,14 @@
                         name="./button2/openNewTabFlag"
                         text="Open in new windowr?"
                         value="{Boolean}true"/>
+                    <cta-color
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/ctacolorpicker"
+                        fieldDescription="Select the container background color"
+                        fieldLabel="CTA Color"
+                        freestylePalette="{Boolean}true"
+                        name="./button2/ctaColor"/>
                 </items>
             </columns>
         </items>
