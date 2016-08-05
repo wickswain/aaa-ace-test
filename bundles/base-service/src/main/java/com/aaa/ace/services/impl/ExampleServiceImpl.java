@@ -47,6 +47,7 @@ public class ExampleServiceImpl implements ExampleService {
     public String[] getNames() {
 
         //query jcr for some content associated with these name
+
         return names;
     }
 

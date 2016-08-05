@@ -1,4 +1,8 @@
-<div>
+<div data-sly-use.simpleprovider="com.aaa.ace.sightly.providers.SimpleComponentProvider">
     <p data-goodstuff="${currentStyle.goodStuff}" >this is a ${currentStyle.goodStuff} simple component</p>
 
+    <h1>names</h1>
+    <ul data-sly-list="${simpleprovider.names}">
+        <li>${item}</li>
+    </ul>
 </div>
