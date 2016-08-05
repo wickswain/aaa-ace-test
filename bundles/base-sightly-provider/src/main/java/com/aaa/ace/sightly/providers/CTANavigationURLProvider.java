@@ -3,6 +3,8 @@ package com.aaa.ace.sightly.providers;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aaa.ace.services.PageSuffixResolverService;
 import com.aaa.ace.services.RegionDataService;
 import com.aaa.ace.services.RunmodeProviderService;
 import com.adobe.cq.sightly.WCMUsePojo;
@@ -30,6 +32,12 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 		if(StringUtils.isNotBlank(keys))
 			keyArray = keys.split(CTANavigationURLProvider.DELIMITER);
 		url = get("url", String.class);
+		
+		if (url != null && url.startsWith("/content")) {
+			PageSuffixResolverService pageService = getSlingScriptHelper().getService(PageSuffixResolverService.class);
+			url = pageService.resolveLinkURL(getResourceResolver(), url);
+        } 
+		
 		RunmodeProviderService runmodeService = getSlingScriptHelper().getService(RunmodeProviderService.class);
 		String runmode = runmodeService.getEnv();
 		String env = StringUtils.isNotBlank(runmode)?runmode:get("env", String.class);
