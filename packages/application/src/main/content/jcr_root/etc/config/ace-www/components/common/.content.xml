@@ -47,4 +47,14 @@
             text="Neutral Color (#D9DADB)"
             value="#D9DADB"/>
     </colors>
+    <social-media-providers jcr:primaryType="nt:unstructured">
+        <facebook
+            jcr:primaryType="nt:unstructured"
+            text="Facebook"
+            value="facebook"/>
+        <twitter
+            jcr:primaryType="nt:unstructured"
+            text="Twitter"
+            value="twitter"/>
+    </social-media-providers>
 </jcr:root>
