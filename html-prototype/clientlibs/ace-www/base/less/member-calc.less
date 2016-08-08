@@ -1,0 +1,137 @@
+/*****************************************
+Membership Calculator Component
+*****************************************/
+
+.membership-calculator {
+    background: @color-white;
+    padding-top: 130px;
+    text-align: center;
+    min-height: 620px;
+    .caption {
+        margin-bottom: 30px;
+        margin-top: 0px;
+        line-height: 1.25em;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+    }
+    p {
+        margin-bottom: 150px;
+        padding: 0px 170px;
+    }
+    .membership-calculator-block {
+        background: #eee;
+        min-height: 600px;
+        position: relative;
+    }
+    .membership-img {
+        min-height: 600px;
+        background: transparent url() no-repeat bottom left;
+        padding: 0px 100px;
+        .membership-pay-info {
+            box-shadow: 0px 0px 15px #ccc;
+            padding: 20px 20px 0px 20px;
+            margin-top: 50px;
+            background: @color-white;
+            text-align: left;
+            color: #666;
+            width: 400px;
+            .col-sm-6 {
+                padding-right: 0px;
+            }
+        }
+        .img-position {
+            position: relative;
+            left: -150px;
+            bottom: -4px;
+        }
+        .text-center {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        h6 {
+            margin: 0px;
+            padding: 0px;
+            line-height: 50px;
+            color: #888;
+        }
+        .price {
+            font-size: 36px;
+            line-height: 50px;
+        }
+        .price-total {
+            font-size: 46px;
+            color: #66C996;
+            padding: 70px 0px;
+        }
+        hr {
+            border-top: dashed 1px #ccc;
+            float: left;
+            width: 100%;
+            background: transparent;
+            margin-bottom: 0px;
+        }
+        .total-saving-price {
+            margin-top: 70px;
+            font-family: 'robotomedium' !important;
+            font-size: @f-font-size-d;
+            color: @color-black;
+        }
+    }
+    .block-position {
+        position: absolute;
+        right: 0;
+        top: -35px;
+    }
+    .membership-discount-details {
+        padding: 0px;
+        transform: translateY(-30px);
+        display: table-cell;
+        vertical-align: middle;
+        height: 700px;
+        .item {
+            padding: 32px 20px;
+            text-align: left;
+            .services-title {
+                color: #1D603B;
+                margin: 0px;
+                padding: 0px;
+            }
+            .icon {
+                float: left;
+                margin-right: 15px;
+            }
+            .price {
+                color: #1D603B;
+                font-size: 20px;
+                float: left;
+                position: relative;
+                .discount-price {
+                    position: absolute;
+                    font-size: 14px;
+                    top: -20px;
+                    text-decoration: line-through;
+                    color: #47976C;
+                }
+            }
+            .total-price {
+                color: @color-white;
+                font-size: 20px;
+                float: right;
+            }
+        }
+        .item:nth-child(even) {
+            background: #66C996;
+        }
+        .item:nth-child(odd) {
+            background: #4dbf84;
+        }
+        .title {
+            text-transform: uppercase;
+            margin: 0px;
+            padding: 5px 0px;
+            min-height: auto;
+            background: #006b34 !important;
+            color: #b6e6cd;
+        }
+    }
+}

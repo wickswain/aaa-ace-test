@@ -1,0 +1,117 @@
+/*Base Color Coding*/
+
+@color-white: #fff;
+@color-black: #000;
+@color-gray-dark: #303030;
+@color-gray-medium: #ccc;
+@color-gray-medium-light: #808080;
+@color-gray-light: #E4E5E5;
+@color-blue-primary-dark: #005095;
+@color-blue-primary-medium: #0099FF;
+@color-blue: #012546;
+@color-blue-dark: #033465;
+@color-blue-medium: #1080D8;
+@color-blue-light: #00AAFF;
+@color-blue-mediumlight: #058dd8;
+@color-orange: #ff4639;
+@color-orange-medium: #ff584d;
+@color-orange-light: #db3c31;
+
+/*Basic CSS Style*/
+
+html,
+body {
+    font-family: @font-family-regular;
+    color: @color-black;
+    background: @color-gray-medium none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img,
+:hover,
+:focus {
+    outline: none;
+}
+
+a {
+    color: @color-black;
+    text-decoration: none;
+    font-family: inherit;
+    &:focus,
+    &:hover {
+        color: @color-blue-primary-medium;
+        text-decoration: none;
+    }
+}
+
+#page-container {
+    background: @color-white none;
+}
+
+.dark-bg {
+    background-color: @color-blue-primary-dark;
+    padding: 20px 0;
+    color: @color-white;
+}
+
+.table-cp {
+    display: table;
+    width: 100%;
+}
+
+.table-row {
+    display: table-row;
+    vertical-align: middle;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+
+/*Spacings*/
+
+@padding-top: 130px;
+@padding-bottom: 100px;
+@horizontal-space: 30px;
+@bottom-space: 400px;
+@min-spacing: 10px;
+.horizontal-space {
+    margin-bottom: @horizontal-space;
+}
+
+.side-spacing {
+    padding: 0 @horizontal-space;
+}
+
+.min-spacing {
+    margin-bottom: @min-spacing;
+}
+
+.component-space,
+.top-space {
+    padding-top: @padding-top;
+}
+
+.bottom-space {
+    padding-bottom: @bottom-space;
+}
+
+.component-height {
+    min-height: 620px;
+    max-height: 900px;
+}
