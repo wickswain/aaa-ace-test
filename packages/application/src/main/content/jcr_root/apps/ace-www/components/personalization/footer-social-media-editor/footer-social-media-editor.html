@@ -1,0 +1,54 @@
+<!--/*
+
+  	Copyright Info Data Editor Component.
+	--------------------------------------------------
+	This component renders the copyright info data specific to a region.
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.regionInfo="${'com.aaa.ace.sightly.providers.RegionDataProvider' @ componentName='footer_social_media_/socialmedia'}"/>
+<sly data-sly-use.socialMedia="${'com.aaa.ace.sightly.providers.ChildPropertyProvider' @ child='socialmedia'}"></sly>
+<!-- #sightly-global-objects-declaration end -->
+
+<div class="container" style="background-color: #ffffff; margin-bottom: 35px;">
+	<h2>Copyright Info Data [${regionInfo.regionDisplayName} Region]</h2>
+	<p>Access the dailog to edit the data.</p>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th class="col-md-4">Property Label</th>
+				<th class="col-md-8">Property Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="col-md-4">Region Display Name</td>
+				<td class="col-md-8">${properties.regionName}</td>
+			</tr>
+			<tr><td><strong> Values from Property</strong></td></tr>
+			<sly data-sly-list=${socialMedia.childResource.listChildren}>
+			<tr>
+				<td class="col-md-4">Social Media Provider</td>
+				<td class="col-md-8">${item.socialMediaProvider}</td>
+			</tr>            
+			<tr>
+				<td class="col-md-4">Social Media URL</td>
+				<td class="col-md-8">${item.providerURL}</td>
+			</tr>
+			</sly>
+			<tr><td><strong>Values via region data provider</strong></td></tr>
+			<sly data-sly-list=${regionInfo.componentResource.listChildren}>
+                <tr>
+                    <td class="col-md-4">Social Media Provider</td>
+                    <td class="col-md-8">${item.socialMediaProvider}</td>
+                </tr>            
+                <tr>
+                    <td class="col-md-4">Social Media URL</td>
+                    <td class="col-md-8">${item.providerURL}</td>
+                </tr>
+			</sly>
+		</tbody>
+	</table>
+</div>

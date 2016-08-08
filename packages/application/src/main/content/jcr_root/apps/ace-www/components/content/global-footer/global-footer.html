@@ -1,0 +1,40 @@
+<!--/*
+
+Global Footer Component
+========================
+
+This is a global footer. This should be dropped on an root page having iparsys so that all pages inherit it.
+
+Elements: Logo, links, social media and copyright text.
+
+*/-->
+<sly data-sly-use.regionInfo="${'com.aaa.ace.sightly.providers.RegionDataProvider' @ componentName='footer_social_media_/socialmedia'}"/>
+<sly data-sly-use.socialmedia="${'com.aaa.ace.sightly.providers.ChildPropertyProvider' @ child='socialmedia'}"></sly>
+<sly data-sly-use.links="${'com.aaa.ace.sightly.providers.ChildPropertyProvider' @ child='links'}" ></sly>
+
+<!-- Global Footer component -->
+<div id="base-footer" class="footer-global roboto-light font-e">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="horizontal-space"></div>
+			<div class="col-md-2 col-sm-2 text-center">
+				<a href="."><img src="${properties.fileReference}" alt="${properties.alt}" title="footer-logo" /></a>
+			</div>
+			<div class="col-md-8 col-sm-8 footer-links text-center">
+				<ul class="list-inline" data-sly-list.link="${links.childResource.listChildren}">
+					<li><a href="${link.linkURL}.html" title="">${link.label}</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-2 social-icons text-center">
+				<ul class="list-inline" data-sly-list.socialm="${socialmedia.childResource.listChildren}">
+					<li>
+						<a href="http://www.facebook.com/"><img src="${socialm.smIcon}" alt="${socialm.alt}" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="copy-rights text-center font-d">${properties.copyright @ context='html'}</div>
+		</div>
+	</div>
+</div>

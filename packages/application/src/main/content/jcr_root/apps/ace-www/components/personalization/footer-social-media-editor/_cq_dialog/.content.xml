@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Global Footer Social Medial Editor"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <socialmedia
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Social Media"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <region
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Region Name"
+                                name="./regionName"
+                                required="{Boolean}true"
+                                value=""/>
+                            <linkfields
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                class="full-width"
+                                fieldDescription="Click 'Add field' to add a new item"
+                                fieldLabel="Social Media">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="NODE_STORE"
+                                    name="./socialmedia">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <provider
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Please select the provider"
+                                                    fieldLabel="Social Media Provider"
+                                                    name="./socialMediaProvider"
+                                                    path="/etc/config/ace-www/components/common/social-media-providers">
+                                                    <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/apps/ace-www/components/content/datasource"/>
+                                                </provider>
+                                                <socialURL
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Social Medial URL"
+                                                    name="./providerURL"
+                                                    required="{Boolean}true"
+                                                    value=""/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </linkfields>
+                        </items>
+                    </columns>
+                </items>
+            </socialmedia>
+        </items>
+    </content>
+</jcr:root>
