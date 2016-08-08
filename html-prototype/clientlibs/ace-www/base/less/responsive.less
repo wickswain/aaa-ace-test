@@ -1,0 +1,223 @@
+/*****************************************
+Template : Responsive
+Created Date:28-July-2016
+Modified Date:28-July-2016
+Version:0.1
+*****************************************/
+
+
+/*Desktop Device*/
+
+@media (min-width:768px) {
+    .font-a {
+        font-size: @a-font-size-d;
+        line-height: 58px;
+    }
+    .font-b {
+        font-size: @b-font-size-d;
+        line-height: 40px;
+    }
+    .font-c {
+        font-size: @c-font-size-d;
+        line-height: 16px;
+    }
+    .font-d {
+        font-size: @d-font-size-d;
+        line-height: 14px;
+    }
+    .font-e {
+        font-size: @e-font-size-d;
+        line-height: 18px;
+    }
+    .font-f {
+        font-size: @f-font-size-d;
+        line-height: 24px;
+    }
+    .font-g {
+        font-size: @g-font-small-d;
+        line-height: 28px;
+    }
+    .font-h {
+        font-size: @h-font-large-d;
+        line-height: 18px;
+    }
+    .container-custom {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+    /* Gutter Spaceing 40px */
+    div[class^="col"] {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .horizontal-component-space {
+        padding: 130px 0;
+    }
+    .horizontal-space2 {
+        margin-bottom: @padding-top - 60;
+    }
+    .table-cell {
+        padding: 0px !important;
+    }
+    .flex-component {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/*Tablet Device*/
+
+@media (min-width:640px) and (max-width:767px) {
+    /* Gutter Spaceing 30px */
+    div[class^="col"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Tablet */
+    .font-a {
+        font-size: @a-font-size-t;
+        line-height: 48px;
+    }
+    .font-b {
+        font-size: @b-font-size-t;
+        line-height: 32px;
+    }
+    .font-c {
+        font-size: @c-font-size-t;
+        line-height: 16px;
+        letter-spacing: .16em;
+    }
+    .font-d {
+        font-size: @d-font-size-t;
+        line-height: 14px;
+        letter-spacing: .14em;
+    }
+    .font-e {
+        font-size: @e-font-size-t;
+        line-height: 18px;
+        letter-spacing: .02em;
+    }
+    .font-f {
+        font-size: @f-font-size-t;
+        line-height: 22px;
+    }
+    .font-g {
+        font-size: @g-font-small-t;
+        line-height: 28px;
+    }
+    .font-h {
+        font-size: @h-font-large-t;
+        line-height: 18px;
+    }
+    /*Full image Component*/
+    .component-space {
+        padding-top: 100px;
+    }
+    .single-column {
+        padding-top: @padding-top - 30;
+        padding-bottom: @padding-top - 30;
+    }
+    .horizontal-component-space {
+        padding: 100px 0;
+    }
+    .horizontal-space2 {
+        margin-bottom: @padding-top - 100;
+    }
+    .footer-column {
+        &.icon-text {
+            margin: 15px;
+            display: block;
+        }
+    }
+}
+
+
+/*Mobile Device*/
+
+@media (min-width:320px) and (max-width:639px) {
+    /* Gutter Spaceing 16px */
+    div[class^="col"] {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    /* Mobile */
+    .font-a {
+        font-size: @a-font-size-m;
+        line-height: 40px;
+    }
+    .font-b {
+        font-size: @b-font-size-m;
+        line-height: 33px;
+    }
+    .font-c {
+        font-size: @c-font-size-m;
+        line-height: 16px;
+        letter-spacing: .16em;
+    }
+    .font-d {
+        font-size: @d-font-size-m;
+        line-height: 14px;
+        letter-spacing: .14em;
+    }
+    .font-e {
+        font-size: @e-font-size-m;
+        line-height: 18px;
+        letter-spacing: .02em;
+    }
+    .font-f {
+        font-size: @f-font-size-m;
+        line-height: 22px;
+    }
+    .font-g {
+        font-size: @g-font-small-m;
+        line-height: 24px;
+    }
+    .font-h {
+        font-size: @h-font-large-m;
+        line-height: 18px;
+        letter-spacing: 0.3px;
+    }
+    /*Footer CTA Component*/
+    .footer-column {
+        padding-top: 70px;
+    }
+    /*Full image Component*/
+    .component-space {
+        padding-top: 70px;
+    }
+    .horizontal-component-space {
+        padding: 70px 0;
+    }
+    .horizontal-space2 {
+        margin-bottom: @padding-top - 100;
+    }
+    .single-column {
+        padding-top: @padding-top - 60;
+        padding-bottom: @padding-top - 60;
+        .horizontal-space2 {
+            margin-bottom: @padding-top - 100;
+        }
+    }
+    .footer-column .icon-text {
+        margin: 15px;
+        display: block;
+    }
+    .footer-global {
+        line-height: 40px;
+        padding: 30px 0;
+        li {
+            display: block;
+            margin: 10px 0;
+        }
+        .social-icons,
+        .footer-links,
+        .copy-rights {
+            padding-top: 45px;
+        }
+    }
+    .social-icons li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+}
