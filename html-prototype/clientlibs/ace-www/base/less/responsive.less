@@ -8,7 +8,7 @@ Version:0.1
 
 /*Desktop Device*/
 
-@media (min-width:768px) {
+@media (min-width:769px) {
     .font-a {
         font-size: @a-font-size-d;
         line-height: 58px;
@@ -54,21 +54,21 @@ Version:0.1
         padding: 130px 0;
     }
     .horizontal-space2 {
-        margin-bottom: @padding-top - 60;
-    }
-    .table-cell {
-        padding: 0px !important;
+        margin-bottom: @space-lg - 60;
     }
     .flex-component {
         display: flex;
         align-items: center;
+    }
+    .component-height {
+        max-height: 900px;
     }
 }
 
 
 /*Tablet Device*/
 
-@media (min-width:640px) and (max-width:767px) {
+@media (min-width:641px) and (max-width:768px) {
     /* Gutter Spaceing 30px */
     div[class^="col"] {
         padding-left: 15px;
@@ -115,14 +115,14 @@ Version:0.1
         padding-top: 100px;
     }
     .single-column {
-        padding-top: @padding-top - 30;
-        padding-bottom: @padding-top - 30;
+        padding-top: @space-md;
+        padding-bottom: @space-md;
     }
     .horizontal-component-space {
         padding: 100px 0;
     }
     .horizontal-space2 {
-        margin-bottom: @padding-top - 100;
+        margin-bottom: @space-sm;
     }
     .footer-column {
         &.icon-text {
@@ -135,7 +135,7 @@ Version:0.1
 
 /*Mobile Device*/
 
-@media (min-width:320px) and (max-width:639px) {
+@media (min-width:320px) and (max-width:640px) {
     /* Gutter Spaceing 16px */
     div[class^="col"] {
         padding-left: 8px;
@@ -189,14 +189,11 @@ Version:0.1
     .horizontal-component-space {
         padding: 70px 0;
     }
-    .horizontal-space2 {
-        margin-bottom: @padding-top - 100;
-    }
     .single-column {
-        padding-top: @padding-top - 60;
-        padding-bottom: @padding-top - 60;
+        padding-top: @space-lg - 60;
+        padding-bottom: @space-lg - 60;
         .horizontal-space2 {
-            margin-bottom: @padding-top - 100;
+            margin-bottom: @space-sm;
         }
     }
     .footer-column .icon-text {
@@ -219,5 +216,11 @@ Version:0.1
     .social-icons li {
         display: inline-block;
         margin: 0 15px;
+    }
+    .img-50-50 .flex-component .content .text-block {
+        padding: 70px 20px;
+    }
+    .single-column .image-block {
+        padding: 0 30px;
     }
 }
