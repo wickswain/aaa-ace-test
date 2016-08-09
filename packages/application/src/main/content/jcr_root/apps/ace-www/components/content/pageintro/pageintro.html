@@ -5,26 +5,32 @@
 
     This component is a Versatile component and can be used across most pages throughout the site.
     Placement of the component can only be used at the top of the page, right below the global navigation.
+    
+    Default Behavior:
+    1. Title will derive from the page title.
+    
+    Required Fields:
+    1. Heading/Title
+    2. Headline
 
 */-->
 
 <!-- Sightly global objects declaration
 ============================================= -->
-<sly data-sly-use.pageIntro="com.aaa.ace.sightly.providers.PageIntroSightlyProvider" />
+<sly data-sly-use.pageIntroProvider="com.aaa.ace.sightly.providers.PageIntroSightlyProvider" />
 
 <!-- #sightly-global-objects-declaration end -->
 
 
 <!-- Page Intro Content
 ============================================= -->
-
 <div style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};
             color: ${properties.fontColor ? properties.fontColor : '' @ context='styleToken'};"
      class="page-intro">
      
     <div class="container">
-        <div class="horizontal-space font-c text-uppercase">
-            ${properties.title ? properties.title : pageIntro.pageIntroTitle}
+        <div data-sly-text="${properties.title ? properties.title : pageIntroProvider.title}" 
+             class="horizontal-space font-c text-uppercase">
         </div>
 
         <div data-sly-test="${properties.headline}" data-sly-text="${properties.headline}"
@@ -35,11 +41,9 @@
             <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
         </div>
 
-        <div data-sly-test="${properties.ctaFlag}">
-            <sly data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}" />
-        </div>
+        <sly data-sly-test="${properties.ctaFlag}"
+             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}" />
     </div>
     
 </div>
-
 <!-- #page-intro-content end -->

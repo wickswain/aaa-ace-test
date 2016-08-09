@@ -6,40 +6,38 @@ import com.adobe.cq.sightly.WCMUsePojo;
  * This class is a sightly provider used in page intro component.
  *
  * @author bharath.kambam
- *
  */
 public class PageIntroSightlyProvider extends WCMUsePojo {
 
-	/**
-	 * Page Intro Title.
-	 */
-	private String pageIntroTitle;
+    /**
+     * Title variable.
+     */
+    private String title;
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.adobe.cq.sightly.WCMUsePojo#activate()
-	 */
-	@Override
-	public void activate() throws Exception {
-		pageIntroTitle = fetchPageIntroTitle();
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.adobe.cq.sightly.WCMUsePojo#activate()
+     */
+    @Override
+    public final void activate() throws Exception {
+        getTitle();
+    }
 
-	/**
-	 * Fetch the page intro title.
-	 */
-	private String fetchPageIntroTitle() {
-		return getCurrentPage().getNavigationTitle() != null ? getCurrentPage().getNavigationTitle()
-				: getCurrentPage().getTitle();
-	}
+    /**
+     * Get the page intro title.
+     *
+     * @return the title
+     */
+    public final String getTitle() {
 
-	/**
-	 * Get the page title intro.
-	 *
-	 * @return the pageIntroTitle
-	 */
-	public String getPageIntroTitle() {
-		return pageIntroTitle;
-	}
+        if (getCurrentPage().getNavigationTitle() != null) {
+            title = getCurrentPage().getNavigationTitle();
+        } else {
+            title = getCurrentPage().getTitle();
+        }
+
+        return title;
+    }
 
 }
