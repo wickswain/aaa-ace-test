@@ -15,13 +15,6 @@
 
 */-->
 
-<!-- Sightly global objects declaration
-============================================= -->
-<sly data-sly-use.pageIntroProvider="com.aaa.ace.sightly.providers.PageIntroSightlyProvider" />
-
-<!-- #sightly-global-objects-declaration end -->
-
-
 <!-- Page Intro Content
 ============================================= -->
 <div style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};
@@ -29,8 +22,10 @@
      class="page-intro">
      
     <div class="container">
-        <div data-sly-text="${properties.title ? properties.title : pageIntroProvider.title}" 
-             class="horizontal-space font-c text-uppercase">
+        <div class="horizontal-space font-c text-uppercase">
+            <sly data-sly-test="${properties.title}" data-sly-text="${properties.title}"/>
+            <sly data-sly-test="${!properties.title}" 
+                 data-sly-text="${currentPage.properties.navTitle ? currentPage.properties.navTitle : currentPage.title}"/>
         </div>
 
         <div data-sly-test="${properties.headline}" data-sly-text="${properties.headline}"
