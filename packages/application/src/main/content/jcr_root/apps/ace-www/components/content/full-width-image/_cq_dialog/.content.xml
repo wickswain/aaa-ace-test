@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Full Width Image"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Image"
+                        rootPath="/content/dam/"
+                        name="./image"/>
+                    <alt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldLabel="Alt Text"
+                        required="true"
+                        name="./alttext"/>
+                    <!-- todo:look into using color picker instead of drop down -->
+                    <backgroundcolor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldLabel="Background Color"
+                            name="./backgroundcolorclass">
+                        <items jcr:primaryType="nt:unstructured">
+                            <twoblue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="2 Primary blues"
+                                    value="twoblue-background"/>
+                            <white
+                                jcr:primaryType="nt:unstructured"
+                                text="White"
+                                value="white-background"/>
+                            <grey
+                                jcr:primaryType="nt:unstructured"
+                                text="Grey"
+                                value="grey-background"/>
+                        </items>
+                    </backgroundcolor>
+                </items>
+
+            </column>
+        </items>
+    </content>
+</jcr:root>
