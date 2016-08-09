@@ -1,0 +1,28 @@
+<!-- Placeholder Content
+============================================= -->         
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.fileReference}" data-emptytext="Author 50-50 Image and Text Component Here." src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="50-50 Image and Text Component"/>
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.fileReference}"
+     src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder" alt="50-50 Image and Text Component"/>
+<!-- #placeholder-content end -->
+
+<!-- 50-50 image component -->
+<div data-sly-test="${properties.fileReference}" class="img-50-50 container-fluid" style="background-image:url('${properties.backgroundImage @ context='uri'}');background-color:${properties.backgroundColor}; color:${properties.headerTitleTextFontColor};">
+    <div class="row ${properties.isSwapImageAndTextAlignment=='true'?'row-reverse':''}">
+        <div class="col-sm-6">
+            <div class="text-block">
+                <div class="horizontal-space roboto-light font-b"><img src="${properties.headerIcon}" title="header icon" alt="${properties.headerIconAltText}">
+                </div>
+                <div class="horizontal-space roboto-light font-b">
+                    <h2 title="header title"><span class="round-circle">${properties.numberText}</span>${properties.headerTitle}</h2>
+                </div>
+                
+                <sly class="horizontal-space roboto-light font-g" data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}" />
+                 
+                <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}" />
+            </div>
+            <div class="col-sm-6 image-block">
+                <div class="image-block"><img src="${properties.fileReference}" alt="${properties.altText}" title="50-50-image" class="img-responsive" /></div>
+            </div>
+        </div>
+    </div>
+</div>
