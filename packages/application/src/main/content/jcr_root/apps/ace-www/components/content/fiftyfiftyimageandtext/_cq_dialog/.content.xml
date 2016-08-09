@@ -13,7 +13,7 @@
         <items jcr:primaryType="nt:unstructured">
             <basictab
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Basic"
+                jcr:title="Basic Properties"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -23,10 +23,17 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <is-swap-image-and-text-placement
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if you want to swap placement of Image block and Text block that means image block would shift to right and text block would shift to left "
+                                name="./isSwapImageAndTextAlignment"
+                                text="Swap Image And Text Placement?"
+                                value="{Boolean}true"/>
                             <backgroundcolor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
-                                colorsPath="/apps/ace-www/components/content/fiftyfiftyimageandtext/bgcolorpicker"
+                                colorsPath="/apps/ace-www/components/content/fiftyfiftyimageandtext/bgcoloroptions"
                                 fieldDescription="Please select background color"
                                 fieldLabel="Background Color"
                                 freestylePalette="{Boolean}true"
@@ -50,8 +57,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter alt text for background image"
                                 fieldLabel="Background Image Alt Text"
-                                name="./backgroundImageAltText"
-                                required="{Boolean}true"/>
+                                name="./backgroundImageAltText"/>
                         </items>
                     </columns>
                 </items>
@@ -91,14 +97,16 @@
                                 required="{Boolean}true"/>
                             <number-text
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
                                 fieldDescription="Please enter number before title"
                                 fieldLabel="Number"
+                                max="{Long}99"
+                                min="{Long}1"
                                 name="./numberText"/>
                             <header-title-text-font-color
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
-                                colorsPath="/apps/ace-www/components/content/fiftyfiftyimageandtext/fontcolorpicker"
+                                colorsPath="/etc/config/ace-www/components/common/textfontcolors"
                                 fieldDescription="Please select font color"
                                 fieldLabel="Header Title Text Font Color"
                                 freestylePalette="{Boolean}true"
@@ -112,7 +120,7 @@
                             <header-body-text-font-color
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
-                                colorsPath="/apps/ace-www/components/content/fiftyfiftyimageandtext/fontcolorpicker"
+                                colorsPath="/etc/config/ace-www/components/common/textfontcolors"
                                 fieldDescription="Please select font color"
                                 fieldLabel="Header Body Text Font Color"
                                 freestylePalette="{Boolean}true"
@@ -133,13 +141,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <is-swap-image-and-text-alignment
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                fieldDescription="Please check box if you want to swap alignment of Image and Text in the Component"
-                                name="./isSwapImageAndTextAlignment"
-                                text="Swap Image And Text Alignment?"
-                                value="{Boolean}true"/>
                             <image
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/fileupload"

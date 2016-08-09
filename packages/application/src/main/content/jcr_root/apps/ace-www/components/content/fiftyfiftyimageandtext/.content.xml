@@ -4,4 +4,4 @@
     jcr:title="50-50 Image and Text Component"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="AAA 1"/>
+    componentGroup="AAA"/>
