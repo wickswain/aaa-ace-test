@@ -1,0 +1,29 @@
+<!--/*
+
+    CTA Large Button/Link Component.
+    ----------------------------------------------------------------
+
+    This is a simple button style for the application.
+
+*/-->
+
+<!-- CTA Large Simple Button Content
+============================================= -->
+<template data-sly-template.simpleButton="${@ child}">
+    
+    <sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath}" />
+    
+    <a data-sly-test="${!child.phonedialFlag}" href="${result.url}"
+       target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
+       data-sly-text="${child.ctaLabel}"
+       class="btn-style btn-lg ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'}">
+    </a>
+    
+    <a data-sly-test="${child.phonedialFlag}" href="tel:${child.ctaLabel}"
+       class="btn-style btn-lg ${child.ctaColor=='rgba(255,70,57,1)'?'btn-color-orange':'btn-color-blue'} icon-text"> 
+        <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+        ${child.ctaLabel}
+    </a>
+    
+</template>
+<!-- #cta-large-simple-button-content end -->

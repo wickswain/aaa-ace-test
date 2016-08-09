@@ -14,19 +14,18 @@ import com.day.cq.wcm.api.Page;
  * 
  */
 /**
-* @author manish.singh
-*
-*/
+ * @author manish.singh
+ *
+ */
 @Component
 @Service
-@Properties({
-       @Property(name = "service.vendor", value = "com.aaa.ace.services"),
-       @Property(name = "service.description", value = "com.aaa.ace.services Page Suffix Resolver Service"), })
-public class PageSuffixResolverServiceImpl implements PageSuffixResolverService{
-	
-	 private static final String PAGE_SUFFIX = ".html";
+@Properties({ @Property(name = "service.vendor", value = "com.aaa.ace.services"),
+        @Property(name = "service.description", value = "com.aaa.ace.services Page Suffix Resolver Service"), })
+public class PageSuffixResolverServiceImpl implements PageSuffixResolverService {
 
-	/**
+    private static final String PAGE_SUFFIX = ".html";
+
+    /**
      * Validate the URL and append .html extension if it is an AEM page.
      *
      * @param resolver
@@ -35,13 +34,13 @@ public class PageSuffixResolverServiceImpl implements PageSuffixResolverService{
      *            resource link to be resolved
      * @return String
      */
-	@Override
-	public String resolveLinkURL(ResourceResolver resolver, String link) {
-		if (!ResourceUtil.isNonExistingResource(resolver.getResource(link))) {
-            if (resolver.getResource(link).adaptTo(Page.class) != null) {
-                return link.concat(PAGE_SUFFIX);
-            }
+    @Override
+    public String resolveLinkURL(ResourceResolver resolver, String link) {
+        if (!ResourceUtil.isNonExistingResource(resolver.getResource(link))
+                && resolver.getResource(link).adaptTo(Page.class) != null) {
+            return link.concat(PAGE_SUFFIX);
         }
-		return link;
-	}
+
+        return link;
+    }
 }

@@ -1,0 +1,22 @@
+<!--/*
+
+    CTA Large Button/Link Component.
+    ----------------------------------------------------------------
+
+    This is a regular link style for the application.
+
+*/-->
+
+<!-- CTA Large Regular Link Content
+============================================= -->
+<template data-sly-template.regularLink="${@ child}">
+    
+    <sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath}" />
+    
+    <a href="${result.url}" data-sly-text="${child.ctaLabel}"
+       class="link-btn link-lg ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'}"
+       target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}">
+    </a>
+    
+</template>
+<!-- #cta-large-regular-link-content end -->

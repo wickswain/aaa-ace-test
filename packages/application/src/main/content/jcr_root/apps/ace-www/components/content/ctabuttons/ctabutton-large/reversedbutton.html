@@ -1,0 +1,29 @@
+<!--/*
+
+    CTA Large Button/Link Component.
+    ----------------------------------------------------------------
+
+    This is a reversed button style for the application.
+
+*/-->
+
+<!-- CTA Large Reversed Button Content
+============================================= -->
+<template data-sly-template.reversedButton="${@ child}">
+    
+    <sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath}" />
+    
+    <a data-sly-test="${!child.phonedialFlag}" href="${result.url}"
+       target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
+       data-sly-text="${child.ctaLabel}"
+       class="btn-style btn-lg btn-reversed ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'}">
+    </a>
+    
+    <a data-sly-test="${child.phonedialFlag}" href="tel:${child.ctaLabel}"
+       class="btn-style btn-lg btn-reversed ${child.ctaColor=='rgba(255,70,57,1)'?'btn-color-orange':'btn-color-blue'} icon-text"> 
+        <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+        ${child.ctaLabel}
+    </a>
+    
+</template>
+<!-- #cta-large-reversed-button-content end -->
