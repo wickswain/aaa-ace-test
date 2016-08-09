@@ -66,52 +66,31 @@ a {
     color: @color-white;
 }
 
-.table-cp {
-    display: table;
-    width: 100%;
-}
-
-.table-row {
-    display: table-row;
-    vertical-align: middle;
-}
-
-.table-cell {
-    display: table-cell;
-    vertical-align: middle;
-    float: none;
-}
-
 
 /*Spacings*/
 
-@padding-top: 130px;
-@padding-bottom: 100px;
-@horizontal-space: 30px;
-@bottom-space: 400px;
-@min-spacing: 10px;
+@space-height: 400px;
+@space-lg: 130px;
+@space-md: 100px;
+@space-sm: 30px;
+@space-xs: 10px;
 .horizontal-space {
-    margin-bottom: @horizontal-space;
+    margin-bottom: @space-sm;
 }
 
 .side-spacing {
-    padding: 0 @horizontal-space;
+    padding: 0 @space-sm;
 }
 
 .min-spacing {
-    margin-bottom: @min-spacing;
+    margin-bottom: @space-xs;
 }
 
 .component-space,
 .top-space {
-    padding-top: @padding-top;
+    padding-top: @space-lg;
 }
 
 .bottom-space {
-    padding-bottom: @bottom-space;
-}
-
-.component-height {
-    min-height: 620px;
-    max-height: 900px;
+    padding-bottom: @space-sm;
 }

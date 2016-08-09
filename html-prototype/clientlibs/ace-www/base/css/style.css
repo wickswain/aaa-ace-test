@@ -80,19 +80,6 @@ a:hover {
   padding: 20px 0;
   color: #fff;
 }
-.table-cp {
-  display: table;
-  width: 100%;
-}
-.table-row {
-  display: table-row;
-  vertical-align: middle;
-}
-.table-cell {
-  display: table-cell;
-  vertical-align: middle;
-  float: none;
-}
 /*Spacings*/
 .horizontal-space {
   margin-bottom: 30px;
@@ -108,11 +95,7 @@ a:hover {
   padding-top: 130px;
 }
 .bottom-space {
-  padding-bottom: 400px;
-}
-.component-height {
-  min-height: 620px;
-  max-height: 900px;
+  padding-bottom: 30px;
 }
 /*Header Nav*/
 .navbar-default .navbar-nav > li > a {
@@ -365,9 +348,6 @@ Page Intro Component
 .page-intro .margin-b {
   margin-bottom: 30px;
 }
-.page-intro h5 {
-  text-transform: uppercase;
-}
 .page-intro p {
   margin-bottom: 30px;
 }
@@ -392,6 +372,7 @@ Single column Component
 }
 .single-column .image-block {
   max-width: 1300px;
+  padding: 0 70px;
 }
 .single-column .img-responsive {
   display: inline-block;
@@ -562,9 +543,13 @@ Membership Calculator Component
 .img-50-50 {
   display: flex;
   align-content: center;
+  background-size: cover;
+}
+.img-50-50 .flex-component {
+  align-self: flex-end;
 }
 .img-50-50 .flex-component .content .text-block {
-  padding: 60px;
+  padding: 100px 60px;
 }
 .img-50-50 .flex-component .content .text-block .btn-style,
 .img-50-50 .flex-component .content .text-block .link-btn {
@@ -576,6 +561,17 @@ Membership Calculator Component
 }
 .img-50-50 .row-reverse {
   flex-direction: row-reverse;
+}
+.img-50-50 .round-circle {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  padding: 15px 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  margin-right: 10px;
 }
 /*****************************************
     Footer CTA Component
@@ -593,8 +589,7 @@ Membership Calculator Component
   width: 320px;
   height: 434px;
   background-color: #0099FF;
-  margin-left: 15px;
-  margin-top: 15px;
+  margin: 8px;
   padding: 0px;
   text-align: left;
   vertical-align: top;
@@ -623,6 +618,8 @@ Membership Calculator Component
   background-repeat: no-repeat;
   background-position: center bottom;
   color: #fff;
+  padding-bottom: 400px;
+  background-size: cover;
 }
 /*****************************************
     Footer CTA Component
@@ -646,13 +643,13 @@ Membership Calculator Component
 }
 /*Responsive*/
 /*****************************************
-    Template : Responsive
-    Created Date:28-July-2016
-    Modified Date:28-July-2016
-    Version:0.1
+Template : Responsive
+Created Date:28-July-2016
+Modified Date:28-July-2016
+Version:0.1
 *****************************************/
 /*Desktop Device*/
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .font-a {
     font-size: 54px;
     line-height: 58px;
@@ -700,16 +697,16 @@ Membership Calculator Component
   .horizontal-space2 {
     margin-bottom: 70px;
   }
-  .table-cell {
-    padding: 0px !important;
-  }
   .flex-component {
     display: flex;
     align-items: center;
   }
+  .component-height {
+    max-height: 900px;
+  }
 }
 /*Tablet Device*/
-@media (min-width: 640px) and (max-width: 767px) {
+@media (min-width: 641px) and (max-width: 768px) {
   /* Gutter Spaceing 30px */
   div[class^="col"] {
     padding-left: 15px;
@@ -771,7 +768,7 @@ Membership Calculator Component
   }
 }
 /*Mobile Device*/
-@media (min-width: 320px) and (max-width: 639px) {
+@media (min-width: 320px) and (max-width: 640px) {
   /* Gutter Spaceing 16px */
   div[class^="col"] {
     padding-left: 8px;
@@ -825,9 +822,6 @@ Membership Calculator Component
   .horizontal-component-space {
     padding: 70px 0;
   }
-  .horizontal-space2 {
-    margin-bottom: 30px;
-  }
   .single-column {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -855,5 +849,11 @@ Membership Calculator Component
   .social-icons li {
     display: inline-block;
     margin: 0 15px;
+  }
+  .img-50-50 .flex-component .content .text-block {
+    padding: 70px 20px;
+  }
+  .single-column .image-block {
+    padding: 0 30px;
   }
 }
