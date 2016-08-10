@@ -63,11 +63,11 @@
                             <textlinkregular
                                 jcr:primaryType="nt:unstructured"
                                 text="Text Link Regular"
-                                value="textlinkregular"/>
+                                value="default"/>
                             <textlinkreversed
                                 jcr:primaryType="nt:unstructured"
                                 text="TextLink Reversed"
-                                value="textlinkreversed"/>
+                                value="link-reversed"/>
                         </items>
                     </linkstyle>
                     <cta-label
@@ -142,11 +142,11 @@
                             <textlinkregular
                                 jcr:primaryType="nt:unstructured"
                                 text="Text Link Regular"
-                                value="textlinkregular"/>
+                                value="default"/>
                             <textlinkreversed
                                 jcr:primaryType="nt:unstructured"
                                 text="TextLink Reversed"
-                                value="textlinkreversed"/>
+                                value="link-reversed"/>
                         </items>
                     </linkstyle>
                     <cta-label
@@ -221,11 +221,11 @@
                             <textlinkregular
                                 jcr:primaryType="nt:unstructured"
                                 text="Text Link Regular"
-                                value="textlinkregular"/>
+                                value="default"/>
                             <textlinkreversed
                                 jcr:primaryType="nt:unstructured"
                                 text="TextLink Reversed"
-                                value="textlinkreversed"/>
+                                value="link-reversed"/>
                         </items>
                     </linkstyle>
                     <cta-label
@@ -300,11 +300,11 @@
                             <textlinkregular
                                 jcr:primaryType="nt:unstructured"
                                 text="Text Link Regular"
-                                value="textlinkregular"/>
+                                value="default"/>
                             <textlinkreversed
                                 jcr:primaryType="nt:unstructured"
                                 text="TextLink Reversed"
-                                value="textlinkreversed"/>
+                                value="link-reversed"/>
                         </items>
                     </linkstyle>
                     <cta-label
@@ -379,11 +379,11 @@
                             <textlinkregular
                                 jcr:primaryType="nt:unstructured"
                                 text="Text Link Regular"
-                                value="textlinkregular"/>
+                                value="default"/>
                             <textlinkreversed
                                 jcr:primaryType="nt:unstructured"
                                 text="TextLink Reversed"
-                                value="textlinkreversed"/>
+                                value="link-reversed"/>
                         </items>
                     </linkstyle>
                     <cta-label
@@ -458,19 +458,19 @@
                             <simplebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Simple Button"
-                                value="simplebutton"/>
+                                value="default"/>
                             <reversedbutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Reversed Button"
-                                value="reversedbutton"/>
+                                value="btn-reversed"/>
                             <outlinebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Outline Button"
-                                value="outlinebutton"/>
+                                value="btn-border"/>
                             <reversedoutlinebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Reversed Outline Button"
-                                value="reversedoutlinebutton"/>
+                                value="btn-border btn-border-reversed"/>
                         </items>
                     </buttonstyle>
                     <cta-label
@@ -545,19 +545,19 @@
                             <simplebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Simple Button"
-                                value="simplebutton"/>
+                                value="default"/>
                             <reversedbutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Reversed Button"
-                                value="reversedbutton"/>
+                                value="btn-reversed"/>
                             <outlinebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Outline Button"
-                                value="outlinebutton"/>
+                                value="btn-border"/>
                             <reversedoutlinebutton
                                 jcr:primaryType="nt:unstructured"
                                 text="Reversed Outline Button"
-                                value="reversedoutlinebutton"/>
+                                value="btn-border btn-border-reversed"/>
                         </items>
                     </buttonstyle>
                     <cta-label

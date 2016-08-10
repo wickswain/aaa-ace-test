@@ -22,36 +22,36 @@
 
 <!-- CTA Large Button/Link Content
 ============================================= -->
-<sly data-sly-list.child="${resource.listChildren}"
-     data-sly-use.simpleButtonTemplate="simplebutton.html"
-     data-sly-use.reversedButtonTemplate="reversedbutton.html"
-     data-sly-use.outlineButtonTemplate="outlinebutton.html"
-     data-sly-use.reversedOutlineButtonTemplate="reversedoutlinebutton.html"
-     data-sly-use.regularLinkTemplate="regularlink.html"
-     data-sly-use.reversedLinkTemplate="reversedlink.html">
+<sly data-sly-list.child="${resource.listChildren}">
 
-    <sly data-sly-test="${properties.ctaType=='buttons'}">
-
-        <sly data-sly-test="${child.buttonStyle=='simplebutton' && child.ctaLabel}"
-             data-sly-call="${simpleButtonTemplate.simpleButton @ child=child}"/>
-
-        <sly data-sly-test="${child.buttonStyle=='reversedbutton' && child.ctaLabel}"
-             data-sly-call="${reversedButtonTemplate.reversedButton @ child=child}"/>
-
-        <sly data-sly-test="${child.buttonStyle=='outlinebutton' && child.ctaLabel}"
-             data-sly-call="${outlineButtonTemplate.outlineButton @ child=child}"/>
+    <sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath}" />
     
-        <sly data-sly-test="${child.buttonStyle=='reversedoutlinebutton' && child.ctaLabel}"
-             data-sly-call="${reversedOutlineButtonTemplate.reversedOutlineButton @ child=child}"/>
+    <sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
+
+		<a 	data-sly-test="${!child.phonedialFlag}"
+			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'}"
+		   	href="${child.urlPath ? child.urlPath : ''  @ context='uri'}"
+       	   	target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
+			data-sly-text="${child.ctaLabel}">   
+    	</a>
+
+        <a 	data-sly-test="${child.phonedialFlag}"
+			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} icon-text"
+			href="tel:${child.ctaLabel}">
+				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
+        </a>
+
     </sly>
     
-    <sly data-sly-test="${properties.ctaType=='links'}">
+    <sly data-sly-test="${properties.ctaType=='links' && child.linkStyle && child.ctaLabel}">
 
-        <sly data-sly-test="${child.linkStyle=='textlinkregular' && child.ctaLabel}"
-             data-sly-call="${regularLinkTemplate.regularLink @ child=child}"/>
+		<p>
+			<a class="link-btn link-lg ${child.linkStyle} ${child.ctaColor=='rgba(255,70,57,1)'?'link-color-orange':'link-color-blue'}"
+		   		href="${result.url}" target="${child.openNewTabFlag=='true'?'_blank':'_self'}"
+		   	data-sly-text="${child.ctaLabel}">
+			</a>
+		</p>
 
-        <sly data-sly-test="${child.linkStyle=='textlinkreversed' && child.ctaLabel}"
-             data-sly-call="${reversedLinkTemplate.reversedLink @ child=child}"/>
     </sly>
     
 </sly>
