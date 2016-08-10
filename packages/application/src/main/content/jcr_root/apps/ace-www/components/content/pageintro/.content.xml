@@ -4,4 +4,4 @@
     jcr:title="Page Intro Component"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="aaa-ace"/>
+    componentGroup="AAA COMMON"/>
