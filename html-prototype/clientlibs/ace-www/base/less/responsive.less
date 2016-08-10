@@ -63,6 +63,12 @@ Version:0.1
     .component-height {
         max-height: 900px;
     }
+    .membership-img {
+        min-height: 600px;
+    }
+    .membership-calculator .h-space-cal {
+        padding-bottom: @space-lg + 20;
+    }
 }
 
 
@@ -132,6 +138,34 @@ Version:0.1
         &.icon-text {
             margin: 15px;
             display: block;
+        }
+    }
+    .icon-row h2 {
+        height: 40px;
+    }
+    .icon-row .icon-title {
+        margin-bottom: 15px;
+    }
+    .membership-calculator {
+        padding-top: 100px;
+        .h-space-cal {
+            padding-bottom: 70px;
+        }
+        .membership-details {
+            padding: 0px;
+            width: 100%;
+        }
+        .membership-discount-details {
+            transform: translateY(0px);
+        }
+        .no-float {
+            float: none;
+            margin: 0 auto;
+        }
+        .block-position {
+            position: relative;
+            right: 0px;
+            top: 0px;
         }
     }
 }
@@ -227,5 +261,44 @@ Version:0.1
     }
     .single-column .image-block {
         padding: 0 30px;
+    }
+    .membership-calculator {
+        padding-top: 100px;
+        .membership-details {
+            padding: 0px;
+            background-position: center bottom;
+        }
+        .membership-details {
+            .membership-pay-info {
+                width: 100%;
+                margin: 0px;
+                box-shadow: 0px 0px 0px #ccc;
+            }
+            .img-membership {
+                left: 0;
+            }
+        }
+        .block-position {
+            position: relative;
+            top: 0;
+        }
+        .membership-discount-details {
+            transform: translateY(0px);
+        }
+        .membership-pay-info {
+            div[class^="col"] {
+                width: 50%;
+                float: left;
+            }
+        }
+        .h-space-cal {
+            padding-bottom: 70px;
+        }
+    }
+    .item {
+        div[class^="col"] {
+            width: 50%;
+            float: left;
+        }
     }
 }
