@@ -4,7 +4,7 @@ Membership Calculator Component
 
 .membership-calculator {
     background: @color-white;
-    padding-top: 130px;
+    padding-top: @space-lg;
     text-align: center;
     min-height: 620px;
     .caption {
@@ -14,19 +14,24 @@ Membership Calculator Component
         letter-spacing: .02em;
         text-transform: uppercase;
     }
-    p {
-        margin-bottom: 150px;
-        padding: 0px 170px;
-    }
     .membership-calculator-block {
         background: #eee;
         min-height: 600px;
         position: relative;
     }
-    .membership-img {
-        min-height: 600px;
-        background: transparent url() no-repeat bottom left;
-        padding: 0px 100px;
+    .membership-details {
+        .img-membership {
+            padding: 0px 0px;
+            position: relative;
+            left: -35px;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        .horizontal-space {
+            margin-bottom: 70px;
+        }
         .membership-pay-info {
             box-shadow: 0px 0px 15px #ccc;
             padding: 20px 20px 0px 20px;
@@ -34,7 +39,9 @@ Membership Calculator Component
             background: @color-white;
             text-align: left;
             color: #666;
-            width: 400px;
+            width: 420px;
+            margin-left: auto;
+            margin-right: auto;
             .col-sm-6 {
                 padding-right: 0px;
             }
@@ -44,24 +51,10 @@ Membership Calculator Component
             left: -150px;
             bottom: -4px;
         }
-        .text-center {
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-        h6 {
-            margin: 0px;
-            padding: 0px;
-            line-height: 50px;
-            color: #888;
-        }
-        .price {
-            font-size: 36px;
-            line-height: 50px;
-        }
+        .price {}
         .price-total {
             font-size: 46px;
             color: #66C996;
-            padding: 70px 0px;
         }
         hr {
             border-top: dashed 1px #ccc;
@@ -71,10 +64,11 @@ Membership Calculator Component
             margin-bottom: 0px;
         }
         .total-saving-price {
-            margin-top: 70px;
-            font-family: 'robotomedium' !important;
-            font-size: @f-font-size-d;
             color: @color-black;
+        }
+        .MC-horizontal-space {
+            margin-top: @space-lg - 60;
+            margin-bottom: @space-lg - 60;
         }
     }
     .block-position {
@@ -89,12 +83,13 @@ Membership Calculator Component
         vertical-align: middle;
         height: 700px;
         .item {
-            padding: 32px 20px;
+            padding-top: @space-sm;
+            padding-bottom: @space-sm;
             text-align: left;
+            float: left;
+            width: 100%;
             .services-title {
                 color: #1D603B;
-                margin: 0px;
-                padding: 0px;
             }
             .icon {
                 float: left;
@@ -102,12 +97,10 @@ Membership Calculator Component
             }
             .price {
                 color: #1D603B;
-                font-size: 20px;
                 float: left;
                 position: relative;
                 .discount-price {
                     position: absolute;
-                    font-size: 14px;
                     top: -20px;
                     text-decoration: line-through;
                     color: #47976C;
@@ -115,8 +108,12 @@ Membership Calculator Component
             }
             .total-price {
                 color: @color-white;
-                font-size: 20px;
                 float: right;
+                .title-saved {
+                    position: absolute;
+                    top: -20px;
+                    color: #47976C;
+                }
             }
         }
         .item:nth-child(even) {
@@ -133,5 +130,8 @@ Membership Calculator Component
             background: #006b34 !important;
             color: #b6e6cd;
         }
+    }
+    .title-space {
+        margin-bottom: 30px;
     }
 }
