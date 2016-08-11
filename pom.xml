@@ -345,7 +345,8 @@
 									<resource>
 										<directory>${session.executionRootDirectory}/html-prototype/clientlibs</directory>
 										<excludes>
-					                  		<exclude>**/less/**</exclude>
+					                  		<exclude>**/*.less</exclude>
+                                            <exclude>**/less/**</exclude>
 					                  </excludes>
 									</resource>
 								</resources>

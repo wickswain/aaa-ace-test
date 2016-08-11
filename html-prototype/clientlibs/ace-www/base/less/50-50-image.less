@@ -5,11 +5,13 @@
 .img-50-50 {
     display: flex;
     align-content: center;
+    background-size: cover;
     .flex-component {
         align-self: flex-end;
         .content {
             .text-block {
-                padding: 60px;
+                padding: 100px 80px;
+                padding-right: 0;
                 .btn-style,
                 .link-btn {
                     margin: 0;
@@ -23,12 +25,18 @@
     }
     .row-reverse {
         flex-direction: row-reverse;
+        .content {
+            .text-block {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
     }
     .round-circle {
         display: inline-block;
         width: 70px;
         height: 70px;
-        padding: 15px 0;
+        padding: 12px 0;
         text-align: center;
         vertical-align: middle;
         border: 2px solid #fff;
