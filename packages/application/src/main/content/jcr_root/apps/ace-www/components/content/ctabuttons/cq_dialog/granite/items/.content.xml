@@ -520,9 +520,9 @@
                     <uppercase-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if button should be uppercase"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
                         name="./button1/uppercaseFlag"
-                        text="Is Upper Case?"
+                        text="Is Button1 Label Upper Case?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -614,9 +614,9 @@
                     <uppercase-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if button should be uppercase"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
                         name="./button2/uppercaseFlag"
-                        text="Is Upper Case?"
+                        text="Is Button2 Label Upper Case?"
                         value="{Boolean}true"/>
                 </items>
             </columns>

@@ -29,14 +29,14 @@
     <sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
 
 		<a 	data-sly-test="${!child.phonedialFlag}"
-			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ?'text-uppercase btn-xs-size':''}"
+			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
 		   	href="${child.urlPath ? child.urlPath : ''  @ context='uri'}"
        	   	target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 			data-sly-text="${child.ctaLabel}">   
     	</a>
 
         <a 	data-sly-test="${child.phonedialFlag}"
-			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ?'text-uppercase btn-xs-size':''} icon-text"
+			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
 			href="tel:${child.ctaLabel}">
 				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
         </a>
@@ -46,7 +46,7 @@
     <sly data-sly-test="${properties.ctaType=='links' && child.linkStyle && child.ctaLabel}">
 
 		<p>
-			<a class="link-btn link-lg ${child.linkStyle} ${child.ctaColor=='rgba(255,70,57,1)'?'link-color-orange':'link-color-blue'}"
+			<a class="link-btn link-lg ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'}"
 		   		href="${result.url}" target="${child.openNewTabFlag=='true'?'_blank':'_self'}"
 		   	data-sly-text="${child.ctaLabel}">
 			</a>
