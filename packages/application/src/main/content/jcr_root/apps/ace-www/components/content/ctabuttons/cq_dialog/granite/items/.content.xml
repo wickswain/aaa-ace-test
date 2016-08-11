@@ -517,6 +517,13 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./button1/ctaColor"/>
+                    <uppercase-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
+                        name="./button1/uppercaseFlag"
+                        text="Is Button1 Label Upper Case?"
+                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -604,6 +611,13 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./button2/ctaColor"/>
+                    <uppercase-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
+                        name="./button2/uppercaseFlag"
+                        text="Is Button2 Label Upper Case?"
+                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
