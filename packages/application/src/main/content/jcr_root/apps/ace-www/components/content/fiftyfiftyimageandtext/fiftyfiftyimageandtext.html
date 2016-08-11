@@ -1,0 +1,58 @@
+<!--/*
+
+    50-50 Image and Text Component.
+    ----------------------------------------------------------------
+
+    This component is versatile and can be used across any page of the site. 
+    This component can be stacked one of top of another one to show sequence in steps.
+    
+    Default Behavior:
+    1. Text will appear in left column and Image will appear in right column, both will occupy 50 % width each of the container.
+    
+    Required Fields:
+    1. Alt Text for Images and Icons
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->         
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.altText}" 
+	data-emptytext="Author 50-50 Image and Text Component Here." 
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="50-50 Image and Text Component"/>
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.altText}"
+     src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder" alt="50-50 Image and Text Component"/>
+<!-- #placeholder-content end -->
+
+<!-- 50-50 image component -->
+<div data-sly-test="${properties.altText}" 
+		style="background-image:url('${properties.backgroundImage ? properties.backgroundImage : '' @ context='uri'}');
+			background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
+		class="img-50-50 component-height container-fluid">
+    <div class="row flex-component ${properties.isSwapImageAndTextAlignment=='true'?'row-reverse':''}">
+        <div class="col-md-6 content">
+            <div class="text-block">
+                <div class="horizontal-space roboto-light font-b">
+                	<img src="${properties.headerIcon}" title="header icon" alt="${properties.headerIconAltText}">
+                </div>
+                <div class="horizontal-space roboto-light font-b">
+                    <h2 title="header title" 
+                    	style="color:${properties.headerTitleTextFontColor ? properties.headerTitleTextFontColor : '' @ context='styleToken'};">
+                    	<span class="round-circle" 
+                    		style="border-color:${properties.headerTitleTextFontColor ? properties.headerTitleTextFontColor : '' @ context='styleToken'};">
+                    			${properties.numberText}</span>${properties.headerTitle}
+                    </h2>
+                </div>
+                <div  style="color:${properties.headerBodyTextFontColor ? properties.headerBodyTextFontColor : '' @ context='styleToken'};"
+                		class="horizontal-space roboto-light font-g">
+                    <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
+                </div>
+                <div class="horizontal-space">
+                    <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+                </div>                                                                                
+            </div>
+        </div>
+        <div class="col-md-6 image-block">
+            <img src="${properties.fileReference}" alt="${properties.altText}" title="50-50-image" class="img-responsive" />
+        </div>
+    </div>
+</div>
