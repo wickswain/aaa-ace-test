@@ -24,4 +24,35 @@
 	<name>AAA Ace Web Sites - HTML Prototype</name>
 	<description>AAA Ace Web Sites HTML Prototype Module.</description>
 
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T B U I L D D E S C R I P T I O N -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>1.7.0.1.1</version>
+				<configuration>
+					<sourceDirectory>clientlibs/ace-www</sourceDirectory>
+					<outputDirectory>clientlibs/ace-www</outputDirectory>
+					<includes>
+						<include>**/css/**</include>
+					</includes>
+					<excludes>
+						<exclude>**/less/**</exclude>
+					</excludes>
+					<compress>true</compress>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
