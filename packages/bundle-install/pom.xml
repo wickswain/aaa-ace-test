@@ -49,6 +49,18 @@
 						<filter>
 							<root>/apps/ace-www/config.publish</root>
 						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.qa</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.stage</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.uat</root>
+						</filter>
 					</filters>
 
 					<embeddedTarget>/apps/ace-www/install</embeddedTarget>
