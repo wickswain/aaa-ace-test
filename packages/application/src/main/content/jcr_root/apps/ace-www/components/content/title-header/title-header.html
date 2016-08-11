@@ -19,6 +19,6 @@ Title Header Component
     data-sly-test="${properties.title}" 
 	style="background-color:${properties.sectionBgColor @ context='styleToken'};">
 
-     <h2 style="color:${properties.textColor @ context='styleToken'};" title="Title Header Stand Alone">${properties.title @ context='html'}</h2> 
+     <h2 style="color:${properties.textColor @ context='styleToken'};" title="${properties.title}">${properties.title @ context='html'}</h2>  
 
 </div>
