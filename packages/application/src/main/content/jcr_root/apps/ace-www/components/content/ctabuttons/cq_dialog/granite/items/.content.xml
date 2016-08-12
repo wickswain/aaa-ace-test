@@ -141,7 +141,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./link1/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -249,7 +249,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./link2/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -357,7 +357,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./link3/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -465,7 +465,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./link4/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -573,7 +573,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./link5/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                 </items>
             </columns>
@@ -689,7 +689,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./button1/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                     <uppercase-flag
                         jcr:primaryType="nt:unstructured"
@@ -812,7 +812,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                         fieldDescription="Please check box if it has to open in new Tab"
                         name="./button2/openNewTabFlag"
-                        text="Open in new windowr?"
+                        text="Open in new window?"
                         value="{Boolean}true"/>
                     <uppercase-flag
                         jcr:primaryType="nt:unstructured"
