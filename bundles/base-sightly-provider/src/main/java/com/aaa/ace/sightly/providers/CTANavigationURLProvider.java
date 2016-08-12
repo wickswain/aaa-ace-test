@@ -20,8 +20,8 @@ public class CTANavigationURLProvider extends WCMUsePojo {
     private static final String AMPERSAND_CHARACTER = "&";
     private static final String EXCLAMATION_CHARACTER = "?";
     private static final String DELIMITER = ",";
-    private static final String DOMAIN_PLACE_HOLDER = "<Domain>";
-    private static final String CLUB_PLACE_HOLDER = "<ClubName>";
+    private static final String DOMAIN_PLACE_HOLDER = "[Domain]";
+    private static final String CLUB_PLACE_HOLDER = "[ClubName]";
     private static final String ENVIRONMENT_PROPERTY_NAME = "environment";
 
     private String url;
