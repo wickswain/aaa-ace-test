@@ -1,0 +1,58 @@
+<!--/*
+
+   Footer CTA Component.
+    ----------------------------------------------------------------
+
+    This component can be used across all pages throughout the site.
+    Placement of the component can only be used at the botton of the page as Footer.
+
+    Default Behavior:
+    1. Title will derive from the page title.
+
+    Required Fields:
+    1. Alt Text
+    2. Heading/Title
+
+*/--> 
+
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.heading}" 
+	 data-emptytext="Author Footer CTA Component Here." 
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Footer CTA Component"/>
+
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.heading}"
+     src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder" alt="Footer CTA Component"/>
+
+<!-- #placeholder-content end -->
+
+<!-- Footer CTA Content
+============================================= -->
+
+		<div data-sly-test="${properties.heading}" title="${properties.altText}" style="background-image: url('${properties.fileReference @ context='uri'}');" class="footer-column bottom-space top-space">
+                <div class="container-fluid">
+                    <div class="row"  style="color:${properties.textColor @ context='uri'};">
+                            <div class="col-md-2 col-sm-2">
+                            </div>
+
+                            <div class="col-md-8 col-sm-8">
+
+                                <div class="horizontal-space roboto-light font-b">
+                                    <h2 title="${properties.heading}">${properties.heading}</h2>
+                                </div>
+
+                                <div class="horizontal-space2 roboto-light font-g">
+
+                                      <div data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}">
+                                      </div>
+
+                                </div>
+
+                                <div data-sly-resource="${'large' @ resourceType = '/apps/ace-www/components/content/ctabuttons/ctabutton-large'}">
+                                </div>
+
+                        	</div>
+
+               		 </div>
+
+           		 </div>
+
+     	</div>
