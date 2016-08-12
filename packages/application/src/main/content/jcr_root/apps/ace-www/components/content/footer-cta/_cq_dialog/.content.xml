@@ -60,6 +60,18 @@
                                 fieldLabel="Title/Text Color"
                                 freestylePalette="{Boolean}true"
                                 name="./textColor"/>
+                            <rteflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the rte."
+                                name="./rteFlag"
+                                text="Enable rte?"
+                                value="{Boolean}true"/>
+                            <rteflag_x0040_delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./rteFlag@Delete"
+                                value="{Boolean}true"/>
                             <ctaflag
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -72,6 +84,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./ctaFlag@Delete"
                                 value="{Boolean}true"/>
+                            
                         </items>
                     </columns>
                 </items>
