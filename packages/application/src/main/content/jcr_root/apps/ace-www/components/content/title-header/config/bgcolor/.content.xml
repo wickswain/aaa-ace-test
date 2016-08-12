@@ -13,7 +13,7 @@
         <lightgray
             jcr:primaryType="nt:unstructured"
             text="Light Gray"
-            value="#303030"/>
+            value="#E4E5E5"/>
         <white
             jcr:primaryType="nt:unstructured"
             text="White"
