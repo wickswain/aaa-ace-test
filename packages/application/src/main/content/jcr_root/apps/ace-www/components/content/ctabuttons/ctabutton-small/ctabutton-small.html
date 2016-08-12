@@ -30,7 +30,7 @@
 
 		<a 	data-sly-test="${!child.phonedialFlag}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
-		   	href="${child.urlPath ? child.urlPath : ''  @ context='uri'}"
+		   	href="${result.urlPath ? result.urlPath : ''  @ context='uri'}"
        	   	target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 			data-sly-text="${child.ctaLabel}">   
     	</a>
