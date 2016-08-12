@@ -1,0 +1,38 @@
+<!--/*
+
+    Title Header Component.
+    ----------------------------------------------------------------
+
+    This particular component can be used with one or more components, as a section header, or by itself.
+    Specific padding is set at the top and bottom to alleviate strange, or inconsistent, gaps between components.
+    
+    Default Behavior:
+    1. Background color is Dark Blue.
+    2. Font text color is white.
+    
+    Required Fields:
+    1. Heading/Title
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}"
+	 data-emptytext="Author Title Component Here."
+	 src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	 alt="Title Component" />
+<!-- #placeholder-content end -->
+
+<!-- Title Header Content
+============================================= -->
+<div data-sly-test="${properties.title}"
+     style="background-color: ${properties.sectionBgColor ? properties.sectionBgColor : '' @ context='styleToken'};"
+     class="dark-bg text-center horizontal-component-space roboto-light font-b">
+
+    <h2 style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'};"
+        title="${properties.title}"
+        data-sly-text="${properties.title}">
+    </h2>  
+
+</div>
+<!-- #title-header-content end -->
