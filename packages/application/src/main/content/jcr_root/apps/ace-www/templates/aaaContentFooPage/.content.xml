@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template"
+    jcr:title="AAA Foo Page"
+    allowedPaths="[/content/ace-www/en(/.*)?]"
+    ranking="{Long}550">
+    <jcr:content
+            cq:lastModified="{Date}2016-08-12T11:08:39.069-06:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ace-www/templates/aaaContentFooPage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="FOO page"
+        sling:resourceType="ace-www/components/page/contentaaapage">
+        <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/parsys">
+            <simplecomponent
+                    jcr:created="{Date}2016-08-12T11:07:33.712-06:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2016-08-12T11:08:39.068-06:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/simplecomponent"
+                    simpletext="foo authored content"/>
+        </par>
+    </jcr:content>
+</jcr:root>
