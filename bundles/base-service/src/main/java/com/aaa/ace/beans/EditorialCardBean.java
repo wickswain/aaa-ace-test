@@ -1,62 +1,61 @@
-/**
- * 
- */
 package com.aaa.ace.beans;
 
 /**
+ * This is a simple POJO used to pass the article properties to slightly counterpart.
+ * 
  * @author yogesh.mahajan
  *
  */
 public class EditorialCardBean {
 
-	private String title;
-	
-	private String description;
-	
-	private String imagePath;
+    private String title;
 
-	private String imageAltText;
-	
-	private String articlePath;	
-	
-	public String getTitle() {
-		return title;
-	}
+    private String description;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    private String imagePath;
 
-	public String getDescription() {
-		return description;
-	}
+    private String imageAltText;
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    private String articlePath;
 
-	public String getImagePath() {
-		return imagePath;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getImageAltText() {
-		return imageAltText;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setImageAltText(String imageAltText) {
-		this.imageAltText = imageAltText;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getArticlePath() {
-		return articlePath;
-	}
+    public String getImagePath() {
+        return imagePath;
+    }
 
-	public void setArticlePath(String articlePath) {
-		this.articlePath = articlePath;
-	}
-	
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getImageAltText() {
+        return imageAltText;
+    }
+
+    public void setImageAltText(String imageAltText) {
+        this.imageAltText = imageAltText;
+    }
+
+    public String getArticlePath() {
+        return articlePath;
+    }
+
+    public void setArticlePath(String articlePath) {
+        this.articlePath = articlePath;
+    }
+
 }
