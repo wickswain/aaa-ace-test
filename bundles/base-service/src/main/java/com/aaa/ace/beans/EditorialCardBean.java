@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aaa.ace.sightly.providers;
+package com.aaa.ace.beans;
 
 /**
  * @author yogesh.mahajan
