@@ -36,8 +36,10 @@
             <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
         </div>
 
-        <sly data-sly-test="${properties.ctaFlag}"
-             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}" />
+        <div data-sly-test="${properties.ctaFlag}"
+             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
+             data-sly-unwrap="${wcmmode.disabled}">
+        </div>
     </div>
     
 </div>
