@@ -3,7 +3,6 @@ package com.aaa.ace.sightly.providers;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.aaa.ace.services.PageSuffixResolverService;
 import com.aaa.ace.services.RegionDataService;
 import com.aaa.ace.services.RunmodeProviderService;
@@ -30,8 +29,8 @@ public class CTANavigationURLProvider extends WCMUsePojo {
     public void activate() throws Exception {
         log.info("Start of CTANavigationURLProvider class");
         String keys = get("queryStringKey", String.class);
-        String selectedCommonQueryStringKey = get("selectedCommonQueryStringKey", String.class);
         String[] keyArray = null;
+        String[] selectedCommonQueryStringKeyArray = get("selectedCommonQueryStringKey", String [].class);
         if (StringUtils.isNotBlank(keys) && StringUtils.isNotEmpty(keys))
             keyArray = keys.split(CTANavigationURLProvider.DELIMITER);
         url = get("url", String.class);
@@ -53,20 +52,28 @@ public class CTANavigationURLProvider extends WCMUsePojo {
         String regionName = StringUtils.isNotBlank(regionNameFromURL) ? regionNameFromURL
                 : get("regionName", String.class);
         log.info("custom queryStringKeys from component: " + keys);
-        log.info("selected queryStringKey from component: " + selectedCommonQueryStringKey);
         if (StringUtils.isNotBlank(url) && StringUtils.isNotEmpty(url)) {
         	String appURL = getExternalAppURL(url, regionName, env);
-        	if (StringUtils.isNotBlank(selectedCommonQueryStringKey) && StringUtils.isNotEmpty(selectedCommonQueryStringKey))
-        		url = getQueryStringValueConcatenatedURL(selectedCommonQueryStringKey, appURL);
-            for (int i = 0; i < keyArray.length; i++) {
-                if (url.contains(CTANavigationURLProvider.DOMAIN_PLACE_HOLDER)
-                        && url.contains(CTANavigationURLProvider.CLUB_PLACE_HOLDER)) {
-                    
-                    if (StringUtils.isNotBlank(keyArray[i].trim()))
-                        url = getQueryStringValueConcatenatedURL(keyArray[i].trim(), appURL);
-                } else
-                    url = getQueryStringValueConcatenatedURL(keyArray[i].trim(), url);
-            }
+        	if(keyArray!=null){
+        		for (int i = 0; i < keyArray.length; i++) {
+	                if (url.contains(CTANavigationURLProvider.DOMAIN_PLACE_HOLDER)
+	                        && url.contains(CTANavigationURLProvider.CLUB_PLACE_HOLDER)) {
+	                    if (StringUtils.isNotBlank(keyArray[i].trim()))
+	                        url = getQueryStringValueConcatenatedURL(keyArray[i].trim(), appURL);
+	                } else
+	                    url = getQueryStringValueConcatenatedURL(keyArray[i].trim(), url);
+	            }
+        	}
+        	if(selectedCommonQueryStringKeyArray!=null){
+        		for (int i = 0; i < selectedCommonQueryStringKeyArray.length; i++) {
+	                if (url.contains(CTANavigationURLProvider.DOMAIN_PLACE_HOLDER)
+	                        && url.contains(CTANavigationURLProvider.CLUB_PLACE_HOLDER)) {
+	                    if (StringUtils.isNotBlank(selectedCommonQueryStringKeyArray[i].trim()))
+	                        url = getQueryStringValueConcatenatedURL(selectedCommonQueryStringKeyArray[i].trim(), appURL);
+	                } else
+	                    url = getQueryStringValueConcatenatedURL(selectedCommonQueryStringKeyArray[i].trim(), url);
+	            }
+        	}
         }
         log.info("End of CTANavigationURLProvider class");
     }
