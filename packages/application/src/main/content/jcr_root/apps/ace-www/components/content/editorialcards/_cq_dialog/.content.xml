@@ -58,6 +58,7 @@
                                 mimeTypes="[image]"
                                 multiple="{Boolean}false"
                                 name="./file"
+                                required="{Boolean}true"
                                 title="Upload Image Asset"
                                 uploadUrl="${suffix.path}"
                                 useHTML5="{Boolean}true"/>
