@@ -10,7 +10,8 @@
 
 <div data-sly-test.hasContent="${properties.image}"
      class="single-column component-min-h"
-     style="background:${properties.bgColor @ context='styleToken'}">
+     style="background-color::${properties.bgColor @ context='styleToken'};
+            background-image:url('${properties.backgroundImage @ context='uri'}');">
     <div class="container-fluid">
         <div class="container">
             <div class="horizontal-space roboto-light font-b">
