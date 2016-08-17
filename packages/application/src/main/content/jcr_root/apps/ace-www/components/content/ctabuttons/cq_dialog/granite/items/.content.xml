@@ -99,7 +99,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./link1/selectedQueryString">
+                        name="./link1/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -135,7 +136,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./link1/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -207,7 +208,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./link2/selectedQueryString">
+                        name="./link2/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -243,7 +245,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./link2/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -315,7 +317,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./link3/selectedQueryString">
+                        name="./link3/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -351,7 +354,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./link3/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -423,7 +426,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./link4/selectedQueryString">
+                        name="./link4/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -459,7 +463,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./link4/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -531,7 +535,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./link5/selectedQueryString">
+                        name="./link5/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -567,7 +572,7 @@
                         fieldDescription="Please check box if it is phone number"
                         name="./link5/phonedialFlag"
                         text="Is Phone Number?"
-                        value="{Boolean}false"/>
+                        value="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -647,7 +652,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./button1/selectedQueryString">
+                        name="./button1/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
@@ -770,7 +776,8 @@
                         sling:resourceType="granite/ui/components/foundation/form/select"
                         fieldDescription="Please select a key from list of commonly used query string keys"
                         fieldLabel="Select Query String"
-                        name="./button2/selectedQueryString">
+                        name="./button2/selectedQueryString"
+                        multiple="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <campaigncode
                                 jcr:primaryType="nt:unstructured"
