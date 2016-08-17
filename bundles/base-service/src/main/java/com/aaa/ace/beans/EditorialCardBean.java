@@ -1,5 +1,7 @@
 package com.aaa.ace.beans;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 /**
  * This is a simple POJO used to pass the article properties to slightly counterpart.
  * 
@@ -56,6 +58,12 @@ public class EditorialCardBean {
 
     public void setArticlePath(String articlePath) {
         this.articlePath = articlePath;
+    }
+    
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+         
     }
 
 }

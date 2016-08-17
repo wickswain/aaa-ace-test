@@ -28,21 +28,20 @@ public class EditorialArticleProvider extends WCMUsePojo {
     @Override
     public void activate() throws Exception {
 
-        log.info("Started Activate of EditorialArticleProvider");
+        log.debug("Started Activate of EditorialArticleProvider");
 
         // Get all parameters configured by author
         String path = getProperties().get("searchPath", String.class);
-        log.info("Path: " + path);
 
         String[] tagArray = getProperties().get("tags", String[].class);
 
         List<String> searchTagList = (null != tagArray) ? Arrays.asList(tagArray) : null;
-        log.info("Tags: " + searchTagList);
 
         boolean usePopularity = Boolean
                 .valueOf(getProperties().get("popularityFlag", String.class));
         
-        log.info("usePopularity: " + usePopularity);
+        log.info("Read properties - Path: {}, Tags: {}, UsePopularity: {} ", 
+                                            path, searchTagList, usePopularity);
 
         // Get the article service
         EditorialArticleService articleService = getSlingScriptHelper().getService(
@@ -55,7 +54,7 @@ public class EditorialArticleProvider extends WCMUsePojo {
             log.info("===> No Articles found ");
         }
 
-        log.info("End Activate of EditorialArticleProvider");
+        log.debug("End Activate of EditorialArticleProvider");
     }
 
     public List<EditorialCardBean> getCards() {

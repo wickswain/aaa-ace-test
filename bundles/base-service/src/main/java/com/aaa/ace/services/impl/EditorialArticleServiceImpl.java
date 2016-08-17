@@ -21,8 +21,8 @@ import java.util.ListIterator;
 import javax.jcr.RepositoryException;
 
 /**
- * Editorial service implementation class. 
- * Responsible to construct the query and get the results back to provider class.
+ * Editorial service implementation class. Responsible to construct the query and get the results
+ * back to provider class.
  * 
  * @author yogesh.mahajan
  *
@@ -36,7 +36,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
     QueryService queryService;
 
     private final Logger log = LoggerFactory.getLogger(getClass());
-    
+
     static String sqlWhereClause = " WHERE ISDESCENDANTNODE(parent, '<<path>>') ";
 
     static String sqlTagClause = " child.[cq:tags]='<<tag>>' ";
@@ -53,6 +53,9 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
     public List<EditorialCardBean> getEditorialArticles(String path, List<String> searchTagList,
             boolean usePopularity) {
 
+        log.debug("Executing getEditorialArticles with parameters Path {}, "
+                + "Search Tags: {}, UsePopularity: {}", path, searchTagList, usePopularity);
+
         // List to be returned
         List<EditorialCardBean> cards = new ArrayList<EditorialCardBean>();
 
@@ -60,7 +63,8 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
         String sqlQueryStr = getQueryString(path, searchTagList, usePopularity);
 
         if (StringUtils.isEmpty(sqlQueryStr)) {
-            log.info("Could not fetch articles due to empty sql generated");
+
+            log.debug("Could not fetch articles due to empty sql generated, return empty list");
 
             // Return empty list, let caller deal with it
             return cards;
@@ -87,19 +91,22 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 
         // loop over the result resource list and construct bean list
         for (Resource resource : resourceList) {
+            
             EditorialCardBean card = new EditorialCardBean();
 
+            log.info("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
+            
             ValueMap valueMap = resource.getValueMap();
 
-            log.info("{} jcr:title {}", resource.getName(), 
-                        valueMap.get("jcr:title", String.class));
+            /*Assuming here, the query returns good articles which have title, description and image
+            TODO: Modify query to have not null check on these properties after article template is
+            final.  
+            */
             
             card.setTitle(valueMap.get("jcr:title", String.class));
 
-            log.info("{} jcr:description {}", resource.getName(), valueMap.get("jcr:description"));
             card.setDescription(valueMap.get("jcr:description", String.class));
 
-            log.info("{} Image path {}", resource.getName(), valueMap.get("fileReference"));
             card.setImagePath(valueMap.get("fileReference", String.class));
 
             card.setImageAltText(valueMap.get("altText", String.class));
@@ -115,7 +122,9 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
     }
 
     private String getQueryString(String path, List<String> searchTagList, Boolean usePopularity) {
-
+        
+        //Path is null, dangerous to run query without path restriction.
+        //Let caller handle null.
         if (StringUtils.isEmpty(path)) {
             log.info("Path is not available returning null");
             return null;

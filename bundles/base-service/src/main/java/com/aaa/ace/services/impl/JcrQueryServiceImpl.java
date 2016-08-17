@@ -46,28 +46,35 @@ public class JcrQueryServiceImpl implements QueryService {
 
     ResourceResolver resourceResolver = null;
 
-    Session session;
+    Session session = null;
 
     /**
      * Allocating resolver and session objects to be used for query.
      * 
      * @param props - properties used for activation.
+     * @throws LoginException 
      */
     @Activate
-    public void activate(final Map<String, Object> props) {
+    public void activate(final Map<String, Object> props) throws LoginException {
 
         try {
-
+            
+            /* Get resource resolver with system user, making service name for mapper generic
+             * so that it can be used at other components as well. 
+             */
             Map<String, Object> paramMap = new HashMap<String, Object>();
             paramMap.put(ResourceResolverFactory.SUBSERVICE, "aaagenericservice");
             resourceResolver = resolverFactory.getServiceResourceResolver(paramMap);
 
         } catch (LoginException e) {
-
             log.error("Exception in getting resouce resolver", e);
         }
 
-        session = resourceResolver.adaptTo(Session.class);
+        if (null != resolverFactory)
+        {
+            session = resourceResolver.adaptTo(Session.class);
+        }
+        
     }
 
     /**
