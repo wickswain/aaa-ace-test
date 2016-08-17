@@ -10,9 +10,9 @@
             jcr:primaryType="nt:unstructured"
             text="Dark Blue"
             value="#005095"/>
-        <lightgray
+        <lightgrey
             jcr:primaryType="nt:unstructured"
-            text="Light Gray"
+            text="Light Grey"
             value="#E4E5E5"/>
         <white
             jcr:primaryType="nt:unstructured"
