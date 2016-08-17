@@ -93,15 +93,14 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter alt text for the icon"
                                 fieldLabel="Header Icon Alt Text"
-                                name="./headerIconAltText"
-                                required="{Boolean}true"/>
+                                name="./headerIconAltText"/>
                             <number-text
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                defaultValue=""
                                 fieldDescription="Please enter number before title"
                                 fieldLabel="Number"
                                 max="{Long}99"
-                                min="{Long}1"
                                 name="./numberText"/>
                             <header-title-text-font-color
                                 jcr:primaryType="nt:unstructured"
@@ -116,7 +115,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter header title text"
                                 fieldLabel="Header Title"
-                                name="./headerTitle"/>
+                                name="./headerTitle"
+                                required="{Boolean}true"/>
                             <header-body-text-font-color
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
@@ -160,8 +160,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter alt text for image"
                                 fieldLabel="Alt Text"
-                                name="./altText"
-                                required="{Boolean}true"/>
+                                name="./altText"/>
                         </items>
                     </columns>
                 </items>
