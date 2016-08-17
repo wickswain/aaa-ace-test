@@ -34,8 +34,9 @@
             title="${properties.title}"
             data-sly-text="${properties.title}">
         </h2>
-        <div class="horizontal-space"></div>
-         <p class="font-g">${properties.bodyCopy}</p>
+        <div data-sly-test="${properties.bodyCopy}" class="horizontal-space">
+            <p class="font-g">${properties.bodyCopy}</p>
+        </div>
     </div> 
 
 </div>
