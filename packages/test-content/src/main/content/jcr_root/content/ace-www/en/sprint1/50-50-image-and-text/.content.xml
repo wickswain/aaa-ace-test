@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-08-12T19:47:37.508+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ace-www/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Component - 50/50 Image and Text"
+        sling:resourceType="ace-www/components/page/homepage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <fiftyfiftyimageandte
+                jcr:created="{Date}2016-08-12T18:55:00.289+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:00:19.346+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                altText="image alt"
+                backgroundColor="rgba(0,80,149,1)"
+                fileReference="/content/dam/aaa/images/card.png"
+                headerBodyTextFontColor="rgba(255,255,255,1)"
+                headerIcon="/content/dam/aaa/images/cal-icon.png"
+                headerIconAltText="header alt"
+                headerTitle="Download store list"
+                headerTitleTextFontColor="rgba(255,255,255,1)"
+                numberText="1">
+                <rte
+                    jcr:lastModified="{Date}2016-08-12T19:00:59.525+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <cta-large
+                    jcr:lastModified="{Date}2016-08-12T19:01:58.561+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="buttons">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaColor="rgba(255,70,57,1)"
+                        ctaLabel="Download Store!"
+                        openNewTabFlag="true"
+                        queryStringKey="abc, def"
+                        uppercaseFlag="true"
+                        urlPath="http://[Domain].[ClubName].aaa.com/home.html"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                </cta-large>
+            </fiftyfiftyimageandte>
+            <title_header
+                jcr:created="{Date}2016-08-12T19:24:17.972+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:45:06.355+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/title-header"
+                title="50-50 Image and Text with background image"/>
+            <fiftyfiftyimageandte_71689133
+                jcr:created="{Date}2016-08-12T19:02:37.618+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:09:29.821+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                altText="image alt"
+                backgroundImage="/content/dam/aaa/images/CompA-bg.jpg"
+                backgroundImageAltText="bg alt"
+                fileReference="/content/dam/aaa/images/card.png"
+                headerIcon="/content/dam/aaa/images/CompA-icon.png"
+                headerIconAltText="header alt"
+                headerTitle="Find local events"
+                numberText="2">
+                <rte
+                    jcr:lastModified="{Date}2016-08-12T19:10:11.025+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <cta-large
+                    jcr:lastModified="{Date}2016-08-12T19:47:37.499+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="links">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        ctaColor="rgba(0,153,255,1)"
+                        ctaLabel="Download Calendar!"
+                        linkStyle="default"
+                        openNewTabFlag="true"
+                        queryStringKey="cam"
+                        urlPath="http://[Domain].[ClubName].aaa.com/aceapps/SupportForms/TravelInquiry"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                </cta-large>
+            </fiftyfiftyimageandte_71689133>
+            <Copy_x0020_of_x0020_title_header
+                jcr:created="{Date}2016-08-12T19:24:17.972+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:45:40.435+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/title-header"
+                title="50-50 Image and Text with background image and text block placement swapped"/>
+            <fiftyfiftyimageandte_795856794
+                jcr:created="{Date}2016-08-12T19:15:10.075+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:17:05.340+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                altText="image alt"
+                backgroundImage="/content/dam/aaa/images/CompA-bg2.jpg"
+                backgroundImageAltText="bg alt"
+                fileReference="/content/dam/aaa/images/card.png"
+                headerBodyTextFontColor="rgba(255,255,255,1)"
+                headerIcon="/content/dam/aaa/images/CompA-icon.png"
+                headerIconAltText="header alt"
+                headerTitle="Find local events"
+                headerTitleTextFontColor="rgba(255,255,255,1)"
+                isSwapImageAndTextAlignment="true"
+                numberText="3">
+                <rte
+                    jcr:lastModified="{Date}2016-08-12T19:00:59.525+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <cta-large
+                    jcr:lastModified="{Date}2016-08-12T19:01:58.561+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="buttons">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaColor="rgba(255,70,57,1)"
+                        ctaLabel="Download Store!"
+                        openNewTabFlag="true"
+                        queryStringKey="abc, def"
+                        uppercaseFlag="true"
+                        urlPath="http://[Domain].[ClubName].aaa.com/home.html"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                </cta-large>
+            </fiftyfiftyimageandte_795856794>
+        </content-par>
+        <header-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <ctabutton_small
+                jcr:created="{Date}2016-08-12T19:17:01.382+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:17:28.014+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-small"
+                ctaType="links">
+                <link1
+                    jcr:primaryType="nt:unstructured"
+                    ctaLabel="Sprint1 Demo"
+                    linkStyle="link-reversed"
+                    urlPath="/content/ace-www/en/sprint1"/>
+                <link2
+                    jcr:primaryType="nt:unstructured"
+                    linkStyle="default"/>
+                <link3
+                    jcr:primaryType="nt:unstructured"
+                    linkStyle="default"/>
+                <link4
+                    jcr:primaryType="nt:unstructured"
+                    linkStyle="default"/>
+                <link5
+                    jcr:primaryType="nt:unstructured"
+                    linkStyle="default"/>
+                <button1
+                    jcr:primaryType="nt:unstructured"
+                    buttonStyle="default"/>
+                <button2
+                    jcr:primaryType="nt:unstructured"
+                    buttonStyle="default"/>
+            </ctabutton_small>
+            <title_header
+                jcr:created="{Date}2016-08-12T19:24:17.972+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-08-12T19:25:16.366+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/title-header"
+                title="50-50 Image and Text with background color"/>
+        </header-par>
+    </jcr:content>
+</jcr:root>
