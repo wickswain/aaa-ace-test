@@ -2,11 +2,34 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2013-06-03T21:40:35.072-04:00"
+        cq:lastModified="{Date}2016-08-12T19:42:38.835+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/wcm/core/templates/designpage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Axis41 Core"
         sling:resourceType="wcm/core/components/designer">
+        <homepage jcr:primaryType="nt:unstructured">
+            <content-par
+                jcr:lastModified="{Date}2016-08-12T19:42:38.832+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+            </content-par>
+            <header-par
+                jcr:lastModified="{Date}2016-08-12T16:06:20.483+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+            </header-par>
+            <footer-par
+                jcr:lastModified="{Date}2016-08-12T16:06:43.094+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+            </footer-par>
+        </homepage>
     </jcr:content>
 </jcr:root>
