@@ -3,8 +3,6 @@
 *****************************************/
 
 .img-50-50 {
-    display: flex;
-    align-content: center;
     background-size: cover;
     .flex-component {
         align-self: flex-end;
@@ -15,6 +13,26 @@
                 .btn-style,
                 .link-btn {
                     margin: 0;
+                }
+                .title {
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: top;
+                }
+                .round-circle {
+                    display: inline-block;
+                    width: 70px;
+                    height: 70px;
+                    padding: 12px 0;
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 2px solid @color-black;
+                    border-radius: 100px;
+                    position: absolute;
+                    + .title {
+                        margin-top: 15px;
+                        margin-left: 75px;
+                    }
                 }
             }
         }
@@ -31,16 +49,5 @@
                 padding-right: 40px;
             }
         }
-    }
-    .round-circle {
-        display: inline-block;
-        width: 70px;
-        height: 70px;
-        padding: 12px 0;
-        text-align: center;
-        vertical-align: middle;
-        border: 2px solid #fff;
-        border-radius: 100px;
-        margin-right: 10px;
     }
 }

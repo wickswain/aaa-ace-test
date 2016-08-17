@@ -16,6 +16,7 @@
 @color-orange: #ff4639;
 @color-orange-medium: #ff584d;
 @color-orange-light: #db3c31;
+@color-yellow: #ffcc33;
 
 /*Basic CSS Style*/
 
@@ -46,13 +47,12 @@ img,
 }
 
 a {
-    color: @color-black;
+    color: @color-blue-primary-medium;
     text-decoration: none;
     font-family: inherit;
     &:focus,
     &:hover {
-        color: @color-blue-primary-medium;
-        text-decoration: none;
+        color: @color-blue-light;
     }
 }
 
@@ -64,6 +64,15 @@ a {
     background-color: @color-blue-primary-dark;
     padding: 20px 0;
     color: @color-white;
+}
+
+.alert-warning {
+    background-color: @color-yellow;
+}
+
+.brand {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 

@@ -74,7 +74,7 @@ Version:0.1
 
 /*Tablet Device*/
 
-@media (min-width:641px) and (max-width:768px) {
+@media only screen and (max-width: 768px) {
     /* Gutter Spaceing 30px */
     div[class^="col"] {
         padding-left: 15px;
@@ -134,10 +134,22 @@ Version:0.1
     .img-50-50 .flex-component .content .text-block {
         padding: 70px 40px;
     }
+    .img-50-50 {
+        .flex-component {
+            .content {
+                .text-block {
+                    .round-circle {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
     .footer-column {
-        &.icon-text {
+        .icon-text {
             margin: 15px;
-            display: block;
+            display: inline-block;
         }
     }
     .icon-row h2 {
@@ -168,12 +180,34 @@ Version:0.1
             top: 0px;
         }
     }
+    .footer-global {
+        text-align: center;
+        .footer-list {
+            display: block;
+            width: auto;
+            .list-header {
+                &:after {
+                    display: none;
+                }
+            }
+            border-top: 1px solid #3a3a3a;
+            padding-top:15px;
+            margin-bottom: 15px;
+        }
+        .brand {
+            margin-bottom: 70px;
+            display: block;
+        }
+        .bottom-space {
+            padding: 0 100px 30px;
+        }
+    }
 }
 
 
 /*Mobile Device*/
 
-@media (min-width:320px) and (max-width:640px) {
+@media only screen and (max-width: 480px) {
     /* Gutter Spaceing 16px */
     div[class^="col"] {
         padding-left: 8px;
@@ -234,30 +268,30 @@ Version:0.1
             margin-bottom: @space-sm;
         }
     }
-    .footer-column .icon-text {
-        margin: 15px;
-        display: block;
-    }
-    .footer-global {
-        line-height: 40px;
-        padding: 30px 0;
-        li {
-            display: block;
-            margin: 10px 0;
+    .footer-column {
+        .horizontal-space2 {
+            margin-bottom: @space-sm;
         }
-        .social-icons,
-        .footer-links,
-        .copy-rights {
-            padding-top: 45px;
+        .icon-text {
+            margin: 15px;
+            display: inline-block;
         }
-    }
-    .social-icons li {
-        display: inline-block;
-        margin: 0 15px;
     }
     .img-50-50 .row-reverse .content .text-block,
     .img-50-50 .flex-component .content .text-block {
         padding: 70px 20px;
+    }
+    .img-50-50 {
+        .flex-component {
+            .content {
+                .text-block {
+                    .round-circle {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
     }
     .single-column .image-block {
         padding: 0 30px;
@@ -299,6 +333,32 @@ Version:0.1
         div[class^="col"] {
             width: 50%;
             float: left;
+        }
+    }
+    .footer-global {
+        text-align: center;
+        .footer-list {
+            display: block;
+            width: auto;
+            .list-header {
+                &:after {
+                    display: none;
+                }
+            }
+            border-top: 1px solid #3a3a3a;
+            padding-top:15px;
+            margin-bottom: 15px;
+        }
+        .border-lines div[class^="col"] {
+            &:not(: first) {
+                border-top: 1px solid transparent;
+            }
+        }
+        .brand {
+            margin-bottom: 70px;
+        }
+        .bottom-space {
+            padding: 0 0 30px;
         }
     }
 }
