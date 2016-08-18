@@ -1,60 +1,19 @@
 /*****************************************
 Template : Responsive
 Created Date:28-July-2016
-Modified Date:28-July-2016
-Version:0.1
+Modified Date:18-Aug-2016
+Version:0.3
 *****************************************/
 
-
+@media (min-width:1500px) {
+}
 /*Desktop Device*/
 
-@media (min-width:769px) {
-    .font-a {
-        font-size: @a-font-size-d;
-        line-height: 58px;
-    }
-    .font-b {
-        font-size: @b-font-size-d;
-        line-height: 40px;
-    }
-    .font-c {
-        font-size: @c-font-size-d;
-        line-height: 16px;
-    }
-    .font-d {
-        font-size: @d-font-size-d;
-        line-height: 14px;
-    }
-    .font-e {
-        font-size: @e-font-size-d;
-        line-height: 18px;
-    }
-    .font-f {
-        font-size: @f-font-size-d;
-        line-height: 24px;
-    }
-    .font-g {
-        font-size: @g-font-small-d;
-        line-height: 28px;
-    }
-    .font-h {
-        font-size: @h-font-large-d;
-        line-height: 18px;
-    }
-    .container-custom {
-        max-width: 1700px;
-        margin: 0 auto;
-    }
-    /* Gutter Spaceing 40px */
-    div[class^="col"] {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .horizontal-component-space {
-        padding: 130px 0;
-    }
-    .horizontal-space2 {
-        margin-bottom: @space-lg - 60;
+@media only screen and (max-width:1499px) {    
+	.footer-column {		
+        .horizontal-space2 {
+            margin-bottom: @space-md-60;
+        }   		
     }
     .flex-component {
         display: flex;
@@ -74,7 +33,7 @@ Version:0.1
 
 /*Tablet Device*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
     /* Gutter Spaceing 30px */
     div[class^="col"] {
         padding-left: 15px;
@@ -145,12 +104,12 @@ Version:0.1
                 }
             }
         }
-    }
-    .footer-column {
-        .icon-text {
-            margin: 15px;
-            display: inline-block;
-        }
+    }    
+	.footer-column {
+		&.top-space{padding-top:@space-md;}
+        .horizontal-space2 {
+            margin-bottom: @space-sm;
+        }   		
     }
     .icon-row h2 {
         height: 40px;
@@ -207,7 +166,7 @@ Version:0.1
 
 /*Mobile Device*/
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
     /* Gutter Spaceing 16px */
     div[class^="col"] {
         padding-left: 8px;
@@ -269,13 +228,7 @@ Version:0.1
         }
     }
     .footer-column {
-        .horizontal-space2 {
-            margin-bottom: @space-sm;
-        }
-        .icon-text {
-            margin: 15px;
-            display: inline-block;
-        }
+		&.top-space{padding-top:@space-sm;}        
     }
     .img-50-50 .row-reverse .content .text-block,
     .img-50-50 .flex-component .content .text-block {
@@ -360,5 +313,8 @@ Version:0.1
         .bottom-space {
             padding: 0 0 30px;
         }
+    }
+    .page-intro {
+        padding-top: 70px;
     }
 }
