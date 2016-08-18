@@ -30,12 +30,12 @@
      class="text-center horizontal-component-space roboto-light">
 
     <div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'};">
-        <h2 class="font-b"
+        <h2 class="horizontal-space font-b"
             title="${properties.title}"
             data-sly-text="${properties.title}">
         </h2>
-        <div data-sly-test="${properties.bodyCopy}" class="horizontal-space">
-            <p class="font-g">${properties.bodyCopy}</p>
+        <div class="roboto-light font-g">
+            <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
         </div>
     </div> 
 
