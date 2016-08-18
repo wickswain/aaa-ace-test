@@ -1,214 +1,14 @@
 /*****************************************
 Template : Responsive
 Created Date:28-July-2016
-Modified Date:28-July-2016
-Version:0.1
+Modified Date:18-Aug-2016
+Version:0.3
 *****************************************/
+ /*==========  Mobile First Method  ==========*/
 
-
-/*Desktop Device*/
-
-@media (min-width:769px) {
-    .font-a {
-        font-size: @a-font-size-d;
-        line-height: 58px;
-    }
-    .font-b {
-        font-size: @b-font-size-d;
-        line-height: 40px;
-    }
-    .font-c {
-        font-size: @c-font-size-d;
-        line-height: 16px;
-    }
-    .font-d {
-        font-size: @d-font-size-d;
-        line-height: 14px;
-    }
-    .font-e {
-        font-size: @e-font-size-d;
-        line-height: 18px;
-    }
-    .font-f {
-        font-size: @f-font-size-d;
-        line-height: 24px;
-    }
-    .font-g {
-        font-size: @g-font-small-d;
-        line-height: 28px;
-    }
-    .font-h {
-        font-size: @h-font-large-d;
-        line-height: 18px;
-    }
-    .container-custom {
-        max-width: 1700px;
-        margin: 0 auto;
-    }
-    /* Gutter Spaceing 40px */
-    div[class^="col"] {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .horizontal-component-space {
-        padding: 130px 0;
-    }
-    .horizontal-space2 {
-        margin-bottom: @space-lg - 60;
-    }
-    .flex-component {
-        display: flex;
-        align-items: center;
-    }
-    .component-height {
-        max-height: 900px;
-    }
-    .membership-img {
-        min-height: 600px;
-    }
-    .membership-calculator .h-space-cal {
-        padding-bottom: @space-lg + 20;
-    }
-}
-
-
-/*Tablet Device*/
-
-@media only screen and (max-width: 768px) {
-    /* Gutter Spaceing 30px */
-    div[class^="col"] {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    /* Tablet */
-    .font-a {
-        font-size: @a-font-size-t;
-        line-height: 48px;
-    }
-    .font-b {
-        font-size: @b-font-size-t;
-        line-height: 32px;
-    }
-    .font-c {
-        font-size: @c-font-size-t;
-        line-height: 16px;
-        letter-spacing: .16em;
-    }
-    .font-d {
-        font-size: @d-font-size-t;
-        line-height: 14px;
-        letter-spacing: .14em;
-    }
-    .font-e {
-        font-size: @e-font-size-t;
-        line-height: 18px;
-        letter-spacing: .02em;
-    }
-    .font-f {
-        font-size: @f-font-size-t;
-        line-height: 22px;
-    }
-    .font-g {
-        font-size: @g-font-small-t;
-        line-height: 28px;
-    }
-    .font-h {
-        font-size: @h-font-large-t;
-        line-height: 18px;
-    }
-    /*Full image Component*/
-    .component-space {
-        padding-top: 100px;
-    }
-    .single-column {
-        padding-top: @space-md;
-        padding-bottom: @space-md;
-    }
-    .horizontal-component-space {
-        padding: 100px 0;
-    }
-    .horizontal-space2 {
-        margin-bottom: @space-sm;
-    }
-    .img-50-50 .row-reverse .content .text-block,
-    .img-50-50 .flex-component .content .text-block {
-        padding: 70px 40px;
-    }
-    .img-50-50 {
-        .flex-component {
-            .content {
-                .text-block {
-                    .round-circle {
-                        width: 60px;
-                        height: 60px;
-                    }
-                }
-            }
-        }
-    }
-    .footer-column {
-        .icon-text {
-            margin: 15px;
-            display: inline-block;
-        }
-    }
-    .icon-row h2 {
-        height: 40px;
-    }
-    .icon-row .icon-title {
-        margin-bottom: 15px;
-    }
-    .membership-calculator {
-        padding-top: 100px;
-        .h-space-cal {
-            padding-bottom: 70px;
-        }
-        .membership-details {
-            padding: 0px;
-            width: 100%;
-        }
-        .membership-discount-details {
-            transform: translateY(0px);
-        }
-        .no-float {
-            float: none;
-            margin: 0 auto;
-        }
-        .block-position {
-            position: relative;
-            right: 0px;
-            top: 0px;
-        }
-    }
-    .footer-global {
-        text-align: center;
-        .footer-list {
-            display: block;
-            width: auto;
-            .list-header {
-                &:after {
-                    display: none;
-                }
-            }
-            border-top: 1px solid #3a3a3a;
-            padding-top:15px;
-            margin-bottom: 15px;
-        }
-        .brand {
-            margin-bottom: 70px;
-            display: block;
-        }
-        .bottom-space {
-            padding: 0 100px 30px;
-        }
-    }
-}
-
-
-/*Mobile Device*/
-
-@media only screen and (max-width: 480px) {
-    /* Gutter Spaceing 16px */
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	/* Gutter Spaceing 16px */
     div[class^="col"] {
         padding-left: 8px;
         padding-right: 8px;
@@ -252,7 +52,10 @@ Version:0.1
     }
     /*Footer CTA Component*/
     .footer-column {
-        padding-top: 70px;
+		&.top-space{padding-top:@space-md - 30;}   
+		.horizontal-space2 {
+            margin-bottom: @space-sm;
+        } 		
     }
     /*Full image Component*/
     .component-space {
@@ -267,16 +70,11 @@ Version:0.1
         .horizontal-space2 {
             margin-bottom: @space-sm;
         }
+		.image-block {
+			padding: 0 30px;
+		}
     }
-    .footer-column {
-        .horizontal-space2 {
-            margin-bottom: @space-sm;
-        }
-        .icon-text {
-            margin: 15px;
-            display: inline-block;
-        }
-    }
+    
     .img-50-50 .row-reverse .content .text-block,
     .img-50-50 .flex-component .content .text-block {
         padding: 70px 20px;
@@ -292,10 +90,7 @@ Version:0.1
                 }
             }
         }
-    }
-    .single-column .image-block {
-        padding: 0 30px;
-    }
+    }    
     .membership-calculator {
         padding-top: 100px;
         .membership-details {
@@ -355,10 +150,247 @@ Version:0.1
             }
         }
         .brand {
-            margin-bottom: 70px;
+            margin-bottom: @space-md - 30;
         }
         .bottom-space {
             padding: 0 0 30px;
         }
     }
+    .page-intro {
+        padding-top: @space-md - 30;
+    }
 }
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	/* Gutter Spaceing 30px */
+    div[class^="col"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Tablet */
+    .font-a {
+        font-size: @a-font-size-t;
+        line-height: 48px;
+    }
+    .font-b {
+        font-size: @b-font-size-t;
+        line-height: 32px;
+    }
+    .font-c {
+        font-size: @c-font-size-t;
+        line-height: 16px;
+        letter-spacing: .16em;
+    }
+    .font-d {
+        font-size: @d-font-size-t;
+        line-height: 14px;
+        letter-spacing: .14em;
+    }
+    .font-e {
+        font-size: @e-font-size-t;
+        line-height: 18px;
+        letter-spacing: .02em;
+    }
+    .font-f {
+        font-size: @f-font-size-t;
+        line-height: 22px;
+    }
+    .font-g {
+        font-size: @g-font-small-t;
+        line-height: 28px;
+    }
+    .font-h {
+        font-size: @h-font-large-t;
+        line-height: 18px;
+    }
+	/*Footer CTA Component*/
+    .footer-column {
+		&.top-space{padding-top:@space-md;}        
+    }
+    /*Full image Component*/
+    .component-space {
+        padding-top: @space-md;
+    }
+    .single-column {
+        padding-top: @space-md;
+        padding-bottom: @space-md;
+        .horizontal-space2 {
+            margin-bottom: @space-md - 30;
+        }
+		.image-block {
+			padding: 0 70px;
+		}
+    }
+	.page-intro {
+        padding-top: @space-md;
+    }
+    .horizontal-component-space {
+        padding: @space-md 0;
+    }
+    .horizontal-space2 {
+        margin-bottom: @space-sm;
+    }
+    .img-50-50 .row-reverse .content .text-block,
+    .img-50-50 .flex-component .content .text-block {
+        padding: 70px 40px;
+    }
+    .img-50-50 {
+        .flex-component {			      
+            .content {
+                .text-block {
+                    .round-circle {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+    .icon-row h2 {
+        height: 40px;
+    }
+    .icon-row .icon-title {
+        margin-bottom: 15px;
+    }
+    .membership-calculator {
+        padding-top: 100px;
+        .h-space-cal {
+            padding-bottom: 70px;
+        }
+        .membership-details {
+            padding: 0px;
+            width: 100%;
+        }
+        .membership-discount-details {
+            transform: translateY(0px);
+        }
+        .no-float {
+            float: none;
+            margin: 0 auto;
+        }
+        .block-position {
+            position: relative;
+            right: 0px;
+            top: 0px;
+        }
+    }
+    .footer-global {
+        text-align: center;
+        .footer-list {
+            display: block;
+            width: auto;
+            .list-header {
+                &:after {
+                    display: none;
+                }
+            }
+            border-top: 1px solid #3a3a3a;
+            padding-top:15px;
+            margin-bottom: 15px;
+        }
+        .brand {
+            margin-bottom: 70px;
+            display: block;
+        }
+        .bottom-space {
+            padding: 0 100px 30px;
+        }
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	/* Gutter Spaceing 40px */
+	div[class^="col"] {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.font-a {
+		font-size: @a-font-size-d;
+		line-height: 58px;
+	}
+	.font-b {
+		font-size: @b-font-size-d;
+		line-height: 40px;
+	}
+	.font-c {
+		font-size: @c-font-size-d;
+		line-height: 16px;
+	}
+	.font-d {
+		font-size: @d-font-size-d;
+		line-height: 14px;
+	}
+	.font-e {
+		font-size: @e-font-size-d;
+		line-height: 18px;
+	}
+	.font-f {
+		font-size: @f-font-size-d;
+		line-height: 24px;
+	}
+	.font-g {
+		font-size: @g-font-small-d;
+		line-height: 28px;
+	}
+	.font-h {
+		font-size: @h-font-large-d;
+		line-height: 18px;
+	}
+	.flex-component {
+        display: flex;
+        align-items: center;
+    }
+	/*Footer CTA Component*/
+    .footer-column {
+		&.top-space{padding-top:@space-lg;}    		
+        .horizontal-space2 {
+            margin-bottom: @space-sm;
+        }   		
+    }    
+	.horizontal-component-space {
+		padding: 130px 0;
+	}
+    .component-height {
+        max-height: 900px;
+    }
+	.single-column {
+        padding-top: @space-lg;
+        padding-bottom: @space-lg;
+        .horizontal-space2 {
+            margin-bottom: @space-lg - 60;
+        }
+    }
+    .membership-img {
+        min-height: 600px;
+    }
+    .membership-calculator .h-space-cal {
+        padding-bottom: @space-lg + 20;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	/*Footer CTA Component*/
+    .footer-column {		    		
+        .horizontal-space2 {
+            margin-bottom: @space-md - 30;
+        }   		
+    } 
+}
+	
+	
+@media (min-width:1500px) {
+	/*Screen resolution 1700px and above, container width restricted*/
+	.container-custom {
+		max-width: 1700px;
+		margin: 0 auto;
+	}
+}
+
