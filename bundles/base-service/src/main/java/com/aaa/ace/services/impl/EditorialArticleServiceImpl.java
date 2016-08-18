@@ -64,13 +64,13 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 
         if (StringUtils.isEmpty(sqlQueryStr)) {
 
-            log.debug("Could not fetch articles due to empty sql generated, return empty list");
+            log.warn("Could not fetch articles due to empty sql generated, return empty list");
 
             // Return empty list, let caller deal with it
             return cards;
         }
 
-        log.info("Executing query statement {}", sqlQueryStr);
+        log.debug("Executing query statement {}", sqlQueryStr);
 
         // Result of the query
         List<Resource> resourceList;
@@ -87,14 +87,14 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 
         }
 
-        log.info("Query service returned {} results", resourceList.size());
+        log.debug("Query service returned {} results", resourceList.size());
 
         // loop over the result resource list and construct bean list
         for (Resource resource : resourceList) {
             
             EditorialCardBean card = new EditorialCardBean();
 
-            log.info("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
+            log.debug("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
             
             ValueMap valueMap = resource.getValueMap();
 
@@ -126,7 +126,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
         //Path is null, dangerous to run query without path restriction.
         //Let caller handle null.
         if (StringUtils.isEmpty(path)) {
-            log.info("Path is not available returning null");
+            log.warn("Path is not available returning null");
             return null;
         }
 

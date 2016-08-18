@@ -84,14 +84,14 @@ public class JcrQueryServiceImpl implements QueryService {
     public List<Node> getResultNodes(String queryStatement, int numOfResults)
             throws RepositoryException {
 
-        log.info("Started getResults");
+        log.debug("Started getResults");
 
         List<Node> answerList = new ArrayList<Node>();
 
         NodeIterator nodeIter = executeQuery(queryStatement, numOfResults);
 
         if (null == nodeIter) {
-            log.info("Could not execute query returning empty list");
+            log.warn("Could not execute query returning empty list");
             return answerList;
         }
 
@@ -101,7 +101,7 @@ public class JcrQueryServiceImpl implements QueryService {
             answerList.add(node);
         }
 
-        log.info("Returning list of size {}", answerList.size());
+        log.debug("Returning list of size {}", answerList.size());
 
         return answerList;
     }
@@ -117,7 +117,7 @@ public class JcrQueryServiceImpl implements QueryService {
         NodeIterator nodeListResult = executeQuery(queryStatement, numOfResults);
 
         if (null == nodeListResult) {
-            log.info("Could not execute query returning empty list");
+            log.warn("Could not execute query returning empty list");
             return answerResourceList;
         }
 
@@ -144,7 +144,7 @@ public class JcrQueryServiceImpl implements QueryService {
         // Obtain the query manager for the session ...
         QueryManager queryManager = session.getWorkspace().getQueryManager();
 
-        log.info("Creating query with statement {}", queryStatement);
+        log.debug("Creating query with statement {}", queryStatement);
 
         Query query = queryManager.createQuery(queryStatement, "JCR-SQL2");
 
@@ -158,7 +158,7 @@ public class JcrQueryServiceImpl implements QueryService {
         // Iterate over the nodes in the results ...
         NodeIterator nodeIter = result.getNodes();
 
-        log.info("Query returned iterator of size {}", nodeIter.getSize());
+        log.debug("Query returned iterator of size {}", nodeIter.getSize());
 
         return nodeIter;
     }

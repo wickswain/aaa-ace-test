@@ -40,7 +40,7 @@ public class EditorialArticleProvider extends WCMUsePojo {
         boolean usePopularity = Boolean
                 .valueOf(getProperties().get("popularityFlag", String.class));
         
-        log.info("Read properties - Path: {}, Tags: {}, UsePopularity: {} ", 
+        log.debug("Read properties - Path: {}, Tags: {}, UsePopularity: {} ", 
                                             path, searchTagList, usePopularity);
 
         // Get the article service
@@ -51,7 +51,7 @@ public class EditorialArticleProvider extends WCMUsePojo {
         cards = articleService.getEditorialArticles(path, searchTagList, usePopularity);
 
         if (cards.size() == 0) {
-            log.info("===> No Articles found ");
+            log.warn("===> No Articles found ");
         }
 
         log.debug("End Activate of EditorialArticleProvider");
