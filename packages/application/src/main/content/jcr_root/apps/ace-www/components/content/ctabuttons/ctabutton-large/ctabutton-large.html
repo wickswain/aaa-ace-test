@@ -22,7 +22,7 @@
 <!-- CTA Large Button/Link Content
 ============================================= -->
 <sly data-sly-list.child="${resource.listChildren}"> 
-	<sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath , selectedCommonQueryStringKey = child.selectedQueryString}" />
+	<sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath, childResource = child}" />
 
 	<sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
 		<a data-sly-test="${!child.phonedialFlag}"
