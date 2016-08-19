@@ -39,7 +39,9 @@
 						<filter>
 							<root>/content/ace-www</root>
 						</filter>
-						
+						<filter>
+                            <root>/content/dam/aaa</root>
+                        </filter>
 						<filter>
 							<root>/etc/designs/ace-www</root>
 						</filter>
