@@ -391,6 +391,23 @@ Version:0.3
     .membership-calculator .h-space-cal {
         padding-bottom: @space-lg + 20;
     }
+    .img-50-50 {
+        background-size: cover;
+        padding: 0;
+        .flex-component {
+            width: 100%;
+            margin: 0;
+            .image-block {
+                padding-right: 0;
+            }
+            &.row-reverse {
+                flex-direction: row-reverse;
+                .image-block {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
 }
 
 
