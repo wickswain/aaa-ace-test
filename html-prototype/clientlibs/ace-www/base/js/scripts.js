@@ -9,7 +9,7 @@ $(function () {
         footerResponse();
     });
     footerResponse = function () {
-            if ($(window).width() <= 768) {
+            if ($(window).width() <= 992) {
                 $('.list-header').each(function () {
                     $(this).next().removeClass('in');
                     $('.collapse').on('shown.bs.collapse', function () {
