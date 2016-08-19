@@ -63,7 +63,7 @@ public class JcrQueryServiceImpl implements QueryService {
              * so that it can be used at other components as well. 
              */
             Map<String, Object> paramMap = new HashMap<String, Object>();
-            paramMap.put(ResourceResolverFactory.SUBSERVICE, "aaagenericservice");
+            paramMap.put(ResourceResolverFactory.SUBSERVICE, "jcrqueryservice");
             resourceResolver = resolverFactory.getServiceResourceResolver(paramMap);
 
         } catch (LoginException e) {
@@ -159,7 +159,8 @@ public class JcrQueryServiceImpl implements QueryService {
         NodeIterator nodeIter = result.getNodes();
 
         log.debug("Query returned iterator of size {}", nodeIter.getSize());
-
+        
+        
         return nodeIter;
     }
 
