@@ -35,7 +35,39 @@
     <div id="pagewrapper" class="clearfix container-custom">
         <!-- Header
         ============================================= -->
-        <header id="page-header"> </header>
+        <header id="page-header">
+            <div class="header-section">
+                <div class="container-fluid header-bar">
+                    <div class="row top-header" id="top-header">
+                        <div class="col-md-5">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="truck-icon"></i>
+                                    <a href="../getting-started/">Request help</a>
+                                    <span class="pipe">|</span>
+                                    <a href="../getting-started/">Contact us</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text-center col-md-2">
+                            <div class="brand"><img src="./images/AAA.png" title="Home" alt="AAA - " /></div>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <ul class="list-inline">
+                                <li><a href="http://themes.getbootstrap.com">Find a brach</a><span class="pipe">|</span><a href="http://expo.getbootstrap.com">Sing in</a></li>
+                                <li>
+                                    <form class="navbar-form" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control  icon-search" placeholder="Search" /> </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <div id="page-container">
             <!-- Title Header Stand Alone -->
             <div class="dark-bg text-center horizontal-component-space roboto-light font-b">
@@ -280,37 +312,60 @@
             </div>
         </div>
         <footer id="page-footer">
-            <!-- Footer CTA column component -->
-            <div class="footer-column bottom-space top-space" style="background-image: url(images/footer-image.jpg);">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2"></div>
-                        <div class="col-md-8 col-sm-8">
-                            <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Don't have AAA insurance?">Don't have AAA insurance?</h2></div>
-                            <div class="horizontal-space2 font-g roboto-light">
-                                <p>Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years </p>
-                            </div> <a href="tel:1-800-672-5246" class="icon-text link-btn link-lg link-color-blue link-reversed"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</a><a href="" title="Free online quote" class="btn-style btn-lg btn-reversed btn-border">Free online quote</a></div>
-                    </div>
-                </div>
-            </div>
             <!-- Global Footer component -->
             <div id="base-footer" class="footer-global roboto-light font-e">
-                <div class="container-fluid">
+                <div class="container">
+                    <div class="horizontal-space"></div>
                     <div class="row">
-                        <div class="horizontal-space"></div>
-                        <div class="col-md-2 col-sm-2 text-center">
-                            <a href="."><img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" /></a>
+                        <div class="col-md-2 col-md-push-10 text-center">
+                            <a class="brand" href="#"><img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
                         </div>
-                        <div class="col-md-8 col-sm-8 footer-links text-center">
-                            <ul class="list-inline">
-                                <li><a href="#" title="">Not your club?</a></li>
-                                <li><a href="#" title="">Articles</a></li>
-                                <li><a href="#" title="">About AAA</a></li>
-                                <li><a href="#" title="">Contact Us</a></li>
-                            </ul>
+                        <div class="col-md-10 col-md-pull-2 ">
+                            <div class="footer-list">
+                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                <ul class="list-unstyled collapse in" id="collapse-list-1">
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Identify theft monitoring</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                <h3 class="text-uppercase list-header hidden-xs hidden-sm ">Products & services</h3>
+                                <ul class="list-unstyled collapse in" id="collapse-list-2">
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Identify theft monitoring</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                <ul class="list-unstyled collapse in" id="collapse-list-3">
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Identify theft monitoring</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                    <li> <a href="#">Insurance</a> </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-md-2 col-sm-2 social-icons text-center">
+                    </div>
+                    <div class="row border-lines">
+                        <div class="col-md-5"><span class="app">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
+                        <div class="col-md-5"><span class="blog">Read the latest from our <a href="" class="">blog</a></span></div>
+                        <div class="col-md-2 social-icons ">
                             <ul class="list-inline">
                                 <li>
                                     <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="@aaa" /></a>
@@ -321,13 +376,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="bottom-space"></div>
                     <div class="row">
-                        <div class="copy-rights text-center font-d">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.</div>
+                        <div class="col-md-12">
+                            <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span> <a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span> <a href="http://www.facebook.com/">Terms & conditions</a></p>
+                            <div class="bottom-space"></div>
+                            <p class=" bottom-space footer-p">Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+	<script src="clientlibs/ace-www/base/js/scripts.js"></script>
 </body>
 
 </html>
