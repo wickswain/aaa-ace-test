@@ -16,15 +16,15 @@
 
 <!-- Placeholder Content
 ============================================= -->         
-<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.altText}" 
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.headerTitle}" 
 	data-emptytext="Author 50-50 Image and Text Component Here." 
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="50-50 Image and Text Component"/>
-<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.altText}"
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.headerTitle}"
      src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder" alt="50-50 Image and Text Component"/>
 <!-- #placeholder-content end -->
 
 <!-- 50-50 image component -->
-<div data-sly-test="${properties.altText}" 
+<div data-sly-test="${properties.headerTitle}" 
 		style="background-image:url('${properties.backgroundImage ? properties.backgroundImage : '' @ context='uri'}');
 			background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
 		class="img-50-50 component-height container-fluid">
