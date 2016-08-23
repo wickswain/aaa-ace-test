@@ -35,11 +35,8 @@
 				<artifactId>lesscss-maven-plugin</artifactId>
 				<version>1.7.0.1.1</version>
 				<configuration>
-					<sourceDirectory>clientlibs/ace-www</sourceDirectory>
-					<outputDirectory>clientlibs/ace-www</outputDirectory>
-					<includes>
-						<include>**/css/**</include>
-					</includes>
+					<sourceDirectory>${session.executionRootDirectory}/html-prototype/clientlibs/ace-www</sourceDirectory>
+					<outputDirectory>${session.executionRootDirectory}/html-prototype/clientlibs/ace-www</outputDirectory>
 					<excludes>
 						<exclude>**/less/**</exclude>
 					</excludes>
