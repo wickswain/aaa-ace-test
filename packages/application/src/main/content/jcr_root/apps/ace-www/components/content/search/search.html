@@ -1,0 +1,32 @@
+<!--/*
+
+Google Search Box Component
+===========================
+
+This component draws a search box that triggers query using Google Custom Search. Currenlty used on header top right. 
+
+*/-->
+
+<!-- #placeholder is omitted since search box is always displyed -->
+
+
+<!-- #Google Search Box Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 text-right">
+            <div class="input-group tmar10">                                    
+                <input type="text" name="searchKey" id="searchKey" class="required form-control" placeholder="Search">
+                    <input type="hidden" name="result-page" id="result-page" value="${currentStyle.resultspage}"/>
+
+                <!-- #This is temporary to find region, after code is modified to get region from URL this would not be required -->
+                <input type="hidden" name="ca" id="ca" value="http://www.calif.aaa.com"/>
+                <input type="hidden" name="hi" id="hi" value="http://www.hawaii.aaa.com"/>
+
+                <span class="input-group-addon" id="searchSubmit"><i class="fa fa-search"></i></span>									
+            </div>					
+        </div>
+
+    </div>
+</div>
+<!-- #End Google Search Box Content -->
+

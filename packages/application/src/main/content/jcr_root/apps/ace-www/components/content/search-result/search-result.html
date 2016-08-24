@@ -1,0 +1,38 @@
+<!--/*
+
+Google Search Result Component
+==============================
+
+This component renders a search result from Google Custom Search. This component must be used in conjunction with search box component 
+
+*/-->
+
+<!-- #placeholder is omitted since search result title is always displyed -->
+
+<!--/* Google Search Result Component Start */-->
+
+<div class="container">					
+	<div class="row">
+        <!-- Placeholder for search result, pagination -->
+		<h1>Search Result<span id="searchResult" class="searchResult pull-right"></span></h1>
+		<div class="pageloaddiv"></div>
+
+		<div id="resultContent"></div>
+
+		<div class="alert alert-danger" id="error-alert"></div>	
+	</div>	
+	<div class="row" id="paginationLinks">
+		<div class="col-md-6">
+			<nav style="float:right">
+				<ul class="pagination">
+				  <li id="lnkPrev"><a href="#">Previous</a></li>
+				  <li class="active" ><a href="#" id="lblPageNumber"></a></li>
+				  <li id="lnkNext"><a href="#">Next</a></li>
+				</ul>
+			</nav>
+
+		</div>
+	</div>									
+</div>
+
+<!--/* Google Search Result Component End */-->
