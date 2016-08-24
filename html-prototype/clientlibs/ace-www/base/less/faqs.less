@@ -1,0 +1,54 @@
+/*****************************************
+    Footer CTA Component
+*****************************************/
+
+.faqs {
+    background-color: @color-gray-light;
+    .item {
+        padding: 30px 0;
+        border-top: solid 1px #ccc;
+        .faq-list h2 {
+            padding-right: 40px;
+            position: relative;
+        }
+        .list-space {
+            padding: @space-sm 0;
+        }
+        &:last-child {
+            border-bottom: solid 1px #ccc;
+        }
+        .icon-adjust {
+            color: @color-blue-primary-medium;
+            transition: all 0.4s;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 0;
+            top: -10px;
+            font-size: 32px;
+        }
+        .collapsed .icon-adjust {
+            transform: rotate(0deg);
+        }
+        .top-space {
+            padding-top: 30px;
+        }
+    }
+    .ques-block {
+        background-color: @color-gray-medium;
+        padding-top: @space-sm;
+        padding-bottom: @space-sm + 20;
+        img {
+            /*padding-bottom: 30px;*/
+        }
+        h3 {
+            padding-bottom: 30px;
+        }
+        .faq-links {
+            padding-left: 0;
+            span {
+                display: block;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
