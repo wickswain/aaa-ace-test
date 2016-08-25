@@ -8,7 +8,7 @@
 */-->
 
 <!--/*TODO: BE SURE TO UPDATE TEST TO HAVE A VALID hasContent VALUE */-->
-<div class="icon-row" data-sly-test.hasContent="${properties.icons}">
+<div class="icon-row" data-sly-test.hasContent="${properties.iconnumber}">
     <div class="container horizontal-component-space">
         <!-- Top Header Starts Here -->
         <div class="text-center">
@@ -17,30 +17,8 @@
         </div>
         <!-- List of the cards start here -->
         <ul class="list-inline icon-list row">
-            <li class="col-md-3 col-sm-3  col-xs-12">
-                <div class="horizontal-space"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                <div class="horizontal-space icon-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Food & Drink</h2> </div>
-                <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-            </li>
-            <li class="col-md-3 col-sm-3 col-xs-12">
-                <div class="horizontal-space"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                <div class="horizontal-space icon-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
-                <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-            </li>
-            <li class="col-md-3 col-sm-3 col-xs-12">
-                <div class="horizontal-space"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                <div class="horizontal-space icon-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Arts & Culture</h2> </div>
-                <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-            </li>
-            <li class="col-md-3 col-sm-3 col-xs-12">
-                <div class="horizontal-space"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                <div class="horizontal-space icon-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
-                <div class="font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-            </li>
+            <sly data-sly-resource="${ @path='iconitem1', resourceType='/apps/ace-www/components/content/icon-row/icon-item'}"></sly>
+
         </ul>
     </div>
 </div>
