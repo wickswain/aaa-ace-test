@@ -1,0 +1,77 @@
+<!--/*
+
+    FAQ Component.
+    ----------------------------------------------------------------
+
+    This component will be used across many pages of the site. 
+    For example, Insurance page may have FAQ component with insurance specific questions and answers. 
+    Travel page may have FAQ component which travel specific questions and answers.
+    
+    Default Behavior:
+    1. Questions are always exposed, and answers are collapsed by default.
+    2. Right side section is static except the link labels are authorable
+
+    Required Fields:
+    1. Left and Right Section Title and Left Section Question and Answer
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.faq="${ 'com.aaa.ace.sightly.providers.ChildPropertyProvider' 
+								@ child='faqr'}" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+============================================= -->
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && !faq.childResource}"
+	data-emptytext="Author FAQ Component Here"
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="FAQ Component" />
+
+<!-- #placeholder-content end -->
+
+<!-- Faqs component starts here-->
+<div data-sly-test="${faq.childResource}" class="faqs horizontal-component-space">
+    <div class="container">
+        <!-- Faqs Header Starts Here -->
+        <div style="background-color:${properties.bgColorLeft ? properties.bgColorLeft : '' @ context='styleToken'};" 
+        	class="horizontal-space2 roboto-light font-b">
+            <h2 title="Left Section Title">${properties.leftSectionTitle}</h2>
+        </div>
+        <!-- Faqs List Starts here -->
+        <div class="row">
+            <div data-sly-test="${faq.childResource}" class="col-md-9 col-sm-12">
+            	<sly data-sly-list="${faq.childResource.listChildren}">
+	                <div class="item">
+<div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems${itemList.index}">
+	                        <h2 title="Question 1">${item.question} 
+	                        	<span class="icon-adjust roboto-light">+</span>
+	                        </h2>
+	                    </div>
+	                    <div class="roboto-light font-h collapse" id="collapseOrderItems${itemList.index}">
+	                        <div class="top-space">
+								${item.text @ context = 'html'}
+	                        </div>
+	                    </div>
+	                </div>
+	            </sly>
+	        </div>
+            <div style="background-color:${properties.bgColorRight ? properties.bgColorRight : '' @ context='styleToken'};"
+            	class="col-md-3 col-sm-12">
+                <div class="ques-block">
+                    <div class="left-blk side-spacing text-center">
+                        <span class="adjust-align"><img src="${properties.titleIcon}" alt="${properties.altText}">
+                            <h3 class="roboto-medium font-f ">${properties.rightSectionTitle}</h3></span>
+                        <div class="faq-links">
+                        	<a href="${properties.link1URL}" title="View all FAQ's" class="link-btn link-color-blue link-lg">${properties.link1Caption}</a>
+                        	<span>or</span>
+                        	<a href="${properties.link2URL}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
