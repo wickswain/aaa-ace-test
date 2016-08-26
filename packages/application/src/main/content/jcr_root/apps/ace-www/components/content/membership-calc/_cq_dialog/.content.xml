@@ -65,6 +65,12 @@
                                 fieldDescription="Please enter Alt Text"
                                 fieldLabel="Alt Text"
                                 name="./altText"/>
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enterJumpLink Id"
+                                fieldLabel="JumpLink Id"
+                                name="./jumpLinkId"/>
                         </items>
                     </columns>
                 </items>
