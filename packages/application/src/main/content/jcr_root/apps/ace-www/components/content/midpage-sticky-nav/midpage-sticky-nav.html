@@ -1,25 +1,29 @@
-<!--/*
+<!-- Placeholder Content
+=============================================
+<img data-sly-test="${(wcmmode.edit || wcmmode.design)}"
+	data-emptytext="Author Midpage Sticky Nav Here."
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="Midpage Sticky Nav" />
 
-Editorial Card Component
-========================
+<!-- #placeholder-content end -->
 
-This component renders four cards, first one logo card and 3 cards from article hub.
-
-*/-->
-
-Mid Page Sticky Nav <br/>
-
-Link1 Label    	${properties.link1label} <br/>
-Link 1 URL 		${properties.link1url} <br/>
-
-    Link2 Label    	${properties.link2label} <br/>
-Link 2 URL 		${properties.link2url} <br/>
-
-    Link3 Label    	${properties.link3label} <br/>
-Link 3 URL 		${properties.link3url} <br/>
-
-    Link4 Label    	${properties.link4label} <br/>
-Link 4 URL 		${properties.link4url} <br/>
-
-    Link5 Label    	${properties.link5label} <br/>
-Link 5 URL 		${properties.link5url} <br/>
+<section class="sticky-nav" data-spy="affix" data-offset-top="0">
+	<div class="container-fluid position-rel">
+		<div class="pull-left ">
+			<span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			BROWSE
+			<span class="glyphicon glyphicon-chevron-down "></span>
+			</span>
+			<ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+				<li data-sly-test="${properties.link1label}"><a href="#${properties.jumpLinkId1}">${properties.link1label}</a></li>
+				<li data-sly-test="${properties.link2label}"><a href="#${properties.jumpLinkId2}">${properties.link2label}</a></li>
+				<li data-sly-test="${properties.link3label}"><a href="#${properties.jumpLinkId3}">${properties.link3label}</a></li>
+				<li data-sly-test="${properties.link4label}"><a href="#${properties.jumpLinkId4}">${properties.link4label}</a></li>
+				<li data-sly-test="${properties.link5label}"><a href="#${properties.jumpLinkId5}">${properties.link5label}</a></li>
+			</ul>
+		</div>
+		<div class="pull-right">
+			<sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-small'}"/>
+		</div>
+	</div>
+</section>
