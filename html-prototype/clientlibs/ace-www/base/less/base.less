@@ -6,6 +6,7 @@
 @color-gray-medium: #ccc;
 @color-gray-medium-light: #808080;
 @color-gray-light: #E4E5E5;
+@color-gray-lighter: #7F7F7F;
 @color-blue-primary-dark: #005095;
 @color-blue-primary-medium: #0099FF;
 @color-blue: #012546;
@@ -75,8 +76,13 @@ a {
     vertical-align: middle;
 }
 
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
 
 /*Spacings*/
+
 @space-height: 400px;
 @space-lg: 130px;
 @space-md: 100px;
@@ -87,8 +93,9 @@ a {
 }
 
 .horizontal-space2 {
-	margin-bottom: @space-lg - 60;
+    margin-bottom: @space-lg - 60;
 }
+
 .side-spacing {
     padding: 0 @space-sm;
 }
@@ -105,5 +112,3 @@ a {
 .bottom-space {
     padding-bottom: @space-sm;
 }
-
-

@@ -11,14 +11,13 @@
             .text-block {
                 .title {
                     display: inline-block;
-                    overflow: hidden;
                     vertical-align: top;
                 }
                 .round-circle {
                     display: inline-block;
                     width: 70px;
                     height: 70px;
-                    padding: 12px 0;
+                    line-height: 70px;
                     text-align: center;
                     vertical-align: middle;
                     border: 2px solid @color-black;
@@ -26,17 +25,25 @@
                     position: absolute;
                     + .title {
                         margin-top: 15px;
-                        margin-left: 75px;
+                        margin-left: 85px;
                     }
                 }
             }
         }
         .image-block {
             align-self: flex-end;
+            text-align: right;
+            padding-right: 0;
+            .img-responsive {
+                display: inline;
+            }
         }
     }
     .row-reverse {
         flex-direction: row-reverse;
+        .image-block {
+            text-align: left;
+        }
         .content {
             .text-block {
                 padding-left: 40px;
