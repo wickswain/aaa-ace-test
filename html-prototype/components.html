@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,8 +25,7 @@
     <![endif]-->
     <!-- Latest compiled and minified JS -->
     <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script> 
     <!-- External Plugins JS : External plugin files loaded on need base -->
 </head>
 
@@ -80,8 +80,27 @@
                     <div class="horizontal-space roboto-medium font-a"> <span class="">Save money doing what you love</span> </div>
                     <p class="font-g roboto-light">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p> <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a> </div>
             </div>
+			<!-- Sticky Nav -->
+            <section class="sticky-nav" data-spy="affix" data-offset-top="0">
+                <div class="container-fluid position-rel">
+                    <div class="pull-left ">
+                        <span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BROWSE<span class="glyphicon glyphicon-chevron-down "></span>                        </span>
+                        <ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+                            <li><a href="#full-column-image">full-column-image</a></li>
+							<li><a href="#membership-calculator">membership-calculator</a></li>
+                            <li><a href="#img-50-50">Image 50 50 Component</a></li>                            
+                            <li><a href="#footer-column">footer-column</a></li>
+                        </ul>
+                    </div>
+                    <div class="pull-right">
+                        <a href="tel:1800-1234-567" class="btn-style btn-sm btn-color-blue icon-text"><img src="images/phone-icon.png" aria-hidden="true">1800-1234-567</a>
+                    </div>
+                </div>
+            </section>
             <!-- Full Column image component-->
-            <div class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
+            <div id="full-column-image" class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
+            <!--  Membership Calculator component-->
+           
             <!--  Membership Calculator component-->
             <div class="membership-calculator">
                 <div class="container">
@@ -112,8 +131,8 @@
                                     <hr>
                                     <div class="clearfix"></div>
                                     <div class="col-sm-6">
-                                        <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly
-                                            <br>savings</div>
+                                        <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly savings
+                                        </div>
                                     </div>
                                     <div class="col-sm-6 price-total MC-horizontal-space text-right">$552.00</div>
                                     <div class="clearfix"></div>
@@ -129,7 +148,7 @@
                                     <div class="membership-discount-details">
                                         <div class="col-sm-12 title font-h">Sample services</div>
                                         <div class="item">
-                                            <li> <img src="images/movie.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/movie.png)" title="movie">
                                                 <div class="services-title roboto-medium font-g">Movie night</div>
                                             </li>
                                             <li class="pull-right">
@@ -138,7 +157,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/dinner.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/dinner.png)" title="dinner">
                                                 <div class="services-title roboto-medium font-g">Dinner at Marios</div>
                                             </li>
                                             <li class="pull-right">
@@ -147,7 +166,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/car.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/car.png)" title="car">
                                                 <div class="services-title roboto-medium font-g">Car repair</div>
                                             </li>
                                             <li class="pull-right">
@@ -156,7 +175,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/supplies.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/supplies.png)" title="supplies">
                                                 <div class="services-title roboto-medium font-g">School supplies</div>
                                             </li>
                                             <li class="pull-right">
@@ -165,7 +184,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/dinner.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/dinner.png)" title="dinner">
                                                 <div class="services-title roboto-medium font-g">Ice cream</div>
                                             </li>
                                             <li class="pull-right">
@@ -174,7 +193,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/supplies.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/supplies.png)" title="supplies">
                                                 <div class="services-title roboto-medium font-g">New dress shoes</div>
                                             </li>
                                             <li class="pull-right">
@@ -183,7 +202,7 @@
                                             </li>
                                         </div>
                                         <div class="item">
-                                            <li> <img src="images/tickets.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/tickets.png)" title="tickets">
                                                 <div class="services-title roboto-medium font-g">Tickets to Lagoon</div>
                                             </li>
                                             <li class="pull-right">
@@ -205,7 +224,7 @@
 
 
 
-            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
+            <div id="img-50-50" class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
                 <div class="row flex-component">
                     <div class="col-md-6 content">
                         <div class="text-block">
@@ -224,7 +243,7 @@
 
 
             <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg2.jpg); background-color:#ffffff; color:#ffffff; ">
-                <div class="row flex-component">
+                <div class="row flex-component" style="background-color: rgba(0,0,0,0.4);">
                     <div class="col-md-6 content">
                         <div class="text-block">
                             <div class="horizontal-space roboto-light font-b">
@@ -255,7 +274,7 @@
 
 
             <!-- Footer CTA column component -->
-            <div class="footer-column bottom-space top-space" style="background-image: url(images/footer-image.jpg);">
+            <div id="footer-column" class="footer-column bottom-space top-space" style="background-image: url(images/footer-image.jpg);">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-2 col-sm-2"></div>
@@ -359,10 +378,10 @@
                     <h2 title="Explore articles">Freqently asked questions</h2></div>
                 <!-- Faqs List Starts here -->
                 <div class="row">
-                    <div class="col-md-8 col-sm-12">
+                    <div class="col-md-9 col-sm-12">
                         <div class="item">
                             <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems1">
-                                <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <i class=" icon-adjust glyphicon glyphicon-plus pull-right"></i></h2> </div>
+                                <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
                             <div class="roboto-light font-h collapse" id="collapseOrderItems1">
                                 <div class="top-space">
                                     <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
@@ -371,7 +390,7 @@
                         </div>
                         <div class="item">
                             <div class="faq-list collapsed  roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems2">
-                                <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <i class=" icon-adjust glyphicon glyphicon-plus pull-right"></i></h2> </div>
+                                <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
                             <div class="roboto-light font-h collapse" id="collapseOrderItems2">
                                 <div class="top-space">
                                     <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
@@ -379,10 +398,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-3 col-sm-12">
                         <div class="ques-block">
-                            <div class="left-blk side-spacing text-center"> <img src="images/faq-icon.png" alt="FAQ">
-                                <h3 class="roboto-medium font-f ">Still Need Help?</h3>
+                            <div class="left-blk side-spacing text-center">
+                                <span class="adjust-align"><img src="images/faq-icon.png" alt="FAQ">
+                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3></span>
                                 <div class="faq-links"><a href="#" title="Download" class="link-btn link-color-blue link-lg">View all FAQ's</a><span>or</span><a href="#" title="Download" class="link-btn link-color-blue link-lg">Contact Support</a></div>
                             </div>
                         </div>
@@ -390,15 +410,14 @@
                 </div>
             </div>
         </div>
-
-
+		<!-- Global Footer component -->
         <footer id="page-footer">
-            <!-- Global Footer component -->
+            <!-- Global Base Footer component -->
             <div id="base-footer" class="footer-global roboto-light font-e">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                             <div class="row">
                                 <div class="col-md-2 col-md-push-10 text-center">
                                     <div class="brand-image">
@@ -447,9 +466,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row border-lines">
-                                <div class="col-md-5"><span class="app">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
-                                <div class="col-md-5"><span class="blog">Read the latest from our <a href="" class="">blog</a></span></div>
+                            <div class="border-lines">
+                                <div class="col-md-5"><span class="app" style="background-image:url(images/mobile-icon.png)" title="App">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
+                                <div class="col-md-5"><span class="blog" style="background-image:url(images/rss-icon.png)" title="Blog">Read the latest from our <a href="" class="">blog</a></span></div>
                                 <div class="col-md-2 social-icons ">
                                     <ul class="list-inline">
                                         <li>
@@ -469,7 +488,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1"></div>
+
                     </div>
                 </div>
             </div>

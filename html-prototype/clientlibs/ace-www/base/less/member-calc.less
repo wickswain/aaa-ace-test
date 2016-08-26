@@ -70,15 +70,19 @@ Membership Calculator Component
         padding: 0px;
         display: table-cell;
         vertical-align: middle;
-        height: 700px;
         .item {
             text-align: left;
             float: left;
             width: 100%;
+            .pull-right {
+                padding-left: 0px;
+            }
             li {
                 list-style-type: none;
                 display: inline-block;
                 vertical-align: middle;
+                background: url() no-repeat 15px 50%;
+                padding-left: 65px;
             }
             .services-title {
                 color: #1D603B;
@@ -117,10 +121,10 @@ Membership Calculator Component
             }
         }
         .item:nth-child(even) {
-            background: #66C996;
+            background-color: #66C996;
         }
         .item:nth-child(odd) {
-            background: #4dbf84;
+            background-color: #4dbf84;
         }
         .title {
             text-transform: uppercase;
@@ -134,4 +138,8 @@ Membership Calculator Component
     .title-space {
         margin-bottom: 30px;
     }
+}
+
+.total-saving-price {
+    width: 70%;
 }
