@@ -14,7 +14,36 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Title/Subheading"
+                            name="./title"/>
+                    <icon-amount
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Select the amount of icons you want in the row"
+                            fieldLabel="Icon Amount"
+                            name="./iconamount">
+                        <items jcr:primaryType="nt:unstructured">
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="{Long}3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="Four"
+                                value="{Long}4"/>
+                            <seven
+                                jcr:primaryType="nt:unstructured"
+                                text="Seven"
+                                value="{Long}7"/>
+                            <eight
+                                jcr:primaryType="nt:unstructured"
+                                text="Eight"
+                                value="{Long}8"/>
+                        </items>
+                    </icon-amount>
                 </items>
             </column>
         </items>

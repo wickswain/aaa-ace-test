@@ -7,19 +7,16 @@
 
 */-->
 
-<!--/*TODO: BE SURE TO UPDATE TEST TO HAVE A VALID hasContent VALUE */-->
 <div class="icon-row" data-sly-test.hasContent="${properties.iconnumber}">
-    <div class="container horizontal-component-space">
+    <div class="container horizontal-component-space" data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
         <!-- Top Header Starts Here -->
         <div class="text-center">
             <div class="horizontal-space2 roboto-light font-b">
                 <h2 title="Explore articles">Discounts</h2> </div>
         </div>
         <!-- List of the cards start here -->
-        <ul class="list-inline icon-list row">
-            <sly class="HELLO-WORLD" data-sly-resource="${ @path='iconitem1', resourceType='/apps/ace-www/components/content/icon-row/icon-item'}"></sly>
-            <sly class="HELLO-WORLD" data-sly-resource="${ @path='iconitem2', resourceType='/apps/ace-www/components/content/icon-row/icon-item'}"></sly>
-
+        <ul data-sly-list.icon="${iconsprovider.icons}"class="list-inline icon-list row">
+            <sly data-sly-resource="${icon.path @ resourceType=icon.resourceType}"></sly>
         </ul>
     </div>
 </div>
