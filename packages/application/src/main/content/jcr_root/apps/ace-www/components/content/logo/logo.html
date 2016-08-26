@@ -1,0 +1,36 @@
+<!--/*
+
+  	Logo Component.
+	----------------------------------------------------------------
+  	This component is used to draw the logo on page.
+
+    Required Fields:
+    1. Logo Alt Text
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->         
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.fileReference}"
+	 data-emptytext="Author Logo Here." style="text-align: center;"
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Logo Component"/>
+<!-- #placeholder-content end -->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.currentPagePath="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
+		@ link=currentPage.path}" />
+<sly data-sly-use.logoLinkTo="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
+		@ link=properties.linkTo}" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Logo
+============================================= -->
+<div class="container" data-sly-test="${properties.fileReference}" 
+     data-sly-unwrap="${wcmmode.disabled}">
+    <a href="${logoLinkTo.linkURL ? logoLinkTo.linkURL : currentPagePath.linkURL @ context='uri'}"
+       class="brand">
+        <img src="${properties.fileReference}" alt="${properties.alt}" title="${properties.alt}" class="img-responsive" />
+    </a>
+</div>
+<!-- #logo end -->
