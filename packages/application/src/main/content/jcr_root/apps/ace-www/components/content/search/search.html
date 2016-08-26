@@ -7,18 +7,48 @@ This component draws a search box that triggers query using Google Custom Search
 
 */-->
 
-<!-- #placeholder is omitted since search box is always displyed -->
+<!--/* #placeholder is omitted since search box is always displayed */-->
 
 
 <!-- #Google Search Box Content -->
-<div class="container">
+
+<div id="page-container">
+<div class="container search-results">
+	<!---   Search input box  --->
+	<div class="row search-box">
+		<div class="col-md-9 col-sm-12">
+			<div class="col-lg-12">
+				<div class="input-group">
+					<input type="text" name="searchKey" id="searchKey"
+						class="search-input form-control roboto-light font-b"
+						placeholder="Search here"/> 
+
+						<!--input type="hidden" name="result-page" id="result-page" value="${properties.resultspage || currentPage.path}"/-->
+                        <input type="hidden" name="result-page" id="result-page" value="${properties.resultspage || currentPage.path}"/>
+                        
+
+						<span class="search-addon input-group-addon" id="searchSubmit">
+							<i class="glyphicon glyphicon-search"></i>
+						</span>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-12">
+			<span class="result-no roboto-light font-h" id="resultsCount"></span>
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-3 text-right">
             <div class="input-group tmar10">                                    
                 <input type="text" name="searchKey" id="searchKey" class="required form-control" placeholder="Search">
                     <input type="hidden" name="result-page" id="result-page" value="${currentStyle.resultspage}"/>
 
-                <!-- #This is temporary to find region, after code is modified to get region from URL this would not be required -->
+                #This is temporary to find region, after code is modified to get region from URL this would not be required
                 <input type="hidden" name="ca" id="ca" value="http://www.calif.aaa.com"/>
                 <input type="hidden" name="hi" id="hi" value="http://www.hawaii.aaa.com"/>
 
@@ -28,5 +58,5 @@ This component draws a search box that triggers query using Google Custom Search
 
     </div>
 </div>
-<!-- #End Google Search Box Content -->
-
+ -->
+	<!-- #End Google Search Box Content -->

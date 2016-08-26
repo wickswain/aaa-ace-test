@@ -11,9 +11,47 @@ This component renders a search result from Google Custom Search. This component
 
 <!--/* Google Search Result Component Start */-->
 
-<div class="container">					
+<!--div data-sly-test="${(wcmmode.edit || wcmmode.design)}">
+Search Result will be placed here.
+</div-->
+
+<div class="container search-results">
+	<!---   Results Grid will bind here --->
+	<div class="row results-grid">
+		<div class="col-md-9 col-sm-12">
+			<div id="resultContent"></div>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+
+	<div class="row pagination-grid">
+		<ul>
+			<li style="display: inline-block" class="col-md-3 col-sm-3">
+				<a href="#" title="Solid button"
+					class="btn-style btn-sm btn-color-blue btn-reversed" id="prevPage">
+				<span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>
+			</li>
+			<li style="display: inline-block" class="col-md-3 col-sm-3">
+				<input
+					type="text" name="pageNumber" id="pageNumber"
+					class="pagination-input form-control roboto-light font-h">
+					<span class="text-center roboto-light font-h" id="totalListPages"></span>
+			</li>
+			<li style="display: inline-block" class="col-md-3 col-sm-3">
+				<a
+					href="#" title="Solid button"
+					class="pull-right  btn-style btn-sm btn-color-blue btn-reversed disabled"
+					id="nextPage">Next<span aria-hidden="true"
+					class="next-page glyphicon glyphicon-arrow-right "></span>
+					</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- <div class="container">					
 	<div class="row">
-        <!-- Placeholder for search result, pagination -->
+        Placeholder for search result, pagination
 		<h1>Search Result<span id="searchResult" class="searchResult pull-right"></span></h1>
 		<div class="pageloaddiv"></div>
 
@@ -33,6 +71,6 @@ This component renders a search result from Google Custom Search. This component
 
 		</div>
 	</div>									
-</div>
+</div> -->
 
 <!--/* Google Search Result Component End */-->
