@@ -26,10 +26,9 @@
 
 <!-- Logo
 ============================================= -->
-<div class="container" data-sly-test="${properties.fileReference}" 
+<div data-sly-test="${properties.fileReference}" 
      data-sly-unwrap="${wcmmode.disabled}">
-    <a href="${logoLinkTo.linkURL ? logoLinkTo.linkURL : currentPagePath.linkURL @ context='uri'}"
-       class="brand">
+    <a href="${logoLinkTo.linkURL ? logoLinkTo.linkURL : currentPagePath.linkURL @ context='uri'}">
         <img src="${properties.fileReference}" alt="${properties.alt}" title="${properties.alt}" class="img-responsive" />
     </a>
 </div>

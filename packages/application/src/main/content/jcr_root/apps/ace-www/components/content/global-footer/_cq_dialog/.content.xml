@@ -176,6 +176,78 @@
                     </columns>
                 </items>
             </links_3>
+            <footericons
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Footer Icon Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <icon1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select small image for download app icon"
+                                fieldLabel="Download App Icon"
+                                fileNameParameter="./icon1/fileName"
+                                fileReferenceParameter="./icon1/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./icon1/file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <icon1alttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Alt Text"
+                                name="./icon1/alt"
+                                required="{Boolean}true"/>
+                            <icon2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select small image for download app icon"
+                                fieldLabel="Blog Icon"
+                                fileNameParameter="./icon2/fileName"
+                                fileReferenceParameter="./icon2/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./icon2/file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <icon2alttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Alt Text"
+                                name="./icon2/alt"
+                                required="{Boolean}true"/>
+                            <icon1restype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                ignoreData="{Boolean}true"
+                                name="./icon1/sling:resourceType"
+                                value="foundation/components/image"/>
+                            <icon2restype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                ignoreData="{Boolean}true"
+                                name="./icon2/sling:resourceType"
+                                value="foundation/components/image"/>
+                        </items>
+                    </column>
+                </items>
+            </footericons>
             <socialmedia
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Configure Social Media Properties"

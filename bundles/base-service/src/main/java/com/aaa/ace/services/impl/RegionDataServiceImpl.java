@@ -22,7 +22,7 @@ import com.aaa.ace.services.RegionDataService;
  *
  */
 @Component
-@Service
+@Service({ RegionDataService.class })
 @Properties({ @Property(name = "service.vendor", value = "com.aaa.ace.services"),
         @Property(name = "service.description", value = "com.aaa.ace.services Region Data Service"), })
 public class RegionDataServiceImpl implements RegionDataService {

@@ -1,5 +1,7 @@
 package com.aaa.ace.services;
 
+import org.apache.sling.api.SlingHttpServletRequest;
+
 /**
  * Personalization configuration service.
  *
@@ -15,5 +17,13 @@ public interface PersonalizationConfigService {
      * @return
      */
     String getContentRootPath();
+
+    /**
+     * Gets the valid URL by replacing the region name place holder with the
+     * resolved region name through request.
+     *
+     * @return
+     */
+    String getFormattedPersonalizationPagePath(SlingHttpServletRequest request, String pagePath);
 
 }
