@@ -67,16 +67,26 @@ Sticky Nav Component
                     text-decoration: none;
                     color: @color-black;
                 }
+                /*  &:active {
+                    text-decoration: none;
+                    border-bottom: solid 2px @color-blue-light;
+                }*/
+                &.active {
+                    text-decoration: none;
+                    &:extend(.roboto-medium, .font-f);
+                    border-bottom: solid 2px @color-blue-light;
+                }
                 color: @color-black;
             }
             li:first-child {
-                &:extend(.roboto-medium, .font-f);
+                &:extend(.roboto-light, .font-g);
+                /*&:extend(.roboto-medium, .font-f);*/
                 display: block;
                 &:after {
                     content: '';
                     display: block;
                     width: 100px;
-                    border-bottom: solid 2px @color-blue-light;
+                    //border-bottom: solid 2px @color-blue-light;
                 }
                 padding-bottom: 30px;
             }
@@ -94,8 +104,8 @@ Sticky Nav Component
         }
     }
     .pagination-grid {
-        padding-top: 130px;
-        padding-bottom: 130px;
+        // padding-top: 130px;
+        // padding-bottom: 130px;
         span {
             font-size: 12px;
             top: 0;
@@ -124,21 +134,100 @@ Sticky Nav Component
             opacity: 0.2;
         }
     }
-    /* .filters-grid {
-        a {}
-        .filters-list {
-            position: relative;
-            float: none;
+    .error-message {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .mobile-filter-grid {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+        background-color: @color-gray-light;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
+        .filter-title {
+            padding: 15px 0px;
+            display: block;
+            color: @color-blue-light;
+            text-align: left;
+            i {
+                padding: 5px 10px;
+                font-size: 10px;
+                float: right;
+            }
         }
-        li:first-child {
-            &:extend(.font-d);
+        .filter-res-count {
+            border-left: solid 1px #ccc;
+            text-align: center;
+            .result-no {
+                display: block;
+                padding: 15px 0px;
+            }
         }
-        li {
-            &:extend(.roboto-light, .font-g);
-            padding-top: 15px;
-            padding-left: 15px;
-            padding-bottom: 15px;
-            border-bottom: solid 2px #e4e5e5;
+    }
+    .mobile-filter-list {
+        .mobile-gridview {
+            padding: 0;
         }
-    }*/
+        background-color: @color-gray-light;
+        .filterlist-items {
+            //background-color: #fff;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            background: #fff;
+            li {
+                background-color: #fff;
+                border-bottom: solid 1px @color-gray-light;
+                padding: 15px;
+                list-style-type: none;
+                &:extend(.roboto-light, .font-g);
+                a {
+                    &:hover {
+                        color: @color-blue-primary-medium;
+                        text-decoration: none;
+                    }
+                    &:focus {
+                        text-decoration: none;
+                        color: @color-black;
+                    }
+                    /*&:active {
+                        text-decoration: none;
+                        &:extend(.roboto-medium, .font-f);
+                        &:after {
+                            content: "\e013";
+                            font-family: 'Glyphicons Halflings';
+                            color: @color-blue-primary-medium;
+                            float: right;
+                        }
+                        //border-bottom: solid 2px @color-blue-light;
+                    }*/
+                    color: @color-black;
+                    &.active {
+                        &:extend(.roboto-medium, .font-f);
+                        &:after {
+                            content: "\e013";
+                            font-family: 'Glyphicons Halflings';
+                            color: @color-blue-primary-medium;
+                            float: right;
+                        }
+                    }
+                }
+            }
+            li:first-child {
+                &:extend(.roboto-medium, .font-f);
+                background-color: @color-gray-light;
+                text-align: center;
+                .close-fliter {
+                    color: @color-blue-primary-medium;
+                    float: right;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
