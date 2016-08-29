@@ -1,0 +1,87 @@
+<!--/*
+
+Google Search Result Component
+==============================
+
+This component renders a search result from Google Custom Search. This component must be used in conjunction with search box component 
+
+*/-->
+
+<!-- #placeholder is omitted since search result title is always displayed. -->
+
+<!--/* Google Search Result Component Start */-->
+
+<sly data-sly-use.filterProvider="${'com.aaa.ace.sightly.providers.ChildPropertyProvider' @ child='filters'}" />
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design)}">Author	Search Result.</div>
+
+<div class="container search-results">
+
+	<!--   Search input box  -->
+	<div class="row search-box">
+		<div class="col-md-9 col-sm-12">
+			<div class="col-lg-12">
+				<div class="input-group">
+					<input type="text" name="searchKey" id="searchKey"
+						class="search-input form-control roboto-light font-b"
+						placeholder="Search here" />
+
+					<!--input type="hidden" name="result-page" id="result-page" value="${properties.resultspage || currentPage.path}"/-->
+					<input type="hidden" name="result-page" id="result-page"
+						value="${properties.resultspage || currentPage.path}" /> <span
+						class="search-addon input-group-addon" id="searchSubmit">
+						<i class="glyphicon glyphicon-search"></i>
+					</span>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-12">
+			<span class="result-no roboto-light font-h" id="resultsCount"></span>
+		</div>
+	</div>
+
+	<!--   Results Grid will bind here -->
+	<div class="row results-grid">
+		<div class="col-md-9 col-sm-9">
+			<div id="resultContent"></div>
+		</div>
+		<div class="col-md-3 col-sm-3 hidden-xs">
+			<div class="filter-grid">
+				<ul>
+					<li>All Results</li>
+					<sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
+						<sly data-sly-test="${filters.filterlabel && filters.filtertag}" data-sly-use.tagMetaProvider="${'com.aaa.ace.sightly.providers.TagMetaProvider' @ tagid=filters.filtertag}">
+						<li><a 	href="#" class="meta-data" 
+								data-metaname="${tagMetaProvider.metaName}"
+								data-metacontent="${tagMetaProvider.metaContent}">${filters.filterlabel}</a>
+						</li>
+						</sly>
+					</sly>	
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+
+	<div class="row pagination-grid">
+		<ul>
+			<li class="page-links col-md-3 col-sm-3"><a href="#"
+				title="Solid button"
+				class="btn btn-style btn-sm btn-color-blue btn-reversed"
+				id="prevPage"><span aria-hidden="true"
+					class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a></li>
+			<li class="page-links col-md-3 col-sm-3 text-center"><input
+				type="text" name="pageNumber" id="pageNumber"
+				class="pagination-input form-control roboto-light font-h"><span
+				class="text-center roboto-light font-h" id="totalListPages">of
+					20 </span></li>
+			<li class="page-links col-md-3 col-sm-3"><a href="#"
+				title="Solid button"
+				class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed"
+				id="nextPage">Next<span aria-hidden="true"
+					class="next-page glyphicon glyphicon-arrow-right "></span></a></li>
+		</ul>
+	</div>
+</div>
+<!--/* Google Search Result Component End */-->

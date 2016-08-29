@@ -14,6 +14,13 @@
 <meta name="description" content="${head.description}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
+<!--/*  Custom meta tag for filters based on cq:tag on page through Google Site Search */-->
+<sly data-sly-use.metaProvider="${'com.aaa.ace.sightly.providers.PageMetaProvider'}">
+	<sly data-sly-list.metaBean="${metaProvider.metaList}">
+		<meta name="${metaBean.metaTagName}" content="${metaBean.metaTagContent}">
+	</sly>
+</sly>
+
 <sly data-sly-call="${headlibRenderer.headlibs @ designPath=head.designPath}" />
 <sly data-sly-include="author.html" />
 <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
