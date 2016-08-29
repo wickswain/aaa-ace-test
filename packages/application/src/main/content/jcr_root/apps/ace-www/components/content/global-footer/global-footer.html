@@ -65,7 +65,7 @@
                 </div>
                 
                 <div class="border-lines">
-                    <div class="col-md-5">
+                    <div data-sly-test="${icon1.childResource}" class="col-md-5">
                         <span style="background-image: url('${icon1.childResource ? icon1.childResource.fileReference : '' @ context='uri'}');"
                               title="${icon1.childResource.alt}"
                               class="app">
@@ -73,7 +73,7 @@
                         </span>
                     </div>
                     
-                    <div class="col-md-5">
+                    <div data-sly-test="${icon2.childResource}" class="col-md-5">
                         <span style="background-image: url('${icon2.childResource ? icon2.childResource.fileReference : '' @ context='uri'}');"
                               title="${icon2.childResource.alt}"
                               class="blog">

@@ -60,7 +60,7 @@ try {
     String ddClassName = DropTarget.CSS_CLASS_PREFIX + "paragraph";
 
     // Include the target paragraph by path
-    String targetPath = properties.get("path", String.class);
+    String targetPath = currentStyle.get("path", String.class);
 
     RegionDataService regionService = sling.getService(RegionDataService.class);
     String regionName = regionService.getRegionInfo(slingRequest);
@@ -75,7 +75,7 @@ try {
                 %><div class="<%= ddClassName %>"><% needToCloseDiv = true; %><sling:include path="<%= target %>"/></div><% needToCloseDiv = false; %><%
             } else {
                 if (mode == WCMMode.EDIT) {
-                    String placeholder = "Region Name resolved but component is not authored. Please author the component @" + target;
+                    String placeholder = "Region name resolved to '" + regionName + "' but the reference component is not authored. Please author the component.";
                     %><h2 style="text-align: center;" class="cq-paragraphreference-thumbnail-text"><%= placeholder %></h2><%
                 }
             }
