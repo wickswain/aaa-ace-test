@@ -267,6 +267,7 @@ Version:0.3
             .space-adjust {
                 float: none;
                 margin: 0 auto;
+                padding: 0 20px;
             }
         }
         .membership-calculator {
@@ -393,6 +394,11 @@ Version:0.3
                 }
             }
         }
+        .membership-discount-details {
+            .title {
+                margin-top: -28px;
+            }
+        }
         .membership-calculator-block {
             .membership-details {
                 .membership-pay-info {
@@ -442,13 +448,6 @@ Version:0.3
                         padding-bottom: 0;
                     }
                 }
-            }
-        }
-        .membership-calculator-block {
-            .space-adjust {
-                float: none;
-                margin: 0 auto;
-                padding: 0 20px;
             }
         }
         .membership-pay-info {
@@ -539,9 +538,13 @@ Version:0.3
         .membership-calculator .h-space-cal {
             padding-bottom: @space-lg + 20;
         }
+        .block-height {
+            height: 700px;
+        }
         .block-position {
             width: 100%;
             margin-top: -60px;
+            position: absolute;
         }
         .img-50-50 .flex-component .content .text-block {
             padding: 100px 40px;
@@ -632,6 +635,11 @@ Version:0.3
             }
         }
         .membership-calculator-block {
+            .space-adjust {
+                float: none;
+                margin: 0 auto;
+                padding: 0px;
+            }
             .membership-details {
                 float: left;
                 .membership-pay-info {
