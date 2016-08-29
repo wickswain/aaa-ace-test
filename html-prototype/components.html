@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,8 +25,7 @@
     <![endif]-->
     <!-- Latest compiled and minified JS -->
     <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script> 
     <!-- External Plugins JS : External plugin files loaded on need base -->
 </head>
 
@@ -80,21 +80,45 @@
                     <div class="horizontal-space roboto-medium font-a"> <span class="">Save money doing what you love</span> </div>
                     <p class="font-g roboto-light">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p> <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a> </div>
             </div>
+			<!-- Sticky Nav -->
+            <section class="sticky-nav" data-spy="affix" data-offset-top="0">
+                <div class="container-fluid position-rel">
+                    <div class="pull-left ">
+                        <span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BROWSE<span class="glyphicon glyphicon-chevron-down "></span>                        </span>
+                        <ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+                            <li><a href="#full-column-image">full-column-image</a></li>
+							<li><a href="#membership-calculator">membership-calculator</a></li>
+                            <li><a href="#img-50-50">Image 50 50 Component</a></li>                            
+                            <li><a href="#footer-column">footer-column</a></li>
+                        </ul>
+                    </div>
+                    <div class="pull-right">
+                        <a href="tel:1800-1234-567" class="btn-style btn-sm btn-color-blue icon-text"><img src="images/phone-icon.png" aria-hidden="true">1800-1234-567</a>
+                    </div>
+                </div>
+            </section>
             <!-- Full Column image component-->
-            <div class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
+            <div id="full-column-image" class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
+            <!--  Membership Calculator component-->
+           
             <!--  Membership Calculator component-->
             <div class="membership-calculator">
                 <div class="container">
+
+
                     <div class="horizontal-space roboto-light font-b">
                         <h2 title="Put cash back in your pocket with WOW points">Watch your membership pay for itself</h2> </div>
                     <div class="h-space-cal roboto-light font-g">
                         <p>Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself.</p>
                     </div>
+
+
+
                 </div>
                 <div class="membership-calculator-block">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-7 membership-details">
+                            <div class="col-xs-12 col-sm-6 membership-details">
                                 <div class="membership-pay-info">
                                     <div class="title-space text-center font-h ">EXAMPLE SAVINGS</div>
                                     <div class="col-sm-7 roboto-light font-g">
@@ -107,81 +131,84 @@
                                     <hr>
                                     <div class="clearfix"></div>
                                     <div class="col-sm-6">
-                                        <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly
-                                            <br>savings</div>
+                                        <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly savings
+                                        </div>
                                     </div>
                                     <div class="col-sm-6 price-total MC-horizontal-space text-right">$552.00</div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="horizontal-space"></div>
-                                <div class="col-sm-12 img-membership"> <img src="images/membership-calculator.png" title="membership-calculator" alt="membership-calculator" /> </div>
+                                <div class="col-sm-12 img-membership">
+                                    <img src="images/membership-calculator.png" title="membership-calculator" alt="membership-calculator" />
+
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-sm-10 col-md-5 no-float">
+                            <div class="col-xs-12 col-sm-10 col-md-6 space-adjust">
                                 <div class=" block-position">
                                     <div class="membership-discount-details">
-                                        <div class="col-sm-12 title">Sample services</div>
+                                        <div class="col-sm-12 title font-h">Sample services</div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/movie.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/movie.png)" title="movie">
                                                 <div class="services-title roboto-medium font-g">Movie night</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/dinner.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/dinner.png)" title="dinner">
                                                 <div class="services-title roboto-medium font-g">Dinner at Marios</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/car.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/car.png)" title="car">
                                                 <div class="services-title roboto-medium font-g">Car repair</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/supplies.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/supplies.png)" title="supplies">
                                                 <div class="services-title roboto-medium font-g">School supplies</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/dinner.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/dinner.png)" title="dinner">
                                                 <div class="services-title roboto-medium font-g">Ice cream</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/supplies.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/supplies.png)" title="supplies">
                                                 <div class="services-title roboto-medium font-g">New dress shoes</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="item">
-                                            <div class="col-sm-7"> <img src="images/tickets.png" title="movie" alt="movie" class="icon">
+                                            <li style="background-image:url( images/tickets.png)" title="tickets">
                                                 <div class="services-title roboto-medium font-g">Tickets to Lagoon</div>
-                                            </div>
-                                            <div class="col-sm-5">
+                                            </li>
+                                            <li class="pull-right">
                                                 <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
                                                 <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span>+ $6.00</div>
-                                            </div>
+                                            </li>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -191,19 +218,78 @@
                     </div>
                 </div>
             </div>
+
+
+            <!-- 50-50 image component -->
+
+
+
+            <div id="img-50-50" class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
+                <div class="row flex-component">
+                    <div class="col-md-6 content">
+                        <div class="text-block">
+                            <div class="horizontal-space roboto-light font-b"><img src="images/cal-icon.png" alt="calendar"></div>
+                            <div class="horizontal-space roboto-light font-b">
+                                <h2 title="Find local events"><span class="title">Find local events</span></h2></div>
+                            <div class="horizontal-space roboto-light font-g">
+                                <p>Find events by location and date.</p>
+                            </div> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> </div>
+                    </div>
+                    <div class="col-md-6 image-block"> <img src="images/50-50-img.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg2.jpg); background-color:#ffffff; color:#ffffff; ">
+                <div class="row flex-component" style="background-color: rgba(0,0,0,0.4);">
+                    <div class="col-md-6 content">
+                        <div class="text-block">
+                            <div class="horizontal-space roboto-light font-b">
+                                <h2 title="Find local events"><span class="round-circle" style="border-color:#ffffff;">1</span><span class="title">Show your AAA card</span></h2></div>
+                            <div class="horizontal-space roboto-light font-g">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                                <div class="horizontal-space"></div>
+                                <p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                            </div> <a href="#" class="link-btn link-lg link-color-blue link-reversed" title="Solid button">Download store list</a></div>
+                    </div>
+                    <div class="col-md-6 image-block"> <img src="images/card.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                </div>
+            </div>
             <!-- Single column component -->
             <div class="single-column component-min-h">
+
+                <div class="container">
+                    <div class="horizontal-space roboto-light font-b">
+                        <h2 title="Put cash back in your pocket with WOW points">Put cash back in your pocket with WOW points</h2> </div>
+                    <div class="horizontal-space2 roboto-light font-g">
+                        <p>Beyond our great discounts, we also reward our members with WOW points. Every time you shop online through AAA you earn points that count towards cash-back savings. You can also use your WOW points to purchase from online stores, and they never expire as long as you are with AAA.</p>
+                    </div>
+                    <div class="image-block"><img src="images/one-column-img.png" alt="column image" title="single column image" class="img-responsive"> </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- Footer CTA column component -->
+            <div id="footer-column" class="footer-column bottom-space top-space" style="background-image: url(images/footer-image.jpg);">
                 <div class="container-fluid">
-                    <div class="container">
-                        <div class="horizontal-space roboto-light font-b">
-                            <h2 title="Put cash back in your pocket with WOW points">Put cash back in your pocket with WOW points</h2> </div>
-                        <div class="horizontal-space2 roboto-light font-g">
-                            <p>Beyond our great discounts, we also reward our members with WOW points. Every time you shop online through AAA you earn points that count towards cash-back savings. You can also use your WOW points to purchase from online stores, and they never expire as long as you are with AAA.</p>
-                        </div>
-                        <div class="image-block"><img src="images/one-column-img.png" alt="column image" title="single column image" class="img-responsive"> </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2"></div>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="horizontal-space roboto-light font-b">
+                                <h2 title="Don't have AAA insurance?">Don't have AAA insurance?</h2></div>
+                            <div class="horizontal-space2 roboto-light font-g">
+                                <p>Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years </p>
+                            </div> <span class="icon-text"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</span><a href="" title="Free online quote" class="btn-style btn-lg btn-reversed btn-border">Free online quote</a></div>
                     </div>
                 </div>
             </div>
+
+
+
             <!-- Editorial Cards component starts here-->
             <div class="editorial-cards">
                 <div class="container-fluid horizontal-component-space">
@@ -218,61 +304,33 @@
                     <!-- List of the cards start here -->
                     <ul class="list-inline cards-list">
                         <li>
-                            <div class="horizontal-space">
-                                <a href="#"><img src="images/card-logo.png" title="card-logo" alt="card-logo" class="img-responsive"> </a>
-                            </div>
+                            <div class="horizontal-space"> <img src="images/card-logo.png" title="card-logo" alt="card-logo" class="img-responsive"> </div>
                             <div class="side-spacing horizontal-space roboto-light font-g">
                                 <h2 title="Explore articles">AAA Travel Magazine</h2> </div>
                             <div class="side-spacing horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg link-reversed">See all Articles</a> </div>
                         </li>
                         <li>
-                            <div class="horizontal-space image-block">
-                                <a href="#"><img src="images/CompD-campfire.jpg" title="CompD-campfire" alt="CompD-campfire" class="img-responsive"></a>
-                            </div>
-                            <div class="side-spacing min-spacing roboto-medium font-f">
-                                <h2 title="Explore articles">Campfire Stories</h2> </div>
-                            <div class="side-spacing horizontal-space roboto-light font-h">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </div>
+                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-campfire.jpg" title="CompD-campfire" alt="CompD-campfire" class="img-responsive"> </span>
+                                <h2 class="side-spacing min-spacing roboto-medium font-f" title="Explore articles">Campfire Stories</h2>
+                                <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
+                            </a>
                         </li>
                         <li>
-                            <div class="horizontal-space image-block">
-                                <a href="#"><img src="images/CompD-dinner.jpg" title="CompD-dinner" alt="CompD-dinner" class="img-responsive"></a>
-                            </div>
-                            <div class="side-spacing side-spacing min-spacing roboto-medium font-f">
-                                <h2 title="Explore articles">Restauration</h2> </div>
-                            <div class="side-spacing horizontal-space roboto-light font-h">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
-                            </div>
+                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-dinner.jpg" title="CompD-dinner" alt="CompD-dinner" class="img-responsive"> </span>
+                                <h2 class="side-spacing side-spacing min-spacing roboto-medium font-f" title="Explore articles">Restauration</h2>
+                                <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
+                            </a>
                         </li>
                         <li>
-                            <div class="horizontal-space image-block">
-                                <a href="#"><img src="images/CompD-swim.jpg" title="CompD-swim" alt="CompD-swim" class="img-responsive"></a>
-                            </div>
-                            <div class="side-spacing min-spacing roboto-medium font-f">
-                                <h2 title="Explore articles">Anthem of the Seas</h2> </div>
-                            <div class="side-spacing horizontal-space roboto-light font-h">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
-                            </div>
+                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-swim.jpg" title="CompD-swim" alt="CompD-swim" class="img-responsive"> </span>
+                                <h2 class="side-spacing min-spacing roboto-medium font-f" title="Explore articles">Anthem of the Seas</h2>
+                                <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <!-- 50-50 image component -->
-            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
-                <div class="row flex-component">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5 content">
-                        <div class="text-block">
-                            <div class="horizontal-space roboto-light font-b"><img src="images/cal-icon.png" title="calendar" alt="calendar"></div>
-                            <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Find local events">Find local events</h2></div>
-                            <div class="horizontal-space roboto-light font-g">
-                                <p>Find events by location and date.</p>
-                            </div> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> </div>
-                    </div>
-                    <div class="col-md-6 image-block"> <img src="images/card.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
-                </div>
-            </div>
+
         </div>
         <!-- icon row component starts here-->
         <div class="icon-row">
@@ -285,110 +343,158 @@
                 <!-- List of the cards start here -->
                 <ul class="list-inline icon-list row">
                     <li class="col-md-3 col-sm-3  col-xs-12">
-                        <div class="horizontal-space"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class="horizontal-space icon-title  roboto-medium font-f">
+                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                        <div class="icon-title  roboto-medium font-f">
                             <h2 title="Food & Drink">Food & Drink</h2> </div>
-                        <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                     </li>
                     <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class="horizontal-space icon-title  roboto-medium font-f">
+                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                        <div class=" icon-title  roboto-medium font-f">
                             <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
-                        <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                     </li>
                     <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class="horizontal-space icon-title  roboto-medium font-f">
+                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                        <div class=" icon-title  roboto-medium font-f">
                             <h2 title="Food & Drink">Arts & Culture</h2> </div>
-                        <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                     </li>
                     <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class="horizontal-space icon-title  roboto-medium font-f">
+                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                        <div class=" icon-title  roboto-medium font-f">
                             <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
-                        <div class="font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <!-- Faqs component starts here-->
+        <div class="faqs horizontal-component-space">
+            <div class="container">
+                <!-- Faqs Header Starts Here -->
+                <div class="horizontal-space2 roboto-light font-b">
+                    <h2 title="Explore articles">Freqently asked questions</h2></div>
+                <!-- Faqs List Starts here -->
+                <div class="row">
+                    <div class="col-md-9 col-sm-12">
+                        <div class="item">
+                            <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems1">
+                                <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                            <div class="roboto-light font-h collapse" id="collapseOrderItems1">
+                                <div class="top-space">
+                                    <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="faq-list collapsed  roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems2">
+                                <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                            <div class="roboto-light font-h collapse" id="collapseOrderItems2">
+                                <div class="top-space">
+                                    <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="ques-block">
+                            <div class="left-blk side-spacing text-center">
+                                <span class="adjust-align"><img src="images/faq-icon.png" alt="FAQ">
+                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3></span>
+                                <div class="faq-links"><a href="#" title="Download" class="link-btn link-color-blue link-lg">View all FAQ's</a><span>or</span><a href="#" title="Download" class="link-btn link-color-blue link-lg">Contact Support</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- Global Footer component -->
         <footer id="page-footer">
-            <!-- Global Footer component -->
+            <!-- Global Base Footer component -->
             <div id="base-footer" class="footer-global roboto-light font-e">
                 <div class="container">
-                    <div class="horizontal-space"></div>
                     <div class="row">
-                        <div class="col-md-2 col-md-push-10 text-center">
-                            <a class="brand" href="#"><img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
-                        </div>
-                        <div class="col-md-10 col-md-pull-2 ">
-                            <div class="footer-list">
-                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
-                                <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
-                                <ul class="list-unstyled collapse in" id="collapse-list-1">
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Identify theft monitoring</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                </ul>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-11">
+                            <div class="row">
+                                <div class="col-md-2 col-md-push-10 text-center">
+                                    <div class="brand-image">
+                                        <a href="#"><img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-md-pull-2 ">
+                                    <div class="footer-list">
+                                        <h3 href="javascript:void(0);" class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-1">
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Identify theft monitoring</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-list">
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm ">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-2">
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Identify theft monitoring</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-list">
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-3">
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Identify theft monitoring</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                            <li> <a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="footer-list">
-                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
-                                <h3 class="text-uppercase list-header hidden-xs hidden-sm ">Products & services</h3>
-                                <ul class="list-unstyled collapse in" id="collapse-list-2">
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Identify theft monitoring</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                </ul>
+                            <div class="border-lines">
+                                <div class="col-md-5"><span class="app" style="background-image:url(images/mobile-icon.png)" title="App">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
+                                <div class="col-md-5"><span class="blog" style="background-image:url(images/rss-icon.png)" title="Blog">Read the latest from our <a href="" class="">blog</a></span></div>
+                                <div class="col-md-2 social-icons ">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="@aaa" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.twitter.com/"><img src="images/tweet.png" alt="@aaa" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="footer-list">
-                                <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
-                                <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
-                                <ul class="list-unstyled collapse in" id="collapse-list-3">
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Identify theft monitoring</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                    <li> <a href="#">Insurance</a> </li>
-                                </ul>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span> <a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span> <a href="http://www.facebook.com/">Terms & conditions</a></p>
+                                    <div class="bottom-space"></div>
+                                    <p class="footer-p">Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row border-lines">
-                        <div class="col-md-5"><span class="app">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
-                        <div class="col-md-5"><span class="blog">Read the latest from our <a href="" class="">blog</a></span></div>
-                        <div class="col-md-2 social-icons ">
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="@aaa" /></a>
-                                </li>
-                                <li>
-                                    <a href="http://www.twitter.com/"><img src="images/tweet.png" alt="@aaa" /></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="bottom-space"></div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span> <a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span> <a href="http://www.facebook.com/">Terms & conditions</a></p>
-                            <div class="bottom-space"></div>
-                            <p class=" bottom-space footer-p">Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-	<script src="clientlibs/ace-www/base/js/scripts.js"></script>
+    <script src="clientlibs/ace-www/base/js/scripts.js"></script>
 </body>
 
 </html>
