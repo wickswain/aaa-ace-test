@@ -59,16 +59,16 @@
                                             sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
                                                 <question
-					                                jcr:primaryType="nt:unstructured"
-					                                sling:resourceType="granite/ui/components/foundation/form/textarea"
-					                                fieldDescription="Please enter Question"
-					                                fieldLabel="Question"
-					                                name="./question"
-					                                required="{Boolean}true"/>
-					                            <answer
-									                jcr:primaryType="nt:unstructured"
-									                sling:resourceType="granite/ui/components/foundation/include"
-									                path="/apps/ace-www/components/content/rte/granite/items/text"/>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldDescription="Please enter Question"
+                                                    fieldLabel="Question"
+                                                    name="./question"
+                                                    required="{Boolean}true"/>
+                                                <answer
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/include"
+                                                    path="/apps/ace-www/components/content/rte/granite/items/text"/>
                                             </items>
                                         </column>
                                     </items>
@@ -90,7 +90,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                        	 <bgcolorright
+                            <bgcolorright
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
                                 colorsPath="/etc/config/ace-www/components/common/lightgreybgcolors"
@@ -132,12 +132,12 @@
                                 fieldLabel="Link-1 Caption"
                                 name="./link1Caption"/>
                             <link1url
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-		                        fieldDescription="Please enter Link 1 URL"
-		                        fieldLabel="Link-1 URL"
-		                        name="./link1URL"
-		                        rootPath="/content"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Please enter Link 1 URL"
+                                fieldLabel="Link-1 URL"
+                                name="./link1URL"
+                                rootPath="/content"/>
                             <link2caption
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -145,16 +145,64 @@
                                 fieldLabel="Link-2 Caption"
                                 name="./link2Caption"/>
                             <link2url
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-		                        fieldDescription="Please enter Link 2 URL"
-		                        fieldLabel="Link-2 URL"
-		                        name="./link2URL"
-		                        rootPath="/content"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Please enter Link 2 URL"
+                                fieldLabel="Link-2 URL"
+                                name="./link2URL"
+                                rootPath="/content"/>
                         </items>
                     </columns>
                 </items>
             </rightsectiontab>
+            <jumplink
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Jumplink "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Jump Link Id"
+                                fieldLabel="Jump Link Id"
+                                name="./jumpLinkId"/>
+                        </items>
+                    </columns>
+                </items>
+            </jumplink>
+            <tags
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Tags"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tags
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                allowBulkEdit="{Boolean}true"
+                                allowCreate="{Boolean}true"
+                                cq-msm-lockable="cq:tags"
+                                fieldLabel="Tags"
+                                name="./cq:tags"
+                                renderReadOnly="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </tags>
         </items>
     </content>
 </jcr:root>
