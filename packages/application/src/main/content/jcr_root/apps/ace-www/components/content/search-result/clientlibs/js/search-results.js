@@ -133,7 +133,7 @@ var test = '${properties.jcr:title}';
                     $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
                     /* Navigation Links handling */
                     var totalItems = response.searchInformation.totalResults;
-                    var totalListPages = totalItems / resultsPerPage;
+                	var totalListPages = Math.ceil(totalItems / resultsPerPage);
                     var indexCount = response.queries.request[0].startIndex;
                     if (indexCount === totalListPages) {
                         $("#nextPage").addClass('disabled');
