@@ -1,6 +1,15 @@
+        $(".close-fliter").click(function () {
+            $(".mobile-filter-list").hide();
+        });
+        $('.mobile-filter-grid').hide();
+        $(".mobile-filter-list").hide();
+        $('.mobile-filter-grid').click(function () {
+            $(".mobile-filter-list").show();
+        });
+
         var searchkeyValue = "";
         $(".pagination-grid").hide();
-        $(".filter-grid").hide()
+        $(".results-grid").hide();
 
 	/* Google Search API functionality */
 				//onClick search event
@@ -18,7 +27,7 @@
 								//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
 								//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
 							} else {
-								alert('Please enter search key');
+								$(".error-message").html("No search results found.");
 							}
 						});
 				
@@ -64,12 +73,22 @@ var test = '${properties.jcr:title}';
         $(".meta-data").click(function () {
             var metaName = $(this).attr('data-metaname');
             var metaContent = $(this).attr('data-metacontent');
-            //console.log(searchkeyValue);
-            // alert(metaName)); alert(metaTag));
-            //alert(metaName);
-            //alert(metaTag);
             localStorage.setItem("metaName", metaName);
             localStorage.setItem("metaContent", metaContent);
+            $(".meta-data").removeClass("active");
+            $(this).addClass("active");
+            getResultData(searchkeyValue, pageNumber);
+        });
+        
+        $(".mobile-list").click(function (e) {
+            $(".mobile-list").removeClass("active");
+            $(this).addClass("active");
+            
+            var metaName = $(this).attr('data-metaname');
+            var metaContent = $(this).attr('data-metacontent');
+            localStorage.setItem("metaName", metaName);
+            localStorage.setItem("metaContent", metaContent);
+            
             getResultData(searchkeyValue, pageNumber);
         });
 
@@ -87,10 +106,16 @@ var test = '${properties.jcr:title}';
             if (paginationCount > 1) {
                 pageNumber = paginationCount;
             }
-
+            
+            //AAA keys
             var apikey = 'AIzaSyBC-G6Eu9j36HTIkkCcw92_CVg_ONtK3Ec' ;//'AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I';
             var engineid = '002841571323135263873:_kstmmls-cu'; //'004650686028114475301:tlpfyltlij4';
+            
+            //Axis 41
+            //var apikey = 'AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I';
+            //var engineid = '004650686028114475301:tlpfyltlij4';
 
+            
             var hostname = window.location.hostname;
 
             var domain = hostname.substr(hostname.indexOf(".")+1,hostname.length)
@@ -121,47 +146,64 @@ var test = '${properties.jcr:title}';
         // Final result appending to our html
         function SearchCompleted(response) {
             if (response.error) {
-                var errorMessage = response.error.errors[0].message;
-                alert(errorMessage);
+                var errorMessage = response.error.message;
+                $(".pagination-grid").hide();
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html(errorMessage);
+                pageNumber = 1;
+            }
+            else if (response.items == null || response.items.length === 0) {
+                $(".pagination-grid").hide();
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html("No search results found.");
+                pageNumber = 1;
             }
             else {
+                $(".error-message").hide();
+                $(".pagination-grid").show();
+                $(".results-grid").show();
+                $(".result-no").show();
+                //$(".mobile-filter-list").show();
+                $('.mobile-filter-grid').show();
                 var html = "";
-                if (response.items == null || response.items.length === 0) {
-                    console.log("No matching pages found");
+                $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
+                $("#resultsCount-m").html(response.searchInformation.formattedTotalResults + " results");
+                /* Navigation Links handling */
+                var totalItems = response.searchInformation.totalResults;
+                var totalListPages = Math.ceil(totalItems / resultsPerPage);
+                var indexCount = response.queries.request[0].startIndex;
+                if (indexCount === totalListPages) {
+                    $("#nextPage").addClass('disabled');
+                }
+                else if (indexCount === 1) {
+                    $("#prevPage").addClass('disabled');
                 }
                 else {
-                    $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
-                    /* Navigation Links handling */
-                    var totalItems = response.searchInformation.totalResults;
-                	var totalListPages = Math.ceil(totalItems / resultsPerPage);
-                    var indexCount = response.queries.request[0].startIndex;
-                    if (indexCount === totalListPages) {
-                        $("#nextPage").addClass('disabled');
-                    }
-                    else if (indexCount === 1) {
-                        $("#prevPage").addClass('disabled');
-                    }
-                    else {
-                        $("#nextPage").removeClass('disabled');
-                        $("#prevPage").removeClass('disabled');
-                    }
-                    $("#pageNumber").val(indexCount);
-                    $("#totalListPages").html("of " + totalListPages);
-                    $(".pagination-grid").show();
-                    $(".filter-grid").show();
-                    //console.log(totalListPages);
-                    // loop handling
-                    for (var i = 0; i < response.items.length; i++) {
-                        var item = response.items[i];
-                        var responseTitle = item.htmlTitle;
-                        var responseUrl = item.htmlFormattedUrl;
-                        var responseData = item.htmlSnippet;
-                        html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
-                    }
-                    $("#resultContent").html(html);
+                    $("#nextPage").removeClass('disabled');
+                    $("#prevPage").removeClass('disabled');
                 }
+                $("#pageNumber").val(indexCount);
+                $("#totalListPages").html("of " + totalListPages);
+                // loop handling
+                for (var i = 0; i < response.items.length; i++) {
+                    var item = response.items[i];
+                    var responseTitle = item.htmlTitle;
+                    var responseUrl = item.htmlFormattedUrl;
+                    var responseData = item.htmlSnippet;
+                    html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
+                }
+                $(".resultContent").html(html);
             }
         }
+
         
         
         /* Trim Url data to get search string */
