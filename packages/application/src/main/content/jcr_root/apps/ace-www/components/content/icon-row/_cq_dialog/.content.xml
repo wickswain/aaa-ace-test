@@ -14,43 +14,36 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <backgroundcolor
+                    <title
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
-                            colorsPath="/apps/ace-www/components/content/pageintro/config/backgroundcolors"
-                            fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
-                            fieldLabel="Background Color"
-                            freestylePalette="{Boolean}true"
-                            name="./backgroundColor"/>
-                    <text jcr:primaryType="nt:unstructured"
-                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                          fieldLabel="Text"
-                          name="./icontext" />
-                    <icons
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Title/Subheading"
+                            name="./title"/>
+                    <icon-amount
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/select"
-                            fieldDescription="These icons will populate Icon-Row."
-                            fieldLabel="Select Number of Icons"
-                            name="./iconselect">
+                            fieldDescription="Select the amount of icons you want in the row"
+                            fieldLabel="Icon Amount"
+                            name="./iconamount">
                         <items jcr:primaryType="nt:unstructured">
-                            <iconthree
-                                    jcr:primaryType="nt:unstructured"
-                                    text="3"
-                                    value="3"/>
-                            <iconfour
-                                    jcr:primaryType="nt:unstructured"
-                                    text="4"
-                                    value="4"/>
-                            <iconseven
-                                    jcr:primaryType="nt:unstructured"
-                                    text="7"
-                                    value="7"/>
-                            <iconeight
-                                    jcr:primaryType="nt:unstructured"
-                                    text="8"
-                                    value="8"/>
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="{Long}3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="Four"
+                                value="{Long}4"/>
+                            <seven
+                                jcr:primaryType="nt:unstructured"
+                                text="Seven"
+                                value="{Long}7"/>
+                            <eight
+                                jcr:primaryType="nt:unstructured"
+                                text="Eight"
+                                value="{Long}8"/>
                         </items>
-                    </icons>
+                    </icon-amount>
                 </items>
             </column>
         </items>
