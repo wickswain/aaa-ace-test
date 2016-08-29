@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
-	<link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
     <![endif]-->
     <!-- Latest compiled and minified JS -->
     <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
     <!-- External Plugins JS : External plugin files loaded on need base -->
 </head>
 
@@ -80,16 +80,23 @@
                     <div class="horizontal-space roboto-medium font-a"> <span class="">Save money doing what you love</span> </div>
                     <p class="font-g roboto-light">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p> <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a> </div>
             </div>
-			<!-- Sticky Nav -->
+            <!-- Sticky Nav -->
             <section class="sticky-nav" data-spy="affix" data-offset-top="0">
                 <div class="container-fluid position-rel">
                     <div class="pull-left ">
-                        <span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BROWSE<span class="glyphicon glyphicon-chevron-down "></span>                        </span>
+
+
+                        <span id="dLabel" class="hidden-md hidden-lg sticky-menu font-h" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+  BROWSE 
+    <span class="glyphicon glyphicon-chevron-down "></span>
+                        </span>
+
+
                         <ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
                             <li><a href="#full-column-image">full-column-image</a></li>
-							<li><a href="#membership-calculator">membership-calculator</a></li>
-                            <li><a href="#img-50-50">Image 50 50 Component</a></li>                            
-                            <li><a href="#footer-column">footer-column</a></li>
+                            <li><a href="#membership-calculator">membership-calculator</a></li>
+                            <li><a href="#img-50-50">img-50-50</a></li>
+                            <li><a href="#faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="pull-right">
@@ -100,9 +107,9 @@
             <!-- Full Column image component-->
             <div id="full-column-image" class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
             <!--  Membership Calculator component-->
-           
+
             <!--  Membership Calculator component-->
-            <div class="membership-calculator">
+            <div class="membership-calculator" id="membership-calculator">
                 <div class="container">
 
 
@@ -117,7 +124,7 @@
                 </div>
                 <div class="membership-calculator-block">
                     <div class="container">
-                        <div class="row">
+                        <div class="row row-eq-height">
                             <div class="col-xs-12 col-sm-6 membership-details">
                                 <div class="membership-pay-info">
                                     <div class="title-space text-center font-h ">EXAMPLE SAVINGS</div>
@@ -143,74 +150,120 @@
 
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-10 col-md-6 space-adjust">
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-8 col-md-6 block-center">
                                 <div class=" block-position">
                                     <div class="membership-discount-details">
                                         <div class="col-sm-12 title font-h">Sample services</div>
                                         <div class="item">
-                                            <li style="background-image:url( images/movie.png)" title="movie">
-                                                <div class="services-title roboto-medium font-g">Movie night</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/movie.png)" title="movie">Movie night</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 982.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $38.57</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="item">
-                                            <li style="background-image:url( images/dinner.png)" title="dinner">
-                                                <div class="services-title roboto-medium font-g">Dinner at Marios</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/dinner.png)" title="movie">Dinner at Marios</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,982.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $36.57</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="item">
-                                            <li style="background-image:url( images/car.png)" title="car">
-                                                <div class="services-title roboto-medium font-g">Car repair</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/car.png)" title="movie">Car repair</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                </div>
+                                            </div>
                                         </div>
+
+
+
                                         <div class="item">
-                                            <li style="background-image:url( images/supplies.png)" title="supplies">
-                                                <div class="services-title roboto-medium font-g">School supplies</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/tickets.png)" title="movie">Tickets to login</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                </div>
+                                            </div>
                                         </div>
+
+
+
+
+
+
                                         <div class="item">
-                                            <li style="background-image:url( images/dinner.png)" title="dinner">
-                                                <div class="services-title roboto-medium font-g">Ice cream</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/supplies.png)" title="movie">School supplies</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                </div>
+                                            </div>
                                         </div>
+
+
+
+
                                         <div class="item">
-                                            <li style="background-image:url( images/supplies.png)" title="supplies">
-                                                <div class="services-title roboto-medium font-g">New dress shoes</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span> + $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/dinner.png)" title="movie">Ice Cream</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                         <div class="item">
-                                            <li style="background-image:url( images/tickets.png)" title="tickets">
-                                                <div class="services-title roboto-medium font-g">Tickets to Lagoon</div>
-                                            </li>
-                                            <li class="pull-right">
-                                                <div class="price font-g">41.72 <span class="discount-price font-h">48.72</span></div>
-                                                <div class="total-price  font-g"> <span class="title-saved font-h">Saved</span>+ $6.00</div>
-                                            </li>
+                                            <div class="table-block">
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/supplies.png)" title="movie">New dress shoes</div>
+
+
+                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                </div>
+
+
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="clearfix"></div>
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -330,87 +383,87 @@
                     </ul>
                 </div>
             </div>
+            <!-- icon row component starts here-->
+            <div class="icon-row">
+                <div class="container horizontal-component-space">
+                    <!-- Top Header Starts Here -->
+                    <div class="text-center">
+                        <div class="horizontal-space2 roboto-light font-b">
+                            <h2 title="Explore articles">Discounts</h2> </div>
+                    </div>
+                    <!-- List of the cards start here -->
+                    <ul class="list-inline icon-list row">
+                        <li class="col-md-3 col-sm-3  col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class="icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Food & Drink</h2> </div>
+                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
+                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Arts & Culture</h2> </div>
+                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
+                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        </div>
-        <!-- icon row component starts here-->
-        <div class="icon-row">
-            <div class="container horizontal-component-space">
-                <!-- Top Header Starts Here -->
-                <div class="text-center">
+            <!-- Faqs component starts here-->
+            <div id="faq" class="faqs horizontal-component-space">
+                <div class="container">
+                    <!-- Faqs Header Starts Here -->
                     <div class="horizontal-space2 roboto-light font-b">
-                        <h2 title="Explore articles">Discounts</h2> </div>
+                        <h2 title="Explore articles">Freqently asked questions</h2></div>
+                    <!-- Faqs List Starts here -->
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            <div class="item">
+                                <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems1">
+                                    <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                                <div class="roboto-light font-h collapse" id="collapseOrderItems1">
+                                    <div class="top-space">
+                                        <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="faq-list collapsed  roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems2">
+                                    <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                                <div class="roboto-light font-h collapse" id="collapseOrderItems2">
+                                    <div class="top-space">
+                                        <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="ques-block">
+                                <div class="left-blk side-spacing text-center">
+                                    <span class="adjust-align"><img src="images/faq-icon.png" alt="FAQ">
+                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3></span>
+                                    <div class="faq-links"><a href="#" title="Download" class="link-btn link-color-blue link-lg">View all FAQ's</a><span>or</span><a href="#" title="Download" class="link-btn link-color-blue link-lg">Contact Support</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- List of the cards start here -->
-                <ul class="list-inline icon-list row">
-                    <li class="col-md-3 col-sm-3  col-xs-12">
-                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class="icon-title  roboto-medium font-f">
-                            <h2 title="Food & Drink">Food & Drink</h2> </div>
-                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-                    </li>
-                    <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class=" icon-title  roboto-medium font-f">
-                            <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
-                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-                    </li>
-                    <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class=" icon-title  roboto-medium font-f">
-                            <h2 title="Food & Drink">Arts & Culture</h2> </div>
-                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-                    </li>
-                    <li class="col-md-3 col-sm-3 col-xs-12">
-                        <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-                        <div class=" icon-title  roboto-medium font-f">
-                            <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
-                        <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
-                    </li>
-                </ul>
             </div>
         </div>
 
-        <!-- Faqs component starts here-->
-        <div class="faqs horizontal-component-space">
-            <div class="container">
-                <!-- Faqs Header Starts Here -->
-                <div class="horizontal-space2 roboto-light font-b">
-                    <h2 title="Explore articles">Freqently asked questions</h2></div>
-                <!-- Faqs List Starts here -->
-                <div class="row">
-                    <div class="col-md-9 col-sm-12">
-                        <div class="item">
-                            <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems1">
-                                <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
-                            <div class="roboto-light font-h collapse" id="collapseOrderItems1">
-                                <div class="top-space">
-                                    <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="faq-list collapsed  roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems2">
-                                <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
-                            <div class="roboto-light font-h collapse" id="collapseOrderItems2">
-                                <div class="top-space">
-                                    <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12">
-                        <div class="ques-block">
-                            <div class="left-blk side-spacing text-center">
-                                <span class="adjust-align"><img src="images/faq-icon.png" alt="FAQ">
-                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3></span>
-                                <div class="faq-links"><a href="#" title="Download" class="link-btn link-color-blue link-lg">View all FAQ's</a><span>or</span><a href="#" title="Download" class="link-btn link-color-blue link-lg">Contact Support</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<!-- Global Footer component -->
+        <!-- Global Footer component -->
         <footer id="page-footer">
             <!-- Global Base Footer component -->
             <div id="base-footer" class="footer-global roboto-light font-e">

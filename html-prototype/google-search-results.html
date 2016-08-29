@@ -56,27 +56,27 @@
                     <div class="col-md-12  mobile-gridview">
                         <ul class="filterlist-items">
                             <li>Filters<span class="roboto-light font-c close-fliter">X</span></li>
-                            <li><a href="#">All Results</a></li>
-                            <li><a href="#" class="active">Products & Services</a></li>
-                            <li><a href="#">Publications</a></li>
-                            <li><a href="#">Faq's</a></li>
+                            <li><a href="#" class="mobile-list active">All Results</a></li>
+                            <li><a href="#" class="mobile-list">Products & Services</a></li>
+                            <li><a href="#" class="mobile-list">Publications</a></li>
+                            <li><a href="#" class="mobile-list">Faq's</a></li>
                         </ul>
                     </div>
                 </div>
                 <!--  Results Grid will bind here -->
                 <div class="row results-grid">
                     <div class="col-md-9 col-sm-9">
-                        <div id="resultContent"> </div>
+                        <div class="resultContent"> </div>
                     </div>
                     <div class="col-md-3 col-sm-3 hidden-xs">
                         <div class="filter-grid">
                             <ul>
-                                <li><a href="#" class="meta-data" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
-                                <li><a href="#" class="meta-data active" metaName="testingMetaName" metaTag="testingMetaTagName">Products & Services</a></li>
+                                <li><a href="#" class="meta-list-data active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
+                                <li><a href="#" class="meta-data" metaName="testingMetaName" metaTag="testingMetaTagName">Products & Services</a></li>
                                 <li><a href="#" class="meta-data" metaName="testingMetaName1" metaTag="testingMetaTagName1">Publications</a></li>
                                 <li><a href="#" class="meta-data" metaName="testingMetaName2" metaTag="testingMetaTagName2">Travel</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">Discounts</a></li>
+                                <li><a href="#" class="meta-data">Events</a></li>
+                                <li><a href="#" class="meta-data">Discounts</a></li>
                             </ul>
                         </div>
                     </div>
@@ -86,11 +86,11 @@
                 <!--  Pagination values effect here -->
                 <div class="row pagination-grid  horizontal-component-space ">
                     <ul>
-                        <li class="page-links col-md-3 col-sm-3"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
-                        <li class="page-links col-md-3 col-sm-3 text-center">
-                            <input type="text" name="pageNumber" id="pageNumber" class="pagination-input form-control roboto-light font-h"><span class="text-center roboto-light font-h" id="totalListPages">of 20
+                        <li class="page-links col-md-3 col-sm-3 col-xs-4"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
+                        <li class="page-links col-md-3 col-sm-3 text-center col-xs-4">
+                            <input type="text" name="pageNumber" id="pageNumber" class="pagination-input form-control roboto-light font-h"><span class="text-center roboto-light font-h" id="totalListPages">
                         </span> </li>
-                        <li class="page-links col-md-3 col-sm-3"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
+                        <li class="page-links col-md-3 col-sm-3 col-xs-4"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
                     </ul>
                 </div>
             </div>
@@ -99,6 +99,17 @@
         <footer id="page-footer"> </footer>
     </div>
     <script>
+        /* List Item click event */
+        $(".meta-list-data").click(function (e) {
+            $(".meta-list-data").removeClass("active");
+            // or $(".active").removeClass("active");
+            $(this).addClass("active");
+        });
+        $(".mobile-list").click(function (e) {
+            $(".mobile-list").removeClass("active");
+            // or $(".active").removeClass("active");
+            $(this).addClass("active");
+        });
         $(".close-fliter").click(function () {
             $(".mobile-filter-list").hide();
         });
@@ -232,7 +243,7 @@
                     var responseData = item.htmlSnippet;
                     html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                 }
-                $("#resultContent").html(html);
+                $(".resultContent").html(html);
             }
         }
     </script>

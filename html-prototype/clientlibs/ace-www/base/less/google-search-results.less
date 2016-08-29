@@ -78,9 +78,12 @@ Sticky Nav Component
                 }
                 color: @color-black;
             }
-            li:first-child {
-                &:extend(.roboto-light, .font-g);
-                /*&:extend(.roboto-medium, .font-f);*/
+            ul {
+                padding: 0;
+            }
+            // li:first-child {
+            /*&:extend(.roboto-light, .font-g);
+                
                 display: block;
                 &:after {
                     content: '';
@@ -88,15 +91,12 @@ Sticky Nav Component
                     width: 100px;
                     //border-bottom: solid 2px @color-blue-light;
                 }
-                padding-bottom: 30px;
-            }
-            li:not(:first-child) {
+                padding-bottom: 30px;*/
+            // }
+            li {
                 &:extend(.roboto-light, .font-g);
                 display: block;
                 padding-bottom: 30px;
-                /*&:hover {
-    color: @color-blue-primary-medium;
-}*/
             }
             li:last-child {
                 padding-bottom: 0px;

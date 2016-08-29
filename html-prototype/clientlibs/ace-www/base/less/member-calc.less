@@ -12,9 +12,6 @@ Membership Calculator Component
         .table-cell {
             display: table-cell;
             vertical-align: middle;
-            .position-rel {
-                position: relative;
-            }
         }
     }
     .caption {
@@ -28,6 +25,10 @@ Membership Calculator Component
         background: #eee;
         min-height: 600px;
         position: relative;
+        .block-center {
+            float: none;
+            margin: 0 auto;
+        }
     }
     .membership-details {
         .img-membership {
@@ -64,10 +65,9 @@ Membership Calculator Component
         }
         hr {
             border-top: dashed 1px #ccc;
-            float: left;
-            width: 100%;
+            margin: 0 -20px;
             background: transparent;
-            margin-bottom: 0px;
+            clear: both;
         }
         .total-saving-price {
             color: @color-black;
@@ -80,8 +80,8 @@ Membership Calculator Component
     .membership-discount-details {
         .item {
             text-align: left;
-            padding-top: 36px;
-            padding-bottom: 30px;
+            padding-top: 25px;
+            padding-bottom: 25px;
             li {
                 list-style-type: none;
                 display: inline-block;
@@ -92,6 +92,7 @@ Membership Calculator Component
                 color: #1D603B;
                 background: url() no-repeat 15px 50%;
                 padding-left: 65px;
+                max-width: 165px;
             }
             .icon {
                 float: left;
@@ -100,27 +101,25 @@ Membership Calculator Component
             .price {
                 color: #1D603B;
                 position: relative;
-                text-align: left;
-                width: 105px;
+                text-align: right;
+                padding: 0 15px;
+                max-width: 125px;
                 .discount-price {
-                    position: absolute;
-                    top: -18px;
                     text-decoration: line-through;
                     color: #47976C;
-                    right: 0;
-                    float: left;
-                    width: 100%;
-                    text-align: left;
+                    display: block;
+                    text-align: right;
                 }
             }
             .total-price {
                 color: @color-white;
                 position: relative;
-                padding-right: 15px;
-                width: 125px;
+                padding: 0 15px;
+                text-align: right;
+                max-width: 125px;
                 .title-saved {
-                    position: absolute;
-                    top: -18px;
+                    display: block;
+                    text-align: right;
                     color: #47976C;
                 }
             }
@@ -137,7 +136,6 @@ Membership Calculator Component
             min-height: auto;
             background: #006b34 !important;
             color: #b6e6cd;
-            width: 100%;
         }
     }
     .title-space {

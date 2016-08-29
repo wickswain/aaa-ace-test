@@ -38,13 +38,8 @@ $(function () {
         }
     }
     footerResponse();
-        $('.sticky-nav').attr({
-            'data-offset-top': $('.sticky-nav').offset().top
-        }).width($('.container-custom').width());
-    
-    /*  $('.sticky-nav').attr({
-          'data-offset-top': $('.sticky-nav').offset().top
-      }).width($('.container-custom').width());*/
-
+	$('.sticky-nav').attr({
+		'data-offset-top': $('.sticky-nav').offset().top
+	}).width($('.container-custom').width());
 
 });
