@@ -41,7 +41,7 @@
                     <jump-link-id
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enterJumpLink Id"
+                        fieldDescription="Please enter Jump Link Id"
                         fieldLabel="Jump Link Id"
                         name="./jumpLinkId"/>
                 </items>
