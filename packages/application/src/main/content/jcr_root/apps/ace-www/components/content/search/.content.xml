@@ -4,4 +4,4 @@
     jcr:title="Google Search"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="AAA COMMON"/>
+    componentGroup=".hidden"/>

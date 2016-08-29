@@ -1,16 +1,12 @@
 package com.aaa.ace.sightly.providers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.aaa.ace.slightly.beans.PageMetaTagBean;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.tagging.Tag;
-import com.day.cq.wcm.api.Page;
+import com.day.cq.tagging.TagManager;
 
 /**
  * This is Java USE class for slightly templates, used to read the cq:tags and returns the list of
@@ -23,10 +19,13 @@ import com.day.cq.wcm.api.Page;
  *
  */
 
-public class PageMetaProvider extends WCMUsePojo {
+public class TagMetaProvider extends WCMUsePojo {
 
-    /* List to be returned */
-    private List<PageMetaTagBean> metaTagList = new ArrayList<PageMetaTagBean>();
+    String tagId;
+    
+    String metaName;
+    
+    String metaContent;
 
     /* Logger member */
     private final Logger log = LoggerFactory.getLogger(getClass());
@@ -42,34 +41,27 @@ public class PageMetaProvider extends WCMUsePojo {
      */
     @Override
     public void activate() throws Exception {
+        
+        tagId = get("tagid" ,String.class);
 
-        Page currentPage = getCurrentPage();
-
-        /*
-         * Not sure if this is possible to have null current page but should be handled.
-         */
-        if (currentPage == null) {
-            log.warn("Got current page as null returning empty list ");
+        if (StringUtils.isEmpty(tagId)) {
+            log.warn("Tag ID is black returning ");
             return;
         }
 
-        Tag[] tags = currentPage.getTags();
+        log.debug("Tag Id {} ", tagId);
 
-        log.debug("Page {} has {} tags.", currentPage.getName(), tags.length);
+        TagManager tagManager = getResourceResolver().adaptTo(TagManager.class);
+        
+        Tag tag = tagManager.resolve(tagId);
+        
+         metaName = getTagName(tag);
 
-        for (Tag tag : tags) {
+         metaContent = tag.getTitle();
 
-            String metaName = getTagName(tag);
-
-            String metaContent = tag.getTitle();
-
-            log.info("Tag Name {}, Tag value {}", metaName, metaContent);
-            metaTagList.add(new PageMetaTagBean(metaName, metaContent));
+         log.info("Tag reolved to meta name {}, content resolves to {}", metaName, metaContent);
         }
 
-        log.info("Created list {} ", metaTagList);
-
-    }
 
     /**
      * The tag name is constructed with the namespace and tag path after replacing it with
@@ -94,14 +86,12 @@ public class PageMetaProvider extends WCMUsePojo {
         return tagName.toLowerCase();
     }
 
-    /**
-     * Returns Meta tag list.
-     * 
-     * @return
-     */
-    public List<PageMetaTagBean> getMetaList() {
-        log.debug("getMetaList: Returning list {} ", metaTagList);
-        return metaTagList;
+    public String getMetaName() {
+        return metaName;
+    }
+
+    public String getMetaContent() {
+        return metaContent;
     }
 
 }

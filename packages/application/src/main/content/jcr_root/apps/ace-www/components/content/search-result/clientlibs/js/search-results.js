@@ -1,6 +1,40 @@
-$(".pagination-grid").hide();
+        var searchkeyValue = "";
+        $(".pagination-grid").hide();
+        $(".filter-grid").hide()
 
-var searchkeyValue = getParameterByName('q');	
+	/* Google Search API functionality */
+				//onClick search event
+				var searchkeyValue = "";
+				$(".pagination-grid").hide();
+				$("#searchSubmit").click(
+						function() {
+							searchkeyValue = $("#searchKey").val();
+					        
+							localStorage.setItem("metaName", '');
+					        localStorage.setItem("metaTag", '');
+							
+					        if (searchkeyValue) {
+								getResultData(searchkeyValue, 0);
+								//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
+								//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
+							} else {
+								alert('Please enter search key');
+							}
+						});
+				
+				//onEnter search event
+				$("#searchKey").keyup(function(event) {
+					if (event.keyCode == 13) {
+						$('#searchSubmit').click();
+					}
+				});//end of key up
+
+/* Search result */
+
+
+
+//var searchkeyValue = getParameterByName('q');
+var test = '${properties.jcr:title}';
 
 	//Default Pagination Config details
         var resultsPerPage = 10;
@@ -22,9 +56,22 @@ var searchkeyValue = getParameterByName('q');
             }
         });
 
-        if(searchkeyValue){
+        /*if(searchkeyValue){
             getResultData(searchkeyValue,0);
-        }	
+        }*/
+        
+        //Filter List click
+        $(".meta-data").click(function () {
+            var metaName = $(this).attr('data-metaname');
+            var metaContent = $(this).attr('data-metacontent');
+            //console.log(searchkeyValue);
+            // alert(metaName)); alert(metaTag));
+            //alert(metaName);
+            //alert(metaTag);
+            localStorage.setItem("metaName", metaName);
+            localStorage.setItem("metaContent", metaContent);
+            getResultData(searchkeyValue, pageNumber);
+        });
 
         // Api Call based on page number
         function getResultData(searchkeyValue, paginationCount) {
@@ -48,12 +95,29 @@ var searchkeyValue = getParameterByName('q');
 
             var domain = hostname.substr(hostname.indexOf(".")+1,hostname.length)
             
+            var filterPrefix = ' more:pagemap:metatags-'; //DC.Language:en
+
+            var metaName = localStorage.getItem("metaName");
+            var metaContent = localStorage.getItem("metaContent");
+
+            console.log(metaName);
+            console.log(metaContent);
+            
+            if(metaName && metaContent)
+            {
+                var filterString = filterPrefix + metaName + ":" + metaContent;
+                searchkeyValue = searchkeyValue + filterString;
+            	console.log("Query " +searchkeyValue);
+            }
+            
             var url = "https://www.googleapis.com/customsearch/v1?key="+apikey+"&cx="+ engineid 
             			+ "&q=" + searchkeyValue + "&start=" + pageNumber 
             			+ "&siteSearch="+domain + "&callback=?";
             //+ "&siteSearch="+domain
             $.getJSON(url, '', SearchCompleted);
         }
+        
+        
         // Final result appending to our html
         function SearchCompleted(response) {
             if (response.error) {
@@ -72,14 +136,19 @@ var searchkeyValue = getParameterByName('q');
                     var totalListPages = totalItems / resultsPerPage;
                     var indexCount = response.queries.request[0].startIndex;
                     if (indexCount === totalListPages) {
-                        //alert("stop next nav");
+                        $("#nextPage").addClass('disabled');
                     }
                     else if (indexCount === 1) {
-                        //alert("stop prev nav");
+                        $("#prevPage").addClass('disabled');
+                    }
+                    else {
+                        $("#nextPage").removeClass('disabled');
+                        $("#prevPage").removeClass('disabled');
                     }
                     $("#pageNumber").val(indexCount);
                     $("#totalListPages").html("of " + totalListPages);
                     $(".pagination-grid").show();
+                    $(".filter-grid").show();
                     //console.log(totalListPages);
                     // loop handling
                     for (var i = 0; i < response.items.length; i++) {
@@ -87,12 +156,13 @@ var searchkeyValue = getParameterByName('q');
                         var responseTitle = item.htmlTitle;
                         var responseUrl = item.htmlFormattedUrl;
                         var responseData = item.htmlSnippet;
-                        html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + responseUrl + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
+                        html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                     }
                     $("#resultContent").html(html);
                 }
             }
         }
+        
         
         /* Trim Url data to get search string */
         function getParameterByName(name, url) {

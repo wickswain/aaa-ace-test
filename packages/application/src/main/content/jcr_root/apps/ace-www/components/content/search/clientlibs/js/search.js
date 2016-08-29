@@ -10,7 +10,11 @@
 				$("#searchSubmit").click(
 						function() {
 							searchkeyValue = $("#searchKey").val();
-							if (searchkeyValue) {
+					        
+							localStorage.setItem("metaName", '');
+					        localStorage.setItem("metaTag", '');
+							
+					        if (searchkeyValue) {
 								//getResultData(searchkeyValue);
 								//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
 								window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
