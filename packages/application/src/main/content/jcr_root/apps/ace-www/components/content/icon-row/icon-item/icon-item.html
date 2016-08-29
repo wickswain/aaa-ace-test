@@ -8,10 +8,10 @@
 */-->
 
 <sly data-sly-test.hasContent="${properties.image}">
-    <div class="horizontal-space"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+    <div class="horizontal-space"> <img src="${properties.image}" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
     <div class="horizontal-space icon-title  roboto-medium font-f">
-        <h2 title="Food & Drink">Food & Drink</h2> </div>
-    <div class="horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+        <h2 title="${properties.icontext}" class="text-center">${properties.icontext}</h2> </div>
+    <div class="horizontal-space font-h text-center"> <a href="#" title="" class="link-btn link-lg ">${properties.ctatext}</a> </div>
 </sly>
 
 <!-- Placeholder Content
