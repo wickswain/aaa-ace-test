@@ -18,7 +18,7 @@
 	data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.altText}"
 	data-emptytext="Author Membership Calculator Component Here."
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
-	alt="Membership Calculator Component" />
+	alt="  Membership Calculator Component" />
 	
 <!-- Membership Calculator Content
 ============================================= -->
@@ -26,18 +26,20 @@
 								@ child='mcfiledset'}" />
 
             <div id="${properties.jumpLinkId}" data-sly-test="${properties.title}" class="membership-calculator">
-                <div class="container">
-                    <div class="horizontal-space roboto-light font-b">
-                        <h2 title=${properties.title}>${properties.title}</h2> </div>
-                </div>
-                <div class="h-space-cal roboto-light font-g">
-                        <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
+                <div style="color: ${properties.textColor ? properties.textColor
+                    : '' @ context='styleToken'}">
+                    <div class="container">
+                        <div class="horizontal-space roboto-light font-b">
+                            <h2 title=${properties.title}>${properties.title}</h2> </div>
+                    </div>
+                    <div class="h-space-cal roboto-light font-g">
+                        <sly data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}"data-sly-unwrap="${wcmmode.disabled}"/>
+                    </div>
                 </div>
                 <div class="membership-calculator-block">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 membership-details">
-                                  <div data-sly-test="${properties.title}" data-sly-unwrap>
                                     <div class="membership-pay-info">
                                         <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
                                         <div class="col-sm-7 roboto-light font-g">
@@ -59,7 +61,6 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
-                                </div>
                                 <div class="horizontal-space"></div>
                                 <div class="col-sm-12 img-membership">
                                     <img src=${properties.fileReference} title=${properties.altText} alt=${properties.altText} />
