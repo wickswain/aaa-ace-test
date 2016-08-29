@@ -3,7 +3,9 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="FAQ"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    helpPath="en/cq/current/wcm/default_components.html#Text">
+    height="30rem"
+    helpPath="en/cq/current/wcm/default_components.html#Text"
+    width="70rem">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/foundation/container">
@@ -43,8 +45,8 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
                                 class="full-width"
-                                fieldDescription="Click 'Add field' to add a new item"
-                                fieldLabel="FAQ Item">
+                                fieldDescription="Click 'Add field' to add a new FAQ"
+                                fieldLabel="FAQ Question and Answer">
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
@@ -62,7 +64,6 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textarea"
                                                     fieldDescription="Please enter Question"
-                                                    fieldLabel="Question"
                                                     name="./question"
                                                     required="{Boolean}true"/>
                                                 <answer
