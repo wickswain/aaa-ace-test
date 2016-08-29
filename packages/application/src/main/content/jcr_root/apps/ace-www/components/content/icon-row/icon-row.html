@@ -8,7 +8,8 @@
 */-->
 
 <div class="icon-row" data-sly-test.hasContent="${properties.iconnumber}">
-    <div class="container horizontal-component-space" data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
+    <div class="container horizontal-component-space" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
+         data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
         <!-- Top Header Starts Here -->
         <div class="text-center">
             <div class="horizontal-space2 roboto-light font-b">
