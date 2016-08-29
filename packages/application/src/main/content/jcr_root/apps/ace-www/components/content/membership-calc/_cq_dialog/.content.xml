@@ -37,20 +37,6 @@
                                 fieldLabel="Title/Text Color"
                                 freestylePalette="{Boolean}true"
                                 name="./textColor"/>
-                            <total-savings-area-heading
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter Total Savings Heading"
-                                fieldLabel="Total Savings Heading"
-                                name="./totalSavingsHeading"
-                                text="Total Savings area Heading"/>
-                            <itemized-savings-area-heading
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter Itemized Savings Heading"
-                                fieldLabel="Itemized Savings Heading"
-                                name="./itemizedSavingsHeading"
-                                text="Itemized Savings area Heading"/>
                             <mc-image
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/fileupload"
@@ -73,12 +59,6 @@
                                 fieldDescription="Please enter Alt Text"
                                 fieldLabel="Alt Text"
                                 name="./altText"/>
-                            <jump-link-id
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enterJump Link Id"
-                                fieldLabel="Jump Link Id"
-                                name="./jumpLinkId"/>
                         </items>
                     </columns>
                 </items>
@@ -95,6 +75,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <total-savings-area-heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Total Savings Heading"
+                                fieldLabel="Total Savings Heading"
+                                name="./totalSavingsHeading"
+                                text="Total Savings area Heading"/>
                             <yearly-savings-area-text
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -153,6 +140,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <itemized-savings-area-heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Itemized Savings Heading"
+                                fieldLabel="Itemized Savings Heading"
+                                name="./itemizedSavingsHeading"
+                                text="Itemized Savings area Heading"/>
                             <mc-calculator
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
@@ -228,6 +222,28 @@
                     </columns>
                 </items>
             </mc-filedset>
+            <jumplink
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Jumplink "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Jump Link Id"
+                                fieldLabel="Jump Link Id"
+                                name="./jumpLinkId"/>
+                        </items>
+                    </columns>
+                </items>
+            </jumplink>
         </items>
     </content>
 </jcr:root>
