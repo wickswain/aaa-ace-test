@@ -3,12 +3,15 @@
     1 Icon Row Component.
     ----------------------------------------------------------------
 
+    Required Fields:
+    1. Title/Subheading
+
 
 
 */-->
 
-<div class="icon-row" data-sly-test.hasContent="${properties.title}">
-    <div class="container horizontal-component-space" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
+<div class="icon-row" data-sly-test.hasContent="${properties.title}" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
+    <div class="container horizontal-component-space"
          data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
         <!-- Top Header Starts Here -->
         <div class="text-center">

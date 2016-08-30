@@ -32,7 +32,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/select"
                             fieldDescription="Select the amount of icons you want in the row"
-                            fieldLabel="Icon Amount"
+                            fieldLabel="Number of icons"
                             name="./iconamount">
                         <items jcr:primaryType="nt:unstructured">
                             <three
