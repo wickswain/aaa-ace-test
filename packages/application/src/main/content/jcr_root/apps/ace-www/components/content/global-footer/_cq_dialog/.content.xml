@@ -13,7 +13,7 @@
         <items jcr:primaryType="nt:unstructured">
             <links_1
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Configure Static Links List-1"
+                jcr:title="Static Links List-1"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -76,7 +76,7 @@
             </links_1>
             <links_2
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Configure Static Links List-2"
+                jcr:title="Static Links List-2"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -139,7 +139,7 @@
             </links_2>
             <links_3
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Configure Static Links List-3"
+                jcr:title="Static Links List-3"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -274,7 +274,7 @@
             </footericons>
             <socialmedia
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Configure Social Media Properties"
+                jcr:title="Social Media Properties"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -316,7 +316,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldLabel="Alt Text"
                                                     name="./alt"
-                                                    required="{Boolean}true"/>
+                                                    required="{Boolean}false"/>
                                                 <linkURL
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
