@@ -73,8 +73,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Alt text for the main image"
                                 fieldLabel="Main image alt text"
-                                name="./mainalttext"
-                                required="true"/>
+                                name="./mainalttext"/>
                         </items>
                     </mainimageinfo>
                     <backgroundinfo
@@ -109,7 +108,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Alt text for the background image"
                                 fieldLabel="Background Alt Text"
-                                name="./backgroundalttext"/>
+                                name="./backgroundalttext"
+                                required="true"/>
                         </items>
                     </backgroundinfo>
                     <jump-link-id
