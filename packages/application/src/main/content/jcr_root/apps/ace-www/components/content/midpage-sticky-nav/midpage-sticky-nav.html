@@ -1,6 +1,22 @@
-<!-- Placeholder Content
-=============================================
-<img data-sly-test="${(wcmmode.edit || wcmmode.design)}"
+<!--/*
+
+    Midpage Sticky Nav Component.
+    ----------------------------------------------------------------
+
+    Slide-down animation after the user starts scrolling down the page, past [400 px] from the top of the page (Global Nav is sticky until user scrolls down pass 400 px from the top)
+    
+    Default Behavior: NA
+
+    Required Fields: NA
+
+*/-->
+<!-- Placeholder Content start
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.link1label && !properties.jumpLinkId1 &&
+                    !properties.link2label && !properties.jumpLinkId2 &&
+                    !properties.link3label && !properties.jumpLinkId3 &&
+                    !properties.link4label && !properties.jumpLinkId4 &&
+                    !properties.link5label && !properties.jumpLinkId5}"
 	data-emptytext="Author Midpage Sticky Nav Here."
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
 	alt="Midpage Sticky Nav" />
