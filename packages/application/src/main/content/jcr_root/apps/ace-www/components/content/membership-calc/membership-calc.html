@@ -73,7 +73,7 @@
                                                 <div class="services-title roboto-medium font-g table-cell" style="background-image:url('${child.itemizedIcon ? child.itemizedIcon : '' @ context='uri'}')" title=${child.iconAltText}>${child.itemizedSavingsText}</div> 
                                                 <div class="price font-g table-cell"><span class="position-rel"> ${child.discountPrice} <span class="discount-price font-h">${child.actualPrice}</span></span>
                                                 </div> 
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> + $${child.itemizedSavings}</span>
+                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">${child.savingsLabel}</span> + $${child.itemizedSavings}</span>
                                                 </div>
                                            </div>
                                         </div>

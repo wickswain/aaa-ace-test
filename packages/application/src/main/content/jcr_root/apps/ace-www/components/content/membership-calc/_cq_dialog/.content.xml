@@ -211,8 +211,8 @@
                                                 <savings-lable
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    fieldLabel="Savings Lable"
-                                                    name="./savingsLable"/>
+                                                    fieldLabel="Savings Label"
+                                                    name="./savingsLabel"/>
                                             </items>
                                         </column>
                                     </items>
