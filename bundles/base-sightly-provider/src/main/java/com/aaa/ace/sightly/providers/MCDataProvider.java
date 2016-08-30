@@ -18,7 +18,7 @@ public class MCDataProvider extends WCMUsePojo {
 
 	@Override
 	public void activate() throws Exception {
-		log.info("Start of MCDataProvider class");
+		log.debug("Start of MCDataProvider class");
 		String childNode = get("child", String.class);
 		childResource = getResource().getChild(childNode);
 		log.debug("Child resource path: " + childResource.getPath());
