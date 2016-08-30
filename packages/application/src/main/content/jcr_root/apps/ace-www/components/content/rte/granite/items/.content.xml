@@ -58,12 +58,15 @@
                         text="Font Style H"/>
                 </styles>
             </styles>
+            <subsuperscript
+                jcr:primaryType="nt:unstructured"
+                features="*"/>
         </rtePlugins>
         <uiSettings jcr:primaryType="nt:unstructured">
             <cui jcr:primaryType="nt:unstructured">
                 <inline
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
@@ -73,7 +76,7 @@
                 </inline>
                 <fullscreen
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
