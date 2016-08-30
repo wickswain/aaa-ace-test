@@ -120,9 +120,11 @@ Version:0.3
     }
     .membership-pay-info {
         div[class^="col"] {
-            float: left;
+            float: none;
             padding: 0px;
             width: 50%;
+            display: table-cell;
+            vertical-align: middle;
         }
     }
     .h-space-cal {
@@ -291,7 +293,7 @@ Version:0.3
         }
     }
     .membership-calculator {
-        padding-top: 70px;
+        padding-top: 100px;
         .item {
             padding: 0px 15px 0px 15px;
             .price {
@@ -395,26 +397,15 @@ Version:0.3
         }
     }
     .membership-calculator {
-        padding-top: 100px;
+        .membership-pay-info {
+            margin-top: 70px;
+        }
         .h-space-cal {
             padding-bottom: 70px;
         }
         .no-float {
             float: none;
             margin: 0 auto;
-        }
-    }
-    .membership-discount-details {
-        .title {
-            margin-top: -28px;
-        }
-    }
-    .membership-calculator-block {
-        .membership-details {
-            .membership-pay-info {
-                box-shadow: 0px 0px 0px #ccc;
-                width: 420px;
-            }
         }
     }
     .footer-global {
@@ -459,9 +450,6 @@ Version:0.3
                 }
             }
         }
-    }
-    .membership-pay-info {
-        margin-top: 50px;
     }
     .sticky-nav {
         .navbar-collapse {
@@ -556,6 +544,10 @@ Version:0.3
         min-height: 600px;
     }
     .membership-calculator {
+        padding-top: 130px;
+        .block-position {
+            margin: 0 -120px;
+        }
         .membership-details {
             .img-membership {
                 padding: 0px 0px;
@@ -666,11 +658,6 @@ Version:0.3
         }
     }
     .membership-calculator-block {
-        .space-adjust {
-            float: none;
-            margin: 0 auto;
-            padding: 0px;
-        }
         .membership-details {
             float: left;
             .membership-pay-info {
@@ -678,14 +665,6 @@ Version:0.3
                 width: 420px;
             }
         }
-        .space-adjust {
-            float: left;
-        }
-        /*.membership-discount-details {
-                transform: translateY(-80px);
-                height: 700px;
-                display: table-cell;
-            }*/
     }
     .faqs {
         .ques-block {

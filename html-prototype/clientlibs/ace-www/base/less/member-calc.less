@@ -9,6 +9,8 @@ Membership Calculator Component
     .table-block {
         display: table;
         width: 100%;
+        position: relative;
+        z-index: 99;
         .table-cell {
             display: table-cell;
             vertical-align: middle;
@@ -31,6 +33,7 @@ Membership Calculator Component
         }
     }
     .membership-details {
+        align-self: flex-end;
         .img-membership {
             img {
                 max-width: 100%;
@@ -49,6 +52,11 @@ Membership Calculator Component
             width: 420px;
             margin-left: auto;
             margin-right: auto;
+            .saving-item {
+                padding: 5px 0px;
+                width: 100%;
+                display: table;
+            }
             .col-sm-6 {
                 padding-right: 0px;
             }
@@ -65,7 +73,7 @@ Membership Calculator Component
         }
         hr {
             border-top: dashed 1px #ccc;
-            margin: 0 -20px;
+            margin: 10px -20px 0 -20px;
             background: transparent;
             clear: both;
         }
@@ -80,8 +88,9 @@ Membership Calculator Component
     .membership-discount-details {
         .item {
             text-align: left;
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            clear: both;
             li {
                 list-style-type: none;
                 display: inline-block;
@@ -103,7 +112,7 @@ Membership Calculator Component
                 position: relative;
                 text-align: right;
                 padding: 0 15px;
-                max-width: 125px;
+                width: 125px;
                 .discount-price {
                     text-decoration: line-through;
                     color: #47976C;
@@ -116,7 +125,7 @@ Membership Calculator Component
                 position: relative;
                 padding: 0 15px;
                 text-align: right;
-                max-width: 125px;
+                width: 125px;
                 .title-saved {
                     display: block;
                     text-align: right;
@@ -136,10 +145,12 @@ Membership Calculator Component
             min-height: auto;
             background: #006b34 !important;
             color: #b6e6cd;
+            width: 100%;
+            display: inline-block;
         }
     }
     .title-space {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 }
 
