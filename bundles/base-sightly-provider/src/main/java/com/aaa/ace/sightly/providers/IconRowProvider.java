@@ -33,7 +33,7 @@ public class IconRowProvider extends WCMUsePojo {
         for (int i = 0; i < iconAmount; i++) {
             if(!listChildren.hasNext()){
 
-                Resource create = resourceResolver.create(resource, "icon_item"+i+1, componentProperties);
+                Resource create = resourceResolver.create(resource, "icon_item"+(i+1), componentProperties);
                 resourceResolver.commit();
                 iconItems.add(create);
             }else{
