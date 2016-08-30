@@ -17,7 +17,7 @@
 <!--/*  Custom meta tag for filters based on cq:tag on page through Google Site Search */-->
 <sly data-sly-use.metaProvider="${'com.aaa.ace.sightly.providers.PageMetaProvider'}">
 	<sly data-sly-list.metaBean="${metaProvider.metaList}">
-		<meta name="${metaBean.metaTagName}" content="${metaBean.metaTagContent}">
+		<meta name="${metaBean.metaName}" content="${metaBean.metaContent}">
 	</sly>
 </sly>
 

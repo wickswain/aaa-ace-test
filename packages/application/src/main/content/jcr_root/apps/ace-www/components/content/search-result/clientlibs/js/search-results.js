@@ -11,39 +11,42 @@
         $(".pagination-grid").hide();
         $(".results-grid").hide();
 
-	/* Google Search API functionality */
-				//onClick search event
-				var searchkeyValue = "";
-				$(".pagination-grid").hide();
-				$("#searchSubmit").click(
-						function() {
-							searchkeyValue = $("#searchKey").val();
-					        
-							localStorage.setItem("metaName", '');
-					        localStorage.setItem("metaTag", '');
-							
-					        if (searchkeyValue) {
-								getResultData(searchkeyValue, 0);
-								//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
-								//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
-							} else {
-								$(".error-message").html("No search results found.");
-							}
-						});
-				
-				//onEnter search event
-				$("#searchKey").keyup(function(event) {
-					if (event.keyCode == 13) {
-						$('#searchSubmit').click();
+		/* Google Search API functionality */
+		//onClick search event
+		$("#searchSubmit").click(
+				function() {
+					searchkeyValue = $("#searchKey").val();
+			        
+					localStorage.setItem("metaName", '');
+			        localStorage.setItem("metaTag", '');
+					
+			        if (searchkeyValue) {
+						getResultData(searchkeyValue, 0);
+						//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
+						//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
+					} else {
+                        /* Handle scenarios when after one search user search without input */
+                        $(".pagination-grid").hide();
+                        $(".results-grid").hide();
+                        $(".result-no").hide();
+                        $(".mobile-filter-list").hide();
+                        $('.mobile-filter-grid').hide();
+                        $(".error-message").show();
+                        $(".error-message").html("No search results found.");
+                        pageNumber = 1;
 					}
-				});//end of key up
+				});
+		
+		//onEnter search event
+		$("#searchKey").keyup(function(event) {
+			if (event.keyCode == 13) {
+				$('#searchSubmit').click();
+			}
+		});//end of key up
 
-/* Search result */
-
-
+		/* Search result */
 
 //var searchkeyValue = getParameterByName('q');
-var test = '${properties.jcr:title}';
 
 	//Default Pagination Config details
         var resultsPerPage = 10;
@@ -77,7 +80,7 @@ var test = '${properties.jcr:title}';
             localStorage.setItem("metaContent", metaContent);
             $(".meta-data").removeClass("active");
             $(this).addClass("active");
-            getResultData(searchkeyValue, pageNumber);
+            getResultData(searchkeyValue, 0);
         });
         
         $(".mobile-list").click(function (e) {
@@ -89,7 +92,7 @@ var test = '${properties.jcr:title}';
             localStorage.setItem("metaName", metaName);
             localStorage.setItem("metaContent", metaContent);
             
-            getResultData(searchkeyValue, pageNumber);
+            getResultData(searchkeyValue, 0);
         });
 
         // Api Call based on page number
@@ -107,38 +110,25 @@ var test = '${properties.jcr:title}';
                 pageNumber = paginationCount;
             }
             
-            //AAA keys
-            var apikey = 'AIzaSyBC-G6Eu9j36HTIkkCcw92_CVg_ONtK3Ec' ;//'AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I';
-            var engineid = '002841571323135263873:_kstmmls-cu'; //'004650686028114475301:tlpfyltlij4';
+            var apikey = $("#googleAPIKey").val();
+            var engineid = $("#googleSearchEngineId").val();
             
-            //Axis 41
-            //var apikey = 'AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I';
-            //var engineid = '004650686028114475301:tlpfyltlij4';
-
+            //restrict search to a region
+            var domain = getDomain();
             
-            var hostname = window.location.hostname;
-
-            var domain = hostname.substr(hostname.indexOf(".")+1,hostname.length)
+            var filterString = getFilter();
             
-            var filterPrefix = ' more:pagemap:metatags-'; //DC.Language:en
-
-            var metaName = localStorage.getItem("metaName");
-            var metaContent = localStorage.getItem("metaContent");
-
-            console.log(metaName);
-            console.log(metaContent);
-            
-            if(metaName && metaContent)
+            if (filterString)
             {
-                var filterString = filterPrefix + metaName + ":" + metaContent;
                 searchkeyValue = searchkeyValue + filterString;
             	console.log("Query " +searchkeyValue);
             }
-            
+
             var url = "https://www.googleapis.com/customsearch/v1?key="+apikey+"&cx="+ engineid 
             			+ "&q=" + searchkeyValue + "&start=" + pageNumber 
             			+ "&siteSearch="+domain + "&callback=?";
-            //+ "&siteSearch="+domain
+            
+            /* Ajax call to Search API */
             $.getJSON(url, '', SearchCompleted);
         }
         
@@ -204,8 +194,6 @@ var test = '${properties.jcr:title}';
             }
         }
 
-        
-        
         /* Trim Url data to get search string */
         function getParameterByName(name, url) {
         	if (!url) url = window.location.href;
@@ -215,4 +203,32 @@ var test = '${properties.jcr:title}';
         	if (!results) return null;
         	if (!results[2]) return '';
         	return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        
+        /* Return domain to restrict region based search */
+        function getDomain()
+        {
+            var hostname = window.location.hostname;
+            
+            //assuming the URL pattern of www.region.aaa.com
+            var domain = hostname.substr(hostname.indexOf(".")+1,hostname.length);
+            
+            return domain;
+        }
+        
+        /* Return filters if user has clicked on filters */
+        function getFilter()
+        {
+            var metaName = localStorage.getItem("metaName");
+            var metaContent = localStorage.getItem("metaContent");
+
+            if(metaName && metaContent)
+            {
+            	var filterPrefix = ' more:pagemap:metatags-'; 
+            	var filterString = filterPrefix + metaName + ":" + metaContent;
+            	return filterString;
+            }
+            
+            //return blank if no meta name or content found
+            return;
         }
