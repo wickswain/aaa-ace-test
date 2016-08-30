@@ -10,8 +10,12 @@
 <sly data-sly-test.hasContent="${properties.image}">
     <div class="horizontal-space"> <img src="${properties.image}" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
     <div class="horizontal-space icon-title  roboto-medium font-f">
-        <h2 title="${properties.icontext}" class="text-center">${properties.icontext}</h2> </div>
-    <div class="horizontal-space font-h text-center"> <a href="#" title="" class="link-btn link-lg ">${properties.ctatext}</a> </div>
+        <h2 title="${properties.icontitle}" class="text-center">${properties.icontitle}</h2>
+        <p title="${properties.icontext}" class="text-center">${properties.icontext}</p> </div>
+    <div class="horizontal-space font-h text-center">
+        <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+    </div>
+
 </sly>
 
 <!-- Placeholder Content

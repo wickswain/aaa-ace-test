@@ -7,13 +7,13 @@
 
 */-->
 
-<div class="icon-row" data-sly-test.hasContent="${properties.iconnumber}">
+<div class="icon-row" data-sly-test.hasContent="${properties.title}">
     <div class="container horizontal-component-space" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
          data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
         <!-- Top Header Starts Here -->
         <div class="text-center">
             <div class="horizontal-space2 roboto-light font-b">
-                <h2 title="Explore articles">${properties.icontext}</h2> </div>
+                <h2 title="Explore articles">${properties.title}</h2> </div>
         </div>
         <!-- List of the cards start here -->
         <ul data-sly-list.icon="${iconsprovider.icons}"class="list-inline icon-list row">
