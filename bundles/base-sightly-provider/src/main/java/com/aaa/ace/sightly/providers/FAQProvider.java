@@ -21,7 +21,7 @@ public class FAQProvider extends WCMUsePojo{
 			PageSuffixResolverService pageService = getSlingScriptHelper().getService(PageSuffixResolverService.class);
 			return pageService.resolveLinkURL(getResourceResolver(), url);
 		}
-		return null;
+		return url;
 	}
 	
 	/**
