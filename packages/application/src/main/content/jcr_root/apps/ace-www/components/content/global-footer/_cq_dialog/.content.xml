@@ -378,15 +378,9 @@
                                                 <registered
                                                     jcr:primaryType="nt:unstructured"
                                                     entity="&amp;#174;"/>
-                                                <emDash
-                                                    jcr:primaryType="nt:unstructured"
-                                                    entity="&amp;#8212;"/>
                                                 <pound
                                                     jcr:primaryType="nt:unstructured"
                                                     entity="&amp;#163;"/>
-                                                <nbsp
-                                                    jcr:primaryType="nt:unstructured"
-                                                    entity="&amp;#160;"/>
                                             </chars>
                                         </specialCharsConfig>
                                     </misctools>
