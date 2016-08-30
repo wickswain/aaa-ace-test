@@ -87,7 +87,8 @@
                             class="list-inline">
                             <li> 
                                 <sly data-sly-use.linkTo="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link=item.linkTo}" />
-                                <a href="${linkTo.linkURL}">
+                                <a target="${item.newTabFlag != 'true' ? '' : '_blank'}"
+                                   href="${linkTo.linkURL}">
                                     <img src="${item.smIcon}" alt="${item.alt}" title="${item.alt}" />
                                 </a>
                             </li>

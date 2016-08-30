@@ -15,7 +15,10 @@
 		class="list-unstyled collapse in" id="${listId}">
 		<li>
 			<sly data-sly-use.linkTo="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link=item.linkURL}" />
-			<a data-sly-text="${item.linkLabel}" href="${linkTo.linkURL}"></a>
+			<a data-sly-text="${item.linkLabel}" 
+               target="${item.newTabFlag != 'true' ? '' : '_blank'}"
+               href="${linkTo.linkURL}">
+            </a>
 		</li>
 	</ul>
 </template>

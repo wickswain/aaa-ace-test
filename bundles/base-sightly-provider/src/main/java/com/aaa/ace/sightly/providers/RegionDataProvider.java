@@ -26,19 +26,19 @@ public class RegionDataProvider extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception {
-        log.info("[AEM RegionDataProvider]: Start of Region Data Provider class");
+        log.debug("[AEM RegionDataProvider]: Start of Region Data Provider class");
 
         PersonalizationConfigService configService = getSlingScriptHelper()
                 .getService(PersonalizationConfigService.class);
 
         String component = get("componentName", String.class);
-        log.info("Component name passed as a parameter to provider is: " + component);
+        log.debug("Component name passed as a parameter to provider is: " + component);
 
         hostName = getRequest().getHeader("X-FORWARDED-FOR");
         if (StringUtils.isBlank(hostName)) {
             hostName = getRequest().getRemoteHost();
         }
-        log.info("Host Name resolved in provider is: " + hostName);
+        log.debug("Host Name resolved in provider is: " + hostName);
 
         // region resolved by default to California.
         String regionName = "";
@@ -47,7 +47,7 @@ public class RegionDataProvider extends WCMUsePojo {
         } else {
             regionName = "calif";
         }
-        log.info("Region name resolved in provider is: " + regionName);
+        log.debug("Region name resolved in provider is: " + regionName);
 
         String contentBasePath = formatPath(configService.getContentRootPath());
         if (StringUtils.isNotBlank(regionName)) {
@@ -56,15 +56,15 @@ public class RegionDataProvider extends WCMUsePojo {
                 regionDisplayName = regionPage.getTitle();
             }
         }
-        log.info("Region display name resolved in provider is: " + regionDisplayName);
+        log.debug("Region display name resolved in provider is: " + regionDisplayName);
 
         if (StringUtils.isNotBlank(regionName) && StringUtils.isNotBlank(component)) {
             componentResource = getResourceResolver()
                     .resolve(contentBasePath + regionName + JCR_CONTENT_PAR_PATH + component);
         }
-        log.info("Component resource resolved in provider is: " + componentResource);
+        log.debug("Component resource resolved in provider is: " + componentResource);
 
-        log.info("End of Region Data Provider class");
+        log.debug("End of Region Data Provider class");
     }
 
     /*
