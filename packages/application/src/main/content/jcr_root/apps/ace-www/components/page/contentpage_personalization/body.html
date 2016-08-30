@@ -1,0 +1,24 @@
+<!--/*
+
+  	BASE PAGE
+  	------------------------------
+	Renders the body markup of a sightly page
+
+*/-->
+
+<body class="font-g">
+	<div
+		data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
+		data-sly-unwrap>
+	</div>
+	
+	<!-- The Main Wrapper
+	============================================= -->
+	<div id="page-wrapper" class="clearfix container-custom">
+	
+		<sly data-sly-include="content.html" />
+
+		<sly data-sly-include="customfooterlibs.html" />
+	
+	</div>
+</body>
