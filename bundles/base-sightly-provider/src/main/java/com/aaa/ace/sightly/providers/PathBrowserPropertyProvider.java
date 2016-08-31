@@ -1,15 +1,14 @@
 package com.aaa.ace.sightly.providers;
 
 import com.aaa.ace.services.PageSuffixResolverService;
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
  * This sightly provider class is used to get a valid link URL appended with a
  * valid extension based on the selection through path browser granite widget.
  *
  */
-@SuppressWarnings("deprecation")
-public class PathBrowserPropertyProvider extends WCMUse {
+public class PathBrowserPropertyProvider extends WCMUsePojo {
 
     /**
      * Valid Link URL.

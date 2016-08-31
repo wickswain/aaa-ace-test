@@ -18,7 +18,7 @@
 
 <!-- Sightly global objects declaration
 ============================================= -->
-<sly data-sly-use.faq="${ 'com.aaa.ace.sightly.providers.ChildPropertyProvider' 
+<sly data-sly-use.faq="${ 'com.aaa.ace.sightly.providers.ChildResourceProvider' 
 								@ child='faqr'}" />
 <!-- #sightly-global-objects-declaration end -->
 
@@ -36,7 +36,8 @@
 <div id="${properties.jumpLinkId}" data-sly-test="${faq.childResource}" 
 		style="background-color:${properties.bgColorLeft ? properties.bgColorLeft : '' @ context='styleToken'};"
 		class="faqs horizontal-component-space">
-	<sly data-sly-use.result="${'com.aaa.ace.sightly.providers.PageSuffixProvider'}" />
+	<sly data-sly-use.result1="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link = properties.link1URL}"/>
+	<sly data-sly-use.result2="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link = properties.link2URL}"/>
     <div class="container">
         <!-- Faqs Header Starts Here -->
         <div class="horizontal-space2 roboto-light font-b">
@@ -67,9 +68,9 @@
                         <span class="adjust-align"><img src="${properties.titleIcon}" alt="${properties.altText}">
                             <h3 class="roboto-medium font-f ">${properties.rightSectionTitle}</h3></span>
                         <div class="faq-links">
-                        	<a href="${result.url1}" title="View all FAQ's" class="link-btn link-color-blue link-lg">${properties.link1Caption}</a>
+                        	<a href="${result1.linkURL}" title="View all FAQ's" class="link-btn link-color-blue link-lg">${properties.link1Caption}</a>
                         	<span>or</span>
-                        	<a href="${result.url2}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
+                        	<a href="${result2.linkURL}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
                         </div>
                     </div>
                 </div>
