@@ -37,61 +37,73 @@
         <header id="page-header"> </header>
         <div id="page-container">
             <!-- google search results components Starts Here -->
-            <div class="container search-results">
-                <!--  Search input box  -->
-                <div class="row search-box">
-                    <div class="col-md-9 col-sm-9">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <input type="text" name="searchKey" id="searchKey" class="search-input form-control roboto-light font-b" placeholder="Search here"> <span class="search-addon input-group-addon" id="searchSubmit"><i class="glyphicon glyphicon-search"></i></span> </div>
+            <div class="search-results">
+                <div class="search-header">
+                    <div class="container">
+                        <div class="row search-box">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="search-box-handler">
+                                    <div class="input-group search-box-input">
+                                        <input type="text" name="searchKey" id="searchKey" class="search-input form-control roboto-light font-b" placeholder="Search here"> <span class="search-addon input-group-addon" id="searchSubmit"><i class="glyphicon glyphicon-search"></i></span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 hidden-xs search-box-input pull-right"><span class="result-no roboto-light font-h" id="resultsCount"></span></div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 hidden-xs"><span class="result-no roboto-light font-h" id="resultsCount"></span></div>
-                </div>
-                <div class="row mobile-filter-grid hidden-sm hidden-md hidden-lg">
-                    <div class="col-md-9 col-xs-8 text-center"> <span class="filter-title">All Results<i class="glyphicon glyphicon-chevron-down"></i></span> </div>
-                    <div class="col-md-3 col-xs-4 text-center filter-res-count"><span class="result-no roboto-light font-h" id="resultsCount-m"></span></div>
-                </div>
-                <div class="row mobile-filter-list hidden-sm hidden-md hidden-lg">
-                    <div class="col-md-12  mobile-gridview">
-                        <ul class="filterlist-items">
-                            <li>Filters<span class="roboto-light font-c close-fliter">X</span></li>
-                            <li><a href="#" class="mobile-list active">All Results</a></li>
-                            <li><a href="#" class="mobile-list">Products & Services</a></li>
-                            <li><a href="#" class="mobile-list">Publications</a></li>
-                            <li><a href="#" class="mobile-list">Faq's</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--  Results Grid will bind here -->
-                <div class="row results-grid">
-                    <div class="col-md-9 col-sm-9">
-                        <div class="resultContent"> </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 hidden-xs">
-                        <div class="filter-grid">
-                            <ul>
-                                <li><a href="#" class="meta-list-data active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
-                                <li><a href="#" class="meta-data" metaName="testingMetaName" metaTag="testingMetaTagName">Products & Services</a></li>
-                                <li><a href="#" class="meta-data" metaName="testingMetaName1" metaTag="testingMetaTagName1">Publications</a></li>
-                                <li><a href="#" class="meta-data" metaName="testingMetaName2" metaTag="testingMetaTagName2">Travel</a></li>
-                                <li><a href="#" class="meta-data">Events</a></li>
-                                <li><a href="#" class="meta-data">Discounts</a></li>
-                            </ul>
+                        <div class="row mobile-filter-grid hidden-sm hidden-md hidden-lg">
+                            <div class="col-md-9 col-xs-7 text-center"> <span class="filter-title roboto-medium checked-list-item-main">All Results</span> <i class="glyphicon glyphicon-chevron-down"></i> </div>
+                            <div class="col-md-3 col-xs-5 text-center filter-res-count"><span class="result-no roboto-medium font-h" id="resultsCount-m"></span></div>
+                        </div>
+                        <div class="row mobile-filter-list hidden-sm hidden-md hidden-lg">
+                            <div class="col-md-12  mobile-gridview">
+                                <ul class="filterlist-items">
+                                    <li>FILTERS<span class="roboto-light font-c close-fliter">X</span></li>
+                                    <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Error Message -->
-                <div class="error-message .roboto-medium, .font-f"> </div>
-                <!--  Pagination values effect here -->
-                <div class="row pagination-grid  horizontal-component-space ">
-                    <ul>
-                        <li class="page-links col-md-3 col-sm-3 col-xs-4"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
-                        <li class="page-links col-md-3 col-sm-3 text-center col-xs-4">
-                            <input type="text" name="pageNumber" id="pageNumber" class="pagination-input form-control roboto-light font-h"><span class="text-center roboto-light font-h" id="totalListPages">
+                <div class="search-container">
+                    <div class="container ">
+                        <!--  Search input box -->
+                        <!--  Results Grid will bind here -->
+                        <div class="row results-grid">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="resultContent"> </div>
+                                <!--  Pagination values effect here -->
+                                <div class="row pagination-grid  horizontal-component-space ">
+                                    <ul>
+                                        <li class="page-links col-md-4 col-sm-4 col-xs-4"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
+                                        <li class="page-links col-md-4 col-sm-4 text-center col-xs-4">
+                                            <input type="text" name="pageNumber" id="pageNumber" class="pagination-input form-control roboto-light font-h"><span class="text-center roboto-light font-h" id="totalListPages">
                         </span> </li>
-                        <li class="page-links col-md-3 col-sm-3 col-xs-4"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
-                    </ul>
+                                        <li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                <div class="filter-grid">
+                                    <ul>
+                                        <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- Error Message -->
+                        <div class="error-message roboto-medium font-f"> </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,17 +111,7 @@
         <footer id="page-footer"> </footer>
     </div>
     <script>
-        /* List Item click event */
-        $(".meta-list-data").click(function (e) {
-            $(".meta-list-data").removeClass("active");
-            // or $(".active").removeClass("active");
-            $(this).addClass("active");
-        });
-        $(".mobile-list").click(function (e) {
-            $(".mobile-list").removeClass("active");
-            // or $(".active").removeClass("active");
-            $(this).addClass("active");
-        });
+        $(".error-message").hide();
         $(".close-fliter").click(function () {
             $(".mobile-filter-list").hide();
         });
@@ -124,14 +126,15 @@
         $(".results-grid").hide();
         $("#searchSubmit").click(function () {
             searchkeyValue = $("#searchKey").val();
-            localStorage.setItem("metaName", '');
-            localStorage.setItem("metaTag", '');
             if (searchkeyValue) {
+                localStorage.setItem("metaName", '');
+                localStorage.setItem("metaTag", '');
                 getResultData(searchkeyValue);
                 //window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
             }
             else {
                 $(".error-message").html("No search results found.");
+                $(".error-message").show();
             }
         });
         //onEnter search event
@@ -152,7 +155,6 @@
         $(".pagination-input").change(function () {
             var pageNum = $("#pageNumber").val();
             if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
-                // alert('yes its an int!');
                 getResultData(searchkeyValue, pageNum);
             }
             else {
@@ -165,21 +167,26 @@
             var metaTag = $(this).attr('metaTag');
             localStorage.setItem("metaName", metaName);
             localStorage.setItem("metaTag", metaTag);
+            $(".meta-data").removeClass("active");
+            $("[metaName=" + metaName + "]").addClass("active");
+            var currentListItem = $(this).text();
+            $(".checked-list-item-main").html(currentListItem);
+            $(".mobile-filter-list").hide();
             //getResultData(searchkeyValue, pageNumber, metaName, metaTag);
         });
         // Api Call based on page number
         function getResultData(searchkeyValue, paginationCount, metaName, metaTag) {
             if (paginationCount === -1) {
-                pageNumber--;
+                pageNumber = pageNumber - 10;
             }
             if (paginationCount === 1) {
-                pageNumber++;
+                pageNumber = pageNumber + 10;
             }
             if (paginationCount === 0) {
                 pageNumber = 1;
             }
             if (paginationCount > 1) {
-                pageNumber = paginationCount;
+                pageNumber = paginationCount * 10;
             }
             // console.log(localStorage.getItem("metaName"));
             // console.log(localStorage.getItem("metaTag"));
@@ -233,8 +240,17 @@
                     $("#nextPage").removeClass('disabled');
                     $("#prevPage").removeClass('disabled');
                 }
-                $("#pageNumber").val(indexCount);
-                $("#totalListPages").html("of " + totalListPages);
+                var manageInputValue = "";
+                if (indexCount > 1) {
+                    manageInputValue = Math.round(pageNumber / resultsPerPage) + 1;
+                }
+                else {
+                    manageInputValue = 1;
+                }
+                $("#pageNumber").val(manageInputValue);
+                if (totalListPages > 1) {
+                    $("#totalListPages").html("of " + totalListPages);
+                }
                 // loop handling
                 for (var i = 0; i < response.items.length; i++) {
                     var item = response.items[i];
