@@ -11,11 +11,6 @@ $(function () {
         if ($(window).width() <= 992) {
             $('.list-header').each(function () {
                 $(this).next().removeClass('in');
-                $('.collapse').on('shown.bs.collapse', function () {
-                    $(this).parent().find(".glyphicon-chevron-down").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
-                }).on('hidden.bs.collapse', function () {
-                    $(this).parent().find(".glyphicon-chevron-up").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
-                });
             });
         } else {
             $('.list-header').parent().find('ul').addClass('in').removeAttr('style');
