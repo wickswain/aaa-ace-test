@@ -7,7 +7,7 @@
 $(function () {
     
 	/*Footer Responsive script*/
-    var footerResponse = function () {
+    function footerResponse() {
         if ($(window).width() <= 992) {
             $('.list-header').each(function () {
                 $(this).next().removeClass('in');
@@ -15,8 +15,8 @@ $(function () {
         } else {
             $('.list-header').parent().find('ul').addClass('in').removeAttr('style');
         }
-    };
-	
+    }
+	footerResponse();
 	/*Sticky Navigation*/
 	var scrollTop = parseInt($('.sticky-nav').offset().top);
 	
