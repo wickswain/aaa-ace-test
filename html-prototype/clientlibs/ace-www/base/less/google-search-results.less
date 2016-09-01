@@ -1,12 +1,22 @@
 /*****************************************
-Sticky Nav Component
+Google searc Component
 *****************************************/
 
 .search-results {
-    .search-box {
+    .search-header {
         background-color: @color-gray-light;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        border-bottom: solid 1px #ccc;
+    }
+    .search-box {
+        .search-box-input {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            .result-no {
+                display: inline-block;
+                padding-top: 30px;
+                vertical-align: bottom;
+            }
+        }
         .search-input {
             height: 50px;
             padding: 6px 20px;
@@ -27,14 +37,8 @@ Sticky Nav Component
                 background-color: @color-blue-light;
             }
         }
-        .result-no {
-            display: inline-block;
-            padding-top: 30px;
-            vertical-align: bottom;
-        }
     }
     .results-grid {
-        padding-top: 100px;
         .result-item {
             &:first-child {
                 padding-top: 0px;
@@ -47,9 +51,13 @@ Sticky Nav Component
                 border-bottom: solid 1px #e4e5e5;
             }
             a {
-                color: #0000ff;
                 display: block;
                 margin: 0;
+                font-size: 20px;
+                &.result-link {
+                    font-size: 15px;
+                    margin-top: 5px;
+                }
             }
             .result-link {
                 word-wrap: break-word;
@@ -67,10 +75,6 @@ Sticky Nav Component
                     text-decoration: none;
                     color: @color-black;
                 }
-                /*  &:active {
-                    text-decoration: none;
-                    border-bottom: solid 2px @color-blue-light;
-                }*/
                 &.active {
                     text-decoration: none;
                     &:extend(.roboto-medium, .font-f);
@@ -81,18 +85,6 @@ Sticky Nav Component
             ul {
                 padding: 0;
             }
-            // li:first-child {
-            /*&:extend(.roboto-light, .font-g);
-                
-                display: block;
-                &:after {
-                    content: '';
-                    display: block;
-                    width: 100px;
-                    //border-bottom: solid 2px @color-blue-light;
-                }
-                padding-bottom: 30px;*/
-            // }
             li {
                 &:extend(.roboto-light, .font-g);
                 display: block;
@@ -104,8 +96,6 @@ Sticky Nav Component
         }
     }
     .pagination-grid {
-        // padding-top: 130px;
-        // padding-bottom: 130px;
         span {
             font-size: 12px;
             top: 0;
@@ -128,7 +118,6 @@ Sticky Nav Component
             display: inline-block;
             padding: 10px;
             float: left;
-            /*text-align: center;*/
         }
         .disabled {
             opacity: 0.2;
@@ -137,30 +126,35 @@ Sticky Nav Component
     .error-message {
         padding-top: 30px;
         padding-bottom: 30px;
+        padding-left: 24px;
     }
     .mobile-filter-grid {
-        border-top: solid 1px #ccc;
-        border-bottom: solid 1px #ccc;
         background-color: @color-gray-light;
-        // padding-top: 15px;
-        // padding-bottom: 15px;
+        border-top: solid 1px #ccc;
+        .grid-border {
+            border-right: solid 1px #ccc;
+        }
         .filter-title {
             padding: 15px 0px;
             display: block;
             color: @color-blue-light;
             text-align: left;
-            i {
-                padding: 5px 10px;
-                font-size: 10px;
-                float: right;
-            }
+            font-size: 15px;
+            float: left;
+            width: 70%;
+        }
+        i {
+            padding: 20px 15px;
+            font-size: 10px;
+            float: right;
+            color: @color-blue-light;
         }
         .filter-res-count {
-            border-left: solid 1px #ccc;
             text-align: center;
             .result-no {
                 display: block;
                 padding: 15px 0px;
+                color: #000;
             }
         }
     }
@@ -180,10 +174,13 @@ Sticky Nav Component
             left: 0;
             z-index: 99;
             background: #fff;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border: solid 1px #e4e5e5;
             li {
                 background-color: #fff;
                 border-bottom: solid 1px @color-gray-light;
-                padding: 15px;
+                padding: 30px;
                 list-style-type: none;
                 &:extend(.roboto-light, .font-g);
                 a {
@@ -195,17 +192,6 @@ Sticky Nav Component
                         text-decoration: none;
                         color: @color-black;
                     }
-                    /*&:active {
-                        text-decoration: none;
-                        &:extend(.roboto-medium, .font-f);
-                        &:after {
-                            content: "\e013";
-                            font-family: 'Glyphicons Halflings';
-                            color: @color-blue-primary-medium;
-                            float: right;
-                        }
-                        //border-bottom: solid 2px @color-blue-light;
-                    }*/
                     color: @color-black;
                     &.active {
                         &:extend(.roboto-medium, .font-f);
@@ -231,3 +217,165 @@ Sticky Nav Component
         }
     }
 }
+
+.results-categories {
+    .categorie-title {
+        padding-bottom: 10px;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+.control {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    height: 20px;
+    width: 20px;
+    background: #dddddd;
+    border: solid 4px #ccc;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control input:checked~ .control__indicator {
+    background: #00AAFF;
+    border-color: #00AAFF;
+}
+
+.control input:disabled~ .control__indicator {
+    background: #dddddd;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #00AAFF;
+}
+
+.control--radio input:disabled~ .control__indicator:after {
+    background: #7b7b7b;
+}
+
+
+/* Responsive css for this component */
+
+@media only screen and (min-width: 320px) {
+    .search-results {
+        .results-categories {
+            padding: 20px;
+            background: #ddd;
+        }
+        .search-box {
+            .result-no {
+                padding-left: 220px;
+            }
+        }
+        .pagination-grid {
+            ul {
+                margin: 0px;
+                padding: 0px;
+            }
+        }
+        .results-grid {
+            padding-top: 30px;
+        }
+        .search-box-handler {
+            float: right;
+            margin-right: 0;
+        }
+        .pagination-grid {
+            padding-left: 15px;
+        }
+    }
+    .control__indicator {
+        right: 0;
+    }
+    .control {
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 480px) {}
+
+@media only screen and (min-width: 768px) {
+    .search-results {
+        .search-box {
+            .result-no {
+                padding-left: 0px;
+            }
+        }
+        .results-grid {
+            padding-left: 25px;
+        }
+    }
+    .control {
+        padding-left: 30px;
+    }
+    .control__indicator {
+        left: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .search-results {
+        .results-grid {
+            padding-top: 100px;
+        }
+    }
+    .categorie-block {
+        width: 28%;
+    }
+    .results-categories {
+        padding: 40px !important;
+        background: #ddd;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}
+
+@media (min-width:1500px) {}
