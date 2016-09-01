@@ -1,15 +1,21 @@
-        $(".close-fliter").click(function () {
-            $(".mobile-filter-list").hide();
-        });
+        var searchkeyValue = "";
+        var resultsPerPage = 10;
+        var pageNumber = 1;
+        
+        //page load events, clear everything 
+        $(".pagination-grid").hide();
+        $(".results-grid").hide();
+        $(".error-message").hide();
         $('.mobile-filter-grid').hide();
         $(".mobile-filter-list").hide();
+        
+        //register click events
         $('.mobile-filter-grid').click(function () {
             $(".mobile-filter-list").show();
         });
-
-        var searchkeyValue = "";
-        $(".pagination-grid").hide();
-        $(".results-grid").hide();
+        $(".close-fliter-icon").click(function () {
+            $(".mobile-filter-list").hide();
+        });
 
 		/* Google Search API functionality */
 		//onClick search event
@@ -22,7 +28,7 @@
 					
 			        if (searchkeyValue) {
 						getResultData(searchkeyValue, 0);
-						//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
+						//Uncomment it when search component is separated.
 						//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
 					} else {
                         /* Handle scenarios when after one search user search without input */
@@ -46,11 +52,16 @@
 
 		/* Search result */
 
-//var searchkeyValue = getParameterByName('q');
+		//un-comment when search is done from header, in that case query will be read from param. 		
+		//var searchkeyValue = getParameterByName('q');
+	    
+		//un-comment when search is done from header, in that case query will be read from param.
+        /*if(searchkeyValue){
+            getResultData(searchkeyValue,0);
+        }*/
 
+		
 	//Default Pagination Config details
-        var resultsPerPage = 10;
-        var pageNumber = 1;
         $('#prevPage').click(function () {
             getResultData(searchkeyValue, -1);
         });
@@ -60,7 +71,6 @@
         $(".pagination-input").change(function () {
             var pageNum = $("#pageNumber").val();
             if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
-                //alert('yes its an int!');
                 getResultData(searchkeyValue, pageNum);
             }
             else {
@@ -68,9 +78,6 @@
             }
         });
 
-        /*if(searchkeyValue){
-            getResultData(searchkeyValue,0);
-        }*/
         
         //Filter List click
         $(".meta-data").click(function () {
@@ -79,35 +86,46 @@
             localStorage.setItem("metaName", metaName);
             localStorage.setItem("metaContent", metaContent);
             $(".meta-data").removeClass("active");
-            $(this).addClass("active");
+            
+            if(metaName)
+            {
+            	//if meta name is present, then its filter
+            	$("[data-metaName=" + metaName + "]").addClass("active");
+            }else
+            {
+            	//else it is all results
+            	$(".all-results").addClass("active");
+            }
+            
+            var currentListItem = $(this).text();
+            $(".checked-list-item-main").html(currentListItem);
+            $(".mobile-filter-list").hide();
+            
             getResultData(searchkeyValue, 0);
         });
         
-        $(".mobile-list").click(function (e) {
-            $(".mobile-list").removeClass("active");
-            $(this).addClass("active");
-            
-            var metaName = $(this).attr('data-metaname');
-            var metaContent = $(this).attr('data-metacontent');
-            localStorage.setItem("metaName", metaName);
-            localStorage.setItem("metaContent", metaContent);
-            
-            getResultData(searchkeyValue, 0);
-        });
-
         // Api Call based on page number
         function getResultData(searchkeyValue, paginationCount) {
             if (paginationCount === -1) {
-                pageNumber--;
+                pageNumber = pageNumber - 1;
             }
             if (paginationCount === 1) {
-                pageNumber++;
+                pageNumber = pageNumber + 1;
             }
             if (paginationCount === 0) {
                 pageNumber = 1;
             }
             if (paginationCount > 1) {
                 pageNumber = paginationCount;
+            }
+ 
+            var validPage = ""
+            if (pageNumber > 1) {
+                validPage = (pageNumber * 10) + 1;
+                validPage = validPage - 10;
+            }
+            else {
+                validPage = 1;
             }
             
             var apikey = $("#googleAPIKey").val();
@@ -138,6 +156,7 @@
             if (response.error) {
                 var errorMessage = response.error.message;
                 $(".pagination-grid").hide();
+                $("#page_navigation").hide()
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -148,6 +167,7 @@
             }
             else if (response.items == null || response.items.length === 0) {
                 $(".pagination-grid").hide();
+                $("#page_navigation").hide()
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -159,9 +179,9 @@
             else {
                 $(".error-message").hide();
                 $(".pagination-grid").show();
+                $("#page_navigation").show();
                 $(".results-grid").show();
                 $(".result-no").show();
-                //$(".mobile-filter-list").show();
                 $('.mobile-filter-grid').show();
                 var html = "";
                 $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
@@ -170,26 +190,53 @@
                 var totalItems = response.searchInformation.totalResults;
                 var totalListPages = Math.ceil(totalItems / resultsPerPage);
                 var indexCount = response.queries.request[0].startIndex;
-                if (indexCount === totalListPages) {
-                    $("#nextPage").addClass('disabled');
+                if (totalListPages > 1) {
+                    $("#totalListPages").html("of " + totalListPages);
                 }
-                else if (indexCount === 1) {
-                    $("#prevPage").addClass('disabled');
-                }
-                else {
-                    $("#nextPage").removeClass('disabled');
-                    $("#prevPage").removeClass('disabled');
-                }
-                $("#pageNumber").val(indexCount);
-                $("#totalListPages").html("of " + totalListPages);
                 // loop handling
                 for (var i = 0; i < response.items.length; i++) {
                     var item = response.items[i];
                     var responseTitle = item.htmlTitle;
                     var responseUrl = item.htmlFormattedUrl;
-                    var responseData = item.htmlSnippet;
+                    var responseData = item.snippet;
                     html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                 }
+                /* pagination Logic start */
+                if (pageNumber % 5 === 0) {
+                    defaultPage = pageNumber;
+                    defaultTotalPages = pageNumber + 5;
+                }
+                else if (pageNumber === 1) {
+                    defaultPage = 1;
+                    defaultTotalPages = 6;
+                }
+ 
+                console.log(pageNumber);
+                console.log(defaultTotalPages);
+                console.log(defaultPage);
+                var navigation_html = '<div class="row pagination-grid  horizontal-component-space "><ul>';
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4">';
+                navigation_html += '<a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
+                navigation_html += '</li>';
+                for (var i = defaultPage; i < defaultTotalPages; i++) {
+                    navigation_html += '<li class="page_link" id="id' + i + '">';
+                    navigation_html += '<a href="javascript:void(0);" class="pagination-pageclick" longdesc="' + pageNumber + '">' + (i) + '</a>';
+                    navigation_html += '</li>';
+                }
+ 
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right">';
+                navigation_html += '<a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a>';
+                navigation_html += '</li>';
+                navigation_html += '</ul><div>';
+                $('#page_navigation').html(navigation_html);
+                $(".page_link").removeClass("active");
+                $("#id" + pageNumber).addClass('active');
+                $('#nextPage').click(function () {
+                    getResultData(searchkeyValue, 1);
+                });
+                $('#prevPage').click(function () {
+                    getResultData(searchkeyValue, -1);
+                });
                 $(".resultContent").html(html);
             }
         }
