@@ -1,0 +1,281 @@
+        var searchkeyValue = "";
+        var resultsPerPage = 10;
+        var pageNumber = 1;
+        
+        //page load events, clear everything 
+        $(".pagination-grid").hide();
+        $(".results-grid").hide();
+        $(".error-message").hide();
+        $('.mobile-filter-grid').hide();
+        $(".mobile-filter-list").hide();
+        
+        //register click events
+        $('.mobile-filter-grid').click(function () {
+            $(".mobile-filter-list").show();
+        });
+        $(".close-fliter-icon").click(function () {
+            $(".mobile-filter-list").hide();
+        });
+
+		/* Google Search API functionality */
+		//onClick search event
+		$("#searchSubmit").click(
+				function() {
+					searchkeyValue = $("#searchKey").val();
+			        
+					localStorage.setItem("metaName", '');
+			        localStorage.setItem("metaTag", '');
+					
+			        if (searchkeyValue) {
+						getResultData(searchkeyValue, 0);
+						//Uncomment it when search component is separated.
+						//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
+					} else {
+                        /* Handle scenarios when after one search user search without input */
+                        $(".pagination-grid").hide();
+                        $(".results-grid").hide();
+                        $(".result-no").hide();
+                        $(".mobile-filter-list").hide();
+                        $('.mobile-filter-grid').hide();
+                        $(".error-message").show();
+                        $(".error-message").html("No search results found.");
+                        pageNumber = 1;
+					}
+				});
+		
+		//onEnter search event
+		$("#searchKey").keyup(function(event) {
+			if (event.keyCode == 13) {
+				$('#searchSubmit').click();
+			}
+		});//end of key up
+
+		/* Search result */
+
+		//un-comment when search is done from header, in that case query will be read from param. 		
+		//var searchkeyValue = getParameterByName('q');
+	    
+		//un-comment when search is done from header, in that case query will be read from param.
+        /*if(searchkeyValue){
+            getResultData(searchkeyValue,0);
+        }*/
+
+		
+	//Default Pagination Config details
+        $('#prevPage').click(function () {
+            getResultData(searchkeyValue, -1);
+        });
+        $('#nextPage').click(function () {
+            getResultData(searchkeyValue, 1);
+        });
+        $(".pagination-input").change(function () {
+            var pageNum = $("#pageNumber").val();
+            if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
+                getResultData(searchkeyValue, pageNum);
+            }
+            else {
+                alert('Please enter numeric value');
+            }
+        });
+
+        
+        //Filter List click
+        $(".meta-data").click(function () {
+            var metaName = $(this).attr('data-metaname');
+            var metaContent = $(this).attr('data-metacontent');
+            localStorage.setItem("metaName", metaName);
+            localStorage.setItem("metaContent", metaContent);
+            $(".meta-data").removeClass("active");
+            
+            if(metaName)
+            {
+            	//if meta name is present, then its filter
+            	$("[data-metaName=" + metaName + "]").addClass("active");
+            }else
+            {
+            	//else it is all results
+            	$(".all-results").addClass("active");
+            }
+            
+            var currentListItem = $(this).text();
+            $(".checked-list-item-main").html(currentListItem);
+            $(".mobile-filter-list").hide();
+            
+            getResultData(searchkeyValue, 0);
+        });
+        
+        // Api Call based on page number
+        function getResultData(searchkeyValue, paginationCount) {
+            if (paginationCount === -1) {
+                pageNumber = pageNumber - 1;
+            }
+            if (paginationCount === 1) {
+                pageNumber = pageNumber + 1;
+            }
+            if (paginationCount === 0) {
+                pageNumber = 1;
+            }
+            if (paginationCount > 1) {
+                pageNumber = paginationCount;
+            }
+ 
+            var validPage = ""
+            if (pageNumber > 1) {
+                validPage = (pageNumber * 10) + 1;
+                validPage = validPage - 10;
+            }
+            else {
+                validPage = 1;
+            }
+            
+            var apikey = $("#googleAPIKey").val();
+            var engineid = $("#googleSearchEngineId").val();
+            
+            //restrict search to a region
+            var domain = getDomain();
+            
+            var filterString = getFilter();
+            
+            if (filterString)
+            {
+                searchkeyValue = searchkeyValue + filterString;
+            	console.log("Query " +searchkeyValue);
+            }
+
+            var url = "https://www.googleapis.com/customsearch/v1?key="+apikey+"&cx="+ engineid 
+            			+ "&q=" + searchkeyValue + "&start=" + pageNumber 
+            			+ "&siteSearch="+domain + "&callback=?";
+            
+            /* Ajax call to Search API */
+            $.getJSON(url, '', SearchCompleted);
+        }
+        
+        
+        // Final result appending to our html
+        function SearchCompleted(response) {
+            if (response.error) {
+                var errorMessage = response.error.message;
+                $(".pagination-grid").hide();
+                $("#page_navigation").hide()
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html(errorMessage);
+                pageNumber = 1;
+            }
+            else if (response.items == null || response.items.length === 0) {
+                $(".pagination-grid").hide();
+                $("#page_navigation").hide()
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html("No search results found.");
+                pageNumber = 1;
+            }
+            else {
+                $(".error-message").hide();
+                $(".pagination-grid").show();
+                $("#page_navigation").show();
+                $(".results-grid").show();
+                $(".result-no").show();
+                $('.mobile-filter-grid').show();
+                var html = "";
+                $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
+                $("#resultsCount-m").html(response.searchInformation.formattedTotalResults + " results");
+                /* Navigation Links handling */
+                var totalItems = response.searchInformation.totalResults;
+                var totalListPages = Math.ceil(totalItems / resultsPerPage);
+                var indexCount = response.queries.request[0].startIndex;
+                if (totalListPages > 1) {
+                    $("#totalListPages").html("of " + totalListPages);
+                }
+                // loop handling
+                for (var i = 0; i < response.items.length; i++) {
+                    var item = response.items[i];
+                    var responseTitle = item.htmlTitle;
+                    var responseUrl = item.htmlFormattedUrl;
+                    var responseData = item.snippet;
+                    html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
+                }
+                /* pagination Logic start */
+                if (pageNumber % 5 === 0) {
+                    defaultPage = pageNumber;
+                    defaultTotalPages = pageNumber + 5;
+                }
+                else if (pageNumber === 1) {
+                    defaultPage = 1;
+                    defaultTotalPages = 6;
+                }
+ 
+                console.log(pageNumber);
+                console.log(defaultTotalPages);
+                console.log(defaultPage);
+                var navigation_html = '<div class="row pagination-grid  horizontal-component-space "><ul>';
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4">';
+                navigation_html += '<a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
+                navigation_html += '</li>';
+                for (var i = defaultPage; i < defaultTotalPages; i++) {
+                    navigation_html += '<li class="page_link" id="id' + i + '">';
+                    navigation_html += '<a href="javascript:void(0);" class="pagination-pageclick" longdesc="' + pageNumber + '">' + (i) + '</a>';
+                    navigation_html += '</li>';
+                }
+ 
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right">';
+                navigation_html += '<a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a>';
+                navigation_html += '</li>';
+                navigation_html += '</ul><div>';
+                $('#page_navigation').html(navigation_html);
+                $(".page_link").removeClass("active");
+                $("#id" + pageNumber).addClass('active');
+                $('#nextPage').click(function () {
+                    getResultData(searchkeyValue, 1);
+                });
+                $('#prevPage').click(function () {
+                    getResultData(searchkeyValue, -1);
+                });
+                $(".resultContent").html(html);
+            }
+        }
+
+        /* Trim Url data to get search string */
+        function getParameterByName(name, url) {
+        	if (!url) url = window.location.href;
+        	name = name.replace(/[\[\]]/g, "\\$&");
+        	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        		results = regex.exec(url);
+        	if (!results) return null;
+        	if (!results[2]) return '';
+        	return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        
+        /* Return domain to restrict region based search */
+        function getDomain()
+        {
+            var hostname = window.location.hostname;
+            
+            //assuming the URL pattern of www.region.aaa.com
+            var domain = hostname.substr(hostname.indexOf(".")+1,hostname.length);
+            
+            return domain;
+        }
+        
+        /* Return filters if user has clicked on filters */
+        function getFilter()
+        {
+            var metaName = localStorage.getItem("metaName");
+            var metaContent = localStorage.getItem("metaContent");
+
+            if(metaName && metaContent)
+            {
+            	var filterPrefix = ' more:pagemap:metatags-'; 
+            	var filterString = filterPrefix + metaName + ":" + metaContent;
+            	return filterString;
+            }
+            
+            //return blank if no meta name or content found
+            return;
+        }
