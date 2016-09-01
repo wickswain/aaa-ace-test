@@ -8,16 +8,17 @@
     .horizontal-space {
         margin-bottom: @space-md;
     }
-    .footer-list {        
+    .footer-list {
         .list-header {
             font-size: 11px;
-            color: #7f7f7f;
+            color: @color-gray-lighter;
+            cursor: pointer;
             &:after {
-                content: '';
+                /*content: '';
                 display: block;
                 width: 40px;
                 padding-bottom: 15px;
-                border-bottom: solid 2px @color-white;
+                border-bottom: solid 2px @color-white;*/
             }
             i {
                 padding: 0 10px;
@@ -59,22 +60,29 @@
     .half-space {
         padding: 15px;
     }
-    .border-lines div[class^="col"] {
-        border-bottom: 1px solid #3a3a3a;
-        border-top: 1px solid #3a3a3a;
-        line-height: 50px;
+    .border-lines {
+		&:after{content:''; display:block; clear:both; }
+        div[class^="col"]:first-child {
+            padding-left: 0px;
+        }
+        div[class^="col"] {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
     }
     .app,
     .blog {
         display: inline-block;
-        padding:0 40px;
+        padding: 0 40px;
+        padding-right: 0;
         color: #7f7f7f;
         background: transparent url() no-repeat 0;
+        min-height: 20px;
     }
     .app {
-        background-image: url('../../../../images/mobile-icon.png');
+        background: transparent url() no-repeat 0;
     }
     .blog {
-        background-image: url('../../../../images/rss-icon.png');
+        background: transparent url() no-repeat 0;
     }
 }

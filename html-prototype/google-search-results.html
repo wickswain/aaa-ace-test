@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Axis41 Stylesheets, Scripts & Title -->
+    <title>AAA</title>
+    <!-- Browser / Bookmark icon -->
+    <!--<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png" />
+      <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />-->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Latest compiled and minified JS -->
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
+    <!-- External Plugins JS : External plugin files loaded on need base -->
+</head>
+
+<body>
+    <!-- The Main Wrapper
+      ============================================= -->
+    <div id="pagewrapper" class="clearfix container-custom">
+        <!-- Header -->
+        <header id="page-header"> </header>
+        <div id="page-container">
+            <!-- google search results components Starts Here -->
+            <div class="search-results">
+                <div class="search-header">
+                    <div class="container">
+                        <div class="row search-box">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="search-box-handler">
+                                    <div class="input-group search-box-input">
+                                        <input type="text" name="searchKey" id="searchKey" class="search-input form-control roboto-light font-b" placeholder="Search here"> <span class="search-addon input-group-addon" id="searchSubmit"><i class="glyphicon glyphicon-search"></i></span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 hidden-xs search-box-input pull-right"><span class="result-no roboto-light font-h" id="resultsCount"></span></div>
+                        </div>
+                        <div class="row mobile-filter-grid hidden-sm hidden-md hidden-lg">
+                            <div class="col-md-9 col-xs-7 text-center"> <span class="filter-title roboto-medium checked-list-item-main">All Results</span> <i class="glyphicon glyphicon-chevron-down"></i> </div>
+                            <div class="col-md-3 col-xs-5 text-center filter-res-count"><span class="result-no roboto-medium font-h" id="resultsCount-m"></span></div>
+                        </div>
+                        <div class="row mobile-filter-list hidden-sm hidden-md hidden-lg">
+                            <div class="col-md-12  mobile-gridview">
+                                <ul class="filterlist-items">
+                                    <li>FILTERS<span class="roboto-light font-c close-fliter">X</span></li>
+                                    <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <div class="container ">
+                        <!--  Search input box -->
+                        <!--  Results Grid will bind here -->
+                        <div class="row results-grid">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="resultContent"> </div>
+                                <!--  Pagination values effect here -->
+                                <div class="row pagination-grid  horizontal-component-space ">
+                                    <ul>
+                                        <li class="page-links col-md-4 col-sm-4 col-xs-4"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
+                                        <li class="page-links col-md-4 col-sm-4 text-center col-xs-4">
+                                            <input type="text" name="pageNumber" id="pageNumber" class="pagination-input form-control roboto-light font-h"><span class="text-center roboto-light font-h" id="totalListPages">
+                        </span> </li>
+                                        <li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                <div class="filter-grid">
+                                    <ul>
+                                        <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- Error Message -->
+                        <div class="error-message roboto-medium font-f"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer id="page-footer"> </footer>
+    </div>
+    <script>
+        $(".error-message").hide();
+        $(".close-fliter").click(function () {
+            $(".mobile-filter-list").hide();
+        });
+        $('.mobile-filter-grid').hide();
+        $(".mobile-filter-list").hide();
+        $('.mobile-filter-grid').click(function () {
+            $(".mobile-filter-list").show();
+        });
+        /* Google Search API Funcionality */
+        var searchkeyValue = "";
+        $(".pagination-grid").hide();
+        $(".results-grid").hide();
+        $("#searchSubmit").click(function () {
+            searchkeyValue = $("#searchKey").val();
+            if (searchkeyValue) {
+                localStorage.setItem("metaName", '');
+                localStorage.setItem("metaTag", '');
+                getResultData(searchkeyValue);
+                //window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
+            }
+            else {
+                $(".error-message").html("No search results found.");
+                $(".error-message").show();
+            }
+        });
+        //onEnter search event
+        $("#searchKey").keyup(function (event) {
+            if (event.keyCode == 13) {
+                $('#searchSubmit').click();
+            }
+        });
+        //Default Pagination Config details
+        var resultsPerPage = 10;
+        var pageNumber = 1;
+        $('#prevPage').click(function () {
+            getResultData(searchkeyValue, -1);
+        });
+        $('#nextPage').click(function () {
+            getResultData(searchkeyValue, 1);
+        });
+        $(".pagination-input").change(function () {
+            var pageNum = $("#pageNumber").val();
+            if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
+                getResultData(searchkeyValue, pageNum);
+            }
+            else {
+                alert('Please enter numeric value');
+            }
+        });
+        //Filter List click
+        $(".meta-data").click(function () {
+            var metaName = $(this).attr('metaName');
+            var metaTag = $(this).attr('metaTag');
+            localStorage.setItem("metaName", metaName);
+            localStorage.setItem("metaTag", metaTag);
+            $(".meta-data").removeClass("active");
+            $("[metaName=" + metaName + "]").addClass("active");
+            var currentListItem = $(this).text();
+            $(".checked-list-item-main").html(currentListItem);
+            $(".mobile-filter-list").hide();
+            //getResultData(searchkeyValue, pageNumber, metaName, metaTag);
+        });
+        // Api Call based on page number
+        function getResultData(searchkeyValue, paginationCount, metaName, metaTag) {
+            if (paginationCount === -1) {
+                pageNumber = pageNumber - 10;
+            }
+            if (paginationCount === 1) {
+                pageNumber = pageNumber + 10;
+            }
+            if (paginationCount === 0) {
+                pageNumber = 1;
+            }
+            if (paginationCount > 1) {
+                pageNumber = paginationCount * 10;
+            }
+            // console.log(localStorage.getItem("metaName"));
+            // console.log(localStorage.getItem("metaTag"));
+            var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I&cx=004650686028114475301:tlpfyltlij4&q=" + searchkeyValue + "&start=" + pageNumber + "&callback=?";
+            $.getJSON(url, '', SearchCompleted);
+        }
+        // Final result appending to our html
+        function SearchCompleted(response) {
+            if (response.error) {
+                var errorMessage = response.error.message;
+                $(".pagination-grid").hide();
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html(errorMessage);
+                pageNumber = 1;
+            }
+            else if (response.items == null || response.items.length === 0) {
+                $(".pagination-grid").hide();
+                $(".results-grid").hide();
+                $(".result-no").hide();
+                $(".mobile-filter-list").hide();
+                $('.mobile-filter-grid').hide();
+                $(".error-message").show();
+                $(".error-message").html("No search results found.");
+                pageNumber = 1;
+            }
+            else {
+                $(".error-message").hide();
+                $(".pagination-grid").show();
+                $(".results-grid").show();
+                $(".result-no").show();
+                //$(".mobile-filter-list").show();
+                $('.mobile-filter-grid').show();
+                var html = "";
+                $("#resultsCount").html(response.searchInformation.formattedTotalResults + " results");
+                $("#resultsCount-m").html(response.searchInformation.formattedTotalResults + " results");
+                /* Navigation Links handling */
+                var totalItems = response.searchInformation.totalResults;
+                var totalListPages = Math.round(totalItems / resultsPerPage);
+                var indexCount = response.queries.request[0].startIndex;
+                if (indexCount === totalListPages) {
+                    $("#nextPage").addClass('disabled');
+                }
+                else if (indexCount === 1) {
+                    $("#prevPage").addClass('disabled');
+                }
+                else {
+                    $("#nextPage").removeClass('disabled');
+                    $("#prevPage").removeClass('disabled');
+                }
+                var manageInputValue = "";
+                if (indexCount > 1) {
+                    manageInputValue = Math.round(pageNumber / resultsPerPage) + 1;
+                }
+                else {
+                    manageInputValue = 1;
+                }
+                $("#pageNumber").val(manageInputValue);
+                if (totalListPages > 1) {
+                    $("#totalListPages").html("of " + totalListPages);
+                }
+                // loop handling
+                for (var i = 0; i < response.items.length; i++) {
+                    var item = response.items[i];
+                    var responseTitle = item.htmlTitle;
+                    var responseUrl = item.htmlFormattedUrl;
+                    var responseData = item.htmlSnippet;
+                    html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
+                }
+                $(".resultContent").html(html);
+            }
+        }
+    </script>
+</body>
+
+</html>
