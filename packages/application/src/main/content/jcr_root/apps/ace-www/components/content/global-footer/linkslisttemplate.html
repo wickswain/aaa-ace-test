@@ -1,7 +1,7 @@
 <template data-sly-template.linkstemplate="${@ listResource, listId, listHeading}"
 	      data-sly-use.itemTemplate="linkslisttemplate.html">
 
-	<h3 data-sly-test="${listHeading}" class="text-uppercase list-header hidden-md hidden-lg"
+	<h3 data-sly-test="${listHeading}" class="text-uppercase list-header hidden-md hidden-lg collapsed"
 		data-toggle="collapse" data-target="${'#{0}' @ format=[listId]}">
     	${listHeading} <i class="glyphicon glyphicon-chevron-down"></i>
     </h3>
