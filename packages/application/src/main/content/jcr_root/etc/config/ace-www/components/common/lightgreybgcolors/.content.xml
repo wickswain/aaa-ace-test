@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <colors jcr:primaryType="nt:unstructured">
+        <lightgrey1
+            jcr:primaryType="nt:unstructured"
+            text="Light Grey Color 1 (#E4E5E5)"
+            value="#E4E5E5"/>
+        <lightgrey2
+            jcr:primaryType="nt:unstructured"
+            text="Light Grey Color 2 (#CCCCCC)"
+            value="#CCCCCC"/>
+    </colors>
+</jcr:root>
