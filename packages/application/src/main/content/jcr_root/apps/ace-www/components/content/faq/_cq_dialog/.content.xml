@@ -124,8 +124,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter title text for right section"
                                 fieldLabel="Title"
-                                name="./rightSectionTitle"
-                                required="{Boolean}true"/>
+                                name="./rightSectionTitle"/>
                             <link1caption
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
