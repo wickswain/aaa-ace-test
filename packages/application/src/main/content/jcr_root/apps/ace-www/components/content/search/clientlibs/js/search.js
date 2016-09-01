@@ -15,8 +15,6 @@
 					        localStorage.setItem("metaTag", '');
 							
 					        if (searchkeyValue) {
-								//getResultData(searchkeyValue);
-								//window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
 								window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
 							} else {
 								alert('Please enter search key');

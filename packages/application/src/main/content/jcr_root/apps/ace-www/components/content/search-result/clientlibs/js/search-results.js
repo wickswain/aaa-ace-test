@@ -17,7 +17,6 @@
             $(".mobile-filter-list").hide();
         });
 
-		/* Google Search API functionality */
 		//onClick search event
 		$("#searchSubmit").click(
 				function() {
@@ -28,8 +27,6 @@
 					
 			        if (searchkeyValue) {
 						getResultData(searchkeyValue, 0);
-						//Uncomment it when search component is separated.
-						//window.location.href = $("#result-page").val() + '.html' + '?q=' + searchkeyValue;
 					} else {
                         /* Handle scenarios when after one search user search without input */
                         $(".pagination-grid").hide();
@@ -50,18 +47,8 @@
 			}
 		});//end of key up
 
-		/* Search result */
-
-		//un-comment when search is done from header, in that case query will be read from param. 		
-		//var searchkeyValue = getParameterByName('q');
-	    
-		//un-comment when search is done from header, in that case query will be read from param.
-        /*if(searchkeyValue){
-            getResultData(searchkeyValue,0);
-        }*/
-
 		
-	//Default Pagination Config details
+		//Default Pagination Config details
         $('#prevPage').click(function () {
             getResultData(searchkeyValue, -1);
         });
@@ -104,7 +91,7 @@
             getResultData(searchkeyValue, 0);
         });
         
-        // Api Call based on page number
+        // API Call based on page number
         function getResultData(searchkeyValue, paginationCount) {
             if (paginationCount === -1) {
                 pageNumber = pageNumber - 1;
