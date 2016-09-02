@@ -28,7 +28,7 @@
 					searchkeyValue = $("#searchKey").val();
 			        
 					localStorage.setItem("metaName", '');
-			        localStorage.setItem("metaTag", '');
+			        localStorage.setItem("metaContent", '');
 					
 			        if (searchkeyValue) {
 			        	getResultData(searchkeyValue, '', 1, '');
