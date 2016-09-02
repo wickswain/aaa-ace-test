@@ -24,7 +24,7 @@
 <sly data-sly-list.child="${resource.listChildren}"> <sly
 	data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath, childResource = child}" />
 
-	<sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
+	<sly data-sly-test="${child.buttonStyle && child.ctaLabel}">
 		<a data-sly-test="${!child.phonedialFlag}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
 			href="${result.url ? result.url : ''  @ context='uri'}"
