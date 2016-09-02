@@ -92,10 +92,10 @@
         // API Call based on page number
         function getResultData(searchkeyValue, navigation, currentPage) {
             if (navigation === -1) {
-                pageNumber = pageNumber - 1;
+                pageNumber = parseInt(pageNumber) - 1;
             }
             if (navigation === 1) {
-                pageNumber = pageNumber + 1;
+                pageNumber = parseInt(pageNumber) + 1;
             }
             if (currentPage) {
                 pageNumber = currentPage;
@@ -179,27 +179,20 @@
                     html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                 }
                 /* pagination Logic start */
-                if (pageNumber % 5 === 0 && totalListPages > 5) {
-                    defaultPage = pageNumber;
-                    var reaminigPages = totalListPages - pageNumber;
-                    if (reaminigPages > 6) {
-                        defaultTotalPages = parseInt(pageNumber) + 6;
-                    }
-                    else {
-                        defaultTotalPages = reaminigPages;
-                    }
-                }
-                else if (pageNumber === 1) {
+                if (parseInt(pageNumber) < 5) {
                     defaultPage = 1;
-                    if (totalListPages < 6) {
+                    if (totalListPages < 5) {
                         defaultTotalPages = totalListPages;
                     }
                     else {
                         defaultTotalPages = 6;
                     }
- 
                 }
-                
+                else if (parseInt(pageNumber) > 5) {
+                    defaultPage = parseInt(pageNumber) - 2;
+                    defaultTotalPages = parseInt(pageNumber) + 3;
+                }
+
                 var navigation_html = '<div class="row pagination-grid  horizontal-component-space "><ul>';
                 navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4">';
                 navigation_html += '<a href="javascript:void(0);" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
@@ -227,6 +220,7 @@
                 
                 $(".pagination-pageclick").click(function () {
                     var selectedPage = $(this).text();
+
                     getResultData(searchkeyValue, '', selectedPage);
                 });
                 if (pageNumber === 1) {
