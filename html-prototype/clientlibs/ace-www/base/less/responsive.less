@@ -511,7 +511,7 @@ Version:0.3
     .membership-calculator {
         padding-top: 130px;
         .block-position {
-            margin: 0 -120px;
+            margin: -120px 0px;
         }
         .membership-details {
             .img-membership {
@@ -526,9 +526,6 @@ Version:0.3
         }
         .h-space-cal {
             padding-bottom: @space-lg + 20;
-        }
-        .block-position {
-            margin: -30px 0;
         }
     }
     .block-height {
@@ -623,6 +620,9 @@ Version:0.3
         }
     }
     .membership-calculator-block {
+        .block-center {
+            padding: 0px;
+        }
         .membership-details {
             float: left;
             .membership-pay-info {
@@ -705,10 +705,19 @@ Version:0.3
     }
 }
 
-@media (min-width:1500px) {
+@media (min-width:1400px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+@media (min-width:1700px) {
     /*Screen resolution 1700px and above, container width restricted*/
     .container-custom {
         max-width: 1700px;
+        margin: 0 auto;
+    }
+    .sticky-nav .sticky-navbar {
         margin: 0 auto;
     }
 }

@@ -2,61 +2,61 @@
     Sticky Nav Component
 *****************************************/
 
-.position-rel {
-    position: relative;
-}
-
 .sticky-nav {
-    background-color: @color-gray-light;
-	border:0; margin:0 auto;
-    border-bottom: 1px solid #bfc2c2;
-    top: 0;
-    height: 60px;
-    z-index: 999;
-    .nav> li> a {
-        color: @color-blue-primary-medium;
-        padding: 20px 20px;
-        display: inline-block;
-        &.btn-style,
-        &.link-btn {
-            padding: 8px 20px;
-            color: #fff;
-        }
-    }
-    .tab-list {
-        margin: 0px;
-    }
-    .btn-style,
-    .link-btn {
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 14px;
-    }
-    .collapse-btn {
-        padding: 20px 0px;
-        float: left;
-    }
-    .dropdown-menu {
-        width: 100%;
-        background: transparent;
-        border: none;
-        padding: 0;
-        margin: 0px;
-        li {
-            a {
-                color: #0099FF;
-            }
-            a:hover {
-                text-decoration: underline;
-                background: transparent;
-            }
-            a:focus {
-                background: transparent;
+    min-height: 60px;
+    position: relative;
+    .sticky-navbar {
+        background-color: @color-gray-light;
+        border: 0;
+        margin: 0;
+        border-bottom: 1px solid #bfc2c2;
+        top: 0;
+        z-index: 999;
+        .nav> li> a {
+            color: @color-blue-primary-medium;
+            padding: 20px 20px;
+            display: inline-block;
+            &.btn-style,
+            &.link-btn {
+                padding: 8px 20px;
+                color: #fff;
             }
         }
-    }
-    .nav-pills>li {
-        float: none;
+        .tab-list {
+            margin: 0px;
+        }
+        .btn-style,
+        .link-btn {
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 14px;
+        }
+        .collapse-btn {
+            padding: 20px 0px;
+            float: left;
+        }
+        .dropdown-menu {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0px;
+            li {
+                a {
+                    color: #0099FF;
+                }
+                a:hover {
+                    text-decoration: underline;
+                    background: transparent;
+                }
+                a:focus {
+                    background: transparent;
+                }
+            }
+        }
+        .nav-pills>li {
+            float: none;
+        }
     }
     .sticky-menu {
         cursor: pointer;
