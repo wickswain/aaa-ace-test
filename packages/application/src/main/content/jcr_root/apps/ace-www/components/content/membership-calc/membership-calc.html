@@ -31,7 +31,8 @@
 ============================================= -->
  <div data-sly-test="${properties.title}" id="${properties.jumpLinkId}" class="membership-calculator">
     
-    <div class="container">
+    <div class="container" style="color: ${properties.textColor ? properties.textColor
+ : '' @ context='styleToken'}" >
         <div class="horizontal-space roboto-light font-b">
             <h2 title=${properties.title}>${properties.title}</h2> 
         </div>
