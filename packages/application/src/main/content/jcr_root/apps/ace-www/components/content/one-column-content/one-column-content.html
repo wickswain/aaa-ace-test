@@ -8,7 +8,7 @@
 
 */-->
 
-<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.backgroundImage}"
+<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.mainimage || properties.bgColor}"
      class="single-column component-min-h"
      style="background-color:${properties.bgColor @ context='styleToken'};
             background-image:url('${properties.backgroundImage @ context='uri'}');"
@@ -26,7 +26,7 @@
             <div class="image-block" data-sly-test="${properties.mainalttext && properties.mainimage}">
                 <img src="${properties.mainimage}" alt="${properties.mainalttext}" title="single column image" class="img-responsive">
             </div>
-    </div>
+        </div>
     </div>
 </div>
 
