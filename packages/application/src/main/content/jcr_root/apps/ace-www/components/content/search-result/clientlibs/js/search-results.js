@@ -2,12 +2,17 @@
         var resultsPerPage = 10;
         var pageNumber = 1;
         
+        var metaName = "";
+        var metaContent = "";
+        var totalListPages;
+        
         //page load events, clear everything 
-        $(".pagination-grid").hide();
         $(".results-grid").hide();
         $(".error-message").hide();
         $('.mobile-filter-grid').hide();
         $(".mobile-filter-list").hide();
+        $(".pagination-grid").hide();
+        $("#page_navigation").hide();
         
         //register click events
         $('.mobile-filter-grid').click(function () {
@@ -23,13 +28,14 @@
 					searchkeyValue = $("#searchKey").val();
 			        
 					localStorage.setItem("metaName", '');
-			        localStorage.setItem("metaTag", '');
+			        localStorage.setItem("metaContent", '');
 					
 			        if (searchkeyValue) {
-						getResultData(searchkeyValue, 0);
+			        	getResultData(searchkeyValue, '', 1, '');
 					} else {
                         /* Handle scenarios when after one search user search without input */
                         $(".pagination-grid").hide();
+                        $("#page_navigation").hide();
                         $(".results-grid").hide();
                         $(".result-no").hide();
                         $(".mobile-filter-list").hide();
@@ -55,17 +61,8 @@
         $('#nextPage').click(function () {
             getResultData(searchkeyValue, 1);
         });
-        $(".pagination-input").change(function () {
-            var pageNum = $("#pageNumber").val();
-            if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
-                getResultData(searchkeyValue, pageNum);
-            }
-            else {
-                alert('Please enter numeric value');
-            }
-        });
 
-        
+        /* Links disables handling */
         //Filter List click
         $(".meta-data").click(function () {
             var metaName = $(this).attr('data-metaname');
@@ -88,32 +85,25 @@
             $(".checked-list-item-main").html(currentListItem);
             $(".mobile-filter-list").hide();
             
-            getResultData(searchkeyValue, 0);
+            getResultData(searchkeyValue, '', 1);
         });
         
+        
         // API Call based on page number
-        function getResultData(searchkeyValue, paginationCount) {
-            if (paginationCount === -1) {
-                pageNumber = pageNumber - 1;
+        function getResultData(searchkeyValue, navigation, currentPage) {
+            if (navigation === -1) {
+                pageNumber = parseInt(pageNumber) - 1;
             }
-            if (paginationCount === 1) {
-                pageNumber = pageNumber + 1;
+            if (navigation === 1) {
+                pageNumber = parseInt(pageNumber) + 1;
             }
-            if (paginationCount === 0) {
-                pageNumber = 1;
-            }
-            if (paginationCount > 1) {
-                pageNumber = paginationCount;
+            if (currentPage) {
+                pageNumber = currentPage;
             }
  
-            var validPage = ""
-            if (pageNumber > 1) {
-                validPage = (pageNumber * 10) + 1;
-                validPage = validPage - 10;
-            }
-            else {
-                validPage = 1;
-            }
+            var startIndex = ""
+            startIndex = (pageNumber * 10) + 1;
+            startIndex = startIndex - 10;
             
             var apikey = $("#googleAPIKey").val();
             var engineid = $("#googleSearchEngineId").val();
@@ -130,7 +120,7 @@
             }
 
             var url = "https://www.googleapis.com/customsearch/v1?key="+apikey+"&cx="+ engineid 
-            			+ "&q=" + searchkeyValue + "&start=" + pageNumber 
+            			+ "&q=" + searchkeyValue + "&start=" + startIndex 
             			+ "&siteSearch="+domain + "&callback=?";
             
             /* Ajax call to Search API */
@@ -143,7 +133,7 @@
             if (response.error) {
                 var errorMessage = response.error.message;
                 $(".pagination-grid").hide();
-                $("#page_navigation").hide()
+                $("#page_navigation").hide();
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -154,7 +144,7 @@
             }
             else if (response.items == null || response.items.length === 0) {
                 $(".pagination-grid").hide();
-                $("#page_navigation").hide()
+                $("#page_navigation").hide();
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -189,41 +179,61 @@
                     html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                 }
                 /* pagination Logic start */
-                if (pageNumber % 5 === 0) {
-                    defaultPage = pageNumber;
-                    defaultTotalPages = pageNumber + 5;
-                }
-                else if (pageNumber === 1) {
+                if (parseInt(pageNumber) < 5) {
                     defaultPage = 1;
-                    defaultTotalPages = 6;
+                    if (totalListPages < 5) {
+                        defaultTotalPages = totalListPages;
+                    }
+                    else {
+                        defaultTotalPages = 6;
+                    }
                 }
- 
-                console.log(pageNumber);
-                console.log(defaultTotalPages);
-                console.log(defaultPage);
+                else if (parseInt(pageNumber) > 5) {
+                    defaultPage = parseInt(pageNumber) - 2;
+                    defaultTotalPages = parseInt(pageNumber) + 3;
+                }
+
                 var navigation_html = '<div class="row pagination-grid  horizontal-component-space "><ul>';
                 navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4">';
-                navigation_html += '<a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
+                navigation_html += '<a href="javascript:void(0);" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
                 navigation_html += '</li>';
                 for (var i = defaultPage; i < defaultTotalPages; i++) {
                     navigation_html += '<li class="page_link" id="id' + i + '">';
-                    navigation_html += '<a href="javascript:void(0);" class="pagination-pageclick" longdesc="' + pageNumber + '">' + (i) + '</a>';
+                    navigation_html += '<a href="javascript:void(0);" class="pagination-pageclick">' + (i) + '</a>';
                     navigation_html += '</li>';
                 }
  
                 navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right">';
-                navigation_html += '<a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a>';
+                navigation_html += '<a href="javascript:void(0);" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a>';
                 navigation_html += '</li>';
                 navigation_html += '</ul><div>';
+                
                 $('#page_navigation').html(navigation_html);
                 $(".page_link").removeClass("active");
                 $("#id" + pageNumber).addClass('active');
                 $('#nextPage').click(function () {
-                    getResultData(searchkeyValue, 1);
+                	getResultData(searchkeyValue, 1, '');
                 });
                 $('#prevPage').click(function () {
-                    getResultData(searchkeyValue, -1);
+                	getResultData(searchkeyValue, -1, '');
                 });
+                
+                $(".pagination-pageclick").click(function () {
+                    var selectedPage = $(this).text();
+
+                    getResultData(searchkeyValue, '', selectedPage);
+                });
+                if (pageNumber === 1) {
+                    $("#prevPage").addClass('disabled');
+                }
+                else if (pageNumber === totalListPages) {
+                    $("#nextPage").addClass('disabled');
+                }
+                else {
+                    $("#nextPage").removeClass('disabled');
+                    $("#prevPage").removeClass('disabled');
+                }
+                
                 $(".resultContent").html(html);
             }
         }
