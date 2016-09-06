@@ -81,8 +81,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Alt text for the background image"
                                 fieldLabel="Background Alt Text"
-                                name="./backgroundalttext"
-                                required="true"/>
+                                name="./backgroundalttext"/>
                         </items>
                     </backgroundinfo>
                     <mainimageinfo
