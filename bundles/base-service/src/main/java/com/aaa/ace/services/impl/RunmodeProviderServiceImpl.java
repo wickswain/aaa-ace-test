@@ -15,10 +15,10 @@ import org.slf4j.LoggerFactory;
 
 import com.aaa.ace.services.RunmodeProviderService;
 
-@Component(immediate = true, metatype = true, label = "axis41-core Example Service")
+@Component(immediate = true, metatype = true, label = "AAA Runmode Provider Configuration Service")
 @Service
-@Properties({ @Property(name = "service.vendor", value = "com.aaa.ace"),
-        @Property(name = "service.description", value = "com.aaa.ace Runmode Provider OSGI service."), })
+@Properties({ @Property(name = "service.vendor", value = "com.aaa.ace.services"),
+        @Property(name = "service.description", value = "com.aaa.ace.services Runmode Provider OSGI service.") })
 public class RunmodeProviderServiceImpl implements RunmodeProviderService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

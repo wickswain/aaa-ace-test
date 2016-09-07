@@ -1,16 +1,14 @@
 package com.aaa.ace.sightly.providers;
 
 import org.apache.sling.api.resource.Resource;
-
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
  * This sightly provider is used to get the child resource properties of current
  * resource.
  *
  */
-@SuppressWarnings("deprecation")
-public class ChildResourceProvider extends WCMUse {
+public class ChildResourceProvider extends WCMUsePojo {
 
     /**
      * child resource variable.

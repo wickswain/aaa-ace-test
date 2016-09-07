@@ -1,0 +1,36 @@
+<!--/*
+
+    ARTICLE PAGE
+    ------------------------------
+    Renders the content resource using the parsys
+
+*/-->
+
+<!-- Page Container
+============================================= -->
+<div id="page-container">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+            <sly data-sly-resource="${ @path='content-par', resourceType='wcm/foundation/components/parsys'}" />
+        </div>
+
+        <div class="col-md-1"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-7">
+            <sly data-sly-resource="${ @path='left-content-par', resourceType='wcm/foundation/components/parsys'}" />
+        </div>
+
+        <div class="col-md-3">
+            <sly data-sly-resource="${ @path='right-content-par', resourceType='wcm/foundation/components/parsys'}" />
+        </div>
+
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<!-- #page-container ends -->

@@ -8,7 +8,7 @@
 
 */-->
 
-<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.image}"
+<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.mainimage || properties.bgColor}"
      class="single-column component-min-h"
      style="background-color:${properties.bgColor @ context='styleToken'};
             background-image:url('${properties.backgroundImage @ context='uri'}');"
@@ -23,10 +23,10 @@
                  style="color:${properties.bodyTextFontColor @ context='styleToken'};">
                 <p data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}"></p>
             </div>
-            <div class="image-block">
-                <img src="${properties.image}" alt="${properties.mainalttext}" title="single column image" class="img-responsive">
+            <div class="image-block" data-sly-test="${properties.mainalttext && properties.mainimage}">
+                <img src="${properties.mainimage}" alt="${properties.mainalttext}" title="single column image" class="img-responsive">
             </div>
-    </div>
+        </div>
     </div>
 </div>
 
