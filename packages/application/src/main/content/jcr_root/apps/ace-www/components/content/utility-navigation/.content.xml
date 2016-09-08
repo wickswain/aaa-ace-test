@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="There will be one utility navigation for all pages across AAA site, regardless of the club/region. Logo will be regional based on the region/club."
+    jcr:primaryType="cq:Component"
+    jcr:title="Utility Navigation"
+    componentGroup=".hidden"/>
