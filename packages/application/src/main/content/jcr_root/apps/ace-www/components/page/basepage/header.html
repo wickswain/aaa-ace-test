@@ -9,6 +9,11 @@
 <!-- Header
 ============================================= -->
 <header id="page-header">
-    <sly data-sly-resource="${ @path='header-par', resourceType='wcm/foundation/components/parsys'}" />
+    <div class="header-section">
+        <div class="container-fluid search-header-bar">
+            <sly data-sly-resource="${ @path='utility-nav-par', resourceType='/apps/ace-www/components/content/utility-navigation'}" />
+            
+        </div>
+    </div>
 </header>
 <!-- #header ends -->
