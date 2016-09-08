@@ -9,6 +9,12 @@
 <!-- Header
 ============================================= -->
 <header id="page-header">
-    <sly data-sly-resource="${ @path='global-nav-par', resourceType='/apps/ace-www/components/content/global-navigation'}" />
+    
+    <div class="header-section">
+        <div class="container-fluid search-header-bar">
+            <sly data-sly-resource="${ @path='utility-nav-par', resourceType='/apps/ace-www/components/content/utility-navigation'}" />
+            <sly data-sly-resource="${ @path='global-nav-par', resourceType='/apps/ace-www/components/content/global-navigation'}" />
+        </div>
+    </div>
 </header>
 <!-- #header ends -->
