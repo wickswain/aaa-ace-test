@@ -15,8 +15,10 @@
     <div class="horizontal-space icon-image"> <img src="${properties.image}" title="CompI-icon-1" alt="${properties.iconalttext}" class="img-responsive"> </div>
     <div class="icon-title  roboto-medium font-f">
         <h2 title="${properties.icontitle}" >${properties.icontitle}</h2>
-        <p title="${properties.icontext}" >${properties.icontext}</p>
     </div>
+
+    <p data-sly-test="${properties.icontext}" class="icon-title font-h" title="${properties.icontext}" >${properties.icontext}</p>
+
     <div class="icon-link font-h">
         <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
     </div>
