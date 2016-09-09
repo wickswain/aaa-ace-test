@@ -47,41 +47,38 @@
             <div class="row row-eq-height">
 
                 <div class="col-xs-12 col-sm-6 membership-details">
-                    <div class="membership-pay-info">
-                        <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
-
-                        <div class="saving-item">
-                            <div class="col-sm-7 roboto-light font-g">
-                                <h2>${properties.yearlySavingsText}</h2>
-                            </div>
-                            <div class="col-sm-5 roboto-medium font-b text-right">${properties.yearlySavings}</div>
-                        </div>
-
-                        <div class="saving-item">
-                            <div class="col-sm-7 roboto-light font-g">
-                                <h2>${properties.aaaMembershipText}</h2>
-                            </div>
-                            <div class="col-sm-5 roboto-medium font-b text-right">-${properties.aaasMembershipCharge}</div>
-                        </div>
-
-                        <hr>
-                        <div class="clearfix"></div>
- 						<div class="total-price-block">
-                            <div class="col-sm-6">
-                                <div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
-                            </div>
-    
-                            <div class="col-sm-6 price-total MC-horizontal-space text-right">&#36;${properties.totalSavings}</div>
-                            </div>
-                            <div class="clearfix"></div>
-                   		 </div>
+	                    <div class="membership-pay-info">
+		                        <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
+		                        <div class="saving-item">
+		                            <div class="col-sm-7 roboto-light font-g">
+		                                <h2>${properties.yearlySavingsText}</h2>
+		                            </div>
+		                            <div class="col-sm-5 roboto-medium font-b text-right">${properties.yearlySavings}</div>
+		                        </div>
+		
+		                        <div class="saving-item">
+		                            <div class="col-sm-7 roboto-light font-g">
+		                                <h2>${properties.aaaMembershipText}</h2>
+		                            </div>
+		                            <div class="col-sm-5 roboto-medium font-b text-right">-${properties.aaasMembershipCharge}</div>
+		                        </div>
+		                        <hr>
+		                        <div class="clearfix"></div>
+		 						<div class="total-price-block">
+		                            <div class="col-sm-6">
+		                                <div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
+		                            </div>    
+		                            <div class="col-sm-6 price-total MC-horizontal-space text-right">&#36;${properties.totalSavings}</div>
+		                        </div>
+		                        <div class="clearfix"></div>
+	                   </div>
                     
-                    <div class="horizontal-space"></div>
+                       <div class="horizontal-space"></div>
                     
-                    <div class="col-sm-12 img-membership">
-                        <img src=${properties.fileReference} title=${properties.altText}
-                             alt=${properties.altText} />
-                    </div>
+	                    <div class="col-sm-12 img-membership">
+	                        <img src=${properties.fileReference} title=${properties.altText}
+	                             alt=${properties.altText} />
+	                    </div>
                 </div>
                 
                 <div class="col-xs-12 col-sm-8 col-md-6 block-center">
@@ -89,7 +86,7 @@
                         <div class="membership-discount-details">
                             <span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
                             
-                            <div data-sly-list.child="${mcprovider.childResource.listChildren}">
+                            <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
                                 <div class="item">
                                     <div class="table-block">
                                         <div class="services-title roboto-medium font-g table-cell"
@@ -109,11 +106,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </sly>
                         </div>
                     </div>
-                </div>
-                
+                </div>                
             </div>
         </div>
     </div>
