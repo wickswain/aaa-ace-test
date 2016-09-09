@@ -61,12 +61,35 @@
             <subsuperscript
                 jcr:primaryType="nt:unstructured"
                 features="*"/>
+            <misctools
+                jcr:primaryType="nt:unstructured"
+                features="specialchars">
+                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                    <chars jcr:primaryType="nt:unstructured">
+                        <copyright
+                            jcr:primaryType="nt:unstructured"
+                            entity="&amp;#169;"/>
+                        <trademark
+                            jcr:primaryType="nt:unstructured"
+                            entity="&amp;#8482;"/>
+                        <registered
+                            jcr:primaryType="nt:unstructured"
+                            entity="&amp;#174;"/>
+                        <em-dash
+                            jcr:primaryType="nt:unstructured"
+                            entity="&amp;#8212"/>
+                        <en-dash
+                            jcr:primaryType="nt:unstructured"
+                            entity="&amp;#8211"/>
+                    </chars>
+                </specialCharsConfig>
+            </misctools>
         </rtePlugins>
         <uiSettings jcr:primaryType="nt:unstructured">
             <cui jcr:primaryType="nt:unstructured">
                 <inline
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
@@ -76,7 +99,7 @@
                 </inline>
                 <fullscreen
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
