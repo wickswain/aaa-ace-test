@@ -5,4 +5,5 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="calif"/>
     <global-footer/>
+    <global-header/>
 </jcr:root>
