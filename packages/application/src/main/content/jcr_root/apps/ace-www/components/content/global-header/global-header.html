@@ -1,9 +1,9 @@
 <!--/*
 
-    Utility Navigation Component
+    Global Header Component
     --------------------------------------------------
 
-    There will be one utility navigation for all pages across AAA site, regardless of the club/region.
+    There will be one global header for all pages across AAA site, regardless of the club/region.
     Logo will be regional based on the region/club.
 
 */-->
@@ -22,12 +22,12 @@
 		@ link=currentStyle.searchPagePath}" />
 <!-- #sightly-global-objects-declaration end -->
 
-<!-- Utility Navigation component
+<!-- Global Hader component
 ============================================= -->
 <div class="row top-header" id="top-header">
     <div class="col-md-5">
         <ul class="list-inline">
-            <li>
+            <li class="roboto-regular font-e">
                 <img data-sly-test="${currentStyle.fileReference}"
                      src="${currentStyle.fileReference}" title="${currentStyle.alt}" 
                      alt="${currentStyle.alt}" class="img-responsive"/>
@@ -53,7 +53,7 @@
     
     <div class="col-md-5 text-right">
         <ul class="list-inline">
-            <li>
+            <li class="roboto-regular font-e">
                 <a data-sly-test="${currentStyle.findabranchLinkLabel}"
                    data-sly-text="${currentStyle.findabranchLinkLabel}" 
                    href="${findaBranch.url}">
@@ -83,4 +83,4 @@
         </ul>
     </div>
 </div>
-<!-- #utility-navigation-component end -->
+<!-- #global-header-component end -->
