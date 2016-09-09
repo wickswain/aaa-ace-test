@@ -82,7 +82,7 @@
                                         title="Upload Image Asset"
                                         uploadUrl="${suffix.path}"
                                         useHTML5="{Boolean}true"/>
-                                    <alttext
+                                    <articleimagealttext
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                                         defaultValue="Article"
@@ -90,7 +90,57 @@
                                         fieldLabel="Alt Text"
                                         name="./articleImageAltText"
                                         required="{Boolean}true"
-                                        value="Article Page Image"/>
+                                        value="Article Page Image Alt Text"/>
+                                   <articlelogo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        fieldDescription="Please drag an article logo image. This will be displayed on article header before authorname."
+                                        fieldLabel="Article Logo"
+                                        fileReferenceParameter="./articleLogoImage"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        required="{Boolean}false"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <logoalttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Article logo image"
+                                        fieldDescription="Please enter alt text for article logo image"
+                                        fieldLabel="Alt Text"
+                                        name="./articleLogoAltText"
+                                        required="{Boolean}true"
+                                        value="Article Logo Alt Text"/>
+                                    <authorname
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Author Name"
+                                        fieldDescription="Please enter name of author for this article."
+                                        fieldLabel="Author Name"
+                                        name="./authorName"
+                                        required="{Boolean}true"
+                                        value=""/>
+                                    <pubicationdate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/ace-www/granite/widgets/datepicker"
+                                        fieldDescription="Please article publication date, this will be used to get latest articles in pages like editorial card, article hub etc. "
+                                        fieldLabel="Publication Date"
+                                        name="./publicationDate"
+                                        required="{Boolean}true"
+                                        value=""
+                                        storedFormat="LL"
+                                        displayedFormat="LL"
+                                        emptyText="September 09, 2016" />
+                                    <articlehubpath
+				                        jcr:primaryType="nt:unstructured"
+				                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+				                        fieldDescription="Please select article hub path, this will be used to redirect visitor when he clicks on author name."
+				                        fieldLabel="Article hub Path"
+				                        rootPath="/content/ace-www"
+				                        name="./articleHubLink"/>    
                                 </items>
                             </column>
                         </items>

@@ -1,0 +1,35 @@
+<!--/*
+
+Article Header Component
+==============================
+
+This component renders a article header means title, logo, author name and date.
+The properties of the component are part of page properties so no dialog is provided.
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<sly data-sly-test.isAuthored="${pageProperties.authorName && pageProperties.publicationDate}"></sly>
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
+		data-emptytext="Author Aritcle properties under page properties to render article header"
+     	class="cq-placeholder text-center">
+</div>
+<!-- #placeholder-content end -->
+
+ <!--/* Article Header Stand Alone */-->
+ <div class="article-header roboto-medium font-a" data-sly-test="${isAuthored}">
+   <div class="article-info horizontal-space">
+   	<ul class="list-inline font-e">
+   		<li data-sly-test="${pageProperties.articleLogoImage}"><img src="${pageProperties.articleLogoImage}" alt="${pageProperties.articleLogoAltText}" height="20px" /></li>
+   		<li>By <a href="${pageProperties.articleHubLink}.html?author=${pageProperties.authorName}">${pageProperties.authorName}</a></li>
+   		<li><i class="glyphicon glyphicon-time"></i>
+   			<span class="date">${pageProperties.publicationDate}</span>
+  		</li>
+  	</ul>
+  </div>
+  <h2 class="" title="${pageProperties.jcr:title}">${pageProperties.pageTitle}</h2> 
+ </div>
+
+<!--/* Article Header Stand Alone End */-->
