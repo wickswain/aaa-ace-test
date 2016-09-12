@@ -247,15 +247,15 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <small
                                         jcr:primaryType="nt:unstructured"
-                                        text="Small"
+                                        text="Small (50%)"
                                         value="small"/>
                                     <medium
                                         jcr:primaryType="nt:unstructured"
-                                        text="Medium"
+                                        text="Medium (75%)"
                                         value="medium"/>
                                     <full
                                         jcr:primaryType="nt:unstructured"
-                                        text="Full"
+                                        text="Full (100%)"
                                         value="full"/>
                                 </items>
                             </header-size>
