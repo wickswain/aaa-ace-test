@@ -2,5 +2,7 @@
 <workspaceFilter version="1.0">
     <filter root="/content/ace-www" />
     <filter root="/content/dam/aaa" />
+    <filter root="/etc/cloudsettings/default/contexthub" />
 	<filter root="/etc/designs/ace-www" />
+    <filter root="/etc/segmentation/contexthub" />
 </workspaceFilter>
