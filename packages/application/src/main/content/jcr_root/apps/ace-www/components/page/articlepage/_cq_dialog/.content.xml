@@ -8,7 +8,7 @@
                     <articlepage
                         cq:showOnCreate="{Boolean}false"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Article Page Properties"
+                        jcr:title="Article Page"
                         sling:resourceType="granite/ui/components/foundation/section">
                         <layout
                             jcr:primaryType="nt:unstructured"
@@ -91,6 +91,52 @@
                                         name="./articleImageAltText"
                                         required="{Boolean}true"
                                         value="Article Page Image Alt Text"/>
+                                </items>
+                            </column>
+                        </items>
+                    </articlepage>
+                    <articleheader
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Heading"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                   <pubicationdate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/ace-www/granite/widgets/datepicker"
+                                        fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
+                                        fieldLabel="Article Issue Date"
+                                        name="./issueDate"
+                                        required="{Boolean}true"
+                                        storedFormat="LL"
+                                        displayedFormat="LL"
+                                        emptyText="September 09, 2016" />
+                                    <articleTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue=""
+                                        fieldDescription="Please enter article title"
+                                        fieldLabel="Article Title"
+                                        name="./articleTitle"
+                                        required="{Boolean}true"
+                                        value=""/>
+                                   	<authorname
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Author Name"
+                                        fieldDescription="Please enter name of author for this article."
+                                        fieldLabel="Author Name"
+                                        name="./authorName"
+                                        required="{Boolean}true"
+                                        value=""/>
                                    <articlelogo
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/fileupload"
@@ -114,37 +160,16 @@
                                         name="./articleLogoAltText"
                                         required="{Boolean}true"
                                         value="Article Logo Alt Text"/>
-                                    <authorname
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        defaultValue="Author Name"
-                                        fieldDescription="Please enter name of author for this article."
-                                        fieldLabel="Author Name"
-                                        name="./authorName"
-                                        required="{Boolean}true"
-                                        value=""/>
-                                    <pubicationdate
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="/apps/ace-www/granite/widgets/datepicker"
-                                        fieldDescription="Please article publication date, this will be used to get latest articles in pages like editorial card, article hub etc. "
-                                        fieldLabel="Publication Date"
-                                        name="./publicationDate"
-                                        required="{Boolean}true"
-                                        value=""
-                                        storedFormat="LL"
-                                        displayedFormat="LL"
-                                        emptyText="September 09, 2016" />
-                                    <articlehubpath
+                                   	<jump-link-id
 				                        jcr:primaryType="nt:unstructured"
-				                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-				                        fieldDescription="Please select article hub path, this will be used to redirect visitor when he clicks on author name."
-				                        fieldLabel="Article hub Path"
-				                        rootPath="/content/ace-www"
-				                        name="./articleHubLink"/>    
+				                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+				                        fieldDescription="Please enter Jump Link Id"
+				                        fieldLabel="Jump Link Id"
+				                        name="./jumpLinkId"/>    
                                 </items>
                             </column>
                         </items>
-                    </articlepage>
+                    </articleheader>
                 </items>
             </tabs>
         </items>

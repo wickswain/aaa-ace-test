@@ -10,7 +10,7 @@ The properties of the component are part of page properties so no dialog is prov
 
 <!-- Placeholder Content
 ============================================= -->
-<sly data-sly-test.isAuthored="${pageProperties.authorName && pageProperties.publicationDate}"></sly>
+<sly data-sly-test.isAuthored="${pageProperties.authorName && pageProperties.issueDate}"></sly>
 
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
 		data-emptytext="Author Aritcle properties under page properties to render article header"
@@ -19,17 +19,17 @@ The properties of the component are part of page properties so no dialog is prov
 <!-- #placeholder-content end -->
 
  <!--/* Article Header Stand Alone */-->
- <div class="article-header roboto-medium font-a" data-sly-test="${isAuthored}">
+ <div id="${properties.jumpLinkId}" class="article-header roboto-medium font-a" data-sly-test="${isAuthored}">
    <div class="article-info horizontal-space">
    	<ul class="list-inline font-e">
    		<li data-sly-test="${pageProperties.articleLogoImage}"><img src="${pageProperties.articleLogoImage}" alt="${pageProperties.articleLogoAltText}" height="20px" /></li>
    		<li>By ${pageProperties.authorName}</li>
    		<li><i class="glyphicon glyphicon-time"></i>
-   			<span class="date">${pageProperties.publicationDate}</span>
+   			<span class="date">${pageProperties.issueDate}</span>
   		</li>
   	</ul>
   </div>
-  <h2 class="" title="${pageProperties.pageTitle}">${pageProperties.pageTitle}</h2> 
+  <h2 class="" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
  </div>
 
 <!--/* Article Header Stand Alone End */-->
