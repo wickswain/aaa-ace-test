@@ -8,29 +8,41 @@
 
 <!-- Page Container
 ============================================= -->
-<div id="page-container">
+<div id="page-container" class="container-fluid">
+	<!-- Article Hero -->
     <div class="row">
-        <div class="col-md-1"></div>
+    	<div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <!--/* Hardcoding article Hero to not confuse the author with two parsys one for image full width
+             another for article header and text with 1 column left on each side. */-->
+             <sly data-sly-resource="${ @path='article-hero', resourceType='/apps/ace-www/components/content/article-hero'}" />
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
 
-        <div class="col-md-10">
+	<!--/* section to support parsys with one column left on each side */-->
+    <div class="row">
+    	<div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <!--/* Parsys for Article Hero component */-->
             <sly data-sly-resource="${ @path='content-par', resourceType='wcm/foundation/components/parsys'}" />
         </div>
-
-        <div class="col-md-1"></div>
+        <div class="col-sm-1"></div>
     </div>
     
+    
     <div class="row">
-        <div class="col-md-1"></div>
-
-        <div class="col-md-7">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+            <!--/* Article Header Stand Alone or Article Text*/-->
             <sly data-sly-resource="${ @path='left-content-par', resourceType='wcm/foundation/components/parsys'}" />
         </div>
-
-        <div class="col-md-3">
-            <sly data-sly-resource="${ @path='right-content-par', resourceType='wcm/foundation/components/parsys'}" />
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+        	<!--/* Social media and/or vertical editorial card */-->
+			<sly data-sly-resource="${ @path='right-content-par', resourceType='wcm/foundation/components/parsys'}" />
         </div>
-
-        <div class="col-md-1"></div>
+        <div class="col-sm-1"></div>
     </div>
 </div>
 <!-- #page-container ends -->

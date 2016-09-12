@@ -23,13 +23,13 @@ The properties of the component are part of page properties so no dialog is prov
    <div class="article-info horizontal-space">
    	<ul class="list-inline font-e">
    		<li data-sly-test="${pageProperties.articleLogoImage}"><img src="${pageProperties.articleLogoImage}" alt="${pageProperties.articleLogoAltText}" height="20px" /></li>
-   		<li>By <a href="${pageProperties.articleHubLink}.html?author=${pageProperties.authorName}">${pageProperties.authorName}</a></li>
+   		<li>By ${pageProperties.authorName}</li>
    		<li><i class="glyphicon glyphicon-time"></i>
    			<span class="date">${pageProperties.publicationDate}</span>
   		</li>
   	</ul>
   </div>
-  <h2 class="" title="${pageProperties.jcr:title}">${pageProperties.pageTitle}</h2> 
+  <h2 class="" title="${pageProperties.pageTitle}">${pageProperties.pageTitle}</h2> 
  </div>
 
 <!--/* Article Header Stand Alone End */-->
