@@ -4,9 +4,10 @@
     jcr:lastModifiedBy="admin"
     jcr:mixinTypes="[mix:lastModified,sling:HierarchyNode]"
     jcr:primaryType="nt:unstructured"
-    jcr:title="My Account Information"
+    jcr:title="User Information"
     sling:resourceType="/libs/granite/contexthub/cloudsettings/components/uimode"
     enabled="{Boolean}true"
     icon="coral-Icon--user">
     <my_account_module/>
+    <resolvedsegments/>
 </jcr:root>

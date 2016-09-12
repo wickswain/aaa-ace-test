@@ -4,7 +4,7 @@
     jcr:lastModifiedBy="admin"
     jcr:mixinTypes="[sling:HierarchyNode]"
     jcr:primaryType="nt:unstructured"
-    jcr:title="My Account Information"
+    jcr:title="MyAccount Information"
     sling:resourceType="/libs/granite/contexthub/cloudsettings/components/baseuimodule"
     enabled="{Boolean}true"
     moduleType="contexthub.myaccount"/>
