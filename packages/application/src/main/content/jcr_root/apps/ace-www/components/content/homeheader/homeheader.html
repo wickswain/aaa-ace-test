@@ -20,17 +20,19 @@
 	alt="Home Header Component" />
             <div id="${properties.jumpLinkId}" class="home-header ${wcmmode.disabled ? properties.headerSize : ''} text-center" data-sly-test="${properties.title}">
                 <div class="content">
-                    	<div class="margin-b roboto-medium font-a"> <span class="">${properties.title}</span></div>
-                    			<div class="horizontal-space roboto-light font-g">
-                                    <sly data-sly-test="${properties.rteFlag}"
-                                         data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}"
-                                         data-sly-unwrap="${wcmmode.disabled}"/>					
-                        </div> 
-                        <div data-sly-test="${properties.ctaFlag}"
-                                 data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
-                                 data-sly-unwrap="${wcmmode.disabled}">
-                        </div>  
-				</div>
+                    	<div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'}">
+                            <div class="margin-b roboto-medium font-a"> <span class="">${properties.title}</span></div>
+                                    <div class="horizontal-space roboto-light font-g">
+                                        <sly data-sly-test="${properties.rteFlag}"
+                                             data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}"
+                                             data-sly-unwrap="${wcmmode.disabled}"/>					
+                                    </div> 
+                                    <div data-sly-test="${properties.ctaFlag}"
+                                             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
+                                             data-sly-unwrap="${wcmmode.disabled}">
+                                    </div>  
+                            </div>
+                        </div>
 
                      <div data-sly-test="${properties.backgroundShade == 'white'}"
                                  data-sly-test.opacity="${'rgba(255,255,255,{0})' @ format=[properties.opacity]}"
