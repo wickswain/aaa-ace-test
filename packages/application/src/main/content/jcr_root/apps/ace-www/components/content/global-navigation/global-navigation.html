@@ -12,9 +12,6 @@
 ============================================= -->
 
 <sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider" />
-<sly data-sly-use.homePagePath="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
-		@ link=navigationProvider.homePage.path}" />
-
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
@@ -33,14 +30,12 @@
                 <sly data-sly-list="${navigationProvider.navigationVOs}">
                     <li>
                         <a href="javascript:void(0);" id="nav-${itemList.index}" onclick="manageNavContent(this)">
-                            ${item.currentpage.properties.navTitle ?
-					item.currentpage.properties.navTitle : item.currentpage.title}
+                            ${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}
                         </a>
                     </li>
                 </sly>
                 <li>
-                    <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
-                        Join
+                    <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join
                     </a> 
                 </li>
             </ul>
@@ -56,46 +51,41 @@
                 <div class="text-center">
                     <ul class="list-inline">
                         <sly data-sly-list.child1="${item.navigList}">
+                            <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
                             <li>
-                                <a data-sly-test="${child1.currentpage.properties.pageType == 'tile'}" class="tile-card" href="#">
-                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" alt="${child1.currentpage.properties.tileAltText}" title="${child1.currentpage.properties.tileAltText}"> <span class="tile-title">${child1.currentpage.properties.navTitle ?
-                            child1.currentpage.properties.navTitle : child1.currentpage.title}</span>
+                                <a data-sly-test="${child1.currentpage.properties.pageType == 'tile'}" class="tile-card" 
+                                	href="${child1PagePath.url ? child1PagePath.url : ''  @ context='uri'}"
+                                	target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" 
+                                    	alt="${child1.currentpage.properties.tileIconAltText}" title="${child1.currentpage.properties.tileIconAltText}"> 
+                                    	<span class="tile-title">
+                                    		${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
+                                    	</span>
                                 </a>
                             </li>
                         </sly>
                     </ul>
                 </div>
             </div>
-
-            <div class="drawers-tiles-list">
+			<div class="drawers-tiles-list">
                 <div class="container">
                     <div class="drawers-container row">
                         <sly data-sly-list.child1="${item.navigList}">
                             <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}"  class="tiles-list border-manage">
-                                <h3 class="text-uppercase">${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}</h3>
+                                <h3 class="text-uppercase">
+                                	${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}
+                                </h3>
                                 <sly data-sly-list.child2="${child1.navigList}">
-                                    <li><a href="#">${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}</a></li>
+                                	<sly data-sly-use.child2PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child2.currentpage.properties.linkURL}" />
+                                    <li>
+                                        <a href="${child2PagePath.url ? child2PagePath.url : ''  @ context='uri'}"
+                                       		target="${child2.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+                                        	${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}
+                                        </a>
+                                    </li>
                                 </sly>
                             </ul>
                         </sly>
-                    </div>
-                </div>
-            </div>
-            <!-- Drawers bootom -->
-            <div class="bootom-tiles">
-                <div class="bottom-stick">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="bottom-tile roboto-light font-g">
-                                    <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
-                                </div> 
-                                <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue btn-reversed">${child2.currentpage.properties.bottomCTALabel}
-                                </a> 
-                            </div>
-                            <div class="col-md-8 stick-image"><img src="${child2.currentpage.properties.bottomImage}" class="img-responsive"> 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
