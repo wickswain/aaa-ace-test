@@ -203,7 +203,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                 fieldDescription="Please select the checkbox to enable the rte."
                                 name="./rteFlag"
-                                text="Enable RTE?"
+                                text="Enable RTE?(For Text/Body copy)"
                                 value="{Boolean}true"/>
                             <rteflag_x0040_delete
                                 jcr:primaryType="nt:unstructured"
@@ -241,8 +241,8 @@
                             <header-size
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Select home header size"
-                                fieldLabel="Home Header Size"
+                                fieldDescription="Select home header height"
+                                fieldLabel="Home Header Height"
                                 name="./headerSize">
                                 <items jcr:primaryType="nt:unstructured">
                                     <small
