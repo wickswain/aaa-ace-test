@@ -1,0 +1,115 @@
+<!--/*
+
+    Global Header Component
+    --------------------------------------------------
+
+    There will be one global header for all pages across AAA site, regardless of the club/region.
+    Logo will be regional based on the region/club.
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.requestRoadSide="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+		@ url = currentStyle.requestRoadsideLinkTo}"/>
+<sly data-sly-use.contactUS="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+		@ url = currentStyle.contactusLinkTo}"/>
+<sly data-sly-use.findaBranch="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+		@ url = currentStyle.findabranchLinkTo}"/>
+<sly data-sly-use.signin="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+		@ url = currentStyle.signinLinkTo}"/>
+<sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
+		@ link = currentStyle.searchPagePath}" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Global Hader component
+============================================= -->
+<div id="global-header">
+    <div class="col-xs-4 col-md-5 text-right col-md-push-7">
+        <span class="menu">
+            <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i> Menu
+        </span>
+        <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
+            <li id="nav-links">
+                <a data-sly-test="${currentStyle.findabranchLinkLabel}"
+                   data-sly-text="${currentStyle.findabranchLinkLabel}" 
+                   href="${findaBranch.url}">
+                </a>
+                
+                <span data-sly-test="${currentStyle.findabranchLinkLabel}"
+                      class="pipe">|</span>
+                
+                <a data-sly-test="${currentStyle.signinLinkLabel}"
+                   href="${signin.url}" id="user-login">
+                    <img data-sly-test="${currentStyle.icon2Path}"
+                         src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
+                         alt="${currentStyle.icon2Alt}" class="lock-icon img-responsive"/>
+                    ${currentStyle.signinLinkLabel}
+                </a>
+                
+                <!-- /* TODO: Profile section changes need to include */ -->
+                
+            </li>
+            
+            <li>
+                <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-search " aria-hidden="true"></i> ${currentStyle.searchLabel}
+                    </span>
+                </span>
+            </li>
+        </ul>
+        
+        <div class="expend-searchbar" style="width:100px; opacity:0; ">
+            <form action="${searchPage.linkURL @ context='uri'}" role="search">
+                <div class="input-group search-bar">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                    </span>
+                    
+                    <input type="search" name="q" id="q" placeholder="${currentStyle.searchPlaceholderLabel}" class="form-control font-h" />
+                    
+                    <span class="input-group-addon">
+                        <i class="close-icon">+</i>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="text-center col-xs-4 col-md-2">
+        <div class="brand">
+            <sly data-sly-resource="${ @path='global-header-logo', resourceType='/apps/ace-www/components/content/reference'}" />
+        </div>
+    </div>
+    
+    <div class="col-xs-4 col-md-5 col-md-pull-7">
+        <ul class="nav-list-inline font-h dropdown roadside-block">
+            <li>
+                <a data-sly-test="${currentStyle.requestRoadsideLinkLabel}" 
+                   href="${requestRoadSide.url}"
+                   class="truck-icon">
+                    <img data-sly-test="${currentStyle.icon1Path}"
+                         src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
+                         alt="${currentStyle.icon1Alt}" class="img-responsive"/>
+                    <span data-sly-text="${currentStyle.requestRoadsideLinkLabel}"
+                          class="text-roadside">
+                    </span>
+                </a>
+                
+                <span data-sly-test="${currentStyle.requestRoadsideLinkLabel}"
+                      class="pipe hidden-xs hidden-sm">|
+                </span>
+                
+                <a data-sly-test="${currentStyle.contactusLinkLabel}"
+                   data-sly-text="${currentStyle.contactusLinkLabel}" 
+                   href="${contactUS.url}"
+                   class="hidden-xs hidden-sm">
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="clearfix"></div>
+</div>
+<!-- #global-header-component end -->
