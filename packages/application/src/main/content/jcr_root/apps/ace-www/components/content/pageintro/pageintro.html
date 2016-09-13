@@ -28,12 +28,16 @@
                  data-sly-text="${currentPage.properties.navTitle ? currentPage.properties.navTitle : currentPage.title}"/>
         </div>
 
-        <div data-sly-test="${properties.headline}" data-sly-text="${properties.headline}"
+        <div class="horizontal-space roboto-medium font-a">
+         	<sly data-sly-test="${properties.headLineRTE}" data-sly-resource="${'headline-text' @ resourceType = '/apps/ace-www/components/content/rte'}" />					
+		</div>
+
+        <!-- <div data-sly-test="${properties.headline}" data-sly-text="${properties.headline}"
              class="horizontal-space roboto-medium font-a">
-        </div>
+        </div> -->
 
         <div class="roboto-light font-g">
-            <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
+            <sly data-sly-test="${properties.bodyCopyRTE}" data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" />
         </div>
 
         <div data-sly-test="${properties.ctaFlag}"

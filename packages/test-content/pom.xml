@@ -42,9 +42,15 @@
 						<filter>
                             <root>/content/dam/aaa</root>
                         </filter>
+                        <filter>
+                            <root>/etc/cloudsettings/default/contexthub</root>
+                        </filter>
 						<filter>
 							<root>/etc/designs/ace-www</root>
 						</filter>
+                        <filter>
+                            <root>/etc/segmentation/contexthub</root>
+                        </filter>
 					</filters>
 				</configuration>
 			</plugin>
