@@ -6,22 +6,8 @@
     Required Fields:
     1. See https://axis41.atlassian.net/wiki/display/AAA/Component+-+Services+Cards
 
-
-
-<!--/*
-<div id="${properties.jumpLinkId}" class="icon-row" data-sly-test.hasContent="${properties.title}" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
-    <div class="container horizontal-component-space"
-         data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}">
-        <div class="text-center">
-            <div class="horizontal-space2 roboto-light font-b">
-                <h2 title="Explore articles">${properties.title}</h2> </div>
-        </div>
-        <ul data-sly-list.icon="${iconsprovider.icons}"class="list-inline icon-list row">
-            <sly data-sly-resource="${icon.path @ resourceType=icon.resourceType}"></sly>
-        </ul>
-    </div>
-</div>
 */-->
+
 
 <div class="icon-sc-row">
     <div class="container horizontal-component-space">
@@ -30,35 +16,12 @@
             <div class="top-btm-space-130 roboto-medium font-b">
                 <h1 title="Explore Services">Bundle policy coverage for your important "little" things.</h1> </div>
         </div>
-        <!-- List of the cards start here -->
-        <ul class="list-inline icon-sc-list row purple">
-            <li class="col-md-4 col-sm-4  col-xs-12 white">
-                <div class="horizontal-space icon-sc-image"> <img src="images/75x65-car-insurance-temp.png" title="Car-Insurance-Icon" alt="Car Insurance Icon"> </div>
-                <div class="icon-sc-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Auto Insurance</h2> </div>
-                <p class="font-h">Lorem ipsum dolor sit amet, con secteur adipiscing elit. Etiam eu nulla et magna laoreet scelert.</p>
-                <div class="icon-sc-link font-h">
-                    <a href="#" title="More" class="link-btn link-lg ">More</a>
-                </div>
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-12 white">
-                <div class="horizontal-space icon-sc-image"> <img src="images/75x65-home-insurance-temp.png" title="Home-Insurance-Icon" alt="Home Insurance Icon"> </div>
-                <div class="icon-sc-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Home Insurance</h2> </div>
-                <p class="font-h">Lorem ipsum dolor sit amet, con secteur adipiscing elit. Etiam eu nulla et magna laoreet scelert.</p>
-                <div class="icon-sc-link font-h">
-                    <a href="#" title="More" class="link-btn link-lg ">More</a>
-                </div>
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-12 white">
-                <div class="horizontal-space icon-sc-image"> <img src="images/75x65-life-insurance-temp.png" title="Life-Insurance-Icon" alt="Life Insurance Icon"> </div>
-                <div class="icon-sc-title  roboto-medium font-f">
-                    <h2 title="Food & Drink">Life Insurance</h2> </div>
-                <p class="font-h">Lorem ipsum dolor sit amet, con secteur adipiscing elit. Etiam eu nulla et magna laoreet scelert.</p>
-                <div class="icon-sc-link font-h">
-                    <a href="#" title="More" class="link-btn link-lg ">More</a>
-                </div>
-            </li>
+        <!-- List of the service cards start here -->
+        <ul class="list-inline icon-sc-list row" data-sly-list="${[1,2,3]}">
+            <li class="col-md-4 col-sm-4  col-xs-12 white" data-sly-resource="${ @path='servicecard', resourceType='/apps/ace-www/components/content/services-cards/service-card'}"></li>
+            <li class="col-md-4 col-sm-4  col-xs-12 white" data-sly-resource="${ @path='servicecard', resourceType='/apps/ace-www/components/content/services-cards/service-card'}"></li>
+            <li class="col-md-4 col-sm-4  col-xs-12 white" data-sly-resource="${ @path='servicecard', resourceType='/apps/ace-www/components/content/services-cards/service-card'}"></li>
+
         </ul>
     </div>
 </div>
