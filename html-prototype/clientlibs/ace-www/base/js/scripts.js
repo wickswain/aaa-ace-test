@@ -1,10 +1,33 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:09-September-2016
-    Version:0.5
+    Modified Date:13-September-2016
+    Version:0.6
 *****************************************/
 $(function () {
+    /*User Login dialog*/
+    $('#user-login').on('click', function () {
+        $('.user-info').show();
+        $(this).hide();
+    });
+    $('.signout a').on('click', function (e) {
+        $('.user-info').toggle();
+        $('#nav-links').removeClass('open');
+        $('#user-login').show();
+        e.preventDefault();
+    });
+    $('.search-btn').on('click', function () {
+        $('.expend-searchbar').animate({
+            opacity: '1',
+            width: '80%'
+        }, 500).prev().fadeOut();
+    });
+    $('.expend-searchbar .close-icon').parent().on('click', function () {
+        $('.expend-searchbar').animate({
+            opacity: '0',
+            width: '20%'
+        }, 500).prev().fadeIn();
+    });
     /*Fixed Header - alignment*/
     $('#page-container').css('paddingTop', $('#page-header').outerHeight());
     /*Footer Responsive script*/
@@ -34,8 +57,37 @@ $(function () {
         }, 1000, 'swing');
         e.preventDefault();
     });
+
+    /*Home Header resize*/
+    function headerResize() {
+        var winheight = $(window).height(),
+            headHeight = $('#page-header').outerHeight();
+        $('.home-header').each(function () {
+            ($(this).height() < winheight / 2 - headHeight && $(this).hasClass('small')) ? $(this).height(winheight / 2 - headHeight): false;
+            ($(this).height() < winheight / 4 * 3 - headHeight && $(this).hasClass('medium')) ? $(this).height(winheight / 4 * 3 - headHeight): false;
+            ($(this).height() < winheight - headHeight && $(this).hasClass('full')) ? $(this).height(winheight - headHeight): false;
+        });
+    }
+    headerResize();
+    /*Home Header - jump link*/
+    ($('.home-header').next().attr('id') != 'undefined') ? $('.learn-link a').attr('href', '#' + $('.home-header').parent().next().children().attr('id')): $('.learn-link a').attr('href', '#');
+    $('.home-header .learn-link a').click(function (e) {
+        var hashtag = $(this.hash),
+            $target = (hashtag != '') ? parseInt(hashtag.offset().top) : 0;
+        $('html,body').stop().animate({
+            scrollTop: $target
+        }, 1000, 'swing');
+        e.preventDefault();
+    });
+
     /*Page Scroll*/
     $(window).scroll(function () {
+        //console.log($(this).scrollTop());
+        /*Sticky Header offset*/
+        ($(this).scrollTop() >= 400) ? $('header').css({
+            'top': '-' + $('#page-header').outerHeight()
+        }): false;
+
         /*Sticky Nav scroll event*/
         ($(this).scrollTop() > scrollTop) ? $('.sticky-navbar').addClass('navbar-fixed-top'): $('.sticky-navbar').removeClass('navbar-fixed-top');
         $('.sticky-nav .dropdown-menu li > a').each(function () {
@@ -46,25 +98,6 @@ $(function () {
                 $(this).addClass('current');
             }
         });
-    });
-    /*Home Header resize*/
-    function headerResize() {
-        $('.home-header').each(function () {
-            if ($(this).height() < $(window).height() / 2 - $('#page-header').outerHeight() && $(this).hasClass('small')) $(this).height($(window).height() / 2 - $('#page-header').outerHeight());
-            if ($(this).height() < $(window).height() / 4 * 3 - $('#page-header').outerHeight() && $(this).hasClass('medium')) $(this).height($(window).height() / 4 * 3 - $('#page-header').outerHeight());
-            if ($(this).height() < $(window).height() - $('#page-header').outerHeight() && $(this).hasClass('full')) $(this).height($(window).height() - $('#page-header').outerHeight());
-        });
-    }
-    headerResize();
-    /*Home Header - jump link*/
-    $('.learn-link a').attr('href', '#' + $('.home-header').next().attr('id'));
-    $('.home-header .learn-link a').click(function (e) {
-        var hashtag = $(this.hash),
-            $target = parseInt(hashtag.offset().top);
-        $('html,body').stop().animate({
-            scrollTop: $target
-        }, 1000, 'swing');
-        e.preventDefault();
     });
     /*Responsive*/
     $(window).resize(function () {
