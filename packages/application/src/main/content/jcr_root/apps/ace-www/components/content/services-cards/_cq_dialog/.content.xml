@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Services Cards"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Title/Subheading"
+                            required="{Boolean}true"
+                            name="./title"/>
+                    <backgroundcolor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                            colorsPath="/apps/ace-www/components/content/services-cards/config/backgroundcolors"
+                            fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
+                            fieldLabel="Background Color"
+                            freestylePalette="{Boolean}true"
+                            name="./backgroundColor"/>
+                    <row-amount
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Select the amount of rows you want"
+                            fieldLabel="Number of rows"
+                            name="./rowamount">
+                        <items jcr:primaryType="nt:unstructured">
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="{Long}3"/>
+                        </items>
+                    </row-amount>
+                    <jump-link-id
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldDescription="Please enter Jump Link Id"
+                            fieldLabel="Jump Link Id"
+                            name="./jumpLinkId"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
