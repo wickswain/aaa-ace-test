@@ -8,7 +8,7 @@
                     <globalnav
                         cq:showOnCreate="{Boolean}false"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Global Navigation Properties"
+                        jcr:title="Global Navigation"
                         sling:resourceType="granite/ui/components/foundation/section">
                         <layout
                             jcr:primaryType="nt:unstructured"
@@ -55,35 +55,26 @@
                                         title="Upload Image Asset"
                                         uploadUrl="${suffix.path}"
                                         useHTML5="{Boolean}true"/>
-                                    <tileAltText
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter alt text for tile Icon"
-                                fieldLabel="Tile Alt Text"
-                                name="./tileAltText"
-                                required="{Boolean}true"/>
-                                    <bottomctalabel
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter caption for bottom CTA button"
-                                fieldLabel="Bottom CTA Caption"
-                                name="./bottomCTACaption"
-                                required="{Boolean}true"/>
-                                    <bottomimage
+                                    <tileIconAltText
+		                                jcr:primaryType="nt:unstructured"
+		                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+		                                fieldDescription="Please enter alt text for tile Icon"
+		                                fieldLabel="Tile Icon Alt Text"
+		                                name="./tileIconAltText"/>
+                                    <linkurl
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                        allowupload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldDescription="Please Select Image to be displayed in the navigation bottom"
-                                        fieldLabel="Bottom Image"
-                                        fileNameParameter="./fileName"
-                                        fileReferenceParameter="./bottomImage"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                        fieldLabel="Link URL"
+                                        name="./linkURL"
+                                        rootPath="/content"/>
+                                    <open-in-new-tab-flag
+				                        jcr:primaryType="nt:unstructured"
+				                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+				                        fieldDescription="Please check box if the link has to open in new Tab"
+				                        name="./openInNewTabFlag"
+				                        text="Open link in new Window?"
+				                        value="{Boolean}true"/>
                                 </items>
                             </column>
                         </items>
