@@ -1,0 +1,42 @@
+<!--/*
+
+    Icon Item component
+    ----------------------------------------------------------------
+
+    Hidden component that makes up the component row.
+
+    Required Fields:
+    1. Icon Title
+    2. Image
+
+*/-->
+
+    <sly data-sly-test.hasContent="${properties.image}">
+        <div class="horizontal-space text-center">
+            <img src="${properties.image}" alt="Column Image" class="img-responsive column-image">
+        </div>
+    </sly>
+
+    <div class="tcc-horizontal-space">
+        <h2 class="font-b text-center">${properties.columntitle}</h2>
+    </div>
+
+<div class="horizontal-space">
+    <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}" />
+</div>
+
+<div class="text-center tcc-cta-top">
+    <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+</div>
+
+
+
+<!--<sly data-sly-test.hasContent="${properties.image}">-->
+
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Column Item here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+ <!-- #placeholder-content end -->
