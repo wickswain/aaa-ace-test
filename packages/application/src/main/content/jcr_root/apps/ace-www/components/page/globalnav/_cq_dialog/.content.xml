@@ -40,7 +40,7 @@
                                                 value="column"/>
                                         </items>
                                     </pagetype>
-                                    <headericon
+                                    <tileicon
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/fileupload"
                                         allowupload="{Boolean}false"
@@ -50,6 +50,35 @@
                                         fieldLabel="Tile Icon"
                                         fileNameParameter="./fileName"
                                         fileReferenceParameter="./tileIcon"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <tileAltText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter alt text for tile Icon"
+                                fieldLabel="Tile Alt Text"
+                                name="./tileAltText"
+                                required="{Boolean}true"/>
+                                    <bottomctalabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter caption for bottom CTA button"
+                                fieldLabel="Bottom CTA Caption"
+                                name="./bottomCTACaption"
+                                required="{Boolean}true"/>
+                                    <bottomimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowupload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Please Select Image to be displayed in the navigation bottom"
+                                        fieldLabel="Bottom Image"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./bottomImage"
                                         mimeTypes="[image]"
                                         multiple="{Boolean}false"
                                         title="Upload Image Asset"
