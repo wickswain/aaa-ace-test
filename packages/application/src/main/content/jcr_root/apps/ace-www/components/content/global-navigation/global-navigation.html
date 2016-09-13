@@ -32,9 +32,7 @@
             <ul class="nav navbar-nav">
                 <sly data-sly-list="${navigationProvider.navigationVOs}">
                     <li>
-                        <sly data-sly-use.itemPagePath="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
-												@ link=item.currentpage.path}" />
-                        <a href="#" id="nav-${itemList.index}">
+                        <a href="javascript:void(0);" id="nav-${itemList.index}" onclick="manageNavContent(this)">
                             ${item.currentpage.properties.navTitle ?
 					item.currentpage.properties.navTitle : item.currentpage.title}
                         </a>
@@ -49,46 +47,59 @@
         </div>
     </nav>
     <!-- Drawers content based on onclick event from navigation -->
-    <div class="drawers-content">
-        <div class="drawer-close">
-            <div class="roboto-light font-c close-icon">X</div>
-        </div>
-        <div class="drawers-tiles">
-            <div class="container text-center flexcontainer">
-                <ul class="list-inline">
-                    <sly data-sly-list="${navigationProvider.navigationVOs}">
+    <sly data-sly-list="${navigationProvider.navigationVOs}">
+        <div class="nav-${itemList.index} drawers-content">
+            <div class="drawer-close">
+                <div class="close-icon close-drawer"><span>+</span></div>
+            </div>
+            <div class="drawers-tiles">
+                <div class="text-center">
+                    <ul class="list-inline">
                         <sly data-sly-list.child1="${item.navigList}">
                             <li>
-                                <a data-sly-test="${child1.currentpage.properties.pageType == 'tile'}" class="tile-card">
-                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">${child1.currentpage.properties.navTitle ?
+                                <a data-sly-test="${child1.currentpage.properties.pageType == 'tile'}" class="tile-card" href="#">
+                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" alt="${child1.currentpage.properties.tileAltText}" title="${child1.currentpage.properties.tileAltText}"> <span class="tile-title">${child1.currentpage.properties.navTitle ?
                             child1.currentpage.properties.navTitle : child1.currentpage.title}</span>
                                 </a>
                             </li>
                         </sly>
-                    </sly>
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="drawers-tiles-list">
-            <div class="container">
-                <div class="drawers-container">
-                    <sly data-sly-list="${navigationProvider.navigationVOs}">
+
+            <div class="drawers-tiles-list">
+                <div class="container">
+                    <div class="drawers-container row">
                         <sly data-sly-list.child1="${item.navigList}">
                             <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}"  class="tiles-list border-manage">
                                 <h3 class="text-uppercase">${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}</h3>
-                                    <sly data-sly-list.child2="${child1.navigList}">
-                                        <li><a>${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}</a></li>
-                                    </sly>
+                                <sly data-sly-list.child2="${child1.navigList}">
+                                    <li><a href="#">${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}</a></li>
+                                </sly>
                             </ul>
                         </sly>
-                    </sly>
+                    </div>
+                </div>
+            </div>
+            <!-- Drawers bootom -->
+            <div class="bootom-tiles">
+                <div class="bottom-stick">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="bottom-tile roboto-light font-g">
+                                    <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
+                                </div> 
+                                <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue btn-reversed">${child2.currentpage.properties.bottomCTALabel}
+                                </a> 
+                            </div>
+                            <div class="col-md-8 stick-image"><img src="${child2.currentpage.properties.bottomImage}" class="img-responsive"> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Drawers bootom -->
-        <div class="bootom-tiles">
-            <p class="bottom-tile roboto-light font-g">Bundle life insurance plus auto insuarance and save 15%</p>
-        </div>
-    </div>
+    </sly>
 </div>
 <!-- #global-navigation-component end -->
