@@ -35,10 +35,22 @@
                             fieldLabel="Number of rows"
                             name="./rowamount">
                         <items jcr:primaryType="nt:unstructured">
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="One"
+                                value="{Long}1"/>
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="Two"
+                                value="{Long}2"/>
                             <three
                                 jcr:primaryType="nt:unstructured"
                                 text="Three"
                                 value="{Long}3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="Four"
+                                value="{Long}4"/>
                         </items>
                     </row-amount>
                     <jump-link-id
