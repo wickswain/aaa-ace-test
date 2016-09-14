@@ -84,116 +84,551 @@
                     </div>
                 </div>
             </div>
+            <!-- Navigation Bar -->
             <div class="navigation-bar">
                 <nav class="navbar navbar-default">
                     <div class="text-center">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="#nav-0"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Membership</a>
+                                <a href="javascript:void(0);" id="nav-0" onclick="manageNavContent(this)"> <img src="images/member-icon.png" alt="Membership" alt="Membership" class="icon-link hidden-lg hidden-md"> Membership </a>
                             </li>
                             <li>
-                                <a href="#nav-1"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Insurance</a>
+                                <a href="javascript:void(0);" id="nav-1" onclick="manageNavContent(this)" href="javascript:void(0);" id="nav-2" onclick="manageNavContent(this)"> <img src="images/insurance-icon.png" alt="Insurance" alt="Insurance" class="icon-link hidden-lg hidden-md"> Insurance</a>
                             </li>
                             <li>
-                                <a href="#nav-2" id="travel-nav"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Travel</a>
+                                <a href="javascript:void(0);" id="nav-2" onclick="manageNavContent(this)"> <img src="images/travel-icon.png" alt="Travel" alt="Travel" class="icon-link hidden-lg hidden-md"> Travel</a>
                             </li>
                             <li>
-                                <a href="#nav-3"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Discount & Rewards</a>
+                                <a href="javascript:void(0);" id="nav-3" onclick="manageNavContent(this)"> <img src="images/disp-icon.png" alt="Discount & Rewards" alt="Discount & Rewards" class="icon-link hidden-lg hidden-md"> Discount & Rewards</a>
                             </li>
                             <li>
-                                <a href="#nav-4"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Activities</a>
+                                <a href="javascript:void(0);" id="nav-4" onclick="manageNavContent(this)"> <img src="images/activi-icon.png" alt="Activities" alt="Activities" class="icon-link hidden-lg hidden-md"> Activities</a>
                             </li>
                             <li>
-                                <a href="#nav-5"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Automative</a>
+                                <a href="javascript:void(0);" id="nav-5" onclick="manageNavContent(this)"> <img src="images/auto-icon.png" alt="Automative" alt="Automative" class="icon-link hidden-lg hidden-md"> Automative</a>
                             </li>
                             <li>
-                                <a href="#nav-6"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> nav-6</a>
+                                <a href="javascript:void(0);" id="nav-6" onclick="manageNavContent(this)"> <img src="images/finan-icon.png" alt="Financial" alt="Financial" class="icon-link hidden-lg hidden-md"> Financial</a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn"> <span class="glyphicon glyphicon-lock hidden-lg hidden-md icon-link" aria-hidden="true"></span> Join </a>
-                            </li>
+                            <li> <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn"> Join </a> </li>
                         </ul>
                     </div>
                 </nav>
                 <!-- Drawers content based on onclick event from navigation -->
-                <div id="nav-0" class="drawers-content" style="background-image:url('images/backdrops/AAA_Component_Z_GlobalNav_v1_06.png');">
-                    <div class="drawer-close">
-                        <div class="close-icon" id="travel-close"><span>+</span></div>
-                    </div>
-                    <div class="drawers-tiles">
-                        <div class="text-center">
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
-                                </li>
-                            </ul>
+                <div class="nav-0 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
                         </div>
-                    </div>
-                    <div class="drawers-tiles-list">
-                        <div class="container">
-                            <div class="drawers-container row">
-                                <ul class="tiles-list border-manage col-md-3">
-                                    <h3 class="text-uppercase ">Book with aaa & save</h3>
-                                    <li><a href="#">All booking</a></li>
-                                    <li><a href="#">AAA travel agent</a></li>
-                                    <li><a href="#">Disneyland packages</a></li>
-                                    <li><a href="#">Universal orlando</a></li>
-                                    <li><a href="#">Grand Canyon Railway</a></li>
-                                    <li><a href="#">Limited time offers</a></li>
-                                </ul>
-                                <ul class="tiles-list border-manage col-md-3">
-                                    <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
-                                    <li><a href="#">Travel guides & tour books</a></li>
-                                    <li><a href="#">AAA curated drive tips</a></li>
-                                    <li><a href="#">AAA app</a></li>
-                                    <li><a href="#">Triptik tip planner</a></li>
-                                    <li><a href="#">Driving directions</a></li>
-                                    <li><a href="#">Woodall's campgrounds</a></li>
-                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
-                                </ul>
-                                <ul class="tiles-list border-manage col-md-3">
-                                    <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
-                                    <li><a href="#">Foreign currency</a></li>
-                                    <li><a href="#">Passport photos & info</a></li>
-                                    <li><a href="#">International driving permits</a></li>
-                                    <li><a href="#">Mexico auto insurance</a></li>
-                                </ul>
-                                <ul class="tiles-list col-md-3">
-                                    <h3 class="text-uppercase ">Vacation Ideas</h3>
-                                    <li><a href="#">AAA curated vacations</a></li>
-                                    <li><a href="#">Noth America vacations</a></li>
-                                    <li><a href="#">Worldwide vacation deals</a></li>
-                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
-                                    <li><a href="#">Disney vacation deals</a></li>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34"> <span class="tile-title">My reservations</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <!-- Drawers bootom -->
-                    <div class="bootom-tiles">
-                        <div class="bottom-stick">
+                        <div class="drawers-tiles-list">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p class="bottom-tile roboto-light font-g"><strong>Save 10%</strong> on select international flights</p> <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue btn-reversed">See flights</a> </div>
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        <!-- Drawers bootom -->
+                        <div class="bootom-tiles" style="background-image:url('images/backdrops/AAA_Component_Z_GlobalNav_v1_06.png');">
+                            <div class="bottom-stick">
+                                <div class="container">
+                                    <div class="col-sm-6">
+                                        <div class="bottom-tile ">
+                                            <p class="roboto-light font-g"><strong>Save 10%</strong> on select international flights</p>
+                                            <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue btn-reversed">See flights</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-1 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-2 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-3 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-4 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-5 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-6 drawers-wrapper">
+                    <div class="drawers-content">
+                        <div class="drawer-close">
+                            <div class="close-icon close-drawer"><span>+</span></div>
+                        </div>
+                        <div class="drawers-tiles">
+                            <div class="text-center container">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="tile-card"> <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Hotels</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Rental car</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Flights</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Cruises </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">Travel insurance </span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tile-card"><img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one"> <span class="tile-title">My reservations</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drawers-tiles-list">
+                            <div class="container">
+                                <div class="drawers-container">
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">Book with aaa & save</h3>
+                                        <li><a href="#">All booking</a></li>
+                                        <li><a href="#">AAA travel agent</a></li>
+                                        <li><a href="#">Disneyland packages</a></li>
+                                        <li><a href="#">Universal orlando</a></li>
+                                        <li><a href="#">Grand Canyon Railway</a></li>
+                                        <li><a href="#">Limited time offers</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                        <li><a href="#">Travel guides & tour books</a></li>
+                                        <li><a href="#">AAA curated drive tips</a></li>
+                                        <li><a href="#">AAA app</a></li>
+                                        <li><a href="#">Triptik tip planner</a></li>
+                                        <li><a href="#">Driving directions</a></li>
+                                        <li><a href="#">Woodall's campgrounds</a></li>
+                                        <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                    </ul>
+                                    <ul class="tiles-list border-manage">
+                                        <h3 class="text-uppercase ">INTERNATIONAL travel preparation tools</h3>
+                                        <li><a href="#">Foreign currency</a></li>
+                                        <li><a href="#">Passport photos & info</a></li>
+                                        <li><a href="#">International driving permits</a></li>
+                                        <li><a href="#">Mexico auto insurance</a></li>
+                                    </ul>
+                                    <ul class="tiles-list">
+                                        <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                        <li><a href="#">AAA curated vacations</a></li>
+                                        <li><a href="#">Noth America vacations</a></li>
+                                        <li><a href="#">Worldwide vacation deals</a></li>
+                                        <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                        <li><a href="#">Disney vacation deals</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
