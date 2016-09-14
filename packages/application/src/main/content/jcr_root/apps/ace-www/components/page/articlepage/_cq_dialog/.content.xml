@@ -115,7 +115,6 @@
                                         fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
                                         fieldLabel="Article Issue Date"
                                         name="./issueDate"
-                                        required="{Boolean}true"
                                         storedFormat="LL"
                                         displayedFormat="LL"
                                         emptyText="September 09, 2016" />
@@ -158,7 +157,6 @@
                                         fieldDescription="Please enter alt text for article logo image"
                                         fieldLabel="Alt Text"
                                         name="./articleLogoAltText"
-                                        required="{Boolean}true"
                                         value="Article Logo Alt Text"/>
 									<jump-link-id
 										jcr:primaryType="nt:unstructured"
