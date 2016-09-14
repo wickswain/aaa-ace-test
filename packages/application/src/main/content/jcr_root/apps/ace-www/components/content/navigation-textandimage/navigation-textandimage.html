@@ -11,37 +11,35 @@
 
 <!-- Sightly global objects declaration
 ============================================= -->
-
+<sly data-sly-test.isAuthored="${properties.fileReference || properties.enableRTE || properties.enableCTA}">
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
 ============================================= -->       
-<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.fileReference && !properties.enableRTE && !properties.enableCTA}"
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}"
      data-emptytext="Author Navigation Text & Image Component Here." style="text-align: center;"
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Navigation Text & Image Component"/>
 <!-- #placeholder-content end -->
 
 <!-- Navigation Text & Image component
 ============================================= -->
-		<div data-sly-test="${properties.fileReference || properties.enableRTE || properties.enableCTA}">
-			<div class="bootom-tiles" style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');">
-                   <div class="bottom-stick">
-                        <div class="container">
-                            <div class="col-sm-6">
-                                <div class="bottom-tile ">
-                                    <div class="roboto-light font-g">
-                                        <sly data-sly-test="${properties.enableRTE}"
-     										 data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}"
-     										 data-sly-unwrap="${wcmmode.disabled}"/>	
-                                     </div>
-                                     <div data-sly-test="${properties.enableCTA}"
-										 data-sly-resource="${ @path='cta-button-small', resourceType='/apps/ace-www/components/content/ctabuttons/single-ctabutton-small'}"
-							             data-sly-unwrap="${wcmmode.disabled}">
-					   				 </div>
-                               	</div>
-                            </div>
-                        </div>
-                   </div>
-	         </div>
-       </div>
+<div data-sly-test="${isAuthored}" class="bootom-tiles" 
+     style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');">
+    <div class="bottom-stick">
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="bottom-tile ">
+                    <div data-sly-test="${properties.enableRTE}" class="roboto-light font-g">
+                        <sly data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}" />   			          	
+                    </div>
+                       
+                    <div data-sly-test="${properties.enableCTA}"
+						 data-sly-resource="${ @path='cta-button-small', resourceType='/apps/ace-www/components/content/ctabuttons/single-ctabutton-small'}"
+				         data-sly-unwrap="${wcmmode.disabled}">
+		   			</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- #navigation-text-and-image-component end -->
