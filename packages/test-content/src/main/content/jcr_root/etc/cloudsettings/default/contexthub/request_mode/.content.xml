@@ -9,4 +9,5 @@
     enabled="{Boolean}true"
     icon="coral-Icon--infoCircle">
     <region_module/>
+    <navigation_module/>
 </jcr:root>
