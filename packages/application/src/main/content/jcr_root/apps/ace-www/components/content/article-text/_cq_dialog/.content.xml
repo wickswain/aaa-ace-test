@@ -28,7 +28,7 @@
                                 sling:resourceType="granite/ui/components/foundation/include"
                                 fieldDescription="Please enter article text"
                                 fieldLabel="Article Text"
-                                path="/apps/ace-www/components/content/rte/cq:dialog/content/items/tabs/items/text"/>
+                                path="/apps/ace-www/components/content/rte/granite/items/text"/>
                         </items>
                     </columns>
                 </items>
