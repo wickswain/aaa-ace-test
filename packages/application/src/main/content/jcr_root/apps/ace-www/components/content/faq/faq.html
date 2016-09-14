@@ -69,8 +69,10 @@
                             <h3 class="roboto-medium font-f ">${properties.rightSectionTitle}</h3></span>
                         <div class="faq-links">
                         	<a href="${result1.linkURL}" title="View all FAQ's" class="link-btn link-color-blue link-lg">${properties.link1Caption}</a>
-                        	<span>or</span>
-                        	<a href="${result2.linkURL}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
+                        	 <div data-sly-test="${properties.link2Caption}">
+                             	<span>or</span>
+                        	 	<a href="${result2.linkURL}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
