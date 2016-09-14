@@ -21,15 +21,21 @@ This component renders a article carousel.
  <!--/* Article Carousel starts */-->
 <div id="article-carousel" class="carousel slide carousel-sync" data-sly-test="${isAuthored}">
 	<div class="carousel-inner" data-sly-list.images="${childImages.childResource.listChildren}">
-		<div class="item ${imagesList.count==1 && 'active'}">
-			<img src="${images.carouselImage}" alt="${images.altText}" title=${images.altText}>
-			<div class="carousel-text left-align">
-				<sly data-sly-test="${images.imageLabel}">${images.imageLabel @ context='html'}</sly>
-				<sly data-sly-test="${images.photoCredit}"><span class="spacer pipe"> | </span>Photo by ${images.photoCredit @ context='html'}</sly>
-			</div>
-			<div class="carousel-text right-align"><span id="current-slide">${imagesList.count}</span> of <span id="total-slides">${childImages.childLength}</span></div>	
+		<div data-imagelabel="${images.imageLabel @ context='html'}" data-author="${images.photoCredit @ context='html'}"
+		     class="item ${imagesList.count==1 && 'active'}">
+			<img src="${images.carouselImage}" alt="${images.altText}" title=${images.altText}>	
 		</div>
 	</div>
+
+    <div class="carousel-text left-align">
+        <span class="image-label"></span>
+        <span data-sly-test="${images.photoCredit}" class="spacer pipe"> | </span>
+        photo by <span class="author"></span>
+    </div>
+    
+    <div class="carousel-text right-align">
+        <span id="current-slide"></span> of <span id="total-slides"></span>
+    </div>
 
 	<a class="left carousel-control" href="#article-carousel"
 		data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span>
