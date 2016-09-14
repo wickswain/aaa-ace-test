@@ -5,7 +5,7 @@
 
     1. This is global navigation component. Some portions of this component would be personalized.
     2. Navigation will be derived from dummy IA created under "Navigation Root" nodeusing siteadmin console.
-    
+
 */-->
 
 <!-- Sightly global objects declaration
@@ -43,7 +43,8 @@
     </nav>
     <!-- Drawers content based on onclick event from navigation -->
     <sly data-sly-list="${navigationProvider.navigationVOs}">
-        <div class="nav-${itemList.index} drawers-content">
+        <div class="nav-${itemList.index} drawers-wrapper">
+            <div class="drawers-content">
             <div class="drawer-close">
                 <div class="close-icon close-drawer"><span>+</span></div>
             </div>
@@ -52,8 +53,8 @@
                     <ul class="list-inline">
                         <sly data-sly-list.child1="${item.navigList}">
                             <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
-                            <li>
-                                <a data-sly-test="${child1.currentpage.properties.pageType == 'tile'}" class="tile-card" 
+                            <li data-sly-test="${child1.currentpage.properties.pageType == 'tile'}">
+                                <a class="tile-card" 
                                 	href="${child1PagePath.url ? child1PagePath.url : ''  @ context='uri'}"
                                 	target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
                                     <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" 
@@ -71,7 +72,7 @@
                 <div class="container">
                     <div class="drawers-container row">
                         <sly data-sly-list.child1="${item.navigList}">
-                            <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}"  class="tiles-list border-manage">
+                            <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}" class="${!child1List.last?'tiles-list border-manage':'tiles-list'}">
                                 <h3 class="text-uppercase">
                                 	${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}
                                 </h3>
@@ -89,6 +90,7 @@
                     </div>
                 </div>
             </div>
+			</div>
         </div>
     </sly>
 </div>
