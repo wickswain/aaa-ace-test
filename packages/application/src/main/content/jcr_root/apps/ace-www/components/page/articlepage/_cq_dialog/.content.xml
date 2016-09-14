@@ -116,8 +116,9 @@
                                         fieldLabel="Article Issue Date"
                                         name="./issueDate"
                                         storedFormat="LL"
-                                        displayedFormat="LL"
-                                        emptyText="September 09, 2016" />
+                                        displayedFormat="MMMM DD, YY"
+                                        emptyText="September 09, 16"
+                                        minDate="1970-01-01" />
                                     <articleTitle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
