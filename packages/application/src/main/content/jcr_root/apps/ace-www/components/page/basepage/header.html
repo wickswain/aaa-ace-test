@@ -1,14 +1,23 @@
 <!--/*
 
-  	BASE PAGE
-  	------------------------------
-	Renders the header resource using the parsys
+    BASE PAGE
+    ------------------------------
+    Renders the header resource using the parsys
 
 */-->
 
 <!-- Header
 ============================================= -->
 <header id="page-header">
-    <sly data-sly-resource="${ @path='header-par', resourceType='wcm/foundation/components/parsys'}" />
+    <div class="header-section">
+        <div class="container-fluid header-bar">
+            <div class="row top-header" id="top-header">
+                <!-- /* Global Header Component */ -->
+                <sly data-sly-resource="${ @path='global-header', resourceType='/apps/ace-www/components/content/global-header'}" />
+            
+                <!-- /* Global Navigation Component */ -->
+            </div>
+        </div>
+    </div>
 </header>
 <!-- #header ends -->
