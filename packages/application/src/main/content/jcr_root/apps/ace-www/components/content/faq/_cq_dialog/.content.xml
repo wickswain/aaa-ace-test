@@ -140,13 +140,13 @@
                                 rootPath="/content"/>
                             <link2caption
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 fieldDescription="Please enter Caption for Link 2"
                                 fieldLabel="Link-2 Caption"
                                 name="./link2Caption"/>
                             <link2url
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 fieldDescription="Please enter Link 2 URL"
                                 fieldLabel="Link-2 URL"
                                 name="./link2URL"

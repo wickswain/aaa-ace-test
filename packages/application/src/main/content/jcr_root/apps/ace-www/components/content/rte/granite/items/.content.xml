@@ -27,35 +27,35 @@
                     <font-a
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-regular font-a"
-                        text="Font Style A"/>
+                        text="Bold XL Header"/>
                     <font-b
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-light font-b"
-                        text="Font Style B"/>
+                        text="Bold Header"/>
                     <font-c
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-regular font-c"
-                        text="Font Style C"/>
+                        text="13px All Caps Title"/>
                     <font-d
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-regular font-d"
-                        text="Font Style D"/>
+                        text="12px All Caps Title"/>
                     <font-e
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-regular font-e"
-                        text="Font Style E"/>
+                        text="Light Title"/>
                     <font-f
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-medium font-f"
-                        text="Font Style F"/>
+                        text="Medium Title"/>
                     <font-g
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-light font-g"
-                        text="Font Style G"/>
+                        text="Large Body Text"/>
                     <font-h
                         jcr:primaryType="nt:unstructured"
                         cssName="roboto-light font-h"
-                        text="Font Style H"/>
+                        text="Small Body Text"/>
                 </styles>
             </styles>
             <subsuperscript
