@@ -1,40 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Two Column Item"
+          jcr:title="Column Items"
           sling:resourceType="cq/gui/components/authoring/dialog">
     <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/container">
         <layout
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <column
+            <left-column
                     jcr:primaryType="nt:unstructured"
+                    jcr:title="Left Column"
                     sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <image
+                    <columns
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                            fieldLabel="Icon"
-                            required="{Boolean}false"
-                            rootPath="/content/dam/"
-                            name="./image"/>
-                    <text jcr:primaryType="nt:unstructured"
-                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                          fieldLabel="Title/Heading"
-                          required="{Boolean}false"
-                          name="./columntitle" />
-                    <rte
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/textfield"
-                            fieldLabel="Body Content"
-                            required="{Boolean}false"
-                            name="./bodycopy"
-                    />
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <left-image
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldLabel="Image"
+                                    required="{Boolean}false"
+                                    rootPath="/content/dam/"
+                                    name="./leftImage"/>
+                            <left-alt-text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Alt Text"
+                                    name="./leftAltText"
+                                    required="{Boolean}false"/>
+                            <heading-title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Heading/Title"
+                                    name="./leftHeading"
+                                    required="{Boolean}false"/>
+                        </items>
+                    </columns>
                 </items>
-            </column>
+            </left-column>
+            <right-column
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Right Column"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <right-image
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldLabel="Image"
+                                    required="{Boolean}false"
+                                    rootPath="/content/dam/"
+                                    name="./rightImage"/>
+                            <right-alt-text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Alt Text"
+                                    name="./rightAltText"
+                                    required="{Boolean}false"/>
+                            <right-heading-title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Heading/Title"
+                                    name="./rightHeading"
+                                    required="{Boolean}false"/>
+                        </items>
+                    </columns>
+                </items>
+            </right-column>
         </items>
     </content>
 </jcr:root>

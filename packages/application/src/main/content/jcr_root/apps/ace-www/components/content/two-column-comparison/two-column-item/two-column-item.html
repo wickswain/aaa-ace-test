@@ -11,23 +11,51 @@
 
 */-->
 
-    <sly data-sly-test.hasContent="${properties.image}">
-        <div class="horizontal-space text-center">
-            <img src="${properties.image}" alt="Column Image" class="img-responsive column-image">
-        </div>
-    </sly>
+    <!--/*  Left Column  */-->
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
+        <sly data-sly-test.hasContent="${properties.leftImage}">
+            <div class="horizontal-space text-center">
+                <img src="${properties.leftImage}" alt="${properties.leftAltText}" class="img-responsive column-image">
+            </div>
+        </sly>
 
-    <div class="tcc-horizontal-space">
-        <h2 class="font-b text-center">${properties.columntitle}</h2>
+        <div class="tcc-horizontal-space font-b">
+            <h2 class="font-b text-center">${properties.leftHeading}</h2>
+        </div>
+
+        <div class="horizontal-space font-f">
+            <sly data-sly-resource="${ @path='rte-left', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
+
+        <div class="text-center tcc-cta-top">
+            <sly data-sly-resource="${ @path='cta-large-left', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+        </div>
     </div>
 
-<div class="horizontal-space">
-    <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}" />
-</div>
+    <div class="visible-lg visible-md col-lg-2 col-md-2 tcc-divider">
+        <hr>
+    </div>
 
-<div class="text-center tcc-cta-top">
-    <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
-</div>
+    <!--/*  Right Column  */-->
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
+        <sly data-sly-test.hasContent="${properties.rightImage}">
+            <div class="horizontal-space text-center">
+                <img src="${properties.rightImage}" alt="${properties.rightAltText}" class="img-responsive column-image">
+            </div>
+        </sly>
+
+        <div class="tcc-horizontal-space font-b">
+            <h2 class="font-b text-center">${properties.rightHeading}</h2>
+        </div>
+
+        <div class="horizontal-space font-f">
+            <sly data-sly-resource="${ @path='rte-right', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
+
+        <div class="text-center tcc-cta-top">
+            <sly data-sly-resource="${ @path='cta-large-right', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+        </div>
+    </div>
 
 
 
