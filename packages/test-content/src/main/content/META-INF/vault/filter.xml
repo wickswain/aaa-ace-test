@@ -3,6 +3,7 @@
     <filter root="/content/ace-www" />
     <filter root="/content/dam/aaa" />
     <filter root="/content/campaigns/ace-www" />
+    <filter root="/content/navigation-root" />
     <filter root="/content/personalization/ace-www" />
     <filter root="/etc/cloudsettings/default/contexthub" />
 	<filter root="/etc/designs/ace-www" />

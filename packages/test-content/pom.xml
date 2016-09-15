@@ -46,6 +46,9 @@
                             <root>/content/personalization/ace-www</root>
                         </filter>
                         <filter>
+                            <root>/content/navigation-root</root>
+                        </filter>
+                        <filter>
                             <root>/content/campaigns/ace-www</root>
                         </filter>
                         <filter>
