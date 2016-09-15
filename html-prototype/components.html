@@ -41,8 +41,9 @@
                     <div class="col-xs-4 col-md-5 text-right col-md-push-7"> <span class="menu"><i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i> Menu</span>
                         <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
                             <li id="nav-links"><a href="#">Find a brach</a><span class="pipe">|</span>
-                                <a href="#" id="user-login"><img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon"> Login</a> <span id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info" style="display:none;">Jessica <i class="glyphicon glyphicon-chevron-down"></i> <span class="avatar"><span class="notification">3</span><img src="images/card-img-1.png" class="img-responsive" title="card" alt="card"></span>
-                                </span>
+                                <a href="#" id="user-login"><img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a>
+                                <a href="javascript:void(0);" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info" style="display:none;">Jessica<i class="glyphicon glyphicon-chevron-down"></i><span class="avatar"><span class="notification">3</span><img src="images/card-img-1.png" class="img-responsive" title="card" alt="card"></span>
+                                </a>
                                 <div class="profile-box dropdown-menu" aria-labelledby="user-info">
                                     <div class="avatar-pic"><img src="images/card-img-1.png" class="img-responsive"></div>
                                     <div class="avatar-title font-f">Jessica</div>
@@ -639,12 +640,12 @@
                 <div class="content">
                     <div class="margin-b roboto-medium font-a"> <span class="">Save money doing what you love</span> </div>
                     <p class="horizontal-space roboto-light font-g">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p> <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a> </div>
-                <div class="learn-link" style="background-color:rgba(0,0,0,0.3);"> <a href="#" class="learn-btn font-h ">Learn<br><div class="bounce"><span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span></div></a> </div>
+                <div class="learn-link" style="background-color:rgba(0,0,0,0.3);"> <a href="#titlehead" class="learn-btn font-h ">Learn<br><div class="bounce"><span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span></div></a> </div>
                 <video id="home-video" class="video" autoplay="autoplay" loop="loop" muted="" width="100%" height="100%" poster="images/footer-image.jpg">
                     <source src="media/demo.mp4" type="video/mp4" /> </video>
             </div>
             <!-- Title Header Stand Alone -->
-            <div class="dark-bg text-center horizontal-component-space roboto-light font-b">
+            <div id="titlehead" class="dark-bg text-center horizontal-component-space roboto-light font-b">
                 <!--This place with RTE Control-->
                 <h2 class="" title="Title Header Stand Alone">Title Header Stand Alone</h2> </div>
             <!-- Page intro component-->
@@ -793,8 +794,9 @@
             </div>
             <!-- 50-50 image component -->
             <div id="img-50-50" class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
-                <div class="row flex-component">
-                    <div class="col-md-6 content">
+                <div class="row flex-component" style="background-color: rgba(255,255,255,0.2);">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 content">
                         <div class="text-block">
                             <div class="horizontal-space roboto-light font-b"><img src="images/cal-icon.png" alt="calendar"></div>
                             <div class="horizontal-space roboto-light font-b">
@@ -803,22 +805,26 @@
                                 <p>Find events by location and date.</p>
                             </div> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> </div>
                     </div>
-                    <div class="col-md-6 image-block"> <img src="images/50-50-img.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 image-block"> <img src="images/50-50-img.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
                 </div>
             </div>
-            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg2.jpg); background-color:#ffffff; color:#ffffff; ">
-                <div class="row flex-component" style="background-color: rgba(0,0,0,0.4);">
-                    <div class="col-md-6 content">
+
+
+            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
+                <div class="row flex-component row-reverse">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 content">
                         <div class="text-block">
+                            <div class="horizontal-space roboto-light font-b"><img src="images/cal-icon.png" title="calendar" alt="calendar"></div>
                             <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Find local events"><span class="round-circle" style="border-color:#ffffff;">1</span><span class="title">Show your AAA card</span></h2></div>
+                                <h2 title="Find local events"><span class="round-circle" style="border-color:#ffffff;">1</span><span class="title">Find local events</span></h2></div>
                             <div class="horizontal-space roboto-light font-g">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-                                <div class="horizontal-space"></div>
-                                <p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-                            </div> <a href="#" class="link-btn link-lg link-color-blue link-reversed" title="Solid button">Download store list</a></div>
+                                <p>Find events by location and date.</p>
+                            </div> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a><a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> </div>
                     </div>
-                    <div class="col-md-6 image-block"> <img src="images/card.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 image-block"> <img src="images/CompA-side-img1.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
                 </div>
             </div>
             <!-- Single column component -->
@@ -967,7 +973,7 @@
         <footer id="page-footer">
             <!-- Global Base Footer component -->
             <div id="base-footer" class="footer-global roboto-light font-e">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10">

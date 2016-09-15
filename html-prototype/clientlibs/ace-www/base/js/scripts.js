@@ -1,15 +1,16 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:13-September-2016
-    Version:0.6
+    Modified Date:15-September-2016
+    Version:0.7
 *****************************************/
 $(function () {
 
     /*User Login dialog*/
-    $('#user-login').on('click', function () {
+    $('#user-login').on('click', function (e) {
         $('.user-info').show();
         $(this).hide();
+        e.preventDefault();
     });
     $('.signout a').on('click', function (e) {
         $('.user-info').toggle();
@@ -17,17 +18,19 @@ $(function () {
         $('#user-login').show();
         e.preventDefault();
     });
-    $('.search-btn').on('click', function () {
+    $('.search-btn').on('click', function (e) {
         $('.expend-searchbar').animate({
             opacity: '1',
             width: '80%'
         }, 500).prev().fadeOut();
+        e.preventDefault();
     });
-    $('.expend-searchbar .close-icon').parent().on('click', function () {
+    $('.expend-searchbar .close-icon').parent().on('click', function (e) {
         $('.expend-searchbar').animate({
             opacity: '0',
             width: '20%'
         }, 500).prev().fadeIn();
+        e.preventDefault();
     });
     /*Fixed Header - alignment*/
     $('#page-container').css('paddingTop', $('#page-header').outerHeight());
@@ -44,7 +47,6 @@ $(function () {
     footerResponse();
     /*Sticky Navigation*/
     var scrollTop = ($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;
-
     $('.sticky-nav .dropdown-menu li > a').click(function (e) {
         var hashtag = $(this.hash),
             $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
@@ -65,10 +67,10 @@ $(function () {
     }
     headerResize();
     /*Home Header - jump link*/
-    ($('.home-header').next().attr('id') != 'undefined') ? $('.learn-link a').attr('href', '#' + $('.home-header').parent().next().children().attr('id')): $('.learn-link a').attr('href', '#');
+    ($('.home-header').next().attr('id') != 'undefined') ? $('.learn-link a').attr('href', '#' + $('.home-header').next().children().attr('id')): $('.learn-link a').attr('href', '#');
     $('.home-header .learn-link a').click(function (e) {
         var hashtag = $(this.hash),
-            $target = (hashtag != '') ? parseInt(hashtag.offset().top) : 0;
+            $target = (hashtag != '') ? parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight() : 0;
         $('html,body').stop().animate({
             scrollTop: $target
         }, 1000, 'swing');
@@ -78,7 +80,6 @@ $(function () {
     ($('.drawers-content').height() < $(window).height() - $('header').outerHeight()) ? $('.drawers-wrapper').height($(window).height() - $('header').outerHeight()): false;
     /*Page Scroll*/
     $(window).scroll(function () {
-        //console.log($(this).scrollTop());
         /*Sticky Header offset*/
         ($(this).scrollTop() >= 400) ? $('header').css({
             'top': '-' + $('#page-header').outerHeight() + 'px'
@@ -90,7 +91,7 @@ $(function () {
         ($(this).scrollTop() > scrollTop) ? $('.sticky-nav').addClass('navbar-fixed-top').show(): $('.sticky-nav').removeClass('navbar-fixed-top').hide();
         $('.sticky-nav .dropdown-menu li > a').each(function () {
             var scrolltag = $(this.hash),
-                $target = parseInt(scrolltag.offset().top - 1) + 45;
+                $target = (scrolltag != 'undefined') ? parseInt(scrolltag.offset().top - 1) + 45 : 0;
             if ($(window).scrollTop() >= $target) {
                 $('.sticky-nav .dropdown-menu li > a').removeClass('current');
                 $(this).addClass('current');
@@ -101,7 +102,6 @@ $(function () {
     $(window).resize(function () {
         headerResize();
         footerResponse();
-        stickynav();
     });
     /*Navigation*/
     $('.navigation-bar .nav li a').removeAttr('onclick');
@@ -109,7 +109,7 @@ $(function () {
         var navid = $(this).attr('id');
         $('.drawers-wrapper:not(".' + navid + '")').hide();
         $('.' + navid).stop().slideToggle(500);
-        $('.navigation-bar .nav li a').css("opacity", "0.3");
+        $('.navigation-bar .nav li a').css("opacity", '0.3');
         $(this).css("opacity", "1");
 
         var activenavlink = 'GlobalNavigation:link' + navid;

@@ -12,33 +12,42 @@
             margin-bottom: 0;
             padding: 13px 0px;
             .navbar-nav {
-                display: inline-block;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                max-width: 1140px;
                 float: none;
+                margin: 0 auto;
+                li {
+                    float: none;
+                    display: flex;
+                    align-items: center;
+                    a {
+                        font-size: 13px;
+                        letter-spacing: .08em;
+                        text-transform: uppercase;
+                        padding: 0px;
+                        color: @color-white;
+                        transition: all 0.4s;
+                        &.join-btn {
+                            padding: 5px 15px;
+                            margin: 0px;
+                        }
+                    }
+                }
                 .navbar-collapse {
                     text-align: center;
                 }
-                li>a {
-                    font-size: 13px;
-                    letter-spacing: .08em;
-                    text-transform: uppercase;
-                    padding: 13px;
-                    color: @color-white;
-                    transition: all 0.4s;
-                    &.join-btn {
-                        margin-top: 10px;
-                        padding: 5px 15px;
-                        margin-right: 0;
-                        margin-bottom: 0;
-                        margin-left: 20px;
-                    }
+                .navbar-collapse {
+                    text-align: center;
                 }
             }
         }
         .drawers-wrapper {
             overflow: auto;
             display: none;
+            background: #0088de url() no-repeat 50% 100%;
             .drawers-content {
-                background: #0088de url() no-repeat 50% 100%;
                 position: relative;
                 .drawer-close {
                     color: @color-blue-primary-medium;
@@ -63,30 +72,32 @@
                 .drawers-tiles {
                     ul {
                         padding-bottom: 30px;
-                        margin: 0;
+                        margin: 0 auto;
                         padding-top: 80px;
                         display: flex;
                         flex-flow: row nowrap;
-                        justify-content: center;
+                        justify-content: space-around;
+                        max-width: 1140px;
                         li {
-                            padding-left: 0;
-                            padding-right: 0;
-                            margin: 0 5px;
-                            width: 195px;
-                            height: 140px;
-                            display: inline-block;
-                            background-color: @color-blue-primary-dark;
+                            width: 180px;
+                            min-height: 140px;
+                            display: flex;
+                            text-align: center;
+                            background-color: #005095;
                             transition: all 0.4s ease;
                             border-radius: 4px;
-                            &:last-child {
-                                margin-right: 0px;
+                            align-items: center;
+                            flex-direction: column;
+                            margin: 0 5px;
+                            &:hover {
+                                background-color: #03477f;
+                                transform: scale(1.05);
                             }
                             &:first-child {
                                 margin-left: 0px;
                             }
-                            &:hover {
-                                background-color: #03477f;
-                                transform: scale(1.05);
+                            &:last-child {
+                                margin-right: 0px;
                             }
                             a.tile-card {
                                 vertical-align: top;
@@ -100,11 +111,13 @@
                                 .drawer-image {
                                     margin-bottom: 24px;
                                     margin-top: 24px;
+                                    height: 34px;
                                 }
                                 .tile-title {
                                     display: block;
                                     color: @color-white;
-                                    font-size: 15px
+                                    font-size: 15px;
+                                    line-height: normal;
                                 }
                             }
                         }
@@ -115,6 +128,8 @@
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: center;
+                        max-width: 1140px;
+                        margin: 0 auto;
                         :first-child {
                             padding-left: 0;
                         }
@@ -125,15 +140,16 @@
                     }
                     .tiles-list {
                         padding: 0 35px;
-                        width: 300px;
-                        &.border-manage {
-                            border-right: solid 1px #3c66ac;
-                        }
-                        display: inline-block;
+                        width: 285px;
+                        flex-direction: column;
+                        display: flex;
                         margin-bottom: 30px;
                         padding-top: 0;
                         vertical-align: top;
                         border-top: 0;
+                        &.border-manage {
+                            border-right: solid 1px #3c66ac;
+                        }
                         h3 {
                             color: #1d333c;
                             font-size: 11px;
