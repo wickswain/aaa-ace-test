@@ -25,9 +25,11 @@ public class NavigationProvider extends WCMUsePojo {
 
 	private static final Logger log = LoggerFactory.getLogger(NavigationProvider.class);
 
-	//private static final String STYLE_PROPERTY_ABSOLUTE_PARENT = "absParent";
-
-	//private static final String STYLE_PROPERTY_NAVIGATION_HOME_PAGE = "rootPagePath";
+	private static final String NAVIGATION_HOME_PAGE = "/content/navigation-root";
+	private static final String PAGE_TYPE_KEY = "pageType";
+	private static final String PAGE_TYPE_VALUE = "tile";
+	private static final int PAGE_TYPE_TILE_MAX_COUNT = 6;
+	private static final int FIRST_LEVEL_NAVIGATION_CHILD_MAX_COUNT = 7;
 
 	private List<NavigationVO> navigationVOs = new ArrayList<NavigationVO>();
 
@@ -41,12 +43,7 @@ public class NavigationProvider extends WCMUsePojo {
 	}
 
 	private Page setHomePage() {
-		// homePage = getPageManager().getPage(getCurrentStyle().get(STYLE_PROPERTY_NAVIGATION_HOME_PAGE, ""));
-		homePage = getPageManager().getPage("/content/navigation-root");
-		/*if (homePage == null) {
-			homePage = getRootPage(getCurrentPage(), getCurrentStyle().get(STYLE_PROPERTY_ABSOLUTE_PARENT, 2));
-		}*/
-
+		homePage = getPageManager().getPage(NAVIGATION_HOME_PAGE);
 		return homePage;
 	}
 
@@ -56,12 +53,14 @@ public class NavigationProvider extends WCMUsePojo {
 	 * NavigationVO object based on node properties.
 	 */
 	private void getNavigationItems() {
-		//Page navRootPage = getRootPage(getCurrentPage(), getCurrentStyle().get(STYLE_PROPERTY_ABSOLUTE_PARENT, 2));
-		
+		int firstLevelNavigationChildCount = 0;
 		if(StringUtils.isNotBlank(homePage.getPath())){
 			Iterator<Page> navigationNodes = homePage.listChildren();
 
 			while (navigationNodes.hasNext()) {
+				firstLevelNavigationChildCount+=1;
+				if(firstLevelNavigationChildCount > FIRST_LEVEL_NAVIGATION_CHILD_MAX_COUNT)
+					break;
 				NavigationVO navigationVO = new NavigationVO();
 				Page currentPage = navigationNodes.next();
 
@@ -89,11 +88,16 @@ public class NavigationProvider extends WCMUsePojo {
 
 		List<NavigationVO> childPages = new ArrayList<NavigationVO>();
 		NavigationVO navigationChildVo = null;
-
+		int pageTypeAsTileCount = 0;
 		while (childNodes.hasNext()) {
 			navigationChildVo = new NavigationVO();
 			Page childPage = childNodes.next();
 			if (!childPage.getProperties().containsKey(NameConstants.PN_HIDE_IN_NAV)) {
+				if(childPage.getProperties().containsKey(PAGE_TYPE_KEY) && childPage.getProperties().get(PAGE_TYPE_KEY).equals(PAGE_TYPE_VALUE)){
+					pageTypeAsTileCount+=1;
+					if(pageTypeAsTileCount > PAGE_TYPE_TILE_MAX_COUNT)
+						break;
+				}
 				navigationChildVo.setCurrentpage(childPage);
 				navigationChildVo.setUniqueId(UUID.randomUUID().toString());
 				childPages.add(navigationChildVo);
@@ -105,7 +109,6 @@ public class NavigationProvider extends WCMUsePojo {
 			}
 
 		}
-
 		navigationVO.setNavigList(childPages);
 	}
 
@@ -128,23 +131,6 @@ public class NavigationProvider extends WCMUsePojo {
 
 		return isNotHideInNav;
 	}
-
-	/*
-	 * Gets the root page where the navigation will start from.
-	 * 
-	 * @param currentPage The current page.
-	 * 
-	 * @param absParent The absolute level of the navigation root.
-	 * 
-	 * @return The root page.
-	 */
-	/*private Page getRootPage(final Page currentPage, final int absParent) {
-		final Page parentPage = currentPage.getAbsoluteParent(absParent);
-		if (parentPage == null) {
-			return currentPage;
-		}
-		return parentPage;
-	}*/
 
 	public Page getHomePage() {
 		return homePage;
