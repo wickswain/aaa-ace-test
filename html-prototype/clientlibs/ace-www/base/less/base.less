@@ -1,0 +1,114 @@
+/*Base Color Coding*/
+
+@color-white: #fff;
+@color-black: #000;
+@color-gray-dark: #303030;
+@color-gray-medium: #cfcfcf;
+@color-gray-medium-light: #808080;
+@color-gray-light: #E4E5E5;
+@color-gray-lighter: #7F7F7F;
+@color-blue-primary-dark: #005095;
+@color-blue-primary-medium: #0099FF;
+@color-blue: #012546;
+@color-blue-dark: #033465;
+@color-blue-medium: #1080D8;
+@color-blue-light: #00AAFF;
+@color-blue-mediumlight: #058dd8;
+@color-orange: #ff4639;
+@color-orange-medium: #ff584d;
+@color-orange-light: #db3c31;
+@color-yellow: #ffcc33;
+
+/*Basic CSS Style*/
+
+html,
+body {
+    font-family: @font-family-regular;
+    color: @color-black;
+    background: @color-gray-medium none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img,
+:hover,
+:focus {
+    outline: none;
+}
+
+a {
+    color: @color-blue-primary-medium;
+    text-decoration: none;
+    font-family: inherit;
+    &:focus,
+    &:hover {
+        color: @color-blue-light;
+    }
+}
+
+#page-container {
+    background: @color-white none;
+}
+
+.dark-bg {
+    background-color: @color-blue-primary-dark;
+    padding: 20px 0;
+    color: @color-white;
+}
+
+.alert-warning {
+    background-color: @color-yellow;
+}
+
+.brand {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
+
+/*Spacings*/
+
+@space-height: 400px;
+@space-lg: 130px;
+@space-md: 100px;
+@space-sm: 30px;
+@space-xs: 10px;
+.horizontal-space {
+    margin-bottom: @space-sm;
+}
+
+.horizontal-space2 {
+    margin-bottom: @space-lg - 60;
+}
+
+.side-spacing {
+    padding: 0 @space-sm;
+}
+
+.min-spacing {
+    margin-bottom: @space-xs;
+}
+
+.component-space,
+.top-space {
+    padding-top: @space-lg;
+}
+
+.bottom-space {
+    padding-bottom: @space-sm;
+}

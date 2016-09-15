@@ -1,0 +1,50 @@
+<!--/*
+
+    Page Intro Component.
+    ----------------------------------------------------------------
+
+    This component is a Versatile component and can be used across most pages throughout the site.
+    Placement of the component can only be used at the top of the page, right below the global navigation.
+    
+    Default Behavior:
+    1. Title will derive from the page title.
+    
+    Required Fields:
+    1. Heading/Title
+    2. Headline
+
+*/-->
+
+<!-- Page Intro Content
+============================================= -->
+<div id="${properties.jumpLinkId}" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};
+            color: ${properties.fontColor ? properties.fontColor : '' @ context='styleToken'};"
+     class="page-intro">
+     
+    <div class="container">
+        <div class="horizontal-space font-c text-uppercase">
+            <sly data-sly-test="${properties.title}" data-sly-text="${properties.title}"/>
+            <sly data-sly-test="${!properties.title}" 
+                 data-sly-text="${currentPage.properties.navTitle ? currentPage.properties.navTitle : currentPage.title}"/>
+        </div>
+
+        <div class="horizontal-space roboto-medium font-a">
+         	<sly data-sly-test="${properties.headLineRTE}" data-sly-resource="${'headline-text' @ resourceType = '/apps/ace-www/components/content/rte'}" />					
+		</div>
+
+        <!-- <div data-sly-test="${properties.headline}" data-sly-text="${properties.headline}"
+             class="horizontal-space roboto-medium font-a">
+        </div> -->
+
+        <div class="roboto-light font-g">
+            <sly data-sly-test="${properties.bodyCopyRTE}" data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
+
+        <div data-sly-test="${properties.ctaFlag}"
+             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
+             data-sly-unwrap="${wcmmode.disabled}">
+        </div>
+    </div>
+    
+</div>
+<!-- #page-intro-content end -->

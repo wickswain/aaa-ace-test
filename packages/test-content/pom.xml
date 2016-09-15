@@ -39,10 +39,27 @@
 						<filter>
 							<root>/content/ace-www</root>
 						</filter>
-						
+						<filter>
+                            <root>/content/dam/aaa</root>
+                        </filter>
+                        <filter>
+                            <root>/content/personalization/ace-www</root>
+                        </filter>
+                        <filter>
+                            <root>/content/navigation-root</root>
+                        </filter>
+                        <filter>
+                            <root>/content/campaigns/ace-www</root>
+                        </filter>
+                        <filter>
+                            <root>/etc/cloudsettings/default/contexthub</root>
+                        </filter>
 						<filter>
 							<root>/etc/designs/ace-www</root>
 						</filter>
+                        <filter>
+                            <root>/etc/segmentation/contexthub</root>
+                        </filter>
 					</filters>
 				</configuration>
 			</plugin>

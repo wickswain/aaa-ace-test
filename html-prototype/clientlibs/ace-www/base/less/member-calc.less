@@ -1,0 +1,164 @@
+/*****************************************
+Membership Calculator Component
+*****************************************/
+
+.membership-calculator {
+    background: @color-white;
+    text-align: center;
+    min-height: 620px;
+    .table-block {
+        display: table;
+        width: 100%;
+        position: relative;
+        z-index: 99;
+        .table-cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    .caption {
+        margin-bottom: 30px;
+        margin-top: 0px;
+        line-height: 1.25em;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+    }
+    .membership-calculator-block {
+        background: #e4e5e5;
+        min-height: 620px;
+        position: relative;
+        .block-center {
+            float: none;
+            margin: 0 auto;
+        }
+    }
+    .membership-details {
+        align-self: flex-end;
+        .img-membership {
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        .horizontal-space {
+            margin-bottom: 70px;
+        }
+        .membership-pay-info {
+            box-shadow: 0px 0px 15px #ccc;
+            padding: 20px 20px 0px 20px;
+            background: @color-white;
+            text-align: left;
+            color: #666;
+            width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            .saving-item {
+                padding: 5px 0px;
+                width: 100%;
+                display: table;
+            }
+            .col-sm-6 {
+                padding-right: 0px;
+            }
+            .total-price-block {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+        .img-position {
+            position: relative;
+            left: -150px;
+            bottom: -4px;
+        }
+        .price {}
+        .price-total {
+            font-size: 46px;
+            color: #66C996;
+        }
+        hr {
+            border-top: dashed 1px #ccc;
+            margin: 10px -20px 0 -20px;
+            background: transparent;
+            clear: both;
+        }
+        .total-saving-price {
+            color: @color-black;
+            display: inline-block;
+        }
+        .MC-horizontal-space {
+            margin-top: @space-lg - 60;
+            margin-bottom: @space-lg - 60;
+        }
+    }
+    .membership-discount-details {
+        .item {
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            clear: both;
+            li {
+                list-style-type: none;
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 65px;
+            }
+            .services-title {
+                color: #1D603B;
+                background: url() no-repeat 15px 50%;
+                padding-left: 65px;
+                max-width: 165px;
+            }
+            .icon {
+                float: left;
+                margin: 0px 15px;
+            }
+            .price {
+                color: #1D603B;
+                position: relative;
+                text-align: right;
+                padding: 0 15px;
+                width: 125px;
+                .discount-price {
+                    text-decoration: line-through;
+                    color: #47976C;
+                    display: block;
+                    text-align: right;
+                }
+            }
+            .total-price {
+                color: @color-white;
+                position: relative;
+                padding: 0 15px;
+                text-align: right;
+                width: 125px;
+                .title-saved {
+                    display: block;
+                    text-align: right;
+                    color: #47976C;
+                }
+            }
+        }
+        .item:nth-child(even) {
+            background-color: #79d1a2;
+        }
+        .item:nth-child(odd) {
+            background-color: #66c996;
+        }
+        .title {
+            padding: 5px 0px;
+            min-height: auto;
+            background: #104929 !important;
+            color: #b6e6cd;
+            width: 100%;
+            display: inline-block;
+        }
+    }
+    .title-space {
+        margin-bottom: 20px;
+    }
+}
+
+.total-saving-price {
+    width: 80%;
+}

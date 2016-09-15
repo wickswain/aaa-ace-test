@@ -1,7 +1,14 @@
-<!-- custom for aaa-ace -->
-<!--css data-sly-call="${clientLib.css @ categories=['apps.aaa-ace']}" data-sly-unwrap/-->
-<div class="container">
-    <div class="main">
-    	<div data-sly-include="maincontent.html" data-sly-unwrap></div>
-    </div>
+<!--/*
+
+  	HOME PAGE
+  	------------------------------
+	Renders the content resource using the parsys
+
+*/-->
+
+<!-- Page Container
+============================================= -->
+<div id="page-container">
+    <sly data-sly-resource="${ @path='content-par', resourceType='wcm/foundation/components/parsys'}" />
 </div>
+<!-- #page-container ends -->

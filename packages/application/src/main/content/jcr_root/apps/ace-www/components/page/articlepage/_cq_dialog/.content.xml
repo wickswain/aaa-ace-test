@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <articlepage
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Page"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <popularity
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please Select Article Page Popularity"
+                                        fieldLabel="Page Popularity"
+                                        name="./pagePopularity">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <_x0031_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="1-Most Popular"
+                                                value="1"/>
+                                            <_x0032_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2"
+                                                value="2"/>
+                                            <_x0033_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="3"
+                                                value="3"/>
+                                            <_x0034_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="4"
+                                                value="4"/>
+                                            <_x0035_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="5"
+                                                value="5"/>
+                                            <_x0036_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="6"
+                                                value="6"/>
+                                            <_x0037_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="7"
+                                                value="7"/>
+                                            <_x0038_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="8"
+                                                value="8"/>
+                                            <_x0039_
+                                                jcr:primaryType="nt:unstructured"
+                                                text="9"
+                                                value="9"/>
+                                            <_x0031_0
+                                                jcr:primaryType="nt:unstructured"
+                                                text="10"
+                                                value="10"/>
+                                        </items>
+                                    </popularity>
+                                    <articleimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        fieldDescription="Please upload page image, this will be used wherever preview is required."
+                                        fieldLabel="Article Image"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        required="{Boolean}false"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <articleimagealttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Article"
+                                        fieldDescription="Please enter alt text for article page image"
+                                        fieldLabel="Alt Text"
+                                        name="./articleImageAltText"
+                                        required="{Boolean}true"
+                                        value="Article Page Image Alt Text"/>
+                                </items>
+                            </column>
+                        </items>
+                    </articlepage>
+                    <articleheader
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Heading"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                   <pubicationdate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/ace-www/granite/widgets/datepicker"
+                                        fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
+                                        fieldLabel="Article Issue Date"
+                                        name="./issueDate"
+                                        storedFormat="LL"
+                                        displayedFormat="MMMM DD, YY"
+                                        emptyText="September 09, 16"
+                                        minDate="1970-01-01" />
+                                    <articleTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue=""
+                                        fieldDescription="Please enter article title"
+                                        fieldLabel="Article Title"
+                                        name="./articleTitle"
+                                        required="{Boolean}true"
+                                        value=""/>
+                                   	<authorname
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Author Name"
+                                        fieldDescription="Please enter name of author for this article."
+                                        fieldLabel="Author Name"
+                                        name="./authorName"
+                                        required="{Boolean}true"
+                                        value=""/>
+                                   <articlelogo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        fieldDescription="Please drag an article logo image. This will be displayed on article header before authorname."
+                                        fieldLabel="Article Logo"
+                                        fileReferenceParameter="./articleLogoImage"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        required="{Boolean}false"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <logoalttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        defaultValue="Article logo image"
+                                        fieldDescription="Please enter alt text for article logo image"
+                                        fieldLabel="Alt Text"
+                                        name="./articleLogoAltText"
+                                        value="Article Logo Alt Text"/>
+									<jump-link-id
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/textfield"
+										fieldDescription="Please enter Jump Link Id"
+										fieldLabel="Jump Link Id"
+										name="./jumpLinkId"/>    
+                                </items>
+                            </column>
+                        </items>
+                    </articleheader>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Title Header"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Title">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter title text"
+                        fieldLabel="Title"
+                        name="./title"
+                        required="{Boolean}true"/>
+                    <bgcolor
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/apps/ace-www/components/content/title-header/config/bgcolor"
+                        fieldDescription="Select the section background color"
+                        fieldLabel="Background Color"
+                        freestylePalette="{Boolean}true"
+                        name="./sectionBgColor"/>
+                    <textcolor
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                        colorsPath="/etc/config/ace-www/components/common/textfontcolors"
+                        fieldDescription="Select the title text color"
+                        fieldLabel="Text Color"
+                        freestylePalette="{Boolean}true"
+                        name="./textColor"/>
+                    <jump-link-id
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please enter Jump Link Id"
+                        fieldLabel="Jump Link Id"
+                        name="./jumpLinkId"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

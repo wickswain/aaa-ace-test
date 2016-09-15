@@ -20,8 +20,8 @@
     ValueMap vm = (ValueMap) request.getAttribute(Field.class.getName());
 
     Resource mappingsRes = null;
-    String colorsRespurcePath = cfg.get("colorsPath", "");
-    Resource rt = resourceResolver.getResource(colorsRespurcePath);
+    String colorsResourcePath = cfg.get("colorsPath", "");
+    Resource rt = resourceResolver.getResource(colorsResourcePath);
     if (rt != null) {
         mappingsRes = rt.getChild("colors");
     }

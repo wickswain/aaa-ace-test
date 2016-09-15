@@ -168,6 +168,13 @@
 				<scope>provided</scope>
 			</dependency>
 
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-api</artifactId>
+				<version>5.7.2</version>  <!-- 5.5.12 in aem 6.1 -->
+				<scope>provided</scope>
+			</dependency>
+
 			<!-- I18N 5.5.12 -->
 			<dependency>
 				<groupId>com.day.cq</groupId>
@@ -324,6 +331,28 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>2.7</version>
+					<executions>
+						<execution>
+							<id>copy-resources-1</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${session.executionRootDirectory}/packages/application/src/main/content/jcr_root/etc/clientlibs</outputDirectory>
+								<overwrite>true</overwrite>
+								<resources>
+									<resource>
+										<directory>${session.executionRootDirectory}/html-prototype/clientlibs</directory>
+										<excludes>
+					                  		<exclude>**/*.less</exclude>
+                                            <exclude>**/less/**</exclude>
+					                  </excludes>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 
 				<plugin>
@@ -464,6 +493,7 @@
 
 	<modules>
 		<module>build-tools</module>
+		<module>html-prototype</module>
 		<module>bundles</module>
 		<module>packages</module>
 	</modules>
