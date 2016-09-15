@@ -1,0 +1,97 @@
+<!--/*
+
+    Global Navigation Component
+    --------------------------------------------------
+
+    1. This is global navigation component. Some portions of this component would be personalized.
+    2. Navigation will be derived from dummy IA created under "Navigation Root" nodeusing siteadmin console.
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+
+<sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+============================================= -->         
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !navigationProvider.navigationVOs}"
+     data-emptytext="Author Global Navigation Component Here." style="text-align: center;"
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Global Navigation Component"/>
+<!-- #placeholder-content end -->
+
+<!-- Global Navigation component
+============================================= -->
+<div class="navigation-bar">
+    <nav class="navbar navbar-default">
+        <div class="container text-center">
+            <ul class="nav navbar-nav">
+                <sly data-sly-list="${navigationProvider.navigationVOs}">
+                    <li>
+                        <a href="javascript:void(0);" id="nav-${itemList.index}" onclick="manageNavContent(this)">
+                            ${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}
+                        </a>
+                    </li>
+                </sly>
+                <li>
+                    <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join
+                    </a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Drawers content based on onclick event from navigation -->
+    <sly data-sly-list="${navigationProvider.navigationVOs}">
+        <div class="nav-${itemList.index} drawers-wrapper">
+            <div class="drawers-content">
+            <div class="drawer-close">
+                <div class="close-icon close-drawer"><span>+</span></div>
+            </div>
+            <div class="drawers-tiles">
+                <div class="text-center">
+                    <ul class="list-inline">
+                        <sly data-sly-list.child1="${item.navigList}">
+                            <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
+                            <li data-sly-test="${child1.currentpage.properties.pageType == 'tile'}">
+                                <a class="tile-card" 
+                                	href="${child1PagePath.url ? child1PagePath.url : ''  @ context='uri'}"
+                                	target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" 
+                                    	alt="${child1.currentpage.properties.tileIconAltText}" title="${child1.currentpage.properties.tileIconAltText}"> 
+                                    	<span class="tile-title">
+                                    		${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
+                                    	</span>
+                                </a>
+                            </li>
+                        </sly>
+                    </ul>
+                </div>
+            </div>
+			<div class="drawers-tiles-list">
+                <div class="container">
+                    <div class="drawers-container row">
+                        <sly data-sly-list.child1="${item.navigList}">
+                            <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}" class="${!child1List.last?'tiles-list border-manage':'tiles-list'}">
+                                <h3 class="text-uppercase">
+                                	${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}
+                                </h3>
+                                <sly data-sly-list.child2="${child1.navigList}">
+                                	<sly data-sly-use.child2PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child2.currentpage.properties.linkURL}" />
+                                    <li>
+                                        <a href="${child2PagePath.url ? child2PagePath.url : ''  @ context='uri'}"
+                                       		target="${child2.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+                                        	${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}
+                                        </a>
+                                    </li>
+                                </sly>
+                            </ul>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+			</div>
+        </div>
+    </sly>
+</div>
+<!-- #global-navigation-component end -->
