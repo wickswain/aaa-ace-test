@@ -25,7 +25,7 @@
 ============================================= -->
 <div class="navigation-bar">
     <nav class="navbar navbar-default">
-        <div class="container text-center">
+        <div class="text-center">
             <ul class="nav navbar-nav">
                 <sly data-sly-list="${navigationProvider.navigationVOs}">
                     <li>
@@ -49,7 +49,7 @@
                 <div class="close-icon close-drawer"><span>+</span></div>
             </div>
             <div class="drawers-tiles">
-                <div class="text-center">
+                <div class="text-center container">
                     <ul class="list-inline">
                         <sly data-sly-list.child1="${item.navigList}">
                             <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
