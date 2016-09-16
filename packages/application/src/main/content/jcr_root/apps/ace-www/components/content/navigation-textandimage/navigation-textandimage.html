@@ -11,12 +11,13 @@
 
 <!-- Sightly global objects declaration
 ============================================= -->
-<sly data-sly-test.isAuthored="${properties.fileReference || properties.enableRTE || properties.enableCTA}">
+<sly data-sly-test.isNotAuthored="${!properties.fileReference && !properties.enableRTE && !properties.enableCTA}"/>
+<sly data-sly-test.isAuthored="${properties.fileReference || properties.enableRTE || properties.enableCTA}"/>
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
 ============================================= -->       
-<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}"
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && isNotAuthored}"
      data-emptytext="Author Navigation Text & Image Component Here." style="text-align: center;"
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Navigation Text & Image Component"/>
 <!-- #placeholder-content end -->
