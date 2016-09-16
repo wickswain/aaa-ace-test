@@ -26,11 +26,11 @@
                 <styles jcr:primaryType="nt:unstructured">
                     <font-a
                         jcr:primaryType="nt:unstructured"
-                        cssName="roboto-regular font-a"
+                        cssName="roboto-slab-bold font-a"
                         text="Bold XL Header"/>
                     <font-b
                         jcr:primaryType="nt:unstructured"
-                        cssName="roboto-light font-b"
+                        cssName="roboto-slab-bold font-b"
                         text="Bold Header"/>
                     <font-c
                         jcr:primaryType="nt:unstructured"
