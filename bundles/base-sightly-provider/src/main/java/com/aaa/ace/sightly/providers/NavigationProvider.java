@@ -75,61 +75,51 @@ public class NavigationProvider extends WCMUsePojo {
 	}
 
 	/*
-	 * This method recursively iterates over all the child nodes of the parent
+	 * This method iterates over all the child nodes of the parent
 	 * page. For current node iterate each child set currengtPage,hasChildren
 	 * and list of children of that child in NavigationVO object based on node
 	 * properties.
 	 */
 
 	private void getChildPages(NavigationVO navigationVO, Page currentPage) {
-		Iterator<Page> childNodes = currentPage.listChildren();
-		Iterator<Page> tmp = currentPage.listChildren();
-		navigationVO.setHasChildren(hasMoreThnOneChild(tmp));
+		Iterator<Page> childPages = currentPage.listChildren();
 
-		List<NavigationVO> childPages = new ArrayList<NavigationVO>();
+		List<NavigationVO> newChildPagesList = new ArrayList<NavigationVO>();
 		NavigationVO navigationChildVo = null;
-		int pageTypeAsTileCount = 0;
-		while (childNodes.hasNext()) {
+		int tilePageCount = 0;
+		while (childPages.hasNext()) {
 			navigationChildVo = new NavigationVO();
-			Page childPage = childNodes.next();
-			if (!childPage.getProperties().containsKey(NameConstants.PN_HIDE_IN_NAV)) {
-				if(childPage.getProperties().containsKey(PAGE_TYPE_KEY) && childPage.getProperties().get(PAGE_TYPE_KEY).equals(PAGE_TYPE_VALUE)){
-					pageTypeAsTileCount+=1;
-					if(pageTypeAsTileCount > PAGE_TYPE_TILE_MAX_COUNT)
-						break;
+			Page childPage = childPages.next();
+			if (isVisibleInNav(childPage)) {
+				boolean isQualifiedNavPage = true;
+				if(isTilePage(childPage)){
+					tilePageCount++;
+					isQualifiedNavPage = tilePageCount <= PAGE_TYPE_TILE_MAX_COUNT;
 				}
-				navigationChildVo.setCurrentpage(childPage);
-				navigationChildVo.setUniqueId(UUID.randomUUID().toString());
-				childPages.add(navigationChildVo);
-
-				if (childPage.listChildren() != null) {
-					getChildPages(navigationChildVo, childPage);
+				if(isQualifiedNavPage){
+					navigationChildVo.setCurrentpage(childPage);
+					navigationChildVo.setUniqueId(UUID.randomUUID().toString());
+					newChildPagesList.add(navigationChildVo);
+					
+					if (childPage.listChildren() != null) {
+						getChildPages(navigationChildVo, childPage);
+					}
 				}
-
 			}
-
 		}
-		navigationVO.setNavigList(childPages);
+		navigationVO.setHasChildren(newChildPagesList.size()>1);
+		navigationVO.setNavigList(newChildPagesList);
+	}
+	
+	private boolean isVisibleInNav(Page page){
+		return !page.getProperties().containsKey(NameConstants.PN_HIDE_IN_NAV);
 	}
 
-	private boolean hasMoreThnOneChild(Iterator<Page> iterator) {
-		boolean isHideInNav = false, isNotHideInNav = true;
-
-		while (iterator.hasNext()) {
-			Page tmpPage = iterator.next();
-			isHideInNav = tmpPage.getProperties().containsKey(NameConstants.PN_HIDE_IN_NAV);
-			if (!isHideInNav) {
-				isNotHideInNav = tmpPage.getProperties().containsKey(NameConstants.PN_HIDE_IN_NAV);
-			}
+	private boolean isTilePage(Page page){
+		if(page.getProperties().containsKey(PAGE_TYPE_KEY) && page.getProperties().get(PAGE_TYPE_KEY).equals(PAGE_TYPE_VALUE)){
+		   return true;
 		}
-
-		if (!isNotHideInNav) {
-			isNotHideInNav = true;
-		} else {
-			isNotHideInNav = false;
-		}
-
-		return isNotHideInNav;
+		return false;
 	}
 
 	public Page getHomePage() {
