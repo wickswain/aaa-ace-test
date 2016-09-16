@@ -21,7 +21,7 @@ $(function () {
     $('.search-btn').on('click', function (e) {
         $('.expand-searchbar').animate({
             opacity: '1',
-            width: '62%'
+            width: '70%'
         }, 500).prev().fadeOut();
         e.preventDefault();
     });
