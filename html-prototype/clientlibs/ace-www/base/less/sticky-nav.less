@@ -4,14 +4,16 @@
 
 .sticky-nav {
     min-height: 60px;
-    position: relative;
+    display: none;
+    max-width: 1700px;
+    margin: 0 auto;
+    z-index: 99;
+    top: 0;
     .sticky-navbar {
         background-color: @color-gray-light;
         border: 0;
         margin: 0;
         border-bottom: 1px solid #bfc2c2;
-        top: 0;
-        z-index: 999;
         .nav> li> a {
             color: @color-blue-primary-medium;
             padding: 20px 20px;
