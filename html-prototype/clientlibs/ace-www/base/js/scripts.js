@@ -1,8 +1,8 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:15-September-2016
-    Version:0.7
+    Modified Date:16-September-2016
+    Version:0.8
 *****************************************/
 $(function () {
 
@@ -19,14 +19,14 @@ $(function () {
         e.preventDefault();
     });
     $('.search-btn').on('click', function (e) {
-        $('.expend-searchbar').animate({
+        $('.expand-searchbar').animate({
             opacity: '1',
-            width: '80%'
+            width: '62%'
         }, 500).prev().fadeOut();
         e.preventDefault();
     });
-    $('.expend-searchbar .close-icon').parent().on('click', function (e) {
-        $('.expend-searchbar').animate({
+    $('.expand-searchbar .close-icon').parent().on('click', function (e) {
+        $('.expand-searchbar').animate({
             opacity: '0',
             width: '20%'
         }, 500).prev().fadeIn();
@@ -67,7 +67,6 @@ $(function () {
     }
     headerResize();
     /*Home Header - jump link*/
-    ($('.home-header').next().attr('id') != 'undefined') ? $('.learn-link a').attr('href', '#' + $('.home-header').next().children().attr('id')): $('.learn-link a').attr('href', '#');
     $('.home-header .learn-link a').click(function (e) {
         var hashtag = $(this.hash),
             $target = (hashtag != '') ? parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight() : 0;
@@ -109,7 +108,7 @@ $(function () {
         var navid = $(this).attr('id');
         $('.drawers-wrapper:not(".' + navid + '")').hide();
         $('.' + navid).stop().slideToggle(500);
-        $('.navigation-bar .nav li a').css("opacity", '0.3');
+        $('.navigation-bar .nav li a').css("opacity", "0.3");
         $(this).css("opacity", "1");
 
         var activenavlink = 'GlobalNavigation:link' + navid;
@@ -117,7 +116,7 @@ $(function () {
 
         e.preventDefault();
     });
-    /* Navigation Close event */
+    // Navigation Close event /
     $('.drawer-close').on('click', function () {
         $(this).parent().parent().stop().slideUp();
         $('.navigation-bar .nav li a').css("opacity", "1");

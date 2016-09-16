@@ -47,7 +47,7 @@
                                         <div class="avatar-title font-f">Jessica</div>
                                         <div class="my-aacount "><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
                                         <div class="signout"> <a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
-                                        <div class="notofication-list">
+                                        <div class="notification-list">
                                             <ul>
                                                 <li>
                                                     <p class="font-h">Lorem ipsum Test question one dolor sit amet,consectetur elit?</p>
@@ -63,7 +63,7 @@
                                 <li> <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text"><span class="input-group-addon"><i class="glyphicon glyphicon-search " aria-hidden="true"></i> Search</span></span>
                                 </li>
                             </ul>
-                            <div class="expend-searchbar" style="width:20%; opacity:0;">
+                            <div class="expand-searchbar" style="width:20%; opacity:0;">
                                 <div class="input-group search-bar"> <span class="input-group-addon">
                                <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                               </span>
@@ -98,9 +98,9 @@
     </div>
     <script>
         $(function() {
-            ($(window).width() < 992) ? $("#profile-box").appendTo(".mobile-view"): $("#profile-box").appendTo(".desktop-view");
+            ($(window).width() < 992) ? $(".profile-box").appendTo(".mobile-view"): $(".profile-box").appendTo("#nav-links");
             $(window).resize(function() {
-                ($(this).width() < 992) ? $("#profile-box").appendTo(".mobile-view"): $("#profile-box").appendTo(".desktop-view");
+                ($(this).width() < 992) ? $(".profile-box").appendTo(".mobile-view"): $(".profile-box").appendTo("#nav-links");
             });
         });
 
