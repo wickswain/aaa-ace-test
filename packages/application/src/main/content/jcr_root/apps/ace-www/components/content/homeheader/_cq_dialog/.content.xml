@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Home Header"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Text">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <home-header
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <headline-title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter title text for heading"
+                                fieldLabel="Heading/Title"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <title-text-color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/ace-www/components/common/textfontcolors"
+                                fieldDescription="Select title font text color"
+                                fieldLabel="Text Font Color"
+                                freestylePalette="{Boolean}true"
+                                name="./textColor"/>
+                            <imageorvideo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".showimageorvideo"
+                                fieldDescription="Please select background Image or Video"
+                                fieldLabel="Image/Video"
+                                name="./imageorvideo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./image"
+                                        text="Image"
+                                        value="showimage"/>
+                                    <video
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./video"
+                                        text="Video"
+                                        value="showvideo"/>
+                                </items>
+                            </imageorvideo>
+                            <backgroundimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Background Image"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./image"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <backgroundvideo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Drop video from the Content Finder (Only mp4 video supported)"
+                                fieldLabel="Background Video(Only mp4)"
+                                name="./video"
+                                regex="/.(mp4)/"
+                                regexText="Please drop videos in mp4 format only"
+                                rootPath="/content/dam"/>
+                            <alt-text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide showimageorvideo"
+                                showhidetargetvalue="showimage">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alt-text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Alt Text"
+                                        name="./altText"/>
+                                </items>
+                            </alt-text>
+                            <background-shade
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide showimageorvideo"
+                                showhidetargetvalue="showimage">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <background-shade
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Select back ground shade"
+                                        fieldLabel="Back Ground Shade"
+                                        name="./backgroundShade">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <white
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White"
+                                                value="white"/>
+                                            <black
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Black"
+                                                value="black"/>
+                                        </items>
+                                    </background-shade>
+                                </items>
+                            </background-shade>
+                            <opacity-alphavalue
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide showimageorvideo"
+                                showhidetargetvalue="showimage">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <opacity-alphavalue
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select opacity alpha value"
+                                        fieldLabel="Opacity Alpha"
+                                        name="./opacity">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <zero
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0"
+                                                value="0"/>
+                                            <one
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.1"
+                                                value="0.1"/>
+                                            <two
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.2"
+                                                value="0.2"/>
+                                            <three
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.3"
+                                                value="0.3"/>
+                                            <four
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.4"
+                                                value="0.4"/>
+                                            <five
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.5"
+                                                value="0.5"/>
+                                            <six
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.6"
+                                                value="0.6"/>
+                                            <seven
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.7"
+                                                value="0.7"/>
+                                            <eight
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.8"
+                                                value="0.8"/>
+                                            <nine
+                                                jcr:primaryType="nt:unstructured"
+                                                text="0.9"
+                                                value="0.9"/>
+                                            <ten
+                                                jcr:primaryType="nt:unstructured"
+                                                text="1"
+                                                value="1"/>
+                                        </items>
+                                    </opacity-alphavalue>
+                                </items>
+                            </opacity-alphavalue>
+                            <learn-button-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter next component's Jump Link Id"
+                                fieldLabel="Learn Button Id"
+                                name="./learnButtonId"/>
+                        </items>
+                    </columns>
+                </items>
+            </home-header>
+            <enablerteorcta
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Enable RTE/CTA Button"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <rteflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the rte."
+                                name="./rteFlag"
+                                text="Enable RTE?(For Text/Body copy)"
+                                value="{Boolean}true"/>
+                            <rteflag_x0040_delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./rteFlag@Delete"
+                                value="{Boolean}true"/>
+                            <ctaflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the CTA button."
+                                name="./ctaFlag"
+                                text="Enable CTA Button?"
+                                value="{Boolean}true"/>
+                            <ctaflag_x0040_delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./ctaFlag@Delete"
+                                value="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </enablerteorcta>
+            <homeheadersize
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Home Header Size "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <header-size
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select home header height"
+                                fieldLabel="Home Header Height"
+                                name="./headerSize">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Small (50%)"
+                                        value="small"/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Medium (75%)"
+                                        value="medium"/>
+                                    <full
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Full (100%)"
+                                        value="full"/>
+                                </items>
+                            </header-size>
+                        </items>
+                    </columns>
+                </items>
+            </homeheadersize>
+            <jumplink
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Jumplink "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Jump Link Id"
+                                fieldLabel="Jump Link Id"
+                                name="./jumpLinkId"/>
+                        </items>
+                    </columns>
+                </items>
+            </jumplink>
+        </items>
+    </content>
+</jcr:root>
