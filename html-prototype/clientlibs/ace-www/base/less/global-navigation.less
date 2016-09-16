@@ -3,8 +3,8 @@
 *****************************************/
     
     .navigation-bar {
-        float: left;
-        width: 100%;
+        max-width: 1700px;
+        margin: 0 auto;
         .navbar {
             border-radius: 0px;
             border-color: transparent;
@@ -75,21 +75,17 @@
                         padding-bottom: 30px;
                         margin: 0 auto;
                         padding-top: 80px;
-                        display: flex;
-                        flex-flow: row nowrap;
-                        justify-content: space-around;
                         max-width: 1140px;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
                         li {
-                            flex: 1 0 auto;
-                            max-width: 180px;
-                            min-height: 140px;
-                            display: flex;
+                            width: 180px;
+                            height: 140px;
                             text-align: center;
                             background-color: #005095;
                             transition: all 0.4s ease;
                             border-radius: 4px;
-                            align-items: center;
-                            flex-direction: column;
                             margin: 0 5px;
                             &:hover {
                                 background-color: #03477f;
@@ -131,12 +127,12 @@
                 }
                 .drawers-tiles-list {
                     .drawers-container {
-                        display: flex;
-                        flex-flow: row nowrap;
-                        justify-content: center;
                         max-width: 1140px;
                         margin: 0 auto;
                         padding-top: 30px;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
                         :first-child {
                             padding-left: 0;
                         }
@@ -148,12 +144,12 @@
                     .tiles-list {
                         padding: 0 35px;
                         width: 285px;
-                        flex-direction: column;
-                        display: flex;
+                        display: inline-block;
                         margin-bottom: 30px;
                         padding-top: 0;
                         vertical-align: top;
                         border-top: 0;
+                        text-align: left;
                         &.border-manage {
                             border-right: solid 1px #3c66ac;
                         }
