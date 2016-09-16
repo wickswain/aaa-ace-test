@@ -1,0 +1,70 @@
+<!--/*
+
+    Icon Item component
+    ----------------------------------------------------------------
+
+    Hidden component that makes up the component row.
+
+    Required Fields:
+    1. Icon Title
+    2. Image
+
+*/-->
+
+    <!--/*  Left Column  */-->
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
+        <sly data-sly-test.hasContent="${properties.leftImage}">
+            <div class="horizontal-space text-center">
+                <img src="${properties.leftImage}" alt="${properties.leftAltText}" class="img-responsive column-image">
+            </div>
+        </sly>
+
+        <div class="tcc-horizontal-space font-b">
+            <h2 class="font-b text-center">${properties.leftHeading}</h2>
+        </div>
+
+        <div class="horizontal-space font-f">
+            <sly data-sly-resource="${ @path='rte-left', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
+
+        <div class="text-center tcc-cta-top">
+            <sly data-sly-resource="${ @path='cta-large-left', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+        </div>
+    </div>
+
+    <div class="visible-lg visible-md col-lg-2 col-md-2 tcc-divider">
+        <hr>
+    </div>
+
+    <!--/*  Right Column  */-->
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
+        <sly data-sly-test.hasContent="${properties.rightImage}">
+            <div class="horizontal-space text-center">
+                <img src="${properties.rightImage}" alt="${properties.rightAltText}" class="img-responsive column-image">
+            </div>
+        </sly>
+
+        <div class="tcc-horizontal-space font-b">
+            <h2 class="font-b text-center">${properties.rightHeading}</h2>
+        </div>
+
+        <div class="horizontal-space font-f">
+            <sly data-sly-resource="${ @path='rte-right', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
+
+        <div class="text-center tcc-cta-top">
+            <sly data-sly-resource="${ @path='cta-large-right', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+        </div>
+    </div>
+
+
+
+<!--<sly data-sly-test.hasContent="${properties.image}">-->
+
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Column Item here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+ <!-- #placeholder-content end -->
