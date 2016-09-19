@@ -80,7 +80,7 @@
                     text="12px All Caps Title"/>
                 <font-e
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-regular font-e"
+                    cssName="roboto-light font-e"
                     text="Light Title"/>
                 <font-f
                     jcr:primaryType="nt:unstructured"
