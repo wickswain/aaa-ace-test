@@ -36,7 +36,7 @@
                     <div data-sly-test.opacity="${properties.backgroundShade == 'white' ? 'rgba(255,255,255,{0})' : 'rgba(0,0,0,{0})' @ format=[properties.opacity]}"
                                  style="background-color:${opacity @ context='styleToken'}"
                                  class="learn-link">
-		                 	<a href="#" class="learn-btn font-h ">Learn<br>
+		                 	<a href="#${properties.learnButtonId}" class="learn-btn font-h ">Learn<br>
 			                 	<div class="bounce">
 			                	 	<span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
 			                 	</div>
