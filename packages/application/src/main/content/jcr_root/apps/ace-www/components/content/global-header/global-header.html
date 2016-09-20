@@ -16,8 +16,6 @@
         @ url = currentStyle.leftLink2LinkTo}"/>
 <sly data-sly-use.rightLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
         @ url = currentStyle.rightLink1LinkTo}"/>
-<sly data-sly-use.rightLink2="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
-        @ url = currentStyle.rightLink2LinkTo}"/>
 <sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
         @ link = currentStyle.searchPagePath}" />
 <!-- #sightly-global-objects-declaration end -->
@@ -40,16 +38,8 @@
                 <span data-sly-test="${currentStyle.rightLink1Label}"
                       class="pipe">|</span>
                 
-                <a data-sly-test="${currentStyle.rightLink2Label}"
-                   target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${rightLink2.url}" id="user-login">
-                    <img data-sly-test="${currentStyle.icon2Path}"
-                         src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
-                         alt="${currentStyle.icon2Alt}" class="lock-icon"/>
-                    ${currentStyle.rightLink2Label}
-                </a>
-                
                 <!-- /* TODO: Profile section changes need to include */ -->
+                <sly data-sly-include="login.html"/>
             </li>
             
             <li>

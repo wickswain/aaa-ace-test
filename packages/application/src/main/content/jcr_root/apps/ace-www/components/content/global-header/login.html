@@ -1,0 +1,67 @@
+<!--/*
+
+    Login Component.
+    ----------------------------------------------------------------
+    This component is used to disaply the logged in state of the active user.
+
+    Required Fields:
+    1. Sign-In Link
+    2. Sing-Out Link
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.rightLink2="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.rightLink2LinkTo}"/>
+<sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'
+        @ signInURL = rightLink2.url}"/>
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Login component
+============================================= -->
+<a data-sly-test="${!user.isLoggedIn}"
+   target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+   href="http://apps.calif.aaa.com/aceapps/authenticate/login?ReturnURL=http://local.calif.aaa.com:4502/content/ace-www/en/sprint2.html"
+   id="user-login">
+    <img data-sly-test="${currentStyle.icon2Path}"
+         src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
+         alt="${currentStyle.icon2Alt}" class="lock-icon"/>
+        ${currentStyle.rightLink2Label}
+</a>
+
+<a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" 
+   aria-haspopup="true" aria-expanded="false" class="user-info">
+    ${user.firstName}<i class="glyphicon glyphicon-chevron-down"></i>
+    <span class="avatar">
+        <span class="notification">3</span>
+    </span>
+</a>
+
+<div class="profile-box dropdown-menu" aria-labelledby="user-info">
+    <div class="avatar-pic">
+        <img src="images/card-img-1.png" class="img-responsive">
+    </div>
+    <div class="avatar-title font-f">${user.firstName}</div>
+    <div class="my-aacount ">
+        <a href="https://apps.calif.aaa.com/aceapps/account/my-account" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a>
+    </div>
+    <div class="signout"> 
+        <a href="http://apps.calif.aaa.com/aceapps/authenticate/logout?ReturnURL=http://local.calif.aaa.com:4502/content/ace-www/en/sprint2.html" class="link-btn link-lg link-color-orange link-reversed">Sign out</a>
+    </div>
+    <div class="notification-list">
+        <ul>
+            <li>
+                <p class="font-h">Lorem ipsum Test question one dolor sit amet,consectetur elit?</p>
+            </li>
+            <li>
+                <p class="font-h">Lorem ipsum Test question one dolor sit amet,consectetur elit?</p>
+            </li>
+        </ul>
+    </div>
+    <div class="pending-notification">
+        <span class="pull-left font-h">Pending notifications (3)</span>
+        <a href="#" class="link-btn link-color-orange link-reversed font-h">See all</a>
+    </div>
+</div>
+<!-- #login-component end -->
