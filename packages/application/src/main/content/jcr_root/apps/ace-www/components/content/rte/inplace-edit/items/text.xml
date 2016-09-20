@@ -125,6 +125,39 @@
                     <pound
                         jcr:primaryType="nt:unstructured"
                         entity="&amp;#163;"/>
+                    <apostrophe
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8216"/>
+                    <macron-A
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#256"/>
+                    <macron-a
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#257"/>
+                    <macron-E
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#274"/>
+                    <macron-e
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#275"/>
+                    <macrnon-I
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#298"/>
+                    <macron-i
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#299"/>
+                    <macron-O
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#332"/>
+                    <macron-o
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#333"/>
+                    <macron-U
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#362"/>
+                    <macrnon-u
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#363"/>
                 </chars>
             </specialCharsConfig>
         </misctools>
