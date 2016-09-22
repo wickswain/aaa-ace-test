@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-13T09:04:22.132-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/apps/ace-www/templates/globalnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Travel"
+        jcr:uuid="828f3e66-15b4-4aca-8de1-1f14ea570e78"
+        sling:resourceType="ace-www/components/page/globalnav"/>
+    <hotel/>
+    <RentalCar/>
+    <flights/>
+    <cruises/>
+    <travel-insurance/>
+    <join-now/>
+    <book-with-aaa---save/>
+    <u-s--road-trip-tools/>
+    <international-travel-preparation-tools/>
+    <vacation-ideas/>
+</jcr:root>
