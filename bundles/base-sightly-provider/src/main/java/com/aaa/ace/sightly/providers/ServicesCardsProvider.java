@@ -1,53 +1,37 @@
 package com.aaa.ace.sightly.providers;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by E644282 on 09/13/2016.
  */
 public class ServicesCardsProvider extends WCMUsePojo{
 
+    public static final int CARD_ROW_AMOUNT = 3;
     private int requestedRowsAmt;
 
-    private List<Resource> servicesCards;
+    private List<String> servicesCardPaths;
 
     public void activate ( ) throws Exception{
 
-        servicesCards = new ArrayList<>();
-
-        Map servicesCardsProperties = new HashMap<>();
+        servicesCardPaths = new ArrayList();
 
         requestedRowsAmt = Integer.parseInt(this.getProperties().get("rowamount", String.class));
 
-        Resource resource = this.getResource();
+        //loop over the row amount times the card row amount. in this case it row * 3
+            //make unique path for each iteration. in this case it's servicecardpath+i
+            //add unique string to servicecardPaths
 
-        ResourceResolver resourceResolver = this.getResourceResolver();
-
-        Iterator<Resource> serviceCardsChildren = this.getResource().listChildren();
-
-        servicesCardsProperties.put("sling:resourceType", "/apps/ace-www/components/content/services-cards/service-card");
-
-
-        for (int i=0; i<requestedRowsAmt; i++){
-            if (!serviceCardsChildren.hasNext()){
-                Resource create = resourceResolver.create(resource, "service_card" + (i+1), servicesCardsProperties);
-                resourceResolver.commit();
-                servicesCards.add(create);
-            }else{
-                servicesCards.add(serviceCardsChildren.next());
-            }
+        for (int i = 0; i<(requestedRowsAmt* CARD_ROW_AMOUNT); i++){
+            String addPathName="servicecard"+(i+1);
+            servicesCardPaths.add(addPathName);
         }
 
-        while(serviceCardsChildren.hasNext()){
-            resourceResolver.delete(serviceCardsChildren.next());
-            resourceResolver.commit();
-        }
     }
-    public List<Resource> getServiceCards(){
-        return servicesCards;
+    public List<String> getCardPaths(){
+        return servicesCardPaths;
     }
 }

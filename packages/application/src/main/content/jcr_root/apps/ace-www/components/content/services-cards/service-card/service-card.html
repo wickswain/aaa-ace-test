@@ -8,32 +8,60 @@
 
 */-->
 
-<!--/*
-<sly data-sly-test.hasContent="${properties.image}">
-    <div class="horizontal-space icon-image"> <img src="${properties.image}" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
-    <div class="icon-title  roboto-medium font-f">
-        <h2 title="${properties.icontitle}" >${properties.icontitle}</h2>
-        <p title="${properties.icontext}" >${properties.icontext}</p>
-    </div>
-    <div class="icon-link font-h">
-        <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
-    </div>
-</sly>
-*/-->
+
+        <sly data-sly-test.hasContent="${properties.cardtitle}">
+            <div class="visible-lg visible-md" style="background-color:${properties.cardbackgroundColor @ context='styleToken'};">
+                <div class="horizontal-space icon-sc-image">
+                    <img src="${properties.image}" title="${properties.altText}" alt="${properties.altText}">
+                </div>
+                <div class="icon-sc-title roboto-medium font-f">
+                    <h2 title="Food & Drink">${properties.cardtitle}</h2>
+                </div>
+                <p class="font-h">${properties.cardtext}</p>
+                <div class="text-center">
+                    <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+                </div>
+            </div>
 
 
-    <div class="horizontal-space icon-sc-image"> <img src="images/75x65-car-insurance-temp.png" title="Car-Insurance-Icon" alt="Car Insurance Icon"> </div>
-    <div class="icon-sc-title  roboto-medium font-f">
-        <h2 title="Food & Drink">Auto Insurance</h2> </div>
-    <p class="font-h">Lorem ipsum dolor sit amet, con secteur adipiscing elit. Etiam eu nulla et magna laoreet scelert.</p>
-    <div class="icon-sc-link font-h">
-        <a href="#" title="More" class="link-btn link-lg ">More</a>
-    </div>
+        <div class="visible-sm visible-xs">
+            <div class="item">
+                <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems">
+                    <div class="col-sm-4 col-xs-4">
+                        <img src="${properties.image}" title="${properties.tilealttext}" alt="${properties.tilealttext}">
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <h3 title="Question 1">${properties.cardtitle}</h3>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <span class="icon-adjust roboto-light sc-toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="roboto-light font-h collapse" id="collapseOrderItems">
+                    <div class="col-sm-12 col-xs-12">
+                        <p class="font-h">${properties.cardtext}</p>
+                        <div class="text-center">
+                            <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-small'}"/>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+    </sly>
 
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Service Card Item here"
-     class="cq-placeholder" style="text-align: center;">
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Service Card Item here" style="text-align: center;">
+    <div>
+        <div class="horizontal-space icon-sc-image">
+            <img src="/content/dam/aaa/images/75x75_placeholder.png" title="Placeholder Image" alt="Car Insurance Icon">
+        </div>
+        <div class="icon-sc-title roboto-medium font-f">
+            <h2 title="Food & Drink">Author Service Card Here</h2> </div>
+        <p class="font-h"></p>
+    </div>
 </div>
  <!-- #placeholder-content end -->

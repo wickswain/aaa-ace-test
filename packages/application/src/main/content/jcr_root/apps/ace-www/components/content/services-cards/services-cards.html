@@ -7,22 +7,23 @@
     1. See https://axis41.atlassian.net/wiki/display/AAA/Component+-+Services+Cards
 
 */-->
-
-
-<div class="icon-sc-row">
-    <div class="container horizontal-component-space"
-         data-sly-use.cardsprovider="${'com.aaa.ace.sightly.providers.ServicesCardsProvider'}">
-        <div class="text-center">
-            <div class="top-btm-space-130 roboto-medium font-b">
-                <h1 title="Explore Services">Bundle policy coverage for your important "little" things.</h1> </div>
+<div id="${properties.jumpLinkId}" style="background-color:${properties.backgroundColor @ context='styleToken'};">
+    <div class="icon-sc-row" data-sly-test.hasContent="${properties.rowamount}">
+        <div class="container horizontal-component-space"
+             data-sly-use.cardsprovider="${'com.aaa.ace.sightly.providers.ServicesCardsProvider'}">
+            <div class="text-center">
+                <div class="top-btm-space-130 roboto-medium font-b">
+                    <h1 data-sly-test="${properties.title}" title="${properties.title}"
+                        style="color:${properties.headerTitleTextFontColor @ context='styleToken'};">${properties.title}</h1>
+                </div>
+            </div>
+            <!-- List of the cards start here -->
+            <ul class="list-inline icon-sc-list row" data-sly-list.path="${cardsprovider.cardPaths}">
+                <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 services-cards-card" data-sly-resource="${ @path=path, resourceType='/apps/ace-www/components/content/services-cards/service-card'}"></li>
+            </ul>
         </div>
-        <!-- List of the service cards start here -->
-        <ul data-sly-list.cardrow="${cardsprovider.serviceCards}"class="list-inline icon-list row">
-            <sly data-sly-resource="${cardrow.path @ resourceType=cardrow.resourceType}"></sly>
-        </ul>
     </div>
 </div>
-
 
 <!-- Placeholder Content
 ============================================= -->
