@@ -10,7 +10,6 @@
 
 <!-- Sightly global objects declaration
 ============================================= -->
-
 <sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider" />
 <!-- #sightly-global-objects-declaration end -->
 
@@ -41,55 +40,63 @@
             </ul>
         </div>
     </nav>
+    
     <!-- Drawers content based on onclick event from navigation -->
     <sly data-sly-list="${navigationProvider.navigationVOs}">
         <div class="nav-${itemList.index} drawers-wrapper">
             <div class="drawers-content">
-            <div class="drawer-close">
-                <div class="close-icon close-drawer"><span>+</span></div>
-            </div>
-            <div class="drawers-tiles">
-                <div class="text-center container">
-                    <ul class="list-inline">
-                        <sly data-sly-list.child1="${item.navigList}">
-                            <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
-                            <li data-sly-test="${child1.currentpage.properties.pageType == 'tile'}">
-                                <a class="tile-card" 
-                                	href="${child1PagePath.url ? child1PagePath.url : ''  @ context='uri'}"
-                                	target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
-                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" 
-                                    	alt="${child1.currentpage.properties.tileIconAltText}" title="${child1.currentpage.properties.tileIconAltText}"> 
-                                    	<span class="tile-title">
-                                    		${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
-                                    	</span>
-                                </a>
-                            </li>
-                        </sly>
-                    </ul>
+	            <div class="drawer-close">
+	                <div class="close-icon close-drawer"><span>+</span></div>
+	            </div>
+	            
+	            <div class="drawers-tiles">
+	                <div class="text-center container">
+	                    <ul class="list-inline">
+	                        <sly data-sly-list.child1="${item.navigList}">
+	                            <sly data-sly-use.child1PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child1.currentpage.properties.linkURL}" />
+	                            <li data-sly-test="${child1.currentpage.properties.pageType == 'tile'}">
+	                                <a class="tile-card" 
+	                                	href="${child1PagePath.url ? child1PagePath.url : ''  @ context='uri'}"
+	                                	target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+	                                    <img src="${child1.currentpage.properties.tileIcon}" class="drawer-image" 
+	                                    	alt="${child1.currentpage.properties.tileIconAltText}" title="${child1.currentpage.properties.tileIconAltText}"> 
+	                                    	<span class="tile-title">
+	                                    		${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
+	                                    	</span>
+	                                </a>
+	                            </li>
+	                        </sly>
+	                    </ul>
+	                </div>
+	            </div>
+	            
+				<div class="drawers-tiles-list">
+	                <div class="container">
+	                    <div class="drawers-container row">
+	                        <sly data-sly-list.child1="${item.navigList}">
+	                            <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}" class="${!child1List.last?'tiles-list border-manage':'tiles-list'}">
+	                                <h3 class="text-uppercase">
+	                                	${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}
+	                                </h3>
+	                                <sly data-sly-list.child2="${child1.navigList}">
+	                                	<sly data-sly-use.child2PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child2.currentpage.properties.linkURL}" />
+	                                    <li>
+	                                        <a href="${child2PagePath.url ? child2PagePath.url : ''  @ context='uri'}"
+	                                       		target="${child2.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+	                                        	${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}
+	                                        </a>
+	                                    </li>
+	                                </sly>
+	                            </ul>
+	                        </sly>
+	                    </div>
+	                </div>
+	            </div>
+	            
+                <div id="bottom-nav-${itemList.index}"
+                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
+                     data-sly-resource="${ @path=path, resourceType='/apps/ace-www/components/content/navigation-textandimage' }">
                 </div>
-            </div>
-			<div class="drawers-tiles-list">
-                <div class="container">
-                    <div class="drawers-container row">
-                        <sly data-sly-list.child1="${item.navigList}">
-                            <ul data-sly-test="${child1.currentpage.properties.pageType == 'column'}" class="${!child1List.last?'tiles-list border-manage':'tiles-list'}">
-                                <h3 class="text-uppercase">
-                                	${child1.currentpage.properties.navTitle ?child1.currentpage.properties.navTitle : child1.currentpage.title}
-                                </h3>
-                                <sly data-sly-list.child2="${child1.navigList}">
-                                	<sly data-sly-use.child2PagePath="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child2.currentpage.properties.linkURL}" />
-                                    <li>
-                                        <a href="${child2PagePath.url ? child2PagePath.url : ''  @ context='uri'}"
-                                       		target="${child2.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
-                                        	${child2.currentpage.properties.navTitle ?child2.currentpage.properties.navTitle : child2.currentpage.title}
-                                        </a>
-                                    </li>
-                                </sly>
-                            </ul>
-                        </sly>
-                    </div>
-                </div>
-            </div>
 			</div>
         </div>
     </sly>
