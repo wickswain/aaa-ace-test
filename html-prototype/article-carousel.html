@@ -35,85 +35,91 @@
     <div id="pagewrapper" class="clearfix container-custom">
         <!-- Header
         ============================================= -->
-        <header id="page-header"> </header>
+        <header id="page-header"></header>
         <div id="page-container">
             <!-- Article Carousel component-->
             <div id="article-carousel" class="carousel slide carousel-sync">
-				<div class="carousel-inner">
-					<div class="item active" data-author="Ansel Adams1" data-imagelabel="Sulte at Hotel 1929">
-						<img src="http://placehold.it/300x200/1abc9c/fff">
-					</div>
-					<div class="item" data-author="Ansel Adams2" data-imagelabel="Sulte at Hotel 1930">
-						<img src="http://placehold.it/300x200/2ecc71/fff">
-					</div>
-					<div class="item" data-author="Ansel Adams3" data-imagelabel="Sulte at Hotel 1931">
-						<img src="http://placehold.it/300x200/3498db/fff">
-					</div>
-					<div class="item" data-author="Ansel Adams4" data-imagelabel="Sulte at Hotel 1932">
-						<img src="http://placehold.it/300x200/9b59b6/fff">
-					</div>
-				</div>
-				
-				<div class="carousel-text left-align">
-					<span class="image-label">Sulte at Hotel 1929</span> 
-					<span class="pipe">|</span> 
-					photo by <span class="author">Ansel Adams1</span>
-				</div>
-				<div class="carousel-text right-align">
-					<span id="current-slide">1</span> of <span id="total-slides">4</span>
-				</div>
+                <div class="carousel-inner">
+                    <div class="item active" data-author="Ansel Adams1" data-imagelabel="Sulte at Hotel 1929">
+                        <img src="http://placehold.it/300x200/1abc9c/fff">
+                    </div>
+                    <div class="item" data-author="Ansel Adams2" data-imagelabel="Sulte at Hotel 1930">
+                        <img src="http://placehold.it/300x200/2ecc71/fff">
+                    </div>
+                    <div class="item" data-author="Ansel Adams3" data-imagelabel="Sulte at Hotel 1931">
+                        <img src="http://placehold.it/300x200/3498db/fff">
+                    </div>
+                    <div class="item" data-author="Ansel Adams4" data-imagelabel="Sulte at Hotel 1932">
+                        <img src="http://placehold.it/300x200/9b59b6/fff">
+                    </div>
+                </div>
 
-				<a class="left carousel-control" href="#article-carousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#article-carousel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div>
+                <div class="carousel-text left-align">
+                    <span class="image-label"></span>
+                </div>
+                <div class="carousel-text right-align">
+                    <span class="slide-count"></span>
+                </div>
+
+                <a class="left carousel-control" href="#article-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#article-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
         </div>
     </div>
-	<script>
-	$(function(){
+    <script src="clientlibs/ace-www/thirdparty/jquery/js/jquery.noconflict.js"></script>
+    <script>
+        $j(function ($) {
 
-		$('#article-carousel').find('.carousel-control.left')
-							  .css({'cursor': 'wait',
-							        'pointer-events': 'none',
-									'opacity': '0.1'});
-														
-		$('#article-carousel').bind('slid.bs.carousel', function (e) {
-        
-            var $this = $(this);
+            $('#article-carousel').find('.carousel-control.left')
+                                  .css({
+                                      'cursor': 'wait',
+                                      'pointer-events': 'none',
+                                      'opacity': '0.1'
+                                  });
 
-            $this.children('.carousel-control').show();
-            $('#article-carousel').carousel('pause');
-			
-			$('.carousel-text .image-label').text($('div.active').data('imagelabel'));
-			$('.carousel-text .author').text($('div.active').data('author'));
-			
-			$('#total-slides').text($('.carousel-inner .item').length);
-			$('#current-slide').text($('div.active').index() + 1);
+            $('.carousel-text .image-label').text($('div.active').data('imagelabel') + ' | ' + $('div.active').data('author'));
+            $('.right-align').text($('div.active').index() + 1 + ' of ' + $('.carousel-inner .item').length);
 
-            if ($('.carousel-inner .item:first').hasClass('active')) {
-                $this.children('.carousel-control.left')
-					 .css({'cursor': 'wait',
-					       'pointer-events': 'none',
-						   'opacity': '0.1'});
-            } else {
-                $this.children('.carousel-control.left').removeAttr('style');
-            }
-            
-            if ($('.carousel-inner .item:last').hasClass('active')) {
-				$this.children('.carousel-control.right')
-					 .css({ 'cursor': 'wait',
-							'pointer-events': 'none',
-							'opacity': '0.1'});
-            } else {
-                $this.children('.carousel-control.right').removeAttr('style');
-            }
-			
+            $('#article-carousel').bind('slid.bs.carousel', function (e) {
+
+                var $this = $(this);
+
+                $this.children('.carousel-control').show();
+                $('#article-carousel').carousel('pause');
+
+                $('.carousel-text .image-label').text($('div.active').data('imagelabel') + ' | ' + $('div.active').data('author'));
+                $('.right-align').text($('div.active').index() + 1 + ' of ' + $('.carousel-inner .item').length);
+
+
+                if ($('.carousel-inner .item:first').hasClass('active')) {
+                    $this.children('.carousel-control.left')
+                         .css({
+                             'cursor': 'wait',
+                             'pointer-events': 'none',
+                             'opacity': '0.1'
+                         });
+                } else {
+                    $this.children('.carousel-control.left').removeAttr('style');
+                }
+
+                if ($('.carousel-inner .item:last').hasClass('active')) {
+                    $this.children('.carousel-control.right')
+                         .css({
+                             'cursor': 'wait',
+                             'pointer-events': 'none',
+                             'opacity': '0.1'
+                         });
+                } else {
+                    $this.children('.carousel-control.right').removeAttr('style');
+                }
+
+            });
         });
-	});
-	</script>
+    </script>
 </body>
 
 </html>
