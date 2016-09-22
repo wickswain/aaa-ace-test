@@ -19,10 +19,12 @@
         </div>
         <!-- List of the cards start here -->
         <ul data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}" data-sly-list.icon="${iconsprovider.icons}" class="list-inline icon-list row">
-            <li class="${iconsprovider.classes}" data-sly-resource="${icon.path @ resourceType=icon.resourceType}"></li>
+            <li class="${iconsprovider.classes}" data-sly-resource="${@path=icon, resourceType='/apps/ace-www/components/content/icon-row/icon-item'}"></li>
         </ul>
     </div>
 </div>
+
+
 
 
 <!--/* Placeholder Content
