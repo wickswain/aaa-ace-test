@@ -19,7 +19,7 @@ import java.util.*;
 public class TwoColumnComparisonProvider extends WCMUsePojo{
 
     private List<Resource> columnItems;     ////base variable for collection of column pairs
-    private final String COLUMN_COUNT = "columncount";  ///config column count property name
+    private final String COLUMN_COUNT = "columnCount";  ///config column count property name
     private final String CONTENT_PATH = "/apps/ace-www/components/content/";
 
     @Override

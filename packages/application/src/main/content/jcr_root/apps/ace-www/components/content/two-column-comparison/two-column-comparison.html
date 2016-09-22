@@ -1,30 +1,43 @@
 <!--/*
 
-    1
+    Two column comparison component
     ----------------------------------------------------------------
 
     Required Fields:
-    1. Title/Subheading
-
-
+    1. Title - optional.
+    2. Sub title - optional
+    3. Background color - white or grey
+    4. Columns (2 or 3) - required
 
 */-->
 
-<div id="${properties.jumpLinkId}" class="" data-sly-test.hasContent="${properties.title}"
+<div id="${properties.jumpLinkId}" class=""
      style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
-    <div class="container horizontal-component-space"
-         data-sly-use.twocolumnprovider="${'com.aaa.ace.sightly.providers.TwoColumnComparisonProvider'}">
+    <div class="container horizontal-component-space">
         <!-- Top Header Starts Here -->
         <div class="text-center">
             <div class="roboto-light font-b">
                 <h2 class="horizontal-space" title="Two Column Comparison">${properties.title}</h2> </div>
-                <p class="tcc-horizontal-space font-g">${properties.textbodycopy}</p>
         </div>
 
+        <div class="text-center tcc-horizontal-space">
+            <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}" />
+        </div>
 
-        <ul data-sly-list.column="${twocolumnprovider.columns}"class="text-block list-inline icon-list row">
-            <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"></sly>
-        </ul>
+        <!-- Two Columns Here-->
+
+        <div class="col-md-5 col-lg-5 col-sm-10 col-xs-10 pull-left tcc-container-padding">
+            <sly data-sly-resource="${ @path='leftColumn', resourceType='/apps/ace-www/components/content/two-column-comparison/two-column-container'}" />
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-sm-10 col-xs-10 pull-right tcc-container-padding">
+            <sly data-sly-resource="${ @path='rightColumn1', resourceType='/apps/ace-www/components/content/two-column-comparison/two-column-container'}" />
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-sm-10 col-xs-10 pull-right tcc-container-padding">
+            <sly data-sly-resource="${ @path='rightColumn', resourceType='/apps/ace-www/components/content/two-column-comparison/two-column-container'}" />
+        </div>
+
 
     </div>
 </div>

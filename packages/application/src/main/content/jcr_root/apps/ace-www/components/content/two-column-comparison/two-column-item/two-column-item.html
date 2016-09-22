@@ -1,65 +1,40 @@
 <!--/*
 
-    Icon Item component
+    Two Column Item
     ----------------------------------------------------------------
 
-    Hidden component that makes up the component row.
+    Hidden component that makes up the column row.
 
     Required Fields:
-    1. Icon Title
-    2. Image
+    1. Header text (RTE) - optional
+    2. Body text (RTE) - optional
+    3. CTA - optional
+    4. Dotted divider - optional
 
 */-->
 
-    <!--/*  Left Column  */-->
-    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
-        <sly data-sly-test.hasContent="${properties.leftImage}">
-            <div class="horizontal-space text-center">
-                <img src="${properties.leftImage}" alt="${properties.leftAltText}" class="img-responsive column-image">
+    <div class="tcc-horizontal-space">
+        <div class="horizontal-space font-f text-center">
+            <h2>${properties.headerCopy @ context='html'}</h2>
+        </div>
+        <div class="horizontal-space font-h text-center">
+            <p>${properties.bodyCopy @ context='html'}</p>
+        </div>
+
+        <div class="text-center">
+            <div  data-sly-test="${properties.includeCTA}"
+                  data-sly-resource="${ @path='cta', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
+                  data-sly-unwrap="${wcmmode.disabled}" >
             </div>
-        </sly>
-
-        <div class="tcc-horizontal-space font-b">
-            <h2 class="font-b text-center">${properties.leftHeading}</h2>
         </div>
 
-        <div class="horizontal-space font-f">
-            <sly data-sly-resource="${ @path='rte-left', resourceType='/apps/ace-www/components/content/rte'}" />
-        </div>
 
-        <div class="text-center tcc-cta-top">
-            <sly data-sly-resource="${ @path='cta-large-left', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+        <div data-sly-test="${properties.includeDivider}"
+             data-sly-unwrap="${wcmmode.disabled}" class="text-center" >
+            <div class="tcc-divider"> </div>
         </div>
     </div>
 
-    <div class="visible-lg visible-md col-lg-2 col-md-2 tcc-divider">
-        <hr>
-    </div>
-
-    <!--/*  Right Column  */-->
-    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 tcc-container-padding">
-        <sly data-sly-test.hasContent="${properties.rightImage}">
-            <div class="horizontal-space text-center">
-                <img src="${properties.rightImage}" alt="${properties.rightAltText}" class="img-responsive column-image">
-            </div>
-        </sly>
-
-        <div class="tcc-horizontal-space font-b">
-            <h2 class="font-b text-center">${properties.rightHeading}</h2>
-        </div>
-
-        <div class="horizontal-space font-f">
-            <sly data-sly-resource="${ @path='rte-right', resourceType='/apps/ace-www/components/content/rte'}" />
-        </div>
-
-        <div class="text-center tcc-cta-top">
-            <sly data-sly-resource="${ @path='cta-large-right', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
-        </div>
-    </div>
-
-
-
-<!--<sly data-sly-test.hasContent="${properties.image}">-->
 
 
 <!-- Placeholder Content
