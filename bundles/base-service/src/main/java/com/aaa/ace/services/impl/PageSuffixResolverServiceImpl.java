@@ -36,7 +36,8 @@ public class PageSuffixResolverServiceImpl implements PageSuffixResolverService 
      */
     @Override
     public String resolveLinkURL(ResourceResolver resolver, String link) {
-        if (!ResourceUtil.isNonExistingResource(resolver.getResource(link))
+        if (resolver.getResource(link) != null
+                && !ResourceUtil.isNonExistingResource(resolver.getResource(link))
                 && resolver.getResource(link).adaptTo(Page.class) != null) {
             return link.concat(PAGE_SUFFIX);
         }

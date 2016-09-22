@@ -1,0 +1,98 @@
+<!--/*
+
+Google Search Result Component
+==============================
+
+This component renders a search result from Google Custom Search.
+
+*/-->
+
+<!-- #placeholder is omitted since search result title is always displayed. -->
+
+<!--/* Global JAVA USE declaration. */-->
+<sly data-sly-use.filterProvider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='filters'}" />
+<sly data-sly-use.searchConfig="${'com.aaa.ace.sightly.providers.SearchConfigProvider'}" />
+
+<!-- google search results components Starts Here -->
+<div class="search-results">
+      <div class="search-header">
+          <div class="container">
+              <div class="row search-box">
+                  <div class="col-md-8 col-sm-8">
+                      <div class="search-box-handler">
+                          <div class="input-group search-box-input">
+                              	<input type="text" name="searchKey" id="searchKey" class="search-input form-control roboto-light font-b" placeholder="Search here"> <span class="search-addon input-group-addon" id="searchSubmit"><i class="glyphicon glyphicon-search"></i></span>
+                              	<input type="hidden" name="googleAPIKey" id="googleAPIKey" value="${searchConfig.googleApiKey}" />
+							<input type="hidden" name="googleSearchEngineId" id="googleSearchEngineId" value="${searchConfig.googleSearchEngineId}" />	
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 hidden-xs search-box-input pull-right"><span class="result-no roboto-light font-h" id="resultsCount"></span></div>
+              </div>
+              <div class="row mobile-filter-grid hidden-sm hidden-md hidden-lg">
+                  <div class="col-md-9 col-xs-7 text-center"> <span class="filter-title roboto-medium checked-list-item-main">All Results</span> <i class="glyphicon glyphicon-chevron-down"></i> </div>
+                  <div class="col-md-3 col-xs-5 text-center filter-res-count"><span class="result-no roboto-medium font-h" id="resultsCount-m"></span></div>
+              </div>
+              
+        		<div class="row mobile-filter-list hidden-sm hidden-md hidden-lg">
+                 <div class="col-md-12  mobile-gridview">
+                     <ul class="filterlist-items">
+                         <li class="close-filters">FILTERS<span class="roboto-light font-c close-fliter-icon">X</span></li>
+                         <div class="results-categories">
+                             <div class="categorie-title">CATEGORIES</div>
+                             <ul>
+                                 <li><a href="javascript:void(0);" class="meta-data font-h active all-results" data-metaname="" data-metacontent="">All</a></li>
+                                 <sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
+                                     <sly data-sly-test="${filters.filterlabel && filters.filtertag}"
+                                                 data-sly-use.tagMetaProvider="${'com.aaa.ace.sightly.providers.TagMetaProvider' @ tagid=filters.filtertag}">
+                                         <li><a href="javascript:void(0)" class="meta-data font-h" data-metaname="${tagMetaProvider.metaName}"
+                                                         data-metacontent="${tagMetaProvider.metaContent}">${filters.filterlabel}</a>
+                                         </li>
+                                     </sly> 
+                                 </sly>
+                             </ul>
+                         </div>
+                     </ul>
+                 </div>
+             	</div>               
+          </div>
+      </div>
+      <div class="search-container">
+          <div class="container ">
+              <!--  Search input box -->
+           <!--  Results Grid will bind here -->
+           <div class="row results-grid">
+               <div class="col-md-8 col-sm-8">
+                   <div class="resultContent"></div>
+                   	<!--  Pagination values effect here -->
+                   	<div id="page_navigation" class="pagination-grid1"> </div>
+                     	<div class="clearfix"></div>
+               </div>
+                 
+                <div class="col-md-3 col-sm-4 hidden-xs pull-right categorie-block">
+                    <div class="filter-grid">
+                        <div class="results-categories">
+                            <div class="categorie-title">CATEGORIES</div>
+                            <ul>
+                                <li><a href="javascript:void(0);" class="meta-data font-h active all-results" data-metaname="" data-metacontent="">All</a></li>
+                                <sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
+                                	<sly data-sly-test="${filters.filterlabel && filters.filtertag}" data-sly-use.tagMetaProvider="${'com.aaa.ace.sightly.providers.TagMetaProvider' @ tagid=filters.filtertag}">
+                                  	<li><a href="#" class="meta-data font-h" 
+                                             data-metaname="${tagMetaProvider.metaName}"
+                                             data-metacontent="${tagMetaProvider.metaContent}">${filters.filterlabel}</a>
+                                      </li>
+                                	</sly>
+                                </sly>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                  
+                 <div class="clearfix"></div>
+             </div>
+             <!-- Error Message -->
+            <div class="error-message roboto-medium font-f"> </div>
+        </div>
+    </div>
+</div>
+
+<!--/* Google Search Result Component End */-->

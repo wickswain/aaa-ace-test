@@ -1,6 +1,7 @@
 package com.aaa.ace.sightly.providers;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import org.apache.sling.api.resource.ModifiableValueMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.slf4j.Logger;
@@ -19,7 +20,11 @@ public class IconRowProvider extends WCMUsePojo {
     private final Logger log = LoggerFactory.getLogger(getClass());
     private List<Resource> iconItems;
     private final String PROP_ICON_AMOUNT = "iconamount";
+    private String classes;
 
+    public String getClasses() {
+        return classes;
+    }
 
     @Override
     public void activate() throws Exception {
@@ -30,6 +35,14 @@ public class IconRowProvider extends WCMUsePojo {
         Iterator<Resource> listChildren = this.getResource().listChildren();
         Map componentProperties = new HashMap<>();
         componentProperties.put("sling:resourceType", "/apps/ace-www/components/content/icon-row/icon-item");
+        // classes for icons
+        classes= "";
+        if(iconAmount == 3){
+            classes = "col-md-4 col-sm-4 col-xs-12";
+        }else if(iconAmount == 4){
+            classes = "col-md-3 col-sm-3 col-xs-12";
+        }
+
         for (int i = 0; i < iconAmount; i++) {
             if(!listChildren.hasNext()){
 

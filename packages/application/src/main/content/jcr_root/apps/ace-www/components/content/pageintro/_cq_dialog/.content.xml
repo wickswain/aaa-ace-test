@@ -45,13 +45,20 @@
                                 fieldDescription="Leave empty to display the page title as the heading/title."
                                 fieldLabel="Heading/Title"
                                 name="./title"/>
-                            <headline
+                            <headlinerte
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter the headline text."
-                                fieldLabel="Headline"
-                                name="./headline"
-                                required="{Boolean}true"/>
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the rte."
+                                name="./headLineRTE"
+                                text="Enable RTE for Headline ?"
+                                value="{Boolean}true"/>
+                            <bodycopyrte
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the rte."
+                                name="./bodyCopyRTE"
+                                text="Enable RTE for Body Copy ?"
+                                value="{Boolean}true"/>
                             <ctaflag
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -68,7 +75,7 @@
                     </columns>
                 </items>
             </basictab>
-             <jumplink
+            <jumplink
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Jumplink "
                 sling:resourceType="granite/ui/components/foundation/container">
