@@ -171,7 +171,7 @@
                                 fieldLabel="Link To"
                                 name="./rightLink2LinkTo"
                                 rootPath="/content"
-                                value="http://[Domain].[ClubName].aaa.com/home.html"/>
+                                value="http://[Domain].[ClubName].aaa.com/aceapps/authenticate/login"/>
                             <openinnewtabflag
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -183,6 +183,60 @@
                     </columns>
                 </items>
             </rightsidelink2>
+            <account
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Profile Links"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <signoutlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter signout link label."
+                                fieldLabel="Signout Link Label"
+                                name="./signOutLinkLabel"/>
+                            <signoutlinkto
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Signout Link To"
+                                name="./signOutLinkTo"
+                                value="http://[Domain].[ClubName].aaa.com/aceapps/authenticate/logout"/>
+                            <defaultavatar
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Select small image for default avatar icon"
+                                fieldLabel="Default Avatar Icon Image"
+                                name="./defaultAvatarPath"
+                                rootPath="/content/dam/"/>
+                            <defaultavataralttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Default Avatar Icon Alt Text"
+                                name="./defaultAvatarAlt"/>
+                            <accountlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter signout link label."
+                                fieldLabel="MyAccount Link Label"
+                                name="./accountLinkLabel"/>
+                            <accountlinkto
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="MyAccount Link To"
+                                name="./accountLinkTo"
+                                value="http://[Domain].[ClubName].aaa.com/aceapps/account/my-account"/>
+                        </items>
+                    </columns>
+                </items>
+            </account>
             <search
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Search"

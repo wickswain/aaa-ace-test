@@ -75,11 +75,11 @@
     </div>
     
     <div class="col-xs-4 col-md-5 col-md-pull-7">
-        <ul class="nav-list-inline font-h dropdown">
+        <ul class="nav-list-inline font-h dropdown roadside-text">
             <li>
                 <a data-sly-test="${currentStyle.leftLink1Label}"
                    target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${leftLink1.url}">
+                   href="${leftLink1.url}" id="truck-link">
                     <img data-sly-test="${currentStyle.icon1Path}"
                          src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
                          alt="${currentStyle.icon1Alt}" class="truck-icon"/>
@@ -93,7 +93,7 @@
                 <a data-sly-test="${currentStyle.leftLink2Label}"
                    data-sly-text="${currentStyle.leftLink2Label}"
                    target="${currentStyle.leftLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${leftLink2.url}" class="hidden-xs hidden-sm">
+                   href="${leftLink2.url}" class="link2 hidden-xs hidden-sm">
                 </a>
             </li>
         </ul>
