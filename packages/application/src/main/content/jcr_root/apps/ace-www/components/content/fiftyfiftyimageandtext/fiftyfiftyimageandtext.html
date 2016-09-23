@@ -29,7 +29,8 @@
 			background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
 		class="img-50-50 component-height container-fluid">
     <div class="row flex-component ${properties.isSwapImageAndTextAlignment=='true'?'row-reverse':''}">
-        <div class="col-md-6 content">
+    	<div class="col-md-1"></div>
+        <div class="col-md-5 content">
             <div class="text-block">
                 <div data-sly-test="${properties.headerIcon}" class="horizontal-space roboto-light font-b">
                 	<img src="${properties.headerIcon}" title="${properties.headerIconAltText}" alt="${properties.headerIconAltText}">
@@ -54,7 +55,8 @@
                 </div>                                                                                
             </div>
         </div>
-        <div data-sly-test="${properties.fileReference}" class="col-md-6 image-block">
+        <div class="col-md-1"></div>
+        <div data-sly-test="${properties.fileReference}" class="col-md-5 image-block">
             <img src="${properties.fileReference}" alt="${properties.altText}" title="${properties.altText}" class="img-responsive" />
         </div>
     </div>
