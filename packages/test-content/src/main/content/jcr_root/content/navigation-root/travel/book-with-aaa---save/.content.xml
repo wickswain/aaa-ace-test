@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-06T20:16:11.083+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ace-www/templates/globalnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="BOOK WITH AAA &amp; SAVE"
+        jcr:uuid="66730c79-f892-47fe-b073-73616ecbfbff"
+        sling:resourceType="ace-www/components/page/globalnav"
+        pageType="column"/>
+    <book-now/>
+    <aaa-travel-agent/>
+    <disneyland-packages/>
+    <universal-orlando/>
+    <grand-canyon-railway/>
+    <limited-time-offers/>
+    <my-reservations/>
+</jcr:root>
