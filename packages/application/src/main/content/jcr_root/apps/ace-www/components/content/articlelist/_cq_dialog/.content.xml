@@ -48,7 +48,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -78,7 +78,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -108,7 +108,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -138,7 +138,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -168,7 +168,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -198,7 +198,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -228,7 +228,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -258,7 +258,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -288,7 +288,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
@@ -318,7 +318,7 @@
                                             <filtertag
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/autocomplete"
-                                                fieldDescription="Please select the tags for which search results should be pulled."
+                                                fieldDescription="Please select the tags for which articles should be pulled."
                                                 fieldLabel="Fitler Tag"
                                                 mode="contains"
                                                 multiple="{Boolean}false"
