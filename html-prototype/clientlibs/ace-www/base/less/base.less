@@ -53,6 +53,7 @@ a {
     color: @color-blue-primary-medium;
     text-decoration: none;
     font-family: inherit;
+
     &:focus,
     &:hover {
         color: @color-blue-light;
@@ -81,15 +82,39 @@ a {
 [data-toggle="collapse"] {
     cursor: pointer;
 }
-
-
-/*Spacings*/
+.icon-info .btn-info, .icon-info .btn-info:hover {
+    background:transparent none;
+    cursor:pointer;
+}
+.icon-info .btn-info:after {
+    content: 'i';
+    display: inline-block;
+    vertical-align: middle;
+    color: @color-blue-primary-medium;
+    border: 1px solid @color-blue-primary-medium;
+    border-radius: 15px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    margin-left:5px;
+}
+.modal-header .close {
+    margin-top: -80px;
+    margin-right: -80px;
+    color: #fff;
+    opacity: 1;
+    font-weight: normal;
+}
+/*Spacing's*/
 
 @space-height: 400px;
 @space-lg: 130px;
 @space-md: 100px;
 @space-sm: 30px;
 @space-xs: 10px;
+
 .horizontal-space {
     margin-bottom: @space-sm;
 }

@@ -5,6 +5,32 @@
     Version:1.0
 *****************************************/
 $j(function ($) {
+    /**/
+    /*Center Modal Dialog*/
+    function reposition() {
+        var modal = $(this),
+            dialog = modal.find('.modal-dialog');
+        modal.css('display', 'block');
+
+        // Dividing by two centers the modal exactly, but dividing by three 
+        // or four works better for larger screens.
+        dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+
+        $('.modal')
+       .on('shown', function () {
+           //console.log('show');
+           $('body').css({ overflow: 'hidden' });
+       })
+       .on('hidden', function () {
+           $('body').css({ overflow: '' });
+       });
+    }
+    // Reposition when a modal is shown
+    $('.modal').on('show.bs.modal', reposition);
+    // Reposition when the window is resized
+    $(window).on('resize', function () {
+        $('.modal:visible').each(reposition);
+    });
 
     /*User Login dialog*/
     $('#user-login').on('click', function (e) {
