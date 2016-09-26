@@ -9,20 +9,17 @@ Page Intro Component
 
 .membership-comparision {
     padding-bottom: 130px;
-
     .highlight-class {
         z-index: 2;
         margin-top: -10px;
         padding-top: 60px;
-        background-color: @color-blue-primary-medium;
-        color: @color-white!important;
+        //background-color: @color-blue-primary-medium;
+        //color: @color-white!important;
     }
-
     .selected {
         box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
-        color: @color-blue-primary-medium;
+        //color: @color-blue-primary-medium;
     }
-
     .highlight-one {
         .header {
             &:nth-of-type(2) {
@@ -30,7 +27,6 @@ Page Intro Component
                 .selected();
             }
         }
-
         .membership-cols {
             div {
                 &:nth-of-type(2) {
@@ -39,7 +35,6 @@ Page Intro Component
             }
         }
     }
-
     .highlight-two {
         .header {
             &:nth-of-type(3) {
@@ -47,7 +42,6 @@ Page Intro Component
                 .selected();
             }
         }
-
         .membership-cols {
             div {
                 &:nth-of-type(3) {
@@ -56,7 +50,6 @@ Page Intro Component
             }
         }
     }
-
     .highlight-three {
         .header {
             &:nth-of-type(4) {
@@ -64,7 +57,6 @@ Page Intro Component
                 .selected();
             }
         }
-
         .membership-cols {
             div {
                 &:nth-of-type(4) {
@@ -73,10 +65,8 @@ Page Intro Component
             }
         }
     }
-
     .membership {
         text-align: center;
-
         .header {
             /*background-color: @color-gray-medium;*/
             padding: 50px 30px;
@@ -86,25 +76,23 @@ Page Intro Component
                 padding: 30px 0 20px 0;
                 font-size: 28px;
             }
-
             p {
                 padding-bottom: 30px;
             }
-
             a {
-                margin: 0;
+                margin: 15px 0 0;
             }
         }
     }
-
     .membership-cols {
         text-align: center;
-
         a {
             margin: 0;
         }
     }
 }
+
+
 /* Responsive css for this component */
 
 @media only screen and (min-width: 320px) {
@@ -113,32 +101,29 @@ Page Intro Component
             display: block;
             justify-content: center;
         }
-
         .membership-cols {
             display: block;
             justify-content: center;
-
             div {
                 border-top: 1px solid #cccccc;
                 border-left: 1px solid #cccccc;
                 padding: 15px 15px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
-
-                div:last-child {
-                    border-right: 1px solid #cccccc;
-                }
-
-                div:first-child {
-                    border-right: 1px solid #cccccc;
-                    background-color: @color-gray-light;
-                }
-
+            div:last-child {
+                border-right: 1px solid #cccccc;
+            }
+            div:first-child {
+                border-right: 1px solid #cccccc;
+                background-color: @color-gray-light;
+            }
             &:last-child {
                 div {
                     &:first-child {
                         border-bottom: 0px solid #cccccc;
                     }
-
                     border-bottom: 1px solid #cccccc;
                 }
             }
@@ -146,8 +131,7 @@ Page Intro Component
     }
 }
 
-@media only screen and (min-width: 480px) {
-}
+@media only screen and (min-width: 480px) {}
 
 @media only screen and (min-width: 768px) {
     .modal-content {
@@ -161,38 +145,31 @@ Page Intro Component
             display: flex;
             justify-content: center;
         }
-
         .membership-cols {
             display: flex;
             justify-content: center;
-
             .selected {
                 box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
             }
-
             div {
                 border-top: 0px solid #cccccc;
                 border-left: 0px solid #cccccc;
                 border-right: 1px solid #cccccc;
                 padding: 15px 15px;
             }
-
-                div:not(:first-child) {
-                    border-top: 1px solid #cccccc;
-                }
-
-                div:first-child {
-                    border-right: 1px solid #cccccc;
-                    background-color: @color-white;
-                    text-align: right;
-                }
-
+            div:not(:first-child) {
+                border-top: 1px solid #cccccc;
+            }
+            div:first-child {
+                border-right: 1px solid #cccccc;
+                background-color: @color-white;
+                text-align: right;
+            }
             &:last-child {
                 div {
                     &:first-child {
                         border-bottom: 0px solid #cccccc;
                     }
-
                     border-bottom: 1px solid #cccccc;
                 }
             }
@@ -200,5 +177,4 @@ Page Intro Component
     }
 }
 
-@media only screen and (min-width: 1200px) {
-}
+@media only screen and (min-width: 1200px) {}
