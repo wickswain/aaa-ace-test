@@ -21,6 +21,11 @@
             <p>${properties.bodyCopy @ context='html'}</p>
         </div>
 
+        <div data-sly-test="${properties.includeDivider}"
+             data-sly-unwrap="${wcmmode.disabled}" class="text-center" >
+            <div class="col-compare-divider"> </div>
+        </div>
+
         <div class="text-center">
             <div  data-sly-test="${properties.includeCTA}"
                   data-sly-resource="${ @path='cta', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"
@@ -28,11 +33,6 @@
             </div>
         </div>
 
-
-        <div data-sly-test="${properties.includeDivider}"
-             data-sly-unwrap="${wcmmode.disabled}" class="text-center" >
-            <div class="col-compare-divider"> </div>
-        </div>
     </div>
 
 

@@ -36,8 +36,8 @@
                     <columncount
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/select"
-                            fieldDescription="Select the amount of column pairs"
-                            fieldLabel="Number of Columns"
+                            fieldDescription="Select number of section blocks"
+                            fieldLabel="Number of Section Blocks"
                             required="{Boolean}true"
                             name="./columnCount">
                         <items jcr:primaryType="nt:unstructured">
