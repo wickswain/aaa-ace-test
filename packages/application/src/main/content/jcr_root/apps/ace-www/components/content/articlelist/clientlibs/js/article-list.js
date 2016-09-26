@@ -98,7 +98,7 @@ $(function () {
                 var html = "";
                 /* Navigation Links handling */
                 var totalItems = response.searchInformation.totalResults;
-                totalListPages = Math.round(totalItems / resultsPerPage);
+                totalListPages = Math.ceil(totalItems / resultsPerPage);
                 var indexCount = response.searchInformation.startIndex;
                 if (totalListPages > 1) {
                     $("#totalListPages").html("of " + totalListPages);
@@ -113,7 +113,7 @@ $(function () {
                      * Also due to pagination it looks tricky to keep final HTML clean. 	
                      */ 
                     
-                    var listHtml = "<div id='article-list' class='row article-list with-img roboto-medium font-a'> <div class='col-md-4 col-sm-12'>  <div class='imgblock'> <img src='@articleImage@' alt='@articleImageAltText@' title='@articleImageAltText@' class='img-responsive' />  </div> </div> <div class='col-md-8 col-sm-12'>  <div class='article-info'> <ul class='list-inline font-e'> <li><img src='@articleLogoImage@' alt='@articleLogoAltText@' class='img-responsive'/></li> <li class='author'>By @authorName@</li> <li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>@issueDate@</span></li> </ul> <a href='@link@' class='font-a' title='@articleTitle@'>@articleTitle@</a> <p class='font-h roboto-light'>@description@</p>  </div> </div> </div>";
+                    var listHtml = "<div id='article-list' class='row article-list with-img roboto-medium font-a'> <div class='col-md-4 col-sm-12'>  <div class='imgblock'> <img src='@articleImage@' alt='@articleImageAltText@' title='@articleImageAltText@' class='img-responsive' />  </div> </div> <div class='col-md-8 col-sm-12'>  <div class='article-info'> <ul class='list-inline font-e'> <li><img src='@articleLogoImage@' alt='@articleLogoAltText@' class='img-responsive'/></li> <li class='author'>By @authorName@</li> <li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>@issueDate@</span></li> </ul> <a href='@link@' class='font-a' title='@articleTitle@'>@articleTitle@</a> <p class='font-h roboto-light'>@description@</p><div class='list-btn visible-xs'><a href='@link@' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div>  </div> </div> </div>";
                     
                     listHtml = listHtml.replace(/@articleTitle@/g, ((item.articleTitle) ? item.articleTitle : ""));
                     listHtml = listHtml.replace(/@link@/g, ((item.link) ? item.link : "#"));
@@ -128,26 +128,27 @@ $(function () {
                     html += listHtml;
                 }
                 /* pagination Logic start */
-				var reaminigPages = totalListPages - pageNumber;
-                if (pageNumber <= 5 && totalListPages > 0) {
+                if (parseInt(pageNumber) < 5) {
                     defaultPage = 1;
                     if (totalListPages < 5) {
-                        defaultTotalPages = totalListPages;
+                        defaultTotalPages = totalListPages + 1;
                     }
                     else {
                         defaultTotalPages = 6;
                     }
                 }
-                else if (pageNumber > 5 && totalListPages > 5) {
-                    defaultPage = pageNumber;
-                    var reaminigPages = totalListPages - pageNumber;
-                    if (reaminigPages > 5) {
-                        defaultTotalPages = parseInt(pageNumber) + 5;
+                else if (parseInt(pageNumber) > 5) {
+                    defaultPage = parseInt(pageNumber) - 2;
+                    defaultTotalPages = parseInt(pageNumber) + 3;
+                    
+                    if(defaultTotalPages > parseInt(totalListPages) + 1){
+                    	defaultTotalPages = totalListPages + 1 ;
+                    	defaultPage = totalListPages - 4;
                     }
-                    else {
-                        defaultTotalPages = reaminigPages;
-                    }
+                    		
+                    
                 }
+                
                 
                 /* Declaring the div structure here. 
                  * Tried using html template tag but it has problem with IE.
@@ -161,7 +162,7 @@ $(function () {
                 navigation_html += '</li><li class="page-links text-right  col-xs-3"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next <span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a></li></ul>';
                 $('#pagination-grid').html(navigation_html);
                 $('.pagination-grid').show();
-                if (totalItems < 10)
+                if (totalItems <= 10)
                 {
                 	$('.pagination-grid').hide();
                 }
@@ -177,10 +178,10 @@ $(function () {
                     var selectedPage = $(this).text();
                     getArticles('', selectedPage);
                 });
-                if (pageNumber === 1) {
+                if (parseInt(pageNumber) === 1) {
                     $("#prevPage").addClass('disabled');
                 }
-                else if (pageNumber === totalListPages) {
+                else if (parseInt(pageNumber) === totalListPages) {
                     $("#nextPage").addClass('disabled');
                 }
                 else {

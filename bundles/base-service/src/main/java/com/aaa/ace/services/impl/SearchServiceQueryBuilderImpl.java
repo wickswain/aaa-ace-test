@@ -139,7 +139,7 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
             items.put("issueDate", properties.get("issueDate"));
             items.put("articleTitle", properties.get("articleTitle"));
             items.put("articleLogoAltText", properties.get("articleLogoAltText"));
-            items.put("description", properties.get("jcr:description"));
+            items.put("description", properties.get("text"));
             
             Resource articleHeroResource = hit.getResource().getChild("article-hero");
             if(null != articleHeroResource)
