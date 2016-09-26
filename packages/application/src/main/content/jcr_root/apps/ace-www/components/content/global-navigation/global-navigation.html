@@ -71,16 +71,15 @@
                 </div>
             </div>
 
-            <div class="sign-join-in">
-                <a data-sly-test="${!user.isLoggedIn}"
-                   target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+            <div data-sly-test="${!user.isLoggedIn}" class="sign-join-in">
+                <a target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
                    href="${user.signInURL}" id="user-login" class="user-login">
                     <img data-sly-test="${currentStyle.icon2Path}"
                          src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
                          alt="${currentStyle.icon2Alt}" class="lock-icon"/>
                         ${currentStyle.rightLink2Label}
                 </a>
-                <a href="javascript:void(0);" class="link-btn link-color-blue link-lg join-btn">
+                <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">
                     Join
                 </a>
             </div>
@@ -91,8 +90,10 @@
                         <img src="${currentStyle.defaultAvatarPath}" alt="${currentStyle.defaultAvatarAlt}"
                              title="${currentStyle.defaultAvatarAlt}" class="img-responsive"/>
                     </div>
-                    <div class="avatar-title font-f">${user.firstName}</div>
-                    <div class="my-aacount">
+                    <div class="avatar-title font-f">
+                        <span data-sly-text="${user.firstName}" class="restrict-characters"></span>
+                    </div>
+                    <div class="my-account">
                         <a href="${accountLink.url}" class="btn-style btn-lg btn-border btn-border-reversed">${currentStyle.accountLinkLabel}</a>
                     </div>
                     <div class="signout">
@@ -126,7 +127,7 @@
                         </a>
                         
                         <div class="nav-${itemList.index} drawers-wrapper dropdown-menu" aria-labelledby="nav-${itemList.index}">
-                            <ul class="drawers-content">
+                            <div class="drawers-content">
                                 <div class="drawer-close">
                                     <div class="close-icon close-drawer"><span>+</span></div>
                                 </div>
@@ -181,11 +182,11 @@
                                      data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
                                      data-sly-resource="${ @path=path, resourceType='/apps/ace-www/components/content/navigation-textandimage' }">
                                 </div>
-                            </ul>
+                            </div>
                         </div>
                     </li>
                 </sly>
-                <li>
+                <li class="hidden-xs hidden-sm">
                     <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a>
                 </li>
             </ul>
