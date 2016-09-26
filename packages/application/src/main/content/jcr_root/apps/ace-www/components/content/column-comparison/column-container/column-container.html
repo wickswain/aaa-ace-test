@@ -13,18 +13,18 @@
 
 */-->
 
-<div data-sly-use.twocolumnprovider="${'com.aaa.ace.sightly.providers.TwoColumnComparisonProvider'}">
+<div data-sly-use.columnprovider="${'com.aaa.ace.sightly.providers.ColumnComparisonProvider'}">
     <sly data-sly-test.hasContent="${properties.image}">
         <div class="horizontal-space text-center">
-            <img src="${properties.image}" alt="${properties.altText}" class="img-responsive column-image">
+            <img src="${properties.image}" alt="${properties.altText}" class="img-responsive col-compare-image">
         </div>
     </sly>
 
-    <div class="tcc-horizontal-space font-b">
+    <div class="col-compare--horizontal-space font-b">
         <h2 class="font-b text-center">${properties.heading}</h2>
     </div>
 
-    <ul data-sly-list.column="${twocolumnprovider.columns}"class="text-block list-inline icon-list row">
+    <ul data-sly-list.column="${columnprovider.columns}"class="text-block list-inline icon-list row">
         <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"></sly>
     </ul>
 </div>
@@ -32,7 +32,7 @@
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Column Item here"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) }" data-emptytext="Author Column Item here"
      class="cq-placeholder" style="text-align: center;">
 </div>
 <!-- #placeholder-content end -->

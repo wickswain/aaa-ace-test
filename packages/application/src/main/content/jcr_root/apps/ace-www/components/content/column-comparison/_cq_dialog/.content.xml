@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Two Column Comparison"
+          jcr:title="Column Comparison"
           sling:resourceType="cq/gui/components/authoring/dialog">
     <content
             jcr:primaryType="nt:unstructured"
@@ -14,6 +14,25 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
+                    <column-count
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+                            required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/radio"
+                                    name="./columnCount"
+                                    text="Two Columns"
+                                    value="2"/>
+                            <three
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/radio"
+                                    name="./columnCount"
+                                    text="Three Columns"
+                                    value="3"/>
+                        </items>
+                    </column-count>
                     <title
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -23,7 +42,7 @@
                     <backgroundcolor
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
-                            colorsPath="/apps/ace-www/components/content/icon-row/config/backgroundcolors"
+                            colorsPath="/apps/ace-www/components/content/column-comparison/config/backgroundcolors"
                             fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
                             fieldLabel="Background Color"
                             freestylePalette="{Boolean}true"
