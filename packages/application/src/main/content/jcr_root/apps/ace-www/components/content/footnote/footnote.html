@@ -22,9 +22,9 @@
 
 <!-- Footernote Text Content
 ============================================= -->
-<div id="${properties.jumpLinkId}" style="background-color:${properties.backgroundColor @ context='styleToken'};" >
+<div id="${properties.jumpLinkId}" style="background-color:${properties.backgroundColor @ context='styleToken'}; color:${properties.fontColor @ context='styleToken'}" >
     <div class="container horizontal-space">
-        <div> ${properties.text @ context='html'} </div>
+        <div>${properties.text @ context='html'}</div>
     </div>
 </div>
 <!-- #Footernote text-content end -->
