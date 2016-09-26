@@ -13,37 +13,48 @@
        1. Article Page Path
 
 */-->
-<img
-	data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.artclepagePath}"
-	data-emptytext="Author Article Hub Component Here."
-	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
-	alt="Article Hub Component" />
-          <div id="${properties.jumpLinkId}"  data-sly-test="${properties.artclepagePath}">
-          		<sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider' @ artclepagePath=properties.artclepagePath}" />
-	  	            <div data-sly-test.articlepage="${articledata.articlePage}"
-	   	                 data-sly-test.articlehero="${articledata.articleHero}"
-	                     data-sly-test="${articlepage.template.name=='article'}">
-	                   	<div class="row article-hero" style="background-image: url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
-		                   <div class="row article-hero-header">
-		                       <div class="article-hero " style="background-image:url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
-		                       <!-- Article Header Stand Alone -->
-		                       <div class="article-header">
-		                           <div class="article-info">
-		                               <ul class="list-inline font-e">
-		                                   <li data-sly-test="${articlePage.properties.articleLogoImage}">
-		                                       <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
-		                                   <li>By ${articlePage.properties.authorName}</li>
-		                                   <li data-sly-test="${articlePage.properties.issueDate}><i class="glyphicon glyphicon-time"></i><span class="date">${articlePage.properties.issueDate}</span></li>
-		                               </ul>
-		                            </div>
-		                            <div class="article-content">
-		                               <h2 class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
-		                               <p class="roboto-light font-g">${articlePage.properties.text}</p>
-		                            </div>
-		                            <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
-		                       </div>
-		               	</div>
-	             </div>
-         </div>
+
+<!-- Placeholder Content
+============================================= -->
+<sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider' @ artclepagePath=properties.artclepagePath}" />
+
+<sly data-sly-test.articlepage="${articledata.articlePage}"
+	 data-sly-test.articlehero="${articledata.articleHero}"
+	 data-sly-test.isArticle="${articlepage.template.name=='article'}"/>
+	 
+<sly data-sly-test.isAuthored="${properties.artclepagePath}"/>
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
+	 data-emptytext="Author Article Hub Component Here"
+     class="cq-placeholder text-center">
+</div>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isArticle}" 
+	 data-emptytext="Please Select the Page from Article Template"
+     class="cq-placeholder text-center">
+</div>
+<!-- #placeholder-content end -->
+
+<!--/* Article Hub starts */-->
+<div id="${properties.jumpLinkId}"  data-sly-test="${properties.artclepagePath && isArticle}">
+	     <div class="row article-hero-header">
+	         <div class="article-hero " style="background-image:url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
+	         <div class="article-header">
+	             <div class="article-info">
+	                 <ul class="list-inline font-e">
+	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
+	                         <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
+	                     <li>By ${articlePage.properties.authorName}</li>
+	                     <li data-sly-test="${articlePage.properties.issueDate}><i class="glyphicon glyphicon-time"></i><span class="date">${articlePage.properties.issueDate}</span></li>
+	                 </ul>
+	              </div>
+	              <div class="article-content">
+	                 <h2 class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
+	                 <p class="roboto-light font-g">${articlePage.properties.text}</p>
+	              </div>
+	              <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
+	         </div>
+	 	</div>
+</div>
+<!--/* Article Hub End */-->
 
 
