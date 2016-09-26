@@ -55,10 +55,10 @@
                             </span>
                             <input type="search" placeholder="${currentStyle.searchPlaceholderLabel}" class="form-control font-h" />
                             <span class="input-group-addon">
-                                <i class="close-icon">+</i>
+                                <i class="close-icon"  id="m-close-searchbar">+</i>
                             </span>
                         </div>
-                        <a href="#" title="Border button" class="btn-style btn-sm btn-border btn-color-blue"> GO </a>
+                        <input type="submit" title="GO" value="GO" class="btn-style btn-sm btn-border btn-color-blue" />
                     </form>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" id="nav-${itemList.index}" class="dropdown-toggle"
                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <img src="images/member-icon.png" alt="Membership" class="icon-link hidden-lg hidden-md"/>
+                            <img src="${item.currentpage.properties.tileIcon}" alt="${item.currentpage.properties.tileIconAltText}" class="icon-link hidden-lg hidden-md"/>
                             ${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}
                         </a>
                         
@@ -216,3 +216,6 @@
     </div>
 </div>
 <!-- #global-navigation-component end -->
+
+<div class="overlay"></div>
+
