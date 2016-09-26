@@ -23,6 +23,8 @@ import com.day.cq.wcm.api.PageManager;
 public class ArticleDataProvider extends WCMUsePojo {
 	private static final Logger log = LoggerFactory.getLogger(ArticleDataProvider.class);
 
+	private static final String ARTICLE_HERO_PATH = "/jcr:content/article-hero";
+
 	/**
 	 * articlePage object
 	 */
@@ -39,9 +41,9 @@ public class ArticleDataProvider extends WCMUsePojo {
 
 		PageManager pagemanager = getResourceResolver().adaptTo(PageManager.class);
 		String path = get("artclepagePath", String.class);
-		if (StringUtils.isNotBlank(path)) {
+		if (StringUtils.isNotBlank(path) && pagemanager != null) {
 			articlePage = pagemanager.getPage(path);
-			String articleHeroPath = path + "/jcr:content/article-hero";
+			String articleHeroPath = path + ARTICLE_HERO_PATH;
 			Resource articleHeroResource = getResourceResolver().getResource(articleHeroPath);
 
 			if (articleHeroResource != null && !ResourceUtil.isNonExistingResource(articleHeroResource)) {
