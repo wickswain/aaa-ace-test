@@ -29,7 +29,7 @@
      class="cq-placeholder text-center">
 </div>
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isArticle}" 
-	 data-emptytext="Please Select the Page from Article Template"
+	 data-emptytext="Error Message:Wrong path selected. Please select the page created from Article Template"
      class="cq-placeholder text-center">
 </div>
 <!-- #placeholder-content end -->
@@ -44,12 +44,12 @@
 	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
 	                         <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
 	                     <li>By ${articlePage.properties.authorName}</li>
-	                     <li data-sly-test="${articlePage.properties.issueDate}><i class="glyphicon glyphicon-time"></i><span class="date">${articlePage.properties.issueDate}</span></li>
+	                     <li data-sly-test="${articlePage.properties.issueDate}"><i class="glyphicon glyphicon-time"></i> <span class="date">${articlePage.properties.issueDate}</span></li>
 	                 </ul>
 	              </div>
 	              <div class="article-content">
 	                 <h2 class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
-	                 <p class="roboto-light font-g">${articlePage.properties.text}</p>
+	                 <p class="roboto-light font-g">${articlePage.properties.text @ context='html'}</p>
 	              </div>
 	              <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
 	         </div>
