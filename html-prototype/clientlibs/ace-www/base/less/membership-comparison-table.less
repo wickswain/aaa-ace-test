@@ -1,0 +1,166 @@
+    /*****************************************
+Page Intro Component
+*****************************************/
+    
+    .membership-comparision-header {
+        background: @color-white;
+        text-align: center;
+    }
+    
+    .membership-comparision {
+        padding-bottom: 130px;
+        .highlight-class {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            margin-top: -10px;
+            padding-top: 60px;
+            background-color: @color-gray-medium;
+        }
+        .selected {
+            box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
+        }
+        .highlight-one {
+            .header {
+                &:nth-of-type(2) {
+                    .highlight-class();
+                }
+            }
+            .membership-cols {
+                div {
+                    &:nth-of-type(2) {
+                        .selected();
+                    }
+                }
+            }
+        }
+        .highlight-two {
+            .header {
+                &:nth-of-type(3) {
+                    .highlight-class();
+                }
+            }
+            .membership-cols {
+                div {
+                    &:nth-of-type(3) {
+                        .selected();
+                    }
+                }
+            }
+        }
+        .highlight-three {
+            .header {
+                &:nth-of-type(4) {
+                    .highlight-class();
+                }
+            }
+            .membership-cols {
+                div {
+                    &:nth-of-type(4) {
+                        .selected();
+                    }
+                }
+            }
+        }
+        .membership {
+            text-align: center;
+            .header {
+                /*background-color: @color-gray-medium;*/
+                padding: 50px 30px;
+                text-align: center;
+                /* border: 1px solid #cccccc;*/
+                h1 {
+                    padding: 30px 0 20px 0;
+                    font-size: 28px;
+                }
+                p {
+                    padding-bottom: 30px;
+                }
+                a {
+                    margin: 0;
+                }
+            }
+        }
+        .membership-cols {
+            text-align: center;
+            a {
+                margin: 0;
+            }
+        }
+    }
+    /* Responsive css for this component */
+    
+    @media only screen and (min-width: 320px) {
+        .membership-comparision {
+            .membership {
+                display: block;
+                justify-content: center;
+            }
+            .membership-cols {
+                display: block;
+                justify-content: center;
+                div {
+                    border-top: 1px solid #cccccc;
+                    border-left: 1px solid #cccccc;
+                    padding: 15px 15px;
+                }
+                div:last-child {
+                    border-right: 1px solid #cccccc;
+                }
+                div:first-child {
+                    border-right: 1px solid #cccccc;
+                    background-color: @color-gray-light;
+                }
+                &:last-child {
+                    div {
+                        &:first-child {
+                            border-bottom: 0px solid #cccccc;
+                        }
+                        border-bottom: 1px solid #cccccc;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width: 480px) {}
+    
+    @media only screen and (min-width: 768px) {}
+    
+    @media only screen and (min-width: 992px) {
+        .membership-comparision {
+            .membership {
+                display: flex;
+                justify-content: center;
+            }
+            .membership-cols {
+                display: flex;
+                justify-content: center;
+                .selected {
+                    box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
+                }
+                div {
+                    border-top: 0px solid #cccccc;
+                    border-left: 0px solid #cccccc;
+                    border-right: 1px solid #cccccc;
+                    padding: 15px 15px;
+                }
+                div:not(:first-child) {
+                    border-top: 1px solid #cccccc;
+                }
+                div:first-child {
+                    border-right: 1px solid #cccccc;
+                    background-color: @color-white;
+                }
+                &:last-child {
+                    div {
+                        &:first-child {
+                            border-bottom: 0px solid #cccccc;
+                        }
+                        border-bottom: 1px solid #cccccc;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width: 1200px) {}
