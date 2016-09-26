@@ -155,7 +155,7 @@ $(function () {
                  * Putting this in html also creates issue since image will 404.
                  * Also due to pagination it looks tricky to keep final HTML clean. 	
                  */ 
-                var navigation_html = '<ul class="row"><li class="page-links col-xs-3"><a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a></li><li class="page-links text-center col-xs-6">';
+                var navigation_html = '<ul class="row list-inline"><li class="page-links col-xs-3"><a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span> Prev</a></li><li class="page-links text-center col-xs-6">';
                 for (var i = defaultPage; i < defaultTotalPages; i++) {
                     navigation_html += '<a href="javascript:void(0);" class="navPage_click" id="id' + i + '">' + (i) + '</a>';
                 }
