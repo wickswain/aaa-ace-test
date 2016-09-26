@@ -49,6 +49,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.aaa.ace.bundles</groupId>
+			<artifactId>base-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.scr</artifactId>
 		</dependency>
