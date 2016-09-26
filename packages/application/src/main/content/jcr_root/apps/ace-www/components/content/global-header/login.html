@@ -36,7 +36,8 @@
 
 <a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" 
    aria-haspopup="true" aria-expanded="false" class="user-info">
-    ${user.firstName}<i class="glyphicon glyphicon-chevron-down"></i>
+    <span class="restrict-characters">${user.firstName}</span>
+    <i class="glyphicon glyphicon-chevron-down"></i>
     <span class="avatar">
         <img src="${currentStyle.defaultAvatarPath}" alt="${currentStyle.defaultAvatarAlt}"
              title="${currentStyle.defaultAvatarAlt}" class="img-responsive">
@@ -51,7 +52,7 @@
 	             title="${currentStyle.defaultAvatarAlt}" class="img-responsive">
 	    </div>
         <div class="avatar-title font-f">${user.firstName}</div>
-	    <div class="my-aacount ">
+	    <div class="my-account ">
 	        <a href="${accountLink.url}" class="btn-style btn-lg btn-border btn-border-reversed">${currentStyle.accountLinkLabel}</a>
 	    </div>
 	    <div class="signout"> 
