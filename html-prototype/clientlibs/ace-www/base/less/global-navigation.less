@@ -47,8 +47,12 @@
             text-align: left;
             line-height: 60px;
             color: #fff;
+            font-family: "robotomedium";
+            font-size: 12px;
             i {
                 margin-right: 10px;
+                font-size: 24px;
+                top: 6px;
             }
         }
         .navigation-bar {
@@ -58,7 +62,7 @@
             right: 0;
             background: #fff;
             box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 9999;
             overflow: auto;
             display: none;
@@ -174,7 +178,7 @@
                     margin: 0px;
                     padding: 0px;
                     li {
-                        padding: 15px 20px 15px 40px;
+                        padding: 15px 20px 15px 50px;
                         list-style: none;
                         text-align: left;
                         position: relative;
@@ -344,7 +348,7 @@
                 color: #fff;
             }
             #truck-link {
-                width: 116px;
+                width: 105px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -507,16 +511,23 @@
             &.open_popup {
                 display: block;
             }
+            span {
+                font-size: 20px;
+                font-family: "robotomedium";
+                margin-left: 12px;
+            }
             .close_btn {
                 background: #0094fe;
                 position: absolute;
                 top: -60px;
                 right: 0;
-                padding: 20px 40px;
+                padding: 20px 0px;
                 opacity: 1;
-                font-size: 15px;
+                font-size: 13px;
                 color: #fff;
                 text-decoration: none;
+                width: 120px;
+                text-align: center;
             }
             .display-table {
                 display: table;
@@ -575,6 +586,11 @@
         }
         .open_popup {
             display: block;
+        }
+        .roadside-block {
+            .close_btn {
+                width: 140px;
+            }
         }
     }
     
@@ -761,7 +777,7 @@
                         margin: 0px;
                         padding: 0px;
                         li {
-                            padding: 15px 20px 15px 40px;
+                            padding: 15px 20px 15px 50px;
                             list-style: none;
                             text-align: left;
                             position: relative;
@@ -1153,8 +1169,8 @@
     .overlay {
         position: fixed;
         z-index: 99;
-        background-color: rgba(0, 0, 0, 0.5);
-        top: 0px;
+        background-color: rgba(0, 0, 0, 0.7);
+        top: 60px;
         left: 0;
         bottom: 0;
         right: 0;

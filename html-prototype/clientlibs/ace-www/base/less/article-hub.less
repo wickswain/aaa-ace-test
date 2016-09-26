@@ -41,7 +41,7 @@ Article Text Component
                             }
                         }
                     }
-                    a {
+                    .list-title {
                         padding-bottom: 15px;
                         display: block;
                     }
@@ -62,6 +62,18 @@ Article Text Component
                     }
                     .article-info {
                         padding-left: 0;
+                        li {
+                            &:first-child {
+                                display: block;
+                                margin-bottom: 15px;
+                            }
+                            &:last-child {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                    .list-btn {
+                        margin-top: 30px;
                     }
                 }
                 .filter-grid {
@@ -70,8 +82,23 @@ Article Text Component
             }
             
             @media only screen and (min-width: 768px) {
+                .article-hub {
+                    .article-info {
+                        li {
+                            &:first-child {
+                                display: block;
+                                margin-bottom: 15px;
+                            }
+                            &:last-child {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                }
                 .filter-grid {
                     margin-top: 30px;
+                    padding: 30px;
+                    width: 220px;
                 }
             }
             
@@ -82,6 +109,49 @@ Article Text Component
                     }
                     .article-info {
                         padding-left: 20px;
+                        li {
+                            &:first-child {
+                                display: block;
+                                margin-bottom: 15px;
+                            }
+                            &:last-child {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                    .filter-grid {
+                        margin-top: 30px;
+                        padding: 40px;
+                        width: auto;
+                    }
+                }
+            }
+            
+            @media only screen and(min-width: 1200px) {
+                .article-hub {
+                    .article-info {
+                        li {
+                            &:first-child {
+                                display: block;
+                                margin-bottom: 15px;
+                            }
+                            &:last-child {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            @media (min-width:1400px) {
+                .article-hub {
+                    .article-info {
+                        li {
+                            &:first-child {
+                                display: inline-block;
+                                margin-bottom: 15px;
+                            }
+                        }
                     }
                 }
             }
