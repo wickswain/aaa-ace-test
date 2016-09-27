@@ -1,0 +1,26 @@
+<!--/*
+
+    1 Icon Row Component.
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. Title/Subheading
+
+
+
+*/-->
+
+<div id="${properties.jumpLinkId}" class="icon-row" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
+    <div class="container horizontal-component-space">
+        <!-- Top Header Starts Here -->
+        <div class="text-center">
+            <div class="horizontal-space2 roboto-light font-b">
+                <h2 title="Explore articles">${properties.title}</h2> </div>
+        </div>
+        <!-- List of the cards start here -->
+        <ul data-sly-use.data="icon-template.html" data-sly-list.num="${[1,2,3]}" class="list-inline icon-list row">
+            <li class="col-md-4 col-sm-4 col-xs-12" data-sly-call="${data.icon @ src='/content/dam/geometrixx/packshots/GeoPyramid_Packshot.jpg', alt='alttext', itter=num}"></li>
+        </ul>
+    </div>
+</div>
+
