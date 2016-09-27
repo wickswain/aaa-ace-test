@@ -43,13 +43,13 @@
 	                 <ul class="list-inline font-e">
 	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
 	                         <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
-	                     <li>By ${articlePage.properties.authorName}</li>
+	                     <li data-sly-test="${articlePage.properties.authorName}">By ${articlePage.properties.authorName}</li>
 	                     <li data-sly-test="${articlePage.properties.issueDate}"><i class="glyphicon glyphicon-time"></i> <span class="date">${articlePage.properties.issueDate}</span></li>
 	                 </ul>
 	              </div>
 	              <div class="article-content">
-	                 <h2 class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
-	                 <p class="roboto-light font-g">${articlePage.properties.text @ context='html'}</p>
+	                 <h2 data-sly-test="${articlePage.properties.articleTitle}" class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
+	                 <p  data-sly-test="${articlePage.properties.text}" class="roboto-light font-g">${articlePage.properties.text @ context='html'}</p>
 	              </div>
 	              <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
 	         </div>
