@@ -53,10 +53,15 @@
 	    </div>
         <div class="avatar-title font-f">${user.firstName}</div>
 	    <div class="my-account ">
-	        <a href="${accountLink.url}" class="btn-style btn-lg btn-border btn-border-reversed">${currentStyle.accountLinkLabel}</a>
+	        <a target="${currentStyle.accountLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+	           href="${accountLink.url}" data-sly-text="${currentStyle.accountLinkLabel}"
+               class="btn-style btn-lg btn-border btn-border-reversed">
+            </a>
 	    </div>
 	    <div class="signout"> 
-	        <a href="${user.signOutURL}" class="link-btn link-lg link-color-orange link-reversed">${currentStyle.signOutLinkLabel}</a>
+	        <a href="${user.signOutURL}" data-sly-text="${currentStyle.signOutLinkLabel}"
+               class="link-btn link-lg link-color-orange link-reversed">
+            </a>
 	    </div>
     </div>
 </div>
