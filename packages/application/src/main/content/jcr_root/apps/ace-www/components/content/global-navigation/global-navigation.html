@@ -46,6 +46,7 @@
             <span class="m-close-icon">
                 <i>+</i>
             </span>
+            
             <div class="advance-search">
                 <div class="expand-searchbar">
                     <form action="${searchPage.linkURL @ context='uri'}" role="search">
@@ -143,9 +144,9 @@
                                                         target="${child1.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
                                                         <img src="${child1.currentpage.properties.tileIcon}" alt="${child1.currentpage.properties.tileIconAltText}"
                                                              title="${child1.currentpage.properties.tileIconAltText}" width="34" height="34" class="drawer-image"/> 
-                                                            <span class="tile-title">
-                                                                ${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
-                                                            </span>
+                                                        <span class="tile-title">
+                                                            ${child1.currentpage.properties.navTitle ? child1.currentpage.properties.navTitle : child1.currentpage.title}
+                                                        </span>
                                                     </a>
                                                 </li>
                                             </sly>
@@ -209,10 +210,14 @@
         <div class="col-sm-5 col-xs-12 links">Need roadside assistance?</div>
         
         <div class="col-sm-5 col-xs-12">
-            <a href="tel:1-800-672-5246" title="telephone " class="btn-style btn-lg btn-border icon-text">Request help</a>
-            <a href="tel:1-800-672-5246" title="telephone " class="btn-style btn-lg btn-border icon-text"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</a>
+            <a target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+               href="${leftLink1.url}" data-sly-text="${currentStyle.leftLink1Label}" class="btn-style btn-lg btn-border icon-text">
+            </a>
+            
+            <a href="tel:${currentStyle.contactNumber}" title="telephone " class="btn-style btn-lg btn-border icon-text">
+                <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${currentStyle.contactNumber}
+            </a>
         </div>
-
     </div>
 </div>
 <!-- #global-navigation-component end -->
