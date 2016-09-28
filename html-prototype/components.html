@@ -35,132 +35,774 @@
     <div id="pagewrapper" class="clearfix container-custom">
         <!-- Header
         ============================================= -->
-        <header id="page-header">
-            <div class="header-section">
-                <div class="container-fluid header-bar">
+        <header id="page-header" class="navbar-fixed-top">
+            <div class="container-fluid desktop-view header-bar">
+                <div id="global-header">
                     <div class="row top-header" id="top-header">
-                        <div class="col-md-5">
-                            <ul class="list-inline">
-                                <li>
-                                    <i class="truck-icon"></i>
-                                    <a href="../getting-started/">Request help</a>
-                                    <span class="pipe">|</span>
-                                    <a href="../getting-started/">Contact us</a>
-
+                        <div class="col-xs-4 col-md-5 text-right col-md-push-7">
+                            <span class="menu"><i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>Menu</span>
+                            <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
+                                <li id="nav-links"><a href="#" class="link1">Find a brach</a><span class="pipe">|</span>
+                                    <a href="#" id="user-login">
+                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a> <a href="javascript:void(0);" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info" style="display: none;">Jessica<i class="glyphicon glyphicon-chevron-down"></i><span class="avatar"><span class="notification">3</span><img src="images/card-img-1.png" class="img-responsive" title="card" alt="card"></span>
+                                        </a>
+                                    <div class="profile-box dropdown-menu" aria-labelledby="user-info">
+                                        <div class="avatar-pic">
+                                            <img src="images/card-img-1.png" class="img-responsive">
+                                        </div>
+                                        <div class="avatar-title font-f">Jessica</div>
+                                        <div class="my-aacount "><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
+                                        <div class="signout"><a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
+                                        <div class="notification-list">
+                                            <ul>
+                                                <li>
+                                                    <p class="font-h">Lorem ipsum Test question one dolor sit amet,consectetur elit?</p>
+                                                </li>
+                                                <li>
+                                                    <p class="font-h">Lorem ipsum Test question one dolor sit amet,consectetur elit?</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="pending-notification"><span class="pull-left font-h">Pending notifications (3)</span> <a href="#" class="link-btn link-color-orange link-reversed font-h">See all</a> </div>
+                                    </div>
+                                </li>
+                                <li><span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text"><span class="input-group-addon"><i class="glyphicon glyphicon-search " aria-hidden="true"></i>Search</span></span>
                                 </li>
                             </ul>
+                            <div class="expand-searchbar" style="width: 20%; opacity: 0;">
+                                <div class="input-group search-bar">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="search" class="form-control font-h" placeholder="Search...">
+                                    <span class="input-group-addon">
+                                        <i class="close-icon">+</i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-center col-md-2">
-                            <div class="brand"><img src="./images/AAA.png" title="Home" alt="AAA - " /></div>
+                        <div class="text-center col-xs-4 col-md-2">
+                            <div class="brand">
+                                <img src="./images/AAA.png" title="Home" alt="AAA" class="img-responsive" />
+                            </div>
                         </div>
-                        <div class="col-md-5 text-right">
-                            <ul class="list-inline">
-                                <li><a href="http://themes.getbootstrap.com">Find a brach</a><span class="pipe">|</span><a href="http://expo.getbootstrap.com">Sing in</a></li>
+                        <div class="col-xs-4 col-md-5 col-md-pull-7">
+                            <ul class="nav-list-inline font-h dropdown roadside-text ">
                                 <li>
-                                    <form class="navbar-form" role="search">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control  icon-search" placeholder="Search" /> </div>
-                                    </form>
-                                </li>
+                                    <a href="#" id="truck-link">
+                                        <img src="images/truck-white-xs.png" title="truck" alt="truck" class="truck-icon">Roadside</a> <span class="pipe hidden-xs hidden-sm">|</span> <a href="#" class=" hidden-xs hidden-sm link2">Contact us</a> </li>
                             </ul>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
+            </div>
+            <!--<div id="page-container"> </div>-->
+
+
+            <!-- Navigation Bar -->
+            <div class="navigation-bar">
+                <nav class="navbar navbar-default globalnav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-0">
+                                <img src="images/member-icon.png" alt="Membership" class="icon-link hidden-lg hidden-md">Membership</a>
+                            <div class="nav-0 drawers-wrapper">
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34">
+                                                        <span class="tile-title">Work or school account</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34">
+                                                        <span class="tile-title">U.S. theme park & attraction deals </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/SVG/Asset2.svg" class="drawer-image" alt="tiles-Image" title="featured tile one" width="34" height="34">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">U.S. Road Trip tools</li>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Drawers bootom -->
+                                    <div class="bottom-tiles" style="background-image: url('images/backdrops/AAA_Component_Z_GlobalNav_v1_06.png');">
+                                        <div class="bottom-stick">
+                                            <div class="container">
+                                                <div class="col-sm-6">
+                                                    <div class="bottom-tile ">
+                                                        <p class="roboto-light font-g"><strong>Save 10%</strong> on select international flights</p>
+                                                        <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue btn-reversed">See flights</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-1" href="javascript:void(0);">
+                                <img src="images/insurance-icon.png" alt="Insurance" alt="Insurance" class="icon-link hidden-lg hidden-md">Insurance</a>
+                            <div class="nav-1 drawers-wrapper">
+
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Flights</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Cruises </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">U.S. Road Trip tools</li>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-2">
+                                <img src="images/travel-icon.png" alt="Travel" alt="Travel" class="icon-link hidden-lg hidden-md">Travel</a>
+                            <div class="nav-2 drawers-wrapper">
+
+
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-3">
+                                <img src="images/disp-icon.png" alt="Discount & Rewards" alt="Discount & Rewards" class="icon-link hidden-lg hidden-md">Discount & Rewards</a>
+                            <div class="nav-3 drawers-wrapper">
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <h3 class="text-uppercase ">U.S. Road Trip tools</h3>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">INTERNATIONAL travel preparation tools</li>
+                                                    <li><a href="#">Foreign currency</a></li>
+                                                    <li><a href="#">Passport photos & info</a></li>
+                                                    <li><a href="#">International driving permits</a></li>
+                                                    <li><a href="#">Mexico auto insurance</a></li>
+                                                </ul>
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-4">
+                                <img src="images/activi-icon.png" alt="Activities" alt="Activities" class="icon-link hidden-lg hidden-md">Activities</a>
+                            <div class="nav-4 drawers-wrapper">
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Flights</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Cruises </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">U.S. Road Trip tools</li>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">INTERNATIONAL travel preparation tools</li>
+                                                    <li><a href="#">Foreign currency</a></li>
+                                                    <li><a href="#">Passport photos & info</a></li>
+                                                    <li><a href="#">International driving permits</a></li>
+                                                    <li><a href="#">Mexico auto insurance</a></li>
+                                                </ul>
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-5">
+                                <img src="images/auto-icon.png" alt="Automative" alt="Automative" class="icon-link hidden-lg hidden-md">Automative</a>
+                            <div class="nav-5 drawers-wrapper">
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Flights</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Cruises </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">U.S. Road Trip tools</li>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">INTERNATIONAL travel preparation tools</li>
+                                                    <li><a href="#">Foreign currency</a></li>
+                                                    <li><a href="#">Passport photos & info</a></li>
+                                                    <li><a href="#">International driving permits</a></li>
+                                                    <li><a href="#">Mexico auto insurance</a></li>
+                                                </ul>
+                                                <ul class="tiles-list">
+                                                    <li class="text-uppercase ">Vacation Ideas</li>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="" id="nav-6">
+                                <img src="images/finan-icon.png" alt="Financial" alt="Financial" class="icon-link hidden-lg hidden-md">Financial</a>
+                            <div class="nav-6 drawers-wrapper">
+                                <div class="drawers-content">
+                                    <div class="drawer-close">
+                                        <div class="close-icon close-drawer"><span>+</span></div>
+                                    </div>
+                                    <div class="drawers-tiles">
+                                        <div class="text-center container">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/hotels.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Hotels</span> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/rental-car.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Rental car</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/flights.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Flights</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/cruises.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Cruises </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/travelinsurance.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">Travel insurance </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tile-card">
+                                                        <img src="images/reservation.png" class="drawer-image" alt="tiles-Image" title="featured tile one">
+                                                        <span class="tile-title">My reservations</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="drawers-tiles-list">
+                                        <div class="container">
+                                            <div class="drawers-container">
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">Book with aaa & save</li>
+                                                    <li><a href="#">All booking</a></li>
+                                                    <li><a href="#">AAA travel agent</a></li>
+                                                    <li><a href="#">Disneyland packages</a></li>
+                                                    <li><a href="#">Universal orlando</a></li>
+                                                    <li><a href="#">Grand Canyon Railway</a></li>
+                                                    <li><a href="#">Limited time offers</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">U.S. Road Trip tools</li>
+                                                    <li><a href="#">Travel guides & tour books</a></li>
+                                                    <li><a href="#">AAA curated drive tips</a></li>
+                                                    <li><a href="#">AAA app</a></li>
+                                                    <li><a href="#">Triptik tip planner</a></li>
+                                                    <li><a href="#">Driving directions</a></li>
+                                                    <li><a href="#">Woodall's campgrounds</a></li>
+                                                    <li><a href="#">Hertz Gold Plus rewards</a></li>
+                                                </ul>
+                                                <ul class="tiles-list border-manage">
+                                                    <li class="text-uppercase ">INTERNATIONAL travel preparation tools</li>
+                                                    <li><a href="#">Foreign currency</a></li>
+                                                    <li><a href="#">Passport photos & info</a></li>
+                                                    <li><a href="#">International driving permits</a></li>
+                                                    <li><a href="#">Mexico auto insurance</a></li>
+                                                </ul>
+                                                <ul class="tiles-list">
+                                                    <h3 class="text-uppercase ">Vacation Ideas</h3>
+                                                    <li><a href="#">AAA curated vacations</a></li>
+                                                    <li><a href="#">Noth America vacations</a></li>
+                                                    <li><a href="#">Worldwide vacation deals</a></li>
+                                                    <li><a href="#">U.S. theme park & attraction deals</a></li>
+                                                    <li><a href="#">Disney vacation deals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a> </li>
+                    </ul>
+                </nav>
+                <!-- Drawers content based on onclick event from navigation 
+                <div class="drawers-wrapper">                    
+                
+                    
+               
+                    
+                </div>-->
+            </div>
+            <div class="roadside-block">
+                <div class="display-table">
+                    <a href="#" class="close_btn">Close <span>X</span></a>
+
+                    <div class="col-sm-2 col-xs-12">
+                        <img src="images/SVG/Asset31.svg" title="truck" alt="truck" class="truck-icon">
+                    </div>
+                    <div class="col-sm-5 col-xs-12 links">Need roadside assistance?</div>
+                    <div class="col-sm-5 col-xs-12">
+                        <a href="tel:1-800-672-5246" title="telephone " class="btn-style btn-lg btn-border icon-text">Request help</a>
+                        <a href="tel:1-800-672-5246" title="telephone " class="btn-style btn-lg btn-border icon-text"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mobile-view header-bar" id="mySidenav">
+                <div class="sign-join-in"></div>
+                <div class="contact-find">
+                </div>
+
             </div>
         </header>
         <div id="page-container">
+            <!-- Home header component-->
+            <div id="home-header" class="home-header small text-center">
+                <div class="content">
+                    <div class="margin-b roboto-medium font-a"><span class="">Save money doing what you love</span> </div>
+                    <p class="horizontal-space roboto-light font-g">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p>
+                    <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a>
+                </div>
+                <div class="learn-link" style="background-color: rgba(0,0,0,0.3);"><a href="#" class="learn-btn font-h ">Learn<br>
+                    <div class="bounce"><span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span></div>
+                </a></div>
+                <video id="home-video" class="video" autoplay="autoplay" loop="loop" muted="" width="100%" height="100%" poster="images/footer-image.jpg">
+                    <source src="media/demo.mp4" type="video/mp4" />
+                </video>
+            </div>
             <!-- Title Header Stand Alone -->
             <div class="dark-bg text-center horizontal-component-space roboto-light font-b">
                 <!--This place with RTE Control-->
-                <h2 class="" title="Title Header Stand Alone">Title Header Stand Alone</h2> </div>
+                <h2 class="" title="Title Header Stand Alone">Title Header Stand Alone</h2>
+            </div>
             <!-- Page intro component-->
-            <div class="page-intro">
+            <div class="page-intro" id="page-intro">
                 <div class="container">
-                    <div class="horizontal-space font-c text-uppercase"> <span class="">About Discount</span> </div>
-                    <div class="horizontal-space roboto-medium font-a"> <span class="">Save money doing what you love</span> </div>
-                    <p class="font-g roboto-light">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p> <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a> </div>
+                    <div class="horizontal-space font-c text-uppercase"><span class="">About Discount</span> </div>
+                    <div class="horizontal-space roboto-medium font-a"><span class="">Save money doing what you love</span> </div>
+                    <p class="font-g roboto-light">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p>
+                    <a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a>
+                </div>
             </div>
             <!-- Sticky Nav -->
-            <section class="sticky-nav">
-                <div class="container-fluid">
-                    <div class="pull-left ">
-
-
-                        <span id="dLabel" class="hidden-md hidden-lg sticky-menu font-h" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-  BROWSE 
-    <span class="glyphicon glyphicon-chevron-down "></span>
-                        </span>
-
-
-                        <ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
-                            <li><a href="#full-column-image">full-column-image</a></li>
-                            <li><a href="#membership-calculator">membership-calculator</a></li>
-                            <li><a href="#img-50-50">img-50-50</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                        </ul>
+            <section id="sticky-nav" class="sticky-nav">
+                <div class="sticky-navbar">
+                    <div class="container-fluid">
+                        <div class="pull-left ">
+                            <span id="dLabel" class="hidden-md hidden-lg sticky-menu font-h" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BROWSE<span class="glyphicon glyphicon-chevron-down "></span></span>
+                            <ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+                                <li><a href="#full-column-image">full-column-image</a></li>
+                                <li><a href="#membership-calculator">membership-calculator</a></li>
+                                <li><a href="#img-50-50">img-50-50</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="pull-right">
+                            <a href="tel:1800-1234-567" class="btn-style btn-sm btn-color-blue icon-text">
+                                <img src="images/phone-icon.png" aria-hidden="true">1800-1234-567</a>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="pull-right">
-                        <a href="tel:1800-1234-567" class="btn-style btn-sm btn-color-blue icon-text"><img src="images/phone-icon.png" aria-hidden="true">1800-1234-567</a>
-                    </div>
-					<div class="clearfix"></div>
                 </div>
             </section>
             <!-- Full Column image component-->
-            <div id="full-column-image" class="full-column-image component-space component-min-h "> <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width:100%;"> </div>
+            <div id="full-column-image" class="full-column-image component-space component-min-h ">
+                <img src="images/full-img.png" title="full-iamge" alt="full-image" class="img-responsive img-position" style="width: 100%;">
+            </div>
             <!--  Membership Calculator component-->
-
             <div class="membership-calculator" id="membership-calculator">
                 <div class="container">
-
-
                     <div class="horizontal-space roboto-light font-b">
-                        <h2 title="Put cash back in your pocket with WOW points">Watch your membership pay for itself</h2> </div>
+                        <h2 title="Put cash back in your pocket with WOW points">Watch your membership pay for itself</h2>
+                    </div>
                     <div class="h-space-cal roboto-light font-g">
                         <p>Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself.</p>
                     </div>
-
-
-
                 </div>
                 <div class="membership-calculator-block">
                     <div class="container">
                         <div class="row row-eq-height">
                             <div class="col-xs-12 col-sm-6 membership-details">
                                 <div class="membership-pay-info">
-
                                     <div class="title-space text-center font-h ">EXAMPLE SAVINGS</div>
-
                                     <div class="saving-item">
                                         <div class="col-sm-7 roboto-light font-g">
-                                            <h2>Yearly savings</h2> </div>
+                                            <h2>Yearly savings</h2>
+                                        </div>
                                         <div class="col-sm-5 roboto-medium font-b text-right">600.00</div>
                                     </div>
-
                                     <div class="saving-item">
                                         <div class="col-sm-7 roboto-light font-g">
-                                            <h2>AAA membership</h2> </div>
-                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
-                                    </div>
-
-                                    <div class="saving-item">
-                                        <div class="col-sm-7 roboto-light font-g">
-                                            <h2>AAA membership</h2> </div>
-                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
-                                    </div>
-
-                                    <hr>
-
-                                    <div class="col-sm-6">
-                                        <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly savings
+                                            <h2>AAA membership</h2>
                                         </div>
+                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
                                     </div>
-                                    <div class="col-sm-6 price-total MC-horizontal-space text-right">$552.00</div>
+                                    <div class="saving-item">
+                                        <div class="col-sm-7 roboto-light font-g">
+                                            <h2>AAA membership</h2>
+                                        </div>
+                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
+                                    </div>
+                                    <hr>
+                                    <div class="total-price-block">
+                                        <div class="col-sm-6">
+                                            <div class="total-saving-price roboto-medium font-g MC-horizontal-space">Total yearly savings </div>
+                                        </div>
+                                        <div class="col-sm-6 price-total MC-horizontal-space text-right">$552.00</div>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="horizontal-space"></div>
                                 <div class="col-sm-12 img-membership">
                                     <img src="images/membership-calculator.png" title="membership-calculator" alt="membership-calculator" />
-
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -168,116 +810,83 @@
                                 <div class=" block-position">
                                     <div class="membership-discount-details">
                                         <span class="col-sm-12 title font-h">Sample services</span>
-
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/movie.png)" title="movie">Movie night</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 982.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/movie.png)" title="movie">Movie night</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 982.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $38.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $38.57</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/dinner.png)" title="movie">Dinner at Marios</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,982.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/dinner.png)" title="movie">Dinner at Marios</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,982.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $36.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $36.57</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/car.png)" title="movie">Car repair</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/car.png)" title="movie">Car repair</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/tickets.png)" title="movie">Tickets to login</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/tickets.png)" title="movie">Tickets to login</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
-
-
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/supplies.png)" title="movie">School supplies</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/supplies.png)" title="movie">School supplies</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/dinner.png)" title="movie">Ice Cream</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/dinner.png)" title="movie">Ice Cream</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                         <div class="item">
                                             <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image:url( images/supplies.png)" title="movie">New dress shoes</div>
-
-
-                                                <div class="price font-g table-cell"><span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
+                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/supplies.png)" title="movie">New dress shoes</div>
+                                                <div class="price font-g table-cell">
+                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
                                                 </div>
-
-
-                                                <div class="total-price font-g table-cell"> <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
+                                                <div class="total-price font-g table-cell">
+                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -285,61 +894,61 @@
                     </div>
                 </div>
             </div>
-
-
             <!-- 50-50 image component -->
-
-
-
-            <div id="img-50-50" class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg.jpg); background-color:#ffffff; color:#000000;">
+            <div id="img-50-50" class="img-50-50 component-height container-fluid" style="background-image: url(images/CompA-bg.jpg); background-color: #ffffff; color: #000000;">
                 <div class="row flex-component">
                     <div class="col-md-6 content">
                         <div class="text-block">
-                            <div class="horizontal-space roboto-light font-b"><img src="images/cal-icon.png" alt="calendar"></div>
                             <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Find local events"><span class="title">Find local events</span></h2></div>
+                                <img src="images/cal-icon.png" alt="calendar"></div>
+                            <div class="horizontal-space roboto-light font-b">
+                                <h2 title="Find local events"><span class="title">Find local events</span></h2>
+                            </div>
                             <div class="horizontal-space roboto-light font-g">
                                 <p>Find events by location and date.</p>
-                            </div> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> </div>
+                            </div>
+                            <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a> <a href="#" class="btn-style btn-lg btn-color-blue" title="Solid button">Solid button</a>
+                        </div>
                     </div>
-                    <div class="col-md-6 image-block"> <img src="images/50-50-img.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                    <div class="col-md-6 image-block">
+                        <img src="images/50-50-img.png" alt="50-50-image" title="50-50-image" class="img-responsive" />
+                    </div>
                 </div>
             </div>
-
-
-
-
-            <div class="img-50-50 component-height container-fluid" style="background-image:url(images/CompA-bg2.jpg); background-color:#ffffff; color:#ffffff; ">
+            <div class="img-50-50 component-height container-fluid" style="background-image: url(images/CompA-bg2.jpg); background-color: #ffffff; color: #ffffff;">
                 <div class="row flex-component" style="background-color: rgba(0,0,0,0.4);">
                     <div class="col-md-6 content">
                         <div class="text-block">
                             <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Find local events"><span class="round-circle" style="border-color:#ffffff;">1</span><span class="title">Show your AAA card</span></h2></div>
+                                <h2 title="Find local events"><span class="round-circle" style="border-color: #ffffff;">1</span><span class="title">Show your AAA card</span></h2>
+                            </div>
                             <div class="horizontal-space roboto-light font-g">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
                                 <div class="horizontal-space"></div>
                                 <p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-                            </div> <a href="#" class="link-btn link-lg link-color-blue link-reversed" title="Solid button">Download store list</a></div>
+                            </div>
+                            <a href="#" class="link-btn link-lg link-color-blue link-reversed" title="Solid button">Download store list</a>
+                        </div>
                     </div>
-                    <div class="col-md-6 image-block"> <img src="images/card.png" alt="50-50-image" title="50-50-image" class="img-responsive" /> </div>
+                    <div class="col-md-6 image-block">
+                        <img src="images/card.png" alt="50-50-image" title="50-50-image" class="img-responsive" />
+                    </div>
                 </div>
             </div>
             <!-- Single column component -->
             <div class="single-column component-min-h">
-
                 <div class="container">
                     <div class="horizontal-space roboto-light font-b">
-                        <h2 title="Put cash back in your pocket with WOW points">Put cash back in your pocket with WOW points</h2> </div>
+                        <h2 title="Put cash back in your pocket with WOW points">Put cash back in your pocket with WOW points</h2>
+                    </div>
                     <div class="horizontal-space2 roboto-light font-g">
                         <p>Beyond our great discounts, we also reward our members with WOW points. Every time you shop online through AAA you earn points that count towards cash-back savings. You can also use your WOW points to purchase from online stores, and they never expire as long as you are with AAA.</p>
                     </div>
-                    <div class="image-block"><img src="images/one-column-img.png" alt="column image" title="single column image" class="img-responsive"> </div>
+                    <div class="image-block">
+                        <img src="images/one-column-img.png" alt="column image" title="single column image" class="img-responsive">
+                    </div>
                 </div>
-
             </div>
-
-
-
             <!-- Footer CTA column component -->
             <div id="footer-column" class="footer-column bottom-space top-space" style="background-image: url(images/footer-image.jpg);">
                 <div class="container-fluid">
@@ -347,23 +956,24 @@
                         <div class="col-md-2 col-sm-2"></div>
                         <div class="col-md-8 col-sm-8">
                             <div class="horizontal-space roboto-light font-b">
-                                <h2 title="Don't have AAA insurance?">Don't have AAA insurance?</h2></div>
+                                <h2 title="Don't have AAA insurance?">Don't have AAA insurance?</h2>
+                            </div>
                             <div class="horizontal-space2 roboto-light font-g">
                                 <p>Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years </p>
-                            </div> <span class="icon-text"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</span><a href="" title="Free online quote" class="btn-style btn-lg btn-reversed btn-border">Free online quote</a></div>
+                            </div>
+                            <span class="icon-text"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1-800-672-5246</span><a href="" title="Free online quote" class="btn-style btn-lg btn-reversed btn-border">Free online quote</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
             <!-- Editorial Cards component starts here-->
             <div class="editorial-cards">
                 <div class="container-fluid horizontal-component-space">
                     <!-- Top Header Starts Here -->
                     <div class="text-center">
                         <div class="horizontal-space roboto-light font-b">
-                            <h2 title="Explore articles">Explore articles</h2> </div>
+                            <h2 title="Explore articles">Explore articles</h2>
+                        </div>
                         <div class="horizontal-space2 roboto-light font-g">
                             <p>Inspirations and ideas for outings</p>
                         </div>
@@ -371,25 +981,34 @@
                     <!-- List of the cards start here -->
                     <ul class="list-inline cards-list">
                         <li>
-                            <div class="horizontal-space"> <img src="images/card-logo.png" title="card-logo" alt="card-logo" class="img-responsive"> </div>
+                            <div class="horizontal-space">
+                                <img src="images/card-logo.png" title="card-logo" alt="card-logo" class="img-responsive">
+                            </div>
                             <div class="side-spacing horizontal-space roboto-light font-g">
-                                <h2 title="Explore articles">AAA Travel Magazine</h2> </div>
-                            <div class="side-spacing horizontal-space font-h"> <a href="#" title="" class="link-btn link-lg link-reversed">See all Articles</a> </div>
+                                <h2 title="Explore articles">AAA Travel Magazine</h2>
+                            </div>
+                            <div class="side-spacing horizontal-space font-h"><a href="#" title="" class="link-btn link-lg link-reversed">See all Articles</a> </div>
                         </li>
                         <li>
-                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-campfire.jpg" title="CompD-campfire" alt="CompD-campfire" class="img-responsive"> </span>
+                            <a href="#"><span class="horizontal-space image-block">
+                                <img src="images/CompD-campfire.jpg" title="CompD-campfire" alt="CompD-campfire" class="img-responsive">
+                            </span>
                                 <h2 class="side-spacing min-spacing roboto-medium font-f" title="Explore articles">Campfire Stories</h2>
                                 <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
                             </a>
                         </li>
                         <li>
-                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-dinner.jpg" title="CompD-dinner" alt="CompD-dinner" class="img-responsive"> </span>
+                            <a href="#"><span class="horizontal-space image-block">
+                                <img src="images/CompD-dinner.jpg" title="CompD-dinner" alt="CompD-dinner" class="img-responsive">
+                            </span>
                                 <h2 class="side-spacing side-spacing min-spacing roboto-medium font-f" title="Explore articles">Restauration</h2>
                                 <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
                             </a>
                         </li>
                         <li>
-                            <a href="#"> <span class="horizontal-space image-block"> <img src="images/CompD-swim.jpg" title="CompD-swim" alt="CompD-swim" class="img-responsive"> </span>
+                            <a href="#"><span class="horizontal-space image-block">
+                                <img src="images/CompD-swim.jpg" title="CompD-swim" alt="CompD-swim" class="img-responsive">
+                            </span>
                                 <h2 class="side-spacing min-spacing roboto-medium font-f" title="Explore articles">Anthem of the Seas</h2>
                                 <p class="side-spacing horizontal-space roboto-light font-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis...</p>
                             </a>
@@ -403,50 +1022,64 @@
                     <!-- Top Header Starts Here -->
                     <div class="text-center">
                         <div class="horizontal-space2 roboto-light font-b">
-                            <h2 title="Explore articles">Discounts</h2> </div>
+                            <h2 title="Explore articles">Discounts</h2>
+                        </div>
                     </div>
                     <!-- List of the cards start here -->
                     <ul class="list-inline icon-list row">
                         <li class="col-md-3 col-sm-3  col-xs-12">
-                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class="horizontal-space icon-image">
+                                <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive">
+                            </div>
                             <div class="icon-title  roboto-medium font-f">
-                                <h2 title="Food & Drink">Food & Drink</h2> </div>
-                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                                <h2 title="Food & Drink">Food & Drink</h2>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class="horizontal-space icon-image">
+                                <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive">
+                            </div>
                             <div class=" icon-title  roboto-medium font-f">
-                                <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
-                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                                <h2 title="Food & Drink">Outdoors & Recreation</h2>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class="horizontal-space icon-image">
+                                <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive">
+                            </div>
                             <div class=" icon-title  roboto-medium font-f">
-                                <h2 title="Food & Drink">Arts & Culture</h2> </div>
-                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                                <h2 title="Food & Drink">Arts & Culture</h2>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
-                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive"> </div>
+                            <div class="horizontal-space icon-image">
+                                <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1" class="img-responsive">
+                            </div>
                             <div class=" icon-title  roboto-medium font-f">
-                                <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
-                            <div class="icon-link font-h"> <a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                                <h2 title="Food & Drink">ThemeParks & Attrations</h2>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
                         </li>
                     </ul>
                 </div>
             </div>
-
             <!-- Faqs component starts here-->
             <div id="faq" class="faqs horizontal-component-space">
                 <div class="container">
                     <!-- Faqs Header Starts Here -->
                     <div class="horizontal-space2 roboto-light font-b">
-                        <h2 title="Explore articles">Freqently asked questions</h2></div>
+                        <h2 title="Explore articles">Freqently asked questions</h2>
+                    </div>
                     <!-- Faqs List Starts here -->
                     <div class="row">
                         <div class="col-md-9 col-sm-12">
                             <div class="item">
                                 <div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems1">
-                                    <h2 title="Question 1"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                                    <h2 title="Question 1">Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2>
+                                </div>
                                 <div class="roboto-light font-h collapse" id="collapseOrderItems1">
                                     <div class="top-space">
                                         <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
@@ -455,7 +1088,8 @@
                             </div>
                             <div class="item">
                                 <div class="faq-list collapsed  roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems2">
-                                    <h2 title="Question 2"> Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2> </div>
+                                    <h2 title="Question 2">Lorem ipsum Test question one dolor sit amet, consectetur elit? <span class="icon-adjust roboto-light">+</span></h2>
+                                </div>
                                 <div class="roboto-light font-h collapse" id="collapseOrderItems2">
                                     <div class="top-space">
                                         <p>Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
@@ -466,8 +1100,10 @@
                         <div class="col-md-3 col-sm-12">
                             <div class="ques-block">
                                 <div class="left-blk side-spacing text-center">
-                                    <span class="adjust-align"><img src="images/faq-icon.png" alt="FAQ">
-                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3></span>
+                                    <span class="adjust-align">
+                                        <img src="images/faq-icon.png" alt="FAQ">
+                                        <h3 class="roboto-medium font-f ">Still Need Help?</h3>
+                                    </span>
                                     <div class="faq-links"><a href="#" title="Download" class="link-btn link-color-blue link-lg">View all FAQ's</a><span>or</span><a href="#" title="Download" class="link-btn link-color-blue link-lg">Contact Support</a></div>
                                 </div>
                             </div>
@@ -476,7 +1112,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Global Footer component -->
         <footer id="page-footer">
             <!-- Global Base Footer component -->
@@ -488,79 +1123,83 @@
                             <div class="row">
                                 <div class="col-md-2 col-md-push-10 text-center">
                                     <div class="brand-image">
-                                        <a href="#"><img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
+                                        <a href="#">
+                                            <img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-md-pull-2 ">
                                     <div class="footer-list">
-                                        <h3 href="javascript:void(0);" class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 href="javascript:void(0);" class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
                                         <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
                                         <ul class="list-unstyled collapse in" id="collapse-list-1">
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Identify theft monitoring</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
                                         </ul>
                                     </div>
                                     <div class="footer-list">
-                                        <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
                                         <h3 class="text-uppercase list-header hidden-xs hidden-sm ">Products & services</h3>
                                         <ul class="list-unstyled collapse in" id="collapse-list-2">
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Identify theft monitoring</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
                                         </ul>
                                     </div>
                                     <div class="footer-list">
-                                        <h3 class="text-uppercase list-header hidden-md hidden-lg" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
                                         <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
                                         <ul class="list-unstyled collapse in" id="collapse-list-3">
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Identify theft monitoring</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
-                                            <li> <a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="border-lines">
-                                <div class="col-md-5"><span class="app" style="background-image:url(images/mobile-icon.png)" title="App">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
-                                <div class="col-md-5"><span class="blog" style="background-image:url(images/rss-icon.png)" title="Blog">Read the latest from our <a href="" class="">blog</a></span></div>
+                                <div class="col-md-5"><span class="app" style="background-image: url(images/mobile-icon.png)" title="App">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
+                                <div class="col-md-5"><span class="blog" style="background-image: url(images/rss-icon.png)" title="Blog">Read the latest from our <a href="" class="">blog</a></span></div>
                                 <div class="col-md-2 social-icons ">
                                     <ul class="list-inline">
                                         <li>
-                                            <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="@aaa" /></a>
+                                            <a href="http://www.facebook.com/">
+                                                <img src="images/facebook.png" alt="@aaa" /></a>
                                         </li>
                                         <li>
-                                            <a href="http://www.twitter.com/"><img src="images/tweet.png" alt="@aaa" /></a>
+                                            <a href="http://www.twitter.com/">
+                                                <img src="images/tweet.png" alt="@aaa" /></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span> <a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span> <a href="http://www.facebook.com/">Terms & conditions</a></p>
+                                    <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span><a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span><a href="http://www.facebook.com/">Terms & conditions</a></p>
                                     <div class="bottom-space"></div>
                                     <p class="footer-p">Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
                                 </div>
                             </div>
                         </div>
-						<div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script src="clientlibs/ace-www/thirdparty/jquery/js/jquery.noconflict.js"></script>
     <script src="clientlibs/ace-www/base/js/scripts.js"></script>
 </body>
 

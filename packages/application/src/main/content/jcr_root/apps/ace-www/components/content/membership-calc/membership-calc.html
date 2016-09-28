@@ -31,74 +31,72 @@
 ============================================= -->
  <div data-sly-test="${properties.title}" id="${properties.jumpLinkId}" class="membership-calculator">
     
-    <div class="container">
+    <div class="container" style="color: ${properties.textColor ? properties.textColor
+ 	: '' @ context='styleToken'}" >
         <div class="horizontal-space roboto-light font-b">
             <h2 title=${properties.title}>${properties.title}</h2> 
         </div>
-    </div>
-    
-    <div class="h-space-cal roboto-light font-g">
-        <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
-    </div>
+
+        <div class="h-space-cal roboto-light font-g">
+            <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}" /> </p>
+        </div>
+     </div>
 
     <div class="membership-calculator-block">
         <div class="container">
             <div class="row row-eq-height">
 
                 <div class="col-xs-12 col-sm-6 membership-details">
-                    <div class="membership-pay-info">
-                        <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
-
-                        <div class="saving-item">
-                            <div class="col-sm-7 roboto-light font-g">
-                                <h2>${properties.yearlySavingsText}</h2>
-                            </div>
-                            <div class="col-sm-5 roboto-medium font-b text-right">${properties.yearlySavings}</div>
-                        </div>
-
-                        <div class="saving-item">
-                            <div class="col-sm-7 roboto-light font-g">
-                                <h2>${properties.aaaMembershipText}</h2>
-                            </div>
-                            <div class="col-sm-5 roboto-medium font-b text-right">-${properties.aaasMembershipCharge}</div>
-                        </div>
-
-                        <hr>
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6">
-                            <div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
-                        </div>
-
-                        <div class="col-sm-6 price-total MC-horizontal-space text-right">&#36;${properties.totalSavings}</div>
-
-                        <div class="clearfix"></div>
-                    </div>
+	                    <div class="membership-pay-info">
+		                        <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
+		                        <div class="saving-item">
+		                            <div class="col-sm-7 roboto-light font-g">
+		                                <h2>${properties.yearlySavingsText}</h2>
+		                            </div>
+		                            <div class="col-sm-5 roboto-medium font-b text-right">${properties.yearlySavings}</div>
+		                        </div>
+		
+		                        <div class="saving-item">
+		                            <div class="col-sm-7 roboto-light font-g">
+		                                <h2>${properties.aaaMembershipText}</h2>
+		                            </div>
+		                            <div class="col-sm-5 roboto-medium font-b text-right">-${properties.aaasMembershipCharge}</div>
+		                        </div>
+		                        <hr>
+		                        <div class="clearfix"></div>
+		 						<div class="total-price-block">
+		                            <div class="col-sm-6">
+		                                <div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
+		                            </div>    
+		                            <div class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium">&#36;${properties.totalSavings}</div>
+		                        </div>
+		                        <div class="clearfix"></div>
+	                   </div>
                     
-                    <div class="horizontal-space"></div>
+                       <div class="horizontal-space"></div>
                     
-                    <div class="col-sm-12 img-membership">
-                        <img src=${properties.fileReference} title=${properties.altText}
-                             alt=${properties.altText} />
-                    </div>
+	                    <div class="col-sm-12 img-membership">
+	                        <img src=${properties.fileReference} title=${properties.altText}
+	                             alt=${properties.altText} />
+	                    </div>
                 </div>
                 
                 <div class="col-xs-12 col-sm-8 col-md-6 block-center">
                     <div class=" block-position">
                         <div class="membership-discount-details">
-                            <span class="col-sm-12 title font-h">Sample services</span>
+                            <span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
                             
-                            <div data-sly-list.child="${mcprovider.childResource.listChildren}">
+                            <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
                                 <div class="item">
                                     <div class="table-block">
                                         <div class="services-title roboto-medium font-g table-cell"
-                                             style="background-image: url('${child.itemizedIcon ? child.itemizedIcon : ' ' @ context=' uri '}')"
+                                             style="background-image:url('${child.itemizedIcon ? child.itemizedIcon : ' ' @ context='styleString'}')"
                                              title="${child.iconAltText}">
                                             ${child.itemizedSavingsText}
                                         </div>
                                         <div class="price font-g table-cell">
                                             <span class="position-rel">
-                                              <span class="discount-price font-h">${child.discountPrice}</span>${child.actualPrice}
+                                              <span class="discount-price font-h">${child.actualPrice}</span>${child.discountPrice}
                                             </span>
                                         </div>
                                         <div class="total-price font-g table-cell">
@@ -108,11 +106,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </sly>
                         </div>
                     </div>
-                </div>
-                
+                </div>                
             </div>
         </div>
     </div>

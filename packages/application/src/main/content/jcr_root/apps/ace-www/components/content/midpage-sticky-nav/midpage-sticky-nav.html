@@ -23,23 +23,25 @@
 
 <!-- #placeholder-content end -->
 
-<section class="sticky-nav" data-spy="affix" data-offset-top="0">
-	<div class="container-fluid position-rel">
-		<div class="pull-left ">
-			<span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			BROWSE
-			<span class="glyphicon glyphicon-chevron-down "></span>
-			</span>
-			<ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
-				<li data-sly-test="${properties.link1label}"><a href="#${properties.jumpLinkId1}">${properties.link1label}</a></li>
-				<li data-sly-test="${properties.link2label}"><a href="#${properties.jumpLinkId2}">${properties.link2label}</a></li>
-				<li data-sly-test="${properties.link3label}"><a href="#${properties.jumpLinkId3}">${properties.link3label}</a></li>
-				<li data-sly-test="${properties.link4label}"><a href="#${properties.jumpLinkId4}">${properties.link4label}</a></li>
-				<li data-sly-test="${properties.link5label}"><a href="#${properties.jumpLinkId5}">${properties.link5label}</a></li>
-			</ul>
-		</div>
-		<div class="pull-right">
-			<sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-small'}"/>
+<section class="sticky-nav" style="display: ${wcmmode.edit ? 'block' : 'none' @ context='styleToken'};">
+	<div class="sticky-navbar">
+		<div class="container-fluid position-rel">
+			<div class="pull-left ">
+				<span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				BROWSE
+				<span class="glyphicon glyphicon-chevron-down "></span>
+				</span>
+				<ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+					<li data-sly-test="${properties.link1label && properties.jumpLinkId1}"><a href="#${properties.jumpLinkId1}">${properties.link1label}</a></li>
+					<li data-sly-test="${properties.link2label && properties.jumpLinkId2}"><a href="#${properties.jumpLinkId2}">${properties.link2label}</a></li>
+					<li data-sly-test="${properties.link3label && properties.jumpLinkId3}"><a href="#${properties.jumpLinkId3}">${properties.link3label}</a></li>
+					<li data-sly-test="${properties.link4label && properties.jumpLinkId4}"><a href="#${properties.jumpLinkId4}">${properties.link4label}</a></li>
+					<li data-sly-test="${properties.link5label && properties.jumpLinkId5}"><a href="#${properties.jumpLinkId5}">${properties.link5label}</a></li>
+				</ul>
+			</div>
+			<div class="pull-right">
+				<div data-sly-resource="${ @path='cta-small', resourceType='/apps/ace-www/components/content/ctabuttons/single-ctabutton-small'}" data-sly-unwrap="${wcmmode.disabled}"></div>
+			</div>
 		</div>
 	</div>
 </section>

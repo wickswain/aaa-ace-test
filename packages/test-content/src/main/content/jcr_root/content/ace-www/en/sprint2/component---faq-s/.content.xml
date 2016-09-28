@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-02T04:30:02.750-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-02T04:16:57.595-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Component - FAQ's"
+        jcr:uuid="8a2bf6da-8e20-496e-b48d-9a174016655d"
+        sling:resourceType="ace-www/components/page/homepage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <faq
+                jcr:created="{Date}2016-08-29T08:02:35.816-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-02T04:30:02.726-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/faq"
+                altText="alt"
+                bgColorLeft="rgba(228,229,229,1)"
+                bgColorRight="rgba(204,204,204,1)"
+                jumpLinkId="faq"
+                leftSectionTitle="Freqently asked questions"
+                link1Caption="View all FAQ's"
+                link1URL="/content/ace-www/en/sprint2/component---faq-s"
+                link2Caption="Contact Support"
+                link2URL="http://www.google.com"
+                rightSectionTitle="Still Need Help?123dgfdshgfh sdg sdgs gshdfhnh"
+                titleIcon="/content/dam/aaa/faq-icon.png">
+                <faqr jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        question="How can I get a copy of my financial responsibility card (Proof of Insurance)?"
+                        text="California policyholders can view, save, and print a Proof of Insurance card by clicking on the “&lt;b>View Proof of Insurance Card&lt;/b>&amp;quot; link on the &lt;i>&lt;b>My Account&lt;/b>&lt;/i> homepage or the &lt;b>View Policy Details&lt;/b> page. This document is in an Adobe® Acrobat® Portable Document Format (PDF). You can download a free copy of Adobe® Acrobat® Reader directly from the Adobe website.&lt;br>&#xd;&#xa;"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        question=" How can I get details on my other policies?"
+                        text="For additional information on policies other than the ones shown in &lt;b>My Account&lt;/b>, please contact our &lt;b>&lt;i>Member Services Center&lt;/i>&lt;/b>.&lt;br>&#xd;&#xa;"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        question="How do I submit my insurance questionnaire online to qualify for the Verified Mileage Discount on my auto policy renewal?"
+                        text="&lt;p>To qualify for the Verified Mileage Discount before we issue your auto policy renewal, you can access and submit your auto insurance questionnaire (IQ) online by doing one of the following:&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Log in to &lt;b>My Account&lt;/b> and click on the “&lt;b>&lt;i>Submit Your Insurance Questionnaire&lt;/i>&lt;/b>” link in the auto insurance section.&lt;/p>&#xd;&#xa;&lt;p>Go to the &lt;b>&lt;i>Auto Insurance Questionnaire Policy Authentication&lt;/i>&lt;/b> page. You will be asked to provide your auto policy number and the last 4 digits of your driver license to access and submit your insurance questionnaire.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>If you have any issues accessing your auto insurance questionnaire online, or if you have questions related to your insurance questionnaire, please call our &lt;b>&lt;i>Member Services Center&lt;/i>&lt;/b> for assistance.&lt;/p>&#xd;&#xa;"/>
+                </faqr>
+            </faq>
+        </content-par>
+    </jcr:content>
+</jcr:root>

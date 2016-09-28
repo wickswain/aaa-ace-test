@@ -56,13 +56,18 @@
                         <div class="row mobile-filter-list hidden-sm hidden-md hidden-lg">
                             <div class="col-md-12  mobile-gridview">
                                 <ul class="filterlist-items">
-                                    <li>FILTERS<span class="roboto-light font-c close-fliter">X</span></li>
-                                    <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
-                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
-                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
-                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
-                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
-                                    <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                    <li class="close-filters">FILTERS<span class="roboto-light font-c close-fliter-icon">X</span></li>
+                                    <div class="results-categories">
+                                        <div class="categorie-title">CATEGORIES</div>
+                                        <ul>
+                                            <li><a href="#" class="meta-data font-h active" metaName="testingMetaName" metaTag="testingMetaTagName">All</a></li>
+                                            <li><a href="#" class="meta-data font-h" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                            <li><a href="#" class="meta-data font-h" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                            <li><a href="#" class="meta-data font-h" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                            <li><a href="#" class="meta-data font-h" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                            <li><a href="#" class="meta-data font-h" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                        </ul>
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -75,8 +80,8 @@
                         <div class="row results-grid">
                             <div class="col-md-8 col-sm-8">
                                 <div class="resultContent"> </div>
-                                <!--  Pagination values effect here -->
-                                <div class="row pagination-grid  horizontal-component-space ">
+                                <div id="page_navigation" class="pagination-grid1"> </div>
+                                <!--<div class="row pagination-grid  horizontal-component-space ">
                                     <ul>
                                         <li class="page-links col-md-4 col-sm-4 col-xs-4"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a> </li>
                                         <li class="page-links col-md-4 col-sm-4 text-center col-xs-4">
@@ -84,19 +89,23 @@
                         </span> </li>
                                         <li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right"> <a href="#" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a> </li>
                                     </ul>
-                                </div>
+                                </div>-->
+                                <div class="clearfix"></div>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                            <div class="col-md-3 col-sm-4 hidden-xs pull-right categorie-block">
                                 <div class="filter-grid">
-                                    <ul>
-                                        <li><a href="#" class="meta-data font-f active" metaName="testingMetaName" metaTag="testingMetaTagName">All Results</a></li>
-                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
-                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
-                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
-                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
-                                        <li><a href="#" class="meta-data font-g" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
-                                    </ul>
+                                    <div class="results-categories">
+                                        <div class="categorie-title">CATEGORIES</div>
+                                        <ul>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h active" metaName="testingMetaName" metaTag="testingMetaTagName">All</a></li>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                            <li><a href="javascript:void(0);" class="meta-data font-h" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -111,8 +120,11 @@
         <footer id="page-footer"> </footer>
     </div>
     <script>
+        var metaName = "";
+        var metaTag = "";
+        var totalListPages;
         $(".error-message").hide();
-        $(".close-fliter").click(function () {
+        $(".close-fliter-icon").click(function () {
             $(".mobile-filter-list").hide();
         });
         $('.mobile-filter-grid').hide();
@@ -124,12 +136,15 @@
         var searchkeyValue = "";
         $(".pagination-grid").hide();
         $(".results-grid").hide();
+        $("#page_navigation").hide();
+        var resultsPerPage = 10;
+        var pageNumber = 1;
         $("#searchSubmit").click(function () {
             searchkeyValue = $("#searchKey").val();
             if (searchkeyValue) {
                 localStorage.setItem("metaName", '');
                 localStorage.setItem("metaTag", '');
-                getResultData(searchkeyValue);
+                getResultData(searchkeyValue, '', 1, '', '', '');
                 //window.location.href = 'gsearch.html?searchKeyValue=' + searckData;
             }
             else {
@@ -143,54 +158,23 @@
                 $('#searchSubmit').click();
             }
         });
-        //Default Pagination Config details
-        var resultsPerPage = 10;
-        var pageNumber = 1;
-        $('#prevPage').click(function () {
-            getResultData(searchkeyValue, -1);
-        });
-        $('#nextPage').click(function () {
-            getResultData(searchkeyValue, 1);
-        });
-        $(".pagination-input").change(function () {
-            var pageNum = $("#pageNumber").val();
-            if (Math.floor(pageNum) == pageNum && $.isNumeric(pageNum)) {
-                getResultData(searchkeyValue, pageNum);
-            }
-            else {
-                alert('Please enter numeric value');
-            }
-        });
-        //Filter List click
-        $(".meta-data").click(function () {
-            var metaName = $(this).attr('metaName');
-            var metaTag = $(this).attr('metaTag');
-            localStorage.setItem("metaName", metaName);
-            localStorage.setItem("metaTag", metaTag);
-            $(".meta-data").removeClass("active");
-            $("[metaName=" + metaName + "]").addClass("active");
-            var currentListItem = $(this).text();
-            $(".checked-list-item-main").html(currentListItem);
-            $(".mobile-filter-list").hide();
-            //getResultData(searchkeyValue, pageNumber, metaName, metaTag);
-        });
         // Api Call based on page number
-        function getResultData(searchkeyValue, paginationCount, metaName, metaTag) {
-            if (paginationCount === -1) {
-                pageNumber = pageNumber - 10;
+        function getResultData(searchkeyValue, navigation, currentPage, metaName, metaTag) {
+            if (navigation === -1) {
+                pageNumber = parseInt(pageNumber) - 1;
             }
-            if (paginationCount === 1) {
-                pageNumber = pageNumber + 10;
+            if (navigation === 1) {
+                pageNumber = parseInt(pageNumber) + 1;
             }
-            if (paginationCount === 0) {
-                pageNumber = 1;
+            if (currentPage) {
+                pageNumber = currentPage;
             }
-            if (paginationCount > 1) {
-                pageNumber = paginationCount * 10;
-            }
-            // console.log(localStorage.getItem("metaName"));
-            // console.log(localStorage.getItem("metaTag"));
-            var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I&cx=004650686028114475301:tlpfyltlij4&q=" + searchkeyValue + "&start=" + pageNumber + "&callback=?";
+            var validPage = ""
+            validPage = (pageNumber * 10) + 1;
+            validPage = validPage - 10;
+            //var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDb6ZxlQVRZJJQv-t7OQU5A2ibVLlw9d3o&cx=002841571323135263873:_kstmmls-cu&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
+            var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I&cx=004650686028114475301:tlpfyltlij4&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
+            // var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBC-G6Eu9j36HTIkkCcw92_CVg_ONtK3Ec&cx=002841571323135263873:_kstmmls-cu&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
             $.getJSON(url, '', SearchCompleted);
         }
         // Final result appending to our html
@@ -198,6 +182,7 @@
             if (response.error) {
                 var errorMessage = response.error.message;
                 $(".pagination-grid").hide();
+                $("#page_navigation").hide();
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -208,6 +193,7 @@
             }
             else if (response.items == null || response.items.length === 0) {
                 $(".pagination-grid").hide();
+                $("#page_navigation").hide();
                 $(".results-grid").hide();
                 $(".result-no").hide();
                 $(".mobile-filter-list").hide();
@@ -219,6 +205,7 @@
             else {
                 $(".error-message").hide();
                 $(".pagination-grid").show();
+                $("#page_navigation").show();
                 $(".results-grid").show();
                 $(".result-no").show();
                 //$(".mobile-filter-list").show();
@@ -228,26 +215,8 @@
                 $("#resultsCount-m").html(response.searchInformation.formattedTotalResults + " results");
                 /* Navigation Links handling */
                 var totalItems = response.searchInformation.totalResults;
-                var totalListPages = Math.round(totalItems / resultsPerPage);
+                totalListPages = Math.round(totalItems / resultsPerPage);
                 var indexCount = response.queries.request[0].startIndex;
-                if (indexCount === totalListPages) {
-                    $("#nextPage").addClass('disabled');
-                }
-                else if (indexCount === 1) {
-                    $("#prevPage").addClass('disabled');
-                }
-                else {
-                    $("#nextPage").removeClass('disabled');
-                    $("#prevPage").removeClass('disabled');
-                }
-                var manageInputValue = "";
-                if (indexCount > 1) {
-                    manageInputValue = Math.round(pageNumber / resultsPerPage) + 1;
-                }
-                else {
-                    manageInputValue = 1;
-                }
-                $("#pageNumber").val(manageInputValue);
                 if (totalListPages > 1) {
                     $("#totalListPages").html("of " + totalListPages);
                 }
@@ -259,9 +228,74 @@
                     var responseData = item.htmlSnippet;
                     html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
                 }
+                /* pagination Logic start */
+                if (parseInt(pageNumber) < 5) {
+                    defaultPage = 1;
+                    if (totalListPages < 5) {
+                        defaultTotalPages = totalListPages;
+                    }
+                    else {
+                        defaultTotalPages = 6;
+                    }
+                }
+                else if (parseInt(pageNumber) > 5) {
+                    defaultPage = parseInt(pageNumber) - 2;
+                    defaultTotalPages = parseInt(pageNumber) + 3;
+                }
+                var navigation_html = '<div class="row pagination-grid  horizontal-component-space "><ul>';
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4">';
+                navigation_html += '<a href="javascript:void(0);" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a>';
+                navigation_html += '</li>';
+                for (var i = defaultPage; i < defaultTotalPages; i++) {
+                    navigation_html += '<li class="page_link" id="id' + i + '">';
+                    navigation_html += '<a href="javascript:void(0);" class="pagination-pageclick">' + (i) + '</a>';
+                    navigation_html += '</li>';
+                }
+                navigation_html += '<li class="page-links col-md-4 col-sm-4 col-xs-4 pull-right">';
+                navigation_html += '<a href="javascript:void(0);" title="Solid button" class="btn pull-right  btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next<span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a>';
+                navigation_html += '</li>';
+                navigation_html += '</ul><div>';
+                $('#page_navigation').html(navigation_html);
+                $(".page_link").removeClass("active");
+                $("#id" + pageNumber).addClass('active');
+                $('#nextPage').click(function () {
+                    getResultData(searchkeyValue, 1, '', metaName, metaTag);
+                });
+                $('#prevPage').click(function () {
+                    getResultData(searchkeyValue, -1, '', metaName, metaTag);
+                });
+                $(".pagination-pageclick").click(function () {
+                    var selectedPage = $(this).text();
+                    pageNumber = $(this).text();
+                    getResultData(searchkeyValue, '', selectedPage, metaName, metaTag);
+                });
+                if (pageNumber === 1) {
+                    $("#prevPage").addClass('disabled');
+                }
+                else if (pageNumber === totalListPages) {
+                    $("#nextPage").addClass('disabled');
+                }
+                else {
+                    $("#nextPage").removeClass('disabled');
+                    $("#prevPage").removeClass('disabled');
+                }
                 $(".resultContent").html(html);
             }
         }
+        /* Links disables handling */
+        //Filter List click
+        $(".meta-data").click(function () {
+            metaName = $(this).attr('metaName');
+            metaTag = $(this).attr('metaTag');
+            localStorage.setItem("metaName", metaName);
+            localStorage.setItem("metaTag", metaTag);
+            $(".meta-data").removeClass("active");
+            $("[metaName=" + metaName + "]").addClass("active");
+            var currentListItem = $(this).text();
+            $(".checked-list-item-main").html(currentListItem);
+            $(".mobile-filter-list").hide();
+            getResultData(searchkeyValue, '', pageNumber, metaName, metaTag);
+        });
     </script>
 </body>
 

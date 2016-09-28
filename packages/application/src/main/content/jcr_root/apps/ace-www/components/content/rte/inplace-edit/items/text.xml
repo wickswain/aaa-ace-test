@@ -64,36 +64,36 @@
             <styles jcr:primaryType="cq:WidgetCollection">
                 <font-a
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-regular font-a"
-                    text="Font Style A"/>
+                    cssName="roboto-slab-bold font-a"
+                    text="Bold XL Header"/>
                 <font-b
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-light font-b"
-                    text="Font Style B"/>
+                    cssName="roboto-slab-bold font-b"
+                    text="Bold Header"/>
                 <font-c
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-regular font-c"
-                    text="Font Style C"/>
+                    text="13px All Caps Title"/>
                 <font-d
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-regular font-d"
-                    text="Font Style D"/>
+                    text="12px All Caps Title"/>
                 <font-e
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-regular font-e"
-                    text="Font Style E"/>
+                    cssName="roboto-light font-e"
+                    text="Light Title"/>
                 <font-f
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-medium font-f"
-                    text="Font Style F"/>
+                    text="Medium Title"/>
                 <font-g
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-light font-g"
-                    text="Font Style G"/>
+                    text="Large Body Text"/>
                 <font-h
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-light font-h"
-                    text="Font Style H"/>
+                    text="Small Body Text"/>
             </styles>
         </styles>
         <justify
@@ -108,12 +108,65 @@
         <subsuperscript
             jcr:primaryType="nt:unstructured"
             features="*"/>
+        <misctools
+            jcr:primaryType="nt:unstructured"
+            features="specialchars">
+            <specialCharsConfig jcr:primaryType="nt:unstructured">
+                <chars jcr:primaryType="nt:unstructured">
+                    <copyright
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#169;"/>
+                    <trademark
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8482;"/>
+                    <registered
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#174;"/>
+                    <pound
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#163;"/>
+                    <apostrophe
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8216"/>
+                    <macron-A
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#256"/>
+                    <macron-a
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#257"/>
+                    <macron-E
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#274"/>
+                    <macron-e
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#275"/>
+                    <macrnon-I
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#298"/>
+                    <macron-i
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#299"/>
+                    <macron-O
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#332"/>
+                    <macron-o
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#333"/>
+                    <macron-U
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#362"/>
+                    <macrnon-u
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#363"/>
+                </chars>
+            </specialCharsConfig>
+        </misctools>
     </rtePlugins>
     <uiSettings jcr:primaryType="nt:unstructured">
         <cui jcr:primaryType="nt:unstructured">
             <inline
                 jcr:primaryType="nt:unstructured"
-                toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
+                toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
                 <popovers jcr:primaryType="nt:unstructured">
                     <styles
                         jcr:primaryType="nt:unstructured"
@@ -123,7 +176,7 @@
             </inline>
             <fullscreen
                 jcr:primaryType="nt:unstructured"
-                toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript]">
+                toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
                 <popovers jcr:primaryType="nt:unstructured">
                     <styles
                         jcr:primaryType="nt:unstructured"

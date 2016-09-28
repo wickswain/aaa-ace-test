@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-02T09:08:07.478-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-02T09:08:16.240-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sprint2 Demo"
+        jcr:uuid="2ad4b289-1d4f-4a0a-8a35-8ffd329a401f"
+        sling:resourceType="ace-www/components/page/homepage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <one_column_content
+                jcr:created="{Date}2016-08-29T13:01:04.545-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-08-29T15:08:49.288-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/one-column-content"
+                image="/content/dam/aaa/images/one-column-img.png"
+                jumpLinkId="money"
+                mainalttext="money"
+                title="Put cash back in your pocket with WOW points">
+                <body-text
+                    jcr:lastModified="{Date}2016-08-29T13:03:23.780-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Beyond our great discounts, we also reward our members with WOW points. Everytime you shop online through AAA you earn points that count towards cash-back savings. &amp;nbsp;You can also use your WOW points to purchase from online stores, and they never expire as long as you are with AAA.&amp;nbsp;&lt;br>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </one_column_content>
+            <faq
+                jcr:created="{Date}2016-08-29T02:37:52.433-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-01T09:44:58.953-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/faq"
+                altText="FAQ"
+                bgColorLeft="rgba(228,229,229,1)"
+                bgColorRight="rgba(204,204,204,1)"
+                jumpLinkId="faq"
+                leftSectionTitle="Frequently Asked Questions"
+                link1Caption="View All FAQ's"
+                link1URL="/content/ace-www/en/sprint2/component---faq-s"
+                link2Caption="Contact Support"
+                link2URL="/content/ace-www/en/sprint2/component---faq-s"
+                rightSectionTitle="Still Need Help?"
+                titleIcon="/content/dam/aaa/faq-icon.png">
+                <faqr jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        question="How do I make changes to my existing policy or policies?"
+                        text="To make changes to your existing policy or policies, please call our Member Services Center."/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        question="How do I renew my insurance policy or policies?"
+                        text="To renew your insurance policy or policies, you can click on the &amp;quot;Pay&amp;quot; link in the insurance section on the My Account page. The &amp;quot;Pay&amp;quot; link will not display if you are enrolled in automatic payments (AAA Auto Pay). If you prefer to renew your policy or policies over the phone, please contact our Member Services Center."/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        question="Why are you asking for my Date of Birth"
+                        text="For your own security, we require that you validate your Date of Birth so you can access your insurance policy information."/>
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        question="Why are you asking for my Date of Birth"
+                        text="For your own security, we require that you validate your Date of Birth so you can access your insurance policy information&lt;sup>super&lt;/sup>."/>
+                </faqr>
+            </faq>
+            <membership_calc
+                jcr:created="{Date}2016-08-29T02:46:52.985-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-02T09:06:13.064-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/membership-calc"
+                aaaMembershipText="AAA Membership"
+                aaasMembershipCharge="48"
+                altText="alt text"
+                fileReference="/content/dam/aaa/ace-test-page-building/6848599-paradise-beach-wallpaper.jpg"
+                itemizedLabel="Save"
+                itemizedSavingsHeading="SAMPLE SERVICE "
+                jumpLinkId="mc"
+                textColor="rgba(0,0,0,1)"
+                title="Watch your membership pay for itself"
+                totalSavings="552"
+                totalSavingsHeading="EXAMPLE SAVINGS"
+                totalSavingsText="Total Savings"
+                yearlySavings="600"
+                yearlySavingsText="Yearly Savings">
+                <body-text
+                    jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
+                    textIsRich="true"/>
+                <mcfiledset jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="100"
+                        discountPrice="90"
+                        iconAltText="Movie "
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                        itemizedSavings="10"
+                        itemizedSavingsText="Movie night"
+                        savingsLabel="saved"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="113"
+                        discountPrice="93"
+                        iconAltText="Hotel"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                        itemizedSavings="23"
+                        itemizedSavingsText="Hotel Items"
+                        savingsLabel="saved"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="120"
+                        discountPrice="100"
+                        iconAltText="alttext"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="20"
+                        itemizedSavingsText="Car Items"
+                        savingsLabel="saved"/>
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="150"
+                        discountPrice="100"
+                        iconAltText="m ovie"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                        itemizedSavings="50"
+                        itemizedSavingsText="Movie  night"
+                        savingsLabel="saved"/>
+                    <_x0035_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="160"
+                        discountPrice="130"
+                        iconAltText="Car"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="30"
+                        itemizedSavingsText="Car Items"
+                        savingsLabel="saved"/>
+                    <_x0036_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="140"
+                        discountPrice="120"
+                        iconAltText="Hotel"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                        itemizedSavings="20"
+                        itemizedSavingsText="Hotel Items"
+                        savingsLabel="saved"/>
+                    <_x0037_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="170"
+                        discountPrice="145"
+                        iconAltText="AltTest"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="25"
+                        itemizedSavingsText="Movie Items"
+                        savingsLabel="saved"/>
+                </mcfiledset>
+            </membership_calc>
+        </content-par>
+        <header-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <midpage_sticky_nav
+                jcr:created="{Date}2016-09-01T09:19:55.711-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-02T09:08:07.432-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                jumpLinkId1="faq"
+                jumpLinkId2="mc"
+                jumpLinkId3="money"
+                link1label="FAQ"
+                link2label="Membership Calculator"
+                link3label="WOW Points">
+                <cta-small
+                    jcr:lastModified="{Date}2016-09-02T02:22:46.421-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaColor="rgba(0,153,255,1)"
+                        ctaLabel="12343456332789"
+                        phonedialFlag="true"/>
+                </cta-small>
+            </midpage_sticky_nav>
+        </header-par>
+    </jcr:content>
+    <component---faq-s/>
+    <component---membership-calculator/>
+    <component---search-results/>
+    <component---icon-row/>
+    <test/>
+</jcr:root>

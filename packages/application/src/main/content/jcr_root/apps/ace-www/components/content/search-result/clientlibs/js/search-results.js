@@ -22,6 +22,14 @@
             $(".mobile-filter-list").hide();
         });
 
+        /* if search is from header */
+        var searchQuery = getParameterByName('q');
+        if(searchQuery) {
+        	searchkeyValue = searchQuery;
+            getResultData(searchkeyValue, '', 1, '');
+            $("#searchKey").val(searchkeyValue);
+        }
+        
 		//onClick search event
 		$("#searchSubmit").click(
 				function() {
