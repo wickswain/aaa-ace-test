@@ -1,9 +1,9 @@
-			<!--/*
+<!--/*
     
       Article Hub Feautured Component.
        ----------------------------------------------------------------
    
-       This component can be used across all pages throughout the site.
+       This component can be used Article Page throughout the site.
        Placement of the component can only be used at the Top of the Article Page as Feautured.
 
        Default Behavior: NA
@@ -34,7 +34,7 @@
 </div>
 <!-- #placeholder-content end -->
 
-<!--/* Article Hub starts */-->
+<!--/* Article Hub Featured starts */-->
 <div id="${properties.jumpLinkId}"  data-sly-test="${properties.artclepagePath && isArticle}">
 	     <div class="row article-hero-header">
 	         <div class="article-hero " style="background-image:url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
@@ -55,6 +55,6 @@
 	         </div>
 	 	</div>
 </div>
-<!--/* Article Hub End */-->
+<!--/* Article Hub Featured End */-->
 
 
