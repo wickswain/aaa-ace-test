@@ -19,7 +19,10 @@
 </div>
 <sly data-sly-test="${properties.rowItemDescription}">
     <div class="row membership-cols roboto-light font-h">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info"> ${properties.rowItemDescription} <a href="#myModal" class="btn-info" data-toggle="modal"></a></div>
+        <div class="col-md-3 col-sm-12 col-xs-12 ${properties.showModalBox ? 'icon-info' : ''}"> ${properties.rowItemDescription} 
+            <a data-sly-test="${properties.showModalBox}" href="#myModal" class="btn-info" data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}">
+								</a>
+        </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 1}" class="col-md-3 col-sm-4 col-xs-4"> 
             <sly data-sly-test="${properties.enableCol1Text}" data-sly-text="${properties.col1Text}"/>
