@@ -24,6 +24,8 @@
         @ url = currentStyle.signOutLinkTo}"/>
 <sly data-sly-use.accountLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
         @ url = currentStyle.accountLinkTo}"/>
+<sly data-sly-use.joinButton="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.joinButtonURL}"/>
 <sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'
         @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
 <sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider"/>
@@ -80,8 +82,9 @@
                          alt="${currentStyle.icon2Alt}" class="lock-icon"/>
                         ${currentStyle.rightLink2Label}
                 </a>
-                <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">
-                    Join
+                <a href="${joinButton.url}" data-sly-text="${currentStyle.joinButtonLabel}"
+                   target="${currentStyle.joinButtonOpenTabFlag == 'true' ? '_blank' : '_self'}"
+                   class="link-btn link-color-blue link-lg">
                 </a>
             </div>
             
@@ -188,7 +191,10 @@
                     </li>
                 </sly>
                 <li class="hidden-xs hidden-sm">
-                    <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a>
+                    <a href="${joinButton.url}" data-sly-text="${currentStyle.joinButtonLabel}"
+                       target="${currentStyle.joinButtonOpenTabFlag == 'true' ? '_blank' : '_self'}"
+                       class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
+                    </a>
                 </li>
             </ul>
         </nav>
