@@ -30,7 +30,6 @@ $(function () {
             $(".checked-list-item-main").html(currentListItem);
             pageNumber = 1;
             getArticles('', pageNumber);
-            
             e.preventDefault();
         });
         $(".close-fliter-icon").click(function (e) {
@@ -43,7 +42,7 @@ $(function () {
                 $(".filter-grid").show();
             }
         });
-        /* API CALl */
+        /* API CALL */
         function getArticles(navigation, selectedPage) {
             
         	//user navigating through previous button
@@ -80,22 +79,23 @@ $(function () {
             if (response.error) {
                 var errorMessage = response.error.message;
                 $(".article-hub").hide();
-                //$(".result-no").hide();
-                $(".error-grid").show();
+                $(".pagination-grid").hide();
+                $(".error-message").show();
                 $(".error-message").html(errorMessage);
                 pageNumber = 1;
             }
             else if (response.items == null || response.items.length === 0) {
                 $(".article-hub").hide();
-                //$(".result-no").hide();
-                $(".error-grid").show();
-                $(".error-message").html("No search results found.");
+                $(".pagination-grid").hide();
+                $(".error-message").show();
+                $(".error-message").html("No articles found.");
                 pageNumber = 1;
             }
             else {
-                $(".error-grid").hide();
+                $(".error-message").hide();
                 $(".article-hub").show();
                 var html = "";
+                
                 /* Navigation Links handling */
                 var totalItems = response.searchInformation.totalResults;
                 totalListPages = Math.ceil(totalItems / resultsPerPage);
