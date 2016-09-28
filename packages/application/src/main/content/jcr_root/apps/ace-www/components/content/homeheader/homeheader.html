@@ -43,6 +43,6 @@
 		                    </a> 
                 	 </div>
                  <video id="home-video" class="video" autoplay="${!(wcmmode.edit || wcmmode.design)}" loop="loop" muted="" width="100%" height="100%" poster=${properties.image}>
-                    <source src="${properties.video}" type="video/mp4" />
+                    <source src="${properties.imageorvideo=='showvideo' ? properties.video : ''}" type="video/mp4" />
                  </video>
             </div>
