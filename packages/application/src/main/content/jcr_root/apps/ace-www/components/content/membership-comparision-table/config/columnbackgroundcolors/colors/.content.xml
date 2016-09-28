@@ -11,10 +11,10 @@
         value="#E4E5E5"/>
     <blue1
         jcr:primaryType="nt:unstructured"
-        text="Blue Color 1 (#0099ff)"
+        text="Primary Color (#0099ff)"
         value="#0099ff"/>
     <blue2
         jcr:primaryType="nt:unstructured"
-        text="Blue Color 2(#005095)"
+        text="Primary Color (#005095)"
         value="#005095"/>
 </jcr:root>
