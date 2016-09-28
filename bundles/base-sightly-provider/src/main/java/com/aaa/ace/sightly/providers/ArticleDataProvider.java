@@ -40,7 +40,7 @@ public class ArticleDataProvider extends WCMUsePojo {
 		log.debug("Start of ArticleDataProvider class");
 
 		PageManager pagemanager = getResourceResolver().adaptTo(PageManager.class);
-		String path = get("artclepagePath", String.class);
+		String path = getProperties().get("artclepagePath", String.class);
 		if (StringUtils.isNotBlank(path) && pagemanager != null) {
 			articlePage = pagemanager.getPage(path);
 			String articleHeroPath = path + ARTICLE_HERO_PATH;

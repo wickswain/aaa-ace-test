@@ -1,11 +1,11 @@
 			<!--/*
     
-      Article Hub Component.
+      Article Hub Feautured Component.
        ----------------------------------------------------------------
    
        This component can be used across all pages throughout the site.
-       Placement of the component can only be used at the Top of the page as Header.
-   
+       Placement of the component can only be used at the Top of the Article Page as Feautured.
+
        Default Behavior: NA
    
        Required Fields:
@@ -16,7 +16,7 @@
 
 <!-- Placeholder Content
 ============================================= -->
-<sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider' @ artclepagePath=properties.artclepagePath}" />
+<sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider'}" />
 
 <sly data-sly-test.articlepage="${articledata.articlePage}"
 	 data-sly-test.articlehero="${articledata.articleHero}"
@@ -25,7 +25,7 @@
 <sly data-sly-test.isAuthored="${properties.artclepagePath}"/>
 
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
-	 data-emptytext="Author Article Hub Component Here"
+	 data-emptytext="Author Article Hub Feautured Component Here"
      class="cq-placeholder text-center">
 </div>
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isArticle}" 
