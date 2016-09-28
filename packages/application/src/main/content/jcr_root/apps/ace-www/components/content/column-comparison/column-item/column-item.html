@@ -13,7 +13,7 @@
 
 */-->
 
-    <div class="col-compare--horizontal-space">
+    <div class="col-compare--horizontal-space" data-sly-test.hasContent="${properties.headerCopy || properties.bodyCopy}">
         <div class="horizontal-space font-f text-center">
             <h2>${properties.headerCopy @ context='html'}</h2>
         </div>
@@ -39,7 +39,7 @@
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) }" data-emptytext="Author Column Item here"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent }" data-emptytext="Author Column Item here"
      class="cq-placeholder" style="text-align: center;">
 </div>
  <!-- #placeholder-content end -->
