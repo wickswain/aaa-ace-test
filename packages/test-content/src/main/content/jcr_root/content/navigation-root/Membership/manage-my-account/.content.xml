@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:cloudserviceconfigs="[[]]"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2016-09-12T18:38:08.861+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ace-www/templates/globalnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:lastModified="{Date}2016-09-12T18:38:08.857+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Manage My Account"
+        jcr:uuid="a794db91-150b-4029-87ca-42be56deee1a"
+        sling:resourceType="ace-www/components/page/globalnav"
+        linkURL="http://[Domain].[ClubName].aaa.com/home.html"
+        pageType="tile"
+        tileIcon="/content/dam/aaa/images/rental-car.png"
+        tileIconAltText="restaurant alt">
+        <image
+            jcr:lastModified="{Date}2016-09-12T18:38:08.857+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
