@@ -1,0 +1,31 @@
+<!--/*
+
+    Footernote Component.
+    ----------------------------------------------------------------
+
+    This particular component can be used with any where.
+
+    Default Behavior:NA
+
+    Required Fields:NA    
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.text}"
+	 data-emptytext="Footernote Component Here."
+	 src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	 alt="Footernote" />
+
+<!-- #placeholder-content end -->
+
+<!-- Footernote Text Content
+============================================= -->
+<div id="${properties.jumpLinkId}" style="background-color:${properties.backgroundColor @ context='styleToken'}; color:${properties.fontColor @ context='styleToken'}" >
+   <div class="bottom-space"></div>                              
+  		<p class="footer-p"> ${properties.text @ context='html'}</p>
+   <div class="bottom-space"></div>
+</div>
+<!-- #Footernote text-content end -->
+
