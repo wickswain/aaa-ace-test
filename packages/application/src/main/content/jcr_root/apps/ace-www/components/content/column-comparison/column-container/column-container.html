@@ -1,0 +1,38 @@
+<!--/*
+
+    Two Column Container
+    ----------------------------------------------------------------
+
+    Hidden component that will display column content
+
+    Required Fields:
+    1. Image - optional
+    2. Alt text - required if image
+    3. Heading - optional
+    4. Text blocks (1-6) - required at least 1
+
+*/-->
+
+<div data-sly-use.columnprovider="${'com.aaa.ace.sightly.providers.ColumnComparisonProvider'}">
+    <sly data-sly-test.hasContent="${properties.image}">
+        <div class="horizontal-space text-center">
+            <img src="${properties.image}" alt="${properties.altText}" class="img-responsive col-compare-image">
+        </div>
+    </sly>
+
+    <div class="col-compare--horizontal-space font-b">
+        <h2 class="font-b text-center">${properties.heading}</h2>
+    </div>
+
+    <ul data-sly-list.column="${columnprovider.columns}"class="text-block list-inline icon-list row">
+        <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"></sly>
+    </ul>
+</div>
+
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) }" data-emptytext="Author Column Item here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+<!-- #placeholder-content end -->
