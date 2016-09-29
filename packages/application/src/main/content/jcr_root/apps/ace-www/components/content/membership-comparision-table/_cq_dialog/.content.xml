@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Membership Comparision Table"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basictab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter heading or title."
+                                fieldLabel="Heading/Title"
+                                name="./title"/>
+                            <number-of-columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                fieldDescription="Please Select number of Columns"
+                                fieldLabel="Number of Columns"
+                                max="{Long}3"
+                                min="{Long}0"
+                                name="./columnCount"
+                                required="{Boolean}true"
+                                text="Select number of Columns"/>
+                            <total-row-count
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                fieldDescription="Please enter total number of rows"
+                                fieldLabel="Select Number of Rows"
+                                min="{Long}0"
+                                name="./totalRowCount"
+                                required="{Boolean}true"/>
+                            <see-all-row-index
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                fieldDescription="Please enter number of rows after which 'See all' link should be visible"
+                                fieldLabel="Visible number of Rows"
+                                min="{Long}0"
+                                name="./seeAllRowIndex"/>
+                            <backgroundcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                                colorsPath="/apps/ace-www/components/content/membership-comparision-table/config/backgroundcolors"
+                                fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
+                                fieldLabel="Background Color"
+                                freestylePalette="{Boolean}true"
+                                name="./backgroundColor"/>
+                        </items>
+                    </columns>
+                </items>
+            </basictab>
+            <highlightcolumntab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Highlighted Column"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column-highlight
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select column to highlight while comparision"
+                                fieldLabel="Highlight Column"
+                                name="./highlightedColumn">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value="none"/>
+                                    <col1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Column 1"
+                                        value="one"/>
+                                    <col2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Column 2"
+                                        value="two"/>
+                                    <col3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Column 3"
+                                        value="three"/>
+                                </items>
+                            </column-highlight>
+                            <columnbackgroundcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                                colorsPath="/apps/ace-www/components/content/membership-comparision-table/config/columnbackgroundcolors"
+                                fieldDescription="Please select the background color to fill the selected column to change the default selection of white background."
+                                fieldLabel="Background Color"
+                                freestylePalette="{Boolean}true"
+                                name="./columnBackgroundColor"/>
+                            <fontcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/ace-www/components/common/textfontcolors"
+                                fieldDescription="Please select the font color in accordance with the background color selected"
+                                fieldLabel="Font Color"
+                                freestylePalette="{Boolean}true"
+                                name="./fontColor"/>
+                        </items>
+                    </columns>
+                </items>
+            </highlightcolumntab>
+            <jumplink
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Jumplink "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Jump Link Id"
+                                fieldLabel="Jump Link Id"
+                                name="./jumpLinkId"/>
+                        </items>
+                    </columns>
+                </items>
+            </jumplink>
+        </items>
+    </content>
+</jcr:root>
