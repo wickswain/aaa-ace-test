@@ -6,7 +6,9 @@
     transition: all 0.4s;
     border: 0;
 }
-
+#global-header {
+    padding: 0px 20px;
+}
 .dark-bg {
     background: @color-blue none;
     padding: 20px;
@@ -45,11 +47,6 @@
         left: 0;
     }
     #global-header {
-        position: fixed;
-        width: 100%;
-        z-index: 99;
-        left: 0;
-        padding: 0px 20px;
         .menu {
             display: block;
             text-align: left;
@@ -64,11 +61,7 @@
                 top: 6px;
             }
         }
-    }
-    .navbar-fixed-top {
-        position: relative;
-        z-index: 999;
-    }
+    }    
     .header-bar {
         .top-header {
             background: #005095;
