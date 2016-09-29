@@ -16,8 +16,6 @@
         @ url = currentStyle.leftLink2LinkTo}"/>
 <sly data-sly-use.rightLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
         @ url = currentStyle.rightLink1LinkTo}"/>
-<sly data-sly-use.rightLink2="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
-        @ url = currentStyle.rightLink2LinkTo}"/>
 <sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
         @ link = currentStyle.searchPagePath}" />
 <!-- #sightly-global-objects-declaration end -->
@@ -25,88 +23,89 @@
 <!-- Global Hader component
 ============================================= -->
 <div id="global-header">
-    <div class="col-xs-4 col-md-5 text-right col-md-push-7">
-        <span class="menu">
-            <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i> Menu
-        </span>
-        <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
-            <li id="nav-links">
-                <a data-sly-test="${currentStyle.rightLink1Label}"
-                   data-sly-text="${currentStyle.rightLink1Label}"
-                   target="${currentStyle.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${rightLink1.url}">
-                </a>
-                
-                <span data-sly-test="${currentStyle.rightLink1Label}"
-                      class="pipe">|</span>
-                
-                <a data-sly-test="${currentStyle.rightLink2Label}"
-                   target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${rightLink2.url}" id="user-login">
-                    <img data-sly-test="${currentStyle.icon2Path}"
-                         src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
-                         alt="${currentStyle.icon2Alt}" class="lock-icon"/>
-                    ${currentStyle.rightLink2Label}
-                </a>
-                
-                <!-- /* TODO: Profile section changes need to include */ -->
-            </li>
-            
-            <li>
-                <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text">
-                    <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-search " aria-hidden="true"></i> ${currentStyle.searchLabel}
-                    </span>
-                </span>
-            </li>
-        </ul>
-        
-        <div class="expend-searchbar" style="width:20%; opacity:0;">
-            <form action="${searchPage.linkURL @ context='uri'}" role="search">
-                <div class="input-group search-bar">
-                    <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                    </span>
+    <div class="row top-header" id="top-header">
+        <div class="col-xs-4 col-md-5 text-right col-md-push-7">
+            <span class="menu">
+	            <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i> Menu
+	        </span>
+	        <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
+	            <li id="nav-links">
+	                <a data-sly-test="${currentStyle.rightLink1Label}"
+	                   data-sly-text="${currentStyle.rightLink1Label}"
+	                   target="${currentStyle.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${rightLink1.url}">
+	                </a>
+	                
+	                <span data-sly-test="${currentStyle.rightLink1Label}"
+	                      class="pipe">|</span>
+	                
+	                <!-- /* TODO: Profile section changes need to include */ -->
+	                <sly data-sly-include="login.html"/>
+	            </li>
+	            
+	            <li>
+	                <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text">
+	                    <span class="input-group-addon">
+	                        <i class="glyphicon glyphicon-search " aria-hidden="true"></i> ${currentStyle.searchLabel}
+	                    </span>
+	                </span>
+	            </li>
+	        </ul>
+	        
+	        <div class="expand-searchbar" style="width:20%; opacity:0;">
+	            <form action="${searchPage.linkURL @ context='uri'}" role="search">
+	                <div class="input-group search-bar">
+	                    <span class="input-group-addon">
+	                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+	                    </span>
+	                    
+	                    <input type="search" name="q" id="q" placeholder="${currentStyle.searchPlaceholderLabel}" class="form-control font-h" />
+	                    
+	                    <span class="input-group-addon">
+	                        <i class="close-icon" id="d-close-searchbar">+</i>
+	                    </span>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	    
+	    <div class="text-center col-xs-4 col-md-2">
+	        <div class="brand">
+	            <sly data-sly-resource="${ @path='global-header-logo', resourceType='/apps/ace-www/components/content/reference'}" />
+	        </div>
+	    </div>
+	    
+	    <div class="col-xs-4 col-md-5 col-md-pull-7">
+	        <ul class="nav-list-inline font-h dropdown roadside-text">
+	            <li>
+                    <div id="truck-link" class="hidden-lg hidden-md">
+                        <img data-sly-test="${currentStyle.icon1Path}"
+                             src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
+                             alt="${currentStyle.icon1Alt}" class="truck-icon"/>
+                        ${currentStyle.leftLink1Label}
+                    </div>
                     
-                    <input type="search" name="q" id="q" placeholder="${currentStyle.searchPlaceholderLabel}" class="form-control font-h" />
-                    
-                    <span class="input-group-addon">
-                        <i class="close-icon">+</i>
-                    </span>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    <div class="text-center col-xs-4 col-md-2">
-        <div class="brand">
-            <sly data-sly-resource="${ @path='global-header-logo', resourceType='/apps/ace-www/components/content/reference'}" />
-        </div>
-    </div>
-    
-    <div class="col-xs-4 col-md-5 col-md-pull-7">
-        <ul class="nav-list-inline font-h dropdown">
-            <li>
-                <a data-sly-test="${currentStyle.leftLink1Label}"
-                   target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${leftLink1.url}">
-                    <img data-sly-test="${currentStyle.icon1Path}"
-                         src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
-                         alt="${currentStyle.icon1Alt}" class="truck-icon"/>
-                    ${currentStyle.leftLink1Label}
-                </a>
-                
-                <span data-sly-test="${currentStyle.leftLink1Label}"
-                      class="pipe hidden-xs hidden-sm">|
-                </span>
-                
-                <a data-sly-test="${currentStyle.leftLink2Label}"
-                   data-sly-text="${currentStyle.leftLink2Label}"
-                   target="${currentStyle.leftLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-                   href="${leftLink2.url}" class="hidden-xs hidden-sm">
-                </a>
-            </li>
-        </ul>
+	                <a data-sly-test="${currentStyle.leftLink1Label}"
+	                   target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${leftLink1.url}" id="truck-link" class="hidden-xs hidden-sm">
+	                    <img data-sly-test="${currentStyle.icon1Path}"
+	                         src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
+	                         alt="${currentStyle.icon1Alt}" class="truck-icon"/>
+	                    ${currentStyle.leftLink1Label}
+	                </a>
+	                
+	                <span data-sly-test="${currentStyle.leftLink1Label}"
+	                      class="pipe hidden-xs hidden-sm">|
+	                </span>
+	                
+	                <a data-sly-test="${currentStyle.leftLink2Label}"
+	                   data-sly-text="${currentStyle.leftLink2Label}"
+	                   target="${currentStyle.leftLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${leftLink2.url}" class="link2 hidden-xs hidden-sm">
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
     </div>
     
     <div class="clearfix"></div>

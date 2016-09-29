@@ -10,14 +10,19 @@
 ============================================= -->
 <div id="page-container">
 
-    <!-- Article Hero -->
-    <!--/* Embedding article Hero to not confuse the author with two parsys one for image full width
-             another for article header and article text (with 1 column left on each side). */-->
-    <div data-sly-resource="${ @path='article-hero', resourceType='/apps/ace-www/components/content/articlehero'}"
-                 data-sly-unwrap="${wcmmode.disabled}">
-    </div>
-
     <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-sm-12">
+			    <!-- Article Hero -->
+			    <!--/* Embedding article Hero to not confuse the author with two parsys one for image full width
+			             another for article header and article text (with 1 column left on each side). */-->
+			    <div data-sly-resource="${ @path='article-hero', resourceType='/apps/ace-www/components/content/articlehero'}"
+			         data-sly-unwrap="${wcmmode.disabled}">
+			    </div>
+            </div>
+        </div>
+
         <!--/* section to support parsys with one column left on each side */-->
         <div class="row">
             <div class="col-sm-1"></div>
@@ -41,6 +46,16 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
+        <!--/* section to support parsys with one column left on each side */-->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <!--/* Parsys for Copyright component */-->
+                <sly data-sly-resource="${ @path='copy-right', resourceType='/apps/ace-www/components/content/copyright'}" />
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
    	</div>
 </div>
 <!-- #page-container ends -->
