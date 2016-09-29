@@ -14,10 +14,6 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-
-
-
-
                     <header-rte
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="cq/gui/components/authoring/dialog/richtext"
