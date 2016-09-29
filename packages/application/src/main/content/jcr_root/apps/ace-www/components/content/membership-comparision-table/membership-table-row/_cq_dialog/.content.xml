@@ -116,8 +116,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Column1 Alt"
                                 fieldDescription="Please enter alt text"
-                                name="./icon1/alt"
-                                required="{Boolean}true"/>
+                                name="./icon1/alt"/>
                             <icon1restype
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
@@ -183,8 +182,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Column2 Alt"
                                 fieldDescription="Please enter alt text"
-                                name="./icon2/alt"
-                                required="{Boolean}true"/>
+                                name="./icon2/alt"/>
                             <icon2restype
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
@@ -250,8 +248,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Column3 Alt"
                                 fieldDescription="Please enter alt text"
-                                name="./icon3/alt"
-                                required="{Boolean}true"/>
+                                name="./icon3/alt"/>
                             <icon3restype
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"

@@ -2,12 +2,12 @@
 ============================================= -->
 
 <sly data-sly-use.tableprovider="${'com.aaa.ace.sightly.providers.MembershipTableProvider'}"/>
-<sly data-sly-test.isNotAuthored="${(!properties.totalRowCount && !properties.columnCount) || (properties.totalRowCount == '0' && properties.columnCount == '0')}"></sly>
+
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
 ============================================= -->
-<img data-sly-test="${(wcmmode.edit || wcmmode.design) && isNotAuthored}"
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.totalRowCount}"
 	data-emptytext="Author Membership Comparision Table Component Here"
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
 	alt="Membership Comparision Table Component" />
@@ -15,7 +15,7 @@
 
 <!-- Membership Comparision Table
 ============================================= -->
-<div data-sly-test="${!isNotAuthored}" style="background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
+<div data-sly-test="${properties.totalRowCount}" style="background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
      class="membership-comparision-table">
     <div class="container">
         <div class="membership-comparision-header horizontal-component-space">
@@ -47,7 +47,7 @@
                 <div data-sly-resource="${row.path @ resourceType=row.resourceType}" data-sly-unwrap="${wcmmode.disabled}"></div>
             </sly>
 
-            <div class="row membership-cols seeAllLink">
+            <div data-sly-test="${properties.totalRowCount != '0'}" class="row membership-cols seeAllLink">
                 <div class="col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs"></div>
                 <div data-sly-test="${properties.columnCount=='1'}" class="col-md-3 col-sm-12 col-xs-12"> <a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a> </div>
                 <div data-sly-test="${properties.columnCount=='2'}" class="col-md-6 col-sm-12 col-xs-12"> <a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a> </div>
@@ -57,7 +57,7 @@
     </div>
     <!--comparision table content end-->
     <!-- Modal Box content-->
-    <div id="myModal" class="modal fade text-left">
+    <div id="myModal" data-sly-test="${properties.totalRowCount != '0'}" class="modal fade text-left">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
