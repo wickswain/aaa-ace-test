@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +26,6 @@
     <!-- Latest compiled and minified JS -->
     <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
     <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- External Plugins JS : External plugin files loaded on need base -->
 </head>
 
@@ -34,7 +33,9 @@
     <!-- The Main Wrapper
       ============================================= -->
     <div id="pagewrapper" class="clearfix container-custom">
-        <header id="page-header" class="navbar-fixed-top">
+        <!-- Header
+        ============================================= -->
+              <header id="page-header" class="navbar-fixed-top">
             <div class="header-bar">
                 <div id="global-header">
                     <div class="row top-header" id="top-header">
@@ -714,7 +715,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="dropdown">
+                                <li class="">
                                     <a href="javascript:void(0);" id="nav-6" class="active">
                                         <img src="images/finan-icon.png" alt="Financial" alt="Financial" class="icon-link hidden-lg hidden-md">Financial</a>
                                     <div class="nav-6 drawers-wrapper ">
@@ -832,163 +833,386 @@
 
         </header>
         <div id="page-container">
-
-            <div class="membership-calculator">
-                <div class="container">
-                    <div class="horizontal-space roboto-light font-b">
-                        <h2 title="Put cash back in your pocket with WOW points">Watch your membership pay for itself</h2>
+            <!-- icon row component starts here-->
+            <div class="icon-row">
+                <div class="container horizontal-component-space">
+                    <!-- Top Header Starts Here -->
+                    <div class="text-center">
+                        <div class="horizontal-space2 roboto-light font-b">
+                            <h2 title="Explore articles">Discounts</h2> </div>
                     </div>
-                    <div class="h-space-cal roboto-light font-g">
-                        <p>Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself.</p>
+                    <!-- List of the cards start here -->
+                    <ul class="list-inline icon-list row">
+                        <li class="col-md-3 col-sm-3  col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-1.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class="icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Food & DrinkFood & DrinkDrinkFood & Drink</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & RecreationOutdoors & RecreationOutdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Arts & Culture</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & RecreationOutdoors Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-3.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Arts & Culture</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & RecreationOutdoors Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-2.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">Outdoors & Recreation</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & RecreationOutdoors & RecreationOutdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                        <li class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="horizontal-space icon-image"> <img src="images/CompI-icon-4.png" title="CompI-icon-1" alt="CompI-icon-1"> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <h2 title="Food & Drink">ThemeParks & Attrations</h2> </div>
+                            <div class=" icon-title  roboto-medium font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class=" icon-title  roboto-light font-f">
+                                <p title="Food & Drink">Outdoors & Recreation</p>
+                            </div>
+                            <div class="icon-link font-h"><a href="#" title="" class="link-btn link-lg ">View Details</a> </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- icon rows component starts here-->
+            <!-- Comparision component-->
+            <!-- Page intro component-->
+            <div class="membership-comparision-table" style="background-color: #FFFFFF">
+                <div class="container">
+                    <div class="membership-comparision-header horizontal-component-space">
+                        <div class="horizontal-space roboto-medium font-a"><span class="">See how we stack up</span> </div>
+                        <p class="roboto-light font-g">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p>
+                        <!--If CTA Button Author-->
+                        <!--<p class="horizontal-space roboto-light font-g">What's the catch? No catch. Our members bring in more volume to businesses, helping increase their prots. In turn they can offer great discounts to help you follow your passions. Win-win.</p><a href="#" class="btn-style btn-lg btn-color-blue">Sign up</a>-->
                     </div>
                 </div>
-                <div class="membership-calculator-block">
-                    <div class="container">
-                        <div class="row row-eq-height">
-                            <div class="col-xs-12 col-sm-6 membership-details">
-                                <div class="membership-pay-info">
-                                    <div class="title-space text-center font-h ">EXAMPLE SAVINGS</div>
-                                    <div class="saving-item">
-                                        <div class="col-sm-7 roboto-light font-g">
-                                            <h2>Yearly savings</h2>
-                                        </div>
-                                        <div class="col-sm-5 roboto-medium font-b text-right">600.00</div>
-                                    </div>
-                                    <div class="saving-item">
-                                        <div class="col-sm-7 roboto-light font-g">
-                                            <h2>AAA membership</h2>
-                                        </div>
-                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
-                                    </div>
-                                    <div class="saving-item">
-                                        <div class="col-sm-7 roboto-light font-g">
-                                            <h2>AAA membership</h2>
-                                        </div>
-                                        <div class="col-sm-5 roboto-medium font-b text-right">-48.00</div>
-                                    </div>
-                                    <hr>
-                                    <div class="total-price-block">
-                                        <div class="col-sm-6">
-                                            <div class="total-saving-price roboto-medium font-g MC-horizontal-space">
-                                                Total yearly savings
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium">$552.00</div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="horizontal-space"></div>
-                                <div class="col-sm-12 img-membership">
-                                    <img src="images/membership-calculator.png" title="membership-calculator" alt="membership-calculator" />
-                                </div>
+                <!--comparisiton table-->
+                <div class="membership-comparision text-center" data-index="5">
+                    <div class="container highlight-two">
+                        <div class="row membership">
+                            <div class="col-md-3  col-sm-4 col-xs-4  header hidden-xs hidden-sm"></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4  header"> <img src="images/Comp-table-classic.png" title="header-image" alt="header-image" class="img-responsive">
+                                <h1 class="roboto-light">Classic $57/yr</h1>
+                                <div class="border-none">Text</div>
+                                <p class="roboto-light font-h">One-time admission fee: $20 </p> <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue">Select</a> </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4  header"> <img src="images/Comp-table-plus.png" title="header-image" alt="header-image" class="img-responsive">
+                                <h1 class="roboto-light">Classic $57/yr</h1>
+                                <p class="roboto-light font-h">One-time admission fee: $20 </p> <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue">Select</a> </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4  header"> <img src="images/Comp-table-premier.png" title="header-image" alt="header-image" class="img-responsive">
+                                <h1 class="roboto-light">Classic $57/yr</h1>
+                                <p class="roboto-light font-h">One-time admission fee: $20 </p> <a href="#" title="Solid button" class="btn-style btn-sm btn-color-blue">Select</a> </div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12 icon-info">Lorem ipsum dolor sit amet
+                                <a href="#myModal" class="btn-info" data-toggle="modal" data-body="<p>Do you want to save changes you made to document before closing?</p><p><small>If you don't save, your changes will be lost.</small></p>" data-header="Confirmation"> </a>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="col-xs-12 col-sm-8 col-md-6 block-center">
-                                <div class=" block-position">
-                                    <div class="membership-discount-details">
-                                        <span class="col-sm-12 title font-h">Sample services</span>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/movie.png)" title="movie">Movie night</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 982.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $38.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/dinner.png)" title="movie">Dinner at Marios</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,982.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $36.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/car.png)" title="movie">Car repair</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/tickets.png)" title="movie">Tickets to login</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/supplies.png)" title="movie">School supplies</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/dinner.png)" title="movie">Ice Cream</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="table-block">
-                                                <div class="services-title roboto-medium font-g table-cell" style="background-image: url( images/supplies.png)" title="movie">New dress shoes</div>
-                                                <div class="price font-g table-cell">
-                                                    <span class="position-rel"><span class="discount-price font-h">9,999.99</span> 9,082.85 </span>
-                                                </div>
-                                                <div class="total-price font-g table-cell">
-                                                    <span class="position-rel"><span class="title-saved font-h">Saved</span> $68.57</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><img src="images/check_mark.png" height="20" /></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><img src="images/check_mark.png" height="20" /></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><img src="images/check_mark.png" height="20" /></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols roboto-light font-h">
+                            <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3  col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                        </div>
+                        <div class="row membership-cols seeAllLink">
+                            <div class="col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs">&nbsp; </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="Download">See all</a> </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="Download">See all</a> </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4"><a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="Download">See all</a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal" class="modal fade text-left">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title roboto-bold font-b"></h4> </div>
+                            <div class="modal-body"> </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+        <!-- Global Footer component -->
         <footer id="page-footer">
-            <!-- Footer component placed inside this container-->
+            <!-- Global Base Footer component -->
+            <div id="base-footer" class="footer-global roboto-light font-e">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-2 col-md-push-10 text-center">
+                                    <div class="brand-image">
+                                        <a href="#"> <img src="images/aaa-white-logo-xs.png" alt="footer-logo" title="footer-logo" class="img-responsive" /></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-md-pull-2 ">
+                                    <div class="footer-list">
+                                        <h3 href="javascript:void(0);" class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-1">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-1">
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-list">
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-2">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm ">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-2">
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-list">
+                                        <h3 class="text-uppercase list-header hidden-md hidden-lg collapsed" data-toggle="collapse" data-target="#collapse-list-3">Products & services<i class="glyphicon glyphicon-chevron-down"></i></h3>
+                                        <h3 class="text-uppercase list-header hidden-xs hidden-sm">Products & services</h3>
+                                        <ul class="list-unstyled collapse in" id="collapse-list-3">
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Identify theft monitoring</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                            <li><a href="#">Insurance</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-lines">
+                                <div class="col-md-5"><span class="app" style="background-image: url(images/mobile-icon.png)" title="App">Download the AAA app for <a href="" class="">ios</a> or <a href="" class="">android</a></span></div>
+                                <div class="col-md-5"><span class="blog" style="background-image: url(images/rss-icon.png)" title="Blog">Read the latest from our <a href="" class="">blog</a></span></div>
+                                <div class="col-md-2 social-icons ">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <a href="http://www.facebook.com/"> <img src="images/facebook.png" alt="@aaa" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.twitter.com/"> <img src="images/tweet.png" alt="@aaa" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="footer-p ">Copyright &copy; 2016 AAA Hawai'i, LLC. All Rights Reserved.<span class="pipe"> | </span><a href="http://www.facebook.com/">Privacy policy</a><span class="pipe"> | </span><a href="http://www.facebook.com/">Terms & conditions</a></p>
+                                    <div class="bottom-space"></div>
+                                    <p class="footer-p">Lorem ipsum test answer one dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit. elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis... </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
         </footer>
-        <div class="overlay"></div>
-
     </div>
-
-
-
-    <script src="clientlibs/ace-www/thirdparty/jquery/js/jquery.noconflict.js"></script>
+    <div id="infobox-one" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4> </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="infobox-two" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4> </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="clientlibs/ace-www/thirdparty/jquery/js/jquery.noconflict.js"></script>
     <script src="clientlibs/ace-www/base/js/scripts.js"></script>
-
-
-
-
-
+   <script>
+        $j(function ($) {
+            $(".membership-comparision").each(function () {
+                var numberOfRows = $(this).find('.membership-cols').length;
+                var fixedRows = $(this).attr('data-index');
+                if (numberOfRows > fixedRows) {
+                    var numberOfRows = $('.membership-cols').length;
+                    var showCount = parseInt(fixedRows - 1);
+                    $(this).find('.membership-cols:gt(' + showCount + ')').hide();
+                    $(this).find(".seeAllLink").show();
+                }
+                else {
+                    $(".seeAllLink").remove();
+                }
+            });
+            $(".btn-info").each(function () {
+                $(this).click(function () {
+                    var header = $(this).data("header");
+                    var bodyText = $(this).data("body");
+                    $("#myModal").find(".modal-title").text(header);
+                    $("#myModal").find(".modal-body").html(bodyText);
+                });
+            });
+            $(".seeAll").click(function () {
+                $(this).parent().parent().parent().find('.membership-cols').show();
+                $(this).parent().parent().remove();
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,20 +1,21 @@
-    /*****************************************
+/*****************************************
+/*****************************************
 Page Intro Component
 *****************************************/
-    
-    .membership-comparision-header {
-        background: @color-white;
-        text-align: center;
-    }
-    
+
+.membership-comparision-header {
+    text-align: center;
+}
+
+.membership-comparision-table {
     .membership-comparision {
         padding-bottom: 130px;
         .highlight-class {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 2;
             margin-top: -10px;
-            padding-top: 60px;
-            background-color: @color-gray-medium;
+			img{
+				margin-top:10px;
+			}
         }
         .selected {
             box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
@@ -23,6 +24,7 @@ Page Intro Component
             .header {
                 &:nth-of-type(2) {
                     .highlight-class();
+                    .selected();
                 }
             }
             .membership-cols {
@@ -37,6 +39,7 @@ Page Intro Component
             .header {
                 &:nth-of-type(3) {
                     .highlight-class();
+                    .selected();
                 }
             }
             .membership-cols {
@@ -51,6 +54,7 @@ Page Intro Component
             .header {
                 &:nth-of-type(4) {
                     .highlight-class();
+                    .selected();
                 }
             }
             .membership-cols {
@@ -61,24 +65,12 @@ Page Intro Component
                 }
             }
         }
+        
+        .border-none {
+            border: none !important;
+        }
         .membership {
-            text-align: center;
-            .header {
-                /*background-color: @color-gray-medium;*/
-                padding: 50px 30px;
-                text-align: center;
-                /* border: 1px solid #cccccc;*/
-                h1 {
-                    padding: 30px 0 20px 0;
-                    font-size: 28px;
-                }
-                p {
-                    padding-bottom: 30px;
-                }
-                a {
-                    margin: 0;
-                }
-            }
+            text-align: center;           
         }
         .membership-cols {
             text-align: center;
@@ -87,80 +79,117 @@ Page Intro Component
             }
         }
     }
-    /* Responsive css for this component */
-    
-    @media only screen and (min-width: 320px) {
-        .membership-comparision {
-            .membership {
-                display: block;
-                justify-content: center;
+}
+
+
+/* Responsive css for this component */
+
+@media only screen and (min-width: 320px) {
+    .membership-comparision {
+	.row {
+            div:not(:first-child) {
+                border-left: 1px solid #cccccc;				
+                border-top: 1px solid #ccc;
+				div{
+				border : 0;
+				}
             }
-            .membership-cols {
-                display: block;
-                justify-content: center;
-                div {
-                    border-top: 1px solid #cccccc;
-                    border-left: 1px solid #cccccc;
-                    padding: 15px 15px;
-                }
-                div:last-child {
-                    border-right: 1px solid #cccccc;
-                }
-                div:first-child {
-                    border-right: 1px solid #cccccc;
-                    background-color: @color-gray-light;
-                }
-                &:last-child {
-                    div {
-                        &:first-child {
-                            border-bottom: 0px solid #cccccc;
-                        }
-                        border-bottom: 1px solid #cccccc;
-                    }
-                }
+			div:first-child {
+                border-top: 1px solid #ccc;
             }
-        }
-    }
-    
-    @media only screen and (min-width: 480px) {}
-    
-    @media only screen and (min-width: 768px) {}
-    
-    @media only screen and (min-width: 992px) {
-        .membership-comparision {
-            .membership {
-                display: flex;
-                justify-content: center;
+            div:last-child {
+                border-right: 1px solid #ccc;
             }
-            .membership-cols {
-                display: flex;
-                justify-content: center;
-                .selected {
-                    box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
-                }
-                div {
-                    border-top: 0px solid #cccccc;
-                    border-left: 0px solid #cccccc;
-                    border-right: 1px solid #cccccc;
-                    padding: 15px 15px;
-                }
+            &:last-child {
                 div:not(:first-child) {
-                    border-top: 1px solid #cccccc;
+                    border-bottom: 1px solid #ccc;
                 }
-                div:first-child {
-                    border-right: 1px solid #cccccc;
-                    background-color: @color-white;
+            }            
+        }
+        .membership {
+            display: flex;
+            justify-content: center;
+			 .header {               
+                padding: 30px 20px;
+                text-align: center;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-between;
+                h1 {
+                    padding: 20px 0;
+                    font-size: 15px;
                 }
-                &:last-child {
-                    div {
-                        &:first-child {
-                            border-bottom: 0px solid #cccccc;
-                        }
-                        border-bottom: 1px solid #cccccc;
-                    }
+                p {
+                    padding-bottom: 20px;
+                }
+                a {
+                    align-self: center; margin-bottom:0;
                 }
             }
         }
+        .membership-cols {
+            display: block;
+            justify-content: center;
+            div {
+                padding: 15px 15px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
     }
-    
-    @media only screen and (min-width: 1200px) {}
+}
+
+@media only screen and (min-width: 480px) {}
+
+@media only screen and (min-width: 768px) {
+    .modal-content {
+        padding: 40px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .membership-comparision {
+	.row {
+            
+			div:first-child {
+                border-top: 0px solid #ccc;
+            }
+                     
+        }
+        .membership {
+            display: flex;
+            justify-content: center;
+			.header {               
+                padding: 50px 30px;
+                text-align: center;
+                h1 {
+                    padding: 30px 0 20px 0;
+                    font-size: 28px;
+                }
+                p {
+                    padding-bottom: 30px;
+                }
+                a {
+                    /*margin: 15px 0 0;*/
+                }
+            }
+        }
+        .membership-cols {
+            display: flex;
+            justify-content: center;
+            .selected {
+                box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
+            }
+            div {
+                padding: 15px 15px;
+            }
+            div:first-child {
+                background-color: inherit;
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {}
