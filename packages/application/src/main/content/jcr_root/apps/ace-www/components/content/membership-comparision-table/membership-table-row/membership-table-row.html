@@ -1,0 +1,49 @@
+<!--/*
+    Membership Table Row component
+    ----------------------------------------------------------------
+    Hidden component that makes up the table row.
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.tablerowprovider="${'com.aaa.ace.sightly.providers.MembershipTableRowProvider'}"/>
+<sly data-sly-use.icon1="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon1'}" ></sly>
+<sly data-sly-use.icon2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon2'}" ></sly>
+<sly data-sly-use.icon3="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon3'}" ></sly>
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.rowItemDescription}" data-emptytext="Author Membership Table Row here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+<sly data-sly-test="${properties.rowItemDescription}">
+    <div class="row membership-cols roboto-light font-h">
+        <div class="col-md-3 col-sm-12 col-xs-12 ${properties.showModalBox ? 'icon-info' : ''}"> ${properties.rowItemDescription} 
+            <a data-sly-test="${properties.showModalBox}" href="#myModal" class="btn-info" data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}">
+								</a>
+        </div>
+        
+        <div data-sly-test="${tablerowprovider.columnsCount >= 1}" class="col-md-3 col-sm-4 col-xs-4"> 
+            <sly data-sly-test="${properties.enableCol1Text}" data-sly-text="${properties.col1Text}"/>
+            <sly data-sly-test="${!properties.enableCol1Text}"> 
+                <img src="${icon1.childResource ? icon1.childResource.fileReference : ''}" alt="${icon1.childResource ? icon1.childResource.alt : ''}" title="${icon1.childResource ? icon1.childResource.alt : ''}"/>
+            </sly>
+        </div>
+        
+        <div data-sly-test="${tablerowprovider.columnsCount >= 2}" class="col-md-3 col-sm-4 col-xs-4"> 
+            <sly data-sly-test="${properties.enableCol2Text}" data-sly-text="${properties.col2Text}"/>
+            <sly data-sly-test="${!properties.enableCol2Text}"> 
+                <img src="${icon2.childResource ? icon2.childResource.fileReference : ''}" alt="${icon2.childResource ? icon2.childResource.alt : ''}" title="${icon2.childResource ? icon2.childResource.alt : ''}"/>
+            </sly>
+        </div>
+        
+        <div data-sly-test="${tablerowprovider.columnsCount >= 3}" class="col-md-3 col-sm-4 col-xs-4"> 
+            <sly data-sly-test="${properties.enableCol3Text}" data-sly-text="${properties.col3Text}"/>
+            <sly data-sly-test="${!properties.enableCol3Text}"> 
+                <img src="${icon3.childResource ? icon3.childResource.fileReference : ''}" alt="${icon3.childResource ? icon3.childResource.alt : ''}" title="${icon3.childResource ? icon3.childResource.alt : ''}"/>
+            </sly>
+        </div>
+    </div>
+</sly>
+
