@@ -36,13 +36,13 @@
                     <div data-sly-test.opacity="${properties.backgroundShade == 'white' ? 'rgba(255,255,255,{0})' : 'rgba(0,0,0,{0})' @ format=[properties.opacity]}"
                                  style="background-color:${opacity @ context='styleToken'}"
                                  class="learn-link">
-		                 	<a href="#" class="learn-btn font-h ">Learn<br>
+		                 	<a href="#${properties.learnButtonId}" class="learn-btn font-h ">Learn<br>
 			                 	<div class="bounce">
 			                	 	<span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
 			                 	</div>
 		                    </a> 
                 	 </div>
-                 <video id="home-video" class="video" autoplay="autoplay" loop="loop" muted="" width="100%" height="100%" poster=${properties.image}>
-                    <source src="${properties.video}" type="video/mp4" />
+                 <video id="home-video" class="video" autoplay="${!(wcmmode.edit || wcmmode.design)}" loop="loop" muted="" width="100%" height="100%" poster=${properties.image}>
+                    <source src="${properties.imageorvideo=='showvideo' ? properties.video : ''}" type="video/mp4" />
                  </video>
             </div>

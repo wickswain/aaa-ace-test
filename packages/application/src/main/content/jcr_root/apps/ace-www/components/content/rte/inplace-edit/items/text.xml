@@ -64,11 +64,11 @@
             <styles jcr:primaryType="cq:WidgetCollection">
                 <font-a
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-regular font-a"
+                    cssName="roboto-slab-bold font-a"
                     text="Bold XL Header"/>
                 <font-b
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-light font-b"
+                    cssName="roboto-slab-bold font-b"
                     text="Bold Header"/>
                 <font-c
                     jcr:primaryType="nt:unstructured"
@@ -80,7 +80,7 @@
                     text="12px All Caps Title"/>
                 <font-e
                     jcr:primaryType="nt:unstructured"
-                    cssName="roboto-regular font-e"
+                    cssName="roboto-light font-e"
                     text="Light Title"/>
                 <font-f
                     jcr:primaryType="nt:unstructured"
@@ -125,6 +125,39 @@
                     <pound
                         jcr:primaryType="nt:unstructured"
                         entity="&amp;#163;"/>
+                    <apostrophe
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8216"/>
+                    <macron-A
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#256"/>
+                    <macron-a
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#257"/>
+                    <macron-E
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#274"/>
+                    <macron-e
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#275"/>
+                    <macrnon-I
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#298"/>
+                    <macron-i
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#299"/>
+                    <macron-O
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#332"/>
+                    <macron-o
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#333"/>
+                    <macron-U
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#362"/>
+                    <macrnon-u
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#363"/>
                 </chars>
             </specialCharsConfig>
         </misctools>
