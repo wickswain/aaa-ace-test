@@ -21,6 +21,14 @@
 			         data-sly-unwrap="${wcmmode.disabled}">
 			    </div>
             </div>
+            <div class="col-sm-12">
+			    <!-- Article Hub -->
+			    <!--/* Embedding article Hub to not confuse the author with two parsys one for image full width
+			             another for article header and article text (with 1 column left on each side). */-->
+			    <div data-sly-resource="${ @path='article-hub', resourceType='/apps/ace-www/components/content/articlehub-featured'}"
+			         data-sly-unwrap="${wcmmode.disabled}">
+			    </div>
+            </div>
         </div>
 
         <!--/* section to support parsys with one column left on each side */-->
