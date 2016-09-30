@@ -78,16 +78,9 @@
 	    <div class="col-xs-4 col-md-5 col-md-pull-7">
 	        <ul class="nav-list-inline font-h dropdown roadside-text">
 	            <li>
-                    <div id="truck-link" class="hidden-lg hidden-md">
-                        <img data-sly-test="${currentStyle.icon1Path}"
-                             src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
-                             alt="${currentStyle.icon1Alt}" class="truck-icon"/>
-                        ${currentStyle.leftLink1Label}
-                    </div>
-                    
-	                <a data-sly-test="${currentStyle.leftLink1Label}"
+                    <a data-sly-test="${currentStyle.leftLink1Label}"
 	                   target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
-	                   href="${leftLink1.url}" id="truck-link" class="hidden-xs hidden-sm">
+	                   href="${leftLink1.url}" id="truck-link">
 	                    <img data-sly-test="${currentStyle.icon1Path}"
 	                         src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
 	                         alt="${currentStyle.icon1Alt}" class="truck-icon"/>
