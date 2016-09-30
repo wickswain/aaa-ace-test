@@ -23,7 +23,7 @@
 
 html,
 body {
-    font-family: @font-family-regular;
+    font-family: @font-family-light;
     color: @color-black;
     background: @color-gray-medium none;
 }
@@ -53,7 +53,6 @@ a {
     color: @color-blue-primary-medium;
     text-decoration: none;
     font-family: inherit;
-
     &:focus,
     &:hover {
         color: @color-blue-light;
@@ -82,10 +81,13 @@ a {
 [data-toggle="collapse"] {
     cursor: pointer;
 }
-.icon-info .btn-info, .icon-info .btn-info:hover {
-    background:transparent none;
-    cursor:pointer;
+
+.icon-info .btn-info,
+.icon-info .btn-info:hover {
+    background: transparent none;
+    cursor: pointer;
 }
+
 .icon-info .btn-info:after {
     content: 'i';
     display: inline-block;
@@ -98,8 +100,9 @@ a {
     text-align: center;
     font-size: 10px;
     line-height: 14px;
-    margin-left:5px;
+    margin-left: 5px;
 }
+
 .modal-header .close {
     margin-top: -80px;
     margin-right: -80px;
@@ -107,6 +110,8 @@ a {
     opacity: 1;
     font-weight: normal;
 }
+
+
 /*Spacing's*/
 
 @space-height: 400px;
@@ -114,7 +119,6 @@ a {
 @space-md: 100px;
 @space-sm: 30px;
 @space-xs: 10px;
-
 .horizontal-space {
     margin-bottom: @space-sm;
 }
