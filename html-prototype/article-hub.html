@@ -55,7 +55,7 @@
                                             <li><img src='images/AAA.png' alt='List Image' /></li>
                                             <li class='author'>By <a href='#'>Author name </a></li>
                                             <li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li>
-                                        </ul> <a href='#' class='roboto-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a>
+                                        </ul> <a href='#' class='roboto-slab-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a>
                                         <p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p>
                                         <div class="list-btn visible-xs"><a href="#" title="Solid button" class=" btn-style btn-lg btn-color-blue ">Read</a> </div>
                                     </div>
@@ -91,18 +91,18 @@
     </div>
 </body>
 <script>
-    $(function () {
+    $(function() {
         var metaName = "";
         var metaTag = "";
         var totalListPages;
         var resultsPerPage = 10;
         var pageNumber = 1;
         var searchkeyValue = "testing";
-        $(".filter-link").click(function () {
+        $(".filter-link").click(function() {
             $(".filter-grid").show();
         });
         getArticles(searchkeyValue, '', pageNumber, metaName, metaTag);
-        $(".categorie-block li a").click(function (e) {
+        $(".categorie-block li a").click(function(e) {
             var metaName = $(this).attr('metaName');
             var metaTag = $(this).attr('metaTag');
             console.log(metaName);
@@ -116,11 +116,11 @@
             getArticles(searchkeyValue, '', pageNumber, metaName, metaTag);
             e.preventDefault();
         });
-        $(".close-fliter-icon").click(function (e) {
+        $(".close-fliter-icon").click(function(e) {
             $('.filter-grid').hide();
             e.preventDefault();
         });
-        $(window).resize(function () {
+        $(window).resize(function() {
             var winWidth = $(window).width();
             if (winWidth >= 768) {
                 $(".filter-grid").show();
@@ -155,15 +155,13 @@
                 $(".error-grid").show();
                 $(".error-message").html(errorMessage);
                 pageNumber = 1;
-            }
-            else if (response.items == null || response.items.length === 0) {
+            } else if (response.items == null || response.items.length === 0) {
                 $(".article-hub").hide();
                 //$(".result-no").hide();
                 $(".error-grid").show();
                 $(".error-message").html("No search results found.");
                 pageNumber = 1;
-            }
-            else {
+            } else {
                 $(".error-grid").hide();
                 $(".article-hub").show();
                 var html = "";
@@ -181,7 +179,7 @@
                     var responseTitle = item.htmlTitle;
                     var responseUrl = item.htmlFormattedUrl;
                     var responseData = item.htmlSnippet;
-                    html += "<div class='row article-list with-img roboto-medium font-a'><div class='col-sm-12 col-md-6 col-lg-4'><div class='imgblock'><img src='images/footer-image.jpg' alt='' title='' /></div></div><div class='col-sm-12 col-md-6 col-lg-8 '><div class='article-info'><ul class='list-inline font-e'><li><img src='images/CompV-logo.png' alt='List Image' /></li><li class='author'>By <a href='#'>Author name </a></li><li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li></ul> <a href='#' class='roboto-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a><p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p><div class='list-btn visible-xs'><a href='#' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div></div></div></div>";
+                    html += "<div class='row article-list with-img roboto-medium font-a'><div class='col-sm-12 col-md-6 col-lg-4'><div class='imgblock'><img src='images/footer-image.jpg' alt='' title='' /></div></div><div class='col-sm-12 col-md-6 col-lg-8 '><div class='article-info'><ul class='list-inline font-e'><li><img src='images/CompV-logo.png' alt='List Image' /></li><li class='author'>By <a href='#'>Author name </a></li><li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li></ul> <a href='#' class='roboto-slab-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a><p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p><div class='list-btn visible-xs'><a href='#' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div></div></div></div>";
                 }
                 /* pagination Logic start */
                 /* if (totalListPages > 5) {
@@ -208,18 +206,15 @@
                     defaultPage = 1;
                     if (totalListPages < 5) {
                         defaultTotalPages = totalListPages;
-                    }
-                    else {
+                    } else {
                         defaultTotalPages = 6;
                     }
-                }
-                else if (pageNumber > 5 && totalListPages > 5) {
+                } else if (pageNumber > 5 && totalListPages > 5) {
                     defaultPage = pageNumber;
                     var reaminigPages = totalListPages - pageNumber;
                     if (reaminigPages > 5) {
                         defaultTotalPages = parseInt(pageNumber) + 5;
-                    }
-                    else {
+                    } else {
                         defaultTotalPages = reaminigPages;
                     }
                 }
@@ -231,23 +226,21 @@
                 $('.pagination-grid').html(navigation_html);
                 $(".page_link").removeClass("active");
                 $("#id" + pageNumber).addClass('active');
-                $('#nextPage').click(function () {
+                $('#nextPage').click(function() {
                     getArticles(searchkeyValue, 1, '', metaName, metaTag);
                 });
-                $('#prevPage').click(function () {
+                $('#prevPage').click(function() {
                     getArticles(searchkeyValue, -1, '', metaName, metaTag);
                 });
-                $(".navPage_click").click(function () {
+                $(".navPage_click").click(function() {
                     var selectedPage = $(this).text();
                     getArticles(searchkeyValue, '', selectedPage, metaName, metaTag);
                 });
                 if (pageNumber === 1) {
                     $("#prevPage").addClass('disabled');
-                }
-                else if (pageNumber === totalListPages) {
+                } else if (pageNumber === totalListPages) {
                     $("#nextPage").addClass('disabled');
-                }
-                else {
+                } else {
                     $("#nextPage").removeClass('disabled');
                     $("#prevPage").removeClass('disabled');
                 }
@@ -255,6 +248,7 @@
             }
         }
     });
+
 </script>
 
 </html>
