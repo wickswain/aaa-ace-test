@@ -7,18 +7,22 @@ This component renders a article carousel.
 
 */-->
 
-<!-- Placeholder Content
+<!-- Sightly Global Objects Declaration
 ============================================= -->
 <sly data-sly-use.childImages="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='images'}" />
-<sly data-sly-test.isAuthored="${childImages.childResource}"></sly>
+<sly data-sly-test.isAuthored="${childImages.childResource}" />
+<!-- #sightly-global-objects-declaration end -->
 
+<!-- Placeholder Content
+============================================= -->
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
-		data-emptytext="Author Aritcle Carousel properties to render carousel"
-     	class="cq-placeholder text-center">
+	 data-emptytext="Author Aritcle Carousel properties to render carousel"
+     class="cq-placeholder text-center">
 </div>
 <!-- #placeholder-content end -->
 
- <!--/* Article Carousel starts */-->
+<!-- Article Carousel Component
+============================================= -->
 <div id="article-carousel" class="carousel slide carousel-sync" data-sly-test="${isAuthored}">
 	<div class="carousel-inner" data-sly-list.images="${childImages.childResource.listChildren}">
 		<div data-imagelabel="${images.imageLabel @ context='html'}" data-author="${images.photoCredit @ context='html'}"
@@ -29,12 +33,9 @@ This component renders a article carousel.
 
     <div class="carousel-text left-align">
         <span class="image-label"></span>
-        <span data-sly-test="${images.photoCredit}" class="spacer pipe"> | </span>
-        photo by <span class="author"></span>
     </div>
-    
     <div class="carousel-text right-align">
-        <span id="current-slide"></span> of <span id="total-slides"></span>
+        <span class="slide-count"></span>
     </div>
 
 	<a class="left carousel-control" href="#article-carousel"
@@ -44,5 +45,4 @@ This component renders a article carousel.
 		data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span>
 	</a>
 </div>
-
-<!--/* Article carousel End */-->
+<!-- #article-carousel-component end -->

@@ -1,3 +1,4 @@
 #base=js
 
 jquery.min.js
+jquery.noconflict.js
