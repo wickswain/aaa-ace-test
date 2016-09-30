@@ -217,30 +217,4 @@
         </div>
     </div>
 </div>
-
-<div class="roadside-block">
-    <div class="display-table">
-        <a href="#" class="close_btn">
-            Close <span>X</span>
-        </a>
-
-        <div class="col-sm-2 col-xs-12">
-            <img data-sly-test="${currentStyle.icon1Path}"
-                 src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
-                 alt="${currentStyle.icon1Alt}" class="truck-icon"/>
-        </div>
-        
-        <div data-sly-text="${currentStyle.roadsideAssistanceLabel}" class="col-sm-5 col-xs-12 links"></div>
-        
-        <div class="col-sm-5 col-xs-12">
-            <a target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
-               href="${leftLink1.url}" data-sly-text="${currentStyle.requesHelpLabel}" class="btn-style btn-lg btn-border icon-text">
-            </a>
-            
-            <a href="tel:${currentStyle.contactNumber}" title="telephone " class="btn-style btn-lg btn-border icon-text">
-                <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${currentStyle.contactNumber}
-            </a>
-        </div>
-    </div>
-</div>
 <!-- #global-navigation-component end -->
