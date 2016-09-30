@@ -24,7 +24,7 @@ $(function ()  {
 			});
 			
             $(".seeAll").click(function () {
-                $(this).parent().parent().parent().find('.membership-cols').show();
+                 $(this).parent().parent().parent().find('.membership-cols').css('display', 'block');
 				$(this).parent().parent().remove();
             });
         });
