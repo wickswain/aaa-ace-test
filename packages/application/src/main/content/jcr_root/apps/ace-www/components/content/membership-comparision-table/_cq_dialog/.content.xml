@@ -35,7 +35,7 @@
                                 fieldDescription="Please Select number of Columns"
                                 fieldLabel="Number of Columns"
                                 max="{Long}3"
-                                min="{Long}0"
+                                min="{Long}1"
                                 name="./columnCount"
                                 required="{Boolean}true"
                                 text="Select number of Columns"/>
