@@ -128,6 +128,12 @@
                                         name="./articleTitle"
                                         required="{Boolean}true"
                                         value=""/>
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        fieldDescription="Please enter article description"
+                                        fieldLabel="Article description"
+                                        path="/apps/ace-www/components/content/rte/granite/items/text"/>
                                    	<authorname
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"

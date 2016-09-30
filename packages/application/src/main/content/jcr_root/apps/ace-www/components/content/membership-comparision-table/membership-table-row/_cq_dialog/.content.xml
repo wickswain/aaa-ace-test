@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Membership Table Row"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <rowitemtab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Row Item Description"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <rowitemdescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Row Item Description"
+                                fieldDescription="Please enter row item description"
+                                name="./rowItemDescription"
+                                required="{Boolean}true"/>
+                            <showmodalbox
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".modal-option-enable-showhide-target"
+                                fieldDescription="Please select the checkbox to show modal box to enter more description about the row item"
+                                name="./showModalBox"
+                                text="Show Modal Box ?"
+                                value="{Boolean}true"/>
+                             <modal-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide modal-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <modal-title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Please enter title for modal box"
+                                        fieldLabel="Modal Title"
+                                        name="./modalTitle"/>
+                                    <modal-text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/ace-www/components/content/rte/granite/items/text"/>
+                                 </items>
+                            </modal-container>
+                        </items>
+                    </columns>
+                </items>
+            </rowitemtab>
+            <col1tab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Column 1"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <enablecol1text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".text1-option-enable-showhide-target"
+                                fieldDescription="Please select the checkbox to enable the text for Column 1."
+                                name="./enableCol1Text"
+                                text="enable Text in Column 1 ?"
+                                value="{Boolean}true"/>
+                            <text1-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text1-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <col1text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Column1 Text"
+                                        name="./col1Text"/>
+                                </items>
+                            </text1-container>
+                            <icon1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select small image for icon"
+                                fieldLabel="Column1 Icon"
+                                fileNameParameter="./icon1/fileName"
+                                fileReferenceParameter="./icon1/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./icon1/file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <icon1alttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Column1 Alt"
+                                fieldDescription="Please enter alt text"
+                                name="./icon1/alt"/>
+                            <icon1restype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                ignoreData="{Boolean}true"
+                                name="./icon1/sling:resourceType"
+                                value="foundation/components/image"/>
+                        </items>
+                    </columns>
+                </items>
+            </col1tab>
+            <col2tab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Column 2"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <enablecol2text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".text2-option-enable-showhide-target"
+                                fieldDescription="Please select the checkbox to enable the text for Column 2"
+                                name="./enableCol2Text"
+                                text="enable Text in Column 2 ?"
+                                value="{Boolean}true"/>
+                            <text2-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text2-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <col2text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Column2 Text"
+                                        name="./col2Text"/>
+                                </items>
+                            </text2-container>
+                            <icon2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select small image for icon"
+                                fieldLabel="Column2 Icon"
+                                fileNameParameter="./icon2/fileName"
+                                fileReferenceParameter="./icon2/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./icon2/file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <icon2alttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Column2 Alt"
+                                fieldDescription="Please enter alt text"
+                                name="./icon2/alt"/>
+                            <icon2restype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                ignoreData="{Boolean}true"
+                                name="./icon2/sling:resourceType"
+                                value="foundation/components/image"/>
+                        </items>
+                    </columns>
+                </items>
+            </col2tab>
+            <col3tab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Column 3"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <enablecol3text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".text3-option-enable-showhide-target"
+                                fieldDescription="Please select the checkbox to enable the text for Column 3"
+                                name="./enableCol3Text"
+                                text="enable Text in Column 3 ?"
+                                value="{Boolean}true"/>
+                            <text3-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text3-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <col3text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Column3 Text"
+                                        name="./col3Text"/>
+                                </items>
+                            </text3-container>
+                            <icon3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select small image for icon"
+                                fieldLabel="Column3 Icon"
+                                fileNameParameter="./icon3/fileName"
+                                fileReferenceParameter="./icon3/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./icon3/file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <icon3alttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Column3 Alt"
+                                fieldDescription="Please enter alt text"
+                                name="./icon3/alt"/>
+                            <icon3restype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                ignoreData="{Boolean}true"
+                                name="./icon3/sling:resourceType"
+                                value="foundation/components/image"/>
+                        </items>
+                    </columns>
+                </items>
+            </col3tab>
+        </items>
+    </content>
+</jcr:root>

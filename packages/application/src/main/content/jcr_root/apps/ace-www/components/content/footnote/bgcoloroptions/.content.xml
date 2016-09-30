@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <colors jcr:primaryType="nt:unstructured">
+        <white
+            jcr:primaryType="nt:unstructured"
+            text="White (#FFFFFF)"
+            value="#FFFFFF"/>
+        <black
+            jcr:primaryType="nt:unstructured"
+            text="Primary Color (#303030)"
+            value="#303030"/>
+        <grey-light
+            jcr:primaryType="nt:unstructured"
+            text="GreyLight (#E4E5E5)"
+            value="#E4E5E5"/>
+        <grey-thick
+            jcr:primaryType="nt:unstructured"
+            text="GreyThick (#CCCCCC)"
+            value="#CCCCCC"/>
+        <blue-light
+            jcr:primaryType="nt:unstructured"
+            text="BlueLight (#0099FF)"
+            value="#0099FF"/>
+        <blue-thick
+            jcr:primaryType="nt:unstructured"
+            text="BlueThick (#005095)"
+            value="#005095"/>
+    </colors>
+</jcr:root>
