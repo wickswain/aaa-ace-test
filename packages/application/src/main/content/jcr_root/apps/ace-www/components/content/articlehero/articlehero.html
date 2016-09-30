@@ -11,12 +11,15 @@
 
 <!-- Placeholder Content
 ============================================= -->
-
 <img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.articleImage}" 
 	data-emptytext="Author Article Hero Component Here." 
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Article Hero Component"/>
-
 <!-- #placeholder-content end -->
-<div class="container-fluid">
-	<div id="${properties.jumpLinkId}" data-sly-test="${properties.articleImage}" style="background-image:url('${properties.articleImage @ context='uri'}');" alt="${properties.alttext}" title="Article Hero" class="article-hero"></div>
+
+<!-- Article Hero Component Content
+============================================= -->
+<div id="${properties.jumpLinkId}" data-sly-test="${properties.articleImage}" 
+     style="background-image:url('${properties.articleImage @ context='uri'}');" 
+     alt="${properties.alttext}" title="Article Hero" class="article-hero">
 </div>
+<!-- #article-hero-component-content end -->
