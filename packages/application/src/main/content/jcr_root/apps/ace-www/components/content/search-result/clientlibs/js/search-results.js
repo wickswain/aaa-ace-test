@@ -112,29 +112,23 @@ $j(function($) {
         if (response.error) {
             var errorMessage = response.error.message;
             $(".pagination-grid").hide();
-            //$(".results-grid").hide();
             $("#dataGrid").hide();
             $(".result-no").hide();
-            //$("#error-grid").show();
             $(".error-message").show();
             $(".error-message").html("Sorry, something went wrong, if issue persist, please contact AAA.");
             pageNumber = 1;
         }
         else if (response.items == null || response.items.length === 0) {
         	$(".pagination-grid").hide();
-            //$(".results-grid").hide();
             $(".result-no").hide();
             $("#dataGrid").hide();
-            //$("#error-grid").show();
             manageGrid();
             $(".error-message").show();
             $(".error-message").html("No search results found.");
             pageNumber = 1;
         }
         else {
-            //$("#error-grid").hide();
             $(".error-message").hide();
-            //$(".results-grid").show();
             $(".result-no").show();
             $(".result-box").show();
             $("#dataGrid").show();
