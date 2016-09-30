@@ -5,11 +5,8 @@ $j(function($) {
     var searchkeyValue = "";
     var resultsPerPage = 10;
     var pageNumber = 1;
-    $("#error-grid").hide();
-    $(".error-message").hide();
-    $(".results-grid").hide();
-    $(".results-box").hide();
-    $(".pagination-grid").hide();
+    //hide everything
+    $("#error-grid, .error-message, .results-grid, .results-box, .pagination-grid, .result-no").hide();
     
     $(".categorie-block li a").click(function (e) {
         var metaName = $(this).attr('data-metaname');
@@ -58,12 +55,8 @@ $j(function($) {
         }
         else {
             /* Handle scenarios when after one search user search without input */
-            $(".pagination-grid").hide();
-            $("#page_navigation").hide();
-            $(".results-grid").hide();
-            $(".result-no").hide();
+            $(".pagination-grid, #page_navigation, .results-grid, .result-no").hide();
             $(".error-message").html("No search results found.");
-            $("#error-grid").show();
             $(".error-message").show();
             pageNumber = 1;
         }
@@ -111,27 +104,21 @@ $j(function($) {
     	$(".results-grid").show();
         if (response.error) {
             var errorMessage = response.error.message;
-            $(".pagination-grid").hide();
-            $("#dataGrid").hide();
-            $(".result-no").hide();
+            $(".pagination-grid, #dataGrid, .result-no").hide();
             $(".error-message").show();
             $(".error-message").html("Sorry, something went wrong, if issue persist, please contact AAA.");
             pageNumber = 1;
         }
         else if (response.items == null || response.items.length === 0) {
-        	$(".pagination-grid").hide();
-            $(".result-no").hide();
-            $("#dataGrid").hide();
+        	$(".pagination-grid, .result-no, #dataGrid").hide();
             manageGrid();
             $(".error-message").show();
             $(".error-message").html("No search results found.");
             pageNumber = 1;
         }
         else {
-            $(".error-message").hide();
-            $(".result-no").show();
-            $(".result-box").show();
-            $("#dataGrid").show();
+        	$(".result-no, .result-box, #dataGrid").show();
+        	$(".error-message").hide();
             manageGrid();
             var html = "";
             $(".result-no").html(response.searchInformation.formattedTotalResults + " results");
