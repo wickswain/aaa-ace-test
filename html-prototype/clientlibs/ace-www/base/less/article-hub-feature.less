@@ -12,11 +12,9 @@ Article Text Component
         margin-top: 70px;
         margin-bottom: 30px;
         color: @color-white;
-
         .article-hero {
             margin: 0;
         }
-
         .article-header {
             position: relative;
             background-color: @color-blue-primary-dark;
@@ -24,29 +22,23 @@ Article Text Component
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-between;
-
             .article-info {
                 color: @color-white;
-
                 .list-inline {
                     margin-bottom: 0;
-
                     li:first-child {
                         display: block;
                     }
-
                     li {
                         margin-bottom: 15px;
                     }
                 }
             }
-
             .article-content {
                 h2 {
                     margin-bottom: 30px;
                 }
             }
-
             .btn-style {
                 align-self: flex-start;
                 margin: 0;
@@ -56,44 +48,36 @@ Article Text Component
     }
 }
 
-@media only screen and (min-width: 480px) {
-}
+@media only screen and (min-width: 480px) {}
 
 @media only screen and (min-width: 768px) {
     .article-hero-header {
         overflow: initial;
-        height: 460px;
+        height: 500px;
         margin-top: 100px;
         margin-bottom: 100px;
-
         .article-hero {
             position: absolute;
             height: 460px;
             width: 100%;
+            margin: 20px 0px;
         }
-
         .article-header {
             width: 50%;
             padding: 50px;
             height: 500px;
-            margin-top: -20px;
-
             .article-info {
                 color: @color-white;
-
                 .list-inline {
                     margin-bottom: 0;
-
                     li:first-child {
                         display: none;
                     }
-
                     li {
                         margin-bottom: 0px;
                     }
                 }
             }
-
             .article-content {
                 h2 {
                     margin-bottom: 10px;
@@ -107,7 +91,6 @@ Article Text Component
     .article-hero-header {
         margin-top: 130px;
         margin-bottom: 130px;
-
         .article-header {
             margin-left: 10%;
             padding: 70px;
