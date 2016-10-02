@@ -8,9 +8,9 @@
 <!-- Placeholder Content
 ============================================= -->
 <img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.totalRowCount}"
-	data-emptytext="Author Membership Comparision Table Component Here"
-	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
-	alt="Membership Comparision Table Component" />
+    data-emptytext="Author Membership Comparision Table Component Here"
+    src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+    alt="Membership Comparision Table Component" />
 <!-- #placeholder-content end -->
 
 <!-- Membership Comparision Table
@@ -35,8 +35,9 @@
 
                 <!-- List of the columns start here -->
                 <sly data-sly-list.column="${tableprovider.columns}">
-                    <div style="background-color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex == columnList.index && properties.columnBackgroundColor) ? properties.columnBackgroundColor : '' @ context='styleToken'};color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex==columnList.index && properties.fontColor) ? properties.fontColor : '' @ context='styleToken'};"
-                         class="col-md-3 col-sm-4 col-xs-4 header">
+                    <div style="background-color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex == columnList.index && properties.columnBackgroundColor) ? properties.columnBackgroundColor : '' @ context='styleToken'};
+                                color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex==columnList.index && properties.fontColor) ? properties.fontColor : '' @ context='styleToken'};"
+                         class="col-md-3 ${properties.columnCount == '1' ? 'col-sm-12 col-xs-12' : ''} ${properties.columnCount == '2' ? 'col-sm-6 col-xs-6' : ''} ${properties.columnCount == '3' ? 'col-sm-4 col-xs-4' : ''} header">
                         <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"/>
                     </div>
                 </sly>
