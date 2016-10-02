@@ -36,34 +36,53 @@
         <header id="page-header">
             <!-- logo and navigation placed inside this container -->
         </header>
-        <div id="page-container" class="container-fluid">
-            <!-- Article Header Stand Alone -->
-            <div class="row">
-                <div class="col-sm-1">
-                    <div class="text-center hidden-sm hidden-md hidden-lg filter-link"> <a href="#" class="link-btn link-lg roboto-light font-e checked-list-item-main">All Results <i class="glyphicon glyphicon-chevron-down font-d"></i> </a></div>
-                </div>
-                <div class="col-sm-6 ">
-                    <div class="article-hub"></div>
-                    <div class="pagination-grid horizontal-component-space "> </div>
-                </div>
-                <div class="col-sm-1 "></div>
-                <div class="col-sm-3 ">
-                    <div class="filter-grid">
-                        <div class="results-categories">
-                            <div class="close-filter hidden-sm hidden-md hidden-lg">FILTERS<a href="" class="close-fliter-icon pull-right link-btn link-lg roboto-medium font-d">Apply</a></div>
-                            <div class="categorie-title hidden-xs">CATEGORIES</div>
-                            <ul class="categorie-block">
-                                <li><a href="javascript:void(0);" class="font-h active" metaName="testingMetaName" metaTag="testingMetaTagName">All</a></li>
-                                <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
-                                <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
-                                <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
-                                <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
-                                <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
-                            </ul>
+        <div id="page-container">
+            <div class="container-fluid">
+                <!-- Article Header Stand Alone -->
+                <div class="row">
+                    <div class="col-sm-1">
+                        <div class="text-center hidden-sm hidden-md hidden-lg filter-link"> <a href="#" class="link-btn link-lg roboto-light font-e checked-list-item-main">All Results <i class="glyphicon glyphicon-chevron-down font-d"></i> </a></div>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <div class="article-hub">
+                            <!--<div class='row article-list with-img roboto-medium font-a'>
+                                <div class='col-sm-12 col-md-6 col-lg-4'>
+                                    <div class='imgblock'><img src='images/footer-image.jpg' alt='' title='' /></div>
+                                </div>
+                                <div class='col-sm-12 col-md-6 col-lg-8 '>
+                                    <div class='article-info'>
+                                        <ul class='list-inline font-e'>
+                                            <li><img src='images/AAA.png' alt='List Image' /></li>
+                                            <li class='author'>By <a href='#'>Author name </a></li>
+                                            <li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li>
+                                        </ul> <a href='#' class='roboto-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a>
+                                        <p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p>
+                                        <div class="list-btn visible-xs"><a href="#" title="Solid button" class=" btn-style btn-lg btn-color-blue ">Read</a> </div>
+                                    </div>
+                                </div>
+                            </div>--></div>
+                        <div class="pagination-grid"> </div>
+                    </div>
+                    <div class="col-sm-1 "></div>
+                    <div class="col-sm-3 ">
+                        <div class="filter-grid">
+                            <div class="results-categories">
+                                <div class="close-filter hidden-sm hidden-md hidden-lg">FILTERS<a href="" class="close-fliter-icon pull-right link-btn link-lg roboto-medium font-d">X</a></div>
+                                <div class="close-filter hidden-xs">CATEGORIES<a href="" class="close-fliter-icon pull-right roboto-light">Clear all</a></div>
+                                <!--<div class="categorie-title hidden-xs">CATEGORIES</div> -->
+                                <ul class="categorie-block">
+                                    <li><a href="javascript:void(0);" class="font-h active" metaName="testingMetaName" metaTag="testingMetaTagName">All</a></li>
+                                    <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName1" metaTag="testingMetaTagName1">Products & Services</a></li>
+                                    <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName2" metaTag="testingMetaTagName2">Publications</a></li>
+                                    <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName3" metaTag="testingMetaTagName3">Travel</a></li>
+                                    <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName4" metaTag="testingMetaTagName4">Events</a></li>
+                                    <li><a href="javascript:void(0);" class="font-h" metaName="testingMetaName5" metaTag="testingMetaTagName5">Discounts</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-sm-1 "></div>
                 </div>
-                <div class="col-sm-1 "></div>
             </div>
         </div>
         <footer id="page-footer">
@@ -78,20 +97,23 @@
         var totalListPages;
         var resultsPerPage = 10;
         var pageNumber = 1;
+        var searchkeyValue = "testing";
         $(".filter-link").click(function () {
             $(".filter-grid").show();
         });
-        getResultData('', pageNumber, metaName, metaTag);
+        getArticles(searchkeyValue, '', pageNumber, metaName, metaTag);
         $(".categorie-block li a").click(function (e) {
             var metaName = $(this).attr('metaName');
             var metaTag = $(this).attr('metaTag');
+            console.log(metaName);
+            console.log(metaTag);
             localStorage.setItem("metaName", metaName);
             localStorage.setItem("metaTag", metaTag);
             $(".categorie-block li a").removeClass("active");
             $("[metaName=" + metaName + "]").addClass("active");
             var currentListItem = $(this).text();
             $(".checked-list-item-main").html(currentListItem);
-            getResultData('', pageNumber, metaName, metaTag);
+            getArticles(searchkeyValue, '', pageNumber, metaName, metaTag);
             e.preventDefault();
         });
         $(".close-fliter-icon").click(function (e) {
@@ -105,28 +127,27 @@
             }
         });
         /* API CALl */
-        function getResultData(navigation, currentPage, metaName, metaTag) {
+        function getArticles(searchkeyValue, navigation, currentPage, metaName, metaTag) {
             if (navigation === -1) {
-                pageNumber = pageNumber - 1;
+                pageNumber = parseInt(pageNumber) - 1;
             }
             if (navigation === 1) {
-                pageNumber = pageNumber + 1;
+                pageNumber = parseInt(pageNumber) + 1;
             }
             if (currentPage) {
                 pageNumber = currentPage;
             }
             var validPage = ""
-            validPage = (pageNumber * 10) + 1;
-            validPage = validPage - 10;
-            var searchkeyValue = "insurance";
+            validPage = (parseInt(pageNumber) * 10) + 1;
+            validPage = parseInt(validPage) - 10;
             // var url = "http://www.mocky.io/v2/57e39b31110000db1598e34e";
             var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDb6ZxlQVRZJJQv-t7OQU5A2ibVLlw9d3o&cx=002841571323135263873:_kstmmls-cu&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
-            // var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I&cx=004650686028114475301:tlpfyltlij4&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
+            //var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA5Q7Z1wbPOUa59IhoZYO52ulQjWAndn3I&cx=004650686028114475301:tlpfyltlij4&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
             // var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBC-G6Eu9j36HTIkkCcw92_CVg_ONtK3Ec&cx=002841571323135263873:_kstmmls-cu&q=" + searchkeyValue + "&start=" + validPage + "&callback=?";
-            $.getJSON(url, '', SearchCompleted);
+            $.getJSON(url, '', articleReceived);
         }
 
-        function SearchCompleted(response) {
+        function articleReceived(response) {
             if (response.error) {
                 var errorMessage = response.error.message;
                 $(".article-hub").hide();
@@ -149,6 +170,7 @@
                 /* Navigation Links handling */
                 var totalItems = response.searchInformation.totalResults;
                 totalListPages = Math.round(totalItems / resultsPerPage);
+                totalListPages = 8;
                 var indexCount = response.queries.request[0].startIndex;
                 if (totalListPages > 1) {
                     $("#totalListPages").html("of " + totalListPages);
@@ -159,46 +181,65 @@
                     var responseTitle = item.htmlTitle;
                     var responseUrl = item.htmlFormattedUrl;
                     var responseData = item.htmlSnippet;
-                    html += "<div class='row article-list with-img roboto-medium font-a'><div class='col-md-4 col-sm-12'>                    <div class='imgblock'><img src='images/footer-image.jpg' alt='' title='' class='img-responsive' /></div></div><div class='col-md-8 col-sm-12'><div class='article-info'><ul class='list-inline font-e'><li><img src='images/CompV-logo.png' alt='List Image' /></li>                                    <li class='author'>By <a href='#'>Author name</a></li><li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li></ul> <a href='#' class='font-a' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a><p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p></div></div></div>";
-                    // html += "<div class='result-item'><a href='" + item.link + "' class='link-btn link-lg roboto-medium font-f'>" + responseTitle + "</a><a href='" + item.link + "' class='link-btn link-lg roboto-light font-h result-link'>" + responseUrl + "</a><p class='roboto-light font-h'>" + responseData + "</p></div>";
+                    html += "<div class='row article-list with-img roboto-medium font-a'><div class='col-sm-12 col-md-6 col-lg-4'><div class='imgblock'><img src='images/footer-image.jpg' alt='' title='' /></div></div><div class='col-sm-12 col-md-6 col-lg-8 '><div class='article-info'><ul class='list-inline font-e'><li><img src='images/CompV-logo.png' alt='List Image' /></li><li class='author'>By <a href='#'>Author name </a></li><li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>Month 00, 0000</span></li></ul> <a href='#' class='roboto-light font-b list-title' title='Big city on a budget: Singapore'>Big city on a budget: Singapore</a><p class='font-h roboto-light'>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem</p><div class='list-btn visible-xs'><a href='#' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div></div></div></div>";
                 }
                 /* pagination Logic start */
-                if (pageNumber % 5 === 0 && totalListPages > 5) {
-                    defaultPage = pageNumber;
-                    var reaminigPages = totalListPages - pageNumber;
-                    if (reaminigPages > 6) {
-                        defaultTotalPages = parseInt(pageNumber) + 6;
-                    }
-                    else {
-                        defaultTotalPages = reaminigPages;
-                    }
-                }
-                else if (pageNumber === 1) {
+                /* if (totalListPages > 5) {
+                     defaultPage = pageNumber;
+                     var reaminigPages = totalListPages - pageNumber;
+                     if (reaminigPages > 6) {
+                         defaultTotalPages = parseInt(pageNumber) + 5;
+                     }
+                     else {
+                         defaultTotalPages = reaminigPages;
+                     }
+                 }
+                 else if (pageNumber === 1) {
+                     defaultPage = 1;
+                     if (totalListPages < 6) {
+                         defaultTotalPages = totalListPages;
+                     }
+                     else {
+                         defaultTotalPages = 6;
+                     }
+                 }*/
+                var reaminigPages = totalListPages - pageNumber;
+                if (pageNumber <= 5 && totalListPages > 0) {
                     defaultPage = 1;
-                    if (totalListPages < 6) {
+                    if (totalListPages < 5) {
                         defaultTotalPages = totalListPages;
                     }
                     else {
                         defaultTotalPages = 6;
                     }
                 }
-                var navigation_html = '<ul class="row"><li class="page-links col-xs-3"><a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span>Prev</a></li><li class="page-links text-center col-xs-6">';
+                else if (pageNumber > 5 && totalListPages > 5) {
+                    defaultPage = pageNumber;
+                    var reaminigPages = totalListPages - pageNumber;
+                    if (reaminigPages > 5) {
+                        defaultTotalPages = parseInt(pageNumber) + 5;
+                    }
+                    else {
+                        defaultTotalPages = reaminigPages;
+                    }
+                }
+                var navigation_html = '<ul class="row list-inline"><li class="page-links col-xs-3"><a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span> Prev</a></li><li class="page-links text-center col-xs-6">';
                 for (var i = defaultPage; i < defaultTotalPages; i++) {
                     navigation_html += '<a href="javascript:void(0);" class="navPage_click" id="id' + i + '">' + (i) + '</a>';
                 }
-                navigation_html += '</li><li class="page-links text-right  col-xs-3"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next <span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a></li></ul>';
+                navigation_html += '</li><li class="page-links text-right col-xs-3"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next <span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a></li></ul>';
                 $('.pagination-grid').html(navigation_html);
                 $(".page_link").removeClass("active");
                 $("#id" + pageNumber).addClass('active');
                 $('#nextPage').click(function () {
-                    getResultData(searchkeyValue, 1, '', metaName, metaTag);
+                    getArticles(searchkeyValue, 1, '', metaName, metaTag);
                 });
                 $('#prevPage').click(function () {
-                    getResultData(searchkeyValue, -1, '', metaName, metaTag);
+                    getArticles(searchkeyValue, -1, '', metaName, metaTag);
                 });
                 $(".navPage_click").click(function () {
                     var selectedPage = $(this).text();
-                    getResultData(searchkeyValue, '', selectedPage, metaName, metaTag);
+                    getArticles(searchkeyValue, '', selectedPage, metaName, metaTag);
                 });
                 if (pageNumber === 1) {
                     $("#prevPage").addClass('disabled');

@@ -1,39 +1,42 @@
-$(function(){
+$j(function($){
+
 	$('#article-carousel').find('.carousel-control.left')
 						  .css({'cursor': 'wait',
-								'pointer-events': 'none',
+						        'pointer-events': 'none',
 								'opacity': '0.1'});
-													
-	$('#article-carousel').bind('slid.bs.carousel', function (e) {
 	
-		var $this = $(this);
+	$('.carousel-text .image-label').text($('div.active').data('imagelabel') + ' | ' + $('div.active').data('author'));
+	$('.right-align').text($('div.active').index() + 1 + ' of ' + $('.carousel-inner .item').length);
+								
+	$('#article-carousel').bind('slid.bs.carousel', function (e) {
+    
+        var $this = $(this);
 
-		$this.children('.carousel-control').show();
-		$('#article-carousel').carousel('pause');
+        $this.children('.carousel-control').show();
+        $('#article-carousel').carousel('pause');
 		
-		$('.carousel-text .image-label').text($('div.active').data('imagelabel'));
-		$('.carousel-text .author').text($('div.active').data('author'));
+		$('.carousel-text .image-label').text($('div.active').data('imagelabel') + ' | ' + $('div.active').data('author'));
+		$('.right-align').text($('div.active').index() + 1 + ' of ' + $('.carousel-inner .item').length);
+	
 		
-		$('#total-slides').text($('.carousel-inner .item').length);
-		$('#current-slide').text($('div.active').index() + 1);
-
-		if ($('.carousel-inner .item:first').hasClass('active')) {
-			$this.children('.carousel-control.left')
+        if ($('.carousel-inner .item:first').hasClass('active')) {
+            $this.children('.carousel-control.left')
 				 .css({'cursor': 'wait',
-					   'pointer-events': 'none',
+				       'pointer-events': 'none',
 					   'opacity': '0.1'});
-		} else {
-			$this.children('.carousel-control.left').removeAttr('style');
-		}
-		
-		if ($('.carousel-inner .item:last').hasClass('active')) {
+        } else {
+            $this.children('.carousel-control.left').removeAttr('style');
+        }
+        
+        if ($('.carousel-inner .item:last').hasClass('active')) {
 			$this.children('.carousel-control.right')
 				 .css({ 'cursor': 'wait',
 						'pointer-events': 'none',
 						'opacity': '0.1'});
-		} else {
-			$this.children('.carousel-control.right').removeAttr('style');
-		}
+        } else {
+            $this.children('.carousel-control.right').removeAttr('style');
+        }
 		
-	});
+    });
+
 });

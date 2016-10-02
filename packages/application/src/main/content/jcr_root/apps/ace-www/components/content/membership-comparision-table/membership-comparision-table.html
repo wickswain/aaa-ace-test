@@ -1,0 +1,73 @@
+<!-- Sightly global objects declaration
+============================================= -->
+
+<sly data-sly-use.tableprovider="${'com.aaa.ace.sightly.providers.MembershipTableProvider'}"/>
+
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.totalRowCount}"
+	data-emptytext="Author Membership Comparision Table Component Here"
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="Membership Comparision Table Component" />
+<!-- #placeholder-content end -->
+
+<!-- Membership Comparision Table
+============================================= -->
+<div data-sly-test="${properties.totalRowCount}" style="background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
+     class="membership-comparision-table">
+    <div class="container">
+        <div class="membership-comparision-header horizontal-component-space">
+            <div class="horizontal-space roboto-medium font-a"> <span>${properties.title}</span></div>
+            <div class="roboto-light font-g" data-sly-unwrap=${wcmmode.disabled}>
+                <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
+            </div>
+        </div>
+    </div>
+
+    <!--comparision table content-->
+    <div data-index="${wcmmode.edit ? properties.totalRowCount : properties.seeAllRowIndex}"
+         class="membership-comparision text-center">
+        <div class="container highlight-${properties.highlightedColumn}">
+            <div class="row membership">
+                <div class="col-md-3 col-sm-4 col-xs-4 header hidden-xs hidden-sm"></div>
+
+                <!-- List of the columns start here -->
+                <sly data-sly-list.column="${tableprovider.columns}">
+                    <div style="background-color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex == columnList.index && properties.columnBackgroundColor) ? properties.columnBackgroundColor : '' @ context='styleToken'};color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex==columnList.index && properties.fontColor) ? properties.fontColor : '' @ context='styleToken'};"
+                         class="col-md-3 col-sm-4 col-xs-4 header">
+                        <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"/>
+                    </div>
+                </sly>
+
+            </div>
+            <!-- List of the rows start here -->
+            <sly data-sly-list.row="${tableprovider.rows}">
+                <div data-sly-resource="${row.path @ resourceType=row.resourceType}" data-sly-unwrap="${wcmmode.disabled}"></div>
+            </sly>
+
+            <div data-sly-test="${properties.totalRowCount != '0'}" class="row membership-cols seeAllLink">
+                <div class="col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs"></div>
+                <div data-sly-test="${properties.columnCount=='1'}" class="col-md-3 col-sm-12 col-xs-12"> <a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a> </div>
+                <div data-sly-test="${properties.columnCount=='2'}" class="col-md-6 col-sm-12 col-xs-12"> <a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a> </div>
+                <div data-sly-test="${properties.columnCount=='3'}" class="col-md-9 col-sm-12 col-xs-12"> <a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a> </div>
+            </div>
+        </div>
+    </div>
+    <!--comparision table content end-->
+    <!-- Modal Box content-->
+    <div id="myModal" data-sly-test="${properties.totalRowCount != '0'}" class="modal fade text-left">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title roboto-bold font-b"></h4>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Box content end-->
+</div>
+<!-- #Membership Comparision Table-content end -->
