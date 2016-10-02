@@ -6,63 +6,72 @@
 $(function () {
         var filterName = "";
         var filterTag = "";
-        var totalListPages;
-        var resultsPerPage = 10;
-        var pageNumber = 1;
-        $(".filter-link").click(function () {
-            $(".filter-grid").show();
+        var articleTotalListPages;
+        var articleResultsPerPage  = 10;
+        var articlePageNumber = 1;
+        $("#article-filter-link").click(function () {
+            $("#article-filter-grid").show();
         });
         
 		localStorage.setItem("filterName", '');
         localStorage.setItem("filterTag", '');
         
-        getArticles('', pageNumber);
+        getArticles('', articlePageNumber);
         
         //Filter click event
-        $(".categorie-block li a").click(function (e) {
-            var filterName = $(this).attr('filterName');
+        $("#articleHub-categorie-block > li > a").click(function (e) {
+            var filterName = $(this).attr('data-filter-name');
             var filterTag = $(this).attr('data-filter-tag');
             localStorage.setItem("filterName", filterName);
             localStorage.setItem("filterTag", filterTag);
-            $(".categorie-block li a").removeClass("active");
+            $("#articleHub-categorie-block > li > a").removeClass("active");
             $(this).addClass("active");
             var currentListItem = $(this).text();
-            $(".checked-list-item-main").html(currentListItem);
-            pageNumber = 1;
-            getArticles('', pageNumber);
+            $("#article-checked-list-item-main").html(currentListItem);
+            articlePageNumber = 1;
+            getArticles('', articlePageNumber);
             e.preventDefault();
         });
-        $(".close-fliter-icon").click(function (e) {
-            $('.filter-grid').hide();
+        $("#article-close-fliter-icon").click(function (e) {
+            $('#article-filter-grid').hide();
             e.preventDefault();
         });
-        $(window).resize(function () {
+
+        function manageArticleGrid() {
             var winWidth = $(window).width();
-            if (winWidth >= 768) {
-                $(".filter-grid").show();
+            if (winWidth < 768) {
+                $("#article-filter-grid").hide();
             }
-        });
+            else {
+                $("#article-filter-grid").show();
+            }
+        }
+        
+        $(window).resize(function () {
+            manageArticleGrid();
+        });            
+        
         /* API CALL */
         function getArticles(navigation, selectedPage) {
             
         	//user navigating through previous button
         	if (navigation === -1) {
-                pageNumber = parseInt(pageNumber) - 1;
+                articlePageNumber = parseInt(articlePageNumber) - 1;
             }
         	
         	//user navigating through next button
             if (navigation === 1) {
-                pageNumber = parseInt(pageNumber) + 1;
+                articlePageNumber = parseInt(articlePageNumber) + 1;
             }
             
             //if user has clicked a page number
             if (selectedPage) {
-                pageNumber = selectedPage;
+                articlePageNumber = selectedPage;
             }
             
             //calculate start index of results, it would be 11 for 2nd page, 21 for 3rd page and so on.
             var start = "";
-            start = (parseInt(pageNumber) * 10) - 9;
+            start = (parseInt(articlePageNumber) * 10) - 9;
             
             var articleFilterTagLocal = localStorage.getItem("filterTag");
             var filter = "";
@@ -78,30 +87,30 @@ $(function () {
         function articleReceived(response) {
             if (response.error) {
                 var errorMessage = response.error.message;
-                $(".article-hub").hide();
-                $(".pagination-grid").hide();
-                $(".error-message").show();
-                $(".error-message").html(errorMessage);
-                pageNumber = 1;
+                $("#article-hub, #pagination-grid").hide();
+                $("#article-error-message").show();
+                $("#article-error-message").html(errorMessage);
+                articlePageNumber = 1;
             }
             else if (response.items == null || response.items.length === 0) {
-                $(".article-hub").hide();
-                $(".pagination-grid").hide();
-                $(".error-message").show();
-                $(".error-message").html("No articles found.");
-                pageNumber = 1;
+                $("#article-hub, #pagination-grid").hide();
+                $("#article-error-message").show();
+                $("#article-error-message").html("No articles found.");
+                manageArticleGrid();
+                articlePageNumber = 1;
             }
             else {
-                $(".error-message").hide();
-                $(".article-hub").show();
+            	manageArticleGrid();
+                $("#article-error-message").hide();
+                $("#article-hub").show();
                 var html = "";
                 
                 /* Navigation Links handling */
                 var totalItems = response.searchInformation.totalResults;
-                totalListPages = Math.ceil(totalItems / resultsPerPage);
+                articleTotalListPages = Math.ceil(totalItems / articleResultsPerPage );
                 var indexCount = response.searchInformation.startIndex;
-                if (totalListPages > 1) {
-                    $("#totalListPages").html("of " + totalListPages);
+                if (articleTotalListPages > 1) {
+                    $("#totalListPages").html("of " + articleTotalListPages);
                 }
                 // loop handling
                 for (var i = 0; i < response.items.length; i++) {
@@ -128,22 +137,22 @@ $(function () {
                     html += listHtml;
                 }
                 /* pagination Logic start */
-                if (parseInt(pageNumber) < 5) {
+                if (parseInt(articlePageNumber) < 5) {
                     defaultPage = 1;
-                    if (totalListPages < 5) {
-                        defaultTotalPages = totalListPages + 1;
+                    if (articleTotalListPages < 5) {
+                        defaultTotalPages = articleTotalListPages + 1;
                     }
                     else {
                         defaultTotalPages = 6;
                     }
                 }
-                else if (parseInt(pageNumber) > 5) {
-                    defaultPage = parseInt(pageNumber) - 2;
-                    defaultTotalPages = parseInt(pageNumber) + 3;
+                else if (parseInt(articlePageNumber) > 5) {
+                    defaultPage = parseInt(articlePageNumber) - 2;
+                    defaultTotalPages = parseInt(articlePageNumber) + 3;
                     
-                    if(defaultTotalPages > parseInt(totalListPages) + 1){
-                    	defaultTotalPages = totalListPages + 1 ;
-                    	defaultPage = totalListPages - 4;
+                    if(defaultTotalPages > parseInt(articleTotalListPages) + 1){
+                    	defaultTotalPages = articleTotalListPages + 1 ;
+                    	defaultPage = articleTotalListPages - 4;
                     }
                     		
                     
@@ -155,40 +164,43 @@ $(function () {
                  * Putting this in html also creates issue since image will 404.
                  * Also due to pagination it looks tricky to keep final HTML clean. 	
                  */ 
-                var navigation_html = '<ul class="row list-inline"><li class="page-links col-xs-3"><a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="prevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span> Prev</a></li><li class="page-links text-center col-xs-6">';
+                var navigation_html = '<ul class="row list-inline"><li class="page-links col-xs-3"><a href="javascript:void(0);" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="articlePrevPage"><span aria-hidden="true" class="prev-page glyphicon glyphicon-arrow-left"></span> Prev</a></li><li class="page-links text-center col-xs-6">';
                 for (var i = defaultPage; i < defaultTotalPages; i++) {
-                    navigation_html += '<a href="javascript:void(0);" class="navPage_click" id="id' + i + '">' + (i) + '</a>';
+                    navigation_html += '<a href="javascript:void(0);" class="article_navPage_click navPage_click" id="articleid' + i + '">' + (i) + '</a>';
                 }
-                navigation_html += '</li><li class="page-links text-right  col-xs-3"> <a href="#" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="nextPage">Next <span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a></li></ul>';
+                navigation_html += '</li><li class="page-links text-right  col-xs-3"> <a href="javascript:void(0);" title="Solid button" class="btn btn-style btn-sm btn-color-blue btn-reversed" id="articleNextPage">Next <span aria-hidden="true" class="next-page glyphicon glyphicon-arrow-right "></span></a></li></ul>';
                 $('#pagination-grid').html(navigation_html);
-                $('.pagination-grid').show();
+                $('#pagination-grid').show();
                 if (totalItems <= 10)
                 {
-                	$('.pagination-grid').hide();
+                	$('#pagination-grid').hide();
                 }
-                $(".page_link").removeClass("active");
-                $("#id" + pageNumber).addClass('active');
-                $('#nextPage').click(function () {
+                $(".page-links").removeClass("active");
+                $("#articleid" + articlePageNumber).addClass('active');
+                $('#articleNextPage').click(function (event) {
                     getArticles(1, '');
+                    event.preventDefault();
                 });
-                $('#prevPage').click(function () {
+                $('#articlePrevPage').click(function (event) {
                     getArticles(-1, '');
+                    event.preventDefault();
                 });
-                $(".navPage_click").click(function () {
+                $(".article_navPage_click").click(function () {
                     var selectedPage = $(this).text();
                     getArticles('', selectedPage);
                 });
-                if (parseInt(pageNumber) === 1) {
-                    $("#prevPage").addClass('disabled');
+                if (parseInt(articlePageNumber) === 1) {
+                    $("#articlePrevPage").addClass('disabled');
+                    event.preventDefault();
                 }
-                else if (parseInt(pageNumber) === totalListPages) {
-                    $("#nextPage").addClass('disabled');
+                else if (parseInt(articlePageNumber) === articleTotalListPages) {
+                    $("#articleNextPage").addClass('disabled');
                 }
                 else {
-                    $("#nextPage").removeClass('disabled');
-                    $("#prevPage").removeClass('disabled');
+                    $("#articleNextPage").removeClass('disabled');
+                    $("#articlePrevPage").removeClass('disabled');
                 }
-                $(".article-hub").html(html);
+                $("#article-hub").html(html);
             }
         }
         
