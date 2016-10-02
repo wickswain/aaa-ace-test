@@ -131,7 +131,7 @@
             <nav class="navbar navbar-default globalnav">
                 <ul data-sly-list="${navigationProvider.navigationVOs}" class="nav navbar-nav">
                     <!-- Top Level Navigation loop starts -->
-                    <li class="dropdown">
+                    <li data-sly-test="${!itemList.last}" class="dropdown">
                         <a href="javascript:void(0);" id="nav-${itemList.index}" class="active">
                             <img src="${item.currentpage.properties.tileIcon}" alt="${item.currentpage.properties.tileIconAltText}"
                                  title="${item.currentpage.properties.tileIconAltText}" class="icon-link hidden-lg hidden-md"/>
@@ -207,8 +207,10 @@
                     </li>
                     
                     <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm">
-                        <a href="${joinButton.url}" data-sly-text="${currentStyle.joinButtonLabel}"
-                           target="${currentStyle.joinButtonOpenTabFlag == 'true' ? '_blank' : '_self'}"
+                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=item.currentpage.properties.linkURL}" />
+                        <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
+                           data-sly-text="${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}"
+                           target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
                            class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
                         </a>
                     </li>
