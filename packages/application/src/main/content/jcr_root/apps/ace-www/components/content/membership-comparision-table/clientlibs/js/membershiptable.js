@@ -1,7 +1,7 @@
 $(function() {
-	$(".membership-comparision").each(function() {
-        var numberOfRows = $(this).attr('data-rowcount');
-        var fixedRows = $(this).attr('data-defaultrowcount');
+	function showHideMembershipCols() {
+		var numberOfRows = $(".membership-comparision").attr('data-rowcount');
+        var fixedRows = $(".membership-comparision").attr('data-defaultrowcount');
         if (numberOfRows > fixedRows) {
             var showCount = parseInt(fixedRows) * 2;
 
@@ -9,12 +9,17 @@ $(function() {
 				showCount = showCount - 1;
             }
 
-            $(this).find('.membership-cols:gt(' + showCount + ')').hide();
-            $(this).find(".seeAllLink").show();
+            $(".membership-comparision").find('.membership-cols:gt(' + showCount + ')').hide();
+            $(".membership-comparision").find(".seeAllLink").show();
         } else {
             $(".seeAllLink").remove();
         }
+	}
+	
+	$(".membership-comparision").each(function() {
+		showHideMembershipCols();
     });
+	
     $(".btn-info").each(function() {
         $(this).click(function() {
             var header = $(this).data("header");
@@ -23,8 +28,14 @@ $(function() {
             $("#myModal").find(".modal-body").html(bodyText);
         });
     });
+    
     $(".seeAll").click(function() {
         $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
         $(this).parent().parent().remove();
+    });
+    
+    /*Responsive*/
+    $(window).resize(function () {
+        showHideMembershipCols();
     });
 });
