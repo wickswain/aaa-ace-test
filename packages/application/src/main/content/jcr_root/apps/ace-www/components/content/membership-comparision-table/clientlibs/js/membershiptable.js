@@ -1,6 +1,6 @@
 $(function() {
-	$(".membership-comparision").each(function() {
-        var numberOfRows = $(this).attr('data-rowcount');
+	function showHideMembershipCols() {
+		var numberOfRows = $(this).attr('data-rowcount');
         var fixedRows = $(this).attr('data-defaultrowcount');
         if (numberOfRows > fixedRows) {
             var showCount = parseInt(fixedRows) * 2;
@@ -14,7 +14,12 @@ $(function() {
         } else {
             $(".seeAllLink").remove();
         }
+	}
+	
+	$(".membership-comparision").each(function() {
+		showHideMembershipCols();
     });
+	
     $(".btn-info").each(function() {
         $(this).click(function() {
             var header = $(this).data("header");
@@ -23,8 +28,14 @@ $(function() {
             $("#myModal").find(".modal-body").html(bodyText);
         });
     });
+    
     $(".seeAll").click(function() {
         $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
         $(this).parent().parent().remove();
+    });
+    
+    /*Responsive*/
+    $(window).resize(function () {
+        showHideMembershipCols();
     });
 });
