@@ -17,11 +17,18 @@
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.rowItemDescription}" data-emptytext="Author Membership Table Row here"
      class="cq-placeholder" style="text-align: center;">
 </div>
+
 <sly data-sly-test="${properties.rowItemDescription}">
+    <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
+        <div class="col-md-3 col-sm-12 col-xs-12" data-sly-text="${properties.rowItemDescription} "></div>
+    </div>
+    
     <div class="row membership-cols roboto-light font-h">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info"> ${properties.rowItemDescription} 
-            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};" data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}" href="#myModal" class="btn-info">
-								</a>
+        <div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm"> ${properties.rowItemDescription} 
+            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+               data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
+               href="#myModal" class="btn-info">
+		    </a>
         </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 1}" 
