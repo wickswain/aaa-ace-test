@@ -150,13 +150,18 @@ Membership Comparision Table Component
             }
         }
         .membership-cols {
-            display: block;
+            display: flex;
             justify-content: center;
             div {
                 padding: 15px 15px;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 /*white-space: nowrap;*/
+				display: flex;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
             }
         }
     }
@@ -181,6 +186,9 @@ Membership Comparision Table Component
         .row {
             div:first-child {
                 border-top: 0px solid #ccc;
+            }
+			 div:first-child {
+                border-left: none;
             }
             &.membership {
                 display: flex;
