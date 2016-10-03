@@ -27,7 +27,8 @@
     </div>
 
     <!--comparision table content-->
-    <div data-index="${wcmmode.edit ? properties.totalRowCount : properties.seeAllRowIndex}"
+    <div data-defaultrowcount="${wcmmode.edit ? properties.totalRowCount : properties.seeAllRowIndex}"
+         data-rowcount="${properties.totalRowCount}"
          class="membership-comparision text-center">
         <div class="container highlight-${properties.highlightedColumn}">
             <div class="row membership">
