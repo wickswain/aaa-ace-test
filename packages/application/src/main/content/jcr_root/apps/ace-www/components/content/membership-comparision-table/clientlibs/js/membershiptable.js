@@ -1,10 +1,14 @@
 $(function() {
 	$(".membership-comparision").each(function() {
-        var numberOfRows = $(this).find('.membership-cols').length;
-        var fixedRows = $(this).attr('data-index');
+        var numberOfRows = $(this).attr('data-rowcount');
+        var fixedRows = $(this).attr('data-defaultrowcount');
         if (numberOfRows > fixedRows) {
-            var numberOfRows = $('.membership-cols').length;
-            var showCount = parseInt(fixedRows - 1);
+            var showCount = parseInt(fixedRows) * 2;
+
+            if($(window).width() < 992) {
+				showCount = showCount - 1;
+            }
+
             $(this).find('.membership-cols:gt(' + showCount + ')').hide();
             $(this).find(".seeAllLink").show();
         } else {
