@@ -122,13 +122,42 @@ $(function () {
                      * Also due to pagination it looks tricky to keep final HTML clean. 	
                      */ 
                     
-                    var listHtml = "<div id='article-list' class='row article-list with-img roboto-medium font-a'> <div class='col-sm-12 col-md-6 col-lg-4'>  <div class='imgblock'> <img src='@articleImage@' alt='@articleImageAltText@' title='@articleImageAltText@' />  </div> </div> <div class='col-sm-12 col-md-6 col-lg-8 '>  <div class='article-info'> <ul class='list-inline font-e'> <li><img src='@articleLogoImage@' alt='@articleLogoAltText@' /></li> <li class='author'>By @authorName@</li> <li class='time'><i class='glyphicon glyphicon-time'></i> <span class='date'>@issueDate@</span></li> </ul> <a href='@link@' class='roboto-light font-b list-title' title='@articleTitle@'>@articleTitle@</a> <p class='font-h roboto-light'>@description@</p><div class='list-btn visible-xs'><a href='@link@' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div>  </div> </div> </div>";
+                    var listHtml = "<div id='article-list' class='row article-list with-img roboto-medium font-a'> " +
+                    		"<div class='col-sm-12 col-md-6 col-lg-4'>  <div class='imgblock'> " +
+                    		"<img src='@articleImage@' alt='@articleImageAltText@' title='@articleImageAltText@' />  " +
+                    		"</div> </div> <div class='col-sm-12 col-md-6 col-lg-8 '>  " +
+                    		"<div class='article-info'> <ul class='list-inline font-e'> " +
+                    		"<li><img src='@articleLogoImage@' alt='@articleLogoAltText@' /></li> " +
+                    		"<li class='author'>By @authorName@</li>" +
+                    		"<li class='time'><i class='glyphicon glyphicon-time'></i><span class='date'> @issueDate@</span></li>" +
+                    		"</ul>" +
+                    		"<a href='@link@' class='roboto-slab-light font-b list-title' title='@articleTitle@'>@articleTitle@</a> " +
+                    		"<p class='font-h roboto-light'>@description@</p><div class='list-btn visible-xs'>" +
+                    		"<a href='@link@' title='Solid button' class='btn-style btn-lg btn-color-blue'>Read</a></div></div></div></div>";
                     
                     listHtml = listHtml.replace(/@articleTitle@/g, ((item.articleTitle) ? item.articleTitle : ""));
                     listHtml = listHtml.replace(/@link@/g, ((item.link) ? item.link : "#"));
-                    listHtml = listHtml.replace(/@authorName@/g, ((item.authorName) ? item.authorName : ""));
+                    
+                    
+                    //if author name is absent we have to remove "By" also.
+                    if(!item.authorName || item.authorName === '')
+                    {
+                    	listHtml = listHtml.replace("<li class='author'>By @authorName@</li>", "");
+                    }else
+                    {
+                    	listHtml = listHtml.replace(/@authorName@/g, item.authorName);
+                    }
+
+                    //if issue date is absent remove time icon as well
+                    if(!item.issueDate || item.issueDate === '')
+                    {
+                    	listHtml = listHtml.replace("<li class='time'><i class='glyphicon glyphicon-time'></i><span class='date'> @issueDate@</span></li>", "");
+                    }else
+                    {
+                    	listHtml = listHtml.replace(/@issueDate@/g, moment(item.issueDate, 'YYYY-MM-DD').locale("en").format('LL'));
+                    }
+
                     listHtml = listHtml.replace(/@articleLogoImage@/g, ((item.articleLogoImage) ? item.articleLogoImage : ""));
-                    listHtml = listHtml.replace(/@issueDate@/g, ((item.issueDate) ? item.issueDate : ""));
                     listHtml = listHtml.replace(/@articleLogoAltText@/g, ((item.articleLogoAltText) ? item.articleLogoAltText : ""));
                     listHtml = listHtml.replace(/@description@/g, ((item.description) ? item.description : ""));
                     listHtml = listHtml.replace(/@articleImage@/g, ((item.articleImage) ? item.articleImage : ""));
