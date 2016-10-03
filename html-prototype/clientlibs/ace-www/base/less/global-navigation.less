@@ -38,7 +38,7 @@
     position: fixed;
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.7);
-    top: 60px;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
@@ -348,7 +348,7 @@
         transition: all 0.4s;
         overflow-x: hidden;
         padding-top: 55px;
-        overflow-y: scroll;
+        overflow-y: auto;
         .slide-nav {
             width: 100%;
             left: 0;
@@ -721,7 +721,6 @@
             color: #fff;
         }
         #truck-link {
-            max-width: 105px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -1045,6 +1044,12 @@
             }
             .roadside-text {
                 text-align: left;
+                #truck-link {
+                    max-width: 125px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
                 li {
                     :first-child {
                         padding-left: 0px;
@@ -1175,6 +1180,7 @@
                             }
                             .drawers-tiles {
                                 flex: 1;
+                                min-height: 240px;
                                 ul {
                                     padding-bottom: 30px;
                                     margin: 0 auto;
@@ -1231,6 +1237,7 @@
                             }
                             .drawers-tiles-list {
                                 flex: 2;
+                                min-height: 400px;
                                 .drawers-container {
                                     max-width: 1140px;
                                     margin: 0 auto;
@@ -1272,7 +1279,7 @@
                                         }
                                     }
                                     li {
-                                        list-style: none;
+                                        list-style-type: none;
                                         padding-top: 10px;
                                         color: @color-white;
                                         a {
@@ -1335,9 +1342,9 @@
             }
         }
     }
-    .overlay {
+    /*.overlay {
         display: none !important;
-    }
+    }*/
     /*End Global Navigation*/
 }
 
