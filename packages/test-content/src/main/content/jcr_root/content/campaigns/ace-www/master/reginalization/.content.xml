@@ -7,7 +7,7 @@
         cq:targetEngine="cq_contexthub"
         cq:template="/libs/cq/personalization/templates/campaign"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Reginalization"
+        jcr:title="Regionalization"
         sling:resourceType="cq/personalization/components/campaignpage"
         onTime="{Date}2016-09-14T13:24:00.000+05:30"
         priority="1">
