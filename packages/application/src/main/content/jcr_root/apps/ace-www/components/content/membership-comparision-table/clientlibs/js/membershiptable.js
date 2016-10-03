@@ -1,25 +1,26 @@
-$(function() {
-	function showHideMembershipCols() {
-		var numberOfRows = $(".membership-comparision").attr('data-rowcount');
-        var fixedRows = $(".membership-comparision").attr('data-defaultrowcount');
+$j(function($) {
+
+    var showHideMembershipCols = function(){
+		var numberOfRows = $(this).attr('data-rowcount');
+        var fixedRows = $(this).attr('data-defaultrowcount');
         if (numberOfRows > fixedRows) {
             var showCount = parseInt(fixedRows) * 2;
-
+            
             if($(window).width() < 992) {
-				showCount = showCount - 1;
+                showCount = showCount - 1;
             }
-
-            $(".membership-comparision").find('.membership-cols:gt(' + showCount + ')').hide();
-            $(".membership-comparision").find(".seeAllLink").show();
+            
+            $(this).find('.membership-cols:gt(' + showCount + ')').hide();
+            $(this).find(".seeAllLink").show();
         } else {
-            $(".seeAllLink").remove();
+            $(this).find(".seeAllLink").remove();
         }
-	}
-	
+    };
+
 	$(".membership-comparision").each(function() {
-		showHideMembershipCols();
+		showHideMembershipCols.call(this);
     });
-	
+
     $(".btn-info").each(function() {
         $(this).click(function() {
             var header = $(this).data("header");
@@ -36,6 +37,10 @@ $(function() {
     
     /*Responsive*/
     $(window).resize(function () {
-        showHideMembershipCols();
+    
+        $(".membership-comparision").each(function() {
+            showHideMembershipCols.call(this);
+        });
+
     });
 });
