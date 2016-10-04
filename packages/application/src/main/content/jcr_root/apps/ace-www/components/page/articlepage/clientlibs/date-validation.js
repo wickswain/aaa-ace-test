@@ -2,7 +2,6 @@
 "use strict";
 
 	$(document).on("click", ".cq-dialog-submit", function (e) {
-
 		var $form = $(this).closest("form.foundation-form"),
 		isDateInvalid = $form.find("[name='./issueDate']").hasClass('is-invalid'),
         issueDate = $form.find("[name='./issueDate']").val(),
@@ -26,9 +25,8 @@
         			}
         	}); //end prompt
          return false;
-
             }
-        else{
+         else{
 			 return true;
         	$form.submit();
         }
