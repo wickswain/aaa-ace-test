@@ -220,7 +220,6 @@ $(function () {
                 });
                 if (parseInt(articlePageNumber) === 1) {
                     $("#articlePrevPage").addClass('disabled');
-                    event.preventDefault();
                 }
                 else if (parseInt(articlePageNumber) === articleTotalListPages) {
                     $("#articleNextPage").addClass('disabled');
