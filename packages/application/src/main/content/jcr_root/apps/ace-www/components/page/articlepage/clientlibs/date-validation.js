@@ -13,7 +13,7 @@
         	ns.ui.helpers.prompt({
 
                 title: Granite.I18n.get("Invalid Input"),
-        		message: "Please enter a valid issue date. Note: year should be between 1970 and current year",
+                message:"<font color='red'>Please enter a valid date format (September 09, 16) .<br/> Note: year should be between 1970 and current year</font>",
         		actions: [{
                     id: "OK",
         			text: "OK",
@@ -24,7 +24,7 @@
                         }
         			}
         	}); //end prompt
-         return false;
+        	 return false;
             }
          else{
 			 return true;
