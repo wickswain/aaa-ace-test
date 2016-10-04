@@ -17,28 +17,46 @@
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.rowItemDescription}" data-emptytext="Author Membership Table Row here"
      class="cq-placeholder" style="text-align: center;">
 </div>
+
 <sly data-sly-test="${properties.rowItemDescription}">
     <div class="row membership-cols roboto-light font-h">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info"> ${properties.rowItemDescription} 
-            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};" data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}" href="#myModal" class="btn-info">
-								</a>
+        <div class="col-md-3 col-sm-12 col-xs-12"> ${properties.rowItemDescription} 
+            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+               data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
+               href="#myModal" class="btn-info">
+            </a>
+        </div>
+    </div>
+    
+    <div class="row membership-cols roboto-light font-h">
+        <div class="col-md-3 col-sm-12 col-xs-12 icon-info">
+        <span class="left-col-title">
+         ${properties.rowItemDescription} 
+            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+               data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
+               href="#myModal" class="btn-info">
+		    </a>
+		    </span>
         </div>
         
-        <div data-sly-test="${tablerowprovider.columnsCount >= 1}" class="col-md-3 col-sm-4 col-xs-4"> 
+        <div data-sly-test="${tablerowprovider.columnsCount >= 1}" 
+             class="col-md-3 ${tablerowprovider.columnsCount == 1 ? 'col-sm-12 col-xs-12' : ''} ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''}"> 
             <sly data-sly-test="${properties.enableCol1Text}" data-sly-text="${properties.col1Text}"/>
             <sly data-sly-test="${!properties.enableCol1Text}"> 
                 <img src="${icon1.childResource ? icon1.childResource.fileReference : ''}" alt="${icon1.childResource ? icon1.childResource.alt : ''}" title="${icon1.childResource ? icon1.childResource.alt : ''}"/>
             </sly>
         </div>
         
-        <div data-sly-test="${tablerowprovider.columnsCount >= 2}" class="col-md-3 col-sm-4 col-xs-4"> 
+        <div data-sly-test="${tablerowprovider.columnsCount >= 2}"  
+             class="col-md-3 ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''}">
             <sly data-sly-test="${properties.enableCol2Text}" data-sly-text="${properties.col2Text}"/>
             <sly data-sly-test="${!properties.enableCol2Text}"> 
                 <img src="${icon2.childResource ? icon2.childResource.fileReference : ''}" alt="${icon2.childResource ? icon2.childResource.alt : ''}" title="${icon2.childResource ? icon2.childResource.alt : ''}"/>
             </sly>
         </div>
         
-        <div data-sly-test="${tablerowprovider.columnsCount >= 3}" class="col-md-3 col-sm-4 col-xs-4"> 
+        <div data-sly-test="${tablerowprovider.columnsCount >= 3}"  
+             class="col-md-3 col-sm-4 col-xs-4">
             <sly data-sly-test="${properties.enableCol3Text}" data-sly-text="${properties.col3Text}"/>
             <sly data-sly-test="${!properties.enableCol3Text}"> 
                 <img src="${icon3.childResource ? icon3.childResource.fileReference : ''}" alt="${icon3.childResource ? icon3.childResource.alt : ''}" title="${icon3.childResource ? icon3.childResource.alt : ''}"/>
