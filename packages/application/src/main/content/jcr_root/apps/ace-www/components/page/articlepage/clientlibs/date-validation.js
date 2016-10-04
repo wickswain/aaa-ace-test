@@ -3,9 +3,6 @@
 
 	$(document).on("click", ".cq-dialog-submit", function (e) {
 
-        e.stopPropagation();
-		e.preventDefault();
-
 		var $form = $(this).closest("form.foundation-form"),
 		isDateInvalid = $form.find("[name='./issueDate']").hasClass('is-invalid'),
         issueDate = $form.find("[name='./issueDate']").val(),
@@ -14,7 +11,6 @@
 
         if((issueDate != "" && issueDate != null && (!dateMoment.isValid() || dateMoment.year() < 1970 || dateMoment.year() > moment().year() ))
         	|| ((issueDate === "" || issueDate === null) && isDateInvalid)){
-
         	ns.ui.helpers.prompt({
 
                 title: Granite.I18n.get("Invalid Input"),
@@ -29,8 +25,11 @@
                         }
         			}
         	}); //end prompt
-        
-        }else{
+         return false;
+
+            }
+        else{
+			 return true;
         	$form.submit();
         }
 	});
