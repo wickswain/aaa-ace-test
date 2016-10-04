@@ -23,6 +23,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <showfullwidth
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to show full width"
+                                name="./showFullwidth"
+                                text="Show Fullwidth ?"
+                                value="{Boolean}true"/>
                             <rte
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/include"
