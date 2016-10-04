@@ -22,10 +22,19 @@
 
 <!-- Footernote Text Content
 ============================================= -->
-<div id="${properties.jumpLinkId}" style="background-color:${properties.backgroundColor @ context='styleToken'}; color:${properties.fontColor @ context='styleToken'}" >
-   <div class="bottom-space"></div>                              
-  		<p class="footer-p"> ${properties.text @ context='html'}</p>
-   <div class="bottom-space"></div>
-</div>
-<!-- #Footernote text-content end -->
 
+	<div id="${properties.jumpLinkId}" class="row"  style="background-color:${properties.backgroundColor @ context='styleToken'}; color:${properties.fontColor @ context='styleToken'};" >
+       <div data-sly-test.isFullWidth="${properties.showFullwidth}"  data-sly-unwrap >
+           <div class="bottom-space"></div>                              
+                <p class="footer-p"> ${properties.text @ context='html'}</p>
+           <div class="bottom-space"></div>
+       </div>
+       <div data-sly-test="${!isFullWidth}"  data-sly-unwrap>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                ${properties.text @ context='html'}
+            </div>
+            <div class="col-sm-1"></div>
+ 		</div>
+	</div>
+<!-- #Footernote text-content end -->
