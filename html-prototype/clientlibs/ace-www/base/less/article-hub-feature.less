@@ -13,7 +13,7 @@ Article Text Component
         margin-bottom: 30px;
         color: @color-white;
         .article-hero {
-            margin: 0;
+            margin: 0px 20px;
         }
         .article-header {
             position: relative;
@@ -22,21 +22,25 @@ Article Text Component
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-between;
+            margin: 0px 20px;
             .article-info {
                 color: @color-white;
                 .list-inline {
-                    margin-bottom: 0;
+                    margin: 0;
                     li:first-child {
                         display: block;
                     }
                     li {
                         margin-bottom: 15px;
+                        margin-top: 0px;
+                        float: left;
                     }
                 }
             }
             .article-content {
                 h2 {
                     margin-bottom: 30px;
+                    margin-top: 0px;
                 }
             }
             .btn-style {
@@ -54,8 +58,8 @@ Article Text Component
     .article-hero-header {
         overflow: initial;
         height: 500px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 70px;
+        margin-bottom: 70px;
         .article-hero {
             position: absolute;
             height: 460px;
@@ -66,14 +70,16 @@ Article Text Component
             width: 60%;
             padding: 50px;
             height: 500px;
+            margin: 0px;
             .article-info {
+                margin: 0px;
+                padding: 0px;
                 color: @color-white;
                 .list-inline {
                     margin-bottom: 0;
                     li:first-child {
                         display: inline-block;
                     }
-                    
                 }
             }
             .article-content {
@@ -87,10 +93,9 @@ Article Text Component
 
 @media only screen and (min-width: 992px) {
     .article-hero-header {
-        margin-top: 130px;
-        margin-bottom: 130px;
+        margin-top: 70px;
+        margin-bottom: 70px;
         .article-header {
-            margin-left: 10%;
             padding: 70px;
         }
     }
@@ -100,7 +105,6 @@ Article Text Component
     .article-hero-header {
         .article-header {
             width: 35%;
-            margin-left: 15%;
         }
     }
 }

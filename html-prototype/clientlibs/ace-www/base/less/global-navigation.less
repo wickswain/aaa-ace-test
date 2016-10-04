@@ -347,7 +347,6 @@
         left: -375px;
         transition: all 0.4s;
         overflow-x: hidden;
-        padding-top: 55px;
         overflow-y: auto;
         .slide-nav {
             width: 100%;
@@ -355,6 +354,7 @@
             transition: all 0.4s;
             background: #fff;
             position: relative;
+            margin-top: 55px;
             &.slidebox {
                 left: 0px;
             }
@@ -365,17 +365,15 @@
                 border-radius: 0px;
                 margin: 0px;
                 position: static;
+                overflow-x: hidden;
+                overflow-y: auto;
                 ul {
                     padding: 0px;
                     float: none;
                     margin: 0px;
                     .drawers-content {
-                        .list-inline {
-                            display: none;
-                        }
-                        .bottom-tiles {
-                            display: none;
-                        }
+                        width: auto;
+                        position: static;
                         .drawer-close {
                             display: none;
                         }
@@ -383,13 +381,14 @@
                             display: none;
                         }
                         ul {
-                            margin: 0px -20px;
+                            margin: 0px;
                             li {
                                 padding-left: 20px;
                             }
                         }
                         .container {
                             width: auto;
+                            padding: 0px;
                         }
                     }
                     li {
@@ -429,7 +428,7 @@
                                 font-family: 'Glyphicons Halflings';
                                 color: #303030;
                                 position: absolute;
-                                right: 0px;
+                                right: 15px;
                             }
                         }
                     }
@@ -546,14 +545,13 @@
         .drawers-tiles-list {
             transition: all 0.4s;
             width: 375px;
-            position: relative;
+            position: static;
         }
         .drawers-container {
             height: 100%;
-            position: relative;
+            position: static;
             left: 0px;
             top: 0;
-            z-index: 9;
             transition: all 0.4s;
             ul {
                 padding: 0px;
@@ -725,9 +723,14 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             float: right;
-            max-width: 125px;
-             text-decoration: none;
+            max-width: 100px;
+            text-decoration: none;
+            padding-right: 30px;
+            background: transparent url("") no-repeat 100% 50%;
         }
+    }
+    .bottom-tiles {
+        display: none;
     }
 }
 
@@ -758,6 +761,14 @@
     .roadside-block {
         .close_btn {
             width: 140px;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .roadside-text {
+        #truck-link {
+            max-width: 200px;
         }
     }
 }
@@ -1051,7 +1062,10 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
-                     text-decoration: none;
+                    text-decoration: none;
+                    padding-left: 30px;
+                    padding-right: 0px;
+                    background: transparent url("") no-repeat 0% 50%;
                 }
                 li {
                     :first-child {
@@ -1182,7 +1196,7 @@
                                 }
                             }
                             .drawers-tiles {
-                                flex: 1;
+                                flex: 0 1 33%;
                                 min-height: 240px;
                                 ul {
                                     padding-bottom: 30px;

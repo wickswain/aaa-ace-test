@@ -1,8 +1,8 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:30-September-2016
-    Version:2.2
+    Modified Date:04-Oct-2016
+    Version:3
 *****************************************/
 $j(function ($) {
 
@@ -12,11 +12,11 @@ $j(function ($) {
 
         if ($(window).width() > 992) {
             if ($(this).hasClass('opend')) {
-                $('.navigation-bar .nav > li:not(:last-child) > a').removeClass('opend deactive').next().stop().fadeOut();
-                $(".overlay").stop().fadeOut();
+                $('.navigation-bar .nav > li:not(:last-child) > a').removeClass('opend deactive').next().hide();
+                $(".overlay").hide();
             } else {
-                $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('opend').addClass('deactive').next().stop().fadeOut();
-                $(this).addClass('opend').removeClass('deactive').next().stop().fadeIn();
+                $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('opend').addClass('deactive').next().hide();
+                $(this).addClass('opend').removeClass('deactive').next().show();
                 $(".overlay").stop().fadeIn();
             }
 
@@ -44,7 +44,7 @@ $j(function ($) {
         }, 500).prev().fadeOut();
         e.preventDefault();
     });
-	
+
     $('.expand-searchbar #d-close-searchbar').parent().on('click', function (e) {
         $('.expand-searchbar').animate({
             opacity: '0',
@@ -64,7 +64,7 @@ $j(function ($) {
         }
     }
     footerResponse();
-	
+
     /*Sticky Navigation*/
     var scrollTop = ($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;
     $('.sticky-nav .dropdown-menu li > a').click(function (e) {
@@ -75,7 +75,7 @@ $j(function ($) {
         }, 1000, 'swing');
         e.preventDefault();
     });
-	
+
     /*Home Header resize*/
     function headerResize() {
         var winheight = $(window).height(),
@@ -97,7 +97,7 @@ $j(function ($) {
         $('#page-container').css('paddingTop', $('#page-header').outerHeight());
     }
     headerResize();
-	
+
     /*Home Header - jump link*/
     $('.home-header .learn-link a').click(function (e) {
         var hashtag = $(this.hash),
@@ -107,7 +107,7 @@ $j(function ($) {
         }, 1000, 'swing');
         e.preventDefault();
     });
-	
+
     /* Nav Content handling */
     /*Page Scroll*/
     $(window).scroll(function () {
@@ -142,6 +142,7 @@ $j(function ($) {
     $(window).resize(function () {
         headerResize();
         footerResponse();
+
     });
 
     /*Navigation*/
