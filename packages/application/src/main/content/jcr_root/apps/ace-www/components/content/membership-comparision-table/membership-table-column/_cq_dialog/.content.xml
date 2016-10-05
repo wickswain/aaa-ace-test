@@ -39,8 +39,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         fieldDescription="Please enter heading or title."
                         fieldLabel="Header Title"
-                        name="./title"
-                        required="{Boolean}true"/>
+                        name="./title"/>
                 </items>
             </column>
         </items>
