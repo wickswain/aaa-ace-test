@@ -3,7 +3,7 @@
  */
 
 //Article List JS
-$(function () {
+$j(function ($) {
         var filterName = "";
         var filterTag = "";
         var articleTotalListPages;
@@ -123,9 +123,9 @@ $(function () {
                      */ 
                     
                     var listHtml = "<div id='article-list' class='row article-list with-img roboto-medium font-a'> " +
-                    		"<div class='col-sm-12 col-md-6 col-lg-4'>  <div class='imgblock'> " +
+                    		"<div class='col-sm-12 col-md-4'>  <div class='imgblock'> " +
                     		"<img src='@articleImage@' alt='@articleImageAltText@' title='@articleImageAltText@' />  " +
-                    		"</div> </div> <div class='col-sm-12 col-md-6 col-lg-8 '>  " +
+                    		"</div> </div> <div class='col-sm-12 col-md-8 '>  " +
                     		"<div class='article-info'> <ul class='list-inline font-e'> " +
                     		"<li><img src='@articleLogoImage@' alt='@articleLogoAltText@' /></li> " +
                     		"<li class='author'>By @authorName@</li>" +
