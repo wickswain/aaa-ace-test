@@ -115,7 +115,7 @@
                                         fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
                                         fieldLabel="Article Issue Date"
                                         name="./issueDate"
-                                        storedFormat="LL"
+                                        storedFormat="YYYY-MM-DD"
                                         displayedFormat="MMMM DD, YY"
                                         emptyText="September 09, 16"
                                         minDate="1970-01-01" />
