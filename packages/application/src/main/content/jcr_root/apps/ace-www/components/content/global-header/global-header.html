@@ -76,14 +76,12 @@
 	    </div>
 	    
 	    <div class="col-xs-4 col-md-5 col-md-pull-7">
-	        <ul class="nav-list-inline font-h dropdown roadside-text">
+	       <ul class="nav-list-inline font-h dropdown roadside-text">
+
 	            <li>
-                    <a data-sly-test="${currentStyle.leftLink1Label}"
+                     <a data-sly-test="${currentStyle.leftLink1Label}"  style="background-image:url( '${currentStyle.icon1Path ? currentStyle.icon1Path : '' @ context='uri'}');" title="${currentStyle.icon1Alt}"
 	                   target="${currentStyle.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
 	                   href="${leftLink1.url}" id="truck-link">
-	                    <img data-sly-test="${currentStyle.icon1Path}"
-	                         src="${currentStyle.icon1Path}" title="${currentStyle.icon1Alt}" 
-	                         alt="${currentStyle.icon1Alt}" class="truck-icon"/>
 	                    ${currentStyle.leftLink1Label}
 	                </a>
 	                
