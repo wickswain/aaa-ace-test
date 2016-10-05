@@ -6,9 +6,11 @@
     transition: all 0.4s;
     border: 0;
 }
+
 #global-header {
     padding: 0px 20px;
 }
+
 .dark-bg {
     background: @color-blue none;
     padding: 20px;
@@ -29,6 +31,60 @@
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
+    background: transparent;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.search-overlay {
+    position: fixed;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0px;
+    left: 0;
+    right: 0;
+    width: 375px;
+    bottom: 0;
+    display: none;
+}
+
+.drawers-tiles,
+.drawers-tiles-list {
+    /*margin-top: -30px;
+        opacity: 0;*/
+    transition: all 0.4s;
+}
+
+.bottom-tiles {
+    /* margin-bottom: -30px;
+        opacity: 0;*/
+    transition: all 0.4s;
+}
+
+.dropdown {
+    &.open {
+        .drawers-tiles,
+        .drawers-tiles-list {
+            margin-top: 0;
+            opacity: 1;
+        }
+        .bottom-tiles {
+            margin-bottom: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.open>a:focus {
     background: transparent;
 }
 
@@ -61,7 +117,7 @@
                 top: 6px;
             }
         }
-    }    
+    }
     .header-bar {
         .top-header {
             background: #005095;
@@ -82,13 +138,24 @@
                 height: 70px;
                 width: 90px;
                 background: @color-white none;
-                padding: 16px;
                 box-shadow: 0px 0px 5px #000;
                 position: relative;
                 line-height: normal;
                 margin: 0 auto;
                 margin-bottom: -10px;
                 display: block;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                z-index: 9;
+                a {
+                    padding: 0px;
+                    img {
+                        margin: 0 auto;
+                    }
+                }
             }
             .truck-icon {
                 margin: 25px 0px 0px 10px;
@@ -141,11 +208,10 @@
                         margin-top: 5px;
                         color: #fff;
                         .restrict-characters {
-                            width: 73%;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            overflow: hidden;
                             white-space: nowrap;
+                            max-width: 200px;
                             display: inline-block;
                         }
                     }
@@ -281,14 +347,14 @@
         left: -375px;
         transition: all 0.4s;
         overflow-x: hidden;
-        padding-top: 55px;
-        overflow-y: scroll;
+        overflow-y: auto;
         .slide-nav {
             width: 100%;
             left: 0;
             transition: all 0.4s;
             background: #fff;
             position: relative;
+            margin-top: 55px;
             &.slidebox {
                 left: 0px;
             }
@@ -299,17 +365,15 @@
                 border-radius: 0px;
                 margin: 0px;
                 position: static;
+                overflow-x: hidden;
+                overflow-y: auto;
                 ul {
                     padding: 0px;
                     float: none;
                     margin: 0px;
                     .drawers-content {
-                        .list-inline {
-                            display: none;
-                        }
-                        .bottom-tiles {
-                            display: none;
-                        }
+                        width: auto;
+                        position: static;
                         .drawer-close {
                             display: none;
                         }
@@ -317,13 +381,14 @@
                             display: none;
                         }
                         ul {
-                            margin: 0px -20px;
+                            margin: 0px;
                             li {
                                 padding-left: 20px;
                             }
                         }
                         .container {
                             width: auto;
+                            padding: 0px;
                         }
                     }
                     li {
@@ -363,7 +428,7 @@
                                 font-family: 'Glyphicons Halflings';
                                 color: #303030;
                                 position: absolute;
-                                right: 0px;
+                                right: 15px;
                             }
                         }
                     }
@@ -480,14 +545,13 @@
         .drawers-tiles-list {
             transition: all 0.4s;
             width: 375px;
-            position: relative;
+            position: static;
         }
         .drawers-container {
             height: 100%;
-            position: relative;
+            position: static;
             left: 0px;
             top: 0;
-            z-index: 9;
             transition: all 0.4s;
             ul {
                 padding: 0px;
@@ -655,12 +719,18 @@
             color: #fff;
         }
         #truck-link {
-            width: 105px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             float: right;
+            max-width: 100px;
+            text-decoration: none;
+            padding-right: 30px;
+            background: transparent url("") no-repeat 100% 50%;
         }
+    }
+    .bottom-tiles {
+        display: none;
     }
 }
 
@@ -691,6 +761,14 @@
     .roadside-block {
         .close_btn {
             width: 140px;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .roadside-text {
+        #truck-link {
+            max-width: 200px;
         }
     }
 }
@@ -769,7 +847,7 @@
                     margin-left: 15px;
                 }
                 .restrict-characters {
-                    width: 60px;
+                    max-width: 65px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
@@ -781,14 +859,22 @@
                 height: 90px;
                 width: 100px;
                 background: @color-white none;
-                padding: 16px;
                 box-shadow: 0px 0px 5px #000;
                 position: relative;
                 line-height: normal;
                 margin: 0 auto;
                 margin-bottom: -10px;
-                display: block;
-                z-index: 9999999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                z-index: 9;
+                a {
+                    padding: 0px;
+                    img {
+                        margin: 0 auto;
+                    }
+                }
             }
             .truck-icon {
                 margin-right: 10px;
@@ -971,6 +1057,16 @@
             }
             .roadside-text {
                 text-align: left;
+                #truck-link {
+                    max-width: 200px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-decoration: none;
+                    padding-left: 30px;
+                    padding-right: 0px;
+                    background: transparent url("") no-repeat 0% 50%;
+                }
                 li {
                     :first-child {
                         padding-left: 0px;
@@ -1100,7 +1196,8 @@
                                 }
                             }
                             .drawers-tiles {
-                                flex: 1;
+                                flex: 0 1 33%;
+                                min-height: 240px;
                                 ul {
                                     padding-bottom: 30px;
                                     margin: 0 auto;
@@ -1157,6 +1254,7 @@
                             }
                             .drawers-tiles-list {
                                 flex: 2;
+                                min-height: 400px;
                                 .drawers-container {
                                     max-width: 1140px;
                                     margin: 0 auto;
@@ -1198,7 +1296,7 @@
                                         }
                                     }
                                     li {
-                                        list-style: none;
+                                        list-style-type: none;
                                         padding-top: 10px;
                                         color: @color-white;
                                         a {
@@ -1261,10 +1359,22 @@
             }
         }
     }
-    .overlay {
+    /*.overlay {
         display: none !important;
-    }
+    }*/
     /*End Global Navigation*/
+}
+
+@media (min-width:1200px) {
+    .header-bar {
+        .top-header {
+            .user-info {
+                .restrict-characters {
+                    max-width: 125px;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1700px) {
@@ -1273,58 +1383,4 @@
         top: 20px;
         z-index: 1;
     }
-}
-
-.overlay {
-    position: fixed;
-    z-index: 99;
-    background-color: rgba(0, 0, 0, 0.7);
-    top: 60px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: none;
-}
-
-.search-overlay {
-    position: fixed;
-    z-index: 99;
-    background-color: rgba(255, 255, 255, 0.7);
-    top: 0px;
-    left: 0;
-    right: 0;
-    width: 375px;
-    bottom: 0;
-    display: none;
-}
-
-.drawers-tiles,
-.drawers-tiles-list {
-    /*margin-top: -30px;
-        opacity: 0;*/
-    transition: all 0.4s;
-}
-
-.bottom-tiles {
-    /* margin-bottom: -30px;
-        opacity: 0;*/
-    transition: all 0.4s;
-}
-
-.dropdown {
-    &.open {
-        .drawers-tiles,
-        .drawers-tiles-list {
-            margin-top: 0;
-            opacity: 1;
-        }
-        .bottom-tiles {
-            margin-bottom: 0;
-            opacity: 1;
-        }
-    }
-}
-
-.open>a:focus {
-    background: transparent;
 }
