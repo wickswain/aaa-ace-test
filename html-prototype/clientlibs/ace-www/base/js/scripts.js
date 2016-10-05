@@ -112,7 +112,7 @@ $j(function ($) {
     /*Page Scroll*/
     $(window).scroll(function () {
         /*Navigtion Header offset*/
-        if ($(this).scrollTop() >= 400) {
+        if ($(this).scrollTop() >= 400 && $(window).width() > 768) {
             $('header').css({
                 'top': '-' + $('#page-header').outerHeight() + 'px'
             });
