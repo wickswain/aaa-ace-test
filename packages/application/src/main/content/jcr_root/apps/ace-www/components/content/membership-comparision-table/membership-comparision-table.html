@@ -38,7 +38,7 @@
                 <sly data-sly-list.column="${tableprovider.columns}">
                     <div style="background-color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex == columnList.index && properties.columnBackgroundColor) ? properties.columnBackgroundColor : '' @ context='styleToken'};
                                 color:${(properties.highlightedColumn && tableprovider.highlightedColumnIndex==columnList.index && properties.fontColor) ? properties.fontColor : '' @ context='styleToken'};"
-                         class="col-md-3 ${properties.columnCount == '1' ? 'col-sm-12 col-xs-12' : ''} ${properties.columnCount == '2' ? 'col-sm-6 col-xs-6' : ''} ${properties.columnCount == '3' ? 'col-sm-4 col-xs-4' : ''} header">
+                         class="col-md-3 ${properties.columnCount == '1' ? 'col-sm-12 col-xs-12' : ''} ${properties.columnCount == '2' ? 'col-sm-6 col-xs-6' : ''} ${properties.columnCount == '3' ? 'col-sm-4 col-xs-4' : ''}">
                         <sly data-sly-resource="${column.path @ resourceType=column.resourceType}"/>
                     </div>
                 </sly>
