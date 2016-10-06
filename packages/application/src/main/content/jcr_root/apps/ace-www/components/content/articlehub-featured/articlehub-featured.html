@@ -17,12 +17,12 @@
 <!-- Placeholder Content
 ============================================= -->
 <sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider'}" />
-<sly data-sly-use.utilJS="articlehub-featured.js"></sly>
 
 <sly data-sly-test.articlepage="${articledata.articlePage}"
 	 data-sly-test.articlehero="${articledata.articleHero}"
 	 data-sly-test.isArticle="${articlepage.template.name=='article'}"/>
-	 
+     <sly data-sly-use.datevalue="${'articlehub-featured.js' @ issuedate=articlePage.properties.issueDate}"/>
+
 <sly data-sly-test.isAuthored="${properties.artclepagePath}"/>
 
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
@@ -45,7 +45,7 @@
 	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
 	                         <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
 	                     <li data-sly-test="${articlePage.properties.authorName}">By ${articlePage.properties.authorName}</li>
-	                     <li data-sly-test="${articlePage.properties.issueDate}"><i class="glyphicon glyphicon-time"></i> <span class="date">${utilJS.formattedIssueDate}</span></li>
+	                     <li data-sly-test="${articlePage.properties.issueDate}"><i class="glyphicon glyphicon-time"></i> <span class="date">${datevalue.formattedIssueDate }</span></li>
 	                 </ul>
 	              </div>
 	              <div class="article-content">
