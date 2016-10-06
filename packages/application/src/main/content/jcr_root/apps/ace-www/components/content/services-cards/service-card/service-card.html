@@ -17,7 +17,7 @@
                     <h2 title="Card Heading">${properties.cardtitle}</h2>
                 </div>
                 <div class="horizontal-space" style="color:${properties.cardTextFontColor @ context='styleToken'};">
-                    <p data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}"></p>
+                    <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}"/>
                 </div>
                 <div class="text-center">
                     <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>

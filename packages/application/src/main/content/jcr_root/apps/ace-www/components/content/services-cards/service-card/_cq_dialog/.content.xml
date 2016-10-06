@@ -17,6 +17,7 @@
                         <image
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                            fieldDescription="Icon is optional"
                             fieldLabel="Image"
                             rootPath="/content/dam/"
                             name="./image"/>
@@ -28,7 +29,9 @@
                             name="./altText"/>
                         <text jcr:primaryType="nt:unstructured"
                               sling:resourceType="granite/ui/components/foundation/form/textfield"
+                              fieldDescription="Complete this field and the RTE will appear"
                               fieldLabel="Card Heading"
+                              required="{Boolean}true"
                               name="./cardtitle" />
                         <card-title-text-font-color
                                 jcr:primaryType="nt:unstructured"
@@ -43,7 +46,7 @@
                                 sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
                                 colorsPath="/etc/config/ace-www/components/common/textfontcolors"
                                 fieldDescription="Font color for the card text"
-                                fieldLabel="Card Text Color"
+                                fieldLabel="Card RTE Text Color"
                                 freestylePalette="{Boolean}true"
                                 name="./cardTextFontColor"/>
                         <bgcolor
