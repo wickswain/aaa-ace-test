@@ -52,6 +52,10 @@
 							<root>/etc/clientlibs/ace-www</root>
 						</filter>
 						
+                        <filter>
+                            <root>/etc/workflow</root>
+                        </filter>
+                        
 						<filter>
 							<root>/etc/config/ace-www</root>
 						</filter>
