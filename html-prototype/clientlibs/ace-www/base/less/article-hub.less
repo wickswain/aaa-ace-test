@@ -56,6 +56,18 @@ Article Text Component
         .no-padding {
             padding-left: 0px;
         }
+        .checked-list-item-main {
+            &:after {
+                content: "\e114";
+                font-family: 'Glyphicons Halflings';
+                font-size: 12px;
+                line-height: 14px;
+                position: relative;
+                top: 1px;
+                display: inline-block;
+                right: -5px;
+            }
+        }
     }
     /* Responsive styles */
     
@@ -93,7 +105,6 @@ Article Text Component
             .article-info {
                 li {
                     &:first-child {
-                        display: block;
                         margin-bottom: 15px;
                     }
                     &:last-child {
@@ -149,7 +160,7 @@ Article Text Component
             .article-info {
                 li {
                     &:first-child {
-                        display: block;
+                        display: inline-block;
                         margin-bottom: 15px;
                     }
                     &:last-child {
