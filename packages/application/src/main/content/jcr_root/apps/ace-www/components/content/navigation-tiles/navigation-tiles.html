@@ -1,24 +1,24 @@
-
 <!--/* Placeholder Content
 ============================================= */-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) || !child.pageType }" data-emptytext="Author Navigation Tiles here"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !resource.listChildren}" 
+	 data-emptytext="Author Navigation Tiles here"
      class="cq-placeholder" style="text-align: center;">
 </div>
 <!--/* #placeholder-content end */-->
-<div class="drawers-tiles">
-   <div class="text-center container">
-     <ul class="list-inline">
-          <sly data-sly-list.child="${resource.listChildren}">
-   			<li data-sly-test="${child.pageType == 'tile'}">
-                <a href="${child.linkURL ? child.linkURL : ''  @ context='uri'}"
-                    target="${child.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
-                      class="tile-card"> 
-                  <img src="${child.tileIcon}" alt="${child.tileIconAltText}"
-                        title="${child.tileIconAltText}" width="34" height="34" class="drawer-image"/> 
-                   <span data-sly-text="${child.title}" class="tile-title"></span>
-                 </a>
-              </li>
-           </sly>
-      </ul>
-     </div>
- </div>
+ <div class="drawers-tiles">
+     <div class="text-center container">
+        <ul class="list-inline">
+             <sly data-sly-list.child="${resource.listChildren}">
+           			<li data-sly-test="${child.pageType == 'tile'}">
+                        <a href="${child.linkURL ? child.linkURL : ''  @ context='uri'}"
+                            target="${child.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
+                              class="tile-card"> 
+                          <img src="${child.tileIcon}" alt="${child.tileIconAltText}"
+                                title="${child.tileIconAltText}" width="34" height="34" class="drawer-image"/> 
+                           <span data-sly-text="${child.title}" class="tile-title"></span>
+                         </a>
+                    </li>
+              </sly>
+         </ul>
+       </div>
+  </div>
