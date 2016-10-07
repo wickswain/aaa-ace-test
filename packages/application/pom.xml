@@ -52,6 +52,18 @@
 							<root>/etc/clientlibs/ace-www</root>
 						</filter>
 						
+                        <filter>
+                            <root>/etc/workflow/models/ace-www</root>
+                        </filter>
+                        
+                        <filter>
+                            <root>/etc/workflow/notification/email/default</root>
+                        </filter>
+                        
+                        <filter>
+                            <root>/etc/workflow/ace-www</root>
+                        </filter>
+                        
 						<filter>
 							<root>/etc/config/ace-www</root>
 						</filter>
