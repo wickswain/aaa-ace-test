@@ -143,31 +143,12 @@
                                 <div class="drawer-close">
                                     <div class="close-icon close-drawer"><span>+</span></div>
                                 </div>
-                                
-                                <div class="drawers-tiles">
-                                    <div class="text-center container">
-                                        <ul data-sly-list.child="${item.navigList}"
-                                            class="list-inline">
-                                            <!-- Second Level Tiles Navigation loop start -->
-                                            <sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child.currentpage.properties.linkURL}" />
-                                            
-                                            <li data-sly-test="${child.currentpage.properties.pageType == 'tile'}">
-                                                <a  href="${childPage.url ? childPage.url : ''  @ context='uri'}"
-                                                    target="${child.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
-                                                    class="tile-card">
-                                                    
-                                                    <img src="${child.currentpage.properties.tileIcon}" alt="${child.currentpage.properties.tileIconAltText}"
-                                                         title="${child.currentpage.properties.tileIconAltText}" width="34" height="34" class="drawer-image"/> 
-                                                    <span data-sly-text="${child.currentpage.properties.navTitle ? child.currentpage.properties.navTitle : child.currentpage.title}"
-                                                          class="tile-title">
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <!-- Second Level Tiles Navigation loop end -->
-                                        </ul>
-                                    </div>
+                                <!-- navigation tiles -->
+                                <div id="bottom-nav-${itemList.index}"
+                                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link0/navigation-tiles/jcr:content/content-par/navigation_tiles' @ format=[itemList.index]}"
+                                     data-sly-resource="${ @path=path, resourceType='/apps/ace-www/components/content/navigation-tiles' }">
                                 </div>
-                                
+
                                 <div class="drawers-tiles-list">
                                     <div class="container">
                                         <div data-sly-list.child="${item.navigList}" class="drawers-container">
@@ -196,7 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Drawers bootom -->
                                 <div id="bottom-nav-${itemList.index}"
                                      data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
