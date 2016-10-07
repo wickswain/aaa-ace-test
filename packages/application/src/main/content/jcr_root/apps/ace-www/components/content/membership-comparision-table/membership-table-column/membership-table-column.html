@@ -6,11 +6,12 @@
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}" data-emptytext="Author Membership Table Column here"
+<sly data-sly-test.isAuthored="${properties.title || properties.headerImage}"></sly>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" data-emptytext="Author Membership Table Column here"
      class="cq-placeholder" style="text-align: center;">
 </div>
 
-<div class="header" data-sly-test="${properties.title}">
+<div class="header" data-sly-test="${isAuthored}">
     <div class="img-block">
         <img src="${properties.headerImage}" title="${properties.headerImageAltText}" 
              alt="${properties.headerImageAltText}" class="img-responsive" />
