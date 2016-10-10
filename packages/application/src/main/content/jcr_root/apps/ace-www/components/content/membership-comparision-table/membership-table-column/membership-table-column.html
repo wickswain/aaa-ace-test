@@ -6,22 +6,25 @@
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}" data-emptytext="Author Membership Table Column here"
+<sly data-sly-test.isAuthored="${properties.title || properties.headerImage}"></sly>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" data-emptytext="Author Membership Table Column here"
      class="cq-placeholder" style="text-align: center;">
 </div>
-<sly data-sly-test="${properties.title}">
-    <div class="membership-comparision-img-height">
+
+<div class="header" data-sly-test="${isAuthored}">
+    <div class="img-block">
         <img src="${properties.headerImage}" title="${properties.headerImageAltText}" 
              alt="${properties.headerImageAltText}" class="img-responsive" />
     </div>
     
-    <h1 class="roboto-light">${properties.title}</h1>
-    
-    <div class="roboto-light font-g subtitle-b-spacing border-none">
-        <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
+    <div class="contentblock">
+        <h1 class="roboto-light" data-sly-text="${properties.title}"></h1>
+	    <div class="roboto-light font-h subtitle-b-spacing">
+	        <sly data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"/>
+	    </div>
     </div>
-    
-    <div data-sly-resource="${ @path='cta-small', resourceType='/apps/ace-www/components/content/ctabuttons/single-ctabutton-small'}">
-    </div>
-</sly>
-
+	
+	<div class="actionitem"
+	     data-sly-resource="${ @path='cta-small', resourceType='/apps/ace-www/components/content/ctabuttons/single-ctabutton-small'}">
+	</div>
+</div>
