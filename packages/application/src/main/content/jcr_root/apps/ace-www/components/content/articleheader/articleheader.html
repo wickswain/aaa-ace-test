@@ -8,10 +8,13 @@ The properties of the component are part of page properties so no dialog is prov
 
 */-->
 
+<!--/* Java USE Declaration */-->
+<sly data-sly-test.isAuthored="${pageProperties.authorName && pageProperties.articleTitle}"></sly>
+<sly data-sly-use.utilJS="articleheader.js"></sly>
+
+
 <!-- Placeholder Content
 ============================================= -->
-<sly data-sly-test.isAuthored="${pageProperties.authorName && pageProperties.articleTitle}"></sly>
-
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
 		data-emptytext="Author Aritcle properties under page properties to render article header"
      	class="cq-placeholder text-center">
@@ -26,7 +29,7 @@ The properties of the component are part of page properties so no dialog is prov
    		<li>By ${pageProperties.authorName}</li>
    		<li data-sly-test="${pageProperties.issueDate}">
         	<i class="glyphicon glyphicon-time"></i>
-   			<span class="date">${pageProperties.issueDate}</span>
+   			<span class="date">${utilJS.formattedIssueDate}</span>
   		</li>
   	</ul>
   </div>
