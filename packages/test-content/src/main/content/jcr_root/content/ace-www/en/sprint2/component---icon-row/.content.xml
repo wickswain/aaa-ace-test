@@ -7,11 +7,11 @@
         cq:lastReplicated="{Date}2016-09-01T12:12:18.862-06:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/homepage"
+        cq:template="/apps/ace-www/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - Icon Row"
         jcr:uuid="fc0e4491-18f2-42b3-9aee-f15fb94dac60"
-        sling:resourceType="ace-www/components/page/homepage"/>
+        sling:resourceType="ace-www/components/page/genericpage"/>
 </jcr:root>

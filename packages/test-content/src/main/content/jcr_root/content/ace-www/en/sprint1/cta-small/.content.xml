@@ -4,10 +4,10 @@
     <jcr:content
         cq:lastModified="{Date}2016-08-12T20:49:07.646+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/ace-www/templates/homepage"
+        cq:template="/apps/ace-www/templates/generic"
         jcr:primaryType="cq:PageContent"
         jcr:title="Base Component - CTA Button/Link Small"
-        sling:resourceType="ace-www/components/page/homepage">
+        sling:resourceType="ace-www/components/page/genericpage">
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
