@@ -25,6 +25,11 @@ public class Constants {
     public static final String COMMA = ",";
 
     /**
+     * String colon.
+     */
+    public static final String COLON = ":";
+
+    /**
      * String AND.
      */
     public static final String AND = " AND ";
@@ -38,6 +43,11 @@ public class Constants {
      * String path separator.
      */
     public static final String STRING_PATH_SEPARATOR = "/";
+
+    /**
+     * String HTML extension.
+     */
+    public static final String HTML_EXTENSION = ".html";
 
     /**
      * Personalization content base path.
