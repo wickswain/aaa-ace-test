@@ -110,6 +110,13 @@
 			<groupId>org.apache.sling</groupId>
 			<artifactId>org.apache.sling.commons.osgi</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.adobe.aem</groupId>
+			<artifactId>uber-jar</artifactId>
+			<classifier>obfuscated-apis</classifier>
+			<scope>provided</scope>
+		</dependency>
 		
 		<!-- Other dependencies - End -->
 	</dependencies>
