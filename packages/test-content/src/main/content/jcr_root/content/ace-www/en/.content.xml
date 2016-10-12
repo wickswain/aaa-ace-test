@@ -11,7 +11,7 @@
         jcr:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
         jcr:title="AAA Ace Web Sites"
-        sling:resourceType="/apps/ace-www/components/page/homepage"
+        sling:resourceType="/apps/ace-www/components/page/genericpage"
         navTitle="Navigation Title"/>
     <sprint1/>
     <article-hub/>

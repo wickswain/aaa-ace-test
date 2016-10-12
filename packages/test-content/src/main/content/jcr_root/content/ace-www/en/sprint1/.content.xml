@@ -4,10 +4,10 @@
     <jcr:content
         cq:lastModified="{Date}2016-08-12T21:43:21.133+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/ace-www/templates/homepage"
+        cq:template="/apps/ace-www/templates/generic"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sprint1 Demo"
-        sling:resourceType="ace-www/components/page/homepage">
+        sling:resourceType="ace-www/components/page/genericpage">
         <header-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">

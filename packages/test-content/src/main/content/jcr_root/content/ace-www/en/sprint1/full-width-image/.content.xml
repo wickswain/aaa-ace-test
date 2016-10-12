@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2016-08-12T18:24:04.854+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/ace-www/templates/homepage"
+        cq:template="/apps/ace-www/templates/generic"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - Full-Width Image"
-        sling:resourceType="ace-www/components/page/homepage"/>
+        sling:resourceType="ace-www/components/page/genericpage"/>
 </jcr:root>
