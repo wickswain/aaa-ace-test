@@ -14,7 +14,7 @@
         jcr:title="Axis41 Core"
         jcr:uuid="e6367b76-175c-4a5a-bd6d-d423b733aebf"
         sling:resourceType="wcm/core/components/designer">
-        <homepage jcr:primaryType="nt:unstructured">
+        <genericpage jcr:primaryType="nt:unstructured">
             <content-par
                 jcr:lastModified="{Date}2016-08-12T19:42:38.832+05:30"
                 jcr:lastModifiedBy="admin"
@@ -42,6 +42,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/reference"
                 path="/content/personalization/ace-www/206/global-footer/jcr:content/content-par/global_footer"/>
-        </homepage>
+        </genericpage>
     </jcr:content>
 </jcr:root>
