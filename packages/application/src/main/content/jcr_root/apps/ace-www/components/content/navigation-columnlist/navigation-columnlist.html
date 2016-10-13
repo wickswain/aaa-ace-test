@@ -1,0 +1,33 @@
+
+  <!--/* Placeholder Content
+============================================= */-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !resource.listChildren}" 
+	 data-emptytext="Author Navigation Column List here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+
+<!--/* #placeholder-content end */-->
+
+ <div class="drawers-tiles-list">
+	<div class="container">
+        <div data-sly-list="${resource.listChildren}" class="drawers-container">
+	         <ul class="${item.last ? 'tiles-list' : 'tiles-list border-manage'}">
+	             <li>
+	                <h3 data-sly-text="${item.columntitle}" class="sub-title"></h3>
+	                 <sly data-sly-use.multifieldprovider="${'com.aaa.ace.sightly.providers.MultifieldDataProvider' @ name = item.name}"/>
+	                        <ul data-sly-list.fieldvalue="${multifieldprovider.childResource.listChildren}">    
+	                         <!-- Third Level Links Navigation loop start -->
+	                            <sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=fieldvalue.linkURL}" />        
+	                                  <li>
+	                                       <a href="${childPage.url ? childPage.url : ''  @ context='uri'}"
+	                                          data-sly-text="${fieldvalue.linktitle ? fieldvalue.linktitle : fieldvalue.linktitle}"
+	                                          target="${fieldvalue.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+	                                       </a>
+	                                  </li>
+	                          <!-- Third Level Links Navigation loop end -->
+	                     	</ul>
+	              </li>
+	          </ul> 
+        </div>
+     </div>
+</div>
