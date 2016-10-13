@@ -1,0 +1,17 @@
+From: AAA Admin <info@aaa.com>
+
+Subject: Workflow Notification
+
+Hello ${recipientName}
+
+Content changes made on ${host.prefix}${payload.path.open} are rejected.
+
+regards
+AAA Team
+
+-------------------------------------------------------
+This is an automatic generated message. Please do not reply.
+
+-----------------------------------------
+All Workflow properties:
+${properties}
