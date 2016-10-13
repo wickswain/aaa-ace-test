@@ -16,8 +16,6 @@ public class UserDetailsBean {
 
     private String email;
 
-    private String status;
-
     /**
      * @return the userID
      */
@@ -61,21 +59,6 @@ public class UserDetailsBean {
      */
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    /**
-     * @return the status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    /**
-     * @param status
-     *            the status to set
-     */
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     @Override

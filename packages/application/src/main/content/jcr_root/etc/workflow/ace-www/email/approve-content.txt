@@ -1,17 +1,15 @@
-From: AAA Admin <info@aaa.com>
+From: info@aaa.com
+Subject: Workflow Notification: ${title}
 
-Subject: Workflow Notification
+Hello ${recipientName},
 
-Hello ${recipientName}
+You have received an item in your workflow inbox pending for your review. 
+Please access the link ${inboxpath} to act on the pending item(s).
 
-Content changes made on ${host.prefix}${payload.path.open} are approved.
+Regards,
+AAA Team.
 
-regards
-AAA Team
+-----------------------------------------------------------------
+This is an automatically generated message. Please do not reply.
 
--------------------------------------------------------
-This is an automatic generated message. Please do not reply.
-
------------------------------------------
-All Workflow properties:
-${properties}
+-----------------------------------------------------------------

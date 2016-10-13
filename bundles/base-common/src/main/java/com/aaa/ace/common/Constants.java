@@ -82,6 +82,31 @@ public final class Constants {
     public static final String CONTENT_PERSONALIZATION_ACE_WWW_PATH = "/content/personalization/ace-www/";
 
     /**
+     * Application content base path.
+     */
+    public static final String CONTENT_ROOT_PATH = "/content";
+
+    /**
+     * AEM user given name path.
+     */
+    public static final String PROFILE_GIVEN_NAME = "./profile/givenName";
+
+    /**
+     * AEM user email path.
+     */
+    public static final String PROFILE_EMAIL = "./profile/email";
+
+    /**
+     * AEM work flow JCR path.
+     */
+    public static final String JCR_PATH = "JCR_PATH";
+
+    /**
+     * AEM work flow arguments string.
+     */
+    public static final String PROCESS_ARGS = "PROCESS_ARGS";
+
+    /**
      * Instantiates a new constants.
      */
     private Constants() {
