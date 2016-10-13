@@ -27,11 +27,14 @@ import javax.xml.stream.XMLStreamWriter;
 @Service
 @SuppressWarnings("serial")
 @Properties({
-                @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default"),
+                @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default",
+                                                                    propertyPrivate = true),
                 @Property(name = "sling.servlet.selectors", value = "sitemapindex",
-                                propertyPrivate = true),
-                @Property(name = "sling.servlet.extensions", value = "xml", propertyPrivate = true),
-                @Property(name = "sling.servlet.methods", value = "GET", propertyPrivate = true),
+                                                                    propertyPrivate = true),
+                @Property(name = "sling.servlet.extensions", value = "xml", 
+                                                                    propertyPrivate = true),
+                @Property(name = "sling.servlet.methods", value = "GET", 
+                                                                    propertyPrivate = true),
                 @Property(name = "webconsole.configurationFactory.nameHint",
                                 value = "Site Map index for root - aaa.com ") })
 /**

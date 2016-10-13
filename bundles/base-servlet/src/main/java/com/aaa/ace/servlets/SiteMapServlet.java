@@ -41,10 +41,14 @@ import javax.xml.stream.XMLStreamWriter;
 @Service
 @SuppressWarnings("serial")
 @Properties(value = {
-                @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default"),
-                @Property(name = "sling.servlet.selectors", value = "sitemap"),
-                @Property(name = "sling.servlet.extensions", value = "xml"),
-                @Property(name = "sling.servlet.methods", value = "GET") })
+                @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default",
+                                                                 propertyPrivate = true),
+                @Property(name = "sling.servlet.selectors", value = "sitemap",
+                                                                 propertyPrivate = true),
+                @Property(name = "sling.servlet.extensions", value = "xml",
+                                                                 propertyPrivate = true),
+                @Property(name = "sling.servlet.methods", value = "GET",
+                                                                 propertyPrivate = true) })
 public final class SiteMapServlet extends SlingSafeMethodsServlet {
 
     private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
