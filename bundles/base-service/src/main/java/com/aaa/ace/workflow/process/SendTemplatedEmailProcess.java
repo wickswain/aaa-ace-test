@@ -156,7 +156,7 @@ public class SendTemplatedEmailProcess implements WorkflowProcess {
         log.info("Workflow previous step comments: " + comment);
 
         // Send email if send to group name and template path are not empty.
-        if (StringUtils.isNotBlank(sendTo) && StringUtils.isNotBlank(templatePath)) {
+        if (StringUtils.isNotBlank(templatePath)) {
             // Get the recipients list of users tagged with the group.
             List<UserDetailsBean> recipientsList = null;
             if (reviewStatus.contains("reject")) {
