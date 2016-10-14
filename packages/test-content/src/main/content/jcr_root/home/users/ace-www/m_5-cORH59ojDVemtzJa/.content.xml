@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:43:21.268+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:43:21.268+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="06d89b61-bdcb-35db-8b99-d9edca5e6269"
+    rep:authorizableId="aaa-lob-membership-manager"
+    rep:password="\{SHA-256}e5fcadf4f07d1946-1000-1b1ef974e8d32e6a2f89f5bb8a4f209a5689c39cedcd06c7acc3208189a18cfc"
+    rep:principalName="aaa-lob-membership-manager">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        email="hardik.desai@valuelabs.com"
+        familyName="LOB Manager"
+        gender="Select"
+        givenName="Membership"/>
+</jcr:root>

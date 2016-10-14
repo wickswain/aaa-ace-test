@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:lastModified="{Date}2016-10-14T15:39:31.565+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:39:31.565+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="1a56d6b8-13be-392c-bb79-54ba6f8c2b0d"
+    rep:authorizableId="aaa-legal-ogc"
+    rep:members="{WeakReference}[e65fa9d6-d56b-33f9-8c74-90dd9624d732]"
+    rep:principalName="aaa-legal-ogc">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        givenName="Legal Office of General Counsel"/>
+</jcr:root>

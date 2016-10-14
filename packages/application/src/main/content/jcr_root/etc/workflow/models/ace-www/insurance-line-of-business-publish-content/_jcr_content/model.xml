@@ -2,12 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:isCheckedOut="{Boolean}false"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="8f1752d8-b9f5-4331-8f1f-bcbcdca798f3"
+    jcr:uuid="7156c28a-4089-46d8-9385-9b25b8f77c07"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Membership Line of Business Publish Content">
+    title="Insurance Line of Business Publish Content">
     <metaData
-        cq:lastModified="{Long}1476361121978"
+        cq:lastModified="{Long}1476441483958"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -19,13 +19,13 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Email notification sent to the 1st level reviewers &quot;Membership Line of Business Members&quot;."
+            description="Email notification sent to the 1st level reviewers &quot;Insurance Line of Business Members&quot;."
             title="Review Content"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
-                PROCESS_ARGS="sendTo:aaa-membership-lob-members,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:initite-content-review"
+                PROCESS_ARGS="sendTo:aaa-insurance-lob-members,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:initite-content-review"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2
@@ -35,7 +35,7 @@
             type="PARTICIPANT">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PARTICIPANT="aaa-membership-lob-members"/>
+                PARTICIPANT="aaa-insurance-lob-members"/>
         </node2>
         <node3
             jcr:primaryType="cq:WorkflowNode"
@@ -51,13 +51,13 @@
         </node4>
         <node5
             jcr:primaryType="cq:WorkflowNode"
-            description="Content changes are approved by Membership Line of Business and an email notification sent to the 2nd level reviewers &quot;Membership Line of Business Managers&quot;."
+            description="Content changes are approved by Insurance Line of Business and an email notification sent to the 2nd level reviewers &quot;Insurance Line of Business Managers&quot;."
             title="Approve Content"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
-                PROCESS_ARGS="sendTo:aaa-membership-lob-managers,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-member-approve"
+                PROCESS_ARGS="sendTo:aaa-insurance-lob-managers,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-member-approve"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node5>
         <node6
@@ -67,7 +67,7 @@
             type="PARTICIPANT">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PARTICIPANT="aaa-membership-lob-managers"/>
+                PARTICIPANT="aaa-insurance-lob-managers"/>
         </node6>
         <node7
             jcr:primaryType="cq:WorkflowNode"
@@ -83,7 +83,7 @@
         </node8>
         <node9
             jcr:primaryType="cq:WorkflowNode"
-            description="Content changes are approved by Membership Line of Business Managers and an email notification sent to the 3rd level reviewers &quot;Legal OGC&quot;."
+            description="Content changes are approved by Insurance Line of Business Managers and an email notification sent to the 3rd level reviewers &quot;Legal OGC&quot;."
             title="Approve Content"
             type="PROCESS">
             <metaData
@@ -156,8 +156,8 @@
         </node16>
         <node17
             jcr:primaryType="cq:WorkflowNode"
-            description="Content changes are rejected by Membership Line of Business Managers and an email notification has been sent to initiator with the reason to deny the changes."
-            title="Reject"
+            description="Content changes are rejected by Insurance Line of Business Managers and an email notification has been sent to initiator with the reason to deny the changes."
+            title="Reject Content"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
@@ -167,7 +167,7 @@
         </node17>
         <node18
             jcr:primaryType="cq:WorkflowNode"
-            description="Content changes are rejected by Membership Line of Business and an email notification has been sent to initiator with the reason to deny the changes."
+            description="Content changes are rejected by Insurance Line of Business and an email notification has been sent to the initiator with the reason to deny the changes."
             title="Reject Content"
             type="PROCESS">
             <metaData

@@ -3,11 +3,11 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/default"
-        cq:lastModified="{Date}2016-10-13T17:55:47.732+05:30"
+        cq:lastModified="{Date}2016-10-14T16:24:04.706+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Membership Line of Business Publish Content"
+        jcr:title="Financial Line of Business Publish Content"
         sling:resourceType="cq/workflow/components/pages/model">
         <flow
             jcr:primaryType="nt:unstructured"
@@ -15,8 +15,8 @@
             <process
                 jcr:created="{Date}2016-10-13T17:45:15.455+05:30"
                 jcr:createdBy="admin"
-                jcr:description="Email notification sent to the 1st level reviewers &quot;Membership Line of Business Members&quot;."
-                jcr:lastModified="{Date}2016-10-13T17:53:14.798+05:30"
+                jcr:description="Email notification sent to the 1st level reviewers &quot;Financial Line of Business Members&quot;."
+                jcr:lastModified="{Date}2016-10-14T16:21:15.213+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Review Content"
@@ -24,14 +24,14 @@
                 <metaData
                     jcr:primaryType="nt:unstructured"
                     PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
-                    PROCESS_ARGS="sendTo:aaa-membership-lob-members,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:initite-content-review"
+                    PROCESS_ARGS="sendTo:aaa-financial-lob-members,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:initite-content-review"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process>
             <participant
                 jcr:created="{Date}2010-09-21T14:47:57.672+02:00"
                 jcr:createdBy="admin"
                 jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
-                jcr:lastModified="{Date}2016-10-13T17:53:29.600+05:30"
+                jcr:lastModified="{Date}2016-10-14T16:21:23.514+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="1st Level Content Review"
@@ -40,7 +40,7 @@
                     jcr:lastModified="{Date}2010-09-21T14:48:07.024+02:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    PARTICIPANT="aaa-membership-lob-members"/>
+                    PARTICIPANT="aaa-financial-lob-members"/>
             </participant>
             <or
                 jcr:created="{Date}2016-10-05T18:54:18.517+05:30"
@@ -57,8 +57,8 @@
                     <process
                         jcr:created="{Date}2016-10-05T18:55:37.422+05:30"
                         jcr:createdBy="admin"
-                        jcr:description="Content changes are approved by Membership Line of Business and an email notification sent to the 2nd level reviewers &quot;Membership Line of Business Managers&quot;."
-                        jcr:lastModified="{Date}2016-10-13T17:54:53.985+05:30"
+                        jcr:description="Content changes are approved by Financial Line of Business and an email notification sent to the 2nd level reviewers &quot;Financial Line of Business Managers&quot;."
+                        jcr:lastModified="{Date}2016-10-14T16:22:01.851+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Approve Content"
@@ -66,21 +66,21 @@
                         <metaData
                             jcr:primaryType="nt:unstructured"
                             PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
-                            PROCESS_ARGS="sendTo:aaa-membership-lob-managers,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-member-approve"
+                            PROCESS_ARGS="sendTo:aaa-financial-lob-managers,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-member-approve"
                             PROCESS_AUTO_ADVANCE="true"/>
                     </process>
                     <participant
                         jcr:created="{Date}2016-10-05T18:57:57.660+05:30"
                         jcr:createdBy="admin"
                         jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
-                        jcr:lastModified="{Date}2016-10-12T15:23:17.222+05:30"
+                        jcr:lastModified="{Date}2016-10-14T16:22:51.749+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="2nd Level Content Review"
                         sling:resourceType="cq/workflow/components/model/participant">
                         <metaData
                             jcr:primaryType="nt:unstructured"
-                            PARTICIPANT="aaa-membership-lob-managers"/>
+                            PARTICIPANT="aaa-financial-lob-managers"/>
                     </participant>
                     <or
                         jcr:created="{Date}2016-10-05T19:04:04.030+05:30"
@@ -97,8 +97,8 @@
                             <process
                                 jcr:created="{Date}2016-10-05T19:04:19.269+05:30"
                                 jcr:createdBy="admin"
-                                jcr:description="Content changes are approved by Membership Line of Business Managers and an email notification sent to the 3rd level reviewers &quot;Legal OGC&quot;."
-                                jcr:lastModified="{Date}2016-10-12T15:25:43.651+05:30"
+                                jcr:description="Content changes are approved by Financial Line of Business Managers and an email notification sent to the 3rd level reviewers &quot;Legal OGC&quot;."
+                                jcr:lastModified="{Date}2016-10-14T16:23:06.140+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Approve Content"
@@ -113,7 +113,7 @@
                                 jcr:created="{Date}2016-10-05T19:05:25.081+05:30"
                                 jcr:createdBy="admin"
                                 jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
-                                jcr:lastModified="{Date}2016-10-12T15:27:23.952+05:30"
+                                jcr:lastModified="{Date}2016-10-14T16:23:32.430+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="3rd Level Content Review"
@@ -138,7 +138,7 @@
                                         jcr:created="{Date}2016-10-12T15:24:00.378+05:30"
                                         jcr:createdBy="admin"
                                         jcr:description="Content changes are approved by Legal OGC and an email notification sent to the 4th level reviewers &quot;E-Biz&quot;."
-                                        jcr:lastModified="{Date}2016-10-12T15:26:17.014+05:30"
+                                        jcr:lastModified="{Date}2016-10-14T16:23:38.666+05:30"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Approve Content"
@@ -153,7 +153,7 @@
                                         jcr:created="{Date}2016-10-12T15:24:16.779+05:30"
                                         jcr:createdBy="admin"
                                         jcr:description="Need your immediate action to review and replicate the content changes."
-                                        jcr:lastModified="{Date}2016-10-12T15:27:43.227+05:30"
+                                        jcr:lastModified="{Date}2016-10-14T16:24:00.220+05:30"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="4th Level Content Review"
@@ -166,7 +166,7 @@
                                         jcr:created="{Date}2016-10-12T15:24:24.945+05:30"
                                         jcr:createdBy="admin"
                                         jcr:description="Replicate the content changes as it went through the approval process."
-                                        jcr:lastModified="{Date}2016-10-13T17:55:47.721+05:30"
+                                        jcr:lastModified="{Date}2016-10-14T16:24:04.696+05:30"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Replicate Content"
@@ -184,7 +184,7 @@
                                         jcr:created="{Date}2016-10-12T15:24:11.244+05:30"
                                         jcr:createdBy="admin"
                                         jcr:description="Content changes are rejected by Legal OGC and an email notification has been sent to initiator with the reason to deny the changes."
-                                        jcr:lastModified="{Date}2016-10-14T16:26:55.959+05:30"
+                                        jcr:lastModified="{Date}2016-10-14T16:23:54.878+05:30"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Reject Content"
@@ -204,8 +204,8 @@
                             <process
                                 jcr:created="{Date}2016-10-05T19:05:01.912+05:30"
                                 jcr:createdBy="admin"
-                                jcr:description="Content changes are rejected by Membership Line of Business Managers and an email notification has been sent to initiator with the reason to deny the changes."
-                                jcr:lastModified="{Date}2016-10-14T16:26:43.315+05:30"
+                                jcr:description="Content changes are rejected by Financial Line of Business Managers and an email notification has been sent to initiator with the reason to deny the changes."
+                                jcr:lastModified="{Date}2016-10-14T16:23:28.186+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Reject"
@@ -225,8 +225,8 @@
                     <process
                         jcr:created="{Date}2016-10-05T18:57:15.144+05:30"
                         jcr:createdBy="admin"
-                        jcr:description="Content changes are rejected by Membership Line of Business and an email notification has been sent to initiator with the reason to deny the changes."
-                        jcr:lastModified="{Date}2016-10-14T16:26:22.329+05:30"
+                        jcr:description="Content changes are rejected by Financial Line of Business and an email notification has been sent to initiator with the reason to deny the changes."
+                        jcr:lastModified="{Date}2016-10-14T16:22:23.835+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Reject Content"

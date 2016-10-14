@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:lastModified="{Date}2016-10-14T15:42:50.615+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:42:50.615+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="a8c3b8b8-623c-382a-8ea7-04be65a77da5"
+    rep:authorizableId="aaa-insurance-lob-managers"
+    rep:members="{WeakReference}[b8618398-c334-3a4b-b4a9-7c3664b42514]"
+    rep:principalName="aaa-insurance-lob-managers">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        givenName="Insurance Line of Business Managers"/>
+</jcr:root>
