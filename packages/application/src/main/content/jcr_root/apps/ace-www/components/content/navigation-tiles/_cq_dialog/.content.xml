@@ -23,27 +23,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile1/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -101,27 +80,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile2/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -179,27 +137,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile3/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -257,27 +194,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile4/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -335,27 +251,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile5/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -413,27 +308,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagetype
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Please Select Page Type"
-                                fieldLabel="Page Type"
-                                name="./tile6/pageType">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Default"
-                                        value="default"/>
-                                    <tile
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Tile"
-                                        value="tile"/>
-                                    <column-list
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Columns Link List"
-                                        value="column"/>
-                                </items>
-                            </pagetype>
                             <tiletitle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"

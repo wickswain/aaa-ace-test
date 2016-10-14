@@ -28,7 +28,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter title for column"
                                 fieldLabel="Column Title"
-                                name="./column1/columntitle"/>
+                                name="./columntitle1"/>
                             <column-list
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
@@ -39,7 +39,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
                                     acs-commons-nested="NODE_STORE"
-                                    name="./column1/columnfieldset">
+                                    name="./columnfieldset1">
                                     <layout
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -94,7 +94,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter title for column"
                                 fieldLabel="Column Title"
-                                name="./column2/columntitle"/>
+                                name="./columntitle2"/>
                             <column-list
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
@@ -105,7 +105,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
                                     acs-commons-nested="NODE_STORE"
-                                    name="./column2/columnfieldset">
+                                    name="./columnfieldset2">
                                     <layout
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -160,7 +160,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter title for column"
                                 fieldLabel="Column Title"
-                                name="./column3/columntitle"/>
+                                name="./columntitle3"/>
                             <column-list
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
@@ -171,7 +171,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
                                     acs-commons-nested="NODE_STORE"
-                                    name="./column3/columnfieldset">
+                                    name="./columnfieldset3">
                                     <layout
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
@@ -226,7 +226,7 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Please enter title for column"
                                 fieldLabel="Column Title"
-                                name="./column4/columntitle"/>
+                                name="./columntitle4"/>
                             <column-list
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
@@ -237,7 +237,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
                                     acs-commons-nested="NODE_STORE"
-                                    name="./column4/columnfieldset">
+                                    name="./columnfieldset4">
                                     <layout
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>

@@ -1,0 +1,25 @@
+
+<!-- Global Navigation Column List Elements Template
+================================================= -->
+<template data-sly-template.resultstemplate="${@ columnFieldset, columnTitle}"
+	      data-sly-use.columnList="column-list.html">
+
+	<sly data-sly-use.columnprovider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child=columnFieldset}" />
+            <ul class="tiles-list border-manage">
+                <li>
+                    <h3 class="sub-title" data-sly-text="${columnTitle}"></h3>
+                    <ul>
+                        <li data-sly-list.child="${columnprovider.childResource.listChildren}">
+                         	<sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child.linkURL}" />
+                        	<a href="${childPage.url ? childPage.url : ''  @ context='uri'}"
+							   data-sly-text="${child.linktitle ? child.linktitle : child.linktitle}"
+							   target="${child.openInNewTabFlag == 'true' ? '_blank' : '_self'}">
+							</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+</template>
+<!-- # Global Navigation Column List Elements Template end -->
