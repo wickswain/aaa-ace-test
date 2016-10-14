@@ -1,11 +1,11 @@
 
 <!-- Global Navigation Column List Elements Template
 ================================================= -->
-<template data-sly-template.resultstemplate="${@ columnFieldset, columnTitle}"
+<template data-sly-template.resultstemplate="${@ columnFieldset, columnTitle, border}"
 	      data-sly-use.columnList="column-list.html">
 
 	<sly data-sly-use.columnprovider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child=columnFieldset}" />
-            <ul class="tiles-list border-manage">
+            <ul class="${ border ? 'tiles-list border-manage' : 'tiles-list'}">
                 <li>
                     <h3 class="sub-title" data-sly-text="${columnTitle}"></h3>
                     <ul>

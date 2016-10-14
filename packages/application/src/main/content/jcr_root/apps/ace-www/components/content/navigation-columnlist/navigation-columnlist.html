@@ -12,19 +12,22 @@
     <div class="container">
         <div data-sly-use.columnList="column-list.html" class="drawers-container">
         	<sly data-sly-test="${properties.columntitle1}">
-					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset1', columnTitle=properties.columntitle1}" />
-	         </sly>
+            		<sly data-sly-test.isBorder="${properties.columntitle2}"/>
+					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset1', columnTitle=properties.columntitle1, border=isBorder}" />
+	            </sly>
 
         	<sly data-sly-test="${properties.columntitle2}">
-					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset2', columnTitle=properties.columntitle2}" />
-	         </sly>
+            		<sly data-sly-test.isBorder="${properties.columntitle3}"/>
+					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset2', columnTitle=properties.columntitle2, border=isBorder}" />
+	            </sly>
 
         	<sly data-sly-test="${properties.columntitle3}">
-					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset3', columnTitle=properties.columntitle3}" />
-	        </sly>
+            		<sly data-sly-test.isBorder="${properties.columntitle4}"/>
+					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset3', columnTitle=properties.columntitle3, border=isBorder}" />
+	            </sly>
 
         	<sly data-sly-test="${properties.columntitle4}">
-					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset4', columnTitle=properties.columntitle4}" />
+					<sly data-sly-call="${columnList.resultstemplate @ columnFieldset='columnfieldset4', columnTitle=properties.columntitle4, border='false'}" />
 	        </sly>
 
         </div>
