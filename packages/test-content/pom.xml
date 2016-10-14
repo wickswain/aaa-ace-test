@@ -60,6 +60,12 @@
                         <filter>
                             <root>/etc/segmentation/contexthub</root>
                         </filter>
+                        <filter>
+                            <root>/home/groups/ace-www</root>
+                        </filter>
+                        <filter>
+                            <root>/home/users/ace-www</root>
+                        </filter>
 					</filters>
 				</configuration>
 			</plugin>
