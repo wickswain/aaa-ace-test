@@ -1,0 +1,3 @@
+#base=js
+
+store.tealiuminfo.js
