@@ -10,4 +10,5 @@
     icon="coral-Icon--infoCircle">
     <region_module/>
     <navigation_module/>
+    <tealium_module/>
 </jcr:root>

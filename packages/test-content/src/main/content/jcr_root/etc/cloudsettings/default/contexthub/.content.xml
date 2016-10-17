@@ -6,9 +6,11 @@
     debug="{Boolean}false"
     disabled="{Boolean}false"
     initializationTimeout="{Long}2000">
+    <navigationinfo/>
     <user_mode/>
     <request_mode/>
     <myaccountinfo/>
     <requestinfo/>
-	<segmentation/>
+    <segmentation/>
+    <tealiuminfo/>
 </jcr:root>
