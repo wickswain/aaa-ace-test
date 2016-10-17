@@ -29,6 +29,9 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
             if(aceDataObject.acef01 != null) {
 				isIDTheftLinkClicked = aceDataObject.acef01;
             }
+            
+            console.log("isAutoInsurance: " + isAutoInsurance);
+            console.log("isIDTheftLinkClicked: " + isIDTheftLinkClicked);
         }
         
 		return {
