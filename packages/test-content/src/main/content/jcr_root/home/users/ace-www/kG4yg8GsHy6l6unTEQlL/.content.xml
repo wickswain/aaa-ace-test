@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:39:31.533+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:39:31.533+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="e65fa9d6-d56b-33f9-8c74-90dd9624d732"
+    rep:authorizableId="aaa-legal-ogc-member"
+    rep:password="\{SHA-256}48163281f205f05f-1000-632f3fa3045220d921567e686ffef6a2ab0b95e2278833dcc8ce76196670f76b"
+    rep:principalName="aaa-legal-ogc-member">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        email="bkambam@axis41.com"
+        familyName="OGC Member"
+        gender="Select"
+        givenName="Legal"/>
+</jcr:root>

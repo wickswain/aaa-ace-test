@@ -1,0 +1,15 @@
+From: info@aaa.com
+Subject: Workflow Notification: ${title}
+
+Hello ${recipientName},
+
+You have received an item in your workflow inbox pending for your review. 
+Please access the link ${inboxpath} to act on the pending item(s).
+
+Regards,
+AAA Team.
+
+-----------------------------------------------------------------
+This is an automatically generated message. Please do not reply.
+
+-----------------------------------------------------------------

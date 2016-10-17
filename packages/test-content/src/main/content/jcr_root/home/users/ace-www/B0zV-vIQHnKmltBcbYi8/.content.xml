@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:41:55.417+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:41:55.417+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="22c0a42e-fcd2-399f-a551-b5ca2e488502"
+    rep:authorizableId="aaa-lob-automotive-member"
+    rep:password="\{SHA-256}a34d8473c1a5bcc3-1000-b654e2c8157f82d83531aa7ad9b996e8d6c537c746a7e885ac4dd6a89d942522"
+    rep:principalName="aaa-lob-automotive-member">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        familyName="LOB Member"
+        gender="Select"
+        givenName="Automotive"/>
+</jcr:root>

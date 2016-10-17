@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:42:50.573+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:42:50.573+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="b8618398-c334-3a4b-b4a9-7c3664b42514"
+    rep:authorizableId="aaa-lob-insurance-manager"
+    rep:password="\{SHA-256}3d06ae4bf6d85d60-1000-42147be9da5400e53bf2756c1aecbafaf4f5e5ad146399c911755581b06160ac"
+    rep:principalName="aaa-lob-insurance-manager">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        familyName="LOB Manager"
+        gender="Select"
+        givenName="Insurance"/>
+</jcr:root>

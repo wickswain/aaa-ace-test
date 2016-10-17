@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:lastModified="{Date}2016-10-14T15:42:19.688+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:42:19.688+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="c2434570-a16e-346a-9401-4883dffbae4b"
+    rep:authorizableId="aaa-discounts-rewards-lob-members"
+    rep:members="{WeakReference}[954fe429-f7a0-37f9-a79c-ce270c00b508]"
+    rep:principalName="aaa-discounts-rewards-lob-members">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        givenName="Discounts &amp; Rewards Line of Business Members"/>
+</jcr:root>

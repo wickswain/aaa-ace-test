@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:40:08.428+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:40:08.428+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="84514aff-7e55-3059-8380-f32b8e59bd6a"
+    rep:authorizableId="aaa-lob-activities-manager"
+    rep:password="\{SHA-256}619b0e4fd41ee62e-1000-ed00c1ef214273268aed748e117d83abca22b4443a8aac89d2f10ee90a6c233c"
+    rep:principalName="aaa-lob-activities-manager">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        familyName="LOB Manager"
+        gender="Select"
+        givenName="Activities"/>
+</jcr:root>

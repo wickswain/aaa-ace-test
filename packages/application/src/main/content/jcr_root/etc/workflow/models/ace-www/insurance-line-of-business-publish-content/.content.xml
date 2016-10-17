@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/default"
+        cq:lastModified="{Date}2016-10-14T16:08:02.016+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Insurance Line of Business Publish Content"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2016-10-13T17:45:15.455+05:30"
+                jcr:createdBy="admin"
+                jcr:description="Email notification sent to the 1st level reviewers &quot;Insurance Line of Business Members&quot;."
+                jcr:lastModified="{Date}2016-10-14T16:08:02.004+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Review Content"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                    PROCESS_ARGS="sendTo:aaa-insurance-lob-members,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:initite-content-review"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <participant
+                jcr:created="{Date}2010-09-21T14:47:57.672+02:00"
+                jcr:createdBy="admin"
+                jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
+                jcr:lastModified="{Date}2016-10-14T16:02:17.183+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="1st Level Content Review"
+                sling:resourceType="cq/workflow/components/model/participant">
+                <metaData
+                    jcr:lastModified="{Date}2010-09-21T14:48:07.024+02:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    PARTICIPANT="aaa-insurance-lob-members"/>
+            </participant>
+            <or
+                jcr:created="{Date}2016-10-05T18:54:18.517+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-10-05T18:54:18.517+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                orSplit="true">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2016-10-05T18:55:37.422+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Content changes are approved by Insurance Line of Business and an email notification sent to the 2nd level reviewers &quot;Insurance Line of Business Managers&quot;."
+                        jcr:lastModified="{Date}2016-10-14T16:02:53.988+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Approve Content"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                            PROCESS_ARGS="sendTo:aaa-insurance-lob-managers,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-member-approve"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process>
+                    <participant
+                        jcr:created="{Date}2016-10-05T18:57:57.660+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
+                        jcr:lastModified="{Date}2016-10-14T16:04:10.917+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="2nd Level Content Review"
+                        sling:resourceType="cq/workflow/components/model/participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PARTICIPANT="aaa-insurance-lob-managers"/>
+                    </participant>
+                    <or
+                        jcr:created="{Date}2016-10-05T19:04:04.030+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2016-10-05T19:04:04.030+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/workflow/components/model/or"
+                        branches="2"
+                        orSplit="true">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <process
+                                jcr:created="{Date}2016-10-05T19:04:19.269+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Content changes are approved by Insurance Line of Business Managers and an email notification sent to the 3rd level reviewers &quot;Legal OGC&quot;."
+                                jcr:lastModified="{Date}2016-10-14T16:04:32.984+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Approve Content"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                                    PROCESS_ARGS="sendTo:aaa-legal-ogc,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:lob-manager-approve"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                            <participant
+                                jcr:created="{Date}2016-10-05T19:05:25.081+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Need your immediate action to review the content changes and approve or deny accordingly."
+                                jcr:lastModified="{Date}2016-10-14T16:05:10.853+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="3rd Level Content Review"
+                                sling:resourceType="cq/workflow/components/model/participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PARTICIPANT="aaa-legal-ogc"/>
+                            </participant>
+                            <or
+                                jcr:created="{Date}2016-10-12T15:23:38.110+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2016-10-12T15:23:38.110+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/workflow/components/model/or"
+                                branches="2"
+                                orSplit="true">
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/flow/components/parsys">
+                                    <process
+                                        jcr:created="{Date}2016-10-12T15:24:00.378+05:30"
+                                        jcr:createdBy="admin"
+                                        jcr:description="Content changes are approved by Legal OGC and an email notification sent to the 4th level reviewers &quot;E-Biz&quot;."
+                                        jcr:lastModified="{Date}2016-10-14T16:05:22.663+05:30"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Approve Content"
+                                        sling:resourceType="cq/workflow/components/model/process">
+                                        <metaData
+                                            jcr:primaryType="nt:unstructured"
+                                            PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                                            PROCESS_ARGS="sendTo:aaa-ebiz,emailTemplate:/etc/workflow/ace-www/email/approve-content.txt,status:legal-ogc-approve"
+                                            PROCESS_AUTO_ADVANCE="true"/>
+                                    </process>
+                                    <participant
+                                        jcr:created="{Date}2016-10-12T15:24:16.779+05:30"
+                                        jcr:createdBy="admin"
+                                        jcr:description="Need your immediate action to review and replicate the content changes."
+                                        jcr:lastModified="{Date}2016-10-14T16:05:53.429+05:30"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="4th Level Content Review"
+                                        sling:resourceType="cq/workflow/components/model/participant">
+                                        <metaData
+                                            jcr:primaryType="nt:unstructured"
+                                            PARTICIPANT="aaa-ebiz"/>
+                                    </participant>
+                                    <process_888106856
+                                        jcr:created="{Date}2016-10-12T15:24:24.945+05:30"
+                                        jcr:createdBy="admin"
+                                        jcr:description="Replicate the content changes as it went through the approval process."
+                                        jcr:lastModified="{Date}2016-10-14T16:06:09.681+05:30"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Replicate Content"
+                                        sling:resourceType="cq/workflow/components/model/process">
+                                        <metaData
+                                            jcr:primaryType="nt:unstructured"
+                                            PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                                            PROCESS_AUTO_ADVANCE="true"/>
+                                    </process_888106856>
+                                </_x0031_>
+                                <_x0032_
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/flow/components/parsys">
+                                    <process
+                                        jcr:created="{Date}2016-10-12T15:24:11.244+05:30"
+                                        jcr:createdBy="admin"
+                                        jcr:description="Content changes are rejected by Legal OGC and an email notification has been sent to initiator with the reason to deny the changes."
+                                        jcr:lastModified="{Date}2016-10-14T16:05:47.860+05:30"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Reject Content"
+                                        sling:resourceType="cq/workflow/components/model/process">
+                                        <metaData
+                                            jcr:primaryType="nt:unstructured"
+                                            PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                                            PROCESS_ARGS="emailTemplate:/etc/workflow/ace-www/email/reject-content.txt,status:legal-ogc-reject"
+                                            PROCESS_AUTO_ADVANCE="true"/>
+                                    </process>
+                                </_x0032_>
+                            </or>
+                        </_x0031_>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <process
+                                jcr:created="{Date}2016-10-05T19:05:01.912+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Content changes are rejected by Insurance Line of Business Managers and an email notification has been sent to initiator with the reason to deny the changes."
+                                jcr:lastModified="{Date}2016-10-14T16:05:04.950+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Reject Content"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                                    PROCESS_ARGS="emailTemplate:/etc/workflow/ace-www/email/reject-content.txt,status:lob-manager-reject"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                        </_x0032_>
+                    </or>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2016-10-05T18:57:15.144+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Content changes are rejected by Insurance Line of Business and an email notification has been sent to the initiator with the reason to deny the changes."
+                        jcr:lastModified="{Date}2016-10-14T16:03:58.234+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Reject Content"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.aaa.ace.workflow.process.SendTemplatedEmailProcess"
+                            PROCESS_ARGS="emailTemplate:/etc/workflow/ace-www/email/reject-content.txt,status:lob-member-reject"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process>
+                </_x0032_>
+            </or>
+        </flow>
+        <model/>
+    </jcr:content>
+</jcr:root>

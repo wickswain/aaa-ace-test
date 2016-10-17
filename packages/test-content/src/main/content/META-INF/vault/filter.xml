@@ -8,4 +8,6 @@
     <filter root="/etc/cloudsettings/default/contexthub" />
 	<filter root="/etc/designs/ace-www" />
     <filter root="/etc/segmentation/contexthub" />
+    <filter root="/home/groups/ace-www" />
+    <filter root="/home/users/ace-www" />
 </workspaceFilter>

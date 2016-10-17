@@ -1,0 +1,14 @@
+From: info@aaa.com
+Subject: Workflow Notification: ${title}
+
+Hello ${recipientName},
+
+The content changes you made on ${payloadpath} are not approved and the reason is ${comment}
+
+Regards,
+AAA Team.
+
+-----------------------------------------------------------------
+This is an automatically generated message. Please do not reply.
+
+-----------------------------------------------------------------

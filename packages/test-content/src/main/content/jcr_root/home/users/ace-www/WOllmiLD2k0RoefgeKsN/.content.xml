@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    cq:authorizableCategory=""
+    cq:lastModified="{Date}2016-10-14T15:44:02.851+05:30"
+    cq:lastModifiedBy="admin"
+    jcr:lastModified="{Date}2016-10-14T15:44:02.851+05:30"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="737a2d59-b5ad-37cf-89cd-0499d8b4321e"
+    rep:authorizableId="aaa-lob-travel-manager"
+    rep:password="\{SHA-256}3bc457925e47f2f2-1000-bed040ac4073140fbc2fd6e6938f0625aa52b1e3e2e470995a9ecf31d9325663"
+    rep:principalName="aaa-lob-travel-manager">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/security/components/profile"
+        country="Select"
+        familyName="LOB Manager"
+        gender="Select"
+        givenName="Travel"/>
+</jcr:root>
