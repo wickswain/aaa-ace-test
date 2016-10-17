@@ -9,7 +9,7 @@
      <div class="text-center container">
         <ul class="list-inline">
              <sly data-sly-list.child="${resource.listChildren}">
-           			<li>
+           			<li data-sly-test="${child.title}">
                     	<sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child.linkURL}" />
                         <a href="${childPage.url ? childPage.url : ''  @ context='uri'}"
                             target="${child.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
