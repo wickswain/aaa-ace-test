@@ -63,6 +63,10 @@
                         <filter>
                             <root>/etc/workflow/ace-www</root>
                         </filter>
+
+                        <filter>
+                            <root>/apps/cq/contexthub/components/segment-page</root>
+                        </filter>
                     </filters>
                 </configuration>
             </plugin>
