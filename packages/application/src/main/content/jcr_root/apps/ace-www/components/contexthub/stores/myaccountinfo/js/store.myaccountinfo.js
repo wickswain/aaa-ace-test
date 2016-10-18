@@ -18,8 +18,18 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
      * @return requestInfo object.
 	 */
 	var getMyAccountInfo = function() {
-		var isLoggedIn = true;
-        
+		var isLoggedIn = false;
+
+		if ($.cookie('.ASPXAUTH') === null || $.cookie('.ASPXAUTH') === ""
+				|| $.cookie('.ASPXAUTH') === "null"
+				|| $.cookie('.ASPXAUTH') === undefined) {
+			// Login cookie does not exist.
+			isLoggedIn = false;
+		} else {
+			// Login cookie exist.
+			isLoggedIn = true;
+		}
+
 		return {
 			myaccountinfo : {
 				isloggedin : isLoggedIn
