@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2016-08-12T21:43:21.133+05:30"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2016-10-18T03:10:33.059-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-05T09:29:54.201-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/generic"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sprint1 Demo"
+        jcr:uuid="0f06d797-8249-4b13-aef5-76cd07034e1e"
         sling:resourceType="ace-www/components/page/genericpage">
         <header-par
             jcr:primaryType="nt:unstructured"
@@ -80,6 +86,29 @@
                 sling:resourceType="ace-www/components/content/title-header"
                 sectionBgColor="rgba(0,80,149,1)"
                 title="Component - Page Intro"/>
+            <search_result
+                jcr:created="{Date}2016-09-08T08:25:04.193-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-08T08:25:49.993-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/search-result">
+                <filters jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        filterlabel="insurance"
+                        filtertag="ace-brand:travel"/>
+                    <_x0032_ jcr:primaryType="nt:unstructured"/>
+                    <_x0033_ jcr:primaryType="nt:unstructured"/>
+                    <_x0034_ jcr:primaryType="nt:unstructured"/>
+                    <_x0035_ jcr:primaryType="nt:unstructured"/>
+                    <_x0036_ jcr:primaryType="nt:unstructured"/>
+                    <_x0037_ jcr:primaryType="nt:unstructured"/>
+                    <_x0038_ jcr:primaryType="nt:unstructured"/>
+                    <_x0039_ jcr:primaryType="nt:unstructured"/>
+                    <_x0031_0 jcr:primaryType="nt:unstructured"/>
+                </filters>
+            </search_result>
         </header-par>
         <content-par
             jcr:primaryType="nt:unstructured"
@@ -87,16 +116,19 @@
             <pageintro
                 jcr:created="{Date}2016-08-12T16:38:52.170+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T16:41:38.877+05:30"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2016-10-18T01:29:58.435-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/pageintro"
+                bodyCopyRTE="true"
                 ctaFlag="true"
                 headline="Save money doing what you love."
+                headLineRTE="true"
+                jumpLinkId="page-intro"
                 title="About Discounts">
                 <cta-button-large
-                    jcr:lastModified="{Date}2016-08-12T17:59:14.983+05:30"
-                    jcr:lastModifiedBy="admin"
+                    jcr:lastModified="{Date}2016-10-18T01:35:46.856-06:00"
+                    jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
@@ -120,8 +152,8 @@
                         buttonStyle="default"
                         ctaLabel="Sign up"
                         openNewTabFlag="true"
-                        uppercaseFlag="true"
-                        urlPath="http://&lt;Domain>.&lt;ClubName>.aaa.com/home.html"/>
+                        queryStringKey="ReturnURL"
+                        urlPath="http://&lt;Domain>.&lt;ClubName>.aaa.com/aceapps/account-maintenance/register/start"/>
                     <button2
                         jcr:primaryType="nt:unstructured"
                         buttonStyle="default"/>
@@ -133,50 +165,53 @@
                     sling:resourceType="ace-www/components/content/rte"
                     text="What's the catch? No catch. Our members bring in more volume to businesses, helping increase their profits. In turn they can offer great discounts to help you follow your passions. Win-win. &lt;br>&#xa;"
                     textIsRich="true"/>
+                <headline-text
+                    jcr:lastModified="{Date}2016-10-18T01:30:40.918-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Save money doing what you love."
+                    textIsRich="true"/>
             </pageintro>
-            <title_header
-                jcr:created="{Date}2016-08-12T16:39:04.235+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T17:49:15.933+05:30"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
-                sectionBgColor="rgba(0,153,255,1)"
-                textColor="rgba(255,255,255,1)"
-                title="Component - Full Width Image"/>
             <full_width_image
                 jcr:created="{Date}2016-08-12T16:39:08.996+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T16:48:59.600+05:30"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2016-10-18T01:37:20.067-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/full-width-image"
                 alttext="Full width image"
-                image="/content/dam/aaa/images/full-img.png"/>
-            <title_header_2013036183
-                jcr:created="{Date}2016-08-12T16:39:32.221+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T17:36:00.935+05:30"
-                jcr:lastModifiedBy="admin"
+                bgColor="rgba(255,255,255,1)"
+                image="/content/dam/aaa/images/full-img.png"
+                jumpLinkId="full-img"/>
+            <title_header
+                jcr:created="{Date}2016-10-18T02:59:56.654-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T03:01:17.762-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/title-header"
-                sectionBgColor="rgba(228,229,229,1)"
-                textColor="rgba(0,0,0,1)"
-                title="Component - 50/50 Image and Text"/>
+                jumpLinkId="title-header"
+                sectionBgColor="rgba(0,153,255,1)"
+                textColor="rgba(255,255,255,1)"
+                title="Planning tools"/>
             <fiftyfiftyimageandte
                 jcr:created="{Date}2016-08-12T16:39:36.117+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T17:11:04.239+05:30"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2016-10-18T03:09:51.769-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
-                altText="AAA Card"
-                backgroundColor="rgba(255,255,255,1)"
-                fileReference="/content/dam/aaa/images/card.png"
-                headerIcon="/content/dam/aaa/images/CompA-icon.png"
-                headerIconAltText="header icon"
-                headerTitle="Show your AAA card"
-                headerTitleTextFontColor="rgba(0,0,0,1)"
+                altText="CompA-side-img1"
+                backgroundColor="rgba(0,153,255,1)"
+                fileReference="/content/dam/aaa/images/CompA-side-img1.png"
+                headerBodyTextFontColor="rgba(255,255,255,1)"
+                headerIcon="/content/dam/aaa/images/gps-icon.png"
+                headerIconAltText="gps-icon"
+                headerTitle="Trip to local guide"
+                headerTitleTextFontColor="rgba(255,255,255,1)"
+                isSwapImageAndTextAlignment="true"
+                jumpLinkId="50-50-img"
                 numberText="1">
                 <rte
                     jcr:lastModified="{Date}2016-08-12T17:06:59.309+05:30"
@@ -186,15 +221,70 @@
                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
                     textIsRich="true"/>
                 <cta-large
-                    jcr:lastModified="{Date}2016-08-12T17:07:53.444+05:30"
-                    jcr:lastModifiedBy="admin"
+                    jcr:lastModified="{Date}2016-10-18T03:10:32.935-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="buttons">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        ctaLabel="Download store list"
+                        linkStyle="link-reversed"
+                        urlPath="/content/ace-www/en/sprint1"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="btn-reversed"
+                        ctaLabel="Learn more"
+                        urlPath="/content/ace-www/en/sprint1"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                </cta-large>
+            </fiftyfiftyimageandte>
+            <editorialcards
+                jcr:created="{Date}2016-10-18T02:50:56.716-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T02:57:25.152-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/editorialcards"
+                alt="Editorial Card Logo"
+                ctaFlag="true"
+                fileReference="/content/dam/aaa/images/card-logo.png"
+                jumpLinkId="editorial-cards"
+                logoTitle="AAA Travel Magazine"
+                searchPath="/content/ace-www/en/article-hub"
+                title="Explore articles">
+                <body-text
+                    jcr:lastModified="{Date}2016-10-18T02:55:59.018-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Inspiration and ideas for outings&lt;br>&#xa;"
+                    textIsRich="true"/>
+                <logo-cta-button
+                    jcr:lastModified="{Date}2016-10-18T02:58:45.398-06:00"
+                    jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
                     ctaType="links">
                     <link1
                         jcr:primaryType="nt:unstructured"
-                        ctaLabel="Download store list"
-                        linkStyle="default"/>
+                        ctaLabel="See all articles"
+                        linkStyle="link-reversed"
+                        urlPath="/content/ace-www/en/article-hub"/>
                     <link2
                         jcr:primaryType="nt:unstructured"
                         linkStyle="default"/>
@@ -213,18 +303,63 @@
                     <button2
                         jcr:primaryType="nt:unstructured"
                         buttonStyle="default"/>
-                </cta-large>
-            </fiftyfiftyimageandte>
-            <title_header_231764404
-                jcr:created="{Date}2016-08-12T17:37:20.618+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2016-08-12T17:49:35.566+05:30"
-                jcr:lastModifiedBy="admin"
+                </logo-cta-button>
+            </editorialcards>
+            <footer_cta
+                jcr:created="{Date}2016-10-18T01:54:44.945-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T01:56:05.992-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
-                sectionBgColor="rgba(255,255,255,1)"
-                textColor="rgba(0,0,0,1)"
-                title="Component - Footer CTA"/>
+                sling:resourceType="ace-www/components/content/footer-cta"
+                altText="CompB-bg-img"
+                ctaFlag="true"
+                fileReference="/content/dam/aaa/images/CompB-bg-img.jpg"
+                heading="Don't have AAA insurance?"
+                jumpLinkId="footer-cta"
+                rteFlag="true"
+                textColor="rgba(255,255,255,1)">
+                <rte
+                    jcr:lastModified="{Date}2016-10-18T01:57:33.630-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years."
+                    textIsRich="true"/>
+                <cta-button-large
+                    jcr:lastModified="{Date}2016-10-18T02:48:26.376-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="buttons">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="btn-reversed"
+                        ctaLabel="1-800-672-5246"
+                        phonedialFlag="true"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="btn-reversed"
+                        ctaColor="rgba(0,153,255,1)"
+                        ctaLabel="Free online quote"
+                        urlPath="/content/ace-www/en/article-hub/article-1"/>
+                </cta-button-large>
+            </footer_cta>
         </content-par>
         <image
             jcr:lastModified="{Date}2016-08-09T22:30:39.851+05:30"

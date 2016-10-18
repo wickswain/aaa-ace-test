@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.58 13.58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 1.85px;
+      }
+    </style>
+  </defs>
+  <title>Asset 34</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Design">
+      <g>
+        <circle class="cls-1" cx="5.72" cy="5.72" r="4.8"/>
+        <line class="cls-1" x1="9.32" y1="9.32" x2="12.92" y2="12.92"/>
+      </g>
+    </g>
+  </g>
+</svg>

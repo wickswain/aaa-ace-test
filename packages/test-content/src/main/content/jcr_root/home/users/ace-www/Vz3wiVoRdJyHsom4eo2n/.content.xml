@@ -11,20 +11,6 @@
     rep:authorizableId="aaa-lob-membership-member"
     rep:password="\{SHA-256}a0e81261f7319075-1000-29802ab001c2e4404fffb70f66c6e4ff1cba75abd6e6d9705bcc40b24a578384"
     rep:principalName="aaa-lob-membership-member">
-    <_x002e_tokens jcr:primaryType="rep:Unstructured">
-        <_x0032_016-10-14T16.39.17.192_x002b_05.30
-            jcr:primaryType="rep:Token"
-            jcr:uuid="fb1776da-7d51-4276-bade-460667a552c7"
-            rep:token.exp="{Date}2016-10-15T04:39:17.192+05:30"
-            rep:token.key="\{SHA-256}5caa4bf9b93402ce-7287109bf4c7bea9a22291eda0ebe1e3742a9e1862baec5bc2f6a085510d6d76"
-            ip="0:0:0:0:0:0:0:1"
-            referer="http://localhost:4502/libs/granite/core/content/login.html?resource=%2F&amp;$$login$$=%24%24login%24%24&amp;j_reason=unknown&amp;j_reason_code=unknown"
-            useragent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"/>
-    </_x002e_tokens>
-    <preferences
-        jcr:primaryType="nt:unstructured"
-        cq.authoring.editor.page.showTour62="false"
-        granite.shell.showonboarding620="false"/>
     <profile
         jcr:primaryType="nt:unstructured"
         sling:resourceType="cq/security/components/profile"

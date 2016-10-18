@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T06:22:50.983-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-05T09:30:02.605-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/generic"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sprint4 Demo"
+        jcr:uuid="dfdf7b99-ead7-44fe-906c-d2c0a8299d76"
+        sling:resourceType="ace-www/components/page/genericpage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <membership_comparisi
+                jcr:created="{Date}2016-09-25T22:17:56.943-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-03T11:20:52.620-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/membership-comparision-table"
+                closeButtonCaption="Close"
+                columnBackgroundColor="rgba(0,153,255,1)"
+                columnCount="1"
+                fontColor="rgba(255,255,255,1)"
+                highlightedColumn="one"
+                modalTitle="Confirmation"
+                saveButtonCaption="Save changes"
+                seeAllRowIndex="1"
+                title="One column and highlighted too"
+                totalRowCount="2">
+                <membership-table-row1
+                    jcr:lastModified="{Date}2016-10-04T07:13:19.868-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Tows up to 5 miles"
+                    col2Text="Tows up to 100 miles Tows up to 100 miles"
+                    col3Text="Onw tow upto 100 miles, others upto 200 miles"
+                    enableCol1Text="true"
+                    enableCol2Text="true"
+                    enableCol3Text="true"
+                    modalTitle="Test Modal Title will display in this row"
+                    rowItemDescription="This is a Towing Service with long description"
+                    showModalBox="true"
+                    text="Test Modal description"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-04T07:13:19.868-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-04T07:13:19.868-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 2"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-04T07:13:19.868-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 3"/>
+                </membership-table-row1>
+                <membership-table-row2
+                    jcr:lastModified="{Date}2016-10-04T04:00:26.657-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Battery 1"
+                    enableCol1Text="true"
+                    rowItemDescription="vehicle lockout"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-04T04:00:26.657-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 1"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-04T04:00:26.657-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-04T04:00:26.657-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row2>
+                <membership-table-column1
+                    jcr:lastModified="{Date}2016-10-03T11:19:34.164-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-premier.png"
+                    headerImageAltText="header 1"
+                    title="Classic $57/yr1">
+                    <rte
+                        jcr:lastModified="{Date}2016-09-25T22:24:33.951-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $20&lt;br>&#xa;"
+                        textIsRich="true"/>
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-04T07:52:16.827-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(255,70,57,1)"
+                            ctaLabel="Select"
+                            openNewTabFlag="true"
+                            urlPath="/content/navigation-root/Membership"/>
+                    </cta-small>
+                </membership-table-column1>
+                <rte
+                    jcr:lastModified="{Date}2016-10-05T04:29:41.725-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;p>&lt;span class=&quot;roboto-light font-e&quot;>&lt;span class=&quot;roboto-light font-g&quot;>What's the catch? No catch. Our members bring in more volume to businesses, helping increase their pro ts. In turn they can off er great discounts to help you follow your passions. Win-win.&amp;nbsp;&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </membership_comparisi>
+            <membership_comparisi_939964833
+                jcr:created="{Date}2016-09-26T04:08:15.062-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-05T04:41:49.098-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/membership-comparision-table"
+                closeButtonCaption="Close"
+                columnCount="2"
+                highlightedColumn="none"
+                modalTitle="Confirmation"
+                saveButtonCaption="Save changes"
+                seeAllRowIndex="2"
+                title="Two Columns,none highlighted"
+                totalRowCount="5">
+                <membership-table-row1
+                    jcr:lastModified="{Date}2016-09-26T04:13:46.667-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Tows up to 5 miles"
+                    col2Text="Tows up to 100 miles"
+                    col3Text="Onw tow upto 100 miles, others upto 200 miles"
+                    enableCol1Text="true"
+                    enableCol2Text="true"
+                    enableCol3Text="true"
+                    rowItemDescription="Towing Service">
+                    <icon1
+                        jcr:lastModified="{Date}2016-09-26T04:13:46.667-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 1"
+                        fileReference="/content/dam/aaa/images/faq-icon.png"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-09-26T04:13:46.667-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 2"
+                        fileReference="/content/dam/aaa/images/faq-icon.png"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-09-26T04:13:46.667-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 3"
+                        fileReference="/content/dam/aaa/images/GlobalNavigation/Asset 37.svg"/>
+                </membership-table-row1>
+                <membership-table-row2
+                    jcr:lastModified="{Date}2016-09-29T06:15:20.004-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Battery 1"
+                    col2Text="Battery 2"
+                    col3Text="Lockout 3"
+                    enableCol2Text="true"
+                    rowItemDescription="Battery Service"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-09-29T06:15:20.004-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 1"
+                        fileReference="/content/dam/aaa/images/check_mark.png"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-09-29T06:15:20.004-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 2"
+                        fileReference="/content/dam/aaa/images/GlobalNavigation/Asset 26.svg"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-09-29T06:15:20.004-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        alt="alt 3"/>
+                </membership-table-row2>
+                <membership-table-row3
+                    jcr:lastModified="{Date}2016-09-26T04:16:25.396-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Lockout 1"
+                    col2Text="Lockout 2"
+                    col3Text="Lockout 3"
+                    enableCol1Text="true"
+                    enableCol2Text="true"
+                    enableCol3Text="true"
+                    rowItemDescription="Vehicle Lock out">
+                    <icon1
+                        jcr:lastModified="{Date}2016-09-26T04:16:25.396-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-09-26T04:16:25.396-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-09-26T04:16:25.396-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row3>
+                <membership-table-column1
+                    jcr:lastModified="{Date}2016-09-26T04:09:53.214-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-premier.png"
+                    headerImageAltText="header 1"
+                    title="Classic $57/yr1">
+                    <rte
+                        jcr:lastModified="{Date}2016-09-26T04:10:40.793-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $20&lt;br>&#xa;"
+                        textIsRich="true"/>
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-04T07:54:02.012-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(255,70,57,1)"
+                            ctaLabel="Select"
+                            openNewTabFlag="true"
+                            urlPath="/content/mobileapps/cq-screens-player/shell"/>
+                    </cta-small>
+                </membership-table-column1>
+                <membership-table-column2
+                    jcr:lastModified="{Date}2016-09-26T04:10:16.424-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-plus.png"
+                    headerImageAltText="header 2"
+                    title="Classic $57/yr2">
+                    <rte
+                        jcr:lastModified="{Date}2016-09-26T04:11:01.606-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $30&lt;br>&#xa;"
+                        textIsRich="true"/>
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-03T05:26:01.379-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(0,153,255,1)"
+                            ctaLabel="Call to 1800-202-300"/>
+                    </cta-small>
+                </membership-table-column2>
+                <rte
+                    jcr:lastModified="{Date}2016-10-03T08:10:57.131-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="What's the catch? No catch. Our members bring in more volume to businesses, helping increase their pro ts. In turn they can off er great discounts to help you follow your passions. Win-win.&lt;br>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <membership-table-row4
+                    jcr:lastModified="{Date}2016-10-05T04:34:47.511-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Colum 1"
+                    enableCol1Text="true"
+                    modalTitle="Test Model"
+                    rowItemDescription="Test"
+                    showModalBox="true"
+                    text="Test Model"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-05T04:34:47.511-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-05T04:34:47.511-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-05T04:34:47.511-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row4>
+                <membership-table-row5
+                    jcr:lastModified="{Date}2016-10-05T04:33:00.920-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col1Text="Colum 1"
+                    enableCol1Text="true"
+                    rowItemDescription="Test 1"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-05T04:33:00.920-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-05T04:33:00.920-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-05T04:33:00.920-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row5>
+            </membership_comparisi_939964833>
+            <membership_comparisi_72647449
+                jcr:created="{Date}2016-10-03T14:46:10.293-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T06:21:31.082-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/membership-comparision-table"
+                backgroundColor="rgba(255,255,255,1)"
+                columnBackgroundColor="rgba(0,153,255,1)"
+                columnCount="3"
+                fontColor="rgba(255,255,255,1)"
+                highlightedColumn="two"
+                seeAllRowIndex="2"
+                title="3 columns with one highlighted"
+                totalRowCount="3">
+                <membership-table-row1
+                    jcr:lastModified="{Date}2016-10-14T07:01:11.777-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    enableCol1Text="true"
+                    modalTitle="Ttile2"
+                    rowItemDescription="Towing service"
+                    showModalBox="true"
+                    text="Description about Towing service goes here&amp;nbsp;"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-14T07:01:11.777-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-14T07:01:11.777-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        fileReference="/content/dam/aaa/images/check_mark.png"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-14T07:01:11.777-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row1>
+                <membership-table-row2
+                    jcr:lastModified="{Date}2016-10-14T07:01:19.689-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col2Text="Towing upto 20 miles"
+                    enableCol2Text="true"
+                    rowItemDescription="Vehicle"
+                    showModalBox="true"
+                    text="Title2 description"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-14T07:01:19.689-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        fileReference="/content/dam/aaa/images/check_mark.png"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-14T07:01:19.689-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-14T07:01:19.689-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                </membership-table-row2>
+                <membership-table-row3
+                    jcr:lastModified="{Date}2016-10-13T06:27:38.375-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-row"
+                    col2Text="x"
+                    enableCol2Text="true"
+                    modalTitle="Title3"
+                    rowItemDescription="Battery service"
+                    showModalBox="true"
+                    text="Title 3 goes here"
+                    textIsRich="true">
+                    <icon1
+                        jcr:lastModified="{Date}2016-10-13T06:27:38.375-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        fileReference="/content/dam/aaa/images/check_mark.png"/>
+                    <icon2
+                        jcr:lastModified="{Date}2016-10-13T06:27:38.375-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"/>
+                    <icon3
+                        jcr:lastModified="{Date}2016-10-13T06:27:38.375-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/image"
+                        fileReference="/content/dam/aaa/images/check_mark.png"/>
+                </membership-table-row3>
+                <membership-table-column1
+                    jcr:lastModified="{Date}2016-10-05T07:24:42.968-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-premier.png"
+                    headerImageAltText="Alt text"
+                    title="Classic $ 51/yr">
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-05T07:23:11.292-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(255,70,57,1)"
+                            ctaLabel="Select"/>
+                    </cta-small>
+                    <rte
+                        jcr:lastModified="{Date}2016-10-03T15:02:31.942-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $20&lt;br>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </membership-table-column1>
+                <membership-table-column2
+                    jcr:lastModified="{Date}2016-10-05T07:25:26.156-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-plus.png"
+                    title="Classic $ 50/yr">
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-13T06:21:40.533-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(255,70,57,1)"
+                            ctaLabel="Select"
+                            urlPath="/content/navigation-root/Membership"/>
+                    </cta-small>
+                    <rte
+                        jcr:lastModified="{Date}2016-10-03T15:03:15.890-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $20&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </membership-table-column2>
+                <membership-table-column3
+                    jcr:lastModified="{Date}2016-10-05T07:25:48.945-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/membership-comparision-table/membership-table-column"
+                    headerImage="/content/dam/aaa/images/Comp-table-classic.png"
+                    title="Classic $50/yr">
+                    <cta-small
+                        jcr:lastModified="{Date}2016-10-05T07:23:35.200-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"
+                            ctaColor="rgba(255,70,57,1)"
+                            ctaLabel="Select"/>
+                    </cta-small>
+                    <rte
+                        jcr:lastModified="{Date}2016-10-03T15:03:30.224-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="One-time admission fee: $20&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </membership-table-column3>
+                <rte
+                    jcr:lastModified="{Date}2016-10-05T07:31:25.828-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="What's the catch? No catch. Our members bring in more volume to businesses, helping increase their pro ts. In turn they can off er great discounts to help you follow your passions. Win-win."
+                    textIsRich="true"/>
+                <membership-table-row4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/apps/ace-www/components/content/membership-comparision-table/membership-table-row"/>
+            </membership_comparisi_72647449>
+            <footnote
+                jcr:created="{Date}2016-10-06T00:58:04.528-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T05:42:12.848-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/footnote"
+                text="The Automobile club of souheren california"
+                textIsRich="true"/>
+            <icon_row
+                jcr:created="{Date}2016-09-19T14:22:46.533-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T04:25:26.981-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/icon-row"
+                backgroundColor="rgba(255,255,255,1)"
+                iconamount="3"
+                jumpLinkId="icon-row"
+                title="Discounts">
+                <icon_item1
+                    jcr:lastModified="{Date}2016-10-18T04:01:46.972-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="aaainspolic"
+                    icontitle="Your AAA insurance policy number"
+                    image="/content/dam/aaa/images/aaainspolic.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:03:50.747-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item1>
+                <icon_item2
+                    jcr:lastModified="{Date}2016-10-18T04:03:25.133-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="policereportnumber"
+                    icontitle="Policy report number"
+                    image="/content/dam/aaa/images/policereportnumber.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:03:58.771-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item2>
+                <icon_item3
+                    jcr:lastModified="{Date}2016-10-18T04:05:58.140-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="information"
+                    icontitle="Information about parties involved"
+                    image="/content/dam/aaa/images/information.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:06:06.787-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item3>
+                <icon_item4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/apps/ace-www/components/content/icon-row/icon-item"/>
+            </icon_row>
+        </content-par>
+        <foot-note
+            jcr:lastModified="{Date}2016-09-27T01:08:38.420-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/footnote"
+            backgroundColor="rgba(48,48,48,1)"
+            fontColor="rgba(255,255,255,1)"
+            text="&lt;span class=&quot;roboto-light font-h&quot;>The Automobile Club of Southern California is a member club affiliated with the American Automobile Association (AAA) national federation and serves members in the following California counties: Inyo, Imperial, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, Santa Barbara, Tulare, and Ventura.&lt;/span>&#xa;"
+            textIsRich="true"/>
+    </jcr:content>
+</jcr:root>

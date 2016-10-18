@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2016-09-02T09:08:07.478-06:00"
+        cq:lastModified="{Date}2016-10-18T07:20:26.662-06:00"
         cq:lastModifiedBy="axisadmin"
-        cq:lastReplicated="{Date}2016-09-02T09:08:16.240-06:00"
+        cq:lastReplicated="{Date}2016-10-05T09:29:51.941-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/generic"
@@ -17,29 +17,35 @@
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
-            <one_column_content
-                jcr:created="{Date}2016-08-29T13:01:04.545-06:00"
+            <midpage_sticky_nav
+                jcr:created="{Date}2016-10-18T03:21:21.622-06:00"
                 jcr:createdBy="axisadmin"
-                jcr:lastModified="{Date}2016-08-29T15:08:49.288-06:00"
+                jcr:lastModified="{Date}2016-10-18T03:24:54.039-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/one-column-content"
-                image="/content/dam/aaa/images/one-column-img.png"
-                jumpLinkId="money"
-                mainalttext="money"
-                title="Put cash back in your pocket with WOW points">
-                <body-text
-                    jcr:lastModified="{Date}2016-08-29T13:03:23.780-06:00"
+                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                jumpLinkId1="faq"
+                jumpLinkId2="membership-calc"
+                jumpLinkId3="icon-row"
+                link1label="FAQ"
+                link2label="Membership Calculator"
+                link3label="Icon Row">
+                <cta-small
+                    jcr:lastModified="{Date}2016-10-18T03:25:59.801-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
-                    text="Beyond our great discounts, we also reward our members with WOW points. Everytime you shop online through AAA you earn points that count towards cash-back savings. &amp;nbsp;You can also use your WOW points to purchase from online stores, and they never expire as long as you are with AAA.&amp;nbsp;&lt;br>&#xd;&#xa;"
-                    textIsRich="true"/>
-            </one_column_content>
+                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaLabel="1-800-672-5246"
+                        phonedialFlag="true"/>
+                </cta-small>
+            </midpage_sticky_nav>
             <faq
                 jcr:created="{Date}2016-08-29T02:37:52.433-06:00"
                 jcr:createdBy="axisadmin"
-                jcr:lastModified="{Date}2016-09-01T09:44:58.953-06:00"
+                jcr:lastModified="{Date}2016-10-18T03:16:39.779-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/faq"
@@ -49,11 +55,11 @@
                 jumpLinkId="faq"
                 leftSectionTitle="Frequently Asked Questions"
                 link1Caption="View All FAQ's"
-                link1URL="/content/ace-www/en/sprint2/component---faq-s"
+                link1URL="/content/ace-www/en/sprint2"
                 link2Caption="Contact Support"
                 link2URL="/content/ace-www/en/sprint2/component---faq-s"
                 rightSectionTitle="Still Need Help?"
-                titleIcon="/content/dam/aaa/faq-icon.png">
+                titleIcon="/content/dam/aaa/images/faq-icon.png">
                 <faqr jcr:primaryType="nt:unstructured">
                     <_x0031_
                         jcr:primaryType="nt:unstructured"
@@ -74,99 +80,269 @@
                 </faqr>
             </faq>
             <membership_calc
-                jcr:created="{Date}2016-08-29T02:46:52.985-06:00"
-                jcr:createdBy="axisadmin"
-                jcr:lastModified="{Date}2016-09-02T09:06:13.064-06:00"
-                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/membership-calc"
-                aaaMembershipText="AAA Membership"
-                aaasMembershipCharge="48"
-                altText="alt text"
-                fileReference="/content/dam/aaa/ace-test-page-building/6848599-paradise-beach-wallpaper.jpg"
-                itemizedLabel="Save"
-                itemizedSavingsHeading="SAMPLE SERVICE "
-                jumpLinkId="mc"
-                textColor="rgba(0,0,0,1)"
-                title="Watch your membership pay for itself"
-                totalSavings="552"
-                totalSavingsHeading="EXAMPLE SAVINGS"
-                totalSavingsText="Total Savings"
-                yearlySavings="600"
-                yearlySavingsText="Yearly Savings">
-                <body-text
-                    jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
+                sling:resourceType="cq/personalization/components/target"
+                accurateTargeting="false"
+                location="b35ddc0f-5183-4aa7-ac8b-0816a7fd0b5d">
+                <default
+                    jcr:created="{Date}2016-08-29T02:46:52.985-06:00"
+                    jcr:createdBy="axisadmin"
+                    jcr:lastModified="{Date}2016-10-18T03:45:45.923-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
-                    text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
-                    textIsRich="true"/>
-                <mcfiledset jcr:primaryType="nt:unstructured">
-                    <_x0031_
+                    sling:resourceType="ace-www/components/content/membership-calc"
+                    aaaMembershipText="AAA Membership"
+                    aaasMembershipCharge="48"
+                    altText="alt text"
+                    fileReference="/content/dam/aaa/images/membership-calculator.png"
+                    itemizedLabel="Save"
+                    itemizedSavingsHeading="Sample Services"
+                    jumpLinkId="membership-calc"
+                    textColor="rgba(0,0,0,1)"
+                    title="Watch your membership pay for itself"
+                    totalSavings="552"
+                    totalSavingsHeading="Example Savings"
+                    totalSavingsText="Total Savings"
+                    yearlySavings="600"
+                    yearlySavingsText="Yearly Savings">
+                    <body-text
+                        jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
+                        jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        actualPrice="100"
-                        discountPrice="90"
-                        iconAltText="Movie "
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
-                        itemizedSavings="10"
-                        itemizedSavingsText="Movie night"
-                        savingsLabel="saved"/>
-                    <_x0032_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="113"
-                        discountPrice="93"
-                        iconAltText="Hotel"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
-                        itemizedSavings="23"
-                        itemizedSavingsText="Hotel Items"
-                        savingsLabel="saved"/>
-                    <_x0033_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="120"
-                        discountPrice="100"
-                        iconAltText="alttext"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
-                        itemizedSavings="20"
-                        itemizedSavingsText="Car Items"
-                        savingsLabel="saved"/>
-                    <_x0034_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="150"
-                        discountPrice="100"
-                        iconAltText="m ovie"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
-                        itemizedSavings="50"
-                        itemizedSavingsText="Movie  night"
-                        savingsLabel="saved"/>
-                    <_x0035_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="160"
-                        discountPrice="130"
-                        iconAltText="Car"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
-                        itemizedSavings="30"
-                        itemizedSavingsText="Car Items"
-                        savingsLabel="saved"/>
-                    <_x0036_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="140"
-                        discountPrice="120"
-                        iconAltText="Hotel"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
-                        itemizedSavings="20"
-                        itemizedSavingsText="Hotel Items"
-                        savingsLabel="saved"/>
-                    <_x0037_
-                        jcr:primaryType="nt:unstructured"
-                        actualPrice="170"
-                        discountPrice="145"
-                        iconAltText="AltTest"
-                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
-                        itemizedSavings="25"
-                        itemizedSavingsText="Movie Items"
-                        savingsLabel="saved"/>
-                </mcfiledset>
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
+                        textIsRich="true"/>
+                    <mcfiledset jcr:primaryType="nt:unstructured">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="100"
+                            discountPrice="90"
+                            iconAltText="Movie "
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                            itemizedSavings="10"
+                            itemizedSavingsText="Movie night"
+                            savingsLabel="saved"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="113"
+                            discountPrice="93"
+                            iconAltText="Hotel"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                            itemizedSavings="23"
+                            itemizedSavingsText="Hotel Items"
+                            savingsLabel="saved"/>
+                        <_x0033_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="120"
+                            discountPrice="100"
+                            iconAltText="alttext"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                            itemizedSavings="20"
+                            itemizedSavingsText="Car Items"
+                            savingsLabel="saved"/>
+                        <_x0034_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="150"
+                            discountPrice="100"
+                            iconAltText="m ovie"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                            itemizedSavings="50"
+                            itemizedSavingsText="Movie  night"
+                            savingsLabel="saved"/>
+                        <_x0035_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="160"
+                            discountPrice="130"
+                            iconAltText="Car"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                            itemizedSavings="30"
+                            itemizedSavingsText="Car Items"
+                            savingsLabel="saved"/>
+                        <_x0036_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="140"
+                            discountPrice="120"
+                            iconAltText="Hotel"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                            itemizedSavings="20"
+                            itemizedSavingsText="Hotel Items"
+                            savingsLabel="saved"/>
+                        <_x0037_
+                            jcr:primaryType="nt:unstructured"
+                            actualPrice="170"
+                            discountPrice="145"
+                            iconAltText="AltTest"
+                            itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                            itemizedSavings="25"
+                            itemizedSavingsText="Movie Items"
+                            savingsLabel="saved"/>
+                    </mcfiledset>
+                </default>
             </membership_calc>
+            <icon_row
+                jcr:created="{Date}2016-10-18T03:27:51.177-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T03:39:37.173-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/icon-row"
+                backgroundColor="rgba(228,229,229,1)"
+                iconamount="4"
+                jumpLinkId="icon-row"
+                title="Discounts">
+                <icon_item1
+                    jcr:lastModified="{Date}2016-10-18T03:33:09.065-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="CompI-icon-1"
+                    icontitle="Food &amp; Drink"
+                    image="/content/dam/aaa/images/CompI-icon-1.png">
+                    <cta-large
+                        jcr:lastModified="{Date}2016-10-18T03:33:29.958-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        ctaType="links">
+                        <link1
+                            jcr:primaryType="nt:unstructured"
+                            ctaLabel="View details"
+                            linkStyle="default"/>
+                        <link2
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link3
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link4
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link5
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                        <button2
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                    </cta-large>
+                </icon_item1>
+                <icon_item2
+                    jcr:lastModified="{Date}2016-10-18T03:35:01.103-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="CompI-icon-2"
+                    icontitle="Outdoors &amp; Recreation"
+                    image="/content/dam/aaa/images/CompI-icon-2.png">
+                    <cta-large
+                        jcr:lastModified="{Date}2016-10-18T03:35:16.364-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        ctaType="links">
+                        <link1
+                            jcr:primaryType="nt:unstructured"
+                            ctaLabel="View details"
+                            linkStyle="default"/>
+                        <link2
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link3
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link4
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link5
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                        <button2
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                    </cta-large>
+                </icon_item2>
+                <icon_item3
+                    jcr:lastModified="{Date}2016-10-18T03:36:11.155-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="CompI-icon-3"
+                    icontitle="Arts &amp; Culture"
+                    image="/content/dam/aaa/images/CompI-icon-3.png">
+                    <cta-large
+                        jcr:lastModified="{Date}2016-10-18T03:37:11.113-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        ctaType="links">
+                        <link1
+                            jcr:primaryType="nt:unstructured"
+                            ctaLabel="View details"
+                            linkStyle="default"/>
+                        <link2
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link3
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link4
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link5
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                        <button2
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                    </cta-large>
+                </icon_item3>
+                <icon_item4
+                    jcr:lastModified="{Date}2016-10-18T03:36:52.323-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="CompI-icon-4"
+                    icontitle="Theme Parks &amp; Attractions"
+                    image="/content/dam/aaa/images/CompI-icon-4.png">
+                    <cta-large
+                        jcr:lastModified="{Date}2016-10-18T03:37:38.541-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        ctaType="links">
+                        <link1
+                            jcr:primaryType="nt:unstructured"
+                            ctaLabel="View details"
+                            linkStyle="default"/>
+                        <link2
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link3
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link4
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <link5
+                            jcr:primaryType="nt:unstructured"
+                            linkStyle="default"/>
+                        <button1
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                        <button2
+                            jcr:primaryType="nt:unstructured"
+                            buttonStyle="default"/>
+                    </cta-large>
+                </icon_item4>
+            </icon_row>
         </content-par>
         <header-par
             jcr:primaryType="nt:unstructured"
@@ -201,7 +377,4 @@
     </jcr:content>
     <component---faq-s/>
     <component---membership-calculator/>
-    <component---search-results/>
-    <component---icon-row/>
-    <test/>
 </jcr:root>

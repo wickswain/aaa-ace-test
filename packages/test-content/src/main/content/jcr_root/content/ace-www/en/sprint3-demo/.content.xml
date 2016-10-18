@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T04:25:52.599-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-05T09:29:57.163-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/generic"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sprint3 Demo"
+        jcr:uuid="253dc39a-e566-482c-8687-1cd28bf025fb"
+        sling:resourceType="ace-www/components/page/genericpage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <midpage_sticky_nav
+                cq:lastReplicated="{Date}2016-09-16T12:47:05.295-06:00"
+                cq:lastReplicatedBy="axisadmin"
+                cq:lastReplicationAction="Activate"
+                jcr:created="{Date}2016-09-15T04:08:28.594-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T04:25:52.509-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:mixinTypes="[cq:ReplicationStatus]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                jumpLinkId1="home-header"
+                jumpLinkId2="icon-row"
+                link1label="Save Money"
+                link2label="Discounts">
+                <cta-small
+                    jcr:lastModified="{Date}2016-09-30T05:16:30.303-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaLabel="Sign in"/>
+                </cta-small>
+            </midpage_sticky_nav>
+            <homeheader
+                jcr:created="{Date}2016-09-15T03:08:37.383-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T04:25:13.503-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/homeheader"
+                backgroundShade="black"
+                ctaFlag="true"
+                headerSize="full"
+                image="/content/dam/aaa/article-carousel/1471479306370.jpg"
+                imageorvideo="showimage"
+                jumpLinkId="home-header"
+                learnButtonId="discounts"
+                opacity="0.5"
+                rteFlag="true"
+                textColor="rgba(255,255,255,1)"
+                title="Save money doing what you love"
+                video="/content/dam/aaa/Videos/aaa-family-vacation-video.mp4">
+                <rte
+                    jcr:lastModified="{Date}2016-09-20T01:43:44.465-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;span class=&quot;roboto-light font-g&quot;>What's the catch? No catch. Our members bring in more volume to businesses, helping increase their profits. In turn they can off er great discounts to help you follow your passions. Win-win.&lt;br>&#xd;&#xa; &lt;/span>"
+                    textIsRich="true"/>
+                <cta-button-large
+                    jcr:lastModified="{Date}2016-09-15T08:51:16.687-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    ctaType="buttons">
+                    <link1
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link2
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link3
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link4
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <link5
+                        jcr:primaryType="nt:unstructured"
+                        linkStyle="default"/>
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaLabel="Sign in"
+                        urlPath="https://apps.calif.aaa.com/aceapps/Authenticate/login"/>
+                    <button2
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"/>
+                </cta-button-large>
+            </homeheader>
+            <two_column_compariso
+                jcr:created="{Date}2016-09-19T14:07:11.497-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-19T14:07:11.497-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/two-column-comparison"/>
+            <icon_row
+                jcr:created="{Date}2016-09-19T14:22:46.533-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T04:25:26.981-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/icon-row"
+                backgroundColor="rgba(255,255,255,1)"
+                iconamount="3"
+                jumpLinkId="icon-row"
+                title="Discounts">
+                <icon_item1
+                    jcr:lastModified="{Date}2016-10-18T04:01:46.972-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="aaainspolic"
+                    icontitle="Your AAA insurance policy number"
+                    image="/content/dam/aaa/images/aaainspolic.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:03:50.747-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item1>
+                <icon_item2
+                    jcr:lastModified="{Date}2016-10-18T04:03:25.133-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="policereportnumber"
+                    icontitle="Policy report number"
+                    image="/content/dam/aaa/images/policereportnumber.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:03:58.771-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item2>
+                <icon_item3
+                    jcr:lastModified="{Date}2016-10-18T04:05:58.140-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    iconalttext="information"
+                    icontitle="Information about parties involved"
+                    image="/content/dam/aaa/images/information.png">
+                    <rte
+                        jcr:lastModified="{Date}2016-10-18T04:06:06.787-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/rte"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xa;"
+                        textIsRich="true"/>
+                </icon_item3>
+                <icon_item4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/apps/ace-www/components/content/icon-row/icon-item"/>
+            </icon_row>
+            <two_column_compariso_1777906155
+                jcr:created="{Date}2016-09-19T14:27:15.831-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-19T14:27:15.831-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/two-column-comparison"/>
+            <column_comparison
+                jcr:created="{Date}2016-10-18T04:07:21.011-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T04:08:23.614-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/column-comparison"
+                backgroundColor="rgba(255,255,255,1)"
+                columnCount="2"
+                title="Been in accident?">
+                <rte
+                    jcr:lastModified="{Date}2016-10-18T04:08:43.980-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xa;"
+                    textIsRich="true"/>
+                <leftColumnDouble
+                    jcr:lastModified="{Date}2016-10-18T04:15:17.162-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/column-comparison/column-container"
+                    columnCount="4"
+                    heading="Immediate action"
+                    image="/content/dam/aaa/images/CompF-icon-2.png">
+                    <column_item1
+                        jcr:lastModified="{Date}2016-10-18T04:14:05.290-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+                        headerCopy="Protect yourself"
+                        textIsRich="[true,true]"/>
+                    <column_item2
+                        jcr:lastModified="{Date}2016-10-18T04:14:34.379-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+                        headerCopy="File a police report"
+                        textIsRich="[true,true]"/>
+                    <column_item3
+                        jcr:lastModified="{Date}2016-10-18T04:15:36.371-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+                        headerCopy="Don't commit to any obligations"
+                        includeDivider="true"
+                        textIsRich="[true,true]"/>
+                    <column_item4
+                        jcr:lastModified="{Date}2016-10-18T04:22:19.228-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&amp;nbsp;"
+                        headerCopy="Call AAA"
+                        includeCTA="true"
+                        textIsRich="[true,true]">
+                        <cta
+                            jcr:lastModified="{Date}2016-10-18T04:16:10.855-06:00"
+                            jcr:lastModifiedBy="axisadmin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                            ctaType="buttons">
+                            <link1
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link2
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link3
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link4
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link5
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <button1
+                                jcr:primaryType="nt:unstructured"
+                                buttonStyle="default"
+                                ctaLabel="1-800-672-5246"
+                                phonedialFlag="true"/>
+                            <button2
+                                jcr:primaryType="nt:unstructured"
+                                buttonStyle="default"/>
+                        </cta>
+                    </column_item4>
+                </leftColumnDouble>
+                <rightColumnDouble
+                    jcr:lastModified="{Date}2016-10-18T04:13:20.895-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/column-comparison/column-container"
+                    columnCount="4"
+                    heading="Within 24 hours"
+                    image="/content/dam/aaa/images/CompF-icon-4.png">
+                    <column_item1
+                        jcr:lastModified="{Date}2016-10-18T04:18:13.641-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+                        headerCopy="File a police report"
+                        includeDivider="true"
+                        textIsRich="[true,true]"/>
+                    <column_item2
+                        jcr:lastModified="{Date}2016-10-18T04:19:21.349-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        headerCopy="Keep recoreds of your cost"
+                        includeDivider="true"
+                        textIsRich="[true,true]"/>
+                    <column_item3
+                        jcr:lastModified="{Date}2016-10-18T04:20:15.551-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        headerCopy="Report facts and responsibilities"
+                        includeDivider="true"
+                        textIsRich="[true,true]"/>
+                    <column_item4
+                        jcr:lastModified="{Date}2016-10-18T04:20:57.985-06:00"
+                        jcr:lastModifiedBy="axisadmin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ace-www/components/content/column-comparison/column-item"
+                        bodyCopy="Lorem ipsum dolor sit amet, consectetur adispiscing elite."
+                        headerCopy="Submit a claim"
+                        includeCTA="true"
+                        textIsRich="[true,true]">
+                        <cta
+                            jcr:lastModified="{Date}2016-10-18T04:21:16.131-06:00"
+                            jcr:lastModifiedBy="axisadmin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                            ctaType="buttons">
+                            <link1
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link2
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link3
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link4
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <link5
+                                jcr:primaryType="nt:unstructured"
+                                linkStyle="default"/>
+                            <button1
+                                jcr:primaryType="nt:unstructured"
+                                buttonStyle="default"
+                                ctaLabel="1-800-672-5246"
+                                phonedialFlag="true"/>
+                            <button2
+                                jcr:primaryType="nt:unstructured"
+                                buttonStyle="default"/>
+                        </cta>
+                    </column_item4>
+                </rightColumnDouble>
+            </column_comparison>
+        </content-par>
+    </jcr:content>
+    <article-page/>
+    <home-header/>
+</jcr:root>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T03:53:40.487-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/libs/cq/personalization/templates/teaser"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="navigation-tiles(navigation_tiles)"
+        sling:resourceType="cq/personalization/components/teaserpage"
+        location="312e1529-81ff-4066-bada-2cc8c27758c8">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <navigation_tiles
+                jcr:created="{Date}2016-10-18T01:32:28.165-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-18T03:37:56.726-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/navigation-tiles">
+                <tile1
+                    jcr:primaryType="nt:unstructured"
+                    linkURL="/content/dam/formsanddocuments"
+                    openInNewTabFlag="true"
+                    tileIcon="/content/dam/aaa/images/travel-icon.png"
+                    tileIconAltText="Alt Text"
+                    title="TravelServices"/>
+                <tile2
+                    jcr:primaryType="nt:unstructured"
+                    linkURL="https://www.google.com"
+                    openInNewTabFlag="true"
+                    tileIcon="/content/dam/aaa/images/tickets.png"
+                    tileIconAltText="Alt text"
+                    title="Manage My Account"/>
+                <tile3
+                    jcr:primaryType="nt:unstructured"
+                    linkURL="/content/dam/aaa/footer-image.jpg"
+                    tileIcon="/content/dam/aaa/images/supplies.png"
+                    tileIconAltText="Alt text"
+                    title="Everyday Discounts"/>
+                <tile4
+                    jcr:primaryType="nt:unstructured"
+                    tileIcon="/content/dam/aaa/images/tag-icon.png"
+                    title="Insurance Discounts"/>
+                <tile5
+                    jcr:primaryType="nt:unstructured"
+                    tileIcon="/content/dam/aaa/images/scheeld-icon.png"
+                    title="Roadside assistance"/>
+                <tile6
+                    jcr:primaryType="nt:unstructured"
+                    tileIcon="/content/dam/aaa/images/tag-icon.png"
+                    title="Join Now"/>
+            </navigation_tiles>
+        </par>
+    </jcr:content>
+</jcr:root>

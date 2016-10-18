@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T07:20:26.661-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/apps/ace-www/templates/contnetpage_personalization"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Navigation Column Links"
+        sling:resourceType="ace-www/components/page/contentpage_personalization">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <navigation_columnlis
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/personalization/components/target"
+                accurateTargeting="false"
+                location="40ea5075-d25e-4317-9809-cbf9492b8558">
+                <default
+                    jcr:created="{Date}2016-10-18T01:34:48.573-06:00"
+                    jcr:createdBy="axisadmin"
+                    jcr:lastModified="{Date}2016-10-18T01:35:44.377-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/navigation-columnlist"
+                    columntitle1="colum titl1"
+                    columntitle2="colum titl2"
+                    columntitle3="colum titl3"
+                    columntitle4="columntitle4">
+                    <columnfieldset1 jcr:primaryType="nt:unstructured">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title1"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title2"/>
+                    </columnfieldset1>
+                    <columnfieldset2 jcr:primaryType="nt:unstructured">
+                        <_x0033_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title21"/>
+                        <_x0034_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title22"/>
+                    </columnfieldset2>
+                    <columnfieldset3 jcr:primaryType="nt:unstructured">
+                        <_x0035_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title31"/>
+                        <_x0036_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title32"/>
+                    </columnfieldset3>
+                    <columnfieldset4 jcr:primaryType="nt:unstructured">
+                        <_x0037_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title41"/>
+                        <_x0038_
+                            jcr:primaryType="nt:unstructured"
+                            linktitle="Link Title42"/>
+                    </columnfieldset4>
+                </default>
+            </navigation_columnlis>
+        </content-par>
+    </jcr:content>
+</jcr:root>

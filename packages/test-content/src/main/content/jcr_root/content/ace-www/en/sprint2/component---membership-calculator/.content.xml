@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2016-09-02T09:20:23.019-06:00"
         cq:lastModifiedBy="axisadmin"
-        cq:lastReplicated="{Date}2016-09-01T12:12:17.529-06:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastReplicated="{Date}2016-09-16T10:18:30.196-06:00"
+        cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/generic"
         jcr:isCheckedOut="{Boolean}true"

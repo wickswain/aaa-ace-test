@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Article Carousel">
+        <folderThumbnail/>
+    </jcr:content>
+    <_x0031_466631016190.jpg/>
+    <_x0031_471404821149.jpg/>
+    <_x0031_466441331863.jpg/>
+    <_x0031_471404765906.jpg/>
+    <_x0031_471404814707.jpg/>
+    <_x0031_471404771898.jpg/>
+    <_x0031_471404829924.jpg/>
+    <_x0031_471479319977.jpg/>
+    <_x0031_471479313604.jpg/>
+    <_x0031_471479306370.jpg/>
+</jcr:root>

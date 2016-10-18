@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-30T03:35:36.300-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-04T13:04:08.980-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/libs/cq/personalization/templates/teaser"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="bottom-navigation(navigation_textandim)"
+        jcr:uuid="9b20fbe7-d645-430d-b402-c81d7d01c6b4"
+        sling:resourceType="cq/personalization/components/teaserpage"
+        location="3eb51907-31f2-4aad-b984-e4b2e67a501c">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <navigation_textandim
+                jcr:created="{Date}2016-09-21T19:10:46.215+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-09-30T03:35:22.073-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/navigation-textandimage"
+                altText="sfdf"
+                enableCTA="true"
+                enableRTE="true"
+                fileReference="/content/dam/aaa/images/navigation/AAA_Component_Z_GlobalNav_v1_08.png">
+                <rte
+                    jcr:lastModified="{Date}2016-09-27T06:57:44.710-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="&lt;b>&lt;i>RTE text goes here&lt;/i>&lt;/b>"
+                    textIsRich="true"/>
+                <cta-button-small
+                    jcr:lastModified="{Date}2016-09-30T03:35:36.277-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    <button1
+                        jcr:primaryType="nt:unstructured"
+                        buttonStyle="default"
+                        ctaColor="rgba(255,70,57,1)"
+                        ctaLabel="Sign Up"
+                        phonedialFlag="true"/>
+                </cta-button-small>
+            </navigation_textandim>
+        </par>
+    </jcr:content>
+</jcr:root>

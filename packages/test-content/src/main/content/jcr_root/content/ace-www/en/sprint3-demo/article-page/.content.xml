@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2016-09-26T08:21:51.916-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-26T09:21:03.157-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/article"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:lastModified="{Date}2016-09-26T08:21:51.871-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Article Page"
+        jcr:uuid="06ce629a-d1c7-4f07-addd-7fd5db0610b9"
+        sling:resourceType="ace-www/components/page/articlepage"
+        articleImageAltText="Article Page Image Alt Text"
+        articleLogoAltText="Article Logo Alt Text"
+        articleLogoImage="/content/dam/AAA_Assets/50_50_Images/CompA-icon.png"
+        articleTitle="Big city on a budget: Singapore"
+        authorName="Leslie Yap"
+        issueDate="2016-09-19"
+        jumpLinkId="Article Header"
+        pagePopularity="1"
+        text="Description:&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br>&#xd;&#xa;&#xd;&#xa;"
+        textIsRich="true">
+        <left-content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <articlecarousel
+                jcr:created="{Date}2016-09-15T07:38:25.823-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-15T08:19:30.377-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/articlecarousel"
+                altText="[,]"
+                carouselImage="[/content/dam/aaa/images/1.gif,/content/dam/aaa/images/6.gif]"
+                imageLabel="[,]"
+                photoCredit="[,]">
+                <images jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Article Carousel Lake Image"
+                        carouselImage="/content/dam/aaa/article-carousel/1466631016190.jpg"
+                        imageLabel="Caribbean Temple"
+                        photoCredit="Thota Dam"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Article Carousel Lake Image"
+                        carouselImage="/content/dam/aaa/article-carousel/1471404821149.jpg"
+                        imageLabel="Caribbean Food"
+                        photoCredit="Hola umbu"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Article Carousel Sea Image"
+                        carouselImage="/content/dam/aaa/article-carousel/1466441331863.jpg"
+                        imageLabel="Caribbean Lake"
+                        photoCredit="Kapil Dev"/>
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Caribbean Leisure"
+                        carouselImage="/content/dam/aaa/article-carousel/1471404765906.jpg"
+                        imageLabel="Caribbean Leisure"
+                        photoCredit="MK Lodha"/>
+                    <_x0035_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Caribbean Shop"
+                        carouselImage="/content/dam/aaa/article-carousel/1471404814707.jpg"
+                        imageLabel="Caribbean Shop"
+                        photoCredit="Khota kahis"/>
+                    <_x0036_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Caribbean Fun"
+                        carouselImage="/content/dam/aaa/article-carousel/1471404771898.jpg"
+                        imageLabel="Caribbean Fun"
+                        photoCredit="Pumpkin Kullu"/>
+                    <_x0037_
+                        jcr:primaryType="nt:unstructured"
+                        altText="Caribbean Art"
+                        carouselImage="/content/dam/aaa/article-carousel/1471404829924.jpg"
+                        imageLabel="Caribbean Art"
+                        photoCredit="Artiest Kit"/>
+                </images>
+            </articlecarousel>
+        </left-content-par>
+        <article-hero
+            jcr:lastModified="{Date}2016-09-15T05:02:23.550-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehero"
+            articleImage="/content/dam/aaa/images/full-img.jpg"/>
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <articleheader
+                jcr:created="{Date}2016-09-15T05:49:21.272-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-15T05:49:21.272-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/articleheader"/>
+            <article_text
+                jcr:created="{Date}2016-09-15T05:54:13.524-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-19T07:44:47.338-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/article-text"
+                text="&lt;p>&lt;span class=&quot;roboto-light font-b&quot;>&lt;span class=&quot;roboto-slab-bold font-a&quot;>Getting around&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-slab-bold font-b&quot;>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-e&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;™&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-b&quot;>&lt;span class=&quot;roboto-slab-bold font-b&quot;>Getting around&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-e&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;®&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-slab-bold font-b&quot;>Getting around&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-c&quot;>&lt;i>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/i>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-h&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;©&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-medium font-f&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </content-par>
+        <image
+            jcr:lastModified="{Date}2016-09-26T08:21:51.871-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

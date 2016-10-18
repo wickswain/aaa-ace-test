@@ -5,4 +5,5 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="texas"/>
     <global-footer/>
+    <global-logo/>
 </jcr:root>

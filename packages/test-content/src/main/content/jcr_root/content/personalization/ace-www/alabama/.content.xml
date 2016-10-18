@@ -4,4 +4,6 @@
     <jcr:content
         jcr:primaryType="nt:unstructured"
         jcr:title="alabama"/>
+    <global-logo/>
+    <global-footer/>
 </jcr:root>

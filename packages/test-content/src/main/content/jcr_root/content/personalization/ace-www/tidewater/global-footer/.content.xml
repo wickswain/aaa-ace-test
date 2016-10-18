@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-05T03:40:12.108-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-05T09:47:36.851-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/contnetpage_personalization"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Global Footer"
+        jcr:uuid="e608ac1a-3208-4e16-a272-f2ebd8cd457a"
+        sling:resourceType="ace-www/components/page/contentpage_personalization">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <global_footer
+                jcr:created="{Date}2016-08-29T05:40:27.014-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-02T09:15:03.782-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/global-footer"
+                copyright="Copyright © 2016 Automobile Club of Southern California. All Rights Reserved."
+                disclaimer="The Automobile Club of Southern California is a member club affiliated with the American Automobile Association (AAA) national federation and serves members in the following California counties: Inyo, Imperial, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, Santa Barbara, Tulare, and Ventura."
+                linksList1Heading="Popular pages"
+                linksList2Heading="Products &amp; Services"
+                linksList3Heading="Sprint2 Components"
+                textIsRich="true">
+                <icon1
+                    jcr:lastModified="{Date}2016-09-02T09:15:03.782-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/image"
+                    alt="Mobile"
+                    fileReference="/content/dam/aaa/images/mobile-icon.png"/>
+                <icon2
+                    jcr:lastModified="{Date}2016-09-02T09:15:03.782-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/image"
+                    alt="Blog"
+                    fileReference="/content/dam/aaa/images/rss-icon.png"/>
+                <footer-logo
+                    jcr:lastModified="{Date}2016-08-29T06:20:16.964-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/logo"
+                    alt="Logo"
+                    fileReference="/content/dam/aaa/images/aaa-color-logo.png"/>
+                <download-app-text
+                    jcr:lastModified="{Date}2016-08-29T05:52:06.273-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Download the AAA app for ios or android&lt;br>&#xa;"
+                    textIsRich="true"/>
+                <blog-text
+                    jcr:lastModified="{Date}2016-08-29T05:52:38.389-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Read the latest from our blog&lt;br>&#xa;"
+                    textIsRich="true"/>
+                <linksList1 jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Page Intro"
+                        linkURL="/content/ace-www/en/sprint1/page-intro"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Footer CTA"
+                        linkURL="/content/ace-www/en/sprint1/footer-cta"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Full Width Image"
+                        linkURL="/content/ace-www/en/sprint1/full-width-image"/>
+                </linksList1>
+                <linksList2 jcr:primaryType="nt:unstructured">
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Insurance"/>
+                    <_x0035_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Auto Insurance"
+                        linkURL="http://www.axis41.com"
+                        newTabFlag="true"/>
+                </linksList2>
+                <linksList3 jcr:primaryType="nt:unstructured">
+                    <_x0036_
+                        jcr:primaryType="nt:unstructured"
+                        linkLabel="Global Footer"
+                        linkURL="/content/ace-www/en/sprint2/test"/>
+                </linksList3>
+                <socialmedia jcr:primaryType="nt:unstructured">
+                    <_x0037_
+                        jcr:primaryType="nt:unstructured"
+                        alt="Facebook"
+                        linkTo="https://facebook.com/AAASoCal"
+                        smIcon="/content/dam/aaa/images/facebook.png"/>
+                    <_x0038_
+                        jcr:primaryType="nt:unstructured"
+                        alt="Tweet"
+                        linkTo="https://twitter.com/AAASoCal"
+                        smIcon="/content/dam/aaa/images/tweet.png"/>
+                </socialmedia>
+                <foot-note
+                    jcr:lastModified="{Date}2016-10-05T03:40:12.069-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/footnote"
+                    backgroundColor="rgba(48,48,48,1)"
+                    showFullwidth="true"
+                    text="The Automobile Club of Southern California is a member club affiliated with the American Automobile Association (AAA) national federation and serves members in the following California counties: Inyo, Imperial, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, Santa Barbara, Tulare, and Ventura. California&lt;br>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </global_footer>
+        </content-par>
+    </jcr:content>
+</jcr:root>

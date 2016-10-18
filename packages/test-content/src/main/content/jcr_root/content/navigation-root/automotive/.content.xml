@@ -4,21 +4,15 @@
     <jcr:content
         cq:lastModified="{Date}2016-09-13T09:03:53.973-06:00"
         cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-26T09:24:15.066-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/globalnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Automotive"
         jcr:uuid="efff5c68-448a-4b32-89e2-70ef3fde245f"
-        sling:resourceType="ace-www/components/page/globalnav"/>
-    <roadside-assistance/>
-    <aaa-battery-service/>
-    <approved-auto-repair-shops/>
-    <dmv-vehicle-registration-service/>
-    <rent-a-vehicle/>
-    <join-now/>
-    <get-a-vehicle/>
-    <maintain-vehicles/>
-    <driving-education---resources/>
-    <insurance/>
+        sling:resourceType="ace-www/components/page/globalnav"
+        tileIcon="/content/dam/aaa/images/auto-icon.png"/>
 </jcr:root>

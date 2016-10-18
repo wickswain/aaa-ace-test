@@ -4,4 +4,6 @@
     <jcr:content
         jcr:primaryType="nt:unstructured"
         jcr:title="tidewater"/>
+    <global-logo/>
+    <global-footer/>
 </jcr:root>

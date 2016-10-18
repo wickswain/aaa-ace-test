@@ -4,17 +4,15 @@
     <jcr:content
         cq:lastModified="{Date}2016-09-06T19:54:58.709+05:30"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2016-09-26T09:24:39.121-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/globalnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Financial"
         jcr:uuid="1a2b4a1c-0054-4492-9666-e3071507f730"
-        sling:resourceType="ace-www/components/page/globalnav"/>
-    <life-insurance/>
-    <identity-theft-monitoring/>
-    <aaa-credit-card/>
-    <notary-services/>
-    <foreign-currency/>
-    <join-now/>
+        sling:resourceType="ace-www/components/page/globalnav"
+        tileIcon="/content/dam/aaa/images/finan-icon.png"/>
 </jcr:root>
