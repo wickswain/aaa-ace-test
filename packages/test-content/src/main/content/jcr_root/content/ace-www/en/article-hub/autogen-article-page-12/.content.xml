@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2016-10-18T06:19:02.406-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:tags="[AAA:business-funcations/travel]"
+        cq:template="/apps/ace-www/templates/article"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:lastModified="{Date}2016-10-18T06:19:02.371-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AutoGen Article Page 12"
+        jcr:uuid="8477b1e9-f9d2-400a-b0e8-9df889627361"
+        sling:resourceType="ace-www/components/page/articlepage"
+        articleImageAltText="Article Hero Alt Text 12"
+        articleTitle="5 folkloric classes in San Diego"
+        authorName="Lesie Yap"
+        fileReference="/content/dam/AAA_Assets/50_50_Images/JUN_1563.JPG"
+        issueDate="2016-10-03"
+        pagePopularity="1"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;"
+        textIsRich="true">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <article-header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/articleheader"/>
+        </content-par>
+        <article-hero
+            jcr:lastModified="{Date}2016-10-18T06:16:17.371-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehero"
+            articleImage="/content/dam/AAA_Assets/50_50_Images/JUN_1563.JPG"/>
+        <image
+            jcr:lastModified="{Date}2016-10-18T06:19:02.371-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

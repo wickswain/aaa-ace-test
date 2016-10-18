@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-03T15:23:37.639-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-04T13:04:46.366-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/libs/cq/personalization/templates/teaser"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="bottom-navigation(navigation_textandim)"
+        jcr:uuid="544b21fb-6bad-4cc7-8a69-7876b9fbb4bb"
+        sling:resourceType="cq/personalization/components/teaserpage"
+        location="669f8fd7-38d0-43a5-9705-150856cb7e76">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <navigation_textandim
+                jcr:created="{Date}2016-09-21T19:10:46.215+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-10-03T15:23:09.268-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/navigation-textandimage"
+                fileReference="/content/dam/aaa/images/navigation/AAA_Component_Z_GlobalNav_v1_02.png"/>
+        </par>
+    </jcr:content>
+</jcr:root>

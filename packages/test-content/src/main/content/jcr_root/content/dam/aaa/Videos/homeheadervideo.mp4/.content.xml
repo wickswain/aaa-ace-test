@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="f2d54bad-216b-464a-98af-e22806508665">
+    <jcr:content
+        cq:lastReplicated="{Date}2016-09-16T13:02:25.451-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        dam:relativePath="aaa/Videos/homeheadervideo.mp4"
+        jcr:lastModified="{Date}2016-09-25T03:14:18.394-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2016-09-25T03:14:17.447-06:00"
+            dam:sha1="9f2c5f06965ef9e0e42d9c24ec4f3908569a1b39"
+            dam:size="{Long}5251725"
+            dc:format="video/mp4"
+            dc:modified="{Date}2016-09-25T03:14:05.027-06:00"
+            jcr:lastModified="{Date}2016-09-25T03:14:05.026-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

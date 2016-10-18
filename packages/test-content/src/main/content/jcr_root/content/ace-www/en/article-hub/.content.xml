@@ -1,15 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2016-07-29T12:31:12.707+05:30"
-        cq:lastModifiedBy="admin"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2016-10-18T06:19:41.966-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/apps/ace-www/templates/article"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:lastModified="{Date}2016-10-03T04:57:42.831-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Article Hub"
-        sling:resourceType="ace-www/components/page/genericpage"/>
-    <article-1/>
-    <article-2/>
-    <article-3/>
-    <article-4/>
+        jcr:uuid="05ccc22a-b838-4578-b81e-b10d1fc0c83e"
+        sling:resourceType="ace-www/components/page/articlepage"
+        articleImageAltText="Article Page Image Alt Text"
+        articleLogoAltText="Article Logo Alt Text"
+        articleTitle="Big city on a budget: Singapore"
+        authorName="Leslie Yap"
+        pagePopularity="1"
+        text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&lt;br>&#xd;&#xa;"
+        textIsRich="true">
+        <article-hub-feature
+            cq:lastReplicated="{Date}2016-10-05T09:34:20.700-06:00"
+            cq:lastReplicatedBy="axisadmin"
+            cq:lastReplicationAction="Activate"
+            jcr:lastModified="{Date}2016-09-26T05:14:32.263-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehub"
+            artclepagePath="/content/ace-www/en/sprint3-demo/article-page"/>
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys"/>
+        <article-hub
+            cq:lastReplicated="{Date}2016-10-05T09:34:33.408-06:00"
+            cq:lastReplicatedBy="axisadmin"
+            cq:lastReplicationAction="Activate"
+            jcr:lastModified="{Date}2016-10-18T06:19:41.926-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehub-featured"
+            artclepagePath="/content/ace-www/en/article-hub/autogen-article-page-12"/>
+        <image
+            jcr:lastModified="{Date}2016-10-03T04:57:42.831-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"/>
+        <article-content jcr:primaryType="nt:unstructured">
+            <articlelist
+                jcr:created="{Date}2016-09-26T06:19:00.741-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-09-29T04:36:10.344-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/articlelist">
+                <filters jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        filterlabel="Travel"
+                        filtertag="a"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        filterlabel="Insurance"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        filterlabel="Activities"/>
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        filterlabel="Discounts"/>
+                    <_x0035_ jcr:primaryType="nt:unstructured"/>
+                    <_x0036_ jcr:primaryType="nt:unstructured"/>
+                    <_x0037_ jcr:primaryType="nt:unstructured"/>
+                    <_x0038_ jcr:primaryType="nt:unstructured"/>
+                    <_x0039_ jcr:primaryType="nt:unstructured"/>
+                    <_x0031_0 jcr:primaryType="nt:unstructured"/>
+                </filters>
+            </articlelist>
+        </article-content>
+        <article-hero
+            jcr:lastModified="{Date}2016-10-18T05:40:19.442-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehero"
+            alttext="article-hero"
+            articleImage="/content/dam/aaa/images/full-img.png"/>
+    </jcr:content>
+    <autogen-article-page-2/>
+    <autogen-article-page-3/>
+    <autogen-article-page-4/>
+    <autogen-article-page-5/>
+    <autogen-article-page-6/>
+    <autogen-article-page-7/>
+    <autogen-article-page-8/>
+    <autogen-article-page-9/>
+    <autogen-article-page-10/>
+    <autogen-article-page-11/>
+    <autogen-article-page-12/>
+    <autogen-article-page-13/>
+    <autogen-article-page-14/>
+    <autogen-article-page-15/>
+    <autogen-article-page-16/>
+    <autogen-article-page-17/>
+    <autogen-article-page-18/>
+    <autogen-article-page-19/>
+    <autogen-article-page-20/>
+    <autogen-article-page-21/>
+    <autogen-article-page-22/>
+    <autogen-article-page-23/>
+    <autogen-article-page-120/>
+    <autogen-article-page-130/>
+    <autogen-article-page-140/>
+    <autogen-article-page-150/>
+    <autogen-article-page-160/>
+    <autogen-article-page-170/>
+    <autogen-article-page-180/>
+    <autogen-article-page-190/>
+    <autogen-article-page-200/>
+    <autogen-article-page-210/>
+    <autogen-article-page-220/>
+    <autogen-article-page-230/>
+    <autogen-article-page-121/>
+    <autogen-article-page-131/>
+    <autogen-article-page-141/>
+    <autogen-article-page-151/>
+    <autogen-article-page-161/>
+    <autogen-article-page-171/>
+    <autogen-article-page-181/>
+    <autogen-article-page-191/>
+    <autogen-article-page-201/>
+    <autogen-article-page-211/>
+    <autogen-article-page-221/>
+    <autogen-article-page-231/>
 </jcr:root>

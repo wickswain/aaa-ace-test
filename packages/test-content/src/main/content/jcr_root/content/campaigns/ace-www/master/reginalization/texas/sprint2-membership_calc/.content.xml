@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T00:33:21.121-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/libs/cq/personalization/templates/teaser"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="sprint2(membership_calc)"
+        sling:resourceType="cq/personalization/components/teaserpage"
+        location="b35ddc0f-5183-4aa7-ac8b-0816a7fd0b5d">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <membership_calc
+                jcr:created="{Date}2016-08-29T02:46:52.985-06:00"
+                jcr:createdBy="axisadmin"
+                jcr:lastModified="{Date}2016-10-03T05:17:32.032-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/membership-calc"
+                aaaMembershipText="AAA Membership"
+                aaasMembershipCharge="48"
+                altText="alt text"
+                fileReference="/content/dam/aaa/ace-test-page-building/6848599-paradise-beach-wallpaper.jpg"
+                itemizedLabel="Save"
+                itemizedSavingsHeading="Sample Services"
+                jumpLinkId="mc"
+                textColor="rgba(0,0,0,1)"
+                title="Watch your membership pay for itself"
+                totalSavings="552"
+                totalSavingsHeading="Example Savings"
+                totalSavingsText="Total Savings"
+                yearlySavings="600"
+                yearlySavingsText="Yearly Savings">
+                <body-text
+                    jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/rte"
+                    text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
+                    textIsRich="true"/>
+                <mcfiledset jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="100"
+                        discountPrice="90"
+                        iconAltText="Movie "
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                        itemizedSavings="10"
+                        itemizedSavingsText="Movie night"
+                        savingsLabel="saved"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="113"
+                        discountPrice="93"
+                        iconAltText="Hotel"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                        itemizedSavings="23"
+                        itemizedSavingsText="Hotel Items"
+                        savingsLabel="saved"/>
+                    <_x0033_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="120"
+                        discountPrice="100"
+                        iconAltText="alttext"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="20"
+                        itemizedSavingsText="Car Items"
+                        savingsLabel="saved"/>
+                    <_x0034_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="150"
+                        discountPrice="100"
+                        iconAltText="m ovie"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-1.png"
+                        itemizedSavings="50"
+                        itemizedSavingsText="Movie  night"
+                        savingsLabel="saved"/>
+                    <_x0035_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="160"
+                        discountPrice="130"
+                        iconAltText="Car"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="30"
+                        itemizedSavingsText="Car Items"
+                        savingsLabel="saved"/>
+                    <_x0036_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="140"
+                        discountPrice="120"
+                        iconAltText="Hotel"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-2.png"
+                        itemizedSavings="20"
+                        itemizedSavingsText="Hotel Items"
+                        savingsLabel="saved"/>
+                    <_x0037_
+                        jcr:primaryType="nt:unstructured"
+                        actualPrice="170"
+                        discountPrice="145"
+                        iconAltText="AltTest"
+                        itemizedIcon="/content/dam/aaa/images/CompF-icon-3.png"
+                        itemizedSavings="25"
+                        itemizedSavingsText="Movie Items"
+                        savingsLabel="saved"/>
+                </mcfiledset>
+            </membership_calc>
+        </par>
+    </jcr:content>
+</jcr:root>

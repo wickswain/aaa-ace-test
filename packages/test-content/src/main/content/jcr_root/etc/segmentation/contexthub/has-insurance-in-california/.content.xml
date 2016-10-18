@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-17T13:31:18.057-06:00"
+        cq:lastModifiedBy="axisadmin"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Has Insurance in California"
+        sling:resourceType="cq/contexthub/components/segment-page"
+        segmentBoost="{Long}10"
+        segmentName="has-insurance-in-california">
+        <traits
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="cq/contexthub/components/traits/logic/operator-and">
+            <andpar
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys">
+                <property_value
+                    jcr:created="{Date}2016-10-17T11:03:23.257-06:00"
+                    jcr:createdBy="axisadmin"
+                    jcr:lastModified="{Date}2016-10-17T13:30:36.861-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/contexthub/components/traits/generic-comparison/variants/property-value"
+                    dataType="(auto detect)"
+                    operator="equal">
+                    <left
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/contexthub/components/traits/generic-comparison/type/property"
+                        property="tealiuminfo/tealiuminfo/isAutoInsurance"/>
+                    <right
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/contexthub/components/traits/generic-comparison/type/value"
+                        value="true"/>
+                </property_value>
+                <property_value_676957636
+                    jcr:created="{Date}2016-10-17T13:30:45.670-06:00"
+                    jcr:createdBy="axisadmin"
+                    jcr:lastModified="{Date}2016-10-17T13:31:18.030-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/contexthub/components/traits/generic-comparison/variants/property-value"
+                    operator="equal">
+                    <left
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/contexthub/components/traits/generic-comparison/type/property"
+                        property="requestinfo/requestinfo/region"/>
+                    <right
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/contexthub/components/traits/generic-comparison/type/value"
+                        value="calif"/>
+                </property_value_676957636>
+            </andpar>
+        </traits>
+    </jcr:content>
+</jcr:root>

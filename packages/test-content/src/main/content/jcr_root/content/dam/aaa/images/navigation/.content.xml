@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Navigation">
+        <folderThumbnail/>
+    </jcr:content>
+    <AAA_Component_Z_GlobalNav_v1_10.png/>
+    <AAA_Component_Z_GlobalNav_v1_08.png/>
+    <AAA_Component_Z_GlobalNav_v1_06.png/>
+    <AAA_Component_Z_GlobalNav_v1_05.png/>
+    <AAA_Component_Z_GlobalNav_v1_03.png/>
+    <AAA_Component_Z_GlobalNav_v1_12.png/>
+    <AAA_Component_Z_GlobalNav_v1_02.png/>
+</jcr:root>

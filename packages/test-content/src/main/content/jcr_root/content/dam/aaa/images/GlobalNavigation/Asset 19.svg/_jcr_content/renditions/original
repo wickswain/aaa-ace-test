@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.03 28.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.67px;
+      }
+    </style>
+  </defs>
+  <title>Asset 19</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Design">
+      <g>
+        <rect class="cls-1" x="0.19" y="15.95" width="38.84" height="5.18"/>
+        <circle class="cls-1" cx="8.09" cy="23.72" r="5.18"/>
+        <circle class="cls-1" cx="31.72" cy="23.72" r="5.18"/>
+        <polygon class="cls-1" points="31.54 3.87 21.55 3.87 21.55 16.82 39.03 16.82 39.03 11.64 33.41 9.11 31.54 3.87"/>
+        <rect class="cls-1" x="11.95" y="-2.08" width="3.34" height="24.55" rx="1.64" ry="1.64" transform="translate(-3.4 10.12) rotate(-36.57)"/>
+        <path class="cls-2" d="M.84,6.74a3.35,3.35,0,1,0,6.69,0V1.8"/>
+      </g>
+    </g>
+  </g>
+</svg>

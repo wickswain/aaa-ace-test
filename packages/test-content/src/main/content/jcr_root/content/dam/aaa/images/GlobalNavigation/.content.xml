@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+    <Asset_x0020_1.svg/>
+    <Asset_x0020_2.svg/>
+    <Asset_x0020_4.svg/>
+    <Asset_x0020_3.svg/>
+    <Asset_x0020_6.svg/>
+    <Asset_x0020_5.svg/>
+    <Asset_x0020_7.svg/>
+    <Asset_x0020_8.svg/>
+    <Asset_x0020_9.svg/>
+    <Asset_x0020_10.svg/>
+    <Asset_x0020_11.svg/>
+    <Asset_x0020_12.svg/>
+    <Asset_x0020_13.svg/>
+    <Asset_x0020_14.svg/>
+    <Asset_x0020_16.svg/>
+    <Asset_x0020_17.svg/>
+    <Asset_x0020_18.svg/>
+    <Asset_x0020_15.svg/>
+    <Asset_x0020_19.svg/>
+    <Asset_x0020_20.svg/>
+    <Asset_x0020_21.svg/>
+    <Asset_x0020_22.svg/>
+    <Asset_x0020_23.svg/>
+    <Asset_x0020_25.svg/>
+    <Asset_x0020_24.svg/>
+    <Asset_x0020_26.svg/>
+    <Asset_x0020_27.svg/>
+    <Asset_x0020_28.svg/>
+    <Asset_x0020_29.svg/>
+    <Asset_x0020_30.svg/>
+    <Asset_x0020_32.svg/>
+    <Asset_x0020_31.svg/>
+    <Asset_x0020_33.svg/>
+    <Asset_x0020_34.svg/>
+    <Asset_x0020_36.svg/>
+    <Asset_x0020_37.svg/>
+    <Asset_x0020_38.svg/>
+    <Asset_x0020_39.svg/>
+    <Asset_x0020_40.svg/>
+    <Asset_x0020_41.svg/>
+    <Asset_x0020_41_x0020_1.svg/>
+    <Asset_x0020_42.svg/>
+    <Asset_x0020_43.svg/>
+    <Asset_x0020_44.svg/>
+</jcr:root>
