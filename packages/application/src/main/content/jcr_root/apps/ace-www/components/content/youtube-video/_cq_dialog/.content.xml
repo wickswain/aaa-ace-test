@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="YouTube Video Component"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Title/Subheading"
+                            required="{Boolean}false"
+                            name="./title"/>
+                    <titlecolors
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Title colors: Black or White"
+                            fieldLabel="Title text color"
+                            name="./titleColor">
+                        <items jcr:primaryType="nt:unstructured">
+                            <titleblack
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="#000000"/>
+                            <titlewhite
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="#FFFFFF" />
+                        </items>
+                    </titlecolors>
+                    <body-rte
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                            fieldLabel="Body Text"
+                            name="./bodyCopy"
+                            removeSingleParagraphContainer="{Boolean}true"
+                            useFixedInlineToolbar="{Boolean}true">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <misctools
+                                    jcr:primaryType="nt:unstructured"
+                                    features="specialchars">
+                                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                    <chars jcr:primaryType="nt:unstructured">
+                                        <copyright
+                                                jcr:primaryType="nt:unstructured"
+                                                entity="&amp;#169;"/>
+                                        <trademark
+                                                jcr:primaryType="nt:unstructured"
+                                                entity="&amp;#8482;"/>
+                                        <registered
+                                                jcr:primaryType="nt:unstructured"
+                                                entity="&amp;#174;"/>
+                                        <pound
+                                                jcr:primaryType="nt:unstructured"
+                                                entity="&amp;#163;"/>
+                                    </chars>
+                                </specialCharsConfig>
+                            </misctools>
+                            <links jcr:primaryType="nt:unstructured">
+                                <linkDialogConfig
+                                        jcr:primaryType="nt:unstructured"
+                                        height="{Long}316">
+                                    <linkAttributes jcr:primaryType="nt:unstructured">
+                                        <linkAdvanced
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/section"
+                                                name="./linkdialog/cq:adhocLinkTrackingTab"
+                                                title="Link tracking"
+                                                value="advanced">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <enable
+                                                        jcr:primaryType="nt:unstructured"
+                                                        attribute="enabletracking"
+                                                        fieldDescription="override analytics framework settings"
+                                                        fieldLabel="Custom link tracking"
+                                                        name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                        xtype="checkbox">
+                                                    <listeners
+                                                            jcr:primaryType="nt:unstructured"
+                                                            check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                </enable>
+                                                <events
+                                                        jcr:primaryType="nt:unstructured"
+                                                        attribute="adhocevents"
+                                                        fieldDescription="e.g.: event2, event7"
+                                                        fieldLabel="Include SiteCatalyst events"
+                                                        name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                        xtype="textfield"/>
+                                                <evars
+                                                        jcr:primaryType="nt:unstructured"
+                                                        attribute="adhocevars"
+                                                        fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                        fieldLabel="Include SiteCatalyst variables"
+                                                        name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                        xtype="textfield"/>
+                                            </items>
+                                        </linkAdvanced>
+                                    </linkAttributes>
+                                </linkDialogConfig>
+                            </links>
+                            <edit
+                                    jcr:primaryType="nt:unstructured"
+                                    defaultPasteMode="plaintext"
+                                    stripHtmlTags="{Boolean}true"/>
+                            <undo
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                        </rtePlugins>
+                        <uiSettings jcr:primaryType="nt:unstructured">
+                            <cui jcr:primaryType="nt:unstructured">
+                                <inline
+                                        jcr:primaryType="nt:unstructured"
+                                        toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,misctools#specialchars,fullscreen#start,control#close,control#save]"/>
+                                <fullscreen
+                                        jcr:primaryType="nt:unstructured"
+                                        toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,misctools#specialchars,fullscreen#start,control#close,control#save]"/>
+                            </cui>
+                        </uiSettings>
+                    </body-rte>
+                    <bodycolors
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Title colors: Black or White"
+                            fieldLabel="Title text color"
+                            name="./bodyColor">
+                        <items jcr:primaryType="nt:unstructured">
+                            <bodyblack
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="#000000"/>
+                            <bodywhite
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="#FFFFFF" />
+                        </items>
+                    </bodycolors>
+                    <youtubeurl
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Video ID"
+                            fieldDescription="Enter only the video ID in the URL. (ex watch?v=123xyz , enter only the 123xyz portion)."
+                            description="Enter the video ID"
+                            required="{Boolean}true"
+                            name="./videoURL"/>
+
+                    <backgroundcolor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                            colorsPath="/apps/ace-www/components/content/youtube-video/config/backgroundcolors"
+                            fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
+                            fieldLabel="Background Color"
+                            freestylePalette="{Boolean}true"
+                            name="./backgroundColor"/>
+
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
