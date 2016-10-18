@@ -6,4 +6,6 @@
         cq:lastModifiedBy="axisadmin"
         jcr:primaryType="nt:unstructured"
         jcr:title="hawaii"/>
+    <global-logo/>
+    <global-footer/>
 </jcr:root>

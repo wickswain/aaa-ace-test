@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2016-09-21T19:18:14.976+05:30"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2016-10-18T07:20:26.659-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-05T09:47:39.544-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/contnetpage_personalization"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Bottom Navigation Personalization"
+        jcr:title="Navigation Bottom"
+        jcr:uuid="3a693fe2-5cdd-461e-9c88-7e4a3a498354"
         sling:resourceType="ace-www/components/page/contentpage_personalization">
         <content-par
             jcr:primaryType="nt:unstructured"

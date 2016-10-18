@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2016-08-29T05:43:31.325-06:00"
+        cq:lastModified="{Date}2016-10-17T03:30:18.253-06:00"
         cq:lastModifiedBy="axisadmin"
-        cq:lastReplicated="{Date}2016-08-29T06:13:24.382-06:00"
+        cq:lastReplicated="{Date}2016-09-16T12:16:05.970-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
         cq:template="/libs/wcm/core/templates/designpage"
@@ -14,34 +14,152 @@
         jcr:title="Axis41 Core"
         jcr:uuid="e6367b76-175c-4a5a-bd6d-d423b733aebf"
         sling:resourceType="wcm/core/components/designer">
-        <genericpage jcr:primaryType="nt:unstructured">
+        <genericpage
+            cq:lastReplicated="{Date}2016-09-16T12:16:12.761-06:00"
+            cq:lastReplicatedBy="axisadmin"
+            cq:lastReplicationAction="Activate"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured">
             <content-par
-                jcr:lastModified="{Date}2016-08-12T19:42:38.832+05:30"
-                jcr:lastModifiedBy="admin"
+                cq:lastReplicated="{Date}2016-09-16T12:16:23.862-06:00"
+                cq:lastReplicatedBy="axisadmin"
+                cq:lastReplicationAction="Activate"
+                jcr:lastModified="{Date}2016-09-23T17:32:41.188-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:mixinTypes="[cq:ReplicationStatus]"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+                <reference
+                    jcr:lastModified="{Date}2016-10-17T03:30:18.222-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/reference"
+                    path="/content/dam"/>
+            </content-par>
+            <global-footer-par
+                jcr:lastModified="{Date}2016-10-07T07:16:21.790-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/reference"
+                path="/content/personalization/ace-www/calif/global-footer/jcr:content/content-par/global_footer"/>
+            <global-header
+                cq:lastReplicated="{Date}2016-09-30T08:57:03.349-06:00"
+                cq:lastReplicatedBy="axisadmin"
+                cq:lastReplicationAction="Activate"
+                jcr:lastModified="{Date}2016-10-08T03:07:02.472-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:mixinTypes="[cq:ReplicationStatus]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/global-header"
+                accountLinkLabel="My Account"
+                accountLinkTo="http://[Domain].[ClubName].aaa.com/aceapps/account/my-account"
+                defaultAvatarPath="/content/dam/aaa/images/profile-icon.png"
+                icon1Alt="Truck Icon"
+                icon1Path="/content/dam/aaa/images/truck-white-xs.png"
+                icon2Alt="Lock Icon"
+                icon2Path="/content/dam/aaa/images/lock-icon.png"
+                joinButtonLabel="JOIN"
+                joinButtonURL="http://[Domain].[ClubName].aaa.com/home.html"
+                leftLink1Label="Roadside assistance"
+                leftLink1LinkTo="http://www.calif.aaa.com/home/automotive/driving-resources/roadside-assistance.html"
+                leftLink1NewTabFlag="true"
+                leftLink2Label="Contact US"
+                leftLink2LinkTo="http://www.calif.aaa.com/home/information/contact-us.html"
+                leftLink2NewTabFlag="true"
+                requesHelpLabel="Request help"
+                rightLink1Label="Find a Branch"
+                rightLink1LinkTo="http://locator.aaa.com/"
+                rightLink1NewTabFlag="true"
+                rightLink2Label="Sign In"
+                rightLink2LinkTo="https://[Domain].[ClubName].aaa.com/aceapps/Authenticate/login"
+                roadsideAssistanceLabel="Need roadside assistance?"
+                searchLabel="Search"
+                searchPagePath="/content/ace-www/en/search-results"
+                searchPlaceholderLabel="Search"
+                signOutLinkLabel="Sign Out"
+                signOutLinkTo="http://[Domain].[ClubName].aaa.com/aceapps/authenticate/logout">
+                <global-header-logo
+                    jcr:lastModified="{Date}2016-09-26T08:51:21.212-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/reference"
+                    path="/content/personalization/ace-www/calif/global-logo/jcr:content/content-par/logo"/>
+            </global-header>
+            <global-header-logo
+                jcr:lastModified="{Date}2016-10-14T05:41:59.970-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/reference"
+                path="/content/dam"/>
+        </genericpage>
+        <articlepage
+            cq:lastReplicated="{Date}2016-09-16T12:16:18.052-06:00"
+            cq:lastReplicatedBy="axisadmin"
+            cq:lastReplicationAction="Activate"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured">
+            <left-content-par
+                jcr:lastModified="{Date}2016-09-15T03:33:15.415-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+            </left-content-par>
+            <global-header
+                jcr:lastModified="{Date}2016-09-29T03:44:29.024-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/global-header"
+                accountLinkTo="http://[Domain].[ClubName].aaa.com/aceapps/account/my-account"
+                icon1Alt="Truck Icon"
+                icon1Path="/content/dam/aaa/images/truck-white-xs.png"
+                icon2Alt="Lock Icon"
+                icon2Path="/content/dam/aaa/images/lock-icon.png"
+                joinButtonLabel="JOIN"
+                joinButtonURL="http://[Domain].[ClubName].aaa.com/home.html"
+                leftLink1Label="Request roadside"
+                leftLink1LinkTo="http://www.calif.aaa.com/home/automotive/driving-resources/roadside-assistance.html"
+                leftLink1NewTabFlag="true"
+                leftLink2Label="Contact us"
+                leftLink2LinkTo="www.calif.aaa.com/home/information/contact-us.html"
+                leftLink2NewTabFlag="true"
+                rightLink1Label="Find a branch"
+                rightLink1LinkTo="http://locator.aaa.com/"
+                rightLink1NewTabFlag="true"
+                rightLink2Label="Sign in"
+                rightLink2LinkTo="https://apps.calif.aaa.com/aceapps/Authenticate/login"
+                searchLabel="Search"
+                searchPagePath="/content/ace-www/en/search-results"
+                searchPlaceholderLabel="Search"
+                signOutLinkTo="http://[Domain].[ClubName].aaa.com/aceapps/authenticate/logout">
+                <global-header-logo
+                    jcr:lastModified="{Date}2016-10-03T13:47:50.019-06:00"
+                    jcr:lastModifiedBy="axisadmin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ace-www/components/content/reference"
+                    path="/content/personalization/ace-www/calif/global-logo/jcr:content/content-par/logo"/>
+            </global-header>
+            <content-par
+                jcr:lastModified="{Date}2016-09-15T05:48:57.386-06:00"
+                jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 components="group:AAA COMMON">
                 <section jcr:primaryType="nt:unstructured"/>
             </content-par>
-            <header-par
-                jcr:lastModified="{Date}2016-08-12T16:06:20.483+05:30"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                components="group:AAA COMMON">
-                <section jcr:primaryType="nt:unstructured"/>
-            </header-par>
-            <footer-par
-                jcr:lastModified="{Date}2016-08-19T11:06:28.500-06:00"
-                jcr:lastModifiedBy="axisadmin"
-                jcr:primaryType="nt:unstructured"
-                components="group:AAA COMMON">
-                <section jcr:primaryType="nt:unstructured"/>
-            </footer-par>
             <global-footer-par
-                jcr:lastModified="{Date}2016-08-29T05:43:31.311-06:00"
+                jcr:lastModified="{Date}2016-09-15T09:14:39.456-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/reference"
-                path="/content/personalization/ace-www/206/global-footer/jcr:content/content-par/global_footer"/>
-        </genericpage>
+                path="/content/personalization/ace-www/calif/global-footer/jcr:content/content-par/global_footer"/>
+            <article-content
+                jcr:lastModified="{Date}2016-10-05T08:21:33.353-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                components="group:AAA COMMON">
+                <section jcr:primaryType="nt:unstructured"/>
+            </article-content>
+        </articlepage>
     </jcr:content>
 </jcr:root>

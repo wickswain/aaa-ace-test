@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d11a7d2d-66e9-41a5-aea4-fe9a9ef4c5db">
+    <jcr:content
+        dam:relativePath="aaa/images/magic-wand-icon.png"
+        jcr:lastModified="{Date}2016-09-26T07:17:14.243-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="Software: Adobe ImageReady&#xa;"
+            dam:extracted="{Date}2016-09-26T07:17:13.795-06:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}0.5138246417045593"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}0.499937504529953"
+            dam:Progressive="no"
+            dam:sha1="b99ee3b7beda2b3de9f1c885fdf09e8f80b0ef64"
+            dam:size="{Long}470"
+            dc:format="image/png"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}37"
+            tiff:ImageWidth="{Long}36"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="801759b9-56d0-48c0-ba66-c7253f9c75ca">
+    <jcr:content
+        cq:lastReplicated="{Date}2016-09-16T13:02:25.006-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        dam:relativePath="aaa/Videos/aaa-family-vacation-video.mp4"
+        jcr:lastModified="{Date}2016-09-25T03:14:06.175-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2016-09-25T03:14:05.482-06:00"
+            dam:sha1="08868a3deb05c400fcb9a1a93f6ec77a472f964b"
+            dam:size="{Long}2454526"
+            dc:format="video/mp4"
+            dc:modified="{Date}2016-09-25T03:13:54.079-06:00"
+            jcr:lastModified="{Date}2016-09-25T03:13:54.078-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

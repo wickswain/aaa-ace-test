@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.1 14.88">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 0.86px;
+      }
+    </style>
+  </defs>
+  <title>Asset 31</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="design">
+      <g>
+        <rect class="cls-1" x="0.1" y="8.21" width="20" height="2.67"/>
+        <circle class="cls-1" cx="4.17" cy="12.21" r="2.67"/>
+        <circle class="cls-1" cx="16.33" cy="12.21" r="2.67"/>
+        <polygon class="cls-1" points="16.24 1.99 11.1 1.99 11.1 8.66 20.1 8.66 20.1 5.99 17.2 4.69 16.24 1.99"/>
+        <rect class="cls-1" x="6.15" y="-1.07" width="1.72" height="12.64" rx="0.84" ry="0.84" transform="matrix(0.8, -0.6, 0.6, 0.8, -1.75, 5.21)"/>
+        <path class="cls-2" d="M.43,3.47a1.72,1.72,0,0,0,3.44,0V.93"/>
+      </g>
+    </g>
+  </g>
+</svg>

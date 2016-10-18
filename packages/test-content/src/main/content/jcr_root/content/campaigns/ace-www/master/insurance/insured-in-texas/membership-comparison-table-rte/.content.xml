@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-17T14:09:45.483-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/libs/cq/personalization/templates/teaser"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="membership-comparison-table(rte)"
+        sling:resourceType="cq/personalization/components/teaserpage"
+        location="699ef2e8-051c-422b-ba48-ee6e451d3890">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <rte
+                jcr:lastModified="{Date}2016-10-03T14:40:04.766-06:00"
+                jcr:lastModifiedBy="axisadmin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/rte"
+                text="What's the catch? No catch. Our members bring in more volume to businesses, helping increase their pro\u001fts. In turn they can off\u001eer great discounts to help you follow your passions. Win-win.&lt;br>&#xa;"
+                textIsRich="true"/>
+        </par>
+    </jcr:content>
+</jcr:root>

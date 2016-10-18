@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #333;
+      }
+
+      .cls-2 {
+        font-size: 10.87px;
+        font-family: Roboto-Bold, Roboto;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>Asset 41</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="design">
+      <g>
+        <circle class="cls-1" cx="8" cy="8" r="8"/>
+        <text class="cls-2" transform="translate(4.6 12.29)">S</text>
+        <rect class="cls-3" x="7" y="3" width="2" height="2"/>
+        <rect class="cls-3" x="7" y="11" width="2" height="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

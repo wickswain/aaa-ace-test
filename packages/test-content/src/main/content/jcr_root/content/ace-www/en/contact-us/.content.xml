@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-15T03:29:29.877-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-16T10:18:50.597-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ace-www/templates/generic"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Contact US"
+        jcr:uuid="7725486b-92be-4af9-bb12-a3f38d8aba87"
+        sling:resourceType="ace-www/components/page/genericpage"/>
+</jcr:root>

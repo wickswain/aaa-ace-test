@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="90dc30ba-7b91-4ad2-b05b-f18423f89e0e">
+    <jcr:content
+        cq:lastReplicated="{Date}2016-09-16T13:01:52.539-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        dam:relativePath="aaa/images/GlobalNavigation/Asset 5.svg"
+        jcr:lastModified="{Date}2016-09-25T03:13:43.983-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2016-09-25T03:13:43.430-06:00"
+            dam:sha1="0d93115922adc67e00363142b07f8ca2b3b1a99f"
+            dam:size="{Long}1776"
+            dc:format="image/svg+xml"
+            dc:modified="{Date}2016-09-25T03:13:14.898-06:00"
+            jcr:lastModified="{Date}2016-09-25T03:13:14.897-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

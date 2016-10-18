@@ -4,19 +4,15 @@
     <jcr:content
         cq:lastModified="{Date}2016-09-13T09:04:11.100-06:00"
         cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-26T09:23:44.314-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ace-www/templates/globalnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Discounts &amp; Rewards"
         jcr:uuid="d9e6d551-eb25-404e-b76b-148157af7498"
-        sling:resourceType="ace-www/components/page/globalnav"/>
-    <about-aaa-discounts/>
-    <restaurants/>
-    <movie-tickets/>
-    <disney-packages/>
-    <universal-orlando/>
-    <join-now/>
-    <shop---save/>
-    <aaa-insurance-discounts/>
+        sling:resourceType="ace-www/components/page/globalnav"
+        tileIcon="/content/dam/aaa/images/disp-icon.png"/>
 </jcr:root>

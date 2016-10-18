@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:cloudserviceconfigs="[[]]"
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2016-08-12T17:59:14.993+05:30"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2016-10-18T01:11:42.034-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-09-19T15:43:17.541-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        jcr:isCheckedOut="{Boolean}true"
         jcr:lastModified="{Date}2016-08-09T22:30:39.851+05:30"
         jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="AAA Ace Web Sites"
-        sling:resourceType="/apps/ace-www/components/page/genericpage"
+        jcr:title="English"
+        jcr:uuid="6b7a73cd-3c0a-48c1-9c55-cbb47ac9e633"
+        sling:resourceType="ace-www/components/page/genericpage"
         navTitle="Navigation Title"/>
     <sprint1/>
+    <sprint2/>
+    <sprint3-demo/>
+    <sprint4-demo/>
+    <sprint5-demo/>
+    <search-results/>
     <article-hub/>
+    <contact-us/>
 </jcr:root>

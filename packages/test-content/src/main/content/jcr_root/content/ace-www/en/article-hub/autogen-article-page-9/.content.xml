@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T06:08:51.174-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:tags="[AAA:business-funcations/insurance]"
+        cq:template="/apps/ace-www/templates/article"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AutoGen Article Page 9"
+        jcr:uuid="69f7d5e5-ece5-497f-9f7b-96bc0373f2e6"
+        sling:resourceType="ace-www/components/page/articlepage"
+        articleImageAltText="Article Hero Alt Text 9"
+        articleLogoAltText="Article Logo Alt Text 9"
+        articleLogoImage="/content/dam/AAA/aaa-color-logo.png"
+        articleTitle="Big city on a budget: Singapore 9"
+        authorName="Author 9"
+        issueDate="2016-10-03"
+        text="This is description for AutoGen Article Page 9">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <article-header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ace-www/components/content/articleheader"/>
+        </content-par>
+        <article-hero
+            jcr:lastModified="{Date}2016-10-18T06:08:51.163-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ace-www/components/content/articlehero"
+            articleImage="/content/dam/aaa/images/card-img-2.png"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-10-18T01:11:42.034-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:template="/apps/ace-www/templates/generic"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sprint5 Demo"
+        sling:resourceType="ace-www/components/page/genericpage"/>
+    <test-template/>
+</jcr:root>
