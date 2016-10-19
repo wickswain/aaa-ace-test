@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="76367bd2-069a-4888-8995-345e14c519f3">
+    <jcr:content
+        dam:relativePath="aaa-assets/CompF-wallet.png.zip"
+        jcr:lastModified="{Date}2016-09-16T16:43:13.239-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Content="CompF-wallet.png&#xa;"
+            dam:extracted="{Date}2016-09-16T16:43:12.477-06:00"
+            dam:FileCount="{Long}1"
+            dam:sha1="9dd4a9ab05e3279a7a9bee852130c69f23d4c408"
+            dam:size="{Long}101649"
+            dc:format="application/zip"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -19,7 +19,7 @@
         articleImageAltText="Article Hero Alt Text 12"
         articleTitle="5 folkloric classes in San Diego"
         authorName="Lesie Yap"
-        fileReference="/content/dam/AAA_Assets/50_50_Images/JUN_1563.JPG"
+        fileReference="/content/dam/aaa-assets/50_50_Images/JUN_1563.JPG"
         issueDate="2016-10-03"
         pagePopularity="1"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;"
@@ -36,7 +36,7 @@
             jcr:lastModifiedBy="axisadmin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="ace-www/components/content/articlehero"
-            articleImage="/content/dam/AAA_Assets/50_50_Images/JUN_1563.JPG"/>
+            articleImage="/content/dam/aaa-assets/50_50_Images/JUN_1563.JPG"/>
         <image
             jcr:lastModified="{Date}2016-10-18T06:19:02.371-06:00"
             jcr:lastModifiedBy="axisadmin"

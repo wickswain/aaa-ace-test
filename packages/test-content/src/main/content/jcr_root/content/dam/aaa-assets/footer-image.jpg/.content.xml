@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="33472e73-0a40-4b32-95f1-2adddc1ca5ad">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-16T19:02:29.103-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:name="footer-image.jpg"
+        cq:parentPath="/content/dam/aaa-assets"
+        dam:relativePath="aaa/footer-image.jpg"
+        jcr:lastModified="{Date}2016-09-16T19:02:30.629-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2016-09-15T03:04:16.888-06:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="e01440ee12fecc9d4415ac1135f17503b50321d6"
+            dam:size="{Long}74578"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2016-09-16T19:02:29.799-06:00"
+            jcr:lastModified="{Date}2016-09-16T19:02:29.798-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}800"
+            tiff:ImageWidth="{Long}1700"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
