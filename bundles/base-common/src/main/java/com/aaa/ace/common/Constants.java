@@ -107,6 +107,11 @@ public final class Constants {
     public static final String PROCESS_ARGS = "PROCESS_ARGS";
 
     /**
+     * User login cookie key.
+     */
+    public static final String COOKIE_ASPXAUTH = ".ASPXAUTH";
+
+    /**
      * Instantiates a new constants.
      */
     private Constants() {
