@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <lightblue
+        jcr:primaryType="nt:unstructured"
+        text="Light Blue Color (#00A4FF)"
+        value="#00A4FF"/>
+    <lightmidblue
+        jcr:primaryType="nt:unstructured"
+        text="Light Mid Blue Color (#1080D8)"
+        value="#1080D8"/>
+    <white
+        jcr:primaryType="nt:unstructured"
+        text="White Color (#FFFFFF)"
+        value="#FFFFFF"/>
+    <lightgrey
+        jcr:primaryType="nt:unstructured"
+        text="Light Grey Color (#E4E5E5)"
+        value="#E4E5E5"/>
+    <lightmidgrey
+        jcr:primaryType="nt:unstructured"
+        text="Light Mid Grey Color (#CCCCCC)"
+        value="#CCCCCC"/>
+</jcr:root>
