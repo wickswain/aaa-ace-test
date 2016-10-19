@@ -1,0 +1,37 @@
+<!--/*
+
+    1 Services Cards Component.
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. See https://axis41.atlassian.net/wiki/display/AAA/Component+-+Services+Cards
+
+*/-->
+
+<div class="container bottom-space">
+<div id="${properties.jumpLinkId}" class="services-cards-section" style="background-color:${properties.backgroundColor @ context='styleToken'};">
+    <div  data-sly-test.hasContent="${properties.rowamount}">
+        <div data-sly-use.cardsprovider="${'com.aaa.ace.sightly.providers.ServicesCardsProvider'}">
+            <div class="text-center">
+                 <div class="top-btm-space roboto-slab-bold font-b">
+                    <h1  title="${properties.title}"
+                        style="color:${properties.headerTitleTextFontColor @ context='styleToken'};">${properties.title}</h1>
+                </div>
+            </div>
+           <!-- List of the cards start here -->
+             <div class="row"><ul  class="icon-sc-list" id="accordion" data-sly-list.path="${cardsprovider.cardPaths}">
+               <li data-sly-resource="${ @path=path, resourceType='/apps/ace-www/components/content/services-cards/service-card'}"></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Placeholder Content
+============================================= -->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Services Card Row here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+<!-- #placeholder-content end -->
