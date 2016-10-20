@@ -31,19 +31,11 @@
                                 name="./tile1/title"/>
                             <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile1/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile1/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -68,7 +60,7 @@
                     </columns>
                 </items>
             </tilestab-1>
-            <tilestab--2
+            <tilestab-2
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Tile-2"
                 sling:resourceType="granite/ui/components/foundation/container">
@@ -86,21 +78,13 @@
                                 fieldDescription="Please enter title for tile Icon"
                                 fieldLabel="Tile Title"
                                 name="./tile2/title"/>
-                            <tileicon
+                           <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile2/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile2/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -124,7 +108,7 @@
                         </items>
                     </columns>
                 </items>
-            </tilestab--2>
+            </tilestab-2>
             <tilestab-3
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Tile-3"
@@ -145,19 +129,11 @@
                                 name="./tile3/title"/>
                             <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile3/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile3/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -200,21 +176,13 @@
                                 fieldDescription="Please enter title for tile Icon"
                                 fieldLabel="Tile Title"
                                 name="./tile4/title"/>
-                            <tileicon
+                           <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile4/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile4/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -259,19 +227,11 @@
                                 name="./tile5/title"/>
                             <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile5/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile5/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -316,19 +276,11 @@
                                 name="./tile6/title"/>
                             <tileicon
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                allowupload="{Boolean}false"
-                                autoStart="{Boolean}false"
-                                class="cq-droptarget"
-                                fieldDescription="Please Select Icon to be displayed in the navigation tile"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="Tile Icon"
-                                fileNameParameter="./fileName"
-                                fileReferenceParameter="./tile6/tileIcon"
-                                mimeTypes="[image]"
-                                multiple="{Boolean}false"
-                                title="Upload Image Asset"
-                                uploadUrl="${suffix.path}"
-                                useHTML5="{Boolean}true"/>
+                                fieldDescription="Please browse tile Icon"
+                                name="./tile6/tileIcon"
+                                rootPath="/content/dam/"/>
                             <tileIconAltText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
