@@ -32,12 +32,16 @@
             color:${properties.fontColor @ context='styleToken'};padding: 30px 0;">
     
     <sly data-sly-test="${isFullWidth}">
-	   <p class="footer-p" data-sly-text="${properties.text @ context='html'}"></p>
+	   <p class="footer-p">
+	       ${properties.text @ context='html'}
+	   </p>
     </sly>
     
     <div data-sly-test="${!isFullWidth}" class="row">
         <div class="col-xs-1"></div>
-        <div class="col-xs-10" data-sly-text="${properties.text @ context='html'}"></div>
+        <div class="col-xs-10">
+            ${properties.text @ context='html'}
+        </div>
         <div class="col-xs-1"></div>
     </div>
     
