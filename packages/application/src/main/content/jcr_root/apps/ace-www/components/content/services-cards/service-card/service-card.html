@@ -1,0 +1,40 @@
+<!--/*
+
+    1 Services Cards Component.
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. See https://axis41.atlassian.net/wiki/display/AAA/Component+-+Services+Cards
+
+*/-->
+ <div  data-sly-test.hasContent="${properties.cardtitle || properties.image || properties.cardtext}"class="tile-block" style="background-color:${properties.cardbackgroundColor @ context='styleToken'};">
+         <div class="main-title">
+             <a data-toggle="collapse" data-parent="#accordion"  data-target="#collapseOrderItems${currentNode.name}" class="collapsed minus-plus-icon">
+                 <div data-sly-test="${properties.image}" class="icon-sc-image"> <img src="${properties.image}" title="${properties.altText}" alt="${properties.altText}" class="img-responsive"> </div>
+                 <div class="icon-sc-title roboto-medium font-f">
+                     ${properties.cardtitle}
+                 </div>
+             </a>
+         </div>
+         <div class="panel-collapse collapse content" id="collapseOrderItems${currentNode.name}">
+             <div class="service-card-info">
+                 <div class="font-h"> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}"/></div>
+                 <div class="icon-sc-link font-h">
+                      <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+                 </div>
+             </div>
+         </div>
+	</div>
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Service Card Item here" style="text-align: center;">
+    <div>
+        <div class="horizontal-space icon-sc-image">
+            <img src="/content/dam/aaa/images/75x75_placeholder.png" title="Placeholder Image" alt="Service Card Icon">
+        </div>
+        <div class="icon-sc-title roboto-medium font-f">
+            <h2 title="Food & Drink">Author Service Card Here</h2> </div>
+        <p class="font-h"></p>
+    </div>
+</div>
+ <!-- #placeholder-content end -->
