@@ -7,6 +7,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.aaa.ace.common.Constants;
 import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
@@ -24,7 +25,6 @@ public class UserLoginProvider extends WCMUsePojo {
     private static final String PROPERTY_LAST_NAME = "LastName";
     private static final String PROPERTY_FIRST_NAME = "FirstName";
     private static final String COOKIE_ACEUSER = "aceuser";
-    private static final String COOKIE_ASPXAUTH = ".ASPXAUTH";
 
     boolean isLoggedIn = false;
     String firstName;
@@ -45,7 +45,7 @@ public class UserLoginProvider extends WCMUsePojo {
                 getCurrentPage().getPath());
         log.debug("SignOut URL:" + signOutURL);
 
-        Cookie logInCookie = getRequest().getCookie(COOKIE_ASPXAUTH);
+        Cookie logInCookie = getRequest().getCookie(Constants.COOKIE_ASPXAUTH);
 
         if (logInCookie != null) {
             isLoggedIn = true;

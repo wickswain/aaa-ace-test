@@ -19,23 +19,40 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
 	 */
 	var getMyAccountInfo = function() {
 		var isLoggedIn = false;
+        var url = getHost() + "/user.loginstatus.json";
 
-		if ($.cookie('.ASPXAUTH') === null || $.cookie('.ASPXAUTH') === ""
-				|| $.cookie('.ASPXAUTH') === "null"
-				|| $.cookie('.ASPXAUTH') === undefined) {
-			// Login cookie does not exist.
-			isLoggedIn = false;
-		} else {
-			// Login cookie exist.
-			isLoggedIn = true;
-		}
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function(response) { 
+				isLoggedIn = response.isLoggedIn;
+            },
+            async: false
+        });
 
-		return {
+        return {
 			myaccountinfo : {
 				isloggedin : isLoggedIn
 			}
 		};
 	};
+
+    /**
+	 * Gets the host.
+	 * 
+	 */
+	function getHost() {
+        var host = window.location.hostname;
+        var port = window.location.port;
+
+        if (port) {
+            host = host + ":" + port;
+        }
+        
+        return "http://"+host
+    }
+
 
 	/**
 	 * MyAccount Information store.
