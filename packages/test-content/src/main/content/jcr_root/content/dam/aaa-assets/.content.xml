@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+    <_x0035_0_50_Images/>
+    <icon1.png/>
+    <Icon3.png/>
+    <Icon2.png/>
+    <Icon4.png/>
+    <logos/>
+    <Image.jpg/>
+    <CompF-wallet.png.zip/>
+    <CompF-wallet.png/>
+    <_x0035_0-50-img.png/>
+    <card.png/>
+    <CompA-bg2.jpg/>
+    <CompA-side-img1.png/>
+    <footer-image.jpg/>
+    <acsc-logo.png/>
+    <card-logo.png/>
+    <CompI-icon-1.png/>
+    <CompI-icon-2.png/>
+    <CompI-icon-3.png/>
+    <CompI-icon-4.png/>
+    <gps-marker.png/>
+    <CompA-bg.jpg/>
+    <cal-icon.png/>
+    <CompA-icon.png/>
+</jcr:root>

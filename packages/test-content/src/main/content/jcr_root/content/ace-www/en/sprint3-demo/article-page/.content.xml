@@ -20,7 +20,7 @@
         sling:resourceType="ace-www/components/page/articlepage"
         articleImageAltText="Article Page Image Alt Text"
         articleLogoAltText="Article Logo Alt Text"
-        articleLogoImage="/content/dam/AAA_Assets/50_50_Images/CompA-icon.png"
+        articleLogoImage="/content/dam/aaa-assets/50_50_Images/CompA-icon.png"
         articleTitle="Big city on a budget: Singapore"
         authorName="Leslie Yap"
         issueDate="2016-09-19"

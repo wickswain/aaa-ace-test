@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ded42cab-47e1-4ff8-ba9d-82cf62846798">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-16T19:24:08.011-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:name="acsc-logo.png"
+        cq:parentPath="/content/dam/aaa-assets"
+        dam:copiedAt="{Date}2016-09-16T19:24:09.004-06:00"
+        dam:parentAssetID="665af7c3-5655-4395-a5bd-378c0dc73498"
+        dam:relativePath="aaa-assets/acsc-logo.png"
+        jcr:lastModified="{Date}2016-09-16T19:24:09.566-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            cq:tags="[ace-assets:image,ace-assets:logos]"
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2016-09-16T19:24:09.149-06:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="c1db245039b9ddd4c428808805bf82690807b7ca"
+            dam:size="{Long}10264"
+            dc:creator="r.kays"
+            dc:description="The Bell-and-Wheel logo"
+            dc:format="image/png"
+            dc:modified="{Date}2016-09-13T18:13:27.265-06:00"
+            dc:rights="copyright AUTO CLUB"
+            dc:title="Automobile Club of Southern California logo"
+            jcr:lastModified="{Date}2016-09-16T19:24:09.175-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}65"
+            tiff:ImageWidth="{Long}65"
+            xmp:CreatorTool="adobe photoshop"
+            xmpRights:Owner="The AUTO CLUB"
+            xmpRights:UsageTerms="unlimited"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="b11af3c7-8f0a-4e40-adcf-76afff183e37">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-16T18:49:55.409-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:name="CompA-bg2.jpg"
+        cq:parentPath="/content/dam/aaa-assets"
+        dam:copiedAt="{Date}2016-09-16T18:49:56.010-06:00"
+        dam:parentAssetID="40f25e53-f8c4-4368-b71e-bf04c1795f29"
+        dam:relativePath="aaa-assets/CompA-bg2.jpg"
+        jcr:lastModified="{Date}2016-09-16T18:49:56.886-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2016-09-16T18:49:56.220-06:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="8c4213489188bca1976b3be629fd569a8504bdd7"
+            dam:size="{Long}1789867"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2016-09-16T18:49:56.320-06:00"
+            jcr:lastModified="{Date}2016-09-16T18:49:56.319-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}1003"
+            tiff:ImageWidth="{Long}1701"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

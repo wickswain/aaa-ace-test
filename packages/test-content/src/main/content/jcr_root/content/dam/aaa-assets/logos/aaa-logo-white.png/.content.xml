@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="caf86618-4b06-4cbe-9477-91cb3028bedb">
+    <jcr:content
+        cq:lastReplicated="{Date}2016-09-13T15:36:30.142-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:name="aaa-logo-white.png"
+        cq:parentPath="/content/dam/aaa-assets/logos"
+        dam:relativePath="aaa-assets/logos/aaa-logo-white.png"
+        jcr:lastModified="{Date}2016-09-13T15:36:26.783-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            cq:tags="[ace-assets:logos]"
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="Creation Time: 09/07/16&#xa;Software: Adobe Fireworks CS6&#xa;"
+            dam:extracted="{Date}2016-09-07T18:02:25.395-06:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}2"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}0.5278980135917664"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}0.8613073229789734"
+            dam:Progressive="no"
+            dam:sha1="5e130aef4036810e36ee902dbdec811a5b154482"
+            dam:size="{Long}1832"
+            dc:creator="r.kays"
+            dc:description="AAA logo, white with transparent background"
+            dc:format="image/png"
+            dc:modified="{Date}2016-09-07T18:06:49.153-06:00"
+            dc:rights="© American Automobile Association"
+            dc:title="AAA logo"
+            jcr:lastModified="{Date}2016-09-13T15:36:26.783-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}38"
+            tiff:ImageWidth="{Long}62"
+            xmp:CreatorTool="adobe fireworks"
+            xmpRights:Owner="American Automobile Association"
+            xmpRights:UsageTerms="All AAA member clubs are permitted to use the emblem in the promotion or provision of motor club goods and services."/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

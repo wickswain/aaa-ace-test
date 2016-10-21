@@ -25,7 +25,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ace-www/components/content/logo"
                 alt="Alt Text"
-                fileReference="/content/dam/AAA_Assets/acsc-logo.png"/>
+                fileReference="/content/dam/aaa-assets/acsc-logo.png"/>
         </content-par>
     </jcr:content>
 </jcr:root>

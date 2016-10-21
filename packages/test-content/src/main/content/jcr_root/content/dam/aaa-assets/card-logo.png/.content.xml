@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="6ba6015c-552b-45d9-87f3-6f6f93bda671">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-16T19:26:54.215-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:lastReplicated="{Date}2016-10-09T23:26:31.893-06:00"
+        cq:lastReplicatedBy="axisadmin"
+        cq:lastReplicationAction="Activate"
+        cq:name="card-logo.png"
+        cq:parentPath="/content/dam/aaa-assets"
+        dam:relativePath="aaa/images/card-logo.png"
+        jcr:lastModified="{Date}2016-09-16T19:26:55.857-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="Software: Adobe ImageReady&#xa;"
+            dam:extracted="{Date}2016-09-15T03:04:09.412-06:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}2.458026170730591"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}2.7496562004089355"
+            dam:Progressive="no"
+            dam:sha1="556672163361dcb0c4e87224e56e913f211de401"
+            dam:size="{Long}11255"
+            dc:format="image/png"
+            dc:modified="{Date}2016-09-15T03:03:45.496-06:00"
+            jcr:lastModified="{Date}2016-09-16T19:26:54.933-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}177"
+            tiff:ImageWidth="{Long}198"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

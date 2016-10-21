@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="623ed442-98da-4ab4-a0e0-4694c2ae5adc">
+    <jcr:content
+        cq:lastModified="{Date}2016-09-16T19:36:41.005-06:00"
+        cq:lastModifiedBy="axisadmin"
+        cq:name="CompI-icon-1.png"
+        cq:parentPath="/content/dam/aaa-assets"
+        dam:copiedAt="{Date}2016-09-16T19:36:43.146-06:00"
+        dam:parentAssetID="978ae53f-2c03-4279-a60f-2374312fcaf2"
+        dam:relativePath="aaa-assets/CompI-icon-1.png"
+        jcr:lastModified="{Date}2016-09-16T19:36:44.155-06:00"
+        jcr:lastModifiedBy="axisadmin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="Software: Adobe ImageReady&#xa;"
+            dam:extracted="{Date}2016-09-16T19:36:43.382-06:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="667741b1c63c239719f228d3bcdd7d9ff485d2d3"
+            dam:size="{Long}4601"
+            dc:format="image/png"
+            dc:modified="{Date}2016-09-15T03:03:43.118-06:00"
+            jcr:lastModified="{Date}2016-09-16T19:36:43.455-06:00"
+            jcr:lastModifiedBy="axisadmin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}162"
+            tiff:ImageWidth="{Long}162"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

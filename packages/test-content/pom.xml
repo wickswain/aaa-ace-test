@@ -43,6 +43,9 @@
                             <root>/content/dam/aaa</root>
                         </filter>
                         <filter>
+                            <root>/content/dam/aaa-assets</root>
+                        </filter>
+                        <filter>
                             <root>/content/personalization/ace-www</root>
                         </filter>
                         <filter>
