@@ -9,7 +9,7 @@
                     <h3 class="sub-title" data-sly-text="${columnTitle}"></h3>
                     <ul>
                        <sly data-sly-list.child="${columnprovider.childResource.listChildren}">
-                            <li>
+                            <li data-sly-test="${child.linktitle}">
                                 <sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child.linkURL}" />
 	                                <a href="${childPage.url ? childPage.url : ''  @ context='uri'}"
 	                                   data-sly-text="${child.linktitle ? child.linktitle : child.linktitle}"

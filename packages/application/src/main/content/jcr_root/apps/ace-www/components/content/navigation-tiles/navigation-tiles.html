@@ -5,11 +5,10 @@
      class="cq-placeholder" style="text-align: center;">
 </div>
 <!--/* #placeholder-content end */-->
- <div class="drawers-tiles">
      <div class="text-center container">
         <ul class="list-inline">
              <sly data-sly-list.child="${resource.listChildren}">
-           			<li data-sly-test="${child.title}">
+           			<li data-sly-test="${child.title || child.tileIcon}">
                     	<sly data-sly-use.childPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=child.linkURL}" />
                         <a href="${childPage.url ? childPage.url : ''  @ context='uri'}"
                             target="${child.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
@@ -22,4 +21,3 @@
               </sly>
          </ul>
        </div>
-  </div>
