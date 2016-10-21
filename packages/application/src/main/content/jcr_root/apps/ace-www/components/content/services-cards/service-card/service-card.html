@@ -11,16 +11,16 @@
          <div class="main-title">
              <a data-toggle="collapse" data-parent="#accordion"  data-target="#collapseOrderItems${currentNode.name}" class="collapsed minus-plus-icon">
                  <div data-sly-test="${properties.image}" class="icon-sc-image"> <img src="${properties.image}" title="${properties.altText}" alt="${properties.altText}" class="img-responsive"> </div>
-                 <div class="icon-sc-title roboto-medium font-f">
+                 <div class="icon-sc-title roboto-medium font-f" style="color: ${properties.cardTitleTextFontColor ? properties.cardTitleTextFontColor : '' @ context='styleToken'}">
                      ${properties.cardtitle}
                  </div>
              </a>
          </div>
          <div class="panel-collapse collapse content" id="collapseOrderItems${currentNode.name}">
-             <div class="service-card-info">
+             <div class="service-card-info" style="color: ${properties.cardTextFontColor ? properties.cardTextFontColor : '' @ context='styleToken'}">
                  <div class="font-h"> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/ace-www/components/content/rte'}"/></div>
                  <div class="icon-sc-link font-h">
-                      <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
+                      <sly data-sly-resource="${ @path='cta-small', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-small'}"/>
                  </div>
              </div>
          </div>

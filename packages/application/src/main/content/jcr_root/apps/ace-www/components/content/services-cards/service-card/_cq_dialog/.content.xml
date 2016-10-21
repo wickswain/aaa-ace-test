@@ -32,8 +32,7 @@
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         fieldDescription="Complete this field and the RTE will appear"
                         fieldLabel="Card Heading"
-                        name="./cardtitle"
-                        required="{Boolean}true"/>
+                        name="./cardtitle"/>
                     <card-title-text-font-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
