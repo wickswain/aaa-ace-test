@@ -40,12 +40,18 @@ Article Carousel Component
 .carousel-control.left,
 .carousel-control.right {
     background-image: none;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
-    background-color: #FFFFFF;
+    background-color: #ffffff !important;
+    opacity: 10;
     height: 40px;
     width: 40px;
     padding-top: 0;
-    top: 40%;
+    top: 50%;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control.left:hover,
+.carousel-control.right:hover {
+    background-color: #FFFFFF !important;
 }
 
 .carousel-control.left {
