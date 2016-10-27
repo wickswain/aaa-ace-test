@@ -17,12 +17,14 @@
         <h2 title="${properties.icontitle}" >${properties.icontitle}</h2>
     </div>
 
-    <div class="icon-title roboto-light font-f" >
-        <div data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"
-             style="min-width:${wcmmode.edit ? '100px' : 'inherit' @ context = 'styleToken'};"
-             data-sly-unwrap="${wcmmode.disabled}">
+    <sly data-sly-test="${properties.rteFlag}">
+        <div class="icon-title roboto-light font-f" >
+            <div data-sly-resource="${ @path='rte', resourceType='/apps/ace-www/components/content/rte'}"
+                 style="min-width:${wcmmode.edit ? '100px' : 'inherit' @ context = 'styleToken'};"
+                 data-sly-unwrap="${wcmmode.disabled}">
+            </div>
         </div>
-    </div>
+    </sly>
 
     <div class="icon-link font-h">
         <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}"/>
