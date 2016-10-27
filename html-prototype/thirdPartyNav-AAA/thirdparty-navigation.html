@@ -48,7 +48,7 @@
                                 <div class="input-group search-bar"> <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                                     </span>
-                                    <input type="search" class="form-control font-h" placeholder="Search..."> <span class="input-group-addon">
+                                    <input type="search" class="form-control font-h" id="searchKey" name="searchKey" placeholder="Search..."> <span class="input-group-addon">
                                         <i class="close-icon" id="d-close-searchbar">+</i>
                                     </span> </div>
                             </div>
@@ -133,46 +133,62 @@
         <div class="overlay"></div>
     </div>
     <script>
-	$(function () {
-        $(".menu").click(function (e) {
-            $(".navigation-bar, #search-hide").stop().fadeIn();
-            $(".slideboxer").css("left", "0");
-            e.preventDefault();
+        $(function() {
+            var searchkeyValue = "";
+
+
+            $("#searchKey").keyup(function(event) {
+                if (event.keyCode == 13) {
+                    searchkeyValue = $("#searchKey").val();
+                    if (searchkeyValue) {
+                        //alert(searchkeyValue);
+                        window.location.href = 'http://172.22.205.11:82/google-search-results.html?searchKeyValue=' + searchkeyValue;
+                    } else {
+                        alert("Please eneter search keyword");
+                    }
+                }
+            });
+
+            $(".menu").click(function(e) {
+                $(".navigation-bar, #search-hide").stop().fadeIn();
+                $(".slideboxer").css("left", "0");
+                e.preventDefault();
+            });
+            $(".m-close-icon").click(function(e) {
+                $('.slideboxer').css('left', '-375px');
+                $(".navigation-bar").stop().fadeOut();
+                $('.slide-nav').removeAttr('style');
+                $('.drawers-wrapper, .backslide, .tiles-list li > ul').hide();
+                $(".overlay").hide();
+                e.preventDefault();
+            });
+            $('.search-btn').on('click', function(e) {
+                $('.expand-searchbar').animate({
+                    opacity: '1',
+                    width: '70%'
+                }, 500).prev().fadeOut();
+                e.preventDefault();
+            });
+            $('.expand-searchbar #d-close-searchbar').parent().on('click', function(e) {
+                $('.expand-searchbar').animate({
+                    opacity: '0',
+                    width: '20%'
+                }, 500).prev().fadeIn();
+                e.preventDefault();
+            });
+            $("#search-hide").click(function(e) {
+                $(".advance-search, .search-overlay").show();
+                $("#search-hide, .m-close-icon").hide();
+                e.preventDefault();
+            });
+            $(".advance-search #m-close-searchbar").click(function(e) {
+                $(".advance-search, .search-overlay").hide();
+                $("#search-hide, .m-close-icon").show();
+                e.preventDefault();
+            });
+            $(".advance-search").hide();
         });
-        $(".m-close-icon").click(function (e) {
-            $('.slideboxer').css('left', '-375px');
-            $(".navigation-bar").stop().fadeOut();
-            $('.slide-nav').removeAttr('style');
-            $('.drawers-wrapper, .backslide, .tiles-list li > ul').hide();
-            $(".overlay").hide();
-            e.preventDefault();
-        });
-        $('.search-btn').on('click', function (e) {
-            $('.expand-searchbar').animate({
-                opacity: '1'
-                , width: '70%'
-            }, 500).prev().fadeOut();
-            e.preventDefault();
-        });
-        $('.expand-searchbar #d-close-searchbar').parent().on('click', function (e) {
-            $('.expand-searchbar').animate({
-                opacity: '0'
-                , width: '20%'
-            }, 500).prev().fadeIn();
-            e.preventDefault();
-        });
-        $("#search-hide").click(function (e) {
-            $(".advance-search, .search-overlay").show();
-            $("#search-hide, .m-close-icon").hide();
-            e.preventDefault();
-        });
-        $(".advance-search #m-close-searchbar").click(function (e) {
-            $(".advance-search, .search-overlay").hide();
-            $("#search-hide, .m-close-icon").show();
-            e.preventDefault();
-        });
-        $(".advance-search").hide();
-		});
+
     </script>
 </body>
 
