@@ -160,6 +160,13 @@
                 components="group:AAA COMMON">
                 <section jcr:primaryType="nt:unstructured"/>
             </article-content>
+            <article-text
+               jcr:lastModified="{Date}2016-10-05T08:21:33.353-06:00"
+               jcr:lastModifiedBy="axisadmin"
+               jcr:primaryType="nt:unstructured"
+               components="group:AAA COMMON">
+               <section jcr:primaryType="nt:unstructured"/>
+            </article-text>
         </articlepage>
     </jcr:content>
 </jcr:root>
