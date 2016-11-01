@@ -20,6 +20,7 @@ $j(function ($) {
     }
     /* Pagination Controls */
     thirdPartyNav = getParameterByName('navigationLink');
+    console.log(thirdPartyNav);
     if (thirdPartyNav) {
         $("#page-container").hide();
         $("footer").hide();
@@ -137,6 +138,8 @@ $j(function ($) {
     $(window).scroll(function () {
         /*Navigtion Header offset*/
         if ($(this).scrollTop() >= 400 && $(window).width() > 768 && !thirdPartyNav) {
+
+            console.log("Hi" + $(window).width());
             $('header').css({
                 'top': '-' + $('#page-header').outerHeight() + 'px'
             });
@@ -224,6 +227,8 @@ $j(function ($) {
                 var a = $(this).text().trim();
                 $('.backslide').text(a);
                 $(".slide-nav").css("left", "-=375px");
+                console.log("test1");
+                $(".slide-nav").scrollTop();
                 e.preventDefault();
             });
         });
@@ -233,6 +238,8 @@ $j(function ($) {
         $('.backslide').text(globalTab);
         $(".slide-nav").css("left", "+=375px");
         ($(".slide-nav").css("left") == '-375px') ? $(this).hide(): $(this).show();
+        console.log("test2");
+        $(".slide-nav").scrollTop();
         e.preventDefault();
     });
     $("#search-hide").click(function (e) {
@@ -267,16 +274,23 @@ $j(function ($) {
             $('.drawers-wrapper .overlay').hide();
             $("#" + navid).next().show();
             $(".slide-nav").css("left", "-375px");
+            $(".slide-nav").css("top", "0px");
+
+            console.log("test3");
             var a = $("#" + navid).text().trim();
             $('.backslide').show().text(a);
             globalTab = $('#' + $("#" + navid).attr('id')).text().trim();
-            //return false;
+
         }
         var activenavlink = 'GlobalNavigation:link' + navid;
         createCookie('activenavigationlink', activenavlink, 1);
     }
+
     if (thirdPartyNav) {
-        if ($(window).width() > 768) {
+        if ($(window).width() < 768 && thirdPartyNav == "nav-mobile") {
+            $('.menu').click();
+            // managaeNav(thirdPartyNav);
+        } else if ($(window).width() > 768) {
             managaeNav(thirdPartyNav);
         } else {
             $('.menu').click();
