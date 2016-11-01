@@ -29,7 +29,7 @@
     <div class="bottom-stick">
         <div class="container">
             <div class="col-sm-6">
-	            <div class="bottom-tile align-center ">
+	            <div data-sly-test="${properties.enableRTE || properties.enableCTA}" class="bottom-tile align-center">
 	                    <div data-sly-test="${properties.enableRTE}" class="roboto-light font-g">
 	                        <sly data-sly-resource="${'rte' @ resourceType = '/apps/ace-www/components/content/rte'}" />   			          	
 	                    </div>	                       
