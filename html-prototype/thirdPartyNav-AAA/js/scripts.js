@@ -54,12 +54,12 @@ $(function() {
     if(isLoggedIn){
     	var username = getUserName();
     	
-    	$('#user-login').css('display', 'none');
-    	$('#user-info').css('display', 'block');
+    	$('#user-login').hide();
+    	$('#user-info').show();
     	$('#username').html(username);
     } else {
-    	$('#user-login').css('display', 'block');
-    	$('#user-info').css('display', 'none');
+    	$('#user-login').show();
+    	$('#user-info').hide();
     	$('#username').html('');
     }
     
