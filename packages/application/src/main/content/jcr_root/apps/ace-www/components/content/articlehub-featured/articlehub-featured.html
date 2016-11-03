@@ -20,8 +20,8 @@
 
 <sly data-sly-test.articlepage="${articledata.articlePage}"
 	 data-sly-test.articlehero="${articledata.articleHero}"
-	 data-sly-test.isArticle="${articlepage.template.name=='article'}"/>
-	 
+	 data-sly-test.isArticle="${articledata.templatePath=='/apps/ace-www/templates/article'}"/>
+
 <sly data-sly-use.dateFormat="${'articlehub-featured.js' @ issuedate=articlePage.properties.issueDate}"/>
 
 <sly data-sly-test.isAuthored="${properties.artclepagePath}"/>
