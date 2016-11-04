@@ -18,6 +18,8 @@
                     <closeflag
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/textarea"
+                            fieldDescription="Option to include HTML code that falls outside of available component options. Any grid dependent code will need you to include a container/row pair."
+                            fieldLabel="HTML Code"
                             name="./htmlSource"
                             text="HTML Source Code"/>
                 </items>
