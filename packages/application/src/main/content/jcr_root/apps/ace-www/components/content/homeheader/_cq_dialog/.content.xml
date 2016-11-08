@@ -61,26 +61,26 @@
                                 </items>
                             </imageorvideo>
                             <backgroundimage
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
-                                        allowUpload="{Boolean}false"
-                                        autoStart="{Boolean}false"
-                                        class="cq-droptarget"
-                                        fieldLabel="Background Image"
-                                        fileNameParameter="./fileName"
-                                        fileReferenceParameter="./image"
-                                        mimeTypes="[image]"
-                                        multiple="{Boolean}false"
-                                        title="Upload Image Asset"
-                                        uploadUrl="${suffix.path}"
-                                        useHTML5="{Boolean}true"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Background Image"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./image"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
                             <background-video
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/container"
-                                        class="hide showimageorvideo"
-                                        showhidetargetvalue="showvideo">
-                                        <items jcr:primaryType="nt:unstructured">
-                                        <backgroundvideo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide showimageorvideo"
+                                showhidetargetvalue="showvideo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundvideo
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                         fieldDescription="Drop video from the Content Finder (Only mp4 video supported)"
@@ -90,7 +90,7 @@
                                         regexText="Please drop videos in mp4 format only"
                                         rootPath="/content/dam"/>
                                 </items>
-                            </background-video>                            
+                            </background-video>
                             <alt-text
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
@@ -174,12 +174,29 @@
                                         value="1"/>
                                 </items>
                             </opacity-alphavalue>
-                            <learn-button-id
+                            <showlearnbutton
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter next component's Jump Link Id"
-                                fieldLabel="Learn Button Id"
-                                name="./learnButtonId"/>
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".modal-option-enable-showhide-target"
+                                fieldDescription="Please select the checkbox to show showlearnbutton to enter show learnbutton id"
+                                name="./showlearnbutton"
+                                text="Show Learn Button ?"
+                                value="{Boolean}true"/>
+                            <learnbutton-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide modal-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <learn-button-id
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Please enter next component's Jump Link Id"
+                                        fieldLabel="Learn Button Id"
+                                        name="./learnButtonId"/>
+                                </items>
+                            </learnbutton-container>
                         </items>
                     </columns>
                 </items>
