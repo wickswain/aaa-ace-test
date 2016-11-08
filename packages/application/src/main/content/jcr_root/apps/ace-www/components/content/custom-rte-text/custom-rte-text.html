@@ -1,0 +1,29 @@
+<!--/*
+
+    Custom Text Editor Component too.
+    ----------------------------------------------------------------
+
+    This is a stand-alone Text Editor using the customized "rich-text-editor" component
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.text}"
+     data-emptytext="Custom Text Editor Component Here."
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+     alt="Custom Text Editor" />
+
+<!-- #placeholder-content end -->
+
+<div style="background-color:${properties.backgroundColor @ context='styleToken'}">
+    <div class="container">
+        <div class="row">
+            <div id="${properties.jumpLinkId}" style="color:${properties.fontColor @ context='styleToken'}" >
+                <div class="article-text">
+                    <div id="theTextEditor">${properties.text @ context='html'}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
