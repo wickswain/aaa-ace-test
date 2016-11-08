@@ -26,8 +26,8 @@
                             <rowitemdescription
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Row Item Description"
                                 fieldDescription="Please enter row item description"
+                                fieldLabel="Row Item Description"
                                 name="./rowItemDescription"
                                 required="{Boolean}true"/>
                             <showmodalbox
@@ -39,7 +39,7 @@
                                 name="./showModalBox"
                                 text="Show Modal Box ?"
                                 value="{Boolean}true"/>
-                             <modal-container
+                            <modal-container
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
                                 class="hide modal-option-enable-showhide-target"
@@ -55,7 +55,7 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/include"
                                         path="/apps/ace-www/components/content/rte/granite/items/text"/>
-                                 </items>
+                                </items>
                             </modal-container>
                         </items>
                     </columns>
@@ -82,19 +82,6 @@
                                 name="./enableCol1Text"
                                 text="enable Text in Column 1 ?"
                                 value="true"/>
-                            <text1-container
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/container"
-                                class="hide text1-option-enable-showhide-target"
-                                showhidetargetvalue="true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <col1text
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column1 Text"
-                                        name="./col1Text"/>
-                                </items>
-                            </text1-container>
                             <image1-container
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
@@ -120,8 +107,8 @@
                                     <icon1alttext
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column1 Alt"
                                         fieldDescription="Please enter alt text"
+                                        fieldLabel="Column1 Alt"
                                         name="./icon1/alt"/>
                                 </items>
                             </image1-container>
@@ -156,19 +143,6 @@
                                 name="./enableCol2Text"
                                 text="enable Text in Column 2 ?"
                                 value="true"/>
-                            <text2-container
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/container"
-                                class="hide text2-option-enable-showhide-target"
-                                showhidetargetvalue="true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <col2text
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column2 Text"
-                                        name="./col2Text"/>
-                                </items>
-                            </text2-container>
                             <image2-container
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
@@ -194,8 +168,8 @@
                                     <icon2alttext
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column2 Alt"
                                         fieldDescription="Please enter alt text"
+                                        fieldLabel="Column2 Alt"
                                         name="./icon2/alt"/>
                                 </items>
                             </image2-container>
@@ -230,19 +204,6 @@
                                 name="./enableCol3Text"
                                 text="enable Text in Column 3 ?"
                                 value="true"/>
-                            <text3-container
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/container"
-                                class="hide text3-option-enable-showhide-target"
-                                showhidetargetvalue="true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <col3text
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column3 Text"
-                                        name="./col3Text"/>
-                                </items>
-                            </text3-container>
                             <image3-container
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
@@ -268,8 +229,8 @@
                                     <icon3alttext
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Column3 Alt"
                                         fieldDescription="Please enter alt text"
+                                        fieldLabel="Column3 Alt"
                                         name="./icon3/alt"/>
                                 </items>
                             </image3-container>
