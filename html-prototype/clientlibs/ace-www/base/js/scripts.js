@@ -28,37 +28,6 @@ $j(function ($) {
         $("footer").show();
     }
 
-    /*Navigation events*/
-    /* $('.navigation-bar .nav > li.dropdown:not(:last-child) > a').click(function (e) {
-         var navid = $(this).attr('id');
-
-         if ($(window).width() > 992) {
-             if ($(this).hasClass('opend')) {
-                 $('.navigation-bar .nav > li:not(:last-child) > a').removeClass('opend deactive').next().hide();
-                 $(".overlay").hide();
-             } else {
-                 $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('opend').addClass('deactive').next().hide();
-                 $(this).addClass('opend').removeClass('deactive').next().show();
-                 $(".overlay").stop().fadeIn();
-             }
-
-
-         } else {
-             $(this).removeClass('opend');
-             $('.drawers-wrapper .overlay').hide();
-             $(this).next().show();
-             $(".slide-nav").css("left", "-375px");
-             var a = $(this).text().trim();
-             $('.backslide').show().text(a);
-             globalTab = $('#' + $(this).attr('id')).text().trim();
-         }
-
-         var activenavlink = 'GlobalNavigation:link' + navid;
-         createCookie('activenavigationlink', activenavlink, 1);
-
-         e.preventDefault();
-     });*/
-
     $('.search-btn').on('click', function (e) {
         $('.expand-searchbar').animate({
             opacity: '1',

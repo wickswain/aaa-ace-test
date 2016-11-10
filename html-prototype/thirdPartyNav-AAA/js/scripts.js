@@ -25,78 +25,16 @@ $(function() {
     }
 	var hostname = getHostName();
 	
-    $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/authenticate/login?ReturnURL=" + window.location.href);
-    $('#my-account').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
-    $('#sign-out').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/authenticate/logout?ReturnURL=" + window.location.href);
-
+    $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
+    
     // Need to remove the port number if it is not required once this code moves to production environment
-    $('#nav-0').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-0");
-    $('#nav-1').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-1");
-    $('#nav-2').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-2");
-    $('#nav-3').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-3");
-    $('#nav-4').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-4");
-    $('#nav-5').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-5");
-    $('#nav-6').attr('href', hostname + ":4503" + navlandingpagepath + "?navigationLink=nav-6");
-	
-    // Login functionality
-    var isLoggedIn = false;
-    var url = hostname + ":4503/user.loginstatus.json";
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        success: function(response) { 
-			isLoggedIn = response.isLoggedIn;
-        },
-        async: false
-    });
-    
-    if(isLoggedIn){
-    	var username = getUserName();
-    	
-    	$('#user-login').hide();
-    	$('#user-info').show();
-    	$('#username').html(username);
-    } else {
-    	$('#user-login').show();
-    	$('#user-info').hide();
-    	$('#username').html('');
-    }
-    
-    function getUserName() {
-    	var userCookie = getCookie('aceuser');
-    	
-    	return fetchCookieValue(userCookie, 'FirstName');
-    }
-    
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
-    
-    function fetchCookieValue(cookieValue, key) {
-    	var cookieItems = cookieValue.split('&');
-    	
-    	for(var i = 0; i < cookieItems.length; i++) {
-            var cookieItem = cookieItems[i];
-            
-            if (cookieItem.contains(key)) {
-                return cookieItem.substring(cookieItem.indexOf('=') + 1);
-            }
-        }
-    	
-    	return '';
-    }
+    $('#nav-0').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-0");
+    $('#nav-1').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-1");
+    $('#nav-2').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-2");
+    $('#nav-3').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-3");
+    $('#nav-4').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-4");
+    $('#nav-5').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-5");
+    $('#nav-6').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-6");
 
     // Search functionality
     var searchkeyValue = "";
