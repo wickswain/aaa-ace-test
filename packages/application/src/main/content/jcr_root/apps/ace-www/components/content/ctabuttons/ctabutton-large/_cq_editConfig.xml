@@ -2,6 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     cq:actions="[text:CTA Large Button/Link,edit,-,copymove,delete,insert]"
     cq:dialogMode="floating"
+    cq:disableTargeting="{Boolean}true"
     jcr:primaryType="cq:EditConfig">
     <cq:listeners
         jcr:primaryType="cq:EditListenersConfig"
