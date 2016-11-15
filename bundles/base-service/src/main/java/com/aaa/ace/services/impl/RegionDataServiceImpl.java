@@ -1,5 +1,7 @@
 package com.aaa.ace.services.impl;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
@@ -33,27 +35,27 @@ public class RegionDataServiceImpl implements RegionDataService {
 
     @Override
     public String getRegionInfo(SlingHttpServletRequest request) {
-        String hostName = request.getHeader("X-FORWARDED-FOR");
+        String hostName;
+        try {
+            hostName = new URL(request.getRequestURL().toString()).getHost();
 
-        if (StringUtils.isBlank(hostName)) {
-            hostName = request.getServerName();
-        }
-        log.info("Host Name resolved in provider is: " + hostName);
+            log.info("Host Name resolved in provider is: " + hostName);
 
-        if (StringUtils.isNotBlank(hostName)) {
-            String[] hostnames = hostName.split(Pattern.quote("."));
-            log.info("Hostname length after split by dot is: " + hostnames.length);
+            if (StringUtils.isNotBlank(hostName)) {
+                String[] hostnames = hostName.split(Pattern.quote("."));
+                log.info("Hostname length after split by dot is: " + hostnames.length);
 
-            if (hostnames.length > 2) {
-                return hostnames[1];
-            } else {
-                return null;
+                if (hostnames.length > 2) {
+                    return hostnames[1];
+                }
             }
-
-        } else {
-            return null;
+        } catch (MalformedURLException e) {
+            log.error("Error occured while resolving the host name from the request URL: ",
+                    e.getMessage());
+            e.printStackTrace();
         }
 
+        return null;
     }
 
 }
