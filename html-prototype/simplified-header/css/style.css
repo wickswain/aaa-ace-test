@@ -14,32 +14,39 @@
 
 /* Typography*/
 
-.roboto-slab-bold {
-    font-family: 'roboto_slabbold';
-}
-
 .roboto-slab-light {
-    font-family: 'roboto_slablight';
+    font-family: 'robotoslab';
+    font-weight: 300;
 }
 
 .roboto-slab-regular {
-    font-family: 'roboto_slabregular';
+    font-family: 'robotoslab';
+    font-weight: 400;
 }
 
-.roboto-regular {
-    font-family: 'robotoregular';
-}
-
-.roboto-medium {
-    font-family: 'robotomedium';
-}
-
-.roboto-bold {
-    font-family: 'robotobold';
+.roboto-slab-bold {
+    font-family: 'robotoslab';
+    font-weight: 700;
 }
 
 .roboto-light {
-    font-family: 'robotolight';
+    font-family: 'roboto';
+    font-weight: 300;
+}
+
+.roboto-regular {
+    font-family: 'roboto';
+    font-weight: 400;
+}
+
+.roboto-medium {
+    font-family: 'roboto';
+    font-weight: 500;
+}
+
+.roboto-bold {
+    font-family: 'roboto';
+    font-weight: 700;
 }
 
 .font-a {
@@ -94,9 +101,10 @@
 
 html,
 body {
-    font-family: 'robotolight';
+    font-family: 'roboto';
     color: #000000;
     background: #cfcfcf none;
+    font-weight: 300;
 }
 
 h1,
