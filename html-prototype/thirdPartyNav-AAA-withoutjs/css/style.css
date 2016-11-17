@@ -31,32 +31,39 @@ Typography Components
 
 /* Typography */
 
-.roboto-slab-bold {
-    font-family: 'roboto_slabbold';
-}
-
 .roboto-slab-light {
-    font-family: 'roboto_slablight';
+    font-family: 'robotoslab';
+    font-weight: 300;
 }
 
 .roboto-slab-regular {
-    font-family: 'roboto_slabregular';
+    font-family: 'robotoslab';
+    font-weight: 400;
 }
 
-.roboto-regular {
-    font-family: 'robotoregular';
-}
-
-.roboto-medium {
-    font-family: 'robotomedium';
-}
-
-.roboto-bold {
-    font-family: 'robotobold';
+.roboto-slab-bold {
+    font-family: 'robotoslab';
+    font-weight: 700;
 }
 
 .roboto-light {
-    font-family: 'robotolight';
+    font-family: 'roboto';
+    font-weight: 300;
+}
+
+.roboto-regular {
+    font-family: 'roboto';
+    font-weight: 400;
+}
+
+.roboto-medium {
+    font-family: 'roboto';
+    font-weight: 500;
+}
+
+.roboto-bold {
+    font-family: 'roboto';
+    font-weight: 700;
 }
 
 .font-d {
@@ -79,9 +86,10 @@ Typography Components
 
 html,
 body {
-    font-family: 'robotolight';
+    font-family: 'roboto';
     color: #000000;
     background: #cfcfcf none;
+    font-weight: 300;
 }
 
 h1,
@@ -628,7 +636,8 @@ Button style Components
         border-radius: 0px;
         -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.175);
         z-index: 9;
-        font-family: robotolight;
+        font-family: 'roboto';
+        font-weight: 300;
     }
     .header-bar .m-user-details .profile-box:before {
         display: none;
@@ -755,7 +764,8 @@ Button style Components
         margin: 0px;
         float: left;
         width: 100%;
-        font-family: 'robotomedium';
+        font-family: 'roboto';
+        font-weight: 500;
     }
     .header-bar .m-user-details .sign-join-in a .lock-icon {
         margin-right: 10px;
@@ -778,7 +788,8 @@ Button style Components
         text-transform: uppercase;
         letter-spacing: .08em;
         border-right: solid 1px #eee;
-        font-family: 'robotomedium';
+        font-family: 'roboto';
+        font-weight: 500;
         text-decoration: none;
         line-height: 60px;
         width: 49%;
@@ -859,7 +870,8 @@ Button style Components
         padding: 0;
         line-height: 60px;
         display: block;
-        font-family: 'robotolight';
+        font-family: 'roboto';
+        font-weight: 300;
     }
     .slideboxer .slide-nav .globalnav ul li a img {
         margin-right: 20px;
@@ -872,7 +884,8 @@ Button style Components
         line-height: 60px;
         font-size: 18px;
         color: #303030;
-        font-family: 'robotolight';
+        font-family: 'roboto';
+        font-weight: 300;
         cursor: pointer;
     }
     .slideboxer .slide-nav .globalnav ul li h3:after {
@@ -934,7 +947,8 @@ Button style Components
     }
     .slideboxer .expand-searchbar .search-bar .form-control {
         padding: 0px;
-        font-family: 'robotomedium';
+        font-family: 'roboto';
+        font-weight: 500;
     }
     .slideboxer .expand-searchbar .search-bar .input-group .form-control:focus,
     .slideboxer .expand-searchbar .search-bar * {
@@ -1100,7 +1114,8 @@ Button style Components
     }
     .roadside-block span {
         font-size: 20px;
-        font-family: "robotomedium";
+        font-family: "roboto";
+        font-weight: 500;
         margin-left: 12px;
     }
     .roadside-block .close_btn {
@@ -1244,7 +1259,8 @@ Button style Components
         box-shadow: none;
         color: #fff;
         line-height: normal;
-        font-family: 'robotolight';
+        font-family: 'roboto';
+        font-weight: 300;
     }
     .header-bar .top-header .dropdown a:focus {
         text-decoration: none;
@@ -1257,7 +1273,7 @@ Button style Components
         vertical-align: middle;
         padding: 0 10px;
         display: inline-block;
-        font-family: robotolight;
+        font-family: 'roboto';
         font-size: 15px;
         margin: 0px;
     }
@@ -1554,7 +1570,8 @@ Button style Components
         padding: 0px;
         color: #ffffff;
         transition: all 0.4s;
-        font-family: 'robotomedium';
+        font-family: 'roboto';
+        font-weight: 500;
     }
     .navigation-bar .navbar .navbar-nav li> a.join-btn {
         padding: 5px 15px;
@@ -1674,7 +1691,8 @@ Button style Components
         color: #ffffff;
         font-size: 15px;
         line-height: normal;
-        font-family: 'robotolight';
+        font-family: 'roboto';
+        font-weight: 300;
     }
     .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawers-tiles ul li a.tile-card .tile-title:hover {
         text-decoration: none;
@@ -1715,7 +1733,8 @@ Button style Components
         color: #1d333c;
         font-size: 11px;
         letter-spacing: .04em;
-        font-family: 'robotoblack';
+        font-family: 'roboto';
+        font-weight: 900;
     }
     .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawers-tiles-list .tiles-list h3:after {
         content: '';
@@ -1732,7 +1751,8 @@ Button style Components
     .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawers-tiles-list .tiles-list li a {
         font-size: 15px;
         color: #ffffff;
-        font-family: robotolight;
+        font-family: 'roboto';
+        font-weight: 300;
     }
     .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawers-tiles-list .tiles-list li a:hover {
         text-decoration: underline;
