@@ -21,23 +21,7 @@
                             fieldLabel="Title/Subheading"
                             required="{Boolean}false"
                             name="./title"/>
-                    <titlecolors
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/select"
-                            fieldDescription="Title colors: Black or White"
-                            fieldLabel="Title text color"
-                            name="./titleColor">
-                        <items jcr:primaryType="nt:unstructured">
-                            <titleblack
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Black"
-                                    value="#000000"/>
-                            <titlewhite
-                                    jcr:primaryType="nt:unstructured"
-                                    text="White"
-                                    value="#FFFFFF" />
-                        </items>
-                    </titlecolors>
+
                     <body-rte
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="cq/gui/components/authoring/dialog/richtext"
@@ -127,23 +111,7 @@
                             </cui>
                         </uiSettings>
                     </body-rte>
-                    <bodycolors
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/select"
-                            fieldDescription="Title colors: Black or White"
-                            fieldLabel="Title text color"
-                            name="./bodyColor">
-                        <items jcr:primaryType="nt:unstructured">
-                            <bodyblack
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Black"
-                                    value="#000000"/>
-                            <bodywhite
-                                    jcr:primaryType="nt:unstructured"
-                                    text="White"
-                                    value="#FFFFFF" />
-                        </items>
-                    </bodycolors>
+
                     <youtubeurl
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -152,6 +120,24 @@
                             description="Enter the video ID"
                             required="{Boolean}true"
                             name="./videoURL"/>
+
+
+                    <titlecolors
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                            colorsPath="/apps/ace-www/components/content/youtube-video/config/textbackgroundcolors"
+                            fieldDescription="Header text color"
+                            fieldLabel="Title text color"
+                            name="./titleColor" />
+
+                    <bodytextcolors
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/ace-www/granite/widgets/colorpicker"
+                            colorsPath="/apps/ace-www/components/content/youtube-video/config/textbackgroundcolors"
+                            fieldDescription="Body copy text color"
+                            fieldLabel="Body text color"
+                            name="./bodyColor" />
+
 
                     <backgroundcolor
                             jcr:primaryType="nt:unstructured"
