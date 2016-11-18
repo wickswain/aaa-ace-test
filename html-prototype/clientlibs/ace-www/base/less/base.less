@@ -23,9 +23,10 @@
 
 html,
 body {
-    font-family: @font-family-light;
+    font-family: @font-family-roboto;
     color: @color-black;
     background: @color-gray-medium none;
+    font-weight: 300;
 }
 
 h1,
@@ -40,21 +41,19 @@ p {
     font-family: inherit;
     font-size: inherit;
 }
-a,
+
 img,
 :hover,
 :focus,
 a:hover,
 a:focus {
     outline: none;
-    border:0;
 }
 
 a {
     color: @color-blue-primary-medium;
     text-decoration: none;
     font-family: inherit;
-
     &:focus,
     &:hover {
         color: @color-blue-light;
@@ -90,20 +89,20 @@ a {
     cursor: pointer;
 }
 
-    .icon-info .btn-info:after {
-        content: 'i';
-        display: inline-block;
-        vertical-align: middle;
-        color: @color-blue-primary-medium;
-        border: 1px solid @color-blue-primary-medium;
-        border-radius: 15px;
-        width: 14px;
-        height: 14px;
-        text-align: center;
-        font-size: 10px;
-        line-height: 14px;
-        margin-left: 5px;
-    }
+.icon-info .btn-info:after {
+    content: 'i';
+    display: inline-block;
+    vertical-align: middle;
+    color: @color-blue-primary-medium;
+    border: 1px solid @color-blue-primary-medium;
+    border-radius: 15px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    margin-left: 5px;
+}
 
 .modal-header .close {
     margin-top: -80px;
@@ -121,7 +120,6 @@ a {
 @space-md: 100px;
 @space-sm: 30px;
 @space-xs: 10px;
-
 .horizontal-space {
     margin-bottom: @space-sm;
 }
