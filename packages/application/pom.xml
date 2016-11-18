@@ -67,6 +67,10 @@
                         <filter>
                             <root>/apps/cq/contexthub/components/segment-page</root>
                         </filter>
+                        
+                        <filter>
+                            <root>/apps/cq/personalization/components/target</root>
+                        </filter>
                     </filters>
                 </configuration>
             </plugin>
