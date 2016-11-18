@@ -122,7 +122,7 @@
             <cui jcr:primaryType="nt:unstructured">
                 <inline
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,lists#ordered,lists#unordered,lists#indent,lists#outdent,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    toolbar="[format#bold,format#italic,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#ordered,lists#unordered,lists#indent,lists#outdent,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
@@ -132,7 +132,7 @@
                 </inline>
                 <fullscreen
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,lists#ordered,lists#unordered,lists#indent,lists#outdent,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
+                    toolbar="[format#bold,format#italic,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#ordered,lists#unordered,lists#indent,lists#outdent,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
