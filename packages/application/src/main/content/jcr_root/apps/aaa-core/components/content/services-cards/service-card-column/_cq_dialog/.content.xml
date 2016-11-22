@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Service Card"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <column-amount
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Select the amount of columns needed"
+                        fieldLabel="Number of columns"
+                        name="./columnCount">
+                        <items jcr:primaryType="nt:unstructured">
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="One"
+                                value="{Long}1"/>
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="Two"
+                                value="{Long}2"/>
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="{Long}3"/>
+                        </items>
+                    </column-amount>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,202 @@
+/*****************************************
+Template : Services Cards
+Created Date:06-Sept-2016
+Modified Date:07-Sept-2016
+Version:0.1
+*****************************************/
+
+
+/*==========  Services Cards Row  ==========*/
+
+.services-cards-section {
+    ul.icon-sc-list {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+    }
+    li {
+        list-style: none;
+        float: none;
+        margin: 0px auto 30px auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .tile-block {
+        align-items: center;
+        height: 400px;
+        justify-content: flex-end;
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.10);
+        display: flex;
+        flex-flow: column nowrap;
+        &:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .main-title {
+            width: 100%;
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: #000;
+                cursor: default;
+            }
+            .icon-sc-image {
+                margin-left: auto;
+                margin-right: auto;
+                .icon-hidden {
+                    visibility: hidden;
+                }
+            }
+            .icon-sc-title {
+                margin-bottom: 30px;
+                padding: 0px;
+            }
+        }
+        .content {
+            padding: 0px;
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:679px) {
+    .services-cards-section {
+        li {
+            margin-bottom: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+        .icon-sc-link {
+            .link-btn {
+                margin-left: 0px;
+            }
+        }
+        .tile-block {
+            padding: 50px 30px;
+            height: 100%;
+            border-bottom: solid 1px #ccc;
+            .main-title {
+                width: 100%;
+                .minus-plus-icon {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                .minus-plus-icon {
+                    &:after {
+                        content: "+";
+                        transform: rotate(50deg);
+                        transition: all 1s;
+                        display: block;
+                        color: @color-blue-primary-medium;
+                        font-weight: bold;
+                        font-size: 30px;
+                    }
+                    &.collapsed {
+                        &:after {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+                .icon-sc-title {
+                    width: 100%;
+                    margin: 0px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    padding: 0px 20px;
+                }
+            }
+            .icon-sc-link {
+                margin-top: 50px;
+            }
+            .content {
+                width: 100%;
+            }
+            .service-card-info {
+                padding: 50px 40px 0px 40px;
+            }
+            .icon-sc-image {
+                margin-bottom: 30px;
+                width: 40px;
+                margin: 0px;
+                height: auto;
+            }
+        }
+        .top-btm-space {
+            padding: 70px 0;
+        }
+        .bottom-space {
+            padding-bottom: 70px;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .services-cards-section {
+        li {
+            width: 49%;
+            padding: 0px 15px;
+        }
+        .tile-block {
+            padding: 45px 40px;
+            .icon-sc-link {
+                margin-top: 30px;
+            }
+            .content {
+                padding: 0px;
+                display: block !important;
+                width: 100%;
+                height: auto !important;
+            }
+            .icon-sc-title {
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .icon-sc-image {
+                margin-bottom: 30px;
+                img {
+                    display: inline-block;
+                }
+            }
+        }
+        .top-btm-space {
+            padding: 100px 0;
+        }
+        .bottom-space {
+            padding-bottom: 100px;
+        }
+    }
+}
+
+@media (min-width:992px) {
+    .services-cards-section {
+        li {
+            min-width: 400px;
+        }
+        .tile-block {
+            .icon-sc-link {
+                margin-top: 50px;
+            }
+            .icon-sc-image {
+                margin-bottom: 50px;
+            }
+        }
+        .top-btm-space {
+            padding: 130px 0;
+        }
+        .bottom-space {
+            padding-bottom: 130px;
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    .services-cards-section {
+        li {
+            width: 33%;
+            padding: 0px 15px;
+        }
+    }
+}

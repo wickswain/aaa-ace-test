@@ -1,0 +1,85 @@
+/*****************************************
+    Sticky Nav Component
+*****************************************/
+
+.sticky-nav {
+    min-height: 60px;
+    display: none;
+    /*z-index: 99; */
+    top: 0;
+    .sticky-navbar {
+        background-color: @color-gray-light;
+        border: 0;
+        max-width: 1700px;
+        margin: 0 auto;
+        border-bottom: 1px solid #bfc2c2;
+        .nav> li> a {
+            color: @color-blue-primary-medium;
+            padding: 20px 20px;
+            display: inline-block;
+            &.btn-style,
+            &.link-btn {
+                padding: 8px 20px;
+                color: #fff;
+            }
+        }
+        .tab-list {
+            margin: 0px;
+        }
+        .btn-style,
+        .link-btn {
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 14px;
+        }
+        .collapse-btn {
+            padding: 20px 0px;
+            float: left;
+        }
+        .dropdown-menu {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0px;
+            li {
+                a {
+                    color: #0099FF;
+                }
+                a:hover {
+                    text-decoration: underline;
+                    background: transparent;
+                }
+                a:focus {
+                    background: transparent;
+                }
+            }
+        }
+        .nav-pills>li {
+            float: none;
+        }
+    }
+    .sticky-menu {
+        cursor: pointer;
+        padding: 20px 0px;
+        float: left;
+        span {
+            font-size: 10px;
+            color: #0099FF;
+        }
+    }
+}
+
+.open {
+    .sticky-menu {
+        .glyphicon {
+            transform: rotate(-180deg)
+        }
+    }
+}
+
+.affix {
+    .dropdown-menu {
+        margin-top: 1px;
+    }
+}

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/ace-www/components" />
-    <filter root="/apps/ace-www/templates" />
-    <filter root="/apps/ace-www/granite/widgets" />
+    <filter root="/apps/aaa-core/components" />
+    <filter root="/apps/aaa-core/templates" />
+    <filter root="/apps/aaa-core/granite/widgets" />
     <filter root="/apps/cq/contexthub/components/segment-page" />
     <filter root="/apps/cq/personalization/components/target" />
-    <filter root="/etc/clientlibs/ace-www" />
-    <filter root="/etc/config/ace-www" />
+    <filter root="/etc/clientlibs/aaa-core" />
+    <filter root="/etc/config/aaa-core" />
+    <filter root="/apps/ace-www/components" />
+    <filter root="/apps/ace-www/templates" />
     <filter root="/etc/workflow/models/ace-www" />
     <filter root="/etc/workflow/ace-www" />
 </workspaceFilter>

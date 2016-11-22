@@ -1,0 +1,30 @@
+<!--/*
+    Membership Table Row component
+    ----------------------------------------------------------------
+    Hidden component that makes up the table row.
+*/-->
+
+<!-- Placeholder Content
+=============================================-->
+<sly data-sly-test.isAuthored="${properties.title || properties.headerImage}"></sly>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" data-emptytext="Author Membership Table Column here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+
+<div class="header" data-sly-test="${isAuthored}">
+    <div class="img-block">
+        <img src="${properties.headerImage}" title="${properties.headerImageAltText}" 
+             alt="${properties.headerImageAltText}" class="img-responsive" />
+    </div>
+    
+    <div class="contentblock">
+        <h1 class="roboto-light" data-sly-text="${properties.title}"></h1>
+	    <div class="roboto-light font-h subtitle-b-spacing">
+	        <sly data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"/>
+	    </div>
+    </div>
+	
+	<div class="actionitem"
+	     data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}">
+	</div>
+</div>

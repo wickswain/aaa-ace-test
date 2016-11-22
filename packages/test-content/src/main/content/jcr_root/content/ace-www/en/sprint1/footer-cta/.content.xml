@@ -7,13 +7,13 @@
         cq:lastReplicated="{Date}2016-09-16T10:18:34.545-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - Footer CTA"
         jcr:uuid="c54d27a0-6c2c-4f7a-a62a-c8cc324cc9c7"
-        sling:resourceType="ace-www/components/page/genericpage">
+        sling:resourceType="aaa-core/components/page/genericpage">
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-08-19T15:48:58.295+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,153,255,1)"
                 title="Footer CTA with Basic Properties"/>
             <footer_cta
@@ -32,7 +32,7 @@
                 jcr:lastModified="{Date}2016-08-19T15:36:38.608+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 fileReference="/content/dam/geometrixx-gov/gov-homepage-hero.png"
                 heading="Don't have AAA insurance?"
@@ -43,7 +43,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:46:12.592+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,80,149,1)"
                 title="Footer CTA with RTE"/>
             <footer_cta_620922226
@@ -52,7 +52,7 @@
                 jcr:lastModified="{Date}2016-08-19T15:36:46.470+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 fileReference="/content/dam/geometrixx-instore/cover-images/surfing.jpg"
                 heading="Don't have AAA insurance?"
@@ -62,7 +62,7 @@
                     jcr:lastModified="{Date}2016-08-12T18:50:14.497+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years&lt;br>&#xd;&#xa;"
                     textIsRich="true"/>
             </footer_cta_620922226>
@@ -72,7 +72,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:46:29.324+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,153,255,1)"
                 title="Footer CTA with Button CTA  Enabled"/>
             <footer_cta_303631278
@@ -81,7 +81,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:45:23.057+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 ctaFlag="true"
                 fileReference="/content/dam/geometrixx-gov/gov-homepage-health.png"
@@ -91,7 +91,7 @@
                     jcr:lastModified="{Date}2016-08-19T15:40:19.866+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -126,7 +126,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:46:35.317+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,80,149,1)"
                 title="Footer CTA with RTE and Button CTA  Enabled"/>
             <footer_cta_1443769166
@@ -135,7 +135,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:40:11.676+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 ctaFlag="true"
                 fileReference="/content/dam/geometrixx-gov/gov-homepage-child.png"
@@ -145,14 +145,14 @@
                     jcr:lastModified="{Date}2016-08-12T18:57:42.568+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years&lt;br>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-button-large
                     jcr:lastModified="{Date}2016-08-19T14:48:23.927+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -188,7 +188,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:46:53.051+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(228,229,229,1)"
                 title="Footer CTA with Link CTA"/>
             <footer_cta_509196065
@@ -197,7 +197,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:41:11.250+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 ctaFlag="true"
                 fileReference="/content/dam/Test/footer-image.jpg"
@@ -206,14 +206,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:00:33.070+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years&lt;br>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-button-large
                     jcr:lastModified="{Date}2016-08-19T14:50:39.343+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="links">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -249,7 +249,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:46:59.882+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(228,229,229,1)"
                 title="Footer CTA with change of text font color as Black"/>
             <footer_cta_1287817806
@@ -258,7 +258,7 @@
                 jcr:lastModified="{Date}2016-08-19T15:39:21.233+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 ctaFlag="true"
                 fileReference="/content/dam/geometrixx-instore/cover-images/mens.jpg"
@@ -269,14 +269,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:17:15.178+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years&lt;br>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-button-large
                     jcr:lastModified="{Date}2016-08-19T14:51:44.561+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -313,7 +313,7 @@
                 jcr:lastModified="{Date}2016-08-19T14:47:06.392+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,153,255,1)"
                 title="Footer CTA included Button CTA  with Different colors"/>
             <footer_cta_1794387731
@@ -322,7 +322,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:26:11.436+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/footer-cta"
+                sling:resourceType="aaa-core/components/content/footer-cta"
                 altText="Alt Text For Image"
                 ctaFlag="true"
                 fileReference="/content/dam/geometrixx-instore/cover-images/equipment.jpg"
@@ -331,14 +331,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:26:02.616+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Enjoy saving on your auto, home and life insurance policies. Our multi-policy, multi-vehicle, driver discounts and anti-theft discounts are just a few of the many ways you can save up to 22% and still enjoy the peace of mind from the protection we have our members for over 100 years&lt;br>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-button-large
                     jcr:lastModified="{Date}2016-08-19T14:52:15.454+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -379,7 +379,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:17:28.014+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-small"
+                sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-small"
                 ctaType="links">
                 <link1
                     jcr:primaryType="nt:unstructured"

@@ -1,0 +1,47 @@
+<!--/*
+
+    Midpage Sticky Nav Component.
+    ----------------------------------------------------------------
+
+    Slide-down animation after the user starts scrolling down the page, past [400 px] from the top of the page (Global Nav is sticky until user scrolls down pass 400 px from the top)
+    
+    Default Behavior: NA
+
+    Required Fields: NA
+
+*/-->
+<!-- Placeholder Content start
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.link1label && !properties.jumpLinkId1 &&
+                    !properties.link2label && !properties.jumpLinkId2 &&
+                    !properties.link3label && !properties.jumpLinkId3 &&
+                    !properties.link4label && !properties.jumpLinkId4 &&
+                    !properties.link5label && !properties.jumpLinkId5}"
+	data-emptytext="Author Midpage Sticky Nav Here."
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="Midpage Sticky Nav" />
+
+<!-- #placeholder-content end -->
+
+<section class="sticky-nav" style="display: ${wcmmode.edit ? 'block' : 'none' @ context='styleToken'};">
+	<div class="sticky-navbar">
+		<div class="container-fluid position-rel">
+			<div class="pull-left ">
+				<span id="dLabel" class="hidden-md hidden-lg sticky-menu" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				BROWSE
+				<span class="glyphicon glyphicon-chevron-down "></span>
+				</span>
+				<ul class="dropdown-menu font-h" aria-labelledby="dLabel ">
+					<li data-sly-test="${properties.link1label && properties.jumpLinkId1}"><a href="#${properties.jumpLinkId1}">${properties.link1label}</a></li>
+					<li data-sly-test="${properties.link2label && properties.jumpLinkId2}"><a href="#${properties.jumpLinkId2}">${properties.link2label}</a></li>
+					<li data-sly-test="${properties.link3label && properties.jumpLinkId3}"><a href="#${properties.jumpLinkId3}">${properties.link3label}</a></li>
+					<li data-sly-test="${properties.link4label && properties.jumpLinkId4}"><a href="#${properties.jumpLinkId4}">${properties.link4label}</a></li>
+					<li data-sly-test="${properties.link5label && properties.jumpLinkId5}"><a href="#${properties.jumpLinkId5}">${properties.link5label}</a></li>
+				</ul>
+			</div>
+			<div class="pull-right">
+				<div data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}" data-sly-unwrap="${wcmmode.disabled}"></div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,96 @@
+/*****************************************
+    Footer CTA Component
+*****************************************/
+
+.footer-global {
+    background-color: @color-gray-dark;
+    color: @color-gray-medium;
+    .horizontal-space {
+        margin-bottom: @space-md;
+    }
+    .footer-list {
+        .list-header {
+            font-size: 11px;
+            color: @color-gray-lighter;
+            cursor: pointer;
+            &:after {
+                /*content: '';
+                display: block;
+                width: 40px;
+                padding-bottom: 15px;
+                border-bottom: solid 2px @color-white;*/
+            }
+            i {
+                padding: 0 10px;
+                color: @color-white;
+                font-size: 10px;
+            }
+        }
+        .glyphicon-chevron-down {
+            transform: rotate(-180deg);
+        }
+        .collapsed .glyphicon-chevron-down {
+            transform: rotate(0deg);
+        }
+    }
+    li {
+        margin-top: 15px;
+    }
+    a {
+        color: @color-white;
+        margin-bottom: 15px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    img {
+        margin: 0 auto;
+    }
+    .social-icons {
+        ul {
+            margin-bottom: 0;
+        }
+        li {
+            margin: 0px;
+            padding: 0 20px;
+        }
+    }
+    .copy-rights {
+        padding: 15px 0;
+        letter-spacing: normal;
+    }
+    .footer-p,
+    .footer-p a {
+        font-size: 11px;
+        color: #7f7f7f;
+    }
+    .half-space {
+        padding: 15px;
+    }
+    .border-lines {
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div[class^="col"] {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+    .app,
+    .blog {
+        display: inline-block;
+        padding: 0 40px;
+        padding-right: 0;
+        color: #7f7f7f;
+        background: transparent url() no-repeat 0;
+        min-height: 20px;
+    }
+    .app {
+        background: transparent url() no-repeat 0;
+    }
+    .blog {
+        background: transparent url() no-repeat 0;
+    }
+}

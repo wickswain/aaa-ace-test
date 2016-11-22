@@ -1,0 +1,63 @@
+<!--/*
+    
+      Article Hub Feautured Component.
+       ----------------------------------------------------------------
+   
+       This component can be used Article Page throughout the site.
+       Placement of the component can only be used at the Top of the Article Page as Feautured.
+
+       Default Behavior: NA
+   
+       Required Fields:
+
+       1. Article Page Path
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<sly data-sly-use.articledata="${'com.aaa.ace.sightly.providers.ArticleDataProvider'}" />
+
+<sly data-sly-test.articlepage="${articledata.articlePage}"
+	 data-sly-test.articlehero="${articledata.articleHero}"
+	 data-sly-test.isArticle="${articledata.templatePath=='/apps/ace-www/templates/article'}"/>
+
+<sly data-sly-use.dateFormat="${'articlehub-featured.js' @ issuedate=articlePage.properties.issueDate}"/>
+
+<sly data-sly-test.isAuthored="${properties.artclepagePath}"/>
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
+	 data-emptytext="Author Article Hub Feautured Component Here"
+     class="cq-placeholder text-center">
+</div>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isArticle}" 
+	 data-emptytext="Error Message:Wrong path selected. Please select the page created from Article Template"
+     class="cq-placeholder text-center">
+</div>
+<!-- #placeholder-content end -->
+
+<!--/* Article Hub Featured starts */-->
+<div id="${properties.jumpLinkId}"  data-sly-test="${properties.artclepagePath && isArticle}">
+	     <div class="row article-hero-header">
+	         <div class="article-hero " style="background-image:url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
+             <div class="col-sm-1 hidden-sm hidden-xs"></div>
+	         <div class="article-header">
+	             <div class="article-info">
+	                 <ul class="list-inline font-e">
+	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
+	                         <img src="${articlePage.properties.articleLogoImage}" alt="${articlePage.properties.articleLogoAltText}" height="20px" /></li>
+	                     <li data-sly-test="${articlePage.properties.authorName}">By ${articlePage.properties.authorName}</li>
+	                     <li data-sly-test="${articlePage.properties.issueDate}"><i class="glyphicon glyphicon-time"></i> <span class="date">${dateFormat.formattedIssueDate}</span></li>
+	                 </ul>
+	              </div>
+	              <div class="article-content">
+	                 <h2 data-sly-test="${articlePage.properties.articleTitle}" class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
+	                 <p  data-sly-test="${articlePage.properties.text}" class="roboto-light font-g">${articlePage.properties.text @ context='html'}</p>
+	              </div>
+	              <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
+	         </div>
+	 	</div>
+</div>
+<!--/* Article Hub Featured End */-->
+
+

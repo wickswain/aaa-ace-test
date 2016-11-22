@@ -18,8 +18,8 @@ $(function() {
 	
 	function getHostName() {
 		var protocol = "http://";
-		var environment = "ace-www-dev-publish";
-		var subdomain = ".aaa.com";
+		var environment = "www";
+		var subdomain = ".aaaprod.axis41.net";
         
         return protocol + environment + "." + regionname + subdomain;
     }
@@ -42,7 +42,7 @@ $(function() {
         if (event.keyCode == 13) {
             searchkeyValue = $("#searchKey").val();
             if (searchkeyValue) {
-                window.location.href = hostname + ':4503/content/ace-www/en/google-search-results.html?searchKeyValue=' + searchkeyValue;
+                window.location.href = hostname + '/content/ace-www/en/google-search-results.html?searchKeyValue=' + searchkeyValue;
             } else {
                 alert("Please eneter search keyword");
             }

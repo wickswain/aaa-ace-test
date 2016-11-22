@@ -7,13 +7,13 @@
         cq:lastReplicated="{Date}2016-09-16T10:18:30.196-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - Membership Calculator"
         jcr:uuid="718cafd3-cb55-4f5a-9af5-f841fc9c22ce"
-        sling:resourceType="ace-www/components/page/genericpage">
+        sling:resourceType="aaa-core/components/page/genericpage">
         <header-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-08-29T03:15:08.306-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/membership-calc"
+                sling:resourceType="aaa-core/components/content/membership-calc"
                 aaaMembershipText="AAA Membership"
                 aaasMembershipCharge="50"
                 fileReference="/content/dam/aaa/images/membership-calculator.png"
@@ -79,7 +79,7 @@
                 jcr:lastModified="{Date}2016-09-02T09:20:22.972-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/membership-calc"
+                sling:resourceType="aaa-core/components/content/membership-calc"
                 aaaMembershipText="membership"
                 aaasMembershipCharge="2"
                 altText="alt"
@@ -97,7 +97,7 @@
                     jcr:lastModified="{Date}2016-09-02T09:14:16.676-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="hi this is testing text"
                     textIsRich="true"/>
                 <mcfiledset jcr:primaryType="nt:unstructured">
@@ -137,7 +137,7 @@
                 jcr:lastModified="{Date}2016-09-02T09:07:01.733-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/faq"/>
+                sling:resourceType="aaa-core/components/content/faq"/>
         </content-par>
     </jcr:content>
 </jcr:root>

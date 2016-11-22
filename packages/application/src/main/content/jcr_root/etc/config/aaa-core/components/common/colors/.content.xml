@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <primary1
+        jcr:primaryType="nt:unstructured"
+        text="Primary Color (#0099FF)"
+        value="#0099FF"/>
+    <primary2
+        jcr:primaryType="nt:unstructured"
+        text="Primary Color (#005095)"
+        value="#005095"/>
+    <shaeds1
+        jcr:primaryType="nt:unstructured"
+        text="Shade Color (#00A4FF)"
+        value="#00A4FF"/>
+    <shaeds2
+        jcr:primaryType="nt:unstructured"
+        text="Shade Color (#1080D8)"
+        value="#1080D8"/>
+    <shaeds3
+        jcr:primaryType="nt:unstructured"
+        text="Shade Color (#033465)"
+        value="#033465"/>
+    <shaeds4
+        jcr:primaryType="nt:unstructured"
+        text="Shade Color (#012546)"
+        value="#012546"/>
+    <neutrals1
+        jcr:primaryType="nt:unstructured"
+        text="Neutral Color (#000000)"
+        value="#000000"/>
+    <neutrals2
+        jcr:primaryType="nt:unstructured"
+        text="Neutral Color (#303030)"
+        value="#303030"/>
+    <neutrals3
+        jcr:primaryType="nt:unstructured"
+        text="Neutral Color (#FFFFFF)"
+        value="#FFFFFF"/>
+    <neutrals4
+        jcr:primaryType="nt:unstructured"
+        text="Neutral Color (#E4E5E5)"
+        value="#E4E5E5"/>
+    <neutrals5
+        jcr:primaryType="nt:unstructured"
+        text="Neutral Color (#D9DADB)"
+        value="#D9DADB"/>
+</jcr:root>

@@ -16,7 +16,7 @@
                 jcr:lastModified="{Date}2016-10-17T14:10:23.554-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/rte"
+                sling:resourceType="aaa-core/components/content/rte"
                 text="What's the catch? No catch. &lt;b>Especially if you have insurance. &lt;/b>Our members bring in more volume to businesses, helping increase their pro\u001fts. In turn they can off\u001eer great discounts to help you follow your passions. Win-win.&lt;br>&#xa;"
                 textIsRich="true"/>
         </par>

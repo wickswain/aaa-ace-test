@@ -30,7 +30,7 @@
             jcr:lastModifiedBy="axisadmin"
             jcr:mixinTypes="[cq:ReplicationStatus]"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ace-www/components/content/articlehub"
+            sling:resourceType="aaa-core/components/content/articlehub"
             artclepagePath="/content/ace-www/en/sprint3-demo/article-page"/>
         <content-par
             jcr:primaryType="nt:unstructured"
@@ -43,7 +43,7 @@
             jcr:lastModifiedBy="axisadmin"
             jcr:mixinTypes="[cq:ReplicationStatus]"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ace-www/components/content/articlehub-featured"
+            sling:resourceType="aaa-core/components/content/articlehub-featured"
             artclepagePath="/content/ace-www/en/article-hub/autogen-article-page-12"/>
         <image
             jcr:lastModified="{Date}2016-10-03T04:57:42.831-06:00"
@@ -56,7 +56,7 @@
                 jcr:lastModified="{Date}2016-09-29T04:36:10.344-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/articlelist">
+                sling:resourceType="aaa-core/components/content/articlelist">
                 <filters jcr:primaryType="nt:unstructured">
                     <_x0031_
                         jcr:primaryType="nt:unstructured"
@@ -84,7 +84,7 @@
             jcr:lastModified="{Date}2016-10-18T05:40:19.442-06:00"
             jcr:lastModifiedBy="axisadmin"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ace-www/components/content/articlehero"
+            sling:resourceType="aaa-core/components/content/articlehero"
             alttext="article-hero"
             articleImage="/content/dam/aaa/images/full-img.png"/>
     </jcr:content>
