@@ -1,3 +1,0 @@
-#base=js
-
-renderer.navigation.js

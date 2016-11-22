@@ -1,3 +1,0 @@
-#base=js
-
-search-results.js

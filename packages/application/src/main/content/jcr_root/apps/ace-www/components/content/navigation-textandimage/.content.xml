@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="This component will function in sync with general navigation, but it needs to be configured separately by the general marketing authors as it contains the personalized content based on the region. "
-    jcr:primaryType="cq:Component"
-    jcr:title="Navigation Text &amp; Image"
-    sling:resourceSuperType="foundation/components/parbase"
-    componentGroup="AAA COMMON"/>
