@@ -8,33 +8,6 @@
 
 <body data-previewmode="${wcmmode.previewmode ? 'true' : 'false'}" class="font-g">
 
-	<script type="text/javascript">
-	var aceMediaTagValues =
-	{ channel : ""} // ex. "insurance" page : "", // ex. "insurance:get insurnace:get a quote:insurance form:start" page_tags : "", // AEM Tags associated to the page pageurl : "", // ex.http://www.calif.aaa.com/home/insurance/get-insurance/get-a-quote/insurnace-form/start.html subchannel1 : "", // ex. "get insurnace" subchannel2 : "", // ex. "get a quote" subchannel3 : "", // ex. "insurnace form"
-	</script>
-
-	<!-- Loading script asynchronously [Tealium executing script. Must be on every page] -->
-	<script type="text/javascript">
-		(function(a,b,c,d) {
-			a = '//tags.tiqcdn.com/utag/aaa/main/prod/utag.js'; 
-			b = document;
-			c = 'script';
-			d = b.createElement(c);
-			d.src = a;
-			d.type = 'text/java' + c;
-			d.async = true;
-			a = b.getElementsByTagName(c)[0];
-			a.parentNode.insertBefore(d,a);
-		})();
-	</script>
-	
-	<!-- If page is dynamic, please use the following -->
-	<script type="text/javascript">
-		utag.view({
-			channel : ""} // ex. "insurance" page : "", // ex. "insurance:get insurnace:get a quote:insurance form:start" page_tags : "", // AEM Tags associated to the page pageurl : "", // ex.http://www.calif.aaa.com/home/insurance/get-insurance/get-a-quote/insurnace-form/start.html subchannel1 : "", // ex. "get insurnace" subchannel2 : "", // ex. "get a quote" subchannel3 : "", // ex. "insurnace form"
-		);
-	</script>
-
 	<div
 		data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
 		data-sly-unwrap>
@@ -53,4 +26,66 @@
 		<sly data-sly-include="customfooterlibs.html" />
 	
 	</div>
+	
+	<script type="text/javascript">
+		var pathname = window.location.pathname;
+		var channel = "homepage";
+	    
+		if(pathname.split("/").length > 2) {
+			channel = pathname.split("/")[2];
+		}
+		
+		var requesturl = window.location;
+	    var temp = "";
+	    var pageval = "";
+	    var cc = "";
+	    
+	    if(requesturl.lastIndexOf("home.html") != -1) {
+	        pageval = channel;
+	    } else {
+	        if(requesturl.indexOf("home") != -1) {
+	            temp = requesturl.replace(requesturl.substring(0, requesturl.indexOf("home") + 5), "");
+	        }
+	        
+	        //temp = temp.replace("-", " ");        
+	        cc = temp.split("/");
+	            
+	        //if channelcomponents only has one item and it matches our channel, 
+	        //assume we're on a channel landing page    
+	        if(cc.length == 1 && temp.indexOf(channel + ".html") != -1) {
+	            pageval = channel + ":home";
+	        } else {
+	            pageindex = cc.length - 1;
+	            cc[pageindex] = cc[pageindex].replace(".html","");
+	            cc[pageindex] = cc[pageindex];
+	            pageval = cc.join(":");
+	        }
+	    }
+	    
+	    var aceMediaTagValues = {
+            channel: channel, // ex. "insurance"
+            page: pageval.replace(/-/g, " "), // ex. "insurance:get insurnace:get a quote:insurance form:start"
+            page_tags : "", // AEM Tags associated to the page
+            pageurl: requesturl, // ex.http://www.calif.aaa.com/home/insurance/get-insurance/get-a-quote/insurnace-form/start.html
+			subchannel1: (cc.length-1>1) ? cc[1].replace(/-/g, " ") : "", // ex. "get insurnace"
+            subchannel2: (cc.length-1>2) ? cc[2].replace(/-/g, " ") : "", // ex. "get a quote"
+            subchannel3: (cc.length-1>3) ? cc[3].replace(/-/g, " ") : "" // ex. "insurnace form"
+        }
+	</script>
+
+	<!-- Loading script asynchronously [Tealium executing script. Must be on every page] -->
+	<script type="text/javascript">
+		(function(a,b,c,d) {
+			a = '//tags.tiqcdn.com/utag/aaa/main/prod/utag.js'; 
+			b = document;
+			c = 'script';
+			d = b.createElement(c);
+			d.src = a;
+			d.type = 'text/java' + c;
+			d.async = true;
+			a = b.getElementsByTagName(c)[0];
+			a.parentNode.insertBefore(d,a);
+		})();
+	</script>
+	
 </body>

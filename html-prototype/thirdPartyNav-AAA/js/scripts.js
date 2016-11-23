@@ -1,8 +1,13 @@
 $(function() {
 	var navlandingpagepath = "/content/ace-www/en.html";
-	
+	var searchlandingpagepath = "/content/ace-www/en/google-search-results.html";
+	var protocol = "http://";
+	var environment = "www";
+	var subdomain = ".aaaqa.axis41.net";
+	var defaultregionname = "calif";
+    
 	function getRegionName() {
-    	var regionName = "calif";
+    	var regionName = defaultregionname;
         var host = window.location.hostname;
 	    
 	    if (host) {
@@ -17,10 +22,6 @@ $(function() {
 	var regionname = getRegionName();
 	
 	function getHostName() {
-		var protocol = "http://";
-		var environment = "www";
-		var subdomain = ".aaaprod.axis41.net";
-        
         return protocol + environment + "." + regionname + subdomain;
     }
 	var hostname = getHostName();
@@ -42,7 +43,7 @@ $(function() {
         if (event.keyCode == 13) {
             searchkeyValue = $("#searchKey").val();
             if (searchkeyValue) {
-                window.location.href = hostname + '/content/ace-www/en/google-search-results.html?searchKeyValue=' + searchkeyValue;
+                window.location.href = hostname + searchlandingpagepath + '?searchKeyValue=' + searchkeyValue;
             } else {
                 alert("Please eneter search keyword");
             }
