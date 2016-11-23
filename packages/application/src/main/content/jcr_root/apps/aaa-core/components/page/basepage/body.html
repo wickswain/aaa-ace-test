@@ -7,16 +7,13 @@
 */-->
 
 <body data-previewmode="${wcmmode.previewmode ? 'true' : 'false'}" class="font-g">
-
-	<div
-		data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
-		data-sly-unwrap>
+	<div data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
+		 data-sly-unwrap>
 	</div>
 	
 	<!-- The Main Wrapper
 	============================================= -->
 	<div id="page-wrapper" class="clearfix container-custom">
-	
 		<sly data-sly-include="header.html" />
 	
 		<sly data-sly-include="content.html" />
@@ -24,12 +21,14 @@
 		<sly data-sly-include="footer.html" />
 	
 		<sly data-sly-include="customfooterlibs.html" />
-	
 	</div>
+
+	<input type="hidden" id="pagetags" name="pagetags" value="${pageProperties.cq:tags}" />
 	
 	<script type="text/javascript">
 		var pathname = window.location.pathname;
 		var channel = "homepage";
+		var pagetags = document.getElementById("pagetags").value;
 	    
 		if(pathname.split("/").length > 2) {
 			channel = pathname.split("/")[2];
@@ -65,7 +64,7 @@
 	    var aceMediaTagValues = {
             channel: channel, // ex. "insurance"
             page: pageval.replace(/-/g, " "), // ex. "insurance:get insurnace:get a quote:insurance form:start"
-            page_tags : "", // AEM Tags associated to the page
+            page_tags : pagetags, // AEM Tags associated to the page
             pageurl: requesturl, // ex.http://www.calif.aaa.com/home/insurance/get-insurance/get-a-quote/insurnace-form/start.html
 			subchannel1: (cc.length-1>1) ? cc[1].replace(/-/g, " ") : "", // ex. "get insurnace"
             subchannel2: (cc.length-1>2) ? cc[2].replace(/-/g, " ") : "", // ex. "get a quote"
@@ -87,5 +86,4 @@
 			a.parentNode.insertBefore(d,a);
 		})();
 	</script>
-	
 </body>
