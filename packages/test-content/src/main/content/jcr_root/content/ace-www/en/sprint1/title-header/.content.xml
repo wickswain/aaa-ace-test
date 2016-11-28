@@ -7,13 +7,13 @@
         cq:lastReplicated="{Date}2016-09-16T10:18:40.717-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - Title Header Stand Alone"
         jcr:uuid="9cd3695f-5e9f-4886-bf0c-db91444a98a6"
-        sling:resourceType="ace-www/components/page/genericpage">
+        sling:resourceType="aaa-core/components/page/genericpage">
         <header-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:17:28.014+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-small"
+                sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-small"
                 ctaType="links">
                 <link1
                     jcr:primaryType="nt:unstructured"
@@ -59,7 +59,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:19:33.590+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 title="Title header with default background color."/>
             <title_header_581534007
                 jcr:created="{Date}2016-08-12T19:19:40.441+05:30"
@@ -67,7 +67,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:20:05.300+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(228,229,229,1)"
                 textColor="rgba(0,0,0,1)"
                 title="Title header with light greay background color."/>
@@ -77,7 +77,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:20:33.951+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,153,255,1)"
                 textColor="rgba(255,255,255,1)"
                 title="Title header with light blue background color."/>
@@ -87,7 +87,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:21:09.902+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(255,255,255,1)"
                 textColor="rgba(0,0,0,1)"
                 title="Title header with white background color."/>
@@ -97,7 +97,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:21:45.308+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 sectionBgColor="rgba(0,80,149,1)"
                 textColor="rgba(255,255,255,1)"
                 title="Title header with dark blue background color."/>

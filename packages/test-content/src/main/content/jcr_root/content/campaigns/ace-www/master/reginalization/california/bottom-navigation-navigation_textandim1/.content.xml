@@ -24,7 +24,7 @@
                 jcr:lastModified="{Date}2016-10-04T12:49:14.682-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/navigation-textandimage"
+                sling:resourceType="aaa-core/components/content/navigation-textandimage"
                 altText="test"
                 fileReference="/content/dam/aaa/images/navigation/AAA_Component_Z_GlobalNav_v1_12.png"/>
         </par>

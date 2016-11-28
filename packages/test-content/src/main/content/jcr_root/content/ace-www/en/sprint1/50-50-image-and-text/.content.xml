@@ -7,13 +7,13 @@
         cq:lastReplicated="{Date}2016-09-16T10:18:33.520-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component - 50/50 Image and Text"
         jcr:uuid="d2a49c5f-0a3e-4bf6-a494-ebe18dd9e523"
-        sling:resourceType="ace-www/components/page/genericpage">
+        sling:resourceType="aaa-core/components/page/genericpage">
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-09-15T15:14:51.184-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                sling:resourceType="aaa-core/components/content/fiftyfiftyimageandtext"
                 altText="image alt"
                 backgroundColor="rgba(0,80,149,1)"
                 fileReference="/content/dam/aaa/images/card.png"
@@ -38,14 +38,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:00:59.525+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-large
                     jcr:lastModified="{Date}2016-08-12T19:01:58.561+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -82,7 +82,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:45:06.355+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 title="50-50 Image and Text with background image"/>
             <fiftyfiftyimageandte_71689133
                 jcr:created="{Date}2016-08-12T19:02:37.618+05:30"
@@ -90,7 +90,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:09:29.821+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                sling:resourceType="aaa-core/components/content/fiftyfiftyimageandtext"
                 altText="image alt"
                 backgroundImage="/content/dam/aaa/images/CompA-bg.jpg"
                 backgroundImageAltText="bg alt"
@@ -103,14 +103,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:10:11.025+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-large
                     jcr:lastModified="{Date}2016-08-12T19:47:37.499+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="links">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -146,7 +146,7 @@
                 jcr:lastModified="{Date}2016-09-15T12:11:27.262-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                sling:resourceType="aaa-core/components/content/midpage-sticky-nav"
                 jumpLinkId1="storelist"
                 jumpLinkId2="#"
                 link1label="See the Store"
@@ -157,7 +157,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:45:40.435+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 title="50-50 Image and Text with background image and text block placement swapped"/>
             <fiftyfiftyimageandte_795856794
                 jcr:created="{Date}2016-08-12T19:15:10.075+05:30"
@@ -165,7 +165,7 @@
                 jcr:lastModified="{Date}2016-09-15T15:15:09.765-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/fiftyfiftyimageandtext"
+                sling:resourceType="aaa-core/components/content/fiftyfiftyimageandtext"
                 altText="image alt"
                 backgroundImage="/content/dam/aaa/images/CompA-bg2.jpg"
                 backgroundImageAltText="bg alt"
@@ -180,14 +180,14 @@
                     jcr:lastModified="{Date}2016-08-12T19:00:59.525+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                     textIsRich="true"/>
                 <cta-large
                     jcr:lastModified="{Date}2016-08-12T19:01:58.561+05:30"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                    sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                     ctaType="buttons">
                     <link1
                         jcr:primaryType="nt:unstructured"
@@ -228,7 +228,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:17:28.014+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-small"
+                sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-small"
                 ctaType="links">
                 <link1
                     jcr:primaryType="nt:unstructured"
@@ -260,7 +260,7 @@
                 jcr:lastModified="{Date}2016-08-12T19:25:16.366+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/title-header"
+                sling:resourceType="aaa-core/components/content/title-header"
                 title="50-50 Image and Text with background color"/>
         </header-par>
     </jcr:content>
