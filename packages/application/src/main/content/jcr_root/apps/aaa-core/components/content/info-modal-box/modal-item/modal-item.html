@@ -1,0 +1,36 @@
+<!--/*
+
+    Modal Item Column
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. Header text - optional
+    2. Body text (RTE)
+    3. CTA - optional
+
+*/-->
+
+    <div data-sly-test.hasContent="${properties.bodyCopy}">
+        <div class="horizontal-space font-f text-center">
+            <h2>${properties.headerCopy @ context='html'}</h2>
+        </div>
+        <div class="horizontal-space font-h" style="text-align:${properties.rteAlign @ context='styleToken'};">
+            <p>${properties.bodyCopy @ context='html'}</p>
+        </div>
+
+        <div class="text-center">
+            <div  data-sly-test="${properties.includeCTA}"
+                  data-sly-resource="${ @path='cta', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
+                  data-sly-unwrap="${wcmmode.disabled}" >
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent  }" data-emptytext="Author Modal Item here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+ <!-- #placeholder-content end -->

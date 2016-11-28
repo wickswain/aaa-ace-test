@@ -1,0 +1,184 @@
+<!--/*
+
+    Global Navigation Component
+    --------------------------------------------------
+
+    1. This is global navigation component. Some portions of this component would be personalized.
+    2. Navigation will be derived from dummy IA created under "Navigation Root" nodeusing siteadmin console.
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.leftLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.leftLink1LinkTo}"/>
+<sly data-sly-use.leftLink2="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.leftLink2LinkTo}"/>
+<sly data-sly-use.rightLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.rightLink1LinkTo}"/>
+<sly data-sly-use.signInLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.rightLink2LinkTo}"/>
+<sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
+        @ link = currentStyle.searchPagePath}" />
+<sly data-sly-use.signOutLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.signOutLinkTo}"/>
+<sly data-sly-use.accountLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.accountLinkTo}"/>
+<sly data-sly-use.joinButton="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = currentStyle.joinButtonURL}"/>
+<sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'
+        @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
+<sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider"/>
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+============================================= -->         
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !navigationProvider.navigationVOs}"
+     data-emptytext="Author Global Navigation Component Here." style="text-align: center;"
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Global Navigation Component"/>
+<!-- #placeholder-content end -->
+
+<!-- Global Navigation component
+============================================= -->
+<div class="navigation-bar">
+    <div class="slideboxer">
+        <div class="backslide hidden-md hidden-lg"></div>
+        
+        <div class="search-label hidden-md hidden-lg font-h">
+           <span class="m-close-icon">
+               <i>+</i>
+           </span>
+           
+           <div class="input-group" id="search-hide">
+               <span class="input-group-addon ">
+                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+               </span>${currentStyle.searchLabel}
+           </div>
+        </div>
+        
+        <div class="advance-search hidden-md hidden-lg">
+            <form action="${searchPage.linkURL @ context='uri'}" role="search">
+                <div class="input-group search-bar">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                    </span>
+                    <input type="search" placeholder="${currentStyle.searchPlaceholderLabel}" class="form-control font-h" />
+                    <span class="input-group-addon">
+                        <i class="close-icon"  id="m-close-searchbar">+</i>
+                    </span>
+                </div>
+                <input type="submit" title="GO" value="GO" class="btn-style btn-sm btn-border btn-color-blue ">
+            </form>
+        </div>
+        
+        <div class="slide-nav">
+            <div class="search-overlay"></div>
+        
+            <div class="header-bar">
+                <div class="m-user-details">
+                    <div data-sly-test="${user.isLoggedIn}" class="profile-box hidden-md hidden-lg">
+                        <div class="avatar-details">
+                            <div class="avatar-pic">
+                                <img src="${currentStyle.defaultAvatarPath}" alt="${currentStyle.defaultAvatarAlt}"
+                                     title="${currentStyle.defaultAvatarAlt}" class="img-responsive"/>
+                            </div>
+                            <div class="avatar-title font-f">
+                                <span data-sly-text="${user.firstName}" class="restrict-characters"></span>
+                            </div>
+                            <div class="my-account">
+                                <a href="${accountLink.url}" data-sly-text="${currentStyle.accountLinkLabel}"
+                                   class="btn-style btn-lg btn-border btn-border-reversed">
+                                </a>
+                            </div>
+                            <div class="signout">
+                                <a href="${user.signOutURL}" data-sly-text="${currentStyle.signOutLinkLabel}"
+                                   class="link-btn link-lg link-color-orange link-reversed">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div data-sly-test="${!user.isLoggedIn}" class="sign-join-in hidden-md hidden-lg">
+                        <a target="${currentStyle.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+                           href="${user.signInURL}" id="user-login" class="user-login">
+                            <img data-sly-test="${currentStyle.icon2Path}"
+                                 src="${currentStyle.icon2Path}" title="${currentStyle.icon2Alt}" 
+                                 alt="${currentStyle.icon2Alt}" class="lock-icon"/>
+                            ${currentStyle.rightLink2Label}
+                        </a>
+                        <a data-sly-test="${currentStyle.joinButtonLabel}"
+                           href="${joinButton.url}" data-sly-text="${currentStyle.joinButtonLabel}"
+                           target="${currentStyle.joinButtonOpenTabFlag == 'true' ? '_blank' : '_self'}"
+                           class="link-btn link-color-blue link-lg">
+                        </a>
+                    </div>
+                    
+                    <div class="contact-find hidden-md hidden-lg">
+                        <a data-sly-test="${currentStyle.rightLink1Label}"
+                           data-sly-text="${currentStyle.rightLink1Label}"
+                           target="${currentStyle.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+                           href="${rightLink1.url}" class="link1">
+                        </a>
+                        <a data-sly-test="${currentStyle.leftLink2Label}"
+                           data-sly-text="${currentStyle.leftLink2Label}"
+                           target="${currentStyle.leftLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+                           href="${leftLink2.url}" class="link2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <nav class="navbar navbar-default globalnav">
+                <ul data-sly-list="${navigationProvider.navigationVOs}" class="nav navbar-nav">
+                    <!-- Top Level Navigation loop starts -->
+                    <li data-sly-test="${!itemList.last}" class="dropdown">
+                        <a href="javascript:void(0);" id="nav-${itemList.index}" class="active">
+                            <img src="${item.currentpage.properties.tileIcon}" alt="${item.currentpage.properties.tileIconAltText}"
+                                 title="${item.currentpage.properties.tileIconAltText}" class="icon-link hidden-lg hidden-md"/>
+                            ${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}
+                        </a>
+                        
+                        <div class="nav-${itemList.index} drawers-wrapper" aria-labelledby="nav-${itemList.index}">
+                            <div class="drawers-content">
+                                <div class="drawer-close">
+                                    <div class="close-icon close-drawer"><span>+</span></div>
+                                </div>
+                                <!-- navigation tiles -->
+                                <div class="drawers-tiles">
+                                    <div id="tiles-nav-${itemList.index}" 
+                                         data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-tiles/jcr:content/content-par/navigation_tiles' @ format=[itemList.index]}"
+                                         data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-tiles' }">
+                                    </div> 
+								</div>
+                                <!-- navigation columnList -->
+                                <div class="drawers-tiles-list">
+                                <div id="list-nav-${itemList.index}"
+                                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-links/jcr:content/content-par/navigation_columnlis' @ format=[itemList.index]}"
+                                     data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-columnlist' }">
+                                </div>
+                                </div>
+                                <!-- Drawers bootom -->
+                                <div class="bottom-tiles">
+                                <div id="bottom-nav-${itemList.index}"
+                                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
+                                     data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-textandimage' }">
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm">
+                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=item.currentpage.properties.linkURL}" />
+                        <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
+                           data-sly-text="${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}"
+                           target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
+                           class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- #global-navigation-component end -->

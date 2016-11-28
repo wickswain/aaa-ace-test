@@ -37,7 +37,7 @@
                 jcr:lastModified="{Date}2016-09-15T08:19:30.377-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/articlecarousel"
+                sling:resourceType="aaa-core/components/content/articlecarousel"
                 altText="[,]"
                 carouselImage="[/content/dam/aaa/images/1.gif,/content/dam/aaa/images/6.gif]"
                 imageLabel="[,]"
@@ -92,7 +92,7 @@
             jcr:lastModified="{Date}2016-09-15T05:02:23.550-06:00"
             jcr:lastModifiedBy="axisadmin"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ace-www/components/content/articlehero"
+            sling:resourceType="aaa-core/components/content/articlehero"
             articleImage="/content/dam/aaa/images/full-img.jpg"/>
         <content-par
             jcr:primaryType="nt:unstructured"
@@ -103,14 +103,14 @@
                 jcr:lastModified="{Date}2016-09-15T05:49:21.272-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/articleheader"/>
+                sling:resourceType="aaa-core/components/content/articleheader"/>
             <article_text
                 jcr:created="{Date}2016-09-15T05:54:13.524-06:00"
                 jcr:createdBy="axisadmin"
                 jcr:lastModified="{Date}2016-09-19T07:44:47.338-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/article-text"
+                sling:resourceType="aaa-core/components/content/article-text"
                 text="&lt;p>&lt;span class=&quot;roboto-light font-b&quot;>&lt;span class=&quot;roboto-slab-bold font-a&quot;>Getting around&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-slab-bold font-b&quot;>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-e&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;™&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-b&quot;>&lt;span class=&quot;roboto-slab-bold font-b&quot;>Getting around&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-e&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;®&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-g&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-slab-bold font-b&quot;>Getting around&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-regular font-c&quot;>&lt;i>The 20-stop SIA Hop-on bus with recorded narration arrives every 30 minutes from 9 a.m. to 9 p.m. A day pass gets you unlimited rides. Singapore Airlines passengers with an air ticket or boarding pass pay duscount prices.&lt;/i>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-light font-h&quot;>011-6506558-6877;&amp;nbsp;&lt;a href=&quot;http://www.siahopon.com/&quot;>siahopon.com&lt;/a>&amp;nbsp;©&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;roboto-medium font-f&quot;>If you want to commute like a local, the Singapore Tourist Pass offers unlimited rides on the public transport system, Purchase a one-, two- or three-day pass.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://www.thesingaporetouristpass.com.sg/&quot;>&lt;span class=&quot;roboto-regular font-e&quot;>thesingaporetouristpass.com.sg&lt;/span>&lt;/a>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 textIsRich="true"/>
         </content-par>

@@ -1,0 +1,40 @@
+<!--/*
+
+    Icon Item component
+    ----------------------------------------------------------------
+
+    Hidden component that makes up the component row.
+
+    Required Fields:
+    1. Icon Title
+    2. Image
+
+*/-->
+
+<sly data-sly-test.hasContent="${properties.image}">
+    <div class="horizontal-space icon-image"> <img src="${properties.image}" title="CompI-icon-1" alt="${properties.iconalttext}" class="img-responsive"> </div>
+    <div class="icon-title  roboto-medium font-f">
+        <h2 title="${properties.icontitle}" >${properties.icontitle}</h2>
+    </div>
+
+    <sly data-sly-test="${properties.rteFlag}">
+        <div class="icon-title roboto-light font-f" >
+            <div data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"
+                 style="min-width:${wcmmode.edit ? '100px' : 'inherit' @ context = 'styleToken'};"
+                 data-sly-unwrap="${wcmmode.disabled}">
+            </div>
+        </div>
+    </sly>
+
+    <div class="icon-link font-h">
+        <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"/>
+    </div>
+
+</sly>
+
+<!-- Placeholder Content
+=============================================-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Icon Item here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+ <!-- #placeholder-content end -->
