@@ -170,10 +170,6 @@
             String url = contextPath + element.get("url").getAsString();
 
             try {
-            	if (teaserPath.contains("http")) {
-    				teaserPath = new URI(teaserPath).getPath();
-                }
-
             	if (url.contains("http")) {
 					url = new URI(url).getPath();
                 }

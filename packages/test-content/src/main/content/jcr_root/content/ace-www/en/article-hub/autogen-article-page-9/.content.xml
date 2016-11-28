@@ -24,13 +24,13 @@
             sling:resourceType="foundation/components/parsys">
             <article-header
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/articleheader"/>
+                sling:resourceType="aaa-core/components/content/articleheader"/>
         </content-par>
         <article-hero
             jcr:lastModified="{Date}2016-10-18T06:08:51.163-06:00"
             jcr:lastModifiedBy="axisadmin"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ace-www/components/content/articlehero"
+            sling:resourceType="aaa-core/components/content/articlehero"
             articleImage="/content/dam/aaa/images/card-img-2.png"/>
     </jcr:content>
 </jcr:root>

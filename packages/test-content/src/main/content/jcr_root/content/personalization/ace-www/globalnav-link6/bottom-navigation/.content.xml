@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-10-03T14:40:28.019-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/navigation-textandimage"
+                sling:resourceType="aaa-core/components/content/navigation-textandimage"
                 enableCTA="true"
                 enableRTE="true"
                 fileReference="/content/dam/aaa/images/navigation/AAA_Component_Z_GlobalNav_v1_03.png">
@@ -31,7 +31,7 @@
                     jcr:lastModified="{Date}2016-09-27T07:45:49.692-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="RTE text goes here"
                     textIsRich="true"/>
                 <cta-button-small
@@ -43,7 +43,7 @@
                         jcr:lastModified="{Date}2016-09-27T07:46:11.853-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                        sling:resourceType="aaa-core/components/content/ctabuttons/single-ctabutton-small">
                         <button1
                             jcr:primaryType="nt:unstructured"
                             buttonStyle="default"

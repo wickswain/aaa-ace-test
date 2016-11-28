@@ -7,13 +7,13 @@
         cq:lastReplicated="{Date}2016-10-05T09:29:51.941-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sprint2 Demo"
         jcr:uuid="2ad4b289-1d4f-4a0a-8a35-8ffd329a401f"
-        sling:resourceType="ace-www/components/page/genericpage">
+        sling:resourceType="aaa-core/components/page/genericpage">
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-10-18T03:24:54.039-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                sling:resourceType="aaa-core/components/content/midpage-sticky-nav"
                 jumpLinkId1="faq"
                 jumpLinkId2="membership-calc"
                 jumpLinkId3="icon-row"
@@ -34,7 +34,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:25:59.801-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    sling:resourceType="aaa-core/components/content/ctabuttons/single-ctabutton-small">
                     <button1
                         jcr:primaryType="nt:unstructured"
                         buttonStyle="default"
@@ -48,7 +48,7 @@
                 jcr:lastModified="{Date}2016-10-18T03:16:39.779-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/faq"
+                sling:resourceType="aaa-core/components/content/faq"
                 altText="FAQ"
                 bgColorLeft="rgba(228,229,229,1)"
                 bgColorRight="rgba(204,204,204,1)"
@@ -90,7 +90,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:45:45.923-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/membership-calc"
+                    sling:resourceType="aaa-core/components/content/membership-calc"
                     aaaMembershipText="AAA Membership"
                     aaasMembershipCharge="48"
                     altText="alt text"
@@ -109,7 +109,7 @@
                         jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/rte"
+                        sling:resourceType="aaa-core/components/content/rte"
                         text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
                         textIsRich="true"/>
                     <mcfiledset jcr:primaryType="nt:unstructured">
@@ -185,7 +185,7 @@
                 jcr:lastModified="{Date}2016-10-18T03:39:37.173-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/icon-row"
+                sling:resourceType="aaa-core/components/content/icon-row"
                 backgroundColor="rgba(228,229,229,1)"
                 iconamount="4"
                 jumpLinkId="icon-row"
@@ -194,7 +194,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:33:09.065-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    sling:resourceType="aaa-core/components/content/icon-row/icon-item"
                     iconalttext="CompI-icon-1"
                     icontitle="Food &amp; Drink"
                     image="/content/dam/aaa/images/CompI-icon-1.png">
@@ -202,7 +202,7 @@
                         jcr:lastModified="{Date}2016-10-18T03:33:29.958-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                         ctaType="links">
                         <link1
                             jcr:primaryType="nt:unstructured"
@@ -232,7 +232,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:35:01.103-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    sling:resourceType="aaa-core/components/content/icon-row/icon-item"
                     iconalttext="CompI-icon-2"
                     icontitle="Outdoors &amp; Recreation"
                     image="/content/dam/aaa/images/CompI-icon-2.png">
@@ -240,7 +240,7 @@
                         jcr:lastModified="{Date}2016-10-18T03:35:16.364-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                         ctaType="links">
                         <link1
                             jcr:primaryType="nt:unstructured"
@@ -270,7 +270,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:36:11.155-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    sling:resourceType="aaa-core/components/content/icon-row/icon-item"
                     iconalttext="CompI-icon-3"
                     icontitle="Arts &amp; Culture"
                     image="/content/dam/aaa/images/CompI-icon-3.png">
@@ -278,7 +278,7 @@
                         jcr:lastModified="{Date}2016-10-18T03:37:11.113-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                         ctaType="links">
                         <link1
                             jcr:primaryType="nt:unstructured"
@@ -308,7 +308,7 @@
                     jcr:lastModified="{Date}2016-10-18T03:36:52.323-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/icon-row/icon-item"
+                    sling:resourceType="aaa-core/components/content/icon-row/icon-item"
                     iconalttext="CompI-icon-4"
                     icontitle="Theme Parks &amp; Attractions"
                     image="/content/dam/aaa/images/CompI-icon-4.png">
@@ -316,7 +316,7 @@
                         jcr:lastModified="{Date}2016-10-18T03:37:38.541-06:00"
                         jcr:lastModifiedBy="axisadmin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ace-www/components/content/ctabuttons/ctabutton-large"
+                        sling:resourceType="aaa-core/components/content/ctabuttons/ctabutton-large"
                         ctaType="links">
                         <link1
                             jcr:primaryType="nt:unstructured"
@@ -353,7 +353,7 @@
                 jcr:lastModified="{Date}2016-09-02T09:08:07.432-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/midpage-sticky-nav"
+                sling:resourceType="aaa-core/components/content/midpage-sticky-nav"
                 jumpLinkId1="faq"
                 jumpLinkId2="mc"
                 jumpLinkId3="money"
@@ -364,7 +364,7 @@
                     jcr:lastModified="{Date}2016-09-02T02:22:46.421-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/ctabuttons/single-ctabutton-small">
+                    sling:resourceType="aaa-core/components/content/ctabuttons/single-ctabutton-small">
                     <button1
                         jcr:primaryType="nt:unstructured"
                         buttonStyle="default"

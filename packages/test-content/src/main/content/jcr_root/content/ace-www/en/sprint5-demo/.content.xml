@@ -4,9 +4,9 @@
     <jcr:content
         cq:lastModified="{Date}2016-10-18T01:11:42.034-06:00"
         cq:lastModifiedBy="axisadmin"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sprint5 Demo"
-        sling:resourceType="ace-www/components/page/genericpage"/>
+        sling:resourceType="aaa-core/components/page/genericpage"/>
     <test-template/>
 </jcr:root>

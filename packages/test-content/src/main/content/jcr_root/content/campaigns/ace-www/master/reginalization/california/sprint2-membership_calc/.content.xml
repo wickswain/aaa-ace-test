@@ -18,7 +18,7 @@
                 jcr:lastModified="{Date}2016-10-18T03:46:11.362-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/membership-calc"
+                sling:resourceType="aaa-core/components/content/membership-calc"
                 aaaMembershipText="AAA Membership"
                 aaasMembershipCharge="48"
                 altText="alt text"
@@ -37,7 +37,7 @@
                     jcr:lastModified="{Date}2016-08-29T15:20:38.955-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Our wide network of discounts can help you save everyday, so you can sit back and watch your membership pay for itself."
                     textIsRich="true"/>
                 <mcfiledset jcr:primaryType="nt:unstructured">
