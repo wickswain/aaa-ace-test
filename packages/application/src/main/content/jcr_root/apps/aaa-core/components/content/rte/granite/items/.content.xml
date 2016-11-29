@@ -20,6 +20,12 @@
             <links
                 jcr:primaryType="nt:unstructured"
                 features="*"/>
+            <justify
+                jcr:primaryType="nt:unstructured"
+                features="*"/>
+            <lists
+                jcr:primaryType="nt:unstructured"
+                features="*"/>
             <styles
                 jcr:primaryType="nt:unstructured"
                 features="*">
@@ -122,22 +128,38 @@
             <cui jcr:primaryType="nt:unstructured">
                 <inline
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,#justify,#lists]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
                             items="styles:getStyles:styles-pulldown"
                             ref="styles"/>
+                        <lists
+                            jcr:primaryType="nt:unstructured"
+                            items="[lists#unordered,lists#ordered]"
+                            ref="lists"/>
+                        <justify
+                            jcr:primaryType="nt:unstructured"
+                            items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                            ref="justify"/>
                     </popovers>
                 </inline>
                 <fullscreen
                     jcr:primaryType="nt:unstructured"
-                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars]">
+                    toolbar="[format#bold,format#italic,links#modifylink,links#unlink,links#anchor,#styles,fullscreen#start,control#close,control#save,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,#justify,#lists]">
                     <popovers jcr:primaryType="nt:unstructured">
                         <styles
                             jcr:primaryType="nt:unstructured"
                             items="styles:getStyles:styles-pulldown"
                             ref="styles"/>
+                        <lists
+                            jcr:primaryType="nt:unstructured"
+                            items="[lists#unordered,lists#ordered]"
+                            ref="lists"/>
+                        <justify
+                            jcr:primaryType="nt:unstructured"
+                            items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                            ref="justify"/>
                     </popovers>
                 </fullscreen>
             </cui>
