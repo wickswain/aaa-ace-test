@@ -42,8 +42,8 @@
                             <span class="menu"><i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>Menu</span>
                             <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
                                 <li id="nav-links"><a href="#">Find a brach</a><span class="pipe">|</span>
-                                    <a href="#" id="user-login">
-                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a>
+                                    <a href="javascript:void(0);" id="user-login">
+                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Sign In</a>
                                     <a href="javascript:void(0);" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info" style="display: none;">
                                         <span class="restrict-characters">Jessica</span>
                                         <i class="glyphicon glyphicon-chevron-down"></i>
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="avatar-title font-f">Jessica</div>
                                             <div class="my-account"><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
-                                            <div class="signout"><a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
+                                            <div class="signout"><a href="#" id="sign-out" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
                                         </div>
 
                                         <div class="notification-list">
@@ -147,14 +147,14 @@
                         <div class="search-overlay"></div>
                         <div class="header-bar">
                             <div class="m-user-details">
-                                <div class="profile-box" hidden-md hidden-lg style="display:none;">
+                                <div id="m-user-info" class="profile-box" hidden-md hidden-lg style="display: none;">
                                     <div class="avatar-details">
                                         <div class="avatar-pic">
                                             <img src="images/card-img-1.png" class="img-responsive">
                                         </div>
                                         <div class="avatar-title font-f"><span class="restrict-characters">Jessica</span></div>
                                         <div class="my-account "><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
-                                        <div class="signout"><a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
+                                        <div class="signout"><a href="#" id="m-sign-out" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
                                     </div>
 
                                     <div class="notification-list">
@@ -170,8 +170,8 @@
                                     <div class="pending-notification"><span class="pull-left font-h">Pending notifications (3)</span> <a href="#" class="link-btn link-color-orange link-reversed font-h">See all</a> </div>
                                 </div>
                                 <div class="sign-join-in hidden-md hidden-lg">
-                                    <a href="#" id="user-login" class="user-login">
-                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a>
+                                    <a href="javascript:void(0);" id="m-user-login" class="user-login">
+                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Sign In</a>
                                     <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">Join</a>
                                 </div>
                                 <div class="contact-find hidden-md hidden-lg">
@@ -1044,14 +1044,34 @@
 
     </div>
 
-
-
     <script src="clientlibs/aaa-core/thirdparty/jquery/js/jquery.noconflict.js"></script>
     <script src="clientlibs/aaa-core/base/js/scripts.js"></script>
-
-
-
-
+	<script>
+        $j(function($) {
+            ($(window).width() < 992) ? $(".profile-box").appendTo(".mobile-view"): $(".profile-box").appendTo("#nav-links");
+            $(window).resize(function() {
+                ($(this).width() < 992) ? $(".profile-box").appendTo(".mobile-view"): $(".profile-box").appendTo("#nav-links");
+            });
+            //desktop
+			$("#user-login").click(function(){
+				$("#user-login").hide();
+				$("#user-info").show();
+			});
+			$("#sign-out").click(function(){
+				$("#user-login").show();
+				$("#user-info").hide();
+			});
+			// mobile
+			$("#m-user-login").click(function(){
+				$("#m-user-login").hide();
+				$("#m-user-info").show();
+			});
+			$("#m-sign-out").click(function(){
+				$("#m-user-login").show();
+				$("#m-user-info").hide();
+			});
+        });
+    </script>
 
 </body>
 
