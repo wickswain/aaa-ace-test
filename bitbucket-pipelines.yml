@@ -1,0 +1,25 @@
+image: maven:3.3.9-jdk-7
+pipelines:
+  branches:
+    qa-build:
+      - step:
+          script:
+            # AWS credentials should be stored in the repository's settings, under the "Environment Variables" section.
+            # Be sure to check the "secured" box when you add them.
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=23.21.234.108 -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password=$AEM_QA -PautoInstallPackage -U" i-8b5bb39d "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=23.21.210.173 -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password=$AEM_QA -PautoInstallPackage -U" i-fd5eb6eb "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=54.83.8.114 -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password=$AEM_QA -PautoInstallPackage -U" i-5354bc45 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+    stage-build:
+      - step:
+          script:
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=54.204.19.50 -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password=$AEM_STG -PautoInstallPackage -U" i-8fd73699 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=50.17.184.95 -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password=$AEM_STG -PautoInstallPackage -U" i-c69d70d0 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=54.204.40.191 -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password=$AEM_STG -PautoInstallPackage -U" i-fc06ebea "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+    systems-build:
+      - step:
+          script:
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=54.197.236.146 -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password=$AEM_PROD -PautoInstallPackage -U" i-ff0a13e8 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
