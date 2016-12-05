@@ -1,0 +1,71 @@
+<!--/*
+
+Card Carousel Component
+==============================
+
+This component renders a card carousel.
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<sly data-sly-use.childImages="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='images'}" />
+<sly data-sly-test.isAuthored="${childImages.childResource}"></sly>
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" data-emptytext="Author Card Carousel properties to render carousel" class="cq-placeholder text-center">
+</div>
+<!-- #placeholder-content end -->
+
+<div id="${resource.parent.name}-${resource.name}" class="carousel slide carousel-sync carousel-showmanymoveone icon-slideshow" data-interval="" data-sly-test="${isAuthored}" style="background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
+    <div class="text-center">
+        <div class="comp-header">
+            <h2 title="header title">${properties.title}</h2>
+        </div>
+    </div>
+
+    <div class="full-carousel">
+        <div class="carousel-inner icon-inner-slideshow" data-sly-list.images="${childImages.childResource.listChildren}">
+            <div class="item ${imagesList.count ==1 && 'active'}">
+                <div class="col-xs-12 col-sm-6 col-md-3 icon-collection">
+                	<a class="icon-carousel-item-link" href="${images.ctaurl}">
+                        <div class="icon-item-slideshow">
+                            <img src="${images.image}" title="${images.icontitle}" alt="${images.iconalttext}" class="img-responsive icon-image">
+                            <div class="icon-item-text roboto-medium font-f">
+                                <h2 class="icon-title" title="${images.icontitle}">${images.icontitle}</h2>
+                                <div class="icon-item-body-text">${images.icontext}</div>
+                            </div>
+                            <div data-sly-test="${images.shortmessage}">
+                                <div class="cta-border"></div>
+                                <div class="sub-message">
+                                    <p>${images.shortmessage} <span class="message-amount">${images.messageAmount}</span></p>
+                                </div>
+                            </div>
+                            <div data-sly-test="${images.ctatext}">
+                                <div class="cta-border"></div>
+                                <div class="icon-link font-h icon-cta">
+                                    <a href="${images.ctaurl}">${images.ctatext}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#${resource.parent.name}-${resource.name}" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#${resource.parent.name}-${resource.name}" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div data-sly-test="${properties.ctaflag}" class="comp-bottom-cta text-center">
+      <sly data-sly-resource="${ @path='cta-button-large', resourceType='/apps/ace-www/components/content/ctabuttons/ctabutton-large'}">
+      </sly>
+    </div>
+</div>
+
+<style>
+.icon-slideshow.icon-slideshow {
+	padding-bottom: ${properties.ctaflag ? '' : '53px' @ context='styleToken'};
+}
+</style>
+<!--/* Card carousel End */-->
