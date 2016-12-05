@@ -1,0 +1,3 @@
+#base=js
+bcSwipe.js
+card-carousel.js
