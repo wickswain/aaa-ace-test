@@ -126,8 +126,14 @@
   text-align: left;
 }
 
+.icon-item-slideshow .icon-item-text h2 {
+  font-family: 'roboto';
+  font-weight: 500;
+}
+
 .icon-item-body-text {
-  font-family: 'robotolight';
+  font-family: 'roboto';
+  font-weight: 300;
   padding-top: 18px;
   padding-bottom: 27px;
   font-size: 16px;
@@ -170,7 +176,8 @@
 
 .sub-message {
   padding: 20px 10px;
-  font-family: 'robotolight';
+  font-family: 'roboto';
+  font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.5px;
   line-height: 18px;
@@ -178,7 +185,8 @@
 
 .message-amount {
   color: #37a60f;
-  font-family: 'robotoregular';
+  font-family: 'roboto';
+  font-weight: 400;
 }
 
 .cta-border {
@@ -208,7 +216,64 @@
 
 .icon-item-slideshow>div>.icon-cta {
   font-weight: bold;
-  font-family: robotoregular;
+  font-family: 'roboto';
+}
+
+.item.right .cloneditem-1 .icon-item-slideshow, .item.right .cloneditem-2 .icon-item-slideshow, .item.right .cloneditem-3 .icon-item-slideshow {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item.left .cloneditem-1 .icon-item-slideshow, .item.left .cloneditem-2 .icon-item-slideshow, .item.left .cloneditem-3 .icon-item-slideshow {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (min-width: 401px) and (max-width: 1086px) {
+  .icon-slideshow.icon-slideshow {
+    padding: 0;
+  }
+  .icon-item-slideshow {
+    width: 100%;
+    margin-left: 5%;
+  }
+  .icon-inner-slideshow .icon-collection {
+    width: 40%;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+  .icon-item-slideshow:hover {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  }
+  .icon-inner-slideshow>.item.active>.icon-collection {
+    display: block;
+  }
+  .icon-inner-slideshow>.item.active>.cloneditem-1 {
+    display: block;
+  }
+  .icon-inner-slideshow>.item.active>.cloneditem-2 {
+    display: block;
+    position: absolute;
+    right: -20%;
+  }
+  .icon-inner-slideshow>.item.active>.cloneditem-3 {
+    display: block;
+    position: absolute;
+    right: -60%;
+  }
+  .carousel-showmanymoveone .carousel-inner>.item.active.right, .carousel-showmanymoveone .carousel-inner>.item.next {
+    -webkit-transform: translate3d(40%, 0, 0);
+    transform: translate3d(40%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner>.item.active.left, .carousel-showmanymoveone .carousel-inner>.item.prev {
+    -webkit-transform: translate3d(-40%, 0, 0);
+    transform: translate3d(-40%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner>.item.left, .carousel-showmanymoveone .carousel-inner>.item.prev.right, .carousel-showmanymoveone .carousel-inner>.item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -245,7 +310,7 @@
   .carousel-showmanymoveone .carousel-inner>.item.active.right, .carousel-showmanymoveone .carousel-inner>.item.next {
     -webkit-transform: translate3d(82%, 0, 0);
     transform: translate3d(82%, 0, 0);
-    left: -0;
+    left: 0;
   }
   .carousel-showmanymoveone .carousel-inner>.item.active.left, .carousel-showmanymoveone .carousel-inner>.item.prev {
     -webkit-transform: translate3d(-82%, 0, 0);
