@@ -1,9 +1,16 @@
 package com.aaa.ace.servlets;
 
+import java.io.IOException;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.ConfigurationPolicy;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.PropertyUnbounded;
@@ -13,17 +20,8 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.commons.osgi.PropertiesUtil;
 
-import java.io.IOException;
-import java.util.Map;
-
-import javax.servlet.ServletException;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamWriter;
-
 @Component(metatype = true, label = "AAA ACE - Site Map Index Servlet",
-                description = "Region Site Map Index Servlet", configurationFactory = true,
-                policy = ConfigurationPolicy.REQUIRE)
+                description = "Region Site Map Index Servlet", configurationFactory = true)
 @Service
 @SuppressWarnings("serial")
 @Properties({

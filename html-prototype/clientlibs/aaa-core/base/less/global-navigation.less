@@ -300,6 +300,7 @@
                 text-align: center;
                 float: left;
                 width: 100%;
+                text-transform: uppercase;
                 #user-login {
                     border-bottom: solid 1px #555;
                 }
@@ -822,11 +823,6 @@
                     }
                 }
             }
-            .dropdown {
-                a:focus {
-                    text-decoration: none;
-                }
-            }
             #user-login {
                 margin-right: 20px;
             }
@@ -839,7 +835,8 @@
                 font-weight: 300;
                 font-size: 15px;
                 margin: 0px;
-                :hover {
+                text-decoration: none;
+                &:hover {
                     text-decoration: underline;
                 }
                 .lock-icon {
