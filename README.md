@@ -102,3 +102,5 @@ in the new module.
 If configurations are necessary for the new bundle, create a new `.xml` file in `project-root/packages/bundle-install/src/main/content/jcr_root/apps/project-name/config`. The name of the file needs to match the PID of the service you are trying to configure. To build the configurations, go to `project-root/packages/bundle-install` and run
 
 	mvn clean install -PautoInstallPackage
+
+test
