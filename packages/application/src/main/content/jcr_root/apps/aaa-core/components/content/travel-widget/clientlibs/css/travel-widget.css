@@ -480,9 +480,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .rs_button_row a {
-  color: #0099ff;
-  text-decoration: none;
-  font-size: 14px;
+  color: #09f;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 1.7;
   padding: 0 6px;
 }
 
@@ -491,12 +492,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   float: right;
   height: 50px;
   width: 30%;
-  background-color: #0099ff;
+  background-color: #01a3fe;
   color: white;
   border: none;
   font-size: 16px;
   letter-spacing: 3px;
   border-radius: 2px;
+}
+
+.rs_search:hover {
+  background-color: #1080d9;
 }
 
 .add_flight {

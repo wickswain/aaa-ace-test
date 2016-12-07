@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$j(document).ready(function ($) {
   if ($('.travel-widget').length > 0) {
     $('.rs_hotel_flight').click(function (event) {
       event.preventDefault();
@@ -141,7 +141,7 @@ function generateCruiseDates() {
 
   $('.rs_cruise_form .rs_cruise_select').append(result);
 }
-$(document).ready(function () {
+$j(document).ready(function ($) {
   if ($('.travel-widget').length > 0) {
     generateCruiseDates();
     populateYears();
@@ -229,7 +229,7 @@ function hideMulti(num) {
   $('.rem_flight' + prev).show();
   $('.add_flight' + prev).show();
 }
-$(function () {
+$j(function ($) {
 
   $('input[name="rad"]').click(function () {
     var $radio = $(this);
@@ -256,15 +256,6 @@ $(function () {
     if ($(this).val() == "Destination / Keyword") {
       $(this).val('');
     }
-  });
-
-
-  var windowsize = $(window).width();
-  if (windowsize < 750) {
-    $('.rs_searchbox .form-holder').hide();
-  }
-  $('.rs_tabs').click(function () {
-    $('.rs_searchbox .form-holder').show();
   });
 
 
@@ -321,7 +312,7 @@ function updateTravelers(menu) {
   });
 }
 
-$(document).ready(function () {
+$j(document).ready(function ($) {
   if ($('.travel-widget').length > 0) {
     $('input[name=rs_adults]').val("1");
     $('input[name=rs_children]').val("0");

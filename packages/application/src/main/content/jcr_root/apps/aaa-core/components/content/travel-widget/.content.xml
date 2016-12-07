@@ -4,4 +4,4 @@
     jcr:title="Travel Widget"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="aaa"/>
+    componentGroup="AAA COMMON"/>

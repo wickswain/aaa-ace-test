@@ -1,4 +1,4 @@
-(function($) {
+$j(function($) {
   $.fn.bcSwipe = function(settings) {
     var config = { threshold: 50 };
     if (settings) {
@@ -46,8 +46,8 @@
 
     return this;
   };
-})(jQuery);
+});
 
-$(document).ready(function() {
+$j(document).ready(function($) {
 	$('.carousel').bcSwipe({ threshold: 50 });
 });
