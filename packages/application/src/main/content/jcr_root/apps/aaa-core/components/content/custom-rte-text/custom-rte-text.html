@@ -16,12 +16,20 @@
 
 <!-- #placeholder-content end -->
 
-<div style="background-color:${properties.backgroundColor @ context='styleToken'}">
+<div class="crte-container" style="background-color:${properties.backgroundColor @ context='styleToken'}">
     <div class="container">
         <div class="row">
             <div id="${properties.jumpLinkId}" style="color:${properties.fontColor @ context='styleToken'}" >
                 <div class="article-text">
-                    <div id="theTextEditor">${properties.text @ context='html'}</div>
+                    <div class="theTextEditor">
+                        ${properties.text @ context='html'}
+                        <div class="rte-cta-container">
+                            <div data-sly-test="${properties.includeCTA}"
+                                 data-sly-resource="${ @path='cta', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
+                                 data-sly-unwrap="${wcmmode.disabled}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

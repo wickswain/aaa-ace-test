@@ -48,12 +48,12 @@
             <div data-sly-test="${faq.childResource}" class="col-md-9 col-sm-12">
             	<sly data-sly-list="${faq.childResource.listChildren}">
 	                <div class="item">
-						<div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#collapseOrderItems${itemList.index}">
+						<div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#${resource.name}-${itemList.index}">
 	                        <h2 title="Question 1">${item.question} 
 	                        	<span class="icon-adjust roboto-light">+</span>
 	                        </h2>
 	                    </div>
-	                    <div class="roboto-light font-h collapse" id="collapseOrderItems${itemList.index}">
+	                    <div class="roboto-light font-h collapse" id="${resource.name}-${itemList.index}">
 	                        <div class="top-space">
 								${item.text @ context = 'html'}
 	                        </div>
