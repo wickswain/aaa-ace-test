@@ -1,0 +1,39 @@
+<!--/*
+
+    1 Column Content Component.
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. Alt Text for Main Image
+
+*/-->
+
+<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.mainimage || properties.bgColor}"
+     class="single-column component-min-h"
+     style="background-color:${properties.bgColor @ context='styleToken'};
+            background-image:url('${properties.backgroundImage @ context='uri'}');"
+     alt="${properties.backgroundalttext}">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="horizontal-space roboto-light font-b">
+                <h2 data-sly-test="${properties.title}" title="${properties.title}"
+                    style="color:${properties.headerTitleTextFontColor @ context='styleToken'};">${properties.title}</h2>
+            </div>
+            <div class="horizontal-space2 roboto-light font-g"
+                 style="color:${properties.bodyTextFontColor @ context='styleToken'};">
+                <p data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}"></p>
+            </div>
+            <div class="image-block" data-sly-test="${properties.mainalttext && properties.mainimage}">
+                <img src="${properties.mainimage}" alt="${properties.mainalttext}" title="single column image" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Placeholder Content
+============================================= -->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Column Content here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+<!-- #placeholder-content end -->

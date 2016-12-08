@@ -23,7 +23,7 @@ node_modules/
 package.json
 stat.file
 error.log
-html-prototype/clientlibs/ace-www/base/css/style.css
-packages/application/src/main/content/jcr_root/etc/clientlibs/ace-www/thirdparty/
-packages/application/src/main/content/jcr_root/etc/clientlibs/ace-www/base/
+html-prototype/clientlibs/aaa-core/base/css/style.css
+packages/application/src/main/content/jcr_root/etc/clientlibs/aaa-core/thirdparty/
+packages/application/src/main/content/jcr_root/etc/clientlibs/aaa-core/base/
 

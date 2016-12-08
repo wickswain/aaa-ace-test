@@ -1,8 +1,13 @@
 $(function() {
-	var navlandingpagepath = "/content/ace-www/en.html";
-	
+	var landingpagepath = "/content/ace-www/en.html";
+	var searchlandingpagepath = "/content/ace-www/en/search-results.html";
+	var protocol = "http://";
+	var environment = "www";
+	var subdomain = ".aaaqa.axis41.net";
+	var defaultregionname = "calif";
+    
 	function getRegionName() {
-    	var regionName = "calif";
+    	var regionName = defaultregionname;
         var host = window.location.hostname;
 	    
 	    if (host) {
@@ -17,24 +22,21 @@ $(function() {
 	var regionname = getRegionName();
 	
 	function getHostName() {
-		var protocol = "http://";
-		var environment = "ace-www-dev-publish";
-		var subdomain = ".aaa.com";
-        
         return protocol + environment + "." + regionname + subdomain;
     }
 	var hostname = getHostName();
 	
     $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
+	$('#logo-link').attr('href', hostname + landingpagepath);
     
     // Need to remove the port number if it is not required once this code moves to production environment
-    $('#nav-0').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-0");
-    $('#nav-1').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-1");
-    $('#nav-2').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-2");
-    $('#nav-3').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-3");
-    $('#nav-4').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-4");
-    $('#nav-5').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-5");
-    $('#nav-6').attr('href', hostname + navlandingpagepath + "?navigationLink=nav-6");
+    $('#nav-0').attr('href', hostname + landingpagepath + "?navigationLink=nav-0");
+    $('#nav-1').attr('href', hostname + landingpagepath + "?navigationLink=nav-1");
+    $('#nav-2').attr('href', hostname + landingpagepath + "?navigationLink=nav-2");
+    $('#nav-3').attr('href', hostname + landingpagepath + "?navigationLink=nav-3");
+    $('#nav-4').attr('href', hostname + landingpagepath + "?navigationLink=nav-4");
+    $('#nav-5').attr('href', hostname + landingpagepath + "?navigationLink=nav-5");
+    $('#nav-6').attr('href', hostname + landingpagepath + "?navigationLink=nav-6");
 
     // Search functionality
     var searchkeyValue = "";
@@ -42,7 +44,7 @@ $(function() {
         if (event.keyCode == 13) {
             searchkeyValue = $("#searchKey").val();
             if (searchkeyValue) {
-                window.location.href = hostname + ':4503/content/ace-www/en/google-search-results.html?searchKeyValue=' + searchkeyValue;
+                window.location.href = hostname + searchlandingpagepath + '?q=' + searchkeyValue;
             } else {
                 alert("Please eneter search keyword");
             }

@@ -7,11 +7,11 @@
         cq:lastReplicated="{Date}2016-09-16T10:18:50.597-06:00"
         cq:lastReplicatedBy="axisadmin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Contact US"
         jcr:uuid="7725486b-92be-4af9-bb12-a3f38d8aba87"
-        sling:resourceType="ace-www/components/page/genericpage"/>
+        sling:resourceType="aaa-core/components/page/genericpage"/>
 </jcr:root>

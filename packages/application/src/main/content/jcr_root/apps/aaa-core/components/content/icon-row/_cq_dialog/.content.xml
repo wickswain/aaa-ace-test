@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Icon Row"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Title/Subheading"
+                            name="./title"/>
+                    <backgroundcolor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
+                            colorsPath="/apps/aaa-core/components/content/icon-row/config/backgroundcolors"
+                            fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
+                            fieldLabel="Background Color"
+                            freestylePalette="{Boolean}true"
+                            name="./backgroundColor"/>
+                    <icon-amount
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/select"
+                            fieldDescription="Select the amount of icons you want in the row"
+                            fieldLabel="Number of icons"
+                            name="./iconamount">
+                        <items jcr:primaryType="nt:unstructured">
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three"
+                                value="{Long}3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="Four"
+                                value="{Long}4"/>
+                        </items>
+                    </icon-amount>
+                    <jump-link-id
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldDescription="Please enter Jump Link Id"
+                            fieldLabel="Jump Link Id"
+                            name="./jumpLinkId"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
