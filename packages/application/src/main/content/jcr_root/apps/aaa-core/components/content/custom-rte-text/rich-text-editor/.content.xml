@@ -33,7 +33,7 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/include"
                                             fieldLabel="Text"
-                                            path="/apps/aaa-core/components/content/rte-text/rich-text-editor/granite/items/text"/>
+                                            path="/apps/aaa-core/components/content/custom-rte-text/rich-text-editor/granite/items/text"/>
                                 </items>
                             </column>
                         </items>
