@@ -16,11 +16,18 @@
                 <items jcr:primaryType="nt:unstructured">
                     <image
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                            fieldLabel="Image"
-                            required="{Boolean}false"
-                            rootPath="/content/dam/"
-                            name="./image"/>
+                            sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                            allowupload="{Boolean}false"
+                            autoStart="{Boolean}false"
+                            class="cq-droptarget"
+                            fieldLabel="Background Image"
+                            fileNameParameter="./image"
+                            fileReferenceParameter="./image"
+                            mimeTypes="[image]"
+                            multiple="{Boolean}false"
+                            title="Upload Image Asset"
+                            uploadUrl="${suffix.path}"
+                            useHTML5="{Boolean}true"/>
                     <alt-text
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -72,6 +79,7 @@
         </items>
     </content>
 </jcr:root>
+
 
 
 

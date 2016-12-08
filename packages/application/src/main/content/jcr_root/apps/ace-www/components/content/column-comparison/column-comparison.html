@@ -28,26 +28,26 @@
 
         <!--Two Column Option-->
         <div data-sly-test="${(properties.columnCount == '2')}">
-            <div class="col-md-5 col-lg-5 col-sm-10 col-xs-10 pull-left col-compare-container-padding">
+            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 pull-left col-compare-container-padding">
                 <sly data-sly-resource="${ @path='leftColumnDouble', resourceType='/apps/ace-www/components/content/column-comparison/column-container'}" />
             </div>
 
-            <div class="col-md-5 col-lg-5 col-sm-10 col-xs-10 pull-right col-compare-container-padding">
+            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 pull-right col-compare-container-padding">
                 <sly data-sly-resource="${ @path='rightColumnDouble', resourceType='/apps/ace-www/components/content/column-comparison/column-container'}" />
             </div>
         </div>
 
         <!-- Three Column uption-->
         <div data-sly-test="${(properties.columnCount == '3')}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-md-4 col-lg-4 col-sm-10 col-xs-10 pull-left col-compare-container-padding">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 pull-left col-compare-container-padding">
                 <sly data-sly-resource="${ @path='leftColumnTriple', resourceType='/apps/ace-www/components/content/column-comparison/column-container'}" />
             </div>
 
-            <div class="col-md-4 col-lg-4 col-sm-10 col-xs-10 pull-right col-compare-container-padding">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 pull-right col-compare-container-padding">
                 <sly data-sly-resource="${ @path='middleColumnTriple', resourceType='/apps/ace-www/components/content/column-comparison/column-container'}" />
             </div>
 
-            <div class="col-md-4 col-lg-4 col-sm-10 col-xs-10 pull-right col-compare-container-padding">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 pull-right col-compare-container-padding">
                 <sly data-sly-resource="${ @path='rightColumnTriple', resourceType='/apps/ace-www/components/content/column-comparison/column-container'}" />
             </div>
         </div>

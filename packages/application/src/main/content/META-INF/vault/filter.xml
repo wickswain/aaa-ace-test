@@ -4,6 +4,7 @@
     <filter root="/apps/ace-www/templates" />
     <filter root="/apps/ace-www/granite/widgets" />
     <filter root="/apps/cq/contexthub/components/segment-page" />
+    <filter root="/apps/cq/personalization/components/target" />
     <filter root="/etc/clientlibs/ace-www" />
     <filter root="/etc/config/ace-www" />
     <filter root="/etc/workflow/models/ace-www" />

@@ -29,7 +29,8 @@
 <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
 <sly data-sly-include="customheaderlibs.html" />
 
-<link data-sly-test="${head.faviconPath}" rel="icon" type="image/vnd.microsoft.icon" href="${head.faviconPath}">
-<link data-sly-test="${head.faviconPath}" rel="shortcut icon" type="image/vnd.microsoft.icon" href="${head.faviconPath}">
+<sly data-sly-use.favIcon="com.aaa.ace.sightly.providers.FavIconProvider" />
+<link data-sly-test="${favIcon.path}" rel="icon" type="image/vnd.microsoft.icon" href="${favIcon.path}">
+<link data-sly-test="${favIcon.path}" rel="shortcut icon" type="image/vnd.microsoft.icon" href="${favIcon.path}">
 
 <title>${head.title}</title>

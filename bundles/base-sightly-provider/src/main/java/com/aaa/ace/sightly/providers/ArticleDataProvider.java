@@ -31,6 +31,11 @@ public class ArticleDataProvider extends WCMUsePojo {
 	private Page articlePage;
 
 	/**
+	 * articlePage templatePath
+	 */
+	private String templatePath;
+
+	/**
 	 * articleHero properties
 	 */
 	private ValueMap articleHero;
@@ -43,6 +48,7 @@ public class ArticleDataProvider extends WCMUsePojo {
 		String path = getProperties().get("artclepagePath", String.class);
 		if (StringUtils.isNotBlank(path) && pagemanager != null) {
 			articlePage = pagemanager.getPage(path);
+			templatePath = articlePage.getProperties().get("cq:template", "");
 			String articleHeroPath = path + ARTICLE_HERO_PATH;
 			Resource articleHeroResource = getResourceResolver().getResource(articleHeroPath);
 
@@ -65,6 +71,13 @@ public class ArticleDataProvider extends WCMUsePojo {
 	 */
 	public ValueMap getArticleHero() {
 		return articleHero;
+	}
+
+	/**
+	 * @return articlePage templatePath
+	 */
+	public String getTemplatePath() {
+		return templatePath;
 	}
 
 }
