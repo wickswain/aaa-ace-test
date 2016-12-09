@@ -1489,7 +1489,7 @@ Button style Components
         text-overflow: ellipsis;
         white-space: nowrap;
         padding-left: 30px;
-        padding-right: 10px !important;
+        padding-right: 0px;
         background: transparent url("") no-repeat 0% 50%;
     }
     .header-bar .top-header .roadside-text li:first-child {
