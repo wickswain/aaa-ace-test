@@ -111,7 +111,7 @@
                                 <items jcr:primaryType="nt:unstructured">
                                    <pubicationdate
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="/apps/ace-www/granite/widgets/datepicker"
+                                        sling:resourceType="/apps/aaa-core/granite/widgets/datepicker"
                                         fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
                                         fieldLabel="Article Issue Date"
                                         name="./issueDate"
@@ -133,7 +133,7 @@
                                         sling:resourceType="granite/ui/components/foundation/include"
                                         fieldDescription="Please enter article description"
                                         fieldLabel="Article description"
-                                        path="/apps/ace-www/components/content/rte/granite/items/text"/>
+                                        path="/apps/aaa-core/components/content/rte/granite/items/text"/>
                                    	<authorname
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"

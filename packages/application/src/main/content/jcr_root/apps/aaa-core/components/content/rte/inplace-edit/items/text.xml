@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Widget"
+    enableFont="{Boolean}true"
+    enableFormat="{Boolean}true"
+    enableStyle="{Boolean}true"
+    externalStyleSheets="[/etc/clientlibs/aaa-core/base/css/style.css]"
+    hideLabel="{Boolean}true"
+    key="text"
+    name="./text"
+    removeSingleParagraphContainer="{Boolean}true"
+    xtype="richtext">
+    <rtePlugins jcr:primaryType="nt:unstructured">
+        <format
+            jcr:primaryType="nt:unstructured"
+            features="[bold,italic]"/>
+        <justify
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <lists
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <links jcr:primaryType="nt:unstructured">
+            <linkDialogConfig
+                jcr:primaryType="nt:unstructured"
+                height="{Long}316">
+                <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                    <linkAdvanced
+                        jcr:primaryType="cq:Widget"
+                        collapsed="{Boolean}true"
+                        collapsible="{Boolean}true"
+                        inputValue="advanced"
+                        name="./linkdialog/cq:adhocLinkTrackingTab"
+                        title="Link tracking"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <enable
+                                jcr:primaryType="nt:unstructured"
+                                attribute="enabletracking"
+                                fieldDescription="override analytics framework settings"
+                                fieldLabel="Custom link tracking"
+                                name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                xtype="checkbox">
+                                <listeners
+                                    jcr:primaryType="nt:unstructured"
+                                    check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                            </enable>
+                            <events
+                                jcr:primaryType="nt:unstructured"
+                                attribute="adhocevents"
+                                fieldDescription="e.g.: event2, event7"
+                                fieldLabel="Include SiteCatalyst events"
+                                name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                xtype="textfield"/>
+                            <evars
+                                jcr:primaryType="nt:unstructured"
+                                attribute="adhocevars"
+                                fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                fieldLabel="Include SiteCatalyst variables"
+                                name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                xtype="textfield"/>
+                        </items>
+                    </linkAdvanced>
+                </linkAttributes>
+            </linkDialogConfig>
+        </links>
+        <styles
+            jcr:primaryType="nt:unstructured"
+            features="*">
+            <styles jcr:primaryType="cq:WidgetCollection">
+                <font-a
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-slab-bold font-a"
+                    text="Bold XL Header"/>
+                <font-b
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-slab-bold font-b"
+                    text="Bold Header"/>
+                <font-c
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-regular font-c"
+                    text="13px All Caps Title"/>
+                <font-d
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-regular font-d"
+                    text="12px All Caps Title"/>
+                <font-e
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-light font-e"
+                    text="Light Title"/>
+                <font-f
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-medium font-f"
+                    text="Medium Title"/>
+                <font-g
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-light font-g"
+                    text="Large Body Text"/>
+                <font-h
+                    jcr:primaryType="nt:unstructured"
+                    cssName="roboto-light font-h"
+                    text="Small Body Text"/>
+            </styles>
+        </styles>
+        <subsuperscript
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <misctools
+            jcr:primaryType="nt:unstructured"
+            features="specialchars">
+            <specialCharsConfig jcr:primaryType="nt:unstructured">
+                <chars jcr:primaryType="nt:unstructured">
+                    <copyright
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#169;"/>
+                    <trademark
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8482;"/>
+                    <registered
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#174;"/>
+                    <pound
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#163;"/>
+                    <apostrophe
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#8216"/>
+                    <macron-A
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#256"/>
+                    <macron-a
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#257"/>
+                    <macron-E
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#274"/>
+                    <macron-e
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#275"/>
+                    <macrnon-I
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#298"/>
+                    <macron-i
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#299"/>
+                    <macron-O
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#332"/>
+                    <macron-o
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#333"/>
+                    <macron-U
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#362"/>
+                    <macrnon-u
+                        jcr:primaryType="nt:unstructured"
+                        entity="&amp;#363"/>
+                </chars>
+            </specialCharsConfig>
+        </misctools>
+    </rtePlugins>
+    <uiSettings jcr:primaryType="nt:unstructured">
+        <cui jcr:primaryType="nt:unstructured">
+            <inline
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,#justify,#lists,links#modifylink,links#unlink,links#anchor,#styles,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,fullscreen#start,control#close,control#save]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <styles
+                        jcr:primaryType="nt:unstructured"
+                        items="styles:getStyles:styles-pulldown"
+                        ref="styles"/>
+					<justify
+						jcr:primaryType="nt:unstructured"
+						items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+						ref="justify"/>
+					<lists
+						jcr:primaryType="nt:unstructured"
+						items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+						ref="lists"/>
+                </popovers>
+            </inline>
+            <fullscreen
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,#justify,#lists,links#modifylink,links#unlink,links#anchor,#styles,subsuperscript#superscript,subsuperscript#subscript,misctools#specialchars,fullscreen#start,control#close,control#save]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <styles
+                        jcr:primaryType="nt:unstructured"
+                        items="styles:getStyles:styles-pulldown"
+                        ref="styles"/>
+					<justify
+						jcr:primaryType="nt:unstructured"
+						items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+						ref="justify"/>
+					<lists
+						jcr:primaryType="nt:unstructured"
+						items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+						ref="lists"/>
+                </popovers>
+            </fullscreen>
+        </cui>
+    </uiSettings>
+</jcr:root>

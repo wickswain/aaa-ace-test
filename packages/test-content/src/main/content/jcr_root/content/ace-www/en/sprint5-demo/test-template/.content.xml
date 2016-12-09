@@ -4,11 +4,11 @@
     <jcr:content
         cq:lastModified="{Date}2016-10-18T01:12:44.617-06:00"
         cq:lastModifiedBy="axisadmin"
-        cq:template="/apps/ace-www/templates/generic"
+        cq:template="/apps/aaa-core/templates/generic"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Generic Template"
         jcr:uuid="6121c398-d76a-4ba3-9200-1b60ff167d46"
-        sling:resourceType="ace-www/components/page/genericpage"/>
+        sling:resourceType="aaa-core/components/page/genericpage"/>
 </jcr:root>

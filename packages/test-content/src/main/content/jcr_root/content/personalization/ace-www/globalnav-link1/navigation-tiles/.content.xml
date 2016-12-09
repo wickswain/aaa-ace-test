@@ -22,7 +22,7 @@
                     jcr:lastModified="{Date}2016-10-18T07:17:20.236-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/navigation-tiles">
+                    sling:resourceType="aaa-core/components/content/navigation-tiles">
                     <tile1
                         jcr:primaryType="nt:unstructured"
                         linkURL="/content/dam/formsanddocuments"

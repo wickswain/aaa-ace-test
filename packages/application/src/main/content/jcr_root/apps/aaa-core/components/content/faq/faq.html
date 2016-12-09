@@ -1,0 +1,82 @@
+<!--/*
+
+    FAQ Component.
+    ----------------------------------------------------------------
+
+    This component will be used across many pages of the site. 
+    For example, Insurance page may have FAQ component with insurance specific questions and answers. 
+    Travel page may have FAQ component which travel specific questions and answers.
+    
+    Default Behavior:
+    1. Questions are always exposed, and answers are collapsed by default.
+    2. Right side section is static except the link labels are authorable
+
+    Required Fields:
+    1. Left and Right Section Title and Left Section Question and Answer
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.faq="${ 'com.aaa.ace.sightly.providers.ChildResourceProvider' 
+								@ child='faqr'}" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Placeholder Content
+============================================= -->
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && !faq.childResource}"
+	data-emptytext="Author FAQ Component Here"
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="FAQ Component" />
+
+<!-- #placeholder-content end -->
+
+<!-- Faqs component starts here-->
+<div id="${properties.jumpLinkId}" data-sly-test="${faq.childResource}" 
+		style="background-color:${properties.bgColorLeft ? properties.bgColorLeft : '' @ context='styleToken'};"
+		class="faqs horizontal-component-space">
+	<sly data-sly-use.result1="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link = properties.link1URL}"/>
+	<sly data-sly-use.result2="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' @ link = properties.link2URL}"/>
+    <div class="container">
+        <!-- Faqs Header Starts Here -->
+        <div class="horizontal-space2 roboto-light font-b">
+            <h2 title="Left Section Title">${properties.leftSectionTitle}</h2>
+        </div>
+        <!-- Faqs List Starts here -->
+        <div class="row">
+            <div data-sly-test="${faq.childResource}" class="col-md-9 col-sm-12">
+            	<sly data-sly-list="${faq.childResource.listChildren}">
+	                <div class="item">
+						<div class="faq-list collapsed roboto-medium font-f" data-toggle="collapse" data-target="#${resource.name}-${itemList.index}">
+	                        <h2 title="Question 1">${item.question} 
+	                        	<span class="icon-adjust roboto-light">+</span>
+	                        </h2>
+	                    </div>
+	                    <div class="roboto-light font-h collapse" id="${resource.name}-${itemList.index}">
+	                        <div class="top-space">
+								${item.text @ context = 'html'}
+	                        </div>
+	                    </div>
+	                </div>
+	            </sly>
+	        </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="ques-block" 
+                		style="background-color:${properties.bgColorRight ? properties.bgColorRight : '' @ context='styleToken'};">
+                    <div class="left-blk side-spacing text-center">
+                        <span class="adjust-align"><img src="${properties.titleIcon}" alt="${properties.altText}">
+                            <h3 class="roboto-medium font-f ">${properties.rightSectionTitle}</h3></span>
+                        <div class="faq-links">
+                        	<a href="${result1.linkURL}" title="View all FAQ's" class="link-btn link-color-blue link-lg">${properties.link1Caption}</a>
+                        	 <div data-sly-test="${properties.link2Caption}">
+                             	<span>or</span>
+                        	 	<a href="${result2.linkURL}" title="Contact Support" class="link-btn link-color-blue link-lg">${properties.link2Caption}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -23,7 +23,7 @@
                 jcr:lastModified="{Date}2016-09-02T09:15:03.782-06:00"
                 jcr:lastModifiedBy="axisadmin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ace-www/components/content/global-footer"
+                sling:resourceType="aaa-core/components/content/global-footer"
                 copyright="Copyright © 2016 Automobile Club of Southern California. All Rights Reserved."
                 disclaimer="The Automobile Club of Southern California is a member club affiliated with the American Automobile Association (AAA) national federation and serves members in the following California counties: Inyo, Imperial, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, Santa Barbara, Tulare, and Ventura."
                 linksList1Heading="Popular pages"
@@ -48,21 +48,21 @@
                     jcr:lastModified="{Date}2016-08-29T06:20:16.964-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/logo"
+                    sling:resourceType="aaa-core/components/content/logo"
                     alt="Logo"
                     fileReference="/content/dam/aaa/images/aaa-color-logo.png"/>
                 <download-app-text
                     jcr:lastModified="{Date}2016-08-29T05:52:06.273-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Download the AAA app for ios or android&lt;br>&#xa;"
                     textIsRich="true"/>
                 <blog-text
                     jcr:lastModified="{Date}2016-08-29T05:52:38.389-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/rte"
+                    sling:resourceType="aaa-core/components/content/rte"
                     text="Read the latest from our blog&lt;br>&#xa;"
                     textIsRich="true"/>
                 <linksList1 jcr:primaryType="nt:unstructured">
@@ -111,7 +111,7 @@
                     jcr:lastModified="{Date}2016-10-05T03:40:12.069-06:00"
                     jcr:lastModifiedBy="axisadmin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="ace-www/components/content/footnote"
+                    sling:resourceType="aaa-core/components/content/footnote"
                     backgroundColor="rgba(48,48,48,1)"
                     showFullwidth="true"
                     text="The Automobile Club of Southern California is a member club affiliated with the American Automobile Association (AAA) national federation and serves members in the following California counties: Inyo, Imperial, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, Santa Barbara, Tulare, and Ventura. California&lt;br>&#xd;&#xa;"

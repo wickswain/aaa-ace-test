@@ -1,0 +1,33 @@
+<!--/*
+
+    1 Icon Row Component.
+    ----------------------------------------------------------------
+
+    Required Fields:
+    1. Title/Subheading
+
+
+
+*/-->
+
+<div id="${properties.jumpLinkId}" class="icon-row" data-sly-test.hasContent="${properties.iconamount}" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};">
+    <div class="container horizontal-component-space">
+        <!-- Top Header Starts Here -->
+        <div class="text-center">
+            <div class="horizontal-space2 roboto-light font-b">
+                <h2 title="Explore articles">${properties.title}</h2> </div>
+        </div>
+        <!-- List of the cards start here -->
+        <ul data-sly-use.iconsprovider="${'com.aaa.ace.sightly.providers.IconRowProvider'}" data-sly-list.icon="${iconsprovider.icons}" class="list-inline icon-list row">
+            <li class="${iconsprovider.classes}" data-sly-resource="${@path=icon, resourceType='/apps/aaa-core/components/content/icon-row/icon-item'}"></li>
+        </ul>
+    </div>
+</div>
+
+
+<!--/* Placeholder Content
+============================================= */-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !hasContent}" data-emptytext="Author Icon Row here"
+     class="cq-placeholder" style="text-align: center;">
+</div>
+<!--/* #placeholder-content end */-->

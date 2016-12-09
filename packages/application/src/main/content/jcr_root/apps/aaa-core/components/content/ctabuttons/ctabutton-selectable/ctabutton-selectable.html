@@ -1,0 +1,21 @@
+<!-- Placeholder Content
+============================================= -->
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && (!properties.ctaSize)}"
+	data-emptytext="Author CTA Button-Selectable Component Here."
+	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	alt="CTA Button-Selectable Component" />
+<img
+	data-sly-test="${(wcmmode.edit || wcmmode.design) && (!properties.ctaSize)}"
+	src="/libs/cq/ui/resources/0.gif" class="cq-title-placeholder"
+	alt="CTA Button-Selectable Component" />
+<!-- #placeholder-content end -->
+
+
+<div data-sly-test="${properties.ctaSize=='large'}" 
+	data-sly-resource="${'large' @ resourceType = '/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}" data-sly-unwrap>
+</div>
+
+<div data-sly-test="${properties.ctaSize=='small'}"
+	data-sly-resource="${'small' @ resourceType = '/apps/aaa-core/components/content/ctabuttons/ctabutton-small'}" data-sly-unwrap>
+</div>
