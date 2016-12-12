@@ -28,6 +28,9 @@ $(function() {
 	
     $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
 	$('#logo-link').attr('href', hostname + landingpagepath);
+	$('#find-a-branch-link').attr('href', 'http://locator.aaa.com/');
+	$('#contact-us-link').attr('href', hostname + '/contact-us.html');
+	$('#truck-link').attr('href', hostname + '/automotive/roadside-assistance.html');
     
     // Need to remove the port number if it is not required once this code moves to production environment
     $('#nav-0').attr('href', hostname + landingpagepath + "?navigationLink=nav-0");
