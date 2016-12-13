@@ -133,7 +133,7 @@
                             <titlecolors
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                    colorsPath="/apps/aaa-core/components/content/youtube-video/config/textbackgroundcolors"
+                                    colorsPath="/apps/aaa-core/components/content/youtube-video/textcoloroptions"
                                     fieldDescription="Header text color"
                                     fieldLabel="Title text color"
                                     name="./titleColor" />
@@ -141,7 +141,7 @@
                             <bodytextcolors
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                    colorsPath="/apps/aaa-core/components/content/youtube-video/config/textbackgroundcolors"
+                                    colorsPath="/apps/aaa-core/components/content/youtube-video/textcoloroptions"
                                     fieldDescription="Body copy text color"
                                     fieldLabel="Body text color"
                                     name="./bodyColor" />
@@ -150,7 +150,7 @@
                             <backgroundcolor
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                    colorsPath="/apps/aaa-core/components/content/youtube-video/config/backgroundcolors"
+                                    colorsPath="/apps/aaa-core/components/content/youtube-video/bgcoloroptions"
                                     fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
                                     fieldLabel="Background Color"
                                     freestylePalette="{Boolean}true"
