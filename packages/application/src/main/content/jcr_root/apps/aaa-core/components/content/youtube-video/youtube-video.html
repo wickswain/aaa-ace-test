@@ -18,8 +18,9 @@
             <h2 class="horizontal-space yt-title" style="color: ${properties.titleColor ? properties.titleColor : '' @ context='styleToken'};">${properties.title}</h2>
         </div>
 
-        <div data-sly-test="${properties.bodyCopy}" class="yt-body-copy roboto-light font-g col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p style="color: ${properties.bodyColor ? properties.bodyColor : '' @ context='styleToken'};">${properties.bodyCopy @ context='html'}</p>
+        <div data-sly-test="${properties.bodyCopy}" class="yt-body-copy roboto-light font-g col-lg-12 col-md-12 col-sm-12 col-xs-12"
+             style="color: ${properties.bodyColor ? properties.bodyColor : '' @ context='styleToken'};">
+            <p>${properties.bodyCopy @ context='html'}</p>
         </div>
 
 
