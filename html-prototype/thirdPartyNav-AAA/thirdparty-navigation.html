@@ -26,12 +26,12 @@
                     <div class="row top-header" id="top-header">
                         <div class="col-xs-4 col-md-5 text-right col-md-push-7"> 
                             <span class="menu">
-                                <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>Menu
+                                <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>MORE
                             </span>
                             
                             <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
                                 <li id="nav-links"> 
-                                    <a href="#" id="find-a-branch-link">Find a branch</a>
+                                    <a href="#" id="find-a-branch-link">Find a Branch</a>
                                     <span class="pipe">|</span>
                                     
                                     <a href="#" id="user-login">
@@ -60,7 +60,7 @@
                         
                         <div class="text-center col-xs-4 col-md-2">
                             <div class="brand">
-                                <a href="#" id="logo-link"><img src="images/acsc-logo.png" title="Home" alt="AAA" class="img-responsive" /></a>
+                                <a href="#" id="logo-link"><img src="" title="Home" alt="AAA" class="img-responsive" /></a>
                             </div>
                         </div>
                         
@@ -69,7 +69,7 @@
                                 <li> 
                                     <a href="#" id="truck-link" style="background-image:url('images/truck-white-xs.png')">Roadside Assistance</a> 
                                     <span class="pipe hidden-xs hidden-sm">|</span> 
-                                    <a href="#" id="contact-us-link" class="link2 hidden-xs hidden-sm">Contact us</a> 
+                                    <a href="#" id="contact-us-link" class="link2 hidden-xs hidden-sm">Contact Us</a> 
                                 </li>
                             </ul>
                         </div>
@@ -100,12 +100,12 @@
                                 <span class="input-group-addon">
                                     <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                                 </span>
-                                <input type="search" class="form-control font-h" placeholder="Search..." />
+                                <input type="search" class="form-control font-h" id="m-searchKey" name="m-searchKey" placeholder="Search..." />
                                 <span class="input-group-addon">
                                     <i class="close-icon"  id="m-close-searchbar">+</i>
                                 </span>
                             </div>
-                            <input type="submit" title="GO" value="GO" class="btn-style btn-sm btn-border btn-color-blue" />
+                            <input type="button" id="m-search-btn" title="GO" value="GO" class="btn-style btn-sm btn-border btn-color-blue" />
                         </form>
                     </div>
                     
@@ -114,11 +114,15 @@
                         
                         <div class="header-bar">
                             <div class="m-user-details">
-                                <div class="sign-join-in hidden-md hidden-lg"> 
-                                    <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">Join</a> 
+                                <div class="sign-join-in hidden-md hidden-lg">
+                                	<a href="#" id="m-user-login" class="user-login">
+                                		<img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">SIGN IN
+                                	</a>
+                                    <a href="javascript:void(0);" id="m-join-btn" class="link-btn link-color-blue link-lg">JOIN</a> 
                                 </div>
                                 <div class="contact-find hidden-md hidden-lg">
-                                    <a href="#" class="link1">Find a brach</a> <a href="#" class="link2">Contact us</a>
+                                    <a href="#" id="m-find-a-branch-link" class="link1">Find a Branch</a>
+                                    <a href="#" id="m-contact-us-link" class="link2">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -132,36 +136,36 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-1" class="active">
-                                        <img src="images/insurance-icon.png" alt="Insurance" alt="Insurance" class="icon-link hidden-lg hidden-md">Insurance
+                                        <img src="images/insurance-icon.png" alt="Insurance" class="icon-link hidden-lg hidden-md">Insurance
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-2" class="active">
-                                        <img src="images/travel-icon.png" alt="Travel" alt="Travel" class="icon-link hidden-lg hidden-md">Travel
+                                        <img src="images/travel-icon.png" alt="Travel" class="icon-link hidden-lg hidden-md">Travel
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-3" class="active">
-                                        <img src="images/disp-icon.png" alt="Discount & Rewards" alt="Discount & Rewards" class="icon-link hidden-lg hidden-md">Discount & Rewards
+                                        <img src="images/disp-icon.png" alt="Discounts & Rewards" class="icon-link hidden-lg hidden-md">Discounts & Rewards
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-4" class="active">
-                                        <img src="images/activi-icon.png" alt="Activities" alt="Activities" class="icon-link hidden-lg hidden-md">Activities
+                                        <img src="images/activi-icon.png" alt="Activities" class="icon-link hidden-lg hidden-md">Activities
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-5" class="active">
-                                        <img src="images/auto-icon.png" alt="Automative" alt="Automative" class="icon-link hidden-lg hidden-md">Automative
+                                        <img src="images/auto-icon.png" alt="Automotive" class="icon-link hidden-lg hidden-md">Automotive
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" id="nav-6" class="active">
-                                        <img src="images/finan-icon.png" alt="Financial" alt="Financial" class="icon-link hidden-lg hidden-md">Financial
+                                        <img src="images/finan-icon.png" alt="Financial" class="icon-link hidden-lg hidden-md">Financial
                                     </a>
                                 </li>
                                 <li class="hidden-xs hidden-sm">
-                                    <a href="javascript:void(0);" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a>
+                                    <a href="javascript:void(0);" id="nav-7" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a>
                                 </li>
                             </ul>
                         </nav>

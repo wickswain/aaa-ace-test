@@ -39,11 +39,11 @@
                 <div id="global-header">
                     <div class="row top-header" id="top-header">
                         <div class="col-xs-4 col-md-5 text-right col-md-push-7">
-                            <span class="menu"><i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>Menu</span>
+                            <span class="menu"><i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>MORE</span>
                             <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
                                 <li id="nav-links"><a href="#">Find a brach</a><span class="pipe">|</span>
-                                    <a href="#" id="user-login">
-                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a>
+                                    <a href="#" id="user-login" class="user-login">
+                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Sign In</a>
                                     <a href="javascript:void(0);" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info" style="display: none;">
                                         <span class="restrict-characters">Jessica</span>
                                         <i class="glyphicon glyphicon-chevron-down"></i>
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="avatar-title font-f">Jessica</div>
                                             <div class="my-account"><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
-                                            <div class="signout"><a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
+                                            <div class="signout"><a href="#" id="sign-out" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
                                         </div>
 
                                         <div class="notification-list">
@@ -100,7 +100,7 @@
 
 
                                     <a href="#" id="truck-link" style="background-image:url('images/truck-white-xs.png')">
-                                        Roadside Assistance </a> <span class="pipe hidden-xs hidden-sm">|</span> <a href="#" class="link2 hidden-xs hidden-sm">Contact us</a> </li>
+                                        Roadside Assistance </a> <span class="pipe hidden-xs hidden-sm">|</span> <a href="#" class="link2 hidden-xs hidden-sm">Contact Us</a> </li>
                             </ul>
                         </div>
                     </div>
@@ -147,14 +147,14 @@
                         <div class="search-overlay"></div>
                         <div class="header-bar">
                             <div class="m-user-details">
-                                <div class="profile-box" hidden-md hidden-lg style="display:none;">
+                                <div id="m-user-info" class="profile-box hidden-md hidden-lg" style="display:none;">
                                     <div class="avatar-details">
                                         <div class="avatar-pic">
                                             <img src="images/card-img-1.png" class="img-responsive">
                                         </div>
                                         <div class="avatar-title font-f"><span class="restrict-characters">Jessica</span></div>
                                         <div class="my-account "><a href="#" class="btn-style btn-lg btn-border btn-border-reversed">My Account</a></div>
-                                        <div class="signout"><a href="#" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
+                                        <div class="signout"><a href="#" id="m-sign-out" class="link-btn link-lg link-color-orange link-reversed">Sign out</a> </div>
                                     </div>
 
                                     <div class="notification-list">
@@ -170,13 +170,13 @@
                                     <div class="pending-notification"><span class="pull-left font-h">Pending notifications (3)</span> <a href="#" class="link-btn link-color-orange link-reversed font-h">See all</a> </div>
                                 </div>
                                 <div class="sign-join-in hidden-md hidden-lg">
-                                    <a href="#" id="user-login" class="user-login">
-                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Login</a>
-                                    <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">Join</a>
+                                    <a href="#" id="user-login" class="m-user-login">
+                                        <img src="images/lock-icon.png" alt="lock" title="lock" class="lock-icon">SIGNIN</a>
+                                    <a href="javascript:void(0);" class="link-btn link-color-blue link-lg">JOIN</a>
                                 </div>
                                 <div class="contact-find hidden-md hidden-lg">
-                                    <a href="#" class="link1">Find a brach</a>
-                                    <a href="#" class="link2">Contact us</a>
+                                    <a href="#" class="link1">Find a Branch</a>
+                                    <a href="#" class="link2">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +222,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -327,7 +327,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -411,7 +411,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -457,7 +457,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" id="nav-3" class="active">
-                                        <img src="images/disp-icon.png" alt="Discount & Rewards" alt="Discount & Rewards" class="icon-link hidden-lg hidden-md">Discount & Rewards</a>
+                                        <img src="images/disp-icon.png" alt="Discount & Rewards" alt="Discounts & Rewards" class="icon-link hidden-lg hidden-md">Discounts & Rewards</a>
                                     <div class="nav-3 drawers-wrapper ">
                                         <div class="drawers-content">
                                             <div class="drawer-close">
@@ -485,7 +485,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -578,7 +578,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -624,7 +624,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" id="nav-5" class="active">
-                                        <img src="images/auto-icon.png" alt="Automative" alt="Automative" class="icon-link hidden-lg hidden-md">Automative</a>
+                                        <img src="images/auto-icon.png" alt="Automative" alt="Automotive" class="icon-link hidden-lg hidden-md">Automotive</a>
                                     <div class="nav-5 drawers-wrapper ">
                                         <div class="drawers-content ">
                                             <div class="drawer-close">
@@ -671,7 +671,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -764,7 +764,7 @@
                                                     <div class="drawers-container">
                                                         <ul class="tiles-list border-manage">
                                                             <li>
-                                                                <h3 class="sub-title">Book with aaa & save</h3>
+                                                                <h3 class="sub-title">Book with AAA & save</h3>
                                                                 <ul>
                                                                     <li><a href="#">All booking</a></li>
                                                                     <li><a href="#">AAA travel agent</a></li>
@@ -1044,14 +1044,25 @@
 
     </div>
 
-
-
     <script src="clientlibs/aaa-core/thirdparty/jquery/js/jquery.noconflict.js"></script>
     <script src="clientlibs/aaa-core/base/js/scripts.js"></script>
-
-
-
-
+	<script>
+		$j(document).ready(function ($) {
+	        $(".user-login, .m-user-login").click(function () {
+	        	$(".user-login").hide();
+	            $("#user-info").show();
+	        	$(".m-user-login").hide();
+	            $("#m-user-info").show();
+	        });
+	        
+	        $("#sign-out, #m-sign-out").click(function () {
+	        	$("#user-info").hide();
+	        	$(".user-login").show();
+	        	$("#m-user-info").hide();
+	        	$(".m-user-login").show();
+	        });
+	    });
+	</script>
 
 </body>
 
