@@ -1,9 +1,15 @@
 $(function() {
-	var landingpagepath = "/content/ace-www/en.html";
-	var searchlandingpagepath = "/content/ace-www/en/search-results.html";
+	// Page paths information can be updated here.
+	var landingpagepath = "";
+	var searchlandingpagepath = "/search-results.html";
+	var joinpagepath = "";
+	var logoimagepath = "images/acsc-logo.png";
+	
+	// Environment information can be updated here.
 	var protocol = "http://";
 	var environment = "www";
-	var subdomain = ".aaaqa.axis41.net";
+	var subdomain = ".aaaprod.axis41.net";
+	
 	var defaultregionname = "calif";
     
 	function getRegionName() {
@@ -26,10 +32,14 @@ $(function() {
     }
 	var hostname = getHostName();
 	
+	$('#logo-link').find('img').attr('src', logoimagepath);
     $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
+    $('#m-user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
 	$('#logo-link').attr('href', hostname + landingpagepath);
 	$('#find-a-branch-link').attr('href', 'http://locator.aaa.com/');
+	$('#m-find-a-branch-link').attr('href', 'http://locator.aaa.com/');
 	$('#contact-us-link').attr('href', hostname + '/contact-us.html');
+	$('#m-contact-us-link').attr('href', hostname + '/contact-us.html');
 	$('#truck-link').attr('href', hostname + '/automotive/roadside-assistance.html');
     
     // Need to remove the port number if it is not required once this code moves to production environment
@@ -40,6 +50,8 @@ $(function() {
     $('#nav-4').attr('href', hostname + landingpagepath + "?navigationLink=nav-4");
     $('#nav-5').attr('href', hostname + landingpagepath + "?navigationLink=nav-5");
     $('#nav-6').attr('href', hostname + landingpagepath + "?navigationLink=nav-6");
+    $('#nav-7').attr('href', joinpagepath);
+    $('#m-join-btn').attr('href', joinpagepath);
 
     // Search functionality
     var searchkeyValue = "";
@@ -51,6 +63,26 @@ $(function() {
             } else {
                 alert("Please eneter search keyword");
             }
+        }
+    });
+    
+    $("#m-searchKey").keyup(function(event) {
+        if (event.keyCode == 13) {
+            searchkeyValue = $("#m-searchKey").val();
+            if (searchkeyValue) {
+                window.location.href = hostname + searchlandingpagepath + '?q=' + searchkeyValue;
+            } else {
+                alert("Please eneter search keyword");
+            }
+        }
+    });
+    
+    $("#m-search-btn").click(function(event) {
+    	searchkeyValue = $("#m-searchKey").val();
+        if (searchkeyValue) {
+            window.location.href = hostname + searchlandingpagepath + '?q=' + searchkeyValue;
+        } else {
+            alert("Please eneter search keyword");
         }
     });
 
