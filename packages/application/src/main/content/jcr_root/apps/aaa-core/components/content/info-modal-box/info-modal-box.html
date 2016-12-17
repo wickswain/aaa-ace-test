@@ -12,14 +12,18 @@
         <button type="button" class="close"
                 data-dismiss="modal" aria-hidden="true">×</button>
     </div>
+
     <div class="modal-body">
+
         <div data-sly-test="${(properties.columnCount == '1')}">
+            <h2 data-sly-test="${properties.headerCopy}">${properties.headerCopy @ context ='html'}</h2>
             <div class="col-lg-12 col-md-12">
                 <sly data-sly-resource="${ @path='singleColumn', resourceType='/apps/aaa-core/components/content/info-modal-box/modal-item'}" />
             </div>
         </div>
 
         <div data-sly-test="${(properties.columnCount == '2')}">
+            <h2 data-sly-test="${properties.headerCopy}">${properties.headerCopy @ context ='html'}</h2>
             <div class="col-lg-6 col-md-6">
                 <sly data-sly-resource="${ @path='doubleLeftColumn', resourceType='/apps/aaa-core/components/content/info-modal-box/modal-item'}" />
             </div>
