@@ -13,9 +13,9 @@
       <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />-->
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="clientlibs/aaa-core/thirdparty/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="clientlibs/aaa-core/thirdparty/font_roboto/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="clientlibs/aaa-core/thirdparty/font_robotoslab/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_roboto/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/thirdparty/font_robotoslab/css/fonts.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,9 +23,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Latest compiled and minified JS -->
-    <script type="text/javascript" src="clientlibs/aaa-core/thirdparty/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="clientlibs/aaa-core/thirdparty/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="clientlibs/aaa-core/base/css/style.css" />
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="clientlibs/ace-www/thirdparty/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="clientlibs/ace-www/base/css/style.css" />
     <!-- External Plugins JS : External plugin files loaded on need base -->
 </head>
 
@@ -79,17 +79,17 @@
                             </div>
                         </div>
                         <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
-                            <div class="col-md-3 col-sm-12 col-xs-12 icon-info">Lorem ipsum dolor sit amet
+                            <div class="col-md-3 col-sm-12 col-xs-12 icon-info ">Lorem ipsum dolor sit amet
                                 <a href="#myModal" class="btn-info" data-toggle="modal" data-body="<p>Do you want to save changes you made to document before closing?</p><p><small>If you don't save, your changes will be lost.</small></p>" data-header="Confirmation"> </a>
                             </div>
                         </div>
                         <div class="row membership-cols roboto-light font-h">
-                            <div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm">Lorem ipsum dolor sit amet
+                            <div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm align-top">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
                                 <a href="#myModal" class="btn-info" data-toggle="modal" data-body="<p>Do you want to save changes you made to document before closing?</p><p><small>If you don't save, your changes will be lost.</small></p>" data-header="Confirmation"> </a>
                             </div>
-                            <div class="col-md-3 col-sm-4 col-xs-4">Lorem ipsum dolor sit amet </div>
-                            <div class="col-md-3 col-sm-4 col-xs-4 "><i class="glyphicon glyphicon-ok"></i></div>
-                            <div class="col-md-3 col-sm-4 col-xs-4"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 align-top">Lorem ipsum dolor sit amet </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 align-top"><i class="glyphicon glyphicon-ok"></i></div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 align-top"><i class="glyphicon glyphicon-ok"></i></div>
                         </div>
                         <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
                             <div class="col-md-3 col-sm-12 col-xs-12">Lorem ipsum dolor sit amet </div>
@@ -420,11 +420,11 @@
         </div>
         <footer id="page-footer"></footer>
     </div>
-    <script src="clientlibs/aaa-core/thirdparty/jquery/js/jquery.noconflict.js"></script>
-    <script src="clientlibs/aaa-core/base/js/scripts.js"></script>
+    <script src="clientlibs/ace-www/thirdparty/jquery/js/jquery.noconflict.js"></script>
+    <script src="clientlibs/ace-www/base/js/scripts.js"></script>
     <script>
-        $j(function($) {
-            $(".membership-comparision").each(function() {
+        $j(function ($) {
+            $(".membership-comparision").each(function () {
                 var numberOfRows = $(this).find('.membership-cols').length;
                 var fixedRows = $(this).attr('data-index');
                 if (numberOfRows > fixedRows) {
@@ -432,24 +432,24 @@
                     var showCount = parseInt(fixedRows - 1);
                     $(this).find('.membership-cols:gt(' + showCount + ')').hide();
                     $(this).find(".seeAllLink").show();
-                } else {
+                }
+                else {
                     $(".seeAllLink").remove();
                 }
             });
-            $(".btn-info").each(function() {
-                $(this).click(function() {
+            $(".btn-info").each(function () {
+                $(this).click(function () {
                     var header = $(this).data("header");
                     var bodyText = $(this).data("body");
                     $("#myModal").find(".modal-title").text(header);
                     $("#myModal").find(".modal-body").html(bodyText);
                 });
             });
-            $(".seeAll").click(function() {
+            $(".seeAll").click(function () {
                 $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
                 $(this).parent().parent().remove();
             });
         });
-
     </script>
 </body>
 
