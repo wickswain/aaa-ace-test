@@ -1,6 +1,6 @@
 /*****************************************
 /*****************************************
-Page Intro Component
+Membership Comparision Table Component
 *****************************************/
 
 .membership-comparision-header {
@@ -8,14 +8,24 @@ Page Intro Component
 }
 
 .membership-comparision-table {
+    .modal-dialog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+		margin:auto;
+		max-height:200px;
+		.modal-content{margin:0px 20px;}
+    }
     .membership-comparision {
         padding-bottom: 130px;
         .highlight-class {
             z-index: 2;
             margin-top: -10px;
-			img{
-				margin-top:10px;
-			}
+            img {
+                margin-top: 10px;
+            }
         }
         .selected {
             box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
@@ -65,12 +75,11 @@ Page Intro Component
                 }
             }
         }
-        
         .border-none {
             border: none !important;
         }
         .membership {
-            text-align: center;           
+            text-align: center;
         }
         .membership-cols {
             text-align: center;
@@ -86,16 +95,23 @@ Page Intro Component
 
 @media only screen and (min-width: 320px) {
     .membership-comparision {
-	.row {
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
             div:not(:first-child) {
-                border-left: 1px solid #cccccc;				
+                border-left: 1px solid #cccccc;
                 border-top: 1px solid #ccc;
-				div{
-				border : 0;
-				}
+                flex: 1 1 auto;
+                div {
+                    border: 0;
+                }
             }
-			div:first-child {
+            div:first-child {
                 border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                flex: 0 1 100%;
             }
             div:last-child {
                 border-right: 1px solid #ccc;
@@ -104,40 +120,38 @@ Page Intro Component
                 div:not(:first-child) {
                     border-bottom: 1px solid #ccc;
                 }
-            }            
+            }
         }
         .membership {
-            display: flex;
-            justify-content: center;
-			 .header {               
-                padding: 30px 20px;
-                text-align: center;
-				display: flex;
-				flex-flow: column nowrap;
-				justify-content: space-between;
+            .header {
+                padding: 30px 0px;
+                img {
+                    margin: 0 auto;
+                }
                 h1 {
                     padding: 20px 0;
                     font-size: 15px;
                 }
-                p {
+                .subtitle-b-spacing {
                     padding-bottom: 20px;
                 }
                 a {
-                    align-self: center; margin-bottom:0;
+                    margin-bottom: 0;
                 }
             }
         }
         .membership-cols {
-            display: block;
-            justify-content: center;
             div {
                 padding: 15px 15px;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                white-space: nowrap;
             }
         }
     }
+	.modal-header{
+	.close{    margin-top: -45px;
+    margin-right: -15px;}
+	}
 }
 
 @media only screen and (min-width: 480px) {}
@@ -146,50 +160,92 @@ Page Intro Component
     .modal-content {
         padding: 40px;
     }
+	.modal-header{
+	.close{    margin-top: -80px;
+    margin-right: -80px;}
+	}
 }
 
 @media only screen and (min-width: 992px) {
     .membership-comparision {
-	.row {
-            
-			div:first-child {
-                border-top: 0px solid #ccc;
+        .row {
+            div:not(:first-child) {
+                flex: 0 0 auto;
             }
-                     
+            div:first-child {
+                border-top: 0px solid #ccc;
+                border-left: 0px solid #ccc;
+                border-right: 0px solid #ccc;
+                flex: 0 0 auto;
+            }
         }
         .membership {
-            display: flex;
-            justify-content: center;
-			.header {               
-                padding: 50px 30px;
-                text-align: center;
+            .header {
+                padding: 50px 10px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-content: center;
+                align-self: center;
+                .img-block {
+                    min-height: 180px;
+                }
+                img {
+                    margin: 0 auto;
+                }
                 h1 {
                     padding: 30px 0 20px 0;
                     font-size: 28px;
                 }
-                p {
+                .subtitle-b-spacing {
                     padding-bottom: 30px;
                 }
                 a {
-                    /*margin: 15px 0 0;*/
+                    text-decoration: none;
+                    &:focus,
+                    &:visited {
+                        border: none;
+                    }
                 }
             }
         }
         .membership-cols {
-            display: flex;
-            justify-content: center;
             .selected {
                 box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
             }
+			.align-top{    align-items: flex-start !important;}
             div {
                 padding: 15px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .left-col-title {
+                padding-right: 30px;
+                position: relative;
+				float:right;
+                .btn-info {
+                    position: absolute;
+                    top: 0px;
+                    right: 0;
+                }
             }
             div:first-child {
                 background-color: inherit;
                 text-align: right;
+				
             }
         }
     }
 }
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+.membership-cols {div:first-child {
+                background-color: inherit;
+                text-align: right;
+				display:block;
+				
+            }
+			}
+
+}
