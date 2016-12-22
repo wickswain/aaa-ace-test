@@ -3,22 +3,24 @@
 Membership Comparision Table Component
 *****************************************/
 
-.membership-comparision-header {
+.membership-comparison-header {
     text-align: center;
 }
 
-.membership-comparision-table {
+.membership-comparison-table {
     .modal-dialog {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-		margin:auto;
-		max-height:200px;
-		.modal-content{margin:0px 20px;}
+        margin: auto;
+        max-height: 200px;
+        .modal-content {
+            margin: 0px 20px;
+        }
     }
-    .membership-comparision {
+    .membership-comparison {
         padding-bottom: 130px;
         .highlight-class {
             z-index: 2;
@@ -94,7 +96,7 @@ Membership Comparision Table Component
 /* Responsive css for this component */
 
 @media only screen and (min-width: 320px) {
-    .membership-comparision {
+    .membership-comparison {
         .row {
             display: flex;
             flex-flow: row wrap;
@@ -148,10 +150,12 @@ Membership Comparision Table Component
             }
         }
     }
-	.modal-header{
-	.close{    margin-top: -45px;
-    margin-right: -15px;}
-	}
+    .modal-header {
+        .close {
+            margin-top: -45px;
+            margin-right: -15px;
+        }
+    }
 }
 
 @media only screen and (min-width: 480px) {}
@@ -160,14 +164,16 @@ Membership Comparision Table Component
     .modal-content {
         padding: 40px;
     }
-	.modal-header{
-	.close{    margin-top: -80px;
-    margin-right: -80px;}
-	}
+    .modal-header {
+        .close {
+            margin-top: -80px;
+            margin-right: -80px;
+        }
+    }
 }
 
 @media only screen and (min-width: 992px) {
-    .membership-comparision {
+    .membership-comparison {
         .row {
             div:not(:first-child) {
                 flex: 0 0 auto;
@@ -213,7 +219,9 @@ Membership Comparision Table Component
             .selected {
                 box-shadow: 5px 0 5px 0px rgba(0, 0, 0, 0.1), -5px 0 5px 0px rgba(0, 0, 0, 0.1);
             }
-			.align-top{    align-items: flex-start !important;}
+            .align-top {
+                align-items: flex-start !important;
+            }
             div {
                 padding: 15px 15px;
                 display: flex;
@@ -223,7 +231,7 @@ Membership Comparision Table Component
             .left-col-title {
                 padding-right: 30px;
                 position: relative;
-				float:right;
+                float: right;
                 .btn-info {
                     position: absolute;
                     top: 0px;
@@ -233,19 +241,17 @@ Membership Comparision Table Component
             div:first-child {
                 background-color: inherit;
                 text-align: right;
-				
             }
         }
     }
 }
 
 @media only screen and (min-width: 1200px) {
-.membership-cols {div:first-child {
-                background-color: inherit;
-                text-align: right;
-				display:block;
-				
-            }
-			}
-
+    .membership-cols {
+        div:first-child {
+            background-color: inherit;
+            text-align: right;
+            display: block;
+        }
+    }
 }
