@@ -16,9 +16,9 @@
 <!-- Membership Comparision Table
 ============================================= -->
 <div data-sly-test="${properties.totalRowCount}" style="background-color:${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};"
-     class="membership-comparision-table">
+     class="membership-comparison-table">
     <div class="container">
-        <div class="membership-comparision-header horizontal-component-space">
+        <div class="membership-comparison-header horizontal-component-space">
             <div class="horizontal-space roboto-medium font-a"> <span>${properties.title}</span></div>
             <div class="roboto-light font-g text-left" data-sly-unwrap=${wcmmode.disabled}>
                 <sly data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"/>
@@ -26,10 +26,10 @@
         </div>
     </div>
 
-    <!--comparision table content-->
+    <!--comparison table content-->
     <div data-defaultrowcount="${wcmmode.edit ? properties.totalRowCount : properties.seeAllRowIndex}"
          data-rowcount="${properties.totalRowCount}"
-         class="membership-comparision text-center">
+         class="membership-comparison text-center">
         <div class="container highlight-${properties.highlightedColumn}">
             <div class="row membership">
                 <div class="col-md-3 col-sm-4 col-xs-4 header hidden-xs hidden-sm"></div>

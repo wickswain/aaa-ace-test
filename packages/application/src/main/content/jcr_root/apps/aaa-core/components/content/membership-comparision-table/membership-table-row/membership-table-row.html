@@ -19,19 +19,28 @@
 </div>
 
 <sly data-sly-test="${properties.rowItemDescription}">
-	<div class="row membership-cols roboto-light font-h">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info">
-        <span class="left-col-title">
-         ${properties.rowItemDescription} 
+	<div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
+        <div class="col-md-3 col-sm-12 col-xs-12 icon-info ${properties.alignTop ? 'align-top' : ''}">
+         	${properties.rowItemDescription} 
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="#myModal" class="btn-info">
 		    </a>
-		    </span>
         </div>
+    </div>
         
+    <div class="row membership-cols roboto-light font-h">
+    	<div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm ${properties.alignTop ? 'align-top' : ''}">
+         	${properties.rowItemDescription} 
+            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+               data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
+               href="#myModal" class="btn-info">
+		    </a>
+        </div>
+    
         <div data-sly-test="${tablerowprovider.columnsCount >= 1}" 
-             class="col-md-3 ${tablerowprovider.columnsCount == 1 ? 'col-sm-12 col-xs-12' : ''} ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''} text-left"> 
+             class="col-md-3 ${tablerowprovider.columnsCount == 1 ? 'col-sm-12 col-xs-12' : ''} ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''}
+             	    ${properties.alignTop ? 'align-top' : ''}"> 
             <div data-sly-test="${properties.enableCol1Text}" 
             	 data-sly-resource="${ @path='col1_text', resourceType = '/apps/aaa-core/components/content/rte'}"
                  data-sly-unwrap="${wcmmode.disabled}">
@@ -42,7 +51,7 @@
         </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 2}"  
-             class="col-md-3 ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''} text-left">
+             class="col-md-3 ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''} ${properties.alignTop ? 'align-top' : ''}">
             <div data-sly-test="${properties.enableCol2Text}" 
             	 data-sly-resource="${ @path='col2_text', resourceType = '/apps/aaa-core/components/content/rte'}"
                  data-sly-unwrap="${wcmmode.disabled}">
@@ -53,7 +62,7 @@
         </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 3}"  
-             class="col-md-3 col-sm-4 col-xs-4 text-left">
+             class="col-md-3 col-sm-4 col-xs-4 ${properties.alignTop ? 'align-top' : ''}">
             <div data-sly-test="${properties.enableCol3Text}" 
             	 data-sly-resource="${ @path='col3_text', resourceType = '/apps/aaa-core/components/content/rte'}"
                  data-sly-unwrap="${wcmmode.disabled}">
