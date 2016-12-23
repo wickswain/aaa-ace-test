@@ -101,7 +101,7 @@ Membership Comparison Table Component
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
-            div:not(: first-child) {
+            div:not(:first-child) {
                 border-left: 1px solid #cccccc;
                 border-top: 1px solid #ccc;
                 flex: 1 1 auto;
@@ -119,7 +119,7 @@ Membership Comparison Table Component
                 border-right: 1px solid #ccc;
             }
             &:last-child {
-                div:not(: first-child) {
+                div:not(:first-child) {
                     border-bottom: 1px solid #ccc;
                 }
             }
@@ -175,7 +175,7 @@ Membership Comparison Table Component
 @media only screen and (min-width: 992px) {
     .membership-comparison {
         .row {
-            div:not(: first-child) {
+            div:not(:first-child) {
                 flex: 0 0 auto;
             }
             div:first-child {
