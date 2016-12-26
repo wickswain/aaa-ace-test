@@ -1,0 +1,105 @@
+<!--/*
+
+    Header Component
+    --------------------------------------------------
+    There will be one global header for all pages across AAA site, regardless of the club/region.
+    Logo will be regional based on the region/club.
+    
+    Header component is part of global header and construct the useful links, user login and logo.
+
+*/-->
+
+<!-- Sightly global objects declaration
+============================================= -->
+<sly data-sly-use.leftLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = properties.leftLink1LinkTo}"/>
+<sly data-sly-use.leftLink2="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = properties.leftLink2LinkTo}"/>
+<sly data-sly-use.rightLink1="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
+        @ url = properties.rightLink1LinkTo}"/>
+<sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
+        @ link = properties.searchPagePath}" />
+<!-- #sightly-global-objects-declaration end -->
+
+<!-- Header component
+============================================= -->
+<div id="global-header">
+    <div class="row top-header" id="top-header">
+        <div class="col-xs-4 col-md-5 text-right col-md-push-7">
+            <span class="menu">
+	            <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i> More
+	        </span>
+	        <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
+	            <li id="nav-links">
+	                <a data-sly-test="${properties.rightLink1Label}"
+	                   data-sly-text="${properties.rightLink1Label}"
+	                   target="${properties.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${rightLink1.url}">
+	                </a>
+	                
+	                <span data-sly-test="${properties.rightLink1Label}"
+	                      class="pipe">|</span>
+	                
+	                <!-- /* TODO: Profile section changes need to include */ -->
+	                <sly data-sly-include="login.html"/>
+	            </li>
+	            
+	            <li>
+	                <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text">
+	                    <span class="input-group-addon">
+	                        <i class="glyphicon glyphicon-search " aria-hidden="true"></i> ${properties.searchLabel}
+	                    </span>
+	                </span>
+	            </li>
+	        </ul>
+	        
+	        <div class="expand-searchbar" style="width:20%; opacity:0;">
+	            <form action="${searchPage.linkURL @ context='uri'}" role="search">
+	                <div class="input-group search-bar">
+	                    <span class="input-group-addon">
+	                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+	                    </span>
+	                    
+	                    <input type="search" name="q" id="q" placeholder="${properties.searchPlaceholderLabel}" class="form-control font-h" />
+	                    
+	                    <span class="input-group-addon">
+	                        <i class="close-icon" id="d-close-searchbar">+</i>
+	                    </span>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	    
+	    <div class="text-center col-xs-4 col-md-2">
+	        <div class="brand">
+	            <sly data-sly-resource="${ @path='global-header-logo', resourceType='/apps/aaa-core/components/content/reference'}" />
+	        </div>
+	    </div>
+	    
+	    <div class="col-xs-4 col-md-5 col-md-pull-7">
+	       <ul class="nav-list-inline font-h dropdown roadside-text">
+
+	            <li>
+                     <a data-sly-test="${properties.leftLink1Label}"  style="background-image:url( '${properties.icon1Path ? properties.icon1Path : '' @ context='uri'}');" title="${properties.icon1Alt}"
+	                   target="${properties.leftLink1NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${leftLink1.url}" id="truck-link">
+	                    ${properties.leftLink1Label}
+	                </a>
+	                
+	                <span data-sly-test="${properties.leftLink1Label}"
+	                      class="pipe hidden-xs hidden-sm">|
+	                </span>
+	                
+	                <a data-sly-test="${properties.leftLink2Label}"
+	                   data-sly-text="${properties.leftLink2Label}"
+	                   target="${properties.leftLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
+	                   href="${leftLink2.url}" class="link2 hidden-xs hidden-sm">
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+    
+    <div class="clearfix"></div>
+</div>
+<!-- #header-component end -->
