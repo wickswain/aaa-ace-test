@@ -40,6 +40,12 @@
                                             name="./columnCount"
                                             text="Two Columns"
                                             value="2"/>
+                                    <htmlsource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/radio"
+                                            name="./columnCount"
+                                            text="HTML Source"
+                                            value="html"/>
                                 </items>
                             </column-count>
 
@@ -154,6 +160,7 @@
                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                     fieldDescription="Please enter Jump Link Id"
                                     fieldLabel="Jump Link Id"
+                                    required="{Boolean}true"
                                     name="./jumpLinkId"/>
                         </items>
                     </columns>
