@@ -1,0 +1,60 @@
+<!--/*
+
+   Modal Pop-up component .
+    ----------------------------------------------------------------
+
+    This component is a Modal Pop-Up component and can be used across the pages throughout the site.
+
+    
+    Default Behavior:
+    1. Once you click the link it will give the Pop-Up. This componet only visible in edit mode only. mandatory field is Modal Id.
+
+    Required Fields:
+    1. Modal Id
+    2. Header Title
+    3. Body Copy/test
+
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.id}"
+    data-emptytext="Author Modal Pop-Up Component Here."
+    src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+    alt="Modal Pop-Up Component" />
+
+<!-- #placeholder-content end -->
+
+<!-- Modal pop-Up Component 
+============================================= -->
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && properties.id}"
+	 class="container">
+    <div><b>The below text is visible only in Edit or Design mode.</b></div>
+    <div><b>Modal ID:</b> ${properties.id} </div>
+    <div><b>Modal Header:</b> ${properties.title} </div>
+    <div><b>Modal Body/Copy:</b> ${properties.text @ context='html'}</div>
+</div>
+
+<div data-sly-test="${properties.id}" id="${properties.id}"
+	 class="modal fade text-left">
+
+    <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title1 roboto-bold font-b"
+					data-sly-text="${properties.title}">
+				</h4> 
+			</div>
+			
+			<div class="modal-body1">
+				<p>${properties.text @ context='html'}</p>
+			</div>
+		</div>
+    </div>
+
+</div>
+
+<!-- #Modal pop-Up Component end -->
