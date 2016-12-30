@@ -13,7 +13,7 @@
 
 <!-- Placeholder Content
 ============================================= -->
-<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !resource.listChildren}"
 	data-sly-text="Author CTA Small Button/Link Component Here."
 	data-emptytext="Author CTA Small Button/Link Component Here."
 	style="text-align: center;"></div>
