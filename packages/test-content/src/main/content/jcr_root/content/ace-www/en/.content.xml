@@ -13,6 +13,14 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="aaa-core/components/content/global-header"/>
         </header-ipar>
+        <footer-ipar
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/iparsys">
+            <reference
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aaa-core/components/content/reference"
+                path="/content/personalization/ace-www/calif/global-footer/jcr:content/content-par/global_footer"/>
+        </footer-ipar>
     </jcr:content>
     <sprint1/>
     <sprint2/>
