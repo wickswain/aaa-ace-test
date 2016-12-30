@@ -146,25 +146,28 @@
                                     <div class="close-icon close-drawer"><span>+</span></div>
                                 </div>
                                 <!-- navigation tiles -->
-                                <div class="drawers-tiles">
+                                <div data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-tiles/jcr:content/content-par/navigation_tiles' @ format=[itemList.index]}"
+                                	 data-sly-use.componentpath="${'com.aaa.ace.sightly.providers.ComponentPersonalizationPathProvider' @ path = path}"
+                                	 class="drawers-tiles">
                                     <div id="tiles-nav-${itemList.index}" 
-                                         data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-tiles/jcr:content/content-par/navigation_tiles' @ format=[itemList.index]}"
-                                         data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-tiles' }">
+                                         data-sly-resource="${ @path=componentpath.path, resourceType='/apps/aaa-core/components/content/navigation-tiles' }">
                                     </div> 
 								</div>
                                 <!-- navigation columnList -->
-                                <div class="drawers-tiles-list">
-                                <div id="list-nav-${itemList.index}"
-                                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-links/jcr:content/content-par/navigation_columnlis' @ format=[itemList.index]}"
-                                     data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-columnlist' }">
-                                </div>
+                                <div data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/navigation-links/jcr:content/content-par/navigation_columnlis' @ format=[itemList.index]}"
+	                                 data-sly-use.componentpath="${'com.aaa.ace.sightly.providers.ComponentPersonalizationPathProvider' @ path = path}"
+                                	 class="drawers-tiles-list">
+	                                <div id="list-nav-${itemList.index}"
+	                                     data-sly-resource="${ @path=componentpath.path, resourceType='/apps/aaa-core/components/content/navigation-columnlist' }">
+	                                </div>
                                 </div>
                                 <!-- Drawers bootom -->
-                                <div class="bottom-tiles">
-                                <div id="bottom-nav-${itemList.index}"
-                                     data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
-                                     data-sly-resource="${ @path=path, resourceType='/apps/aaa-core/components/content/navigation-textandimage' }">
-                                </div>
+                                <div data-sly-test.path="${'/content/personalization/ace-www/globalnav-link{0}/bottom-navigation/jcr:content/content-par/navigation_textandim' @ format=[itemList.index]}"
+	                                 data-sly-use.componentpath="${'com.aaa.ace.sightly.providers.ComponentPersonalizationPathProvider' @ path = path}"
+                                	 class="bottom-tiles">
+	                                <div id="bottom-nav-${itemList.index}"
+	                                     data-sly-resource="${ @path=componentpath.path, resourceType='/apps/aaa-core/components/content/navigation-textandimage' }">
+	                                </div>
                                 </div>
                             </div>
                         </div>
