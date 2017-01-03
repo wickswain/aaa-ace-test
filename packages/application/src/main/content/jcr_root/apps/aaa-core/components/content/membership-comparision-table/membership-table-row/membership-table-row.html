@@ -24,7 +24,7 @@
          	${properties.rowItemDescription} 
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
-               href="#myModal" class="btn-info">
+               href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
 		    </a>
         </div>
     </div>
@@ -34,7 +34,7 @@
          	${properties.rowItemDescription} 
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
-               href="#myModal" class="btn-info">
+               href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
 		    </a>
         </div>
     
