@@ -687,10 +687,22 @@
                     <phone-dial-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".modal-option-enable-showhide-target"
                         fieldDescription="Please check box if it is phone number"
                         name="./button1/phonedialFlag"
                         text="Is Phone Number?"
                         value="{Boolean}true"/>
+                    <phone-number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        activeValidation="{Boolean}true"
+                        class="hide modal-option-enable-showhide-target"
+                        fieldDescription="Only numbers can accepted"
+                        fieldLabel="Enter Phone Number"
+                        name="./buttonphonenumber"
+                        pattern="number"
+                        showhidetargetvalue="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -812,10 +824,22 @@
                     <phone-dial-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".modal-option-enable-showhide-target"
                         fieldDescription="Please check box if it is phone number"
                         name="./button2/phonedialFlag"
                         text="Is Phone Number?"
                         value="{Boolean}true"/>
+                    <phone-number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        activeValidation="{Boolean}true"
+                        class="hide modal-option-enable-showhide-target"
+                        fieldDescription="Only numbers can accepted"
+                        fieldLabel="Enter Phone Number"
+                        name="./buttonphonenumber"
+                        pattern="number"
+                        showhidetargetvalue="{Boolean}true"/>
                     <open-in-new-tab-flag
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
