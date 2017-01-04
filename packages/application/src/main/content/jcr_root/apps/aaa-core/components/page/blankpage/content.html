@@ -2,18 +2,14 @@
 
   	Blank PAGE
   	--------------------------------------------------------------
-	It doesn't have header and footer. It has only richtext editor.
+	This template does not contians the header and footer instead will have an RTE 
+	as an embeded component.
 
 */-->
 
-
-
 <!-- Including rte component
 	========================= -->
-
-
-		<sly data-sly-resource = "${'blankpage-rte'@resourceType='/apps/aaa-core/components/content/rte'}"/>
-
-
- <!-- Including rte component end.
-	============================== -->
+<div id="page-container">
+	<sly data-sly-resource="${'blankpage-rte'@resourceType='/apps/aaa-core/components/content/rte'}" />
+</div>
+<!-- Including rte component end -->
