@@ -1,5 +1,7 @@
 package com.aaa.ace.sightly.providers;
 
+import java.net.URL;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
@@ -34,10 +36,7 @@ public class RegionDataProvider extends WCMUsePojo {
         String component = get("componentName", String.class);
         log.debug("Component name passed as a parameter to provider is: " + component);
 
-        hostName = getRequest().getHeader("X-FORWARDED-FOR");
-        if (StringUtils.isBlank(hostName)) {
-            hostName = getRequest().getRemoteHost();
-        }
+        hostName = new URL(getRequest().getRequestURL().toString()).getHost();
         log.debug("Host Name resolved in provider is: " + hostName);
 
         // region resolved by default to California.
