@@ -2,4 +2,6 @@
 
 tab-hide-show.js
 multifield.js
+text-field.js
 utils.js
+
