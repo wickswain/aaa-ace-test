@@ -1,10 +1,14 @@
 package com.aaa.ace.servlets;
 
-import com.day.cq.commons.Externalizer;
-import com.day.cq.wcm.api.NameConstants;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageFilter;
-import com.day.cq.wcm.api.PageManager;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.felix.scr.annotations.Activate;
@@ -24,15 +28,10 @@ import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.Map;
-
-import javax.servlet.ServletException;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamWriter;
+import com.day.cq.commons.Externalizer;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageFilter;
+import com.day.cq.wcm.api.PageManager;
 
 
 
@@ -56,6 +55,9 @@ public final class SiteMapServlet extends SlingSafeMethodsServlet {
     private static final boolean DEFAULT_INCLUDE_LAST_MODIFIED = false;
 
     private static final String DEFAULT_HOME_PAGE = "/content/ace-www";
+    
+    //default property to be used to exclude pages. 
+    private static final String DEFAULT_HIDE_IN_SITEMAP_PROPERTY = "hideInSitemap";
 
     @Property(label = "Site Home Page", unbounded = PropertyUnbounded.DEFAULT,
                     description = "The path of site home page, this will be used as the root page"
@@ -113,7 +115,7 @@ public final class SiteMapServlet extends SlingSafeMethodsServlet {
                         properties.get(PROP_PRIORITY_PROPERTIES), new String[0]);
         this.excludeFromSiteMapProperty = PropertiesUtil.toString(
                         properties.get(PROP_EXCLUDE_FROM_SITEMAP_PROPERTY),
-                        NameConstants.PN_HIDE_IN_NAV);
+                        DEFAULT_HIDE_IN_SITEMAP_PROPERTY);
         this.siteRootPath = PropertiesUtil.toString(properties.get(PROP_SITE_HOME_PAGE),
                         DEFAULT_HOME_PAGE);
     }
