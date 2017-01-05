@@ -60,7 +60,7 @@ try {
     String ddClassName = DropTarget.CSS_CLASS_PREFIX + "paragraph";
 
     // Include the target paragraph by path
-    String targetPath = currentStyle.get("path", String.class);
+    String targetPath = properties.get("path", String.class);
 
     RegionDataService regionService = sling.getService(RegionDataService.class);
     String regionName = regionService.getRegionInfo(slingRequest);
