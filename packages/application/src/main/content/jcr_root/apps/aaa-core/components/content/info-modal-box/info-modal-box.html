@@ -4,22 +4,24 @@
     ----------------------------------------------------------------
 
 */-->
-<div id="${properties.jumpLinkId}"></div>
-<div id="infoModal" data-sly-test.hasContent="${properties.columnCount}"
-     class="${(wcmmode.edit || wcmmode.design) ? 'col-md-offset-1 col-sm-offset-1 col-xs-offset-1 fade in' : 'modal col-md-offset-1 col-sm-offset-1 col-xs-offset-1 fade in'}"
+<div id="${properties.jumpLinkId}" data-sly-test.hasContent="${properties.columnCount}"
+     class="${(wcmmode.edit || wcmmode.design) ? 'col-md-offset-1 col-sm-offset-1 col-xs-offset-1 fade in' : 'info-modal modal col-md-offset-1 col-sm-offset-1 col-xs-offset-1 fade in'}"
      tabindex="-1" role="dialog" aria-hidden="false">
     <div class="modal-header">
-        <button type="button" class="close"
-                data-dismiss="modal" aria-hidden="true">×</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     </div>
+
     <div class="modal-body">
+
         <div data-sly-test="${(properties.columnCount == '1')}">
+            <h2 data-sly-test="${properties.headerCopy}">${properties.headerCopy @ context ='html'}</h2>
             <div class="col-lg-12 col-md-12">
                 <sly data-sly-resource="${ @path='singleColumn', resourceType='/apps/aaa-core/components/content/info-modal-box/modal-item'}" />
             </div>
         </div>
 
         <div data-sly-test="${(properties.columnCount == '2')}">
+            <h2 data-sly-test="${properties.headerCopy}">${properties.headerCopy @ context ='html'}</h2>
             <div class="col-lg-6 col-md-6">
                 <sly data-sly-resource="${ @path='doubleLeftColumn', resourceType='/apps/aaa-core/components/content/info-modal-box/modal-item'}" />
             </div>
@@ -28,9 +30,20 @@
             </div>
         </div>
 
+        <div data-sly-test="${(properties.columnCount == 'html')}">
+            <h2 data-sly-test="${properties.headerCopy}">${properties.headerCopy @ context ='html'}</h2>
+            <div>
+                <sly data-sly-resource="${ @path='htmlSource', resourceType='/apps/aaa-core/components/content/html-source'}" />
+            </div>
+        </div>
+
     </div>
 </div>
 
+<!--/*
+<div>
+    ${properties.htmlSource @ context='unsafe'}
+</div>*/-->
 
 <!-- Placeholder Content
 ============================================= -->

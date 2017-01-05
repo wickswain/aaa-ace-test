@@ -13,7 +13,7 @@
 
 <!-- Placeholder Content
 ============================================= -->
-<div data-sly-test="${wcmmode.edit || wcmmode.design}"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !resource.listChildren}"
 	data-sly-text="Author CTA Large Button/Link Component Here."
 	data-emptytext="Author CTA Large Button/Link Component Here."
 	style="text-align: center;"></div>
@@ -33,7 +33,7 @@
 		</a> 
 		<a data-sly-test="${child.phonedialFlag}"
 			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-			href="tel:${child.ctaLabel}"> 
+			href="tel:${child.buttonphonenumber}"> 
 			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 		</a> 
 	</sly> 
@@ -47,7 +47,7 @@
 			</a>
 			<a data-sly-test="${child.phonedialFlag}" 
 				class="link-btn link-lg ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'} icon-text"
-				href="tel:${child.ctaLabel}"> 
+				href="tel:${child.buttonphonenumber}"> 
 				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 			</a>
 		</p>
