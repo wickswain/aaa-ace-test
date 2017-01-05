@@ -27,7 +27,11 @@ Home Header Component
         transform: translate(-50%, -50%);
         width: auto;
         min-width: 100%;
-        min-height: 100%;
+        min-height: 100%;		
+		&::-webkit-media-controls-start-playback-button {
+			display: none!important;
+			-webkit-appearance: none;
+		}
     }
     .opacity-layer {
         position: absolute;
