@@ -2,10 +2,10 @@ $j(function($) {
 	var showHideMembershipCols = function(){
 	    var numberOfRows = $(this).attr('data-rowcount');
 	    var fixedRows = $(this).attr('data-defaultrowcount');
-	    	
+
 	    if (numberOfRows > fixedRows) {
-	    	var showCount = parseInt(fixedRows - 1);
-	
+	    	var showCount = parseInt(fixedRows) * 2;
+
 	        $(this).find('.membership-cols:gt(' + showCount + ')').hide();
 	        $(this).find(".seeAllLink").show();
 	    } else {
@@ -13,7 +13,7 @@ $j(function($) {
 	    }
 	};
 
-    $(".membership-comparision").each(function() {
+    $(".membership-comparison").each(function() {
     	showHideMembershipCols.call(this);
     });
 	
