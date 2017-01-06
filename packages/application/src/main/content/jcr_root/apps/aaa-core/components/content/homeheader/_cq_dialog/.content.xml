@@ -30,7 +30,7 @@
                                 fieldDescription="Please enter title text for heading"
                                 fieldLabel="Heading/Title"
                                 name="./title"
-                                required="{Boolean}true"/>
+                                required="{Boolean}false"/>
                             <title-text-color
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
