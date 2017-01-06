@@ -239,5 +239,5 @@ $j(function($) {
         var navid = $(this).attr('id');
         managaeNav(navid);
     });
-	$(".membership-cols .col-md-3").find("div").css("flex":"auto", "text-align": "inherit");
+	$(".membership-cols .col-md-3").find("div").css({"flex": "auto", "text-align": "inherit", "padding": "0"});
 });
