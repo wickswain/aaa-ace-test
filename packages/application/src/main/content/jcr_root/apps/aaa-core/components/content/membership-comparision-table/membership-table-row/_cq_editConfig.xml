@@ -7,4 +7,9 @@
     <cq:listeners
         jcr:primaryType="cq:EditListenersConfig"
         afteredit="REFRESH_PARENT"/>
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        configPath="/apps/aaa-core/components/content/rte/inplace-edit/items/text"
+        editorType="text"/>
 </jcr:root>
