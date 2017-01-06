@@ -54,15 +54,7 @@ $j(function ($) {
     }
     footerResponse();
     /*Sticky Navigation*/
-    var scrollTop = ($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;
-    $('.sticky-nav .dropdown-menu li > a').click(function (e) {
-        var hashtag = $(this.hash)
-            , $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
-        $('html,body').stop().animate({
-            scrollTop: $target
-        }, 1000, 'swing');
-        e.preventDefault();
-    });
+    var scrollTop = 0; /*($('.sticky-nav').is(':visible')) ? parseInt($('.sticky-nav').offset().top) : 0;*/
     /*Home Header resize*/
     function headerResize() {
         var winheight = $(window).height()
@@ -82,7 +74,7 @@ $j(function ($) {
     }
     headerResize();
     /*Home Header - jump link*/
-    $('.home-header .learn-link a').click(function (e) {
+    $('.home-header .learn-link > a').click(function (e) {
         var hashtag = $(this.hash)
             , $target = (hashtag != '') ? parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight() : 0;
         $('html,body').stop().animate({
@@ -108,8 +100,17 @@ $j(function ($) {
             });
         }
         /*Sticky Nav scroll event*/
+        $('.sticky-nav .dropdown-menu > li > a').on('click', function (e) {
+            var hashtag = $(this.hash)
+                , $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
+            console.log("hashtag" + hashtag);
+            $('html,body').stop().animate({
+                scrollTop: $target
+            }, 1000, 'swing');
+            e.preventDefault();
+        });
         ($(this).scrollTop() > scrollTop) ? $('.sticky-nav').addClass('navbar-fixed-top').show(): $('.sticky-nav').removeClass('navbar-fixed-top').hide();
-        $('.sticky-nav .dropdown-menu li > a').each(function () {
+        $('.sticky-nav .dropdown-menu > li > a').each(function () {
             var scrolltag = $(this.hash)
                 , $target = (scrolltag != 'undefined') ? parseInt(scrolltag.offset().top - 1) + 45 : 0;
             if ($(window).scrollTop() >= $target) {
@@ -249,5 +250,10 @@ $j(function ($) {
     $('.navigation-bar .nav > li.dropdown:not(:last-child) > a').click(function (e) {
         var navid = $(this).attr('id');
         managaeNav(navid);
+    });
+    $(".membership-cols .col-md-3").find("div").css({
+        "flex": "auto"
+        , "text-align": "inherit"
+        , "padding": "0"
     });
 });
