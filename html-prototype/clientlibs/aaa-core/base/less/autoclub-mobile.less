@@ -1,0 +1,72 @@
+
+#autoClubAppWidget{
+  background-color:#0099ff;
+  overflow: hidden;
+}
+
+.phone-header-img{
+  padding-top: 20px;
+}
+
+.mobile-app-copy{
+  padding-top: 50px;
+
+  p, h1, span{
+    color: white;
+  }
+
+  a{
+    color: white;
+    text-decoration: underline;
+
+    &:hover{
+      color: white;
+    }
+    &:active{
+      color: white;
+    }
+  }
+}
+
+.store-badges{
+
+  ul{
+    display: inline-flex;
+    list-style: none;
+    padding: 20px;
+
+    li{
+      padding: 5px;
+
+      img{
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width : 414px) {
+  .store-badges {
+    ul {
+      display: block;
+      li {
+        img {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width : 1024px) {
+  .store-badges {
+    ul {
+      display: block;
+      li {
+        img {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
