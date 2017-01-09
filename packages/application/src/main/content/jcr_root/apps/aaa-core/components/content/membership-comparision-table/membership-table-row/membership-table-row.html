@@ -14,19 +14,17 @@
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.rowItemDescription}" data-emptytext="Author Membership Table Row here"
+<sly data-sly-test.isNotAuthored="${!(properties.alignTop || properties.showModalBox || properties.text || properties.modalTitle || properties.showModalBox || properties.enableCol1Text || properties.enableCol2Text || properties.enableCol3Text)}" />
+
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && isNotAuthored}" data-emptytext="Author Membership Table Row here"
      class="cq-placeholder" style="text-align: center;">
 </div>
 
 <!-- Placeholder Content end -->
 
-<sly data-sly-test="${properties.rowItemDescription}">
 	<div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
         <div class="col-md-3 col-sm-12 col-xs-12 icon-info ${properties.alignTop ? 'align-top' : ''}">
-         	<div data-sly-test="${properties.rowItemDescription}" 
-            	 data-sly-resource="${ @path='rowItemDescription1', resourceType = '/apps/aaa-core/components/content/rte'}"
-                 data-sly-unwrap="${wcmmode.disabled}">
-            </div> 
+			<span><sly data-sly-resource="${ @path='rowItemDescription1', resourceType = '/apps/aaa-core/components/content/rte'}"/></span>
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
@@ -36,10 +34,7 @@
         
     <div class="row membership-cols roboto-light font-h">
     	<div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm ${properties.alignTop ? 'align-top' : ''}">
-         	<div data-sly-test="${properties.rowItemDescription}" 
-            	 data-sly-resource="${ @path='rowItemDescription2', resourceType = '/apps/aaa-core/components/content/rte'}"
-                 data-sly-unwrap="${wcmmode.disabled}">
-            </div> 
+         	<span><sly data-sly-resource="${ @path='rowItemDescription2', resourceType = '/apps/aaa-core/components/content/rte'}"/></span>
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
@@ -80,4 +75,3 @@
             </sly>
         </div>
     </div>
-</sly>

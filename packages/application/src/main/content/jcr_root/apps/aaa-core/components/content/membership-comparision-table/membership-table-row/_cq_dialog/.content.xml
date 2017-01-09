@@ -23,13 +23,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <rowitemtabcheckbox
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                fieldDescription="Please select the checkbox to show enter description about the row item tab"
-                                name="./rowItemDescription"
-                                text="Show rowItemDescription ?"
-                                value="{Boolean}true"/>
                             <aligntop
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
