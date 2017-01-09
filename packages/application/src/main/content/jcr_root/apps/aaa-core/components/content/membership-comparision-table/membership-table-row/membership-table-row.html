@@ -18,10 +18,15 @@
      class="cq-placeholder" style="text-align: center;">
 </div>
 
+<!-- Placeholder Content end -->
+
 <sly data-sly-test="${properties.rowItemDescription}">
 	<div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
         <div class="col-md-3 col-sm-12 col-xs-12 icon-info ${properties.alignTop ? 'align-top' : ''}">
-         	${properties.rowItemDescription} 
+         	<div data-sly-test="${properties.rowItemDescription}" 
+            	 data-sly-resource="${ @path='rowItemDescription1', resourceType = '/apps/aaa-core/components/content/rte'}"
+                 data-sly-unwrap="${wcmmode.disabled}">
+            </div> 
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
@@ -31,7 +36,10 @@
         
     <div class="row membership-cols roboto-light font-h">
     	<div class="col-md-3 col-sm-12 col-xs-12 icon-info hidden-xs hidden-sm ${properties.alignTop ? 'align-top' : ''}">
-         	${properties.rowItemDescription} 
+         	<div data-sly-test="${properties.rowItemDescription}" 
+            	 data-sly-resource="${ @path='rowItemDescription2', resourceType = '/apps/aaa-core/components/content/rte'}"
+                 data-sly-unwrap="${wcmmode.disabled}">
+            </div> 
             <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
@@ -73,4 +81,3 @@
         </div>
     </div>
 </sly>
-
