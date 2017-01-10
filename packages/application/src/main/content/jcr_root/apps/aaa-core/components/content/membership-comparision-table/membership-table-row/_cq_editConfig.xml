@@ -3,14 +3,4 @@
     cq:actions="[text:Membership Comparision Table Row,edit,-,copymove,delete,insert]"
     cq:dialogMode="floating"
     cq:disableTargeting="{Boolean}true"
-    jcr:primaryType="cq:EditConfig">
-    <cq:listeners
-        jcr:primaryType="cq:EditListenersConfig"
-        afteredit="REFRESH_PAGE"
-        aftermove="REFRESH_PAGE"/>
-    <cq:inplaceEditing
-        jcr:primaryType="cq:InplaceEditingConfig"
-        active="{Boolean}true"
-        configPath="/apps/aaa-core/components/content/rte/inplace-edit/items/text"
-        editorType="text"/>
-</jcr:root>
+    jcr:primaryType="cq:EditConfig"/>
