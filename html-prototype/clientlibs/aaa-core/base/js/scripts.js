@@ -1,7 +1,7 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:07-Nov-2016
+    Modified Date:10-Jan-2017
     Version:5
 *****************************************/
 $j(function($) {
@@ -214,7 +214,7 @@ $j(function($) {
             }
         } else {
             $("#" + navid).removeClass('opend');
-            $('.drawers-wrapper .overlay').hide();
+            $('.drawers-wrapper .overlay, .drawers-wrapper').hide();
             $("#" + navid).next().show();
             $(".slide-nav").css("left", "-375px");
             $(".slide-nav").css("top", "0px");
