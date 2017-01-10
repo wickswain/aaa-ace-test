@@ -1,4 +1,4 @@
-$j(function($) {
+var interval = setInterval(function() {
 	var showHideMembershipCols = function(){
 	    var numberOfRows = $(this).attr('data-rowcount');
 	    var fixedRows = $(this).attr('data-defaultrowcount');
@@ -14,14 +14,20 @@ $j(function($) {
 	};
 
     $(".membership-comparison").each(function() {
-    	showHideMembershipCols.call(this);
+        showHideMembershipCols.call(this);
     });
-	
-    $(".seeAll").click(function() {
-        $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
-        $(this).parent().parent().remove();
-    });
-});
+
+    if(document.readyState === 'complete') {
+        $(".seeAll").click(function() {
+            console.log("Bharath");
+            $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
+            $(this).parent().parent().remove();
+        });
+
+		clearInterval(interval);
+    }
+
+}, 100);
 
 $(document).on("click", ".btn-info", function () {
 	var header = $(this).data("header");
