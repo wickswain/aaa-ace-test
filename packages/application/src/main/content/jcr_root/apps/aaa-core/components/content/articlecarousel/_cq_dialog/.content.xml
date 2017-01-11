@@ -50,7 +50,7 @@
                                                     fieldDescription="Please select the path to image for carousel."
                                                     fieldLabel="Carousel image"
                                                     name="./carouselImage"
-                                                    required="true"
+                                                    required="{Boolean}true"
                                                     rootPath="/content/dam"/>
                                                 <alt-text
                                                     jcr:primaryType="nt:unstructured"
@@ -58,7 +58,7 @@
                                                     fieldDescription="Please enter Icon Alt Text"
                                                     fieldLabel="Alt Text"
                                                     name="./altText"
-                                                    required="false"/>
+                                                    required="{Boolean}false"/>
                                                 <image-label
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
