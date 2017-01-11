@@ -245,9 +245,24 @@ $j(function($) {
 	
 });
 
-$(document).on("click", ".modal-popup", function () {
-	var modalId = $(this).attr('href');
-	if(modalId) {
-        $(modalId).modal('show');
+$('a').click(function() {
+	var modalId;
+	var isModalLink = $(this).has('span.modal-popup');
+
+	if (isModalLink.length === 1) {
+		modalId = $(this).attr('href');
+	} else {
+		isModalLink = $(this).parent('span.modal-popup');
+
+		if (isModalLink.length === 1) {
+			modalId = $(this).attr('href');
+		}
+	}
+
+	if (modalId) {
+		if (modalId.indexOf('#') === -1) {
+			modalId = '#' + modalId;
+		}
+		$(modalId).modal('show');
 	}
 });
