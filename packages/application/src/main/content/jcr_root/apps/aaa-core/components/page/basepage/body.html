@@ -38,8 +38,8 @@
         var temp = "";
 	    var pageval = "";
 	    var cc = "";
-	    
-	    if(requesturl.lastIndexOf("home.html") != -1) {
+
+	    if(requesturl.lastIndexOf(".html") === -1) {
 	        pageval = channel;
 	    } else {
         	temp = pathname.replace(pathname.substring(0, pathname.indexOf("/") + 1), "");
