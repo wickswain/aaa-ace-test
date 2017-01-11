@@ -19,7 +19,6 @@ var interval = setInterval(function() {
 
     if(document.readyState === 'complete') {
         $(".seeAll").click(function() {
-            console.log("Bharath");
             $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
             $(this).parent().parent().remove();
         });
