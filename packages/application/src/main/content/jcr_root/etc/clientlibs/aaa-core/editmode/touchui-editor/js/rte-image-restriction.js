@@ -1,5 +1,5 @@
 (function (document, $, ns) {
-"use strict"; 
+"use strict";
 $(document).on("click", ".cq-dialog-submit", function (e) {
 	e.stopPropagation();
 	e.preventDefault();
