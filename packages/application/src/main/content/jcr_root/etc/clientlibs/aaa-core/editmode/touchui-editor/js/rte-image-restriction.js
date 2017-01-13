@@ -9,7 +9,7 @@ $(document).on("click", ".cq-dialog-submit", function (e) {
 	if(RTEimg.includes('<img src="/content/dam/')){
 	ns.ui.helpers.prompt({
 	title: Granite.I18n.get("Invalid Input"),
-	message: "Images are not allowed here",
+	message: "Image not allowed on RTE component",
 	actions: [{
 	id: "CANCEL",
 	text: "CANCEL",
