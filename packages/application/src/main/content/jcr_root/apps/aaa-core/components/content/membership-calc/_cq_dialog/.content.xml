@@ -200,7 +200,6 @@
                                                     activeValidation="{Boolean}true"
                                                     fieldDescription="Please enter Actual Price"
                                                     fieldLabel="Actual Price"
-                                                    maxlength="{Long}20"
                                                     name="./actualPrice"
                                                     pattern="number"
                                                     text="Actual Price"/>
