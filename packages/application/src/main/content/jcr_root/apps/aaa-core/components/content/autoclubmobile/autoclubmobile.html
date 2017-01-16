@@ -9,12 +9,11 @@
 
 */-->
 
-
-<div id="autoClubApp">
+<div class="autoClubAppWidget" style="overflow: hidden; background-color: ${properties.bgColor @ context='styleToken'}">
     <div class="col-lg-6">
-        <img class="img-responsive phone-header-img" src="/content/dam/ace/app/phoneapp.png" alt="iPhone and Android Phone Headers">
+        <img class="img-responsive phone-header-img" src="${(!properties.appImage) ? '/content/dam/ace/app/device/phoneapp.png' : properties.appImage }" alt="iPhone and Android Phone Headers">
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 mobile-app-copy">
+    <div class="col-lg-6 col-md-6 col-sm-12 app-copy">
         <h1 class="roboto-slab-bold font-a">Download the Auto Club App</h1>
         <span class="text-left roboto-regular font-b ">Request help and track your service in real-time.</span>
 

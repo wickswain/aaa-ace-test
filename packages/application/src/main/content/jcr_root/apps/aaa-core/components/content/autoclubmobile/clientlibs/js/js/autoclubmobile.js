@@ -8,6 +8,15 @@ $j(function($) {
        var appURL = (getAppURL(_location)) ? BASE_APPLE_URL + "id1094393125?pt=205244&ct=Autoclub&mt=8" : BASE_APPLE_URL + "id310730297?mt=8";
 
        $(".ios-link").attr("href", appURL);
+
+
+       ///set copy color
+        if($(".autoClubAppWidget").css("background-color") == "rgb(0, 153, 255)" || $(".autoClubAppWidget").css("background-color") == "rgb(0, 80, 149)"){
+            $(".app-copy").addClass("mobile-app-copy-light");
+        }else{
+            $(".app-copy").addClass("mobile-app-copy-dark");
+        }
+
     });
 
     function getAppURL(club){
