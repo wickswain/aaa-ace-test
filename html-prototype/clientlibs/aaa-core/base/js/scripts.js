@@ -1,7 +1,7 @@
 /*****************************************
     Template : AAA Scripts
     Created Date:12-August-2016
-    Modified Date:07-Nov-2016
+    Modified Date:10-Jan-2017
     Version:5
 *****************************************/
 $j(function($) {
@@ -136,6 +136,7 @@ $j(function($) {
     $('.drawer-close').on('click', function(e) {
         if (!thirdPartyNav) {
             $("#page-container, #page-footer").stop().fadeIn();
+            $("body").removeClass("modal-open");
             $('.drawers-wrapper, .overlay').stop().fadeOut();
             $('.drawers-content').scrollTop(0);
             $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('deactive');
@@ -207,14 +208,16 @@ $j(function($) {
                 } else {
                     history.go(-1);
                 }
+                $("body").removeClass("modal-open");
             } else {
                 $('.navigation-bar .nav > li:not(:last-child) > a').not($("#" + navid)).removeClass('opend').addClass('deactive').next().stop().hide();
                 $("#" + navid).addClass('opend').removeClass('deactive').next().stop().show();
                 $(".overlay").stop().fadeIn();
+                $("body").addClass("modal-open");
             }
         } else {
             $("#" + navid).removeClass('opend');
-            $('.drawers-wrapper .overlay').hide();
+            $('.drawers-wrapper .overlay, .drawers-wrapper').hide();
             $("#" + navid).next().show();
             $(".slide-nav").css("left", "-375px");
             $(".slide-nav").css("top", "0px");
@@ -239,5 +242,27 @@ $j(function($) {
         var navid = $(this).attr('id');
         managaeNav(navid);
     });
-	$(".membership-cols .col-md-3").find("div").css({"flex": "auto", "text-align": "inherit", "padding": "0"});
+	
+});
+
+$('a').click(function() {
+	var modalId;
+	var isModalLink = $(this).has('span.modal-popup');
+
+	if (isModalLink.length === 1) {
+		modalId = $(this).attr('href');
+	} else {
+		isModalLink = $(this).parent('span.modal-popup');
+
+		if (isModalLink.length === 1) {
+			modalId = $(this).attr('href');
+		}
+	}
+
+	if (modalId) {
+		if (modalId.indexOf('#') === -1) {
+			modalId = '#' + modalId;
+		}
+		$(modalId).modal('show');
+	}
 });
