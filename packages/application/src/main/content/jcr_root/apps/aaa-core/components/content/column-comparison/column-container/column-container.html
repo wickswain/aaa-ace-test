@@ -14,7 +14,7 @@
 */-->
 
 <div data-sly-use.columnprovider="${'com.aaa.ace.sightly.providers.ColumnComparisonProvider'}"
-     data-sly-test.hasContent="${properties.image || properties.heading}">
+     data-sly-test.hasContent="${properties.image || properties.heading || columnprovider.columns}">
     <sly>
         <div class="horizontal-space text-center">
             <img src="${properties.image}" alt="${properties.altText}" class="img-responsive col-compare-image">

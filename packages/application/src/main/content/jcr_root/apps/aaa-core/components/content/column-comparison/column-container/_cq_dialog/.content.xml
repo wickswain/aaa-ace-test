@@ -20,7 +20,7 @@
                             allowupload="{Boolean}false"
                             autoStart="{Boolean}false"
                             class="cq-droptarget"
-                            fieldLabel="Background Image"
+                            fieldLabel="Column Icon"
                             fileNameParameter="./image"
                             fileReferenceParameter="./image"
                             mimeTypes="[image]"
