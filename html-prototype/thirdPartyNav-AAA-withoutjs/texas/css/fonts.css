@@ -1,0 +1,96 @@
+/******************* 
+
+// Roboto Font 
+--------------------
+// Refrence : https://fonts.google.com/specimen/Roboto?selection.family=Roboto:100,300,400,500,700,900
+
+****************************/
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_thin/Roboto-Thin-webfont.eot');
+    src: url('fonts/roboto_thin/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_thin/Roboto-Thin-webfont.woff') format('woff'), url('fonts/roboto_thin/Roboto-Thin-webfont.ttf') format('truetype'), url('fonts/roboto_thin/Roboto-Thin-webfont.svg#robotothin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_light/Roboto-Light-webfont.eot');
+    src: url('fonts/roboto_light/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_light/Roboto-Light-webfont.woff') format('woff'), url('fonts/roboto_light/Roboto-Light-webfont.ttf') format('truetype'), url('fonts/roboto_light/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_regular/Roboto-Regular-webfont.eot');
+    src: url('fonts/roboto_regular/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_regular/Roboto-Regular-webfont.woff') format('woff'), url('fonts/roboto_regular/Roboto-Regular-webfont.ttf') format('truetype'), url('fonts/roboto_regular/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_medium/Roboto-Medium-webfont.eot');
+    src: url('fonts/roboto_medium/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_medium/Roboto-Medium-webfont.woff') format('woff'), url('fonts/roboto_medium/Roboto-Medium-webfont.ttf') format('truetype'), url('fonts/roboto_medium/Roboto-Medium-webfont.svg#robotomedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_bold/Roboto-Bold-webfont.eot');
+    src: url('fonts/roboto_bold/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_bold/Roboto-Bold-webfont.woff') format('woff'), url('fonts/roboto_bold/Roboto-Bold-webfont.ttf') format('truetype'), url('fonts/roboto_bold/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto_black/Roboto-Black-webfont.eot');
+    src: url('fonts/roboto_black/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/roboto_black/Roboto-Black-webfont.woff') format('woff'), url('fonts/roboto_black/Roboto-Black-webfont.ttf') format('truetype'), url('fonts/roboto_black/Roboto-Black-webfont.svg#robotoblack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+/******************* 
+
+// Roboto Slab
+--------------------
+// Refrence : https://fonts.google.com/specimen/Roboto+Slab?selection.family=Roboto+Slab:100,300,400,700
+
+************************/
+
+@font-face {
+    font-family: 'robotoslab';
+    src: url('fonts/robotoslab_thin/RobotoSlab-Thin-webfont.eot');
+    src: url('fonts/robotoslab_thin/RobotoSlab-Thin-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/robotoslab_thin/RobotoSlab-Thin-webfont.woff') format('woff'), url('fonts/robotoslab_thin/RobotoSlab-Thin-webfont.ttf') format('truetype'), url('fonts/robotoslab_thin/RobotoSlab-Thin-webfont.svg#roboto_slabthin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoslab';
+    src: url('fonts/robotoslab_light/RobotoSlab-Light-webfont.eot');
+    src: url('fonts/robotoslab_light/RobotoSlab-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/robotoslab_light/RobotoSlab-Light-webfont.woff') format('woff'), url('fonts/robotoslab_light/RobotoSlab-Light-webfont.ttf') format('truetype'), url('fonts/robotoslab_light/RobotoSlab-Light-webfont.svg#roboto_slablight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoslab';
+    src: url('fonts/robotoslab_regular/RobotoSlab-Regular-webfont.eot');
+    src: url('fonts/robotoslab_regular/RobotoSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/robotoslab_regular/RobotoSlab-Regular-webfont.woff') format('woff'), url('fonts/robotoslab_regular/RobotoSlab-Regular-webfont.ttf') format('truetype'), url('fonts/robotoslab_regular/RobotoSlab-Regular-webfont.svg#roboto_slabregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoslab';
+    src: url('fonts/robotoslab_bold/RobotoSlab-Bold-webfont.eot');
+    src: url('fonts/robotoslab_bold/RobotoSlab-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/robotoslab_bold/RobotoSlab-Bold-webfont.woff') format('woff'), url('fonts/robotoslab_bold/RobotoSlab-Bold-webfont.ttf') format('truetype'), url('fonts/robotoslab_bold/RobotoSlab-Bold-webfont.svg#roboto_slabbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}

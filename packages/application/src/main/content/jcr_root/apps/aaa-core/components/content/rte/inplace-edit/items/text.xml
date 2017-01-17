@@ -68,6 +68,10 @@
             jcr:primaryType="nt:unstructured"
             features="*">
             <styles jcr:primaryType="cq:WidgetCollection">
+                <modal-popup
+                    jcr:primaryType="nt:unstructured"
+                    cssName="modal-popup"
+                    text="Modal Popup"/>
                 <font-a
                     jcr:primaryType="nt:unstructured"
                     cssName="roboto-slab-bold font-a"
@@ -107,7 +111,7 @@
             features="*"/>
         <misctools
             jcr:primaryType="nt:unstructured"
-            features="specialchars">
+            features="[specialchars]">
             <specialCharsConfig jcr:primaryType="nt:unstructured">
                 <chars jcr:primaryType="nt:unstructured">
                     <copyright

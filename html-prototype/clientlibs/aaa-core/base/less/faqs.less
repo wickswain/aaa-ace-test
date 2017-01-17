@@ -7,15 +7,17 @@
     .item {
         padding: 30px 0;
         border-top: solid 1px #ccc;
-        .faq-list h2 {
-            padding-right: 40px;
-            position: relative;
+        .faq-list {
+            h2 {
+                padding-right: 40px;
+                position: relative;
+            }
         }
         .list-space {
             padding: @space-sm 0;
         }
         &:last-child {
-            border-bottom: solid 1px #ccc;
+            border-bottom: solid 0px #ccc;
         }
         .icon-adjust {
             color: @color-blue-primary-medium;
@@ -36,15 +38,51 @@
     .ques-block {
         background-color: @color-gray-medium;
         padding-top: @space-sm;
-        padding-bottom: @space-sm + 20;       
+        padding-bottom: @space-sm + 20;
         h3 {
             padding-bottom: 30px;
+            padding-top: 10px;
         }
         .faq-links {
             padding-left: 0;
+            margin-top: 0px;
             span {
                 display: block;
                 padding-bottom: 0;
+            }
+            a {
+                margin: 0px;
+            }
+        }
+    }
+}
+
+@media(min-width:768px) {
+    .faqs {
+        .ques-block {
+            h3 {
+                padding-top: 0px;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media(min-width:992px) {
+    .faqs {
+        .item {
+            &:last-child {
+                border-bottom: solid 1px #ccc;
+            }
+        }
+        .ques-block {
+            h3 {
+                padding-top: 10px;
+            }
+            img {
+                margin-right: 0px;
             }
         }
     }

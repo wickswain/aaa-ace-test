@@ -2,13 +2,7 @@
 /*****************************************
 Membership Comparison Table Component
 *****************************************/
-
-.membership-comparison-header {
-    text-align: center;
-}
-
-.membership-comparison-table {
-    .modal-dialog {
+ .modal-dialog {
         position: absolute;
         top: 0;
         left: 0;
@@ -20,6 +14,13 @@ Membership Comparison Table Component
             margin: 0px 20px;
         }
     }
+	
+.membership-comparison-header {
+    text-align: center;
+}
+
+.membership-comparison-table {
+   
     .membership-comparison {
         padding-bottom: 130px;
         .highlight-class {
@@ -104,7 +105,7 @@ Membership Comparison Table Component
             div:not(:first-child) {
                 border-left: 1px solid #cccccc;
                 border-top: 1px solid #ccc;
-                flex: 1 1 auto;
+                flex:2;
                 div {
                     border: 0;
                 }
@@ -227,6 +228,19 @@ Membership Comparison Table Component
                 display: flex;
                 align-items: center;
                 justify-content: center;
+				span{
+					padding-right:20px;
+					float:right;
+				}
+				&.icon-info{
+					.btn-info{ 
+					position:absolute; 
+					right:15px;
+					
+					}
+				}
+				
+				
             }
             .left-col-title {
                 padding-right: 30px;
