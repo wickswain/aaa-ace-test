@@ -1,5 +1,5 @@
 
-#autoClubAppWidget{
+.autoClubAppWidget{
   background-color:#0099ff;
   overflow: hidden;
 }
@@ -8,7 +8,7 @@
   padding-top: 20px;
 }
 
-.mobile-app-copy{
+.mobile-app-copy-light{
   padding-top: 50px;
 
   p, h1, span{
@@ -24,6 +24,26 @@
     }
     &:active{
       color: white;
+    }
+  }
+}
+
+.mobile-app-copy-dark{
+  padding-top: 50px;
+
+  p, h1, span{
+    color: black;
+  }
+
+  a{
+    color: black;
+    text-decoration: underline;
+
+    &:hover{
+      color: black;
+    }
+    &:active{
+      color: black;
     }
   }
 }

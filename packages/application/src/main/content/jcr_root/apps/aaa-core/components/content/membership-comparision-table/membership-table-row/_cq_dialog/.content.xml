@@ -23,13 +23,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <rowitemdescription
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter row item description"
-                                fieldLabel="Row Item Description"
-                                name="./rowItemDescription"
-                                required="{Boolean}true"/>
                             <aligntop
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -39,11 +32,11 @@
                                 text="Top Align Row Text?"
                                 uncheckedValue="{Boolean}false"
                                 value="{Boolean}true"/>
-							<aligntoptype
-							    jcr:primaryType="nt:unstructured"
-							    sling:resourceType="granite/ui/components/foundation/form/hidden"
-							    name="./alignTop@TypeHint"
-							    value="Boolean"/>
+                            <aligntoptype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./alignTop@TypeHint"
+                                value="Boolean"/>
                             <showmodalbox
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
