@@ -11,6 +11,7 @@
 
 <!-- Sightly global objects declaration
 ============================================= -->
+
 <sly data-sly-use.socialmedia="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='socialmedia'}"></sly>
 <sly data-sly-use.icon1="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon1'}" ></sly>
 <sly data-sly-use.icon2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon2'}" ></sly>
@@ -26,8 +27,8 @@
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Global Footer Component"/>
 <!-- #placeholder-content end -->
 
-<!-- Global Footer component
-============================================= -->
+<!-- Global Footer component start here
+========================================= -->
 <div data-sly-test="${icon1.childResource}"
      data-sly-use.itemTemplate="linkslisttemplate.html"
 	 id="base-footer" class="footer-global roboto-light font-e">
@@ -119,4 +120,6 @@
         </div>
     </div>
 </div>
-<!-- #global-footer-component end -->
+
+<!-- Global-footer-component end here
+====================================== -->
