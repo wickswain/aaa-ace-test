@@ -164,6 +164,30 @@
                         name="./link1/openNewTabFlag"
                         text="Open in new window?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-link1-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./link1/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-link1-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link1/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -293,6 +317,30 @@
                         name="./link2/openNewTabFlag"
                         text="Open in new window?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-link2-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./link2/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-link2-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link2/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -422,6 +470,30 @@
                         name="./link3/openNewTabFlag"
                         text="Open in new window?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-link3-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./link3/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-link3-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link3/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -551,6 +623,30 @@
                         name="./link4/openNewTabFlag"
                         text="Open in new window?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-link4-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./link4/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-link4-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link4/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -680,6 +776,30 @@
                         name="./link5/openNewTabFlag"
                         text="Open in new window?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-link5-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./link5/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-link5-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link5/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -824,6 +944,30 @@
                         name="./button1/uppercaseFlag"
                         text="Is Button1 Label Upper Case?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-btn1-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./button1/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-btn1-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./button1/buttonmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
@@ -967,6 +1111,30 @@
                         name="./button2/uppercaseFlag"
                         text="Is Button2 Label Upper Case?"
                         value="{Boolean}true"/>
+                    <modal-Popup-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        class="cq-dialog-checkbox-showhide"
+                        cq-dialog-checkbox-showhide-target=".enable-btn2-modal-Popup-showhide-target"
+                        fieldDescription="Please select the check box to enable the Modal-Popup Id."
+                        name="./button2/modalFlag"
+                        text="Is modal-Popup?"
+                        value="{Boolean}true"/>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide enable-btn2-modal-Popup-showhide-target"
+                        showhidetargetvalue="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./button2/buttonmodal"/>
+                        </items>
+                    </modal-popup-container>
                 </items>
             </columns>
         </items>
