@@ -31,9 +31,10 @@
 			target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 			data-sly-text="${child.ctaLabel}">
 		</a> 
-		<a data-sly-test="${child.phonedialFlag}"
+		<sly data-sly-test.buttonPhoneNumber="${'tel:{0}' @ format=[child.buttonphonenumber]}" />
+		<a data-sly-test="${child.phonedialFlag}"  data-toggle="${child.modalFlag ? 'modal' : ''}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-			href="tel:${child.modalFlag ? child.buttonmodal : (child.buttonphonenumber ? child.buttonphonenumber : '')  @ context='uri'}" data-toggle="${child.modalFlag ? 'modal' : ''}"> 
+            href="${child.modalFlag ? child.buttonmodal : buttonPhoneNumber  @ context='uri'}">
             <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 		</a>
 	</sly> 
