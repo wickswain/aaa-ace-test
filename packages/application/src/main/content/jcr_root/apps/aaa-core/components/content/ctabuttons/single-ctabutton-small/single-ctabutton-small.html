@@ -34,7 +34,7 @@
 		<sly data-sly-test.buttonPhoneNumber="${'tel:{0}' @ format=[child.buttonphonenumber]}" />
 		<a data-sly-test="${child.phonedialFlag}"  data-toggle="${child.modalFlag ? 'modal' : ''}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-            href="${child.modalFlag ? child.buttonmodal : buttonPhoneNumber  @ context='uri'}">
+            href="${child.modalFlag ? child.buttonmodal : buttonPhoneNumber}">
             <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 		</a>
 	</sly> 
