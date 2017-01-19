@@ -295,9 +295,15 @@
                             <pagepath
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldLabel="Join Button path"
-                                name="./joinbtnPath"
+                                fieldLabel="Join Button Path"
+                                name="./joinBtnPath"
                                 rootPath="/content/ace-www"/>
+                            <joinbtntitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter capital letters only"
+                                fieldLabel="Button Title"
+                                name="./joinBtnTitle"/>
                         </items>
                     </columns>
                 </items>
