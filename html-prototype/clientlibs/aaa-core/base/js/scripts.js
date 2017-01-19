@@ -134,7 +134,7 @@ $j(function($) {
         document.cookie = name + "=" + value + expires + "; path=/";
     }
     /* Navigation Close event */
-    $('.drawer-close').on('click', function(e) {
+    $('.drawer-close .close-icon').on('click', function(e) {
         if (!thirdPartyNav) {
             $("#page-container, #page-footer").stop().fadeIn();
             $("body").removeClass("modal-open");
