@@ -171,7 +171,7 @@
                     </li>
                     
                     <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm">
-                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=item.currentpage.properties.linkURL}" />
+                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinbtnPath}" />
                         <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
                            data-sly-text="${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}"
                            target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
