@@ -304,6 +304,13 @@
                                 fieldDescription="Please enter capital letters only"
                                 fieldLabel="Button Title"
                                 name="./joinBtnTitle"/>
+                            <openinnewtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if the join button link has to open in new tab."
+                                name="./joinLinkNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
                         </items>
                     </columns>
                 </items>

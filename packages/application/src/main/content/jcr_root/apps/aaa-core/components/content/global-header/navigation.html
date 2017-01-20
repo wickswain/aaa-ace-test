@@ -111,7 +111,7 @@
                         <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinBtnPath}" />
                         <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}"
                            data-sly-text="${properties.joinBtnTitle? properties.joinBtnTitle : 'JOIN'}"
-                           target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
+                           target="${properties.joinLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
                            class="link-btn link-color-blue link-lg">
                         </a>
                     </div>
@@ -175,7 +175,7 @@
                         <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinBtnPath}" />
                         <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
                            data-sly-text="${properties.joinBtnTitle? properties.joinBtnTitle : 'JOIN'}"
-                           target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
+                           target="${properties.joinLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
                            class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
                         </a>
                     </li>
