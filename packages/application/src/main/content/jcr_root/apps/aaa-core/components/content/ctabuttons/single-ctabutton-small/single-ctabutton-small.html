@@ -27,15 +27,16 @@
 	<sly data-sly-test="${child.buttonStyle && child.ctaLabel}">
 		<a data-sly-test="${!child.phonedialFlag}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
-			href="${result.url ? result.url : ''  @ context='uri'}"
+			href="${child.modalFlag ? child.buttonmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.modalFlag ? 'modal' : ''}"
 			target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
-			data-sly-text="${child.ctaLabel}"> 
+			data-sly-text="${child.ctaLabel}">
 		</a> 
-		<a data-sly-test="${child.phonedialFlag}"
+		<sly data-sly-test.buttonPhoneNumber="${'tel:{0}' @ format=[child.buttonphonenumber]}" />
+		<a data-sly-test="${child.phonedialFlag}"  data-toggle="${child.modalFlag ? 'modal' : ''}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-			href="tel:${child.buttonphonenumber}"> 
-			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
-		</a> 
+            href="${child.modalFlag ? child.buttonmodal : buttonPhoneNumber}">
+            <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
+		</a>
 	</sly> 
 </sly>
 <!-- #cta-small-button-content end -->
