@@ -163,14 +163,19 @@
 										</div>
 										
 										<div class="child_travelers">
-											<label class="field_label"> <span class="adult_label">Child</span>
+											<label class="field_label">
+												<span class="adult_label">Child</span>
+												
 												<span class="input-group-btn">
 													<button type="button" class="min_button"></button>
-											</span> <input class="rs_adults_input pax" type="number"
-												name="rs_children" min="0" max="8" readonly> <span
-												class="input-group-btn">
+												</span>
+												
+												<input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
+												
+												<span class="input-group-btn">
 													<button type="button" class="plus_button"></button>
-											</span></label>
+												</span>
+											</label>
 										</div>
 									</div>
 								</div>
@@ -179,17 +184,18 @@
 
 						<div class="rs_button_row">
 							<button type="submit" class="rs_search">SEARCH</button>
-							<a
-								href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My
-								Reservations</a><span> | </span> <a href="#">Flight + Hotel
-								Packages</a><span> | </span> <a
-								href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced
-								Search</a>
+							<a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+							<span> | </span>
+							<a href="#">Flight + Hotel Packages</a>
+							<span> | </span>
+							<a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
 						</div>
 					</div>
+					
 					<div id="air_one_way">
 						<div class="air_trip">
-							<label class="field_label">Where to?</label> <input
+							<label class="field_label">Where to?</label>
+							<input
 								name="rs_o_city1" class="from rs_autosuggest rs_from"
 								placeholder='Origin' onclick='$(this).val("");'
 								autocomplete="off"> <input name="rs_d_city1"
