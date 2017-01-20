@@ -23,7 +23,7 @@
                  style="color:${properties.bodyTextFontColor @ context='styleToken'};">
                 <p data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}"></p>
             </div>
-            <div class="image-block" data-sly-test="${properties.mainalttext && properties.mainimage}">
+            <div class="image-block" data-sly-test="${properties.mainalttext || properties.mainimage}">
                 <img src="${properties.mainimage}" alt="${properties.mainalttext}" title="single column image" class="img-responsive">
             </div>
         </div>
