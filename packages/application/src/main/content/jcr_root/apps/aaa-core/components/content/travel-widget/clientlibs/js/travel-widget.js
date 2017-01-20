@@ -2,9 +2,11 @@
 var club_number = 004;
 var searchbox_options = {
 	refid : 5776,
+	open_window: true,
 	environment : "prod",
 	hotel : {
 		elements : {
+			form:"hotel",
 			autosuggest : ".rs_autosuggest",
 			rooms : ".rs_rooms",
 			search : ".rs_search",
@@ -14,12 +16,14 @@ var searchbox_options = {
 			chk_out_display : ".rs_date_chk_out"
 		},
 		calendar : {
-			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>"
+			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>",
+			next_day:false
 		},
 		select_name : true
 	},
 	car : {
 		elements : {
+			form:"car",
 			from : ".rs_pickup",
 			to : ".rs_dropoff",
 			chk_in : ".rs_chk_in, .rs_chk_in_calendar, .rs_date_chk_in",
@@ -30,12 +34,15 @@ var searchbox_options = {
 			different_return : "#rs_different"
 		},
 		calendar : {
-			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>"
+			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>",
+			next_day:false
 		},
 		select_name : true
 	},
 	air : {
+		enabled:true,
 		elements : {
+			form: 'air',
 			round_trip : '#air_round_trip',
 			one_way : '#air_one_way',
 			multi_dest : '#air_multi_dest',
@@ -47,7 +54,8 @@ var searchbox_options = {
 			search : ".rs_search"
 		},
 		calendar : {
-			output_format : '<div class="rs_mobi_chk_day">[d]</div><div class="rs_mobi_chk_month">[F]</div>'
+			output_format : '<div class="rs_mobi_chk_day">[d]</div><div class="rs_mobi_chk_month">[F]</div>',
+			next_day:false
 		},
 		autosuggest : {
 			airports : true
@@ -55,6 +63,7 @@ var searchbox_options = {
 		select_name : true
 	},
 	vp : {
+		active:true,
 		elements : {
 			chk_in : ".rs_chk_in, .rs_chk_in_calendar, .rs_date_chk_in",
 			chk_out : ".rs_chk_out, .rs_chk_out_calendar, .rs_date_chk_out",
@@ -63,7 +72,8 @@ var searchbox_options = {
 			search : ".rs_search"
 		},
 		calendar : {
-			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>"
+			output_format : "<div class='rs_mobi_chk_day'>[d]</div><div class='rs_mobi_chk_month'>[F]</div>",
+			next_day:false
 		},
 		select_name : true
 	},
