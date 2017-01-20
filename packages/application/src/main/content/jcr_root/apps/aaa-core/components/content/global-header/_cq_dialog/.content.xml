@@ -280,6 +280,41 @@
                     </columns>
                 </items>
             </search>
+            <joinbutton
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Join Button"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pagepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Join Button Path"
+                                name="./joinBtnPath"
+                                rootPath="/content/ace-www"/>
+                            <joinbtntitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter capital letters only"
+                                fieldLabel="Button Title"
+                                name="./joinBtnTitle"/>
+                            <openinnewtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if the join button link has to open in new tab."
+                                name="./joinLinkNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </joinbutton>
         </items>
     </content>
 </jcr:root>
