@@ -20,12 +20,12 @@ pipelines:
             - export AWS_DEFAULT_REGION=${AWS_REGION}
             - read AUT_NAME AUT_IP AUT_INSTANCE_ID AUT_DEFAULT_SG <<<$(aws ec2 describe-instances --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value|[0], PublicIpAddress, InstanceId, SecurityGroups[][].GroupId|[0]][?[0]==`aaa_qa_aut`][]' --output text)
             - aws ec2 authorize-security-group-ingress --group-id "${AUT_DEFAULT_SG}" --cidr "$(curl -fs canihazip.com/s)/32" --protocol tcp --port 4502
-            - mvn clean install -Dcrx.host=${AUT_IP} -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password="$AEM_QA" -PautoInstallPackage $?=0 || TRUE
+            - mvn clean install -Dcrx.host=${AUT_IP} -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password="$AEM_QA" -PautoInstallPackage
             - aws ec2 revoke-security-group-ingress --group-id "${AUT_DEFAULT_SG}" --cidr "$(curl -fs canihazip.com/s)/32" --protocol tcp --port 4502
 
             - read PUB_NAME PUB_IP PUB_INSTANCE_ID PUB_DEFAULT_SG <<<$(aws ec2 describe-instances --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value|[0], PublicIpAddress, InstanceId, SecurityGroups[][].GroupId|[0]][?[0]==`aaa_qa_pub1`][]' --output text)
             - aws ec2 authorize-security-group-ingress --group-id "${PUB_DEFAULT_SG}" --cidr "$(curl -fs canihazip.com/s)/32" --protocol tcp --port 4503
-            - mvn clean install -Dcrx.host=${PUB_IP} -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password="$AEM_QA" -PautoInstallPackage $?=0 || TRUE
+            - mvn clean install -Dcrx.host=${PUB_IP} -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password="$AEM_QA" -PautoInstallPackage
             - aws ec2 revoke-security-group-ingress --group-id "${PUB_DEFAULT_SG}" --cidr "$(curl -fs canihazip.com/s)/32" --protocol tcp --port 4503
 
     stage:
