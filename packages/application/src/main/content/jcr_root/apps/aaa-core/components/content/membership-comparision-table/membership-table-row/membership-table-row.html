@@ -55,32 +55,32 @@
         <div data-sly-test="${tablerowprovider.columnsCount >= 1}" 
              class="col-md-3 ${tablerowprovider.columnsCount == 1 ? 'col-sm-12 col-xs-12' : ''} ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''}
              	    ${properties.alignTop ? 'align-top' : ''}"> 
-            <span data-sly-test="${properties.enableCol1Text}" class="mebership-row-text"> 
+            <span data-sly-test="${properties.enableCol1Text}" class="membership-row-text"> 
                 <sly data-sly-resource="${ @path='col1_text', resourceType = '/apps/aaa-core/components/content/rte'}"/>
             </span>
 
-            <span data-sly-test="${!properties.enableCol1Text}" class="mebership-row-img"> 
+            <span data-sly-test="${!properties.enableCol1Text}" class="membership-row-img"> 
                 <img src="${icon1.childResource ? icon1.childResource.fileReference : ''}" alt="${icon1.childResource ? icon1.childResource.alt : ''}" title="${icon1.childResource ? icon1.childResource.alt : ''}"/>
             </span>
         </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 2}"  
              class="col-md-3 ${tablerowprovider.columnsCount == 2 ? 'col-sm-6 col-xs-6' : ''} ${tablerowprovider.columnsCount == 3 ? 'col-sm-4 col-xs-4' : ''} ${properties.alignTop ? 'align-top' : ''}">
-            <span data-sly-test="${properties.enableCol2Text}" class="mebership-row-text"> 
+            <span data-sly-test="${properties.enableCol2Text}" class="membership-row-text"> 
                 <sly data-sly-resource="${ @path='col2_text', resourceType = '/apps/aaa-core/components/content/rte'}"/>
             </span>
 
-            <span data-sly-test="${!properties.enableCol2Text}" class="mebership-row-img"> 
+            <span data-sly-test="${!properties.enableCol2Text}" class="membership-row-img"> 
                 <img src="${icon2.childResource ? icon2.childResource.fileReference : ''}" alt="${icon2.childResource ? icon2.childResource.alt : ''}" title="${icon2.childResource ? icon2.childResource.alt : ''}"/>
             </span>
         </div>
         
         <div data-sly-test="${tablerowprovider.columnsCount >= 3}" class="col-md-3 col-sm-4 col-xs-4 ${properties.alignTop ? 'align-top' : ''}">
-            <span data-sly-test="${properties.enableCol3Text}" class="mebership-row-text"> 
+            <span data-sly-test="${properties.enableCol3Text}" class="membership-row-text"> 
                 <sly data-sly-resource="${ @path='col3_text', resourceType = '/apps/aaa-core/components/content/rte'}"/>
             </span>
 
-            <span data-sly-test="${!properties.enableCol3Text}" class="mebership-row-img"> 
+            <span data-sly-test="${!properties.enableCol3Text}" class="membership-row-img"> 
                 <img src="${icon3.childResource ? icon3.childResource.fileReference : ''}" alt="${icon3.childResource ? icon3.childResource.alt : ''}" title="${icon3.childResource ? icon3.childResource.alt : ''}"/>
             </span>
         </div>
