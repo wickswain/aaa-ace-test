@@ -1,8 +1,8 @@
 /*****************************************
     Template : AAA Scripts
-    Created Date:12-August-2016
-    Modified Date:10-Jan-2017
-    Version:5
+    Created Date: 12-August-2016
+    Modified Date: 17-Jan-2017
+    Version: 5.0
 *****************************************/
 $j(function($) {
     /* ThirdParty Navigation url reading */
@@ -52,15 +52,8 @@ $j(function($) {
     }
     footerResponse();
     /*Sticky Navigation*/
-    var scrollTop = ($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;
-    $('.sticky-nav .dropdown-menu li > a').click(function(e) {
-        var hashtag = $(this.hash),
-            $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
-        $('html,body').stop().animate({
-            scrollTop: $target
-        }, 1000, 'swing');
-        e.preventDefault();
-    });
+    var scrollTop = 0; /*($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;*/
+    
     /*Home Header resize*/
     function headerResize() {
         var winheight = $(window).height(),
@@ -105,6 +98,14 @@ $j(function($) {
             });
         }
         /*Sticky Nav scroll event*/
+        $('.sticky-nav .dropdown-menu li > a').on('click', function(e) {
+            var hashtag = $(this.hash),
+                $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
+            $('html,body').stop().animate({
+                scrollTop: $target
+            }, 1000, 'swing');
+            e.preventDefault();
+        });
         ($(this).scrollTop() > scrollTop) ? $('.sticky-nav').addClass('navbar-fixed-top').show(): $('.sticky-nav').removeClass('navbar-fixed-top').hide();
         $('.sticky-nav .dropdown-menu li > a').each(function() {
             var scrolltag = $(this.hash),
@@ -133,7 +134,7 @@ $j(function($) {
         document.cookie = name + "=" + value + expires + "; path=/";
     }
     /* Navigation Close event */
-    $('.drawer-close').on('click', function(e) {
+    $('.drawer-close .close-icon').on('click', function(e) {
         if (!thirdPartyNav) {
             $("#page-container, #page-footer").stop().fadeIn();
             $("body").removeClass("modal-open");
