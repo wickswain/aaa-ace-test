@@ -25,34 +25,33 @@
 	<sly data-sly-use.result="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = child.queryStringKey, url = child.urlPath, childResource = child}" />
 
 	<sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
-		<a data-sly-test="${!child.phonedialFlag}"
+		<a data-sly-test="${child.option!='Phone'}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
-			href="${child.modalFlag ? child.buttonmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.modalFlag ? 'modal' : ''}"
+			href="${child.option=='Modal' ? child.buttonmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
 			target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 			data-sly-text="${child.ctaLabel}">
 		</a> 
-        <sly data-sly-test.buttonPhoneNumber="${'tel:{0}' @ format=[child.buttonphonenumber]}" />
-		<a data-sly-test="${child.phonedialFlag}"  data-toggle="${child.modalFlag ? 'modal' : ''}"
+        <a data-sly-test="${child.option=='Phone'}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-            href="${child.modalFlag ? child.buttonmodal : buttonPhoneNumber}">
-            <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
+			href="tel:${child.buttonphonenumber}">
+			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 		</a>
 	</sly>
 	<sly data-sly-test="${properties.ctaType=='links' && child.linkStyle && child.ctaLabel}">
 		<p>
-			<a data-sly-test="${!child.phonedialFlag}"
+			<a data-sly-test="${child.option!=Phone}"
 				class="link-btn link-sm ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'}"
-				href="${child.modalFlag ? child.linkmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.modalFlag ? 'modal' : ''}"
+				href="${child.option=='Modal' ? child.linkmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
 				target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 				data-sly-text="${child.ctaLabel}"> 
 			</a>
-			<sly data-sly-test.linkPhoneNumber="${'tel:{0}' @ format=[child.linkphonenumber]}" />
-			<a data-sly-test="${child.phonedialFlag}"  data-toggle="${child.modalFlag ? 'modal' : ''}"
+            <a data-sly-test="${child.option=='Phone'}"
 				class="link-btn link-sm ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'} icon-text"
-           		href="${child.modalFlag ? child.linkmodal : linkPhoneNumber}">
-            	<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
+				href="tel:${child.linkphonenumber}"> 
+				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel} 
 			</a>
 		</p>
 	</sly> 
 </sly>
+
 <!-- #cta-small-button-link-content end -->
