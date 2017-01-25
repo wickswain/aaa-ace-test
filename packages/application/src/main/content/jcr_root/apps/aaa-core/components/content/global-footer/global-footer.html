@@ -26,7 +26,7 @@
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Global Footer Component"/>
 <!-- #placeholder-content end -->
 
-<!-- Global Footer component
+<!-- Global Footer component start here
 ============================================= -->
 <div data-sly-test="${icon1.childResource}"
      data-sly-use.itemTemplate="linkslisttemplate.html"
@@ -65,7 +65,7 @@
                 </div>
                 
                 <div class="border-lines">
-                    <div data-sly-test="${icon1.childResource}" class="col-md-5 text-left">
+                    <div data-sly-test="${icon1.childResource}" class="col-md-5">
                         <span style="background-image: url('${icon1.childResource ? icon1.childResource.fileReference : '' @ context='uri'}');"
                               title="${icon1.childResource.alt}"
                               class="app">
@@ -73,7 +73,7 @@
                         </span>
                     </div>
                     
-                    <div data-sly-test="${icon2.childResource}" class="col-md-5 text-left">
+                    <div data-sly-test="${icon2.childResource}" class="col-md-5">
                         <span style="background-image: url('${icon2.childResource ? icon2.childResource.fileReference : '' @ context='uri'}');"
                               title="${icon2.childResource.alt}"
                               class="blog">
@@ -119,4 +119,4 @@
         </div>
     </div>
 </div>
-<!-- #global-footer-component end -->
+<!-- Global-footer-component end here -->

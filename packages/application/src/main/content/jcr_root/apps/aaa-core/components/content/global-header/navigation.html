@@ -108,13 +108,14 @@
                                  alt="${properties.icon2Alt}" class="lock-icon"/>
                             ${properties.rightLink2Label}
                         </a>
-                        <a data-sly-test="${properties.joinButtonLabel}"
-                           href="${joinButton.url}" data-sly-text="${properties.joinButtonLabel}"
-                           target="${properties.joinButtonOpenTabFlag == 'true' ? '_blank' : '_self'}"
+                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinBtnPath}" />
+                        <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}"
+                           data-sly-text="${properties.joinBtnTitle? properties.joinBtnTitle : 'JOIN'}"
+                           target="${properties.joinLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
                            class="link-btn link-color-blue link-lg">
                         </a>
                     </div>
-                    
+
                     <div class="contact-find hidden-md hidden-lg">
                         <a data-sly-test="${properties.rightLink1Label}"
                            data-sly-text="${properties.rightLink1Label}"
@@ -171,10 +172,10 @@
                     </li>
                     
                     <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm">
-                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=item.currentpage.properties.linkURL}" />
+                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinBtnPath}" />
                         <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
-                           data-sly-text="${item.currentpage.properties.navTitle ? item.currentpage.properties.navTitle : item.currentpage.title}"
-                           target="${item.currentpage.properties.openInNewTabFlag == 'true' ? '_blank' : '_self'}"
+                           data-sly-text="${properties.joinBtnTitle? properties.joinBtnTitle : 'JOIN'}"
+                           target="${properties.joinLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
                            class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
                         </a>
                     </li>
