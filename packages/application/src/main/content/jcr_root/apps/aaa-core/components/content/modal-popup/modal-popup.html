@@ -37,24 +37,18 @@
     <div><b>Modal Body/Copy:</b> ${properties.text @ context='html'}</div>
 </div>
 
-<div data-sly-test="${properties.id}" id="${properties.id}"
-	 class="modal fade text-left">
-
-    <div class="modal-dialog">
+<div data-sly-test="${properties.id}" id="${properties.id}" class="modal fade text-left">
+    <div class="modal-dialog modal-md">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="modal-title1 roboto-bold font-b"
-					data-sly-text="${properties.title}">
-				</h4> 
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title roboto-bold font-b" data-sly-text="${properties.title}"></h4> 
 			</div>
 			
-			<div class="modal-body1">
+			<div class="modal-body">
 				<p>${properties.text @ context='html'}</p>
 			</div>
 		</div>
     </div>
-
 </div>
-
 <!-- #Modal pop-Up Component end -->
