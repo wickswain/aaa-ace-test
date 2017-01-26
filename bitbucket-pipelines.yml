@@ -15,8 +15,8 @@ pipelines:
       - step:
           script: # Modify the commands below to build your repository.
             - . /etc/profile.d/jdk.sh
-            - export AWS_ACCESS_KEY_ID=${AWS_KEY}
-            - export AWS_SECRET_ACCESS_KEY=${AWS_SECRET}
+            - export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY}
+            - export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
             - export AWS_DEFAULT_REGION=${AWS_REGION}
             - read AUT_NAME AUT_IP AUT_INSTANCE_ID AUT_DEFAULT_SG <<<$(aws ec2 describe-instances --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value|[0], PublicIpAddress, InstanceId, SecurityGroups[][].GroupId|[0]][?[0]==`aaa_qa_aut`][]' --output text)
             - aws ec2 authorize-security-group-ingress --group-id "${AUT_DEFAULT_SG}" --cidr "$(curl -fs canihazip.com/s)/32" --protocol tcp --port 4502
