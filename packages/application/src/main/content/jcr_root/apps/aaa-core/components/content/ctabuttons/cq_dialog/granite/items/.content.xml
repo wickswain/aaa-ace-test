@@ -73,11 +73,126 @@
                     <cta-label
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter label for Button/Link"
+                        fieldDescription="Please enter label for Link"
                         fieldLabel="Link-1 Label"
+                        maxlength="{Long}20"
                         name="./link1/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-link1-hide-show"
+                        fieldDescription="Please select the type of the link to be created. (Default to noraml link)"
+                        fieldLabel="Link-1 Type"
+                        name="./link1/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Link (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link1-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Link-1 URL"
+                                name="./link1/urlPath"
+                                rootPath="/content"
+                                showhidetargetvalue="linkstyle"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./link1/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Link-1 Custom Query String"
+                                name="./link1/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./link1/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link1-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                maxlength="{Long}20"
+                                name="./link1/linkphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link1-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link1/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -86,64 +201,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./link1/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Link-1 URL"
-                        name="./link1/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./link1/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Link-1 Custom Query String"
-                        name="./link1/queryStringKey"/>
-                    <phone-dial-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it is phone number"
-                        name="./link1/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./link1/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -182,11 +239,126 @@
                     <cta-label
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter label for Button/Link"
+                        fieldDescription="Please enter label for Link."
                         fieldLabel="Link-2 Label"
+                        maxlength="{Long}20"
                         name="./link2/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-link2-hide-show"
+                        fieldDescription="Please select the type of the link to be created. (Default to noraml link)"
+                        fieldLabel="Link-2 Type"
+                        name="./link2/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Link (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link2-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Link-2 URL"
+                                name="./link2/urlPath"
+                                rootPath="/content"
+                                showhidetargetvalue="linkstyle"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./link2/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Link-2 Custom Query String"
+                                name="./link2/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./link2/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link2-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                maxlength="{Long}20"
+                                name="./link2/linkphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link2-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link2/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -195,64 +367,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./link2/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Link-2 URL"
-                        name="./link2/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./link2/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Link-2 Custom Query String"
-                        name="./link2/queryStringKey"/>
-                    <phone-dial-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it is phone number"
-                        name="./link2/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./link2/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -291,11 +405,126 @@
                     <cta-label
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter label for Button/Link"
+                        fieldDescription="Please enter label for Link"
                         fieldLabel="Link-3 Label"
+                        maxlength="{Long}20"
                         name="./link3/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-link3-hide-show"
+                        fieldDescription="Please select the type of the link to be created. (Default to noraml link)"
+                        fieldLabel="Link-3 Type"
+                        name="./link3/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Link (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link3-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Link-3 URL"
+                                name="./link3/urlPath"
+                                rootPath="/content"
+                                showhidetargetvalue="linkstyle"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./link3/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Link-3 Custom Query String"
+                                name="./link3/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./link3/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link3-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                maxlength="{Long}20"
+                                name="./link3/linkphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link3-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link3/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -304,64 +533,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./link3/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Link-3 URL"
-                        name="./link3/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./link3/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Link-3 Custom Query String"
-                        name="./link3/queryStringKey"/>
-                    <phone-dial-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it is phone number"
-                        name="./link3/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./link3/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -400,11 +571,126 @@
                     <cta-label
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter label for Button/Link"
+                        fieldDescription="Please enter label for Link"
                         fieldLabel="Link-4 Label"
+                        maxlength="{Long}20"
                         name="./link4/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-link4-hide-show"
+                        fieldDescription="Please select the type of the link to be created. (Default to noraml link)"
+                        fieldLabel="Link-4 Type"
+                        name="./link4/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Link (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link4-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Link-4 URL"
+                                name="./link4/urlPath"
+                                rootPath="/content"
+                                showhidetargetvalue="linkstyle"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./link4/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Link-4 Custom Query String"
+                                name="./link4/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./link4/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link4-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                maxlength="{Long}20"
+                                name="./link4/linkphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link4-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link4/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -413,64 +699,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./link4/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Link-4 URL"
-                        name="./link4/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./link4/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Link-4 Custom Query String"
-                        name="./link4/queryStringKey"/>
-                    <phone-dial-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it is phone number"
-                        name="./link4/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./link4/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -509,11 +737,126 @@
                     <cta-label
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter label for Button/Link"
+                        fieldDescription="Please enter label for Link"
                         fieldLabel="Link-5 Label"
+                        maxlength="{Long}20"
                         name="./link5/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-link5-hide-show"
+                        fieldDescription="Please select the type of the link to be created. (Default to noraml link)"
+                        fieldLabel="Link-5 Type"
+                        name="./link5/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Link (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link5-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Link-5 URL"
+                                name="./link5/urlPath"
+                                rootPath="/content"
+                                showhidetargetvalue="linkstyle"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./link5/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Link-5 Custom Query String"
+                                name="./link5/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./link5/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link5-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                maxlength="{Long}20"
+                                name="./link5/linkphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-link5-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./link5/linkmodal"/>
+                        </items>
+                    </modal-popup-container>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -522,64 +865,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./link5/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Link-5 URL"
-                        name="./link5/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./link5/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Link-5 Custom Query String"
-                        name="./link5/queryStringKey"/>
-                    <phone-dial-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it is phone number"
-                        name="./link5/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./link5/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -632,6 +917,125 @@
                         name="./button1/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-btn1-hide-show"
+                        fieldDescription="Please select the type of the button to be created. (Default to noraml button)"
+                        fieldLabel="Button-1 Type"
+                        name="./button1/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Button (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn1-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Button-1 URL"
+                                name="./button1/urlPath"
+                                rootPath="/content"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./button1/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Button-1 Custom Query String"
+                                name="./button1/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./button1/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn1-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                name="./button1/buttonphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn1-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./button1/buttonmodal"/>
+                        </items>
+                    </modal-popup-container>
+                    <uppercase-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
+                        name="./button1/uppercaseFlag"
+                        text="Is button1 label upper case?"
+                        value="{Boolean}true"/>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -640,90 +1044,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./button1/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Button-1 URL"
-                        name="./button1/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./button1/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Button-1 Custom Query String"
-                        name="./button1/queryStringKey"/>
-                    <phone-number-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        class="cq-dialog-checkbox-showhide"
-                        cq-dialog-checkbox-showhide-target=".enable-btn1-phone-number-showhide-target"
-                        fieldDescription="Please select the check box to enable the phone number field."
-                        name="./button1/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <phone-number-container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/container"
-                        class="hide enable-btn1-phone-number-showhide-target"
-                        showhidetargetvalue="{Boolean}true">
-                        <items jcr:primaryType="nt:unstructured">
-		                    <phone-number
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        activeValidation="{Boolean}true"
-		                        fieldDescription="Only numbers are accepted."
-		                        fieldLabel="Enter Phone Number"
-		                        maxlength="{Long}20"
-		                        name="./button1/buttonphonenumber"
-		                        pattern="number"/>
-                        </items>
-                    </phone-number-container>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./button1/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
-                    <uppercase-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please select check box, if you want button text to be in upper case"
-                        name="./button1/uppercaseFlag"
-                        text="Is Button1 Label Upper Case?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
@@ -776,6 +1096,125 @@
                         name="./button2/ctaLabel"
                         required="{Boolean}false"
                         text="Label"/>
+                    <options-dropdown
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=" .options-btn2-hide-show"
+                        fieldDescription="Please select the type of the button to be created. (Default to noraml button)"
+                        fieldLabel="Button-2 Type"
+                        name="./button2/option">
+                        <items jcr:primaryType="nt:unstructured">
+                            <urlpath
+                                jcr:primaryType="nt:unstructured"
+                                text="Button (Default)"
+                                value="Link"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                text="Phone"
+                                value="Phone"/>
+                            <modal
+                                jcr:primaryType="nt:unstructured"
+                                text="Modal"
+                                value="Modal"/>
+                        </items>
+                    </options-dropdown>
+                    <url-path-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn2-hide-show"
+                        showhidetargetvalue="Link">
+                        <items jcr:primaryType="nt:unstructured">
+                            <url-path
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
+                                fieldLabel="Button-2 URL"
+                                name="./button2/urlPath"
+                                rootPath="/content"/>
+                            <querystringkeyselection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select a key from list of commonly used query string keys"
+                                fieldLabel="Select Query String"
+                                multiple="{Boolean}true"
+                                name="./button2/selectedQueryString">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaigncode
+                                        jcr:primaryType="nt:unstructured"
+                                        text="campaigncode"
+                                        value="campaigncode"/>
+                                    <area
+                                        jcr:primaryType="nt:unstructured"
+                                        text="area"
+                                        value="area"/>
+                                    <intcmp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="intcmp"
+                                        value="intcmp"/>
+                                    <cid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="cid"
+                                        value="cid"/>
+                                    <bcd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bcd"
+                                        value="bcd"/>
+                                </items>
+                            </querystringkeyselection>
+                            <querystringkey
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldLabel="Button-2 Custom Query String"
+                                name="./button2/queryStringKey"/>
+                            <open-in-new-tab-flag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please check box if it has to open in new Tab"
+                                name="./button2/openNewTabFlag"
+                                text="Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </url-path-container>
+                    <phone-number-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn2-hide-show"
+                        showhidetargetvalue="Phone">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone-number
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Only numbers are accepted."
+                                fieldLabel="Enter Phone Number"
+                                name="./button2/buttonphonenumber"
+                                pattern="number"/>
+                        </items>
+                    </phone-number-container>
+                    <modal-popup-container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="hide options-btn2-hide-show"
+                        showhidetargetvalue="Modal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modal-popup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                activeValidation="{Boolean}true"
+                                fieldDescription="Please make sure to enter a unique ID associated with each modal on page to identify it uniquely."
+                                fieldLabel="Modal Id"
+                                name="./button2/buttonmodal"/>
+                        </items>
+                    </modal-popup-container>
+                    <uppercase-flag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        fieldDescription="Please select check box, if you want button text to be in upper case"
+                        name="./button2/uppercaseFlag"
+                        text="Is button2 label upper case?"
+                        value="{Boolean}true"/>
                     <cta-color
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -784,89 +1223,6 @@
                         fieldLabel="CTA Color"
                         freestylePalette="{Boolean}true"
                         name="./button2/ctaColor"/>
-                    <url-path
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                        fieldDescription="If it is a AAA App URL, please enter URL in the format-http://[Domain].[ClubName].aaa.com/home.html"
-                        fieldLabel="Button-2 URL"
-                        name="./button2/urlPath"
-                        rootPath="/content"
-                        showhidetargetvalue="linkstyle"/>
-                    <querystringkeyselection
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Please select a key from list of commonly used query string keys"
-                        fieldLabel="Select Query String"
-                        multiple="{Boolean}true"
-                        name="./button2/selectedQueryString">
-                        <items jcr:primaryType="nt:unstructured">
-                            <campaigncode
-                                jcr:primaryType="nt:unstructured"
-                                text="campaigncode"
-                                value="campaigncode"/>
-                            <area
-                                jcr:primaryType="nt:unstructured"
-                                text="area"
-                                value="area"/>
-                            <intcmp
-                                jcr:primaryType="nt:unstructured"
-                                text="intcmp"
-                                value="intcmp"/>
-                            <cid
-                                jcr:primaryType="nt:unstructured"
-                                text="cid"
-                                value="cid"/>
-                            <bcd
-                                jcr:primaryType="nt:unstructured"
-                                text="bcd"
-                                value="bcd"/>
-                        </items>
-                    </querystringkeyselection>
-                    <querystringkey
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
-                        fieldLabel="Button-2 Custom Query String"
-                        name="./button2/queryStringKey"/>
-                    <phone-number-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        class="cq-dialog-checkbox-showhide"
-                        cq-dialog-checkbox-showhide-target=".enable-btn2-phone-number-showhide-target"
-                        fieldDescription="Please select the check box to enable the phone number field."
-                        name="./button2/phonedialFlag"
-                        text="Is Phone Number?"
-                        value="{Boolean}true"/>
-                    <phone-number-container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/container"
-                        class="hide enable-btn2-phone-number-showhide-target"
-                        showhidetargetvalue="{Boolean}true">
-                        <items jcr:primaryType="nt:unstructured">
-		                    <phone-number
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        activeValidation="{Boolean}true"
-		                        fieldDescription="Only numbers are accepted."
-		                        fieldLabel="Enter Phone Number"
-		                        name="./button2/buttonphonenumber"
-		                        pattern="number"/>
-                        </items>
-                    </phone-number-container>
-                    <open-in-new-tab-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please check box if it has to open in new Tab"
-                        name="./button2/openNewTabFlag"
-                        text="Open in new window?"
-                        value="{Boolean}true"/>
-                    <uppercase-flag
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                        fieldDescription="Please select check box, if you want button text to be in upper case"
-                        name="./button2/uppercaseFlag"
-                        text="Is Button2 Label Upper Case?"
-                        value="{Boolean}true"/>
                 </items>
             </columns>
         </items>
