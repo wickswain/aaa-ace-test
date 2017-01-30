@@ -55,20 +55,20 @@
             
             <!-- List of the rows start here -->
             <sly data-sly-list.row="${tableprovider.rows}">
-                <div data-sly-resource="${row.path @ resourceType=row.resourceType}" data-sly-unwrap="${wcmmode.disabled}"></div>
+                <div data-sly-resource="${row.path @ resourceType=row.resourceType}" data-sly-unwrap="${wcmmode.disabled || wcmmode.preview}"></div>
             </sly>
 			<!-- List of the rows end here -->
             
             <div data-sly-test="${properties.totalRowCount != '0'}" 
             	 class="row membership-cols seeAllLink">
                 <div class="col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs"></div>
-                <div data-sly-test="${properties.columnCount=='1'}" class="col-md-3 col-sm-12 col-xs-12">
+                <div data-sly-test="${properties.columnCount=='1'}" class="col-md-3 col-sm-12 col-xs-12 text-center">
                 	<a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a>
                 </div>
-                <div data-sly-test="${properties.columnCount=='2'}" class="col-md-6 col-sm-12 col-xs-12">
+                <div data-sly-test="${properties.columnCount=='2'}" class="col-md-6 col-sm-12 col-xs-12 text-center">
                 	<a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a>
                 </div>
-                <div data-sly-test="${properties.columnCount=='3'}" class="col-md-9 col-sm-12 col-xs-12">
+                <div data-sly-test="${properties.columnCount=='3'}" class="col-md-9 col-sm-12 col-xs-12 text-center">
                 	<a href="javascript:void(0);" class="link-btn link-sm link-color-blue seeAll" title="See All Link">See all</a>
                 </div>
             </div>

@@ -6,7 +6,13 @@ var interval = setInterval(function() {
 	    if (numberOfRows > fixedRows) {
 	    	var showCount = parseInt(fixedRows) * 2;
 
-	        $(this).find('.membership-cols:gt(' + showCount + ')').hide();
+            if(showCount != 0) {
+	    		showCount = parseInt(showCount) - 1;
+	        	$(this).find('.membership-cols:gt(' + showCount + ')').hide();
+            } else {
+				$(this).find('.membership-cols').hide();
+            }
+
 	        $(this).find(".seeAllLink").show();
 	    } else {
 	    	$(this).find(".seeAllLink").remove();

@@ -28,8 +28,8 @@
 <sly data-sly-test="${isAuthored}">
 
     <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info ${properties.alignTop ? 'align-top' : ''}">
-			<span>
+        <div class="col-md-3 col-sm-12 col-xs-12 icon-info text-center ${properties.alignTop ? 'align-top' : ''}">
+			<span class="text-center">
 				<sly data-sly-use.rowItemDescription2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='rowItemDescription2'}" />
 				${rowItemDescription2.childResource.text @ context='html'}
 			</span>
