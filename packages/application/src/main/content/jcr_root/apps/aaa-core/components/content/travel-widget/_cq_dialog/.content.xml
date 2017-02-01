@@ -48,9 +48,27 @@
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         defaultValue="5776"
                         fieldDescription="Reference ids[(CA / 5733),(TX / 5799),(NM / 5748),(HI / 5738),(NNE / 5741),(TW / 5780),(AL / 5755),(ACMO / 5783),(EC / 5770)]. Default value section(5776)"
-                        fieldLabel="Select Reference ID"
+                        fieldLabel="Enter Reference ID"
                         name="./refId"
                         value="5776"/>
+                    <clubcode
+                    	jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Club codes[(CA / 004),(TX / 252),(NM / 601),(HI / 018),(NNE / 036),(TW / 258),(AL / 001),(ACMO / 065),(EC / 215)]."
+                        fieldLabel="Enter Partner Code"
+                        name="./clubCode"/>
+                    <partnercode
+                    	jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Partner codes[(CA / 53709),(TX / 58592),(NM / 58593),(HI / 60996),(NNE / 67113),(TW / 35190),(AL / 1817),(ACMO / 21533),(EC / 31333)]."
+                        fieldLabel="Enter Partner Code"
+                        name="./partnerCode"/>
+                    <webserialnumber
+                    	jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Web serial numbers[(CA / 1001),(TX / 1280),(NM / 1281),(HI / 1482),(NNE / 2732),(TW / 1167),(AL / 1116),(ACMO / 1183),(EC / 1198)]."
+                        fieldLabel="Enter Web Serial Number"
+                        name="./wsnCode"/>
                 </items>
             </column>
         </items>

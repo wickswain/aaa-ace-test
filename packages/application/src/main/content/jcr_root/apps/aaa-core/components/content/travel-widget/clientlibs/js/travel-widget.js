@@ -1,5 +1,5 @@
 // Variables declaration starts
-var club_number = 004;
+var club_number = $('#club_number').val();
 var searchbox_options = {
 	refid : 5776,
 	open_window: true,
