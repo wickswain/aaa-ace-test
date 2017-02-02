@@ -10,7 +10,7 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  width: 1068px;
+  width: 1054px;
 }
 
 .rs_searchbox {
@@ -769,7 +769,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 @media only screen and (max-width:1086px) {
   .searchWrapper {
-    width: 734px;
+    width: 700px;
   }
   .rs_products li {
     width: 19.8%;
@@ -953,9 +953,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width:730px) {
-  .searchWrapper {
+  /*.searchWrapper {
     width: 410px;
-  }
+  }*/
   .form-holder {
     border-radius: 0 0 4px 4px;
   }
@@ -1146,9 +1146,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width:730px) {
-  .searchWrapper {
+  /*.searchWrapper {
     width: 390px;
-  }
+  }*/
 }
 
 
@@ -1458,9 +1458,65 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   left: auto;
 }
 
+
 @media only screen and (max-width:720px) {
   .rs_suggest .rs_suggest_absolute {
     width: 100% !important;
     position: static !important;
   }
+
 }
+
+
+
+/*travel-widget-container*/
+    /*.searchWrapper {
+    width: 320px;
+   }*/
+ @media only screen and (max-width:729px) {
+ .searchWrapper {
+    width: 320px;
+   }
+  .travel-widget-search-lable{
+     max-width: 266px;
+  }
+ }
+    .travel-widget-container{
+        padding-bottom: 70px;
+        padding-top: 70px;
+        background-repeat: no-repeat;
+    }
+    .travel-widget-search-lable{
+         padding-bottom:70px;
+         text-align:center;
+         margin:0 auto;
+     }
+@media only screen and (min-width:768px) {
+
+	.travel-widget-container{
+        padding-bottom: 100px;
+        padding-top: 100px;
+
+    }
+    .travel-widget-search-lable{
+         padding-bottom:100px;
+	}
+}
+@media only screen and (min-width:1500px) {
+	/*.searchWrapper {
+        width: 1054px;
+      }*/
+	.travel-widget-container{
+        padding-bottom: 130px;
+        padding-top: 130px;
+
+    }
+    .travel-widget-search-lable{
+         padding-bottom:130px;
+	}
+}
+@media only screen and (min-width:730px) and (max-width:1024px) {
+	.searchWrapper {
+        width: 700px;
+      }
+ }
