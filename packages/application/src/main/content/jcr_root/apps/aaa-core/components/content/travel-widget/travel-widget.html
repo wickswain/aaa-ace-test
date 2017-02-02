@@ -11,14 +11,13 @@
 
 <!-- Travel Widget Content
 ============================================= -->
-<div class="travel-widget-container" style="background:url('/content/dam/aaa/images/full-img.png');">
+<div class="travel-widget-container" style="background: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');">
 	<div class="travel-widget-search-lable">
-		<h5 class="roboto-slab-bold font-a">Search. Plan. Book with AAA.</h5>
+		<h5 data-sly-test="${properties.title}" data-sly-text="${properties.title}" class="roboto-slab-bold font-a"></h5>
     </div>
+    
     <div class="travel-widget">
-        <script type="text/javascript"
-                src="http://www.southernnewengland.aaa.com/uploads/club1/js/searchbox.min.js">
-        </script>
+        <script type="text/javascript" src="http://www.southernnewengland.aaa.com/uploads/club1/js/searchbox.min.js"></script>
         
         <input type="hidden" name="club_number" id="club_number" value="${properties.clubCode}"/>
         
@@ -82,8 +81,8 @@
                         <div class='rs_button_row'>
                             <button type="submit" class="rs_search" data-rs_ga_track='["click",["Searchbox - home page", "Submit"]]' title='Search'>SEARCH</button>
                             <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-                            <span> | </span>
-                            <a href="https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&club=${properties.clubCode}&page=PartnerRedirect&PID=403&https://www.pleasantholidays.com/deeplink?pcode=${properties.partnerCode}&wsn=${properties.wsnCode}&p_type=FH&g1a=2&rf=&d1=&f1=">Flight + Hotel Packages</a>
+                            <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+                            <a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
                             <span> | </span>
                             <a href="https://secure.rezserver.com/home/?refid=${properties.refId ? properties.refId : '5776'}&refclickid=travel_widget_advanced-search">Advanced Search</a>
                         </div>
@@ -191,8 +190,8 @@
                             <div class="rs_button_row">
                                 <button type="submit" class="rs_search">SEARCH</button>
                                 <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-                                <span> | </span>
-                                <a href="https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&club=${properties.clubCode}&page=PartnerRedirect&PID=403&https://www.pleasantholidays.com/deeplink?pcode=${properties.partnerCode}&wsn=${properties.wsnCode}&p_type=FH&g1a=2&rf=&d1=&f1=">Flight + Hotel Packages</a>
+                                <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+                            	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
                                 <span> | </span>
                                 <a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
                             </div>
@@ -276,8 +275,8 @@
                             <div class="rs_button_row">
                                 <button type="submit" class="rs_search">SEARCH</button>
                                 <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-                                <span> | </span> 
-                                <a href="https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&club=${properties.clubCode}&page=PartnerRedirect&PID=403&https://www.pleasantholidays.com/deeplink?pcode=${properties.partnerCode}&wsn=${properties.wsnCode}&p_type=FH&g1a=2&rf=&d1=&f1=">Flight + Hotel Packages</a>
+                                <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+                            	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
                                 <span> | </span>
                                 <a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
                             </div>

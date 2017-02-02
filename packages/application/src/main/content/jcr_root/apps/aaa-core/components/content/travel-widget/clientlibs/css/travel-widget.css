@@ -184,7 +184,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 
 .date_and_travelers {
   display: inline-block;
-  width: 29%;
+  width: 30%;
   padding-left: 1px;
 }
 
@@ -612,7 +612,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
-  width: 37%;
+  width: 36%;
 }
 
 .cruise_destination, .cruise_vendor, .cruise_length, .cruise_month, .cruise_year {
@@ -835,7 +835,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 100%;
   }
   #air_travelers {
-    width: 49%;
+    width: 48%;
   }
   #air_travelers .cabin_options {
     margin: 10px;
@@ -1473,13 +1473,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     /*.searchWrapper {
     width: 320px;
    }*/
- @media only screen and (max-width:729px) {
- .searchWrapper {
-    width: 320px;
-   }
-  .travel-widget-search-lable{
-     max-width: 266px;
-  }
+@media only screen and (max-width:729px) {
+ 	.searchWrapper {
+    	width: 333px;
+   	}
+   
+  	.travel-widget-search-lable{
+     	max-width: 266px;
+  	}
  }
     .travel-widget-container{
         padding-bottom: 70px;
