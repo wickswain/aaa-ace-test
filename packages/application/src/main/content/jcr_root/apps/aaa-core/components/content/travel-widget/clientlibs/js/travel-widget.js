@@ -251,7 +251,7 @@ if ($('.travel-widget').length > 0) {
 	}
 
 	$('#different_return').click(function() {
-		$(".rs_droppff_div").slideToggle();
+		$(".rs_dropoff_div").slideToggle();
 	});
 
 	$('.round-trip').click(function() {
@@ -439,12 +439,12 @@ function hideMulti(num) {
 }
 
 function sameLocation() {
-	$(".rs_droppff_div").hide();
+	$(".rs_dropoff_div").hide();
 	$(".rs_pickup_div").removeClass('rs_car_half');
 }
 
 function differentLocation() {
-	$(".rs_droppff_div").show();
+	$(".rs_dropoff_div").show();
 	$(".rs_pickup_div").addClass('rs_car_half');
 }
 

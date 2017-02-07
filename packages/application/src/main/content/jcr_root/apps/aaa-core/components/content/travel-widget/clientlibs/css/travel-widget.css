@@ -159,7 +159,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
   padding: 0 10px;
 }
 
-.rs_droppff_div, #air_one_way, #air_multi_dest {
+.rs_dropoff_div, #air_one_way, #air_multi_dest {
   display: none;
 }
 
@@ -522,7 +522,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 49%;
   font-size: 16px;
   color: #666666;
-  ;
   margin-left: 35%;
 }
 
@@ -551,7 +550,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   bottom: -28px;
 }
 
-.rs_droppff_div::after {
+.rs_dropoff_div::after {
   content: "";
   background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
   background-repeat: no-repeat;
@@ -1085,7 +1084,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 103%;
     bottom: -24px;
   }
-  .rs_droppff_div::after {
+  .rs_dropoff_div::after {
     bottom: 10px;
   }
   .rs_car_form .rs_date {
