@@ -1,0 +1,1537 @@
+.rs_searchbox_hide {
+  display: none;
+}
+
+.searchWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #404747;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 1054px;
+}
+
+.rs_searchbox {
+  width: 100%;
+  width: calc(100% - 22px);
+  width: -webkit-calc(100% - 22px);
+  margin: auto;
+  padding: 0;
+  position: relative;
+  font-size: 13px;
+  vertical-align: middle;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.rs_searchbox label {
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.rs_products {
+  margin: 0 1px;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  width: 100%;
+}
+
+.rs_products li {
+  display: inline-block;
+  width: 19.9%;
+  height: 49px;
+  line-height: 49px;
+  margin: 0 -1px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  background-color: #005095;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.rs_products .mobile-tab {
+  display: none;
+}
+
+.rs_products li.last_tab {
+  margin-right: 0;
+  width: 20%;
+}
+
+.rs_products li.highlight_tab {
+  color: #005095;
+  background-color: white;
+}
+
+.form-holder {
+  background-color: white;
+  min-height: 160px;
+  padding: 20px;
+  -webkit-border-radius: 0 0 2px 2px;
+  -moz-border-radius: 0 0 2px 2px;
+  border-radius: 0 0 2px 2px;
+}
+
+.rs_no_margin {
+  margin-right: 0 !important;
+}
+
+select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .rs_time_in, .rs_time_out, .rooms, .rs_select_box, .rs_cruise_box {
+  border: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.rs_autosuggest {
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-position: left 10px center !important;
+  background-repeat: no-repeat !important;
+  padding-left: 35px;
+  border: 1px solid #cbc9c9;
+  height: 50px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.hotel_trip {
+  display: inline-block;
+  width: 40%;
+  vertical-align: bottom;
+}
+
+.rs_hotel_form .date_field {
+  width: 32%;
+}
+
+.rs_hotel_form .date_field .date_select {
+  margin-top: -1px;
+}
+
+.rs_hotel_form .rs_rooms, .rs_hotel_form .rs_guests {
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background-position: right;
+}
+
+.rs_air_form .rs_air_options {
+  width: 59%;
+  margin-left: 35%;
+  color: #666666;
+  font-size: 16px;
+}
+
+.rs_air_form .rs_air_options input[type="radio"], .rs_car_form .rs_car_options input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+.rs_air_form .rs_air_options i, .rs_car_form .rs_car_options i {
+  display: inline-block;
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_radio_unselected.svg) no-repeat;
+  height: 30px;
+  width: 30px;
+  vertical-align: text-bottom;
+}
+
+.rs_air_options input:checked+i, .rs_car_options input:checked+i {
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_radio_selected.svg) no-repeat;
+}
+
+.rs_air_options .multi-link {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.rs_air_options .multi-link span {
+  color: #c6c6c6;
+}
+
+.rs_air_options .multi-link a {
+  display: inline-block;
+  color: #0099ff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.rs_dropoff_div, #air_one_way, #air_multi_dest {
+  display: none;
+}
+
+#air_round_trip {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -10px;
+}
+
+#air_one_way {
+  width: 100%;
+  vertical-align: middle;
+  margin-top: -10px;
+}
+
+.air_trip {
+  width: 45%;
+  height: 50px;
+  display: inline-block;
+}
+
+.date_and_travelers {
+  display: inline-block;
+  width: 29%;
+  padding-left: 1px;
+}
+
+#air_one_way .date_field {
+  width: 100%;
+}
+
+.air-date {
+  height: 50px;
+}
+
+#air_one_way .date_select::before {
+  background: none;
+}
+
+#air_travelers {
+  width: 23%;
+  display: inline-block;
+  border: none;
+}
+
+#air_travelers .traveler_select {
+  border: 1px solid #cbc9c9;
+  height: inherit;
+  position: relative;
+}
+
+#air_travelers .traveler_select .dropbtn {
+  height: 100%;
+  line-height: 47px;
+  padding-left: 10px;
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background-position: right;
+}
+
+#air_travelers .traveler_select .dropdown-content {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #c6c6c6;
+  width: 101%;
+  margin-left: -1px;
+  z-index: 1;
+}
+
+#air_travelers .traveler_select .dropdown-content .cabin_options {
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+#air_travelers .traveler_select .dropdown-content .adult_travelers {
+  padding-bottom: 5px;
+}
+
+#air_travelers .traveler_select select {
+  display: block;
+  text-align-last: center;
+  width: 45%;
+  height: 23px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  color: #000000;
+  vertical-align: bottom;
+}
+
+#air_travelers .traveler_select input {
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+  font-size: 20px;
+  border: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  vertical-align: top;
+  position: relative;
+  top: 9px;
+}
+
+#air_travelers .traveler_select .traveler_line {
+  display: block;
+  width: 90%;
+  border-bottom: 1px solid #c6c6c6;
+  margin: 5%;
+}
+
+#air_travelers .traveler_select label {
+  opacity: 1;
+}
+
+#air_travelers .traveler_select label span {
+  vertical-align: top;
+  margin: 5px;
+  display: inline;
+}
+
+#air_travelers .traveler_select label span.adult_label {
+  position: relative;
+  top: 12px;
+}
+
+#air_travelers .traveler_select .min_button, #air_travelers .traveler_select .plus_button {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  background-position: left center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  /*margin-left: -20px;*/
+  padding: 0
+}
+
+#air_travelers .traveler_select .min_button {
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_minus.svg);
+}
+
+#air_travelers .traveler_select .plus_button {
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_plus.svg);
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.prevClass {
+  border: none;
+  background: transparent;
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_left_black.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 27px;
+  margin-left: -5px;
+}
+
+.upArrow {
+  background-image: url('/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_up_blue.svg') !important;
+}
+
+.nextClass {
+  border: none;
+  background: transparent;
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_right_black.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 27px;
+  margin-left: -5px;
+}
+
+.air_trip .rs_from, .air_trip .rs_to {
+  border: 1px solid #cbc9c9;
+  width: 49%;
+  height: 51px;
+  font-size: 18px;
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-position: left 10px center !important;
+  background-repeat: no-repeat !important;
+  padding-left: 35px;
+}
+
+.rs_air_form .rs_autosuggest {
+  width: 50%;
+  border: 1px solid #cbc9c9;
+}
+
+.rs_air_form .rs_autosuggest.rs_from {
+  margin-right: -4px;
+  border-right: none;
+}
+
+.rs_air_form .rs_autosuggest.rs_to {
+  border-left: none;
+}
+
+.air_trip::before {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_round_trip_arrows.svg);
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 16px;
+  display: inline-block;
+  position: relative;
+  left: 213px;
+  bottom: -75px;
+}
+
+#air_one_way .air_trip::before {
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  bottom: -80px;
+}
+
+#air_multi_dest {
+  position: fixed;
+  z-index: 1;
+  background-color: #fff;
+  width: 1068px;
+  height: auto;
+  padding: 25px;
+  border: 1px solid #c6c6c6;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.field_label {
+  display: block;
+  color: #1b1b1b;
+  opacity: 0.5;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.date_field {
+  display: inline-block;
+}
+
+.date_select {
+  border: 1px solid lightgrey;
+}
+
+.date_select::before {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-repeat: no-repeat;
+  height: 13px;
+  width: 16px;
+  display: inline-block;
+  position: relative;
+  left: 140px;
+  bottom: 0;
+}
+
+#air_one_way .date_select::before {
+  background: none;
+}
+
+.rooms_and_guests {
+  display: inline-block;
+  width: 27%;
+  vertical-align: bottom;
+}
+
+.rs_chk_in, .rs_chk_out {
+  cursor: pointer;
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_dates.svg);
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 46%;
+  padding-left: 35px;
+  border-radius: 0px;
+  font-size: 18px;
+}
+
+.rs_chk_in {
+  margin-left: -19px;
+}
+
+.rs_chk_out {
+  margin-left: 17px;
+}
+
+.rs_rooms, .rs_guests {
+  width: 48%;
+  margin-left: 3px;
+  height: 50px;
+  border: 1px solid lightgrey;
+  border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 10px;
+  background-color: white;
+  font-size: 18px;
+}
+
+.rs_button_row {
+  height: 74px;
+  padding-top: 45px;
+  color: #c6c6c6;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+
+.rs_button_row a {
+  color: #09f;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 0 6px;
+}
+
+.rs_search {
+  margin-top: -12px;
+  float: right;
+  height: 50px;
+  width: 30%;
+  background-color: #01a3fe;
+  color: white;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border-radius: 2px;
+}
+
+.rs_search:hover {
+  background-color: #1080d9;
+}
+
+.add_flight {
+  background-color: #ffffff;
+  border: 2px solid #0099ff;
+  color: #0099ff;
+  float: right;
+  width: 25%;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: -12px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border-radius: 2px;
+}
+
+#car_options {
+  width: 49%;
+  font-size: 16px;
+  color: #666666;
+  margin-left: 35%;
+}
+
+.rs_car_option {
+  display: inline-block;
+  color: #404747;
+  padding: 0 0 25px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rs_car_half {
+  float: left;
+  width: 49.5%;
+  margin-right: 1%;
+  vertical-align: middle;
+  *float: left;
+}
+
+.rs_dropoff {
+  border-left: none;
+  margin-left: -5px;
+  margin-bottom: -30px;
+  width: 102.5%;
+  position: relative;
+  bottom: -28px;
+}
+
+.rs_dropoff_div::after {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 16px;
+  display: inline-block;
+  position: relative;
+  left: -15px;
+  bottom: -5px;
+}
+
+.car_location_row {
+  width: 40%;
+  display: inline-block;
+}
+
+.rs_car_form .rs_date {
+  display: inline-block;
+  width: 29%;
+  padding: 0 3px;
+  vertical-align: top;
+}
+
+.rs_car_form .date_select {
+  width: 100%;
+  padding-right: 3px;
+}
+
+.rs_car_form .date_select::before {
+  background: none;
+}
+
+.rs_car_form .date_select input {
+  border-right: 1px solid #c6c6c6;
+  padding-right: 5px;
+}
+
+.rs_car_form .date_select select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.rs_car_form .rs_time {
+  font-size: 18px;
+  overflow: hidden;
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background-position-x: 70px;
+  background-position-y: -5px;
+  background-position: 70px;
+}
+
+.rs_car_form .rs_chk_in, .rs_car_form .rs_chk_out {
+  width: 60%;
+}
+
+.rs_car_form .rs_chk_out {
+  margin-left: -15px;
+}
+
+.rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
+  width: 35%;
+}
+
+.cruise_destination, .cruise_vendor, .cruise_length, .cruise_month, .cruise_year {
+  height: 50px;
+  display: inline-block;
+  padding: 7.2px 6px;
+}
+
+.rs_cruise_form select {
+  height: 50px;
+  font-size: 18px;
+  background-color: transparent;
+  border: 1px solid #c6c6c6;
+  width: 100%;
+  border-radius: 0px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 10px;
+}
+
+.cruise_destination {
+  width: 30%;
+}
+
+.cruise_vendor {
+  width: 25%;
+}
+
+.cruise_length {
+  width: 18%;
+}
+
+.cruise_destination select, .cruise_vendor select, .cruise_length select {
+  color: #1b1b1b;
+  overflow: hidden;
+  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background-position-y: 4px;
+    background-position: 4px
+}
+
+.cruise_destination select {
+  background-position-x: 250px;
+    background-position:250px;
+}
+
+.cruise_vendor select {
+  background-position-x: 200px;
+    background-position: 200px;
+}
+
+.cruise_length select {
+  background-position-x: 130px;
+    background-position: 130px;
+}
+
+.rs_cruise_form .cruise_date {
+  display: inline-block;
+  width: 25%;
+}
+
+.rs_cruise_form .cruise_month {
+  width: 63%;
+  margin-right: -4px;
+}
+
+.cruise_month_select::after {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg);
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 27px;
+  display: inline-block;
+  position: absolute;
+  right: 130px;
+  bottom: 145px;
+}
+
+.rs_cruise_form .cruise_year {
+  width: 35%;
+  border-left: none;
+}
+
+.cruise_year_select::after {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg);
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 27px;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  bottom: 145px;
+}
+
+.rs_cruise_form .rs_button_row {
+  padding-bottom: 25px;
+}
+
+.vacation_destination, .vacation_date {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.vacation_destination {
+  width: 60%;
+}
+
+.vacation_date {
+  width: 39%;
+  vertical-align: top;
+}
+
+.vacation_destination input, .vacation_date input {
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  font-size: 20px;
+}
+
+.vacation_destination input {
+  width: 100%;
+  padding-left: 35px;
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-position: left 10px center !important;
+  background-repeat: no-repeat !important;
+}
+
+.vacation_date input {
+  width: 49%;
+  margin-left: 0px
+}
+
+.vacation_date .rs_chk_in {
+  border-right: none;
+  margin-right: -4px;
+}
+
+.vacation_date .rs_chk_out {
+  border-left: none;
+}
+
+.vacation_date::after {
+  content: "";
+  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 16px;
+  display: inline-block;
+  position: relative;
+  left: 170px;
+  bottom: 32px;
+}
+
+#vacation-form .rs_button_row {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width:1086px) {
+  .searchWrapper {
+    width: 700px;
+  }
+  .rs_products li {
+    width: 19.8%;
+  }
+  .rs_products li.last_tab {
+    margin-right: 0;
+    width: calc(20% + 2px);
+  }
+  .hotel_trip {
+    width: 100%;
+  }
+  .rs_autosuggest {
+    width: 100%;
+  }
+  .date_field {
+    margin: 20px 0;
+    display: block;
+  }
+  .rs_hotel_form .date_field {
+    width: 50%;
+  }
+  .date_select::before {
+    left: 160px;
+  }
+  .rooms_and_guests {
+    position: absolute;
+    right: 29px;
+    bottom: 144px;
+    width: 45%;
+  }
+  .rs_button_row {
+    padding-top: 25px;
+  }
+  .rs_air_form .rs_form_row {
+    width: 100%;
+  }
+  #air_round_trip, #air_one_way {
+    width: 100%;
+  }
+  .rs_air_form .date_and_travelers {
+    width: 50%;
+  }
+  .rs_air_form .date_field {
+    width: 100%;
+    display: inline-block;
+  }
+  .air_trip {
+    width: 100%;
+  }
+  .rs_air_form .rs_air_options {
+    margin-left: 30%;
+  }
+  .air_trip::before {
+    left: 300px;
+  }
+  .rs_air_form .rs_from {
+    margin-right: -4px;
+  }
+  .rs_air_form .rs_from, .rs_air_form .rs_to {
+    width: 50%;
+  }
+  #air_one_way .date_field, #air_one_way .date_field .rs_date {
+    width: 100%;
+  }
+  #air_travelers {
+    width: 49%;
+  }
+  #air_travelers .cabin_options {
+    margin: 10px;
+  }
+  #air_travelers .traveler_select label span {
+    margin: 15px;
+  }
+  #air_travelers .traveler_select .dropdown-content {
+    width: 100.5%;
+  }
+  #air_travelers .rs_adults_input {
+    width: 30%;
+  }
+  #air_travelers .rs_child_input {
+    width: 33%;
+  }
+  #car_options {
+    width: 75%;
+    margin-left: 30%;
+  }
+  .car_location_row {
+    width: 100%;
+  }
+  .rs_dropoff {
+    margin-left: -9px;
+    width: 102%;
+    margin-bottom: -25px;
+  }
+  .rs_car_form .rs_date {
+    padding-top: 15px;
+    width: 50%;
+    margin-left: -3px;
+    width: calc(48% + 8px);
+    padding-right: 3px;
+  }
+  .rs_car_form .date_select {
+    padding-right: 0px;
+  }
+  .rs_date, .rs_people {
+    width: 49.2%;
+  }
+  .cruise_destination {
+    width: 49%;
+  }
+  .cruise_vendor {
+    width: 49%;
+  }
+  .cruise_length {
+    margin-top: 20px;
+    width: 49%;
+  }
+  .rs_cruise_form .cruise_date {
+    width: 48%;
+    margin-left: 5px;
+    margin-top: -34px;
+    vertical-align: middle;
+  }
+  .cruise_date .cruise_month {
+    width: 50%;
+  }
+  .cruise_month_select::after {
+    right: 195px;
+    bottom: 144px;
+  }
+  .cruise_date .cruise_year {
+    width: 50%;
+    padding-left: 40px;
+  }
+  .cruise_year_select::after {
+    right: 42px;
+    bottom: 144px;
+  }
+  .cruise_destination select {
+    background-position-x: 260px;
+    background-position:260px;
+  }
+  .cruise_vendor select {
+    background-position-x: 260px;
+    background-position:260px;
+  }
+  .cruise_length select {
+    background-position-x: 260px;
+    background-position:260px;
+  }
+  .rs_cruise_form .rs_button_row {
+    padding-bottom: 15px;
+    padding-top: 35px;
+  }
+  .rs_cruise_form .rs_search {
+    width: 40%;
+  }
+  .vacation_destination {
+    width: 100%;
+  }
+  .vacation_date {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .vacation_date input {
+    width: 50%;
+  }
+  .vacation_date::after {
+    left: 300px;
+  }
+  #vacation-form .rs_button_row {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  #vacation-form .rs_search {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width:844px) {
+  .rs_air_form .rs_air_options {
+    margin-left: 25%;
+  }
+}
+
+@media only screen and (max-width:730px) {
+  /*.searchWrapper {
+    width: 410px;
+  }*/
+  .form-holder {
+    border-radius: 0 0 4px 4px;
+  }
+  .rs_products li {
+    width: 19.6%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    border-radius: 4px 4px 0 0;
+  }
+  .rs_products .mobile-tab {
+    display: inline-block;
+  }
+  .rs_products .desktop-tablet-tab {
+    display: none;
+  }
+  .rs_products li.last_tab {
+    margin-right: 0;
+    width: calc(19.6% + 3px);
+  }
+  .rs_autosuggest, .rs_chk_in, .rs_chk_out, .rs_rooms, .rs_guests.rs_guests {
+    font-size: 16px;
+  }
+  .rs_hotel_form .date_field {
+    width: 100%;
+  }
+  .rs_chk_in, .rs_chk_out {
+    margin-left: 0px;
+  }
+  .rs_chk_out {
+    border-left: 1px solid #cbc9c9;
+  }
+  .date_select::before {
+    display: none;
+  }
+  .rooms_and_guests {
+    display: block;
+    position: static;
+    width: 100%;
+  }
+  .rs_button_row {
+    padding-top: 30px;
+    padding-bottom: 5px;
+  }
+  .rs_button_row a, .rs_button_row span {
+    display: none;
+  }
+  .rs_search {
+    width: 73%;
+    margin-right: 40px;
+  }
+  .rs_air_form {
+    width: 100%;
+  }
+  .rs_air_form .rs_air_options {
+    width: 100%;
+    font-size: 14px;
+    margin-left: 0%;
+  }
+  .rs_air_options label {
+    padding-right: 0px;
+  }
+  .air_trip {
+    width: 100%;
+  }
+  .air_trip::before {
+    content: "";
+    background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_round_trip_arrows.svg);
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 16px;
+    display: inline-block;
+    position: relative;
+    left: 120px;
+    bottom: -70px;
+  }
+  #air_one_way .air_trip::before {
+    bottom: -75px;
+  }
+  #air_round_trip, #air_one_way {
+    width: 100%;
+  }
+  .rs_air_form .date_and_travelers {
+    width: 100%;
+  }
+  .rs_air_form .date_field {
+    width: 100%;
+    display: inline-block;
+  }
+  #air_travelers {
+    width: 100%;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 30px;
+    position: static;
+  }
+  #air_round_trip .rs_rooms, #air_one_way .rs_rooms {
+    padding-left: 0px;
+  }
+  #car_options {
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+  }
+  .rs_car_option {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  .car_location_row {
+    width: 100%;
+  }
+  .rs_car_half {
+    margin-bottom: -25px;
+  }
+  .rs_dropoff {
+    margin-left: -5px;
+    margin-bottom: 0px;
+    width: 103%;
+    bottom: -24px;
+  }
+  .rs_dropoff_div::after {
+    bottom: 10px;
+  }
+  .rs_car_form .rs_date {
+    padding-top: 15px;
+    width: 100%;
+  }
+  .rs_car_form .rs_chk_out {
+    margin-left: -1px;
+  }
+  .rs_vp_form .rs_form_row {
+    width: 49.2%;
+  }
+  .rs_vp_form .rs_rooms_row {
+    width: 32.5%;
+  }
+  .cruise_destination {
+    width: 100%;
+  }
+  .cruise_vendor {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .cruise_length {
+    width: 100%;
+  }
+  .cruise_destination select {
+    background-position-x: 220px;
+    background-position:220px;
+  }
+  .cruise_vendor select {
+    background-position-x: 220px;
+    background-position:220px;
+  }
+  .cruise_length select {
+    background-position-x: 220px;
+	background-position: 220px;
+  }
+  .rs_cruise_form .cruise_date {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  .cruise_date .cruise_year {
+    width: 48%;
+  }
+  .cruise_date .cruise_month {
+    width: 48%;
+  }
+  .cruise_month_select::after {
+    right: 165px;
+  }
+  .cruise_year_select::after {
+    right: 35px;
+  }
+  .rs_cruise_form .rs_search {
+    width: 70%;
+  }
+  .vacation_date::after {
+    display: none;
+  }
+  .vacation_date .rs_chk_out {
+    border-left: 1px solid #c6c6c6;
+  }
+  #vacation-form .rs_button_row {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+  #vacation-form .rs_search {
+    width: 70%;
+  }
+    .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
+        width: 37%;
+    }
+}
+
+@media only screen and (max-width:730px) {
+  /*.searchWrapper {
+    width: 390px;
+  }*/
+}
+
+
+/* Calendar Styles */
+
+.rs_suggest {
+  position: absolute;
+  z-index: 20;
+  display: none;
+}
+
+.rs_suggest .rs_suggest_absolute {
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #333;
+  background: #fff;
+  z-index: 6;
+  zoom: 1;
+  border-top: 1px solid #ccc;
+}
+
+.rs_suggest .rs_suggest_show {
+  background: #fff;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.rs_suggest .rs_suggest_show a {
+  color: #1e69b3;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.rs_suggest .rs_suggest_absolute {
+  width: 439px;
+  position: absolute;
+}
+
+.rs_suggest .rs_suggest_active, .rs_suggest .rs_suggest_show:hover {
+  background: #eeeeee;
+  color: #469edc;
+}
+
+.rs_suggest ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rs_suggest li {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+}
+
+.rs_suggest_left {
+  width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.rs_suggest_right {
+  width: 30%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  line-height: normal;
+}
+
+.rs_suggest_subhead {
+  display: inline-block;
+  text-align: right;
+  font-size: 12px;
+}
+
+.rs_sub_count {
+  font-size: 12px;
+  display: none;
+}
+
+.rs_sub_count {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.rs_suggest_subhead {
+  font-size: 14px;
+}
+
+.rs_suggest .rs_suggest_air_code {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rs_suggest .rs_suggest_city_name {
+  display: none;
+  font-size: 14px;
+  color: #444444;
+}
+
+.rs_suggest_active .rs_suggest_city_name {
+  display: none;
+}
+
+.rs_suggest_heading {
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 13px;
+  margin: 0;
+  position: relative;
+  background: #1e69b3;
+}
+
+.rs_suggest .rs_icon {
+  width: 15px;
+  height: 13px;
+  margin-right: 5px;
+  background: url('/etc/clientlibs/aaa-ne-web/base/images/icons.png');
+  display: inline-block;
+}
+
+.rs_suggest .icon_city {
+  background-position: 60px 0px;
+}
+
+.rs_suggest .icon_region {
+  background-position: 30px 0px;
+}
+
+.rs_suggest .icon_airport {
+  background-position: 15px 0px;
+}
+
+.rs_suggest .icon_poi {
+  background-position: 0px 0px;
+}
+
+.rs_suggest .icon_hotel {
+  background-position: 45px 0px;
+}
+
+.rs_suggest .rs_suggest_active .icon_city {
+  background-position: 60px 13px;
+}
+
+.rs_suggest .rs_suggest_active .icon_region {
+  background-position: 30px 13px;
+}
+
+.rs_suggest .rs_suggest_active .icon_airport {
+  background-position: 15px 13px;
+}
+
+.rs_suggest .rs_suggest_active .icon_poi {
+  background-position: 0px 13px;
+}
+
+.rs_suggest .rs_suggest_active .icon_hotel {
+  background-position: 45px 13px;
+}
+
+.rs_cal {
+  background-color: #fff;
+  border: 1px solid #8b8b8b;
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  color: #333;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  background: #fff;
+}
+
+.rs_cal .rs_cal_box {
+  display: block;
+}
+
+.rs_cal .rs_calTop {
+  text-align: center;
+  background-color: #004b8e;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 5px 0;
+  height: 35px;
+  line-height: 35px;
+  display: block;
+}
+
+.rs_cal .rs_calTop .rs_cal_previous_month {
+  position: absolute;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 10px 10px 0;
+  left: 0;
+  top: 0;
+  line-height: 24px;
+  display: block;
+}
+
+.rs_cal .rs_calTop .rs_cal_next_month {
+  position: absolute;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 0px 10px 10px;
+  right: 0;
+  line-height: 24px;
+  top: 0;
+  display: block;
+}
+
+.rs_cal .rs_topRow {
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
+
+.rs_cal table {
+  width: 300px;
+  height: 300px;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.rs_cal .rs_topRow td {
+  background-image: -webkit-linear-gradient(top, #eaeaea, #e5e5e5 60%, #d9d9d9);
+  background-image: -moz-linear-gradient(top, #eaeaea, #e5e5e5 60%, #d9d9d9);
+  background-image: -o-linear-gradient(top, #eaeaea, #e5e5e5 60%, #d9d9d9);
+  background-image: linear-gradient(to bottom, #eaeaea, #e5e5e5 60%, #d9d9d9);
+  -webkit-box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+  width: 14.28571428571429%;
+}
+
+.rs_cal td {
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+}
+
+.rs_cal .rs_cal_day:hover {
+  background-color: #999999;
+  color: #fff;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.rs_cal .rs_setDate {
+  background-color: #1e69b3;
+  color: #fff;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.rs_cal .rs_disabledDate {
+  color: #9c9c9c;
+}
+
+.rs_cal .rs_betweenDate {
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.rs_cal .rs_calClose {
+  text-align: center;
+  color: #1e69b3;
+  font-weight: bold;
+  height: 11.1111111111%;
+}
+
+.rs_cal .rs_calClose:hover {
+  background-color: #d6d6d6;
+  cursor: pointer;
+}
+
+.rs_cal .rs_cal_arrow {
+  position: relative;
+  right: auto;
+  left: auto;
+}
+
+
+@media only screen and (max-width:720px) {
+  .rs_suggest .rs_suggest_absolute {
+    width: 100% !important;
+    position: static !important;
+  }
+
+}
+
+
+
+/*travel-widget-container*/
+    /*.searchWrapper {
+    width: 320px;
+   }*/
+ @media only screen and (max-width:729px) {
+ .searchWrapper {
+    width: 333px;
+   }
+  .travel-widget-search-lable{
+     max-width: 266px;
+  }
+ }
+    .travel-widget-container{
+        padding-bottom: 70px;
+        padding-top: 70px;
+        background-repeat: no-repeat;
+    }
+    .travel-widget-search-lable{
+         padding-bottom:70px;
+         text-align:center;
+         margin:0 auto;
+     }
+@media only screen and (min-width:768px) {
+
+	.travel-widget-container{
+        padding-bottom: 100px;
+        padding-top: 100px;
+
+    }
+    .travel-widget-search-lable{
+         padding-bottom:100px;
+	}
+}
+@media only screen and (min-width:1500px) {
+	/*.searchWrapper {
+        width: 1054px;
+      }*/
+	.travel-widget-container{
+        padding-bottom: 130px;
+        padding-top: 130px;
+
+    }
+    .travel-widget-search-lable{
+         padding-bottom:130px;
+	}
+}
+@media only screen and (min-width:730px) and (max-width:1024px) {
+	.searchWrapper {
+        width: 700px;
+      }
+ }
