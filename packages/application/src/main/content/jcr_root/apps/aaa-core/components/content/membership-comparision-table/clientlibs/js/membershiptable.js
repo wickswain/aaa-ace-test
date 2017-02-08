@@ -6,7 +6,13 @@ var interval = setInterval(function() {
 	    if (numberOfRows > fixedRows) {
 	    	var showCount = parseInt(fixedRows) * 2;
 
-	        $(this).find('.membership-cols:gt(' + showCount + ')').hide();
+            if(showCount != 0) {
+	    		showCount = parseInt(showCount) - 1;
+	        	$(this).find('.membership-cols:gt(' + showCount + ')').hide();
+            } else {
+				$(this).find('.membership-cols').hide();
+            }
+
 	        $(this).find(".seeAllLink").show();
 	    } else {
 	    	$(this).find(".seeAllLink").remove();
@@ -18,8 +24,8 @@ var interval = setInterval(function() {
     });
 
     if(document.readyState === 'complete') {
-    	$(".membership-row-text, .membership-row-img").find("div").css("padding", "0px");
-    	$(".membership-row-text, .membership-row-img").find("span").css("padding", "0px");
+    	$(".membership-row-text, .membership-row-img, .icon-info").find("div").css("padding", "0px").css("border", "none").css("display", "inherit");
+        $(".membership-row-text, .membership-row-img, .icon-info").find("span").css("padding", "0px").css("border", "none");
     	
         $(".seeAll").click(function() {
             $(this).parent().parent().parent().find('.membership-cols').css("display", "flex");
@@ -31,8 +37,8 @@ var interval = setInterval(function() {
 
 }, 100);
 
-$(".membership-row-text, .membership-row-img").find("div").css("padding", "0px");
-$(".membership-row-text, .membership-row-img").find("span").css("padding", "0px");
+$(".membership-row-text, .membership-row-img, .icon-info").find("div").css("padding", "0px").css("border", "none").css("display", "inherit");
+$(".membership-row-text, .membership-row-img, .icon-info").find("span").css("padding", "0px").css("border", "none");
 
 $(document).on("click", ".btn-info", function () {
 	var header = $(this).data("header");

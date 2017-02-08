@@ -10,12 +10,13 @@
 <sly data-sly-use.icon1="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon1'}" />
 <sly data-sly-use.icon2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon2'}" />
 <sly data-sly-use.icon3="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon3'}" />
-<sly data-sly-test.isNotAuthored="${!(properties.alignTop || properties.showModalBox || properties.text || properties.modalTitle || properties.showModalBox || properties.enableCol1Text || properties.enableCol2Text || properties.enableCol3Text)}" />
+<sly data-sly-test.isAuthored="${properties.showModalBox || properties.enableCol1Text || properties.enableCol2Text || 
+								properties.enableCol3Text || icon1.childResource || icon2.childResource || icon3.childResource}" />
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
 =============================================-->
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && isNotAuthored}" 
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
 	 data-emptytext="Author Membership Table Row here"
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
      alt="Membership Comparison Table Row Component" style="align:center;">
@@ -24,11 +25,11 @@
 
 <!-- Row Content
 =============================================-->
-<sly data-sly-test="${!isNotAuthored}">
+<sly data-sly-test="${isAuthored}">
 
     <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
-        <div class="col-md-3 col-sm-12 col-xs-12 icon-info ${properties.alignTop ? 'align-top' : ''}">
-			<span>
+        <div class="col-md-3 col-sm-12 col-xs-12 icon-info text-center ${properties.alignTop ? 'align-top' : ''}">
+			<span class="text-center">
 				<sly data-sly-use.rowItemDescription2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='rowItemDescription2'}" />
 				${rowItemDescription2.childResource.text @ context='html'}
 			</span>
