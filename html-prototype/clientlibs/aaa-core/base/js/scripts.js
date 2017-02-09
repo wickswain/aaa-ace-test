@@ -58,11 +58,6 @@ $j(function($) {
     function headerResize() {
         var winheight = $(window).height(),
             headHeight = $('#page-header').outerHeight();
-        $('.home-header').each(function() {
-            ($(this).height() < winheight / 2 - headHeight && $(this).hasClass('small')) ? $(this).height(winheight / 2 - headHeight): false;
-            ($(this).height() < winheight / 4 * 3 - headHeight && $(this).hasClass('medium')) ? $(this).height(winheight / 4 * 3 - headHeight): false;
-            ($(this).height() < winheight - headHeight && $(this).hasClass('full')) ? $(this).height(winheight - headHeight): false;
-        });
         if (!$('body').data('previewmode')) {
             $('.navigation-bar, .slideboxer, .backslide, .slide-nav, .drawers-wrapper, .tiles-list li > ul, body').removeAttr('style');
             $('.navigation-bar .nav > li a').removeClass('deactive');
