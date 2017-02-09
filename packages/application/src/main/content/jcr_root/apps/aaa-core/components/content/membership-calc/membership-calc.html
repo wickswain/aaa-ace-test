@@ -89,10 +89,11 @@
                             <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
                                 <div class="item">
                                     <div class="table-block">
-                                        <div class="services-title roboto-medium font-g table-cell"
-                                             style="background-image:url('${child.itemizedIcon ? child.itemizedIcon : ' ' @ context='styleString'}')"
-                                             title="${child.iconAltText}">
-                                            ${child.itemizedSavingsText}
+                                        <div class="services-title roboto-medium font-g table-cell">
+										<div class="membership-icon">
+											<img src="${child.itemizedIcon ? child.itemizedIcon : ' '}" alt="${child.iconAltText}" class="img-responsive">
+										</div>
+										${child.itemizedSavingsText}
                                         </div>
                                         <div class="price font-g table-cell">
                                             <span class="position-rel">
