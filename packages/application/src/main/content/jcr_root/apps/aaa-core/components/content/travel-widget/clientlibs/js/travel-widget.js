@@ -1,7 +1,9 @@
 // Variables declaration starts
 var club_number = $('#club_number').val();
+var ref_id = $('#ref_id').val();
+
 var searchbox_options = {
-	refid : 5776,
+	refid : ref_id,
 	open_window: true,
 	environment : "prod",
 	hotel : {

@@ -44,7 +44,7 @@
                     <highlighttab
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldDescription="Select the tab which is highlighted by default. "
+                        fieldDescription="Select the tab which is to be highlighted by default. "
                         fieldLabel="Select Highlight Tab"
                         name="./tabType">
                         <items jcr:primaryType="nt:unstructured">
@@ -73,16 +73,14 @@
                     <refid
                     	jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                        defaultValue="5776"
                         fieldDescription="Reference ids[(CA / 5733),(TX / 5799),(NM / 5748),(HI / 5738),(NNE / 5741),(TW / 5780),(AL / 5755),(ACMO / 5783),(EC / 5770)]. Default value section(5776)"
                         fieldLabel="Enter Reference ID"
-                        name="./refId"
-                        value="5776"/>
+                        name="./refId"/>
                     <clubcode
                     	jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                         fieldDescription="Club codes[(CA / 004),(TX / 252),(NM / 601),(HI / 018),(NNE / 036),(TW / 258),(AL / 001),(ACMO / 065),(EC / 215)]."
-                        fieldLabel="Enter Partner Code"
+                        fieldLabel="Enter Club Code"
                         name="./clubCode"/>
                     <partnercode
                     	jcr:primaryType="nt:unstructured"
