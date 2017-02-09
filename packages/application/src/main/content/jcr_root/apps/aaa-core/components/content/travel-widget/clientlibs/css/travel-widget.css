@@ -90,7 +90,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 }
 
 .rs_autosuggest {
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
   background-position: left 10px center !important;
   background-repeat: no-repeat !important;
   padding-left: 35px;
@@ -115,7 +115,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 }
 
 .rs_hotel_form .rs_rooms, .rs_hotel_form .rs_guests {
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position: right;
 }
 
@@ -133,14 +133,14 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 
 .rs_air_form .rs_air_options i, .rs_car_form .rs_car_options i {
   display: inline-block;
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_radio_unselected.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_radio_unselected.svg) no-repeat;
   height: 30px;
   width: 30px;
   vertical-align: text-bottom;
 }
 
 .rs_air_options input:checked+i, .rs_car_options input:checked+i {
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_radio_selected.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_radio_selected.svg) no-repeat;
 }
 
 .rs_air_options .multi-link {
@@ -216,7 +216,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
   height: 100%;
   line-height: 47px;
   padding-left: 10px;
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position: right;
 }
 
@@ -307,11 +307,11 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 }
 
 #air_travelers .traveler_select .min_button {
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_minus.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_minus.svg);
 }
 
 #air_travelers .traveler_select .plus_button {
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_plus.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_plus.svg);
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -322,7 +322,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .prevClass {
   border: none;
   background: transparent;
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_left_black.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_left_black.svg);
   background-position: left center;
   background-repeat: no-repeat;
   height: 14px;
@@ -331,13 +331,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .upArrow {
-  background-image: url('/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_up_blue.svg') !important;
+  background-image: url('/etc/clientlibs/aaa-core/base/images/btn_arrow_up_blue.svg') !important;
 }
 
 .nextClass {
   border: none;
   background: transparent;
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_right_black.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_right_black.svg);
   background-position: left center;
   background-repeat: no-repeat;
   height: 14px;
@@ -350,7 +350,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 49%;
   height: 51px;
   font-size: 18px;
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
   background-position: left 10px center !important;
   background-repeat: no-repeat !important;
   padding-left: 35px;
@@ -372,7 +372,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .air_trip::before {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_round_trip_arrows.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg);
   background-repeat: no-repeat;
   height: 25px;
   width: 16px;
@@ -383,7 +383,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 #air_one_way .air_trip::before {
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
   bottom: -80px;
 }
 
@@ -417,7 +417,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .date_select::before {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
   background-repeat: no-repeat;
   height: 13px;
   width: 16px;
@@ -439,7 +439,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_chk_in, .rs_chk_out {
   cursor: pointer;
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_dates.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_dates.svg);
   background-position: left 10px center;
   background-repeat: no-repeat;
   height: 48px;
@@ -552,7 +552,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_dropoff_div::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
   background-repeat: no-repeat;
   height: 25px;
   width: 16px;
@@ -597,7 +597,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .rs_car_form .rs_time {
   font-size: 18px;
   overflow: hidden;
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-x: 70px;
   background-position-y: -5px;
   background-position: 70px;
@@ -649,7 +649,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .cruise_destination select, .cruise_vendor select, .cruise_length select {
   color: #1b1b1b;
   overflow: hidden;
-  background: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg) no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-y: 4px;
     background-position: 4px
 }
@@ -681,7 +681,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .cruise_month_select::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg);
   background-repeat: no-repeat;
   height: 25px;
   width: 27px;
@@ -698,7 +698,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .cruise_year_select::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/btn_arrow_down_blue.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg);
   background-repeat: no-repeat;
   height: 25px;
   width: 27px;
@@ -735,7 +735,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .vacation_destination input {
   width: 100%;
   padding-left: 35px;
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_whereto_location_pin.svg) !important;
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
   background-position: left 10px center !important;
   background-repeat: no-repeat !important;
 }
@@ -756,7 +756,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .vacation_date::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_oneway_arrow.svg);
+  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
   background-repeat: no-repeat;
   height: 25px;
   width: 16px;
@@ -1030,7 +1030,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   }
   .air_trip::before {
     content: "";
-    background-image: url(/etc/clientlibs/aaa-ne-web/base/images/ic_round_trip_arrows.svg);
+    background-image: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg);
     background-repeat: no-repeat;
     height: 25px;
     width: 16px;
@@ -1299,7 +1299,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 15px;
   height: 13px;
   margin-right: 5px;
-  background: url('/etc/clientlibs/aaa-ne-web/base/images/icons.png');
+  background: url('/etc/clientlibs/aaa-core/base/images/icons.png');
   display: inline-block;
 }
 
