@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="26px" viewBox="0 0 15 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_round_trip_arrows</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Widget-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-30" transform="translate(1.000000, 1.000000)" stroke="#CCCCCC" stroke-width="1.5">
+            <path d="M1.5,5.5 L12.5,5.5" id="Line-Copy-17"></path>
+            <polyline id="Path-427-Copy-18" transform="translate(10.500000, 5.416667) rotate(-90.000000) translate(-10.500000, -5.416667) " points="5.08333333 2.91666667 10.5 7.91666667 15.9166667 2.91666667"></polyline>
+            <path d="M0.5,18.5 L11.5,18.5" id="Line-Copy-18" transform="translate(6.000000, 18.500000) scale(-1, 1) translate(-6.000000, -18.500000) "></path>
+            <polyline id="Path-427-Copy-19" transform="translate(2.500000, 18.416667) scale(-1, 1) rotate(-90.000000) translate(-2.500000, -18.416667) " points="-2.91666667 15.9166667 2.5 20.9166667 7.91666667 15.9166667"></polyline>
+        </g>
+    </g>
+</svg>

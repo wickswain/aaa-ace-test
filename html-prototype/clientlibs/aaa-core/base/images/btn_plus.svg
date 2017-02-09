@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>btn_plus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="btn_plus" fill-opacity="0.1" fill="#0099FF" x="0" y="0" width="40" height="40"></rect>
+        <polygon id="+" fill="#0099FF" points="21.2402344 19.8476562 24.7460938 19.8476562 24.7460938 22.3085938 21.2402344 22.3085938 21.2402344 26.3515625 18.5351562 26.3515625 18.5351562 22.3085938 15 22.3085938 15 19.8476562 18.5351562 19.8476562 18.5351562 16 21.2402344 16"></polygon>
+    </g>
+</svg>
