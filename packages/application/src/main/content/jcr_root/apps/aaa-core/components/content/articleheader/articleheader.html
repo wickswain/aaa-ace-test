@@ -22,7 +22,7 @@ The properties of the component are part of page properties so no dialog is prov
 <!-- #placeholder-content end -->
 
  <!--/* Article Header Stand Alone */-->
- <div id="${properties.jumpLinkId}" class="article-header roboto-medium font-a" data-sly-test="${isAuthored}">
+ <div id="${properties.jumpLinkId}" class="article-header" data-sly-test="${isAuthored}">
    <div class="article-info horizontal-space">
    	<ul class="list-inline font-e">
    		<li data-sly-test="${pageProperties.articleLogoImage}"><img src="${pageProperties.articleLogoImage}" alt="${pageProperties.articleLogoAltText}" height="20px" /></li>
@@ -33,7 +33,8 @@ The properties of the component are part of page properties so no dialog is prov
   		</li>
   	</ul>
   </div>
-  <h2 class="" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
+  <h2 class="font-a roboto-medium horizontal-space" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
+	${pageProperties.text @ context='html'}
  </div>
 
 <!--/* Article Header Stand Alone End */-->

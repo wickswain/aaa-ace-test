@@ -1,3 +1,4 @@
+$.getScript('http://www.southernnewengland.aaa.com/uploads/club1/js/searchbox.min.js', function() {
 // Variables declaration starts
 var club_number = $('#club_number').val();
 var ref_id = $('#ref_id').val();
@@ -475,3 +476,4 @@ function updateTravelers(menu) {
 		
 	});
 }
+});
