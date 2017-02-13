@@ -10,14 +10,14 @@
 
     Required Fields:
     1. Title Text
+*/-->
 
-
- Placeholder Content */-->
-============================================= -->
+<!--/* Placeholder Content 
+============================================= */-->
 <img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}" data-emptytext="Author Membership Calculator Component Here." src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Membership Calculator Component" />
-<!--/*  #placeholder-content end 
-  Global Sightly Provider Content  */-->
-============================================= -->
+<!--/*  #placeholder-content end  */-->
+ <!--/*  Global Sightly Provider Content  */-->
+============================================= 
 <sly data-sly-use.mcprovider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='mcfiledset'}" />
 <!--/* #global-sightly-provider-content end */-->
 <!-- Membership Calculator Content
@@ -52,8 +52,8 @@
 								<h2>${properties.aaaMembershipText}</h2>
 						   </div>
 						   <div  class="col-sm-5 roboto-medium font-b text-right">
-							    <sly data-sly-text="${properties.aaasMembershipCharge ? '-' :' ' }" />
-								<sly data-sly-text="${properties.aaasMembershipCharge ?  properties.aaasMembershipCharge :'0' }" />
+							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-',  properties.aaasMembershipCharge] }" />
+								<sly data-sly-text="${properties.aaasMembershipCharge ?  temp :'0' }" />
 							</div>
 						</div>
 						<hr>
