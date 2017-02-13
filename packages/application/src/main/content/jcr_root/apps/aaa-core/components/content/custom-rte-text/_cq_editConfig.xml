@@ -3,7 +3,4 @@
           cq:actions="[text:Text Editor,edit,-,copymove,delete,insert]"
           cq:dialogMode="floating"
           jcr:primaryType="cq:EditConfig">
-    <cq:listeners
-            jcr:primaryType="cq:EditListenersConfig"
-            afteredit="REFRESH_PAGE"/>
 </jcr:root>
