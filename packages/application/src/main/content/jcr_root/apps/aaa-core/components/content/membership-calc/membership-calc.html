@@ -1,116 +1,110 @@
 <!--/*
- 
+
     Membership Calculator Component.
     ----------------------------------------------------------------
- 
+
     The purpose of this component is to attract potential customers into membership with AAA,
     by displaying a wide varieity of savings/discounts available to the members.
-    
+
     Default Behavior: NA
-    
+
     Required Fields:
     1. Title Text
-
 */-->
- 
-<!-- Placeholder Content
-============================================= -->         
-<img
-    data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}"
-    data-emptytext="Author Membership Calculator Component Here."
-    src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
-    alt="Membership Calculator Component" />
-<!-- #placeholder-content end -->
 
-<!-- Global Sightly Provider Content
-============================================= -->         
+<!--/* Placeholder Content 
+============================================= */-->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}" data-emptytext="Author Membership Calculator Component Here." src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Membership Calculator Component" />
+<!--/*  #placeholder-content end  */-->
+ <!--/*  Global Sightly Provider Content  */-->
+============================================= 
 <sly data-sly-use.mcprovider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='mcfiledset'}" />
-<!-- #global-sightly-provider-content end -->
-
+<!--/* #global-sightly-provider-content end */-->
 <!-- Membership Calculator Content
 ============================================= -->
- <div data-sly-test="${properties.title}" id="${properties.jumpLinkId}" class="membership-calculator">
-    
-    <div class="container" style="color: ${properties.textColor ? properties.textColor
- 	: '' @ context='styleToken'}" >
-        <div class="horizontal-space roboto-light font-b">
-            <h2 title=${properties.title}>${properties.title}</h2> 
-        </div>
-
-        <div class="h-space-cal roboto-light font-g text-left">
-            <p> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}" /> </p>
-        </div>
-     </div>
-
-    <div class="membership-calculator-block">
-        <div class="container">
-            <div class="row row-eq-height">
-
-                <div class="col-xs-12 col-sm-6 membership-details">
-	                    <div class="membership-pay-info">
-		                        <div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
-		                        <div class="saving-item">
-		                            <div class="col-sm-7 roboto-light font-g">
-		                                <h2>${properties.yearlySavingsText}</h2>
-		                            </div>
-		                            <div class="col-sm-5 roboto-medium font-b text-right">${properties.yearlySavings}</div>
-		                        </div>
-		
-		                        <div class="saving-item">
-		                            <div class="col-sm-7 roboto-light font-g">
-		                                <h2>${properties.aaaMembershipText}</h2>
-		                            </div>
-		                            <div class="col-sm-5 roboto-medium font-b text-right">-${properties.aaasMembershipCharge}</div>
-		                        </div>
-		                        <hr>
-		                        <div class="clearfix"></div>
-		 						<div class="total-price-block">
-		                            <div class="col-sm-6 pull-left">
-		                                <div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
-		                            </div>    
-		                            <div class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium pull-right">&#36;${properties.totalSavings}</div>
-		                        </div>
-		                        <div class="clearfix"></div>
-	                   </div>
-                    
-                       <div class="horizontal-space"></div>
-                    
-	                    <div class="col-sm-12 img-membership">
-	                        <img src=${properties.fileReference} title=${properties.altText}
-	                             alt=${properties.altText} />
-	                    </div>
-                </div>
-                
-                <div class="col-xs-12 col-sm-8 col-md-6 block-center">
-                    <div class=" block-position">
-                        <div class="membership-discount-details">
-                            <span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
-                            
-                            <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
-                                <div class="item">
-                                    <div class="table-block">
-                                        <div class="services-title roboto-medium font-g table-cell"
-                                             style="background-image:url('${child.itemizedIcon ? child.itemizedIcon : ' ' @ context='styleString'}')"
-                                             title="${child.iconAltText}">
-                                            ${child.itemizedSavingsText}
-                                        </div>
-                                        <div class="price font-g table-cell">
-                                            <span class="position-rel">
-                                              <span class="discount-price font-h">${child.actualPrice}</span>${child.discountPrice}
-                                            </span>
-                                        </div>
-                                        <div class="total-price font-g table-cell">
-                                            <span class="position-rel"> <span
-                                                class="title-saved font-h">${child.savingsLabel}</span>$${child.itemizedSavings}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </sly>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        </div>
-    </div>
+<div data-sly-test="${properties.title}" id="${properties.jumpLinkId}" class="membership-calculator">
+	<div class="container" style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'}">
+		<div class="horizontal-space roboto-light font-b">
+			<h2 title=${properties.title}>${properties.title}</h2>
+		</div>
+		<div class="h-space-cal roboto-light font-g text-left">
+			<p>
+				<sly data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}" />
+			</p>
+		</div>
+	</div>
+	<div class="membership-calculator-block">
+		<div class="container">
+			<div class="row row-eq-height">
+				<div class="col-xs-12 col-sm-6 membership-details">
+					<div class="membership-pay-info">
+						<div class="title-space text-center font-h ">${properties.totalSavingsHeading}</div>
+						<div class="saving-item">
+							<div class="col-sm-7 roboto-light font-g">
+								<h2>${properties.yearlySavingsText}</h2>
+							</div>
+							<div data-sly-text="${properties.yearlySavings ? properties.yearlySavings : '0'}"
+							 	 class="col-sm-5 roboto-medium font-b text-right">
+							</div>
+						</div>
+						<div class="saving-item">
+							<div class="col-sm-7 roboto-light font-g">
+								<h2>${properties.aaaMembershipText}</h2>
+						   </div>
+						   <div  class="col-sm-5 roboto-medium font-b text-right">
+							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-',  properties.aaasMembershipCharge] }" />
+								<sly data-sly-text="${properties.aaasMembershipCharge ?  temp :'0' }" />
+							</div>
+						</div>
+						<hr>
+						<div class="clearfix"></div>
+						<div class="total-price-block">
+							<div class="col-sm-6 pull-left">
+								<div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
+							</div>
+							<div data-sly-text="${'{0}{1}' @ format =['$',properties.totalSavings ? properties.totalSavings :'0'] }" class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium pull-right">
+			
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="horizontal-space"></div>
+					<div class="col-sm-12 img-membership">
+						<img src=${properties.fileReference} title=${properties.altText} alt=${properties.altText} />
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-6 block-center">
+					<div class=" block-position">
+						<div class="membership-discount-details">
+							<span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
+							 <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
+								<div class="item">
+									<div class="table-block">
+										<div class="services-title roboto-medium font-g table-cell">
+											<div class="membership-icon">
+												<img src="${child.itemizedIcon ? child.itemizedIcon : ' '}" alt="${child.iconAltText}" class="img-responsive">
+											</div>
+                                            	${child.itemizedSavingsText}
+										</div>
+										<div class="price font-g table-cell">
+											<span class="position-rel">
+												<span  data-sly-text= "${child.actualPrice ? child.actualPrice : '0'}" class="discount-price font-h" >	
+												</span>
+												${child.discountPrice}
+											</span>
+										</div>
+										<div class="total-price font-g table-cell">
+											<span class="position-rel">
+												<span  data-sly-text ="${'{0}{1}' @ format =['$',child.itemizedSavings ? child.itemizedSavings :'0'] }"class="title-saved font-h">${child.savingsLabel}</span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</sly>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

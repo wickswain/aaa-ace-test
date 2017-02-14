@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-02-09T16:44:22.042+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/aaa-core/templates/generic"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Error"
+        sling:resourceType="aaa-core/components/page/genericpage"/>
+    <_x0034_04/>
+    <_x0035_00/>
+</jcr:root>

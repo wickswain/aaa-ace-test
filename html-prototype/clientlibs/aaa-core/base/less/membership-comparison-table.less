@@ -103,9 +103,7 @@ Membership Comparison Table Component
             flex-flow: row wrap;
             justify-content: center;
             div:not(:first-child) {
-                border-left: 1px solid #cccccc;
-                border-top: 1px solid #ccc;
-                flex:2;
+               flex:2;
                 div {
                     border: 0;
                 }
@@ -116,7 +114,7 @@ Membership Comparison Table Component
                 border-right: 1px solid #ccc;
                 flex: 0 1 100%;
 					span{
-					padding-right: 20px;
+					margin-right: 20px;
 					}
             }
             div:last-child {
@@ -151,6 +149,9 @@ Membership Comparison Table Component
                 padding: 15px 15px;
                 text-overflow: ellipsis;
                 overflow: hidden;
+					.membership-row-text{ 
+					display:block;
+					}
             }
         }
     }
@@ -162,7 +163,17 @@ Membership Comparison Table Component
     }
 }
 
-@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 480px) {
+
+	.membership-comparison {
+			.row {
+				div:not(:first-child){
+				 border-left: 1px solid #cccccc;
+				 border-top: 1px solid #ccc;
+				}
+			}
+	}
+}
 
 @media only screen and (min-width: 768px) {
     .modal-content {

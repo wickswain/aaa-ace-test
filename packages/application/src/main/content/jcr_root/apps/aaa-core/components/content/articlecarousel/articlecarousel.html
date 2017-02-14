@@ -25,16 +25,16 @@ This component renders a article carousel.
 ============================================= -->
 <div id="article-carousel" class="carousel slide carousel-sync" data-sly-test="${isAuthored}">
 	<div class="carousel-inner" data-sly-list.images="${childImages.childResource.listChildren}">
-		<div data-imagelabel="${images.imageLabel @ context='html'}" data-author="Photo By ${images.photoCredit @ context='html'}"
+		<div data-imagelabel="${images.imageLabel @ context='html'}" data-author="Photo by ${images.photoCredit @ context='html'}"
 		     class="item ${imagesList.count==1 && 'active'}">
 			<img src="${images.carouselImage}" alt="${images.altText}" title=${images.altText}>	
 		</div>
 	</div>
 
-    <div class="carousel-text left-align">
+    <div class="font-h carousel-text left-align">
         <span class="image-label"></span>
     </div>
-    <div class="carousel-text right-align">
+    <div class="font-h carousel-text right-align">
         <span class="slide-count"></span>
     </div>
 
