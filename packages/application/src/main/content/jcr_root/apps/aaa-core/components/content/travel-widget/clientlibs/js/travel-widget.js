@@ -354,6 +354,7 @@ $(".rs_mvp_form").submit(function(e) {
 	var mvp_start = $('.rs_chk_in').val();
 	var mvp_end = $('.rs_chk_out').val();
 	var mvp_kw = $('#mvp-keywords').val();
+	var action = $(".rs_mvp_form").attr('action');
 
 	if (mvp_kw == "Destination / Keyword") {
 		mvp_kw = "";
@@ -367,12 +368,7 @@ $(".rs_mvp_form").submit(function(e) {
 		mvp_end = "";
 	}
 	
-	window.location.href = "https://southernnewengland.membervacationportal.com/?keyword="
-			+ mvp_kw
-			+ "&start="
-			+ mvp_start
-			+ "&end="
-			+ mvp_end + "";
+	window.location.href = action + "?keyword=" + mvp_kw + "&start=" + mvp_start + "&end=" + mvp_end + "";
 	return false;
 });
 

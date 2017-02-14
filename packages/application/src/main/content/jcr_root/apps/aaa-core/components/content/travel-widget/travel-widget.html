@@ -482,7 +482,7 @@
                         <div class="clear"></div>
                     </form>
     
-                    <form name="vp" class="rs_vp_form rs_searchbox_hide">
+                    <form name="mvp" class="rs_vp_form rs_searchbox_hide">
                         <div class="rs_form_row">
                             <input name="rs_o_city" class="from rs_autosuggest rs_from" value='From' onclick='$(this).val("");' autocomplete="off">
                         </div>
@@ -530,9 +530,9 @@
                     </form>
     
                     <form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
-                        id="vacation-form" name="hotel" method="get"
-                        action="https://southernnewengland.membervacationportal.com/">
-                        <script src="https://southernnewengland.membervacationportal.com/widgets/form.min.js?club=1"></script>
+                        id="vacation-form" name="vp" method="get"
+                        action="${properties.vacationsLink ? properties.vacationsLink : 'https://southernnewengland.membervacationportal.com/'}">
+
                         <div class="rs_form_row vacation_row">
                             <div class="vacation_destination">
                                 <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
@@ -542,8 +542,8 @@
                             
                             <div class='rs_date_input_container vacation_date'>
                                 <label class="field_label">Date</label>
-                                <input name="start" class="rs_chk_in" id="mvps" placeholder="Start" readonly>
-                                <input name="end" class="rs_chk_out" id="mvpe" placeholder="End" readonly>
+                                <input name="rs_chk_in" class="rs_chk_in" placeholder="Start" readonly>
+                                <input name="rs_chk_out" class="rs_chk_out" placeholder="End" readonly>
                             </div>
                         </div>
                         
