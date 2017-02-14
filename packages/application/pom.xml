@@ -36,6 +36,10 @@
 
                 <configuration>
                     <filters>
+                     	<filter>
+                            <root>/apps/sling/servlet/errorhandler</root>
+                        </filter>
+                        
                         <filter>
                             <root>/apps/aaa-core/components</root>
                         </filter>

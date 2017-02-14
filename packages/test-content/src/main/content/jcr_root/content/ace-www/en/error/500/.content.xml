@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-02-09T16:54:13.155+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/aaa-core/templates/generic"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Internal Server Error"
+        sling:resourceType="aaa-core/components/page/genericpage">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <article_text
+                jcr:created="{Date}2017-02-09T16:53:51.482+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-02-09T16:54:13.154+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aaa-core/components/content/article-text"
+                text="&lt;div style=&quot;text-align: center;&quot;>500 : Internal Server Error&lt;/div>&#xd;&#xa;"
+                textIsRich="true"/>
+        </content-par>
+    </jcr:content>
+</jcr:root>
