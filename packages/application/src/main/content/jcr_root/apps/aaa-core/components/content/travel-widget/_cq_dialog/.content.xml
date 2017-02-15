@@ -46,10 +46,6 @@
 		                                jcr:primaryType="nt:unstructured"
 		                                text="Cruises"
 		                                value="cruises"/>
-		                            <vacations
-		                                jcr:primaryType="nt:unstructured"
-		                                text="Vacations"
-		                                value="vacations"/>
 		                        </items>
 		                    </highlighttab>
                             <headlinerte

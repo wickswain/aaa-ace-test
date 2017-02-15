@@ -301,8 +301,13 @@ if ($('.travel-widget').length > 0) {
 
 	var $icons = $('.rs_tabs');
 	$icons.click(function() {
-		$icons.removeClass('highlight_tab');
-		$(this).addClass('highlight_tab');
+		var futureTab = $(this).data("tab");
+		
+		if(futureTab !== 'rs_mvp_form'){
+			$icons.removeClass('highlight_tab');
+			$(this).addClass('highlight_tab');
+		}
+		
 	});
 	
 	var $hotel_options = $('.rs_hotel_option');
