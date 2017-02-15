@@ -45,6 +45,9 @@
 	   org.apache.commons.collections.CollectionUtils,
 	   org.apache.commons.collections.Predicate,
 	   org.apache.sling.api.resource.Resource,
+
+	   org.apache.sling.api.resource.ResourceUtil,
+
 	   org.apache.sling.api.resource.ResourceResolver,
 	   org.apache.sling.api.SlingHttpServletRequest" %><%
 
@@ -72,8 +75,12 @@
 
     /* teaser id */
     String targetDivId = ClientContextUtil.getId(resource.getPath());
+    List<Teaser> teaserList = null;
 
-    List<Teaser> teaserList = targetedContentManager.getTeasers(resourceResolver, location, slingRequest.getPathInfo());
+	if (!ResourceUtil.isNonExistingResource(resourceResolver.resolve(slingRequest.getPathInfo().replace(".html", "")))) {
+        teaserList = targetedContentManager.getTeasers(resourceResolver, location, slingRequest.getPathInfo());
+    }
+
     final Set<Resource> areas = areaService.getAreasForPage(currentPage.adaptTo(Resource.class));
     final Set<String> mappedAreaPaths = new HashSet<String>(areas.size());
     for(Resource area : areas){
@@ -106,7 +113,7 @@
 
     Type listType = new TypeToken<ArrayList<Teaser>>() {}.getType();
     String teaserVariants = new GsonBuilder().create().toJson(teaserList, listType);
-    if (teaserVariants.length() > 0) {
+    if (teaserList != null && teaserVariants.length() > 0) {
         String targetingEngine = (String)slingRequest.getAttribute("engine");
         if ("cq".equals(targetingEngine)) {
             String decoratedTeaserVariants = decorateTeaserUrl(slingRequest, teaserVariants);
