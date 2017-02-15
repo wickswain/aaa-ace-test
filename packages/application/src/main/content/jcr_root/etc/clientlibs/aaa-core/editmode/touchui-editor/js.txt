@@ -1,6 +1,8 @@
 #base=js
 
-tab-hide-show.js
-multifield.js
-text-field.js
 utils.js
+touchui-widgets-init.js
+multifield.js
+tab-hide-show.js
+text-field.js
+
