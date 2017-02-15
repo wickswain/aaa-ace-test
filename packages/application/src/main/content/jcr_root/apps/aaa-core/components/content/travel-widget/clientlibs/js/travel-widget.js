@@ -103,10 +103,34 @@ if ($('.travel-widget').length > 0) {
 	$(".rs_tabs").on( "click", function() {
 		var futureTab = $(this).data("tab"), $selectedForm = $("." + futureTab);
 		
-		if ($selectedForm.hasClass("rs_searchbox_hide")) {
-			$selectedForm.removeClass('rs_searchbox_hide').siblings(
-					"form").addClass("rs_searchbox_hide");
+		if(futureTab === 'rs_mvp_form') {
+			var mvp_start = $('.rs_chk_in').val();
+			var mvp_end = $('.rs_chk_out').val();
+			var mvp_kw = $('#mvp-keywords').val();
+			var action = $(".rs_mvp_form").attr('action');
+
+			if(action !== '#') {
+				if (mvp_kw == "Destination / Keyword") {
+					mvp_kw = "";
+				}
+				
+				if (mvp_start == "mm/dd/yyyy") {
+					mvp_start = "";
+				}
+				
+				if (mvp_end == "mm/dd/yyyy") {
+					mvp_end = "";
+				}
+				
+				window.location.href = action + "?keyword=" + mvp_kw + "&start=" + mvp_start + "&end=" + mvp_end + "";
+			}
+		} else {
+			if ($selectedForm.hasClass("rs_searchbox_hide")) {
+				$selectedForm.removeClass('rs_searchbox_hide').siblings(
+						"form").addClass("rs_searchbox_hide");
+			}			
 		}
+		
 	});
 
 	$(".rs_more_option").on("click", function() {

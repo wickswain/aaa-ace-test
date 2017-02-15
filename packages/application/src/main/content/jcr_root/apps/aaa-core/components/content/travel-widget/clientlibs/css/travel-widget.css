@@ -1,3 +1,9 @@
+.travel-widget-container {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
 .rs_searchbox_hide {
   display: none;
 }

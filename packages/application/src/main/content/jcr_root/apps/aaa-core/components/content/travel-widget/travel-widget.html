@@ -11,9 +11,10 @@
 
 <!-- Travel Widget Content
 ============================================= -->
-<div class="travel-widget-container" style="background: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');">
-	<div class="travel-widget-search-lable">
-		<h5 data-sly-test="${properties.title}" data-sly-text="${properties.title}" class="roboto-slab-bold font-a"></h5>
+<div id="${properties.jumpLinkId}" style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}'); background-color: ${properties.backgroundColor @ context='styleToken'};"
+	 class="travel-widget-container">
+	<div style="color:${properties.titleFontColor @ context='styleToken'};" class="travel-widget-search-lable">
+		<sly data-sly-test="${properties.headLineRTE}" data-sly-resource="${'headline-text' @ resourceType = '/apps/aaa-core/components/content/rte'}"/>
     </div>
     
     <div class="travel-widget">
@@ -531,7 +532,7 @@
     
                     <form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
                         id="vacation-form" name="vp" method="get"
-                        action="${properties.vacationsLink ? properties.vacationsLink : 'https://southernnewengland.membervacationportal.com/'}">
+                        action="${properties.vacationsLink ? properties.vacationsLink : '#'}">
 
                         <div class="rs_form_row vacation_row">
                             <div class="vacation_destination">
