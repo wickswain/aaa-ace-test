@@ -45,7 +45,7 @@
 							<div class="col-sm-7 roboto-light font-g">
 								<h2>${properties.yearlySavingsText}</h2>
 							</div>
-							<div data-sly-text="${properties.yearlySavings ? properties.yearlySavings : '0'}"
+							<div data-sly-text="${'{0}{1}' @ format =['$',properties.yearlySavings ? properties.yearlySavings :'0'] }"
 							 	 class="col-sm-5 roboto-medium font-b text-right">
 							</div>
 						</div>
@@ -54,8 +54,8 @@
 								<h2>${properties.aaaMembershipText}</h2>
 						   </div>
 						   <div  class="col-sm-5 roboto-medium font-b text-right">
-							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-',  properties.aaasMembershipCharge] }" />
-								<sly data-sly-text="${properties.aaasMembershipCharge ?  temp :'0' }" />
+							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-$',  properties.aaasMembershipCharge] }" />
+								<sly data-sly-text="${properties.aaasMembershipCharge ?  temp :'$0' }" />
 							</div>
 						</div>
 						<hr>
@@ -90,9 +90,9 @@
 										</div>
 										<div class="price font-g table-cell">
 											<span class="position-rel">
-												<span  data-sly-text= "${child.actualPrice ? child.actualPrice : '0'}" class="discount-price font-h" >	
+												<span  data-sly-text= "${'{0}{1}' @ format =['$',child.actualPrice ? child.actualPrice :'0']}" class="discount-price font-h" >	
 												</span>
-												${child.discountPrice}
+												$${child.discountPrice}
 											</span>
 										</div>
 										<div class="total-price font-g table-cell">
