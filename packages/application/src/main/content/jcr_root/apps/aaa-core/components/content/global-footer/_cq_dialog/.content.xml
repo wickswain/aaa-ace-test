@@ -290,7 +290,7 @@
                                 class="full-width"
                                 fieldDescription="Click 'Add field' to add a new item"
                                 fieldLabel="Social Media"
-                                max="2">
+                                max="3">
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
