@@ -19,35 +19,35 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                	<columns
+                    <columns
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-		                	<highlighttab
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/select"
-		                        fieldDescription="Select the tab which is to be highlighted by default."
-		                        fieldLabel="Select Highlight Tab"
-		                        name="./tabType">
-		                        <items jcr:primaryType="nt:unstructured">
-		                            <hotels
-		                                jcr:primaryType="nt:unstructured"
-		                                text="Hotels (Default)"
-		                                value="hotels"/>
-		                            <flights
-		                                jcr:primaryType="nt:unstructured"
-		                                text="Flights"
-		                                value="flights"/>
-		                            <cars
-		                                jcr:primaryType="nt:unstructured"
-		                                text="Cars"
-		                                value="cars"/>
-		                            <cruises
-		                                jcr:primaryType="nt:unstructured"
-		                                text="Cruises"
-		                                value="cruises"/>
-		                        </items>
-		                    </highlighttab>
+                            <highlighttab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select the tab which is to be highlighted by default."
+                                fieldLabel="Select Highlight Tab"
+                                name="./tabType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hotels
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hotels (Default)"
+                                        value="hotels"/>
+                                    <flights
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Flights"
+                                        value="flights"/>
+                                    <cars
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cars"
+                                        value="cars"/>
+                                    <cruises
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cruises"
+                                        value="cruises"/>
+                                </items>
+                            </highlighttab>
                             <headlinerte
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -55,45 +55,45 @@
                                 name="./headLineRTE"
                                 text="Enable RTE for Headline ?"
                                 value="{Boolean}true"/>
-		                    <headeringfontcolor
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-		                        colorsPath="/etc/config/aaa-core/components/common/textfontcolors"
-		                        fieldDescription="Choose font color for title."
-		                        fieldLabel="Title Font Color"
-		                        freestylePalette="{Boolean}true"
-		                        name="./titleFontColor"/>
-		                    <bgcolor
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-		                        colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
-		                        fieldDescription="Choose background color for travel widget component."
-		                        fieldLabel="Background Color"
-		                        freestylePalette="{Boolean}true"
-		                        name="./backgroundColor"/>
-		                    <bgimage
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
-		                        allowUpload="{Boolean}false"
-		                        autoStart="{Boolean}false"
-		                        class="cq-droptarget"
-		                        fieldDescription="Select backgroung image"
-		                        fieldLabel="Image"
-		                        fileNameParameter="./fileName"
-		                        fileReferenceParameter="./fileReference"
-		                        mimeTypes="[image]"
-		                        multiple="{Boolean}false"
-		                        name="./file"
-		                        title="Upload Image Asset"
-		                        uploadUrl="${suffix.path}"
-		                        useHTML5="{Boolean}true"/>
-		                    <alt-text
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        fieldLabel="Alt Text"
-		                        name="./altText"/>
-		             	</items>
-		           	</columns>
+                            <headeringfontcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/aaa-core/components/common/textfontcolors"
+                                fieldDescription="Choose font color for title."
+                                fieldLabel="Title Font Color"
+                                freestylePalette="{Boolean}true"
+                                name="./titleFontColor"/>
+                            <bgcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
+                                fieldDescription="Choose background color for travel widget component."
+                                fieldLabel="Background Color"
+                                freestylePalette="{Boolean}true"
+                                name="./backgroundColor"/>
+                            <bgimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select backgroung image"
+                                fieldLabel="Image"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <alt-text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Alt Text"
+                                name="./altText"/>
+                        </items>
+                    </columns>
                 </items>
             </basic>
             <travelwidget
@@ -104,70 +104,70 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                	<columns
+                    <columns
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-		                    <refid
-		                    	jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        fieldDescription="Reference ids[(CA / 5733),(TX / 5799),(NM / 5748),(HI / 5738),(NNE / 5741),(TW / 5780),(AL / 5755),(ACMO / 5783),(EC / 5770)]. Default value section(5776)"
-		                        fieldLabel="Enter Reference ID"
-		                        name="./refId"/>
-		                    <clubcode
-		                    	jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        fieldDescription="Club codes[(CA / 004),(TX / 252),(NM / 601),(HI / 018),(NNE / 036),(TW / 258),(AL / 001),(ACMO / 065),(EC / 215)]."
-		                        fieldLabel="Enter Club Code"
-		                        name="./clubCode"/>
-		                    <partnercode
-		                    	jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        fieldDescription="Partner codes[(CA / 53709),(TX / 58592),(NM / 58593),(HI / 60996),(NNE / 67113),(TW / 35190),(AL / 1817),(ACMO / 21533),(EC / 31333)]."
-		                        fieldLabel="Enter Partner Code"
-		                        name="./partnerCode"/>
-		                    <webserialnumber
-		                    	jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-		                        fieldDescription="Web serial numbers[(CA / 1001),(TX / 1280),(NM / 1281),(HI / 1482),(NNE / 2732),(TW / 1167),(AL / 1116),(ACMO / 1183),(EC / 1198)]."
-		                        fieldLabel="Enter Web Serial Number"
-		                        name="./wsnCode"/>
-			            	<vacationslink
-			                	jcr:primaryType="nt:unstructured"
-			                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-			                    fieldDescription="Example [(CA - https://calif.membervacationportal.com/), (NNE - http://northernnewengland.discounts.aaa.com/category/vacationdeals/catIdStr/728/uSource/AAAVD)]"
-			                    fieldLabel="Vacations Link"
-			                    name="./vacationsLink"/>
-		                    <fhlinkflag
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
-		                        class="cq-dialog-checkbox-showhide"
-		                        cq-dialog-checkbox-showhide-target=".fh-link-hide-show"
-		                        fieldDescription="Please select the checkbox to enable the Flights + Hotels link on Travel Widget."
-		                        name="./fhLinkFlag"
-		                        text="Enable Flights + Hotels Link?"
-		                        value="{Boolean}true"/>
-		                    <fhlinkflag_x0040_delete
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/form/hidden"
-		                        name="./fhLinkFlag@Delete"
-		                        value="{Boolean}true"/>
-		                    <fhlink-container
-		                        jcr:primaryType="nt:unstructured"
-		                        sling:resourceType="granite/ui/components/foundation/container"
-		                        class="hide fh-link-hide-show"
-		                        showhidetargetvalue="{Boolean}true">
-		                        <items jcr:primaryType="nt:unstructured">
-					            	<fhpackagelink
-					                	jcr:primaryType="nt:unstructured"
-					                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-					                    fieldDescription="Example (https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&amp;club=004&amp;page=PartnerRedirect&amp;PID=403&amp;https://www.pleasantholidays.com/deeplink?pcode=53709&amp;wsn=1001&amp;p_type=FH&amp;g1a=2&amp;rf=&amp;d1=&amp;f1=)"
-					                    fieldLabel="Flights + Hotels Link"
-					                    name="./fhLink"/>
-		                        </items>
-		                    </fhlink-container>
-		             	</items>
-		           	</columns>
+                            <refid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Reference ids[(CA / 5733),(TX / 5799),(NM / 5748),(HI / 5738),(NNE / 5741),(TW / 5780),(AL / 5755),(ACMO / 5783),(EC / 5770)]. Default value section(5776)"
+                                fieldLabel="Enter Reference ID"
+                                name="./refId"/>
+                            <clubcode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Club codes[(CA / 004),(TX / 252),(NM / 601),(HI / 018),(NNE / 036),(TW / 258),(AL / 001),(ACMO / 065),(EC / 215)]."
+                                fieldLabel="Enter Club Code"
+                                name="./clubCode"/>
+                            <partnercode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Partner codes[(CA / 53709),(TX / 58592),(NM / 58593),(HI / 60996),(NNE / 67113),(TW / 35190),(AL / 1817),(ACMO / 21533),(EC / 31333)]."
+                                fieldLabel="Enter Partner Code"
+                                name="./partnerCode"/>
+                            <webserialnumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Web serial numbers[(CA / 1001),(TX / 1280),(NM / 1281),(HI / 1482),(NNE / 2732),(TW / 1167),(AL / 1116),(ACMO / 1183),(EC / 1198)]."
+                                fieldLabel="Enter Web Serial Number"
+                                name="./wsnCode"/>
+                            <vacationslink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Example [(CA - https://calif.membervacationportal.com/), (NNE - http://northernnewengland.discounts.aaa.com/category/vacationdeals/catIdStr/728/uSource/AAAVD)]"
+                                fieldLabel="Vacations Link"
+                                name="./vacationsLink"/>
+                            <fhlinkflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".fh-link-hide-show"
+                                fieldDescription="Please select the checkbox to enable the Flights + Hotels link on Travel Widget."
+                                name="./fhLinkFlag"
+                                text="Enable Flights + Hotels Link?"
+                                value="{Boolean}true"/>
+                            <fhlinkflag_x0040_delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./fhLinkFlag@Delete"
+                                value="{Boolean}true"/>
+                            <fhlink-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide fh-link-hide-show"
+                                showhidetargetvalue="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fhpackagelink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Example (https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&amp;club=004&amp;page=PartnerRedirect&amp;PID=403&amp;https://www.pleasantholidays.com/deeplink?pcode=53709&amp;wsn=1001&amp;p_type=FH&amp;g1a=2&amp;rf=&amp;d1=&amp;f1=)"
+                                        fieldLabel="Flights + Hotels Link"
+                                        name="./fhLink"/>
+                                </items>
+                            </fhlink-container>
+                        </items>
+                    </columns>
                 </items>
             </travelwidget>
             <jumplink
