@@ -1,7 +1,7 @@
 var interval = setInterval(function() {
 
     if (document.readyState === 'complete') {
-        $.getScript('http://secure.rezserver.com/public/js/searchbox/searchbox.min.js', function() {
+        $.getScript('https://secure.rezserver.com/public/js/searchbox/searchbox.min.js', function() {
             // Variables declaration starts
             var club_number = $('#club_number').val();
             var ref_id = $('#ref_id').val();

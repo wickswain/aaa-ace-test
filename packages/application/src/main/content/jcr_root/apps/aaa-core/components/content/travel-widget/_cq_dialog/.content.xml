@@ -23,7 +23,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-		                    <highlighttab
+		                	<highlighttab
 		                        jcr:primaryType="nt:unstructured"
 		                        sling:resourceType="granite/ui/components/foundation/form/select"
 		                        fieldDescription="Select the tab which is to be highlighted by default."
