@@ -51,7 +51,7 @@
                             <backgroundcolor
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                    colorsPath="/apps/aaa-core/components/content/column-comparison/config/backgroundcolors"
+                                    colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
                                     fieldDescription="Please select the background color to fill the entire component to change the default selection of white background."
                                     fieldLabel="Background Color"
                                     freestylePalette="{Boolean}true"

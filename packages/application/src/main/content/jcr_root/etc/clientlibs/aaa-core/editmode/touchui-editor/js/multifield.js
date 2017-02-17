@@ -83,7 +83,7 @@ Add a comment to this line
       var $field,
           value,
           min,
-          max;
+          max,message = null;
 
       $field = el.closest(".coral-Form-field");
       value = parseInt(el.val(), 10);
@@ -91,13 +91,14 @@ Add a comment to this line
       max = $field.data('max');
 
       if (value > max) {
-        return Granite.I18n.get('The field must contain {0} or less items.', max);
+          message="The field must contain "+max+" or less items.";
       } else if (value < min) {
-        return Granite.I18n.get('The field must contain {0} or more items.', min);
+          message="The field must contain "+min+" or more items.";
       } else {
         el.setCustomValidity(null);
         el.updateErrorUI();
       }
+        return message;
     },
     show: function (el, message) {
       var fieldErrorEl,
@@ -123,13 +124,28 @@ Add a comment to this line
           .attr("data-quicktip-arrow", arrow)
           .attr("data-quicktip-content", message)
           .insertAfter(field);
+/**
+   * Applying minimum concdition
+   * loads.
+   */
+          var value, min, max;
+          value = parseInt(el.val(), 10);
+          min = field.data('min');
+          max = field.data('max');
+          
+          if (value > max) {
+          $(".cq-dialog-submit").attr("disabled", "disabled");
+     	  }
+          else if (value < min) {
+          $(".cq-dialog-submit").attr("disabled", "disabled");
+      	} 
+
       } else {
         error.data("quicktipContent", message);
       }
     },
     clear: function (el) {
       var field = el.closest(".coral-Form-field");
-
       field.removeAttr("aria-invalid").removeClass("is-invalid");
 
       field.nextAll(".coral-Form-fielderror").tooltip("hide").remove();

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <colors jcr:primaryType="nt:unstructured">
+        <primaryblue
+			jcr:primaryType="nt:unstructured"
+			text="Primary Blue (#0099FF)"
+			value="#0099FF"/>
+		<primarymidblue
+            jcr:primaryType="nt:unstructured"
+            text="Primary Mid Blue Color (#005095)"
+            value="#005095"/>
+		<shadelightblue
+			jcr:primaryType="nt:unstructured"
+			text="Shade (#00A4FF)"
+			value="#00A4FF"/>
+		<shademidblue
+            jcr:primaryType="nt:unstructured"
+            text="Shade Mid Blue Color (#1080D8)"
+            value="#1080D8"/>
+		<shademidthcikblue
+            jcr:primaryType="nt:unstructured"
+            text="Shade Mid Thick blue (#033455)"
+            value="#033455"/>
+        <shadeblue
+			jcr:primaryType="nt:unstructured"
+			text="Shade Blue (#012546)"
+			value="#012546"/>
+		<neutralsblack
+            jcr:primaryType="nt:unstructured"
+            text="Neutrals Black (#000000)"
+            value="#000000"/>
+        <neutralslightgrey
+			jcr:primaryType="nt:unstructured"
+			text="Neutrals Light Gray (#303030)"
+			value="#303030"/>
+		<neutralswhite
+            jcr:primaryType="nt:unstructured"
+            text=" Neutrals White (#FFFFFF)"
+            value="#FFFFFF"/>
+       	<neutralsmidgray
+			jcr:primaryType="nt:unstructured"
+			text="Neutrals Mid Gray (#E4E5E5)"
+			value="#E4E5E5"/>
+		<neutralsgreythick
+            jcr:primaryType="nt:unstructured"
+            text="Neutrals Grey Thick (#CCCCCC)"
+            value="#CCCCCC"/>
+    </colors>
+</jcr:root>
