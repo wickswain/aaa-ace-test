@@ -1,1 +1,3 @@
-#base=.
+#base=js
+
+travel-widget.js
