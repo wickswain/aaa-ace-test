@@ -25,7 +25,6 @@ $(function() {
         var host = document.referrer;
         var regionInReferrer;
 
-        console.log("referrer is: " + host);
 
 	    if (host) {
 	        host = host.split('.');
@@ -34,26 +33,21 @@ $(function() {
 	        }            
 	    }
 
-        console.log("Region from referrer is: " + regionInReferrer);
 		//if referrer is present and valid, it has higher priority as user might have changed the region
-        console.log ("Region is valid " + ($.inArray(regionInReferrer, validRegions)>=0));
         if(regionInReferrer && ($.inArray(regionInReferrer, validRegions)>=0 ))
         {
 			//set it in cookie and return it. 
-            console.log("Region from referrer is valid setting to cookie ");
 			setCookie('aaa-region' , regionInReferrer, 1/24);
             return regionInReferrer;
 
         }else
         {
             //referrer is not present or invalid, use from cookie if present
-            console.log("Region from referrer is not present/valid setting from cookie ");
             if (regionInCookie){
 				return regionInCookie;
             }else
             {
 				//set default in cookie untill we get from referrer 
-                console.log("Not present in cookie too, using defualt value ");
 				setCookie('aaa-region' , defaultregionname, 1/24);
 
             }
@@ -63,7 +57,6 @@ $(function() {
     }
 
 	var regionname = getRegionName();
-    console.log("Resolved regions " + regionname);
 
 	function getHostName() {
         return protocol + environment + "." + regionname + subdomain;
