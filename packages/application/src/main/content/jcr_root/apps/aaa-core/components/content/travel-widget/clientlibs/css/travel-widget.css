@@ -550,6 +550,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .rs_dropoff {
   border-left: none;
   margin-left: -6px;
+  margin-bottom: 28px;
   width: 102.5%;
   position: relative;
   bottom: -28px;
@@ -564,7 +565,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: inline-block;
   position: relative;
   left: -15px;
-  bottom: 5px;
+  bottom: 33px;
 }
 
 .car_location_row {
@@ -879,7 +880,7 @@ background-position-x: 200px;
   .rs_dropoff {
     margin-left: -9px;
     width: 102%;
-    margin-bottom: -25px;
+    margin-bottom: 27px;
   }
   .rs_car_form .rs_date {
     padding-top: 15px;
@@ -1092,12 +1093,12 @@ background-position-x: 200px;
   }
   .rs_dropoff {
     margin-left: -5px;
-    margin-bottom: 0px;
+    margin-bottom: 23px;
     width: 103%;
     bottom: -24px;
   }
   .rs_dropoff_div::after {
-    bottom: 10px;
+    bottom: 33px;
   }
   .rs_car_form .rs_date {
     padding-top: 15px;
@@ -1541,8 +1542,5 @@ background-position-x: 200px;
 @media only screen and (min-width:730px) and (max-width:1024px) {
 	.searchWrapper {
 		width: 700px;
-	}
-	.rs_dropoff_div::after {
-		bottom: -5px;
 	}
 }
