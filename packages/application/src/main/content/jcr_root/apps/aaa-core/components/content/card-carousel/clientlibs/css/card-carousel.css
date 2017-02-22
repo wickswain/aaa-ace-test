@@ -18,7 +18,7 @@
 }
 
 .carousel-showmanymoveone .left.carousel-control.left.carousel-control {
-    background: url(../images/img_arrow_dark_left.svg) center no-repeat;
+    background: url(/etc/clientlibs/aaa-core/aggregate-apps//img_arrow_dark_left.svg) center no-repeat;
     height: 70px;
     width: 70px;
     box-shadow: none;
@@ -29,7 +29,7 @@
 }
 
 .carousel-showmanymoveone .right.carousel-control.right.carousel-control {
-    background: url(../images/img_arrow_dark_right.svg) center no-repeat;
+    background: url(/etc/clientlibs/aaa-core/aggregate-apps//img_arrow_dark_right.svg) center no-repeat;
     height: 70px;
     width: 70px;
     box-shadow: none;
