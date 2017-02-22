@@ -549,8 +549,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_dropoff {
   border-left: none;
-  margin-left: -5px;
-  margin-bottom: -30px;
+  margin-left: -6px;
   width: 102.5%;
   position: relative;
   bottom: -28px;
@@ -565,7 +564,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: inline-block;
   position: relative;
   left: -15px;
-  bottom: -5px;
+  bottom: 5px;
 }
 
 .car_location_row {
@@ -652,14 +651,22 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 18%;
 }
 
-.cruise_destination select, .cruise_vendor select, .cruise_length select {
+.cruise_destination select, .cruise_vendor select, .cruise_length select, .cruise_date select {
   color: #1b1b1b;
   overflow: hidden;
   background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-y: 4px;
     background-position: 4px
 }
+.cruise_date .cruise_month {
+    background-position-x: 200px;
+    background-position: 120px;
+}
+ .cruise_date  .cruise_year{
+background-position-x: 200px;
+    background-position: 55px;
 
+                    }
 .cruise_destination select {
   background-position-x: 250px;
     background-position:250px;
@@ -820,7 +827,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 100%;
   }
   .rs_air_form .date_and_travelers {
-    width: 50%;
+    width:49.9%;
   }
   .rs_air_form .date_field {
     width: 100%;
@@ -1533,6 +1540,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 @media only screen and (min-width:730px) and (max-width:1024px) {
 	.searchWrapper {
-        width: 700px;
-      }
- }
+		width: 700px;
+	}
+	.rs_dropoff_div::after {
+		bottom: -5px;
+	}
+}
