@@ -33,7 +33,7 @@
                             <backgroundcolor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                colorsPath="/apps/aaa-core/components/content/card-carousel/bgcoloroptions"
+                                colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
                                 fieldDescription="Please select background color"
                                 fieldLabel="Background Color"
                                 freestylePalette="{Boolean}true"
@@ -157,11 +157,9 @@
                             <jump-link-id
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                disabled="{Boolean}true"
                                 fieldDescription="Please enter Jump Link Id"
                                 fieldLabel="Jump Link Id"
-                                name="./jumpLinkId"
-                                value="article-carousel"/>
+                                name="./jumpLinkId"/>
                         </items>
                     </columns>
                 </items>

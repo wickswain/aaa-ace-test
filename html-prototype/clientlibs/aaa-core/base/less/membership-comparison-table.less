@@ -104,6 +104,8 @@ Membership Comparison Table Component
             justify-content: center;
             div:not(:first-child) {
                flex:2;
+			    border-left: 1px solid #cccccc;
+				border-top: 1px solid #ccc;
                 div {
                     border: 0;
                 }
@@ -154,6 +156,10 @@ Membership Comparison Table Component
                 overflow: hidden;
 					.membership-row-text{ 
 					display:block;
+						ul{
+							float: left;
+							margin-top: 10px;
+						}
 					}
             }
         }
@@ -166,17 +172,7 @@ Membership Comparison Table Component
     }
 }
 
-@media only screen and (min-width: 480px) {
-
-	.membership-comparison {
-			.row {
-				div:not(:first-child){
-				 border-left: 1px solid #cccccc;
-				 border-top: 1px solid #ccc;
-				}
-			}
-	}
-}
+@media only screen and (min-width: 480px) {}
 
 @media only screen and (min-width: 768px) {
     .modal-content {
