@@ -459,4 +459,4 @@ var interval = setInterval(function() {
 		clearInterval(interval);
     }
 
-}, 1000);
+}, 100);
