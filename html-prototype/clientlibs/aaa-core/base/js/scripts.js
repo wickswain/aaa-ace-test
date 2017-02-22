@@ -177,11 +177,15 @@ $j(function($) {
         });
     }
     $('.backslide').click(function(e) {
+        e.preventDefault();
         $('.backslide').text(globalTab);
         $(".slide-nav").css("left", "+=375px");
         ($(".slide-nav").css("left") == '-375px') ? $(this).hide(): $(this).show();
         $(".slide-nav").scrollTop();
-        e.preventDefault();
+        if($(".slide-nav").css("left") < "-375px"){
+            $(this).hide();
+            $(".slide-nav").css("left", "0px");
+        }
     });
     $("#search-hide").click(function(e) {
         $(".advance-search, .search-overlay").show();

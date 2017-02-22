@@ -1,3 +1,9 @@
+.travel-widget-container {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
 .rs_searchbox_hide {
   display: none;
 }
@@ -1491,9 +1497,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
  .searchWrapper {
     width: 365px;
    }
-  .travel-widget-search-lable{
-     max-width: 266px;
-  }
  }
     .travel-widget-container{
         padding-bottom: 70px;
@@ -1502,7 +1505,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     }
     .travel-widget-search-lable{
          padding-bottom:70px;
-         text-align:center;
          margin:0 auto;
      }
 @media only screen and (min-width:768px) {

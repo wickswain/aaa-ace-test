@@ -48,7 +48,7 @@
                             <backgroundColor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
-                                colorsPath="/apps/aaa-core/components/content/custom-rte-text/bgcoloroptions"
+                                colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
                                 fieldDescription="Please select background color"
                                 fieldLabel="Background Color"
                                 freestylePalette="{Boolean}true"
