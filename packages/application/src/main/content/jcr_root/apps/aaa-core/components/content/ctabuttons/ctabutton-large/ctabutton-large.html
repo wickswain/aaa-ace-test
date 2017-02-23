@@ -27,13 +27,13 @@
 	<sly data-sly-test="${properties.ctaType=='buttons' && child.buttonStyle && child.ctaLabel}">
 		<a data-sly-test="${child.option!='Phone'}"
 			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
-			href="${child.option=='Modal' ? child.buttonmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
+			href="${child.option=='Modal' ? child.buttonmodal : (result.url ? result.url : '#')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
 			target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
 			data-sly-text="${child.ctaLabel}">
 		</a> 
         <a data-sly-test="${child.option=='Phone'}"
 			class="btn-style btn-lg ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"
-			href="tel:${child.buttonphonenumber}">  
+			href="tel:${child.buttonphonenumber ? child.buttonphonenumber : '#'}">  
 			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel} 
 		</a>
 	</sly> 
@@ -41,13 +41,13 @@
 		<p>
 			<a data-sly-test="${child.option!='Phone'}" 
 				class="link-btn link-lg ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'}"
-				href="${child.option=='Modal' ? child.linkmodal : (result.url ? result.url : '')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
+				href="${child.option=='Modal' ? child.linkmodal : (result.url ? result.url : '#')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
 				target="${child.openNewTabFlag=='true'?'_blank':'_self'}"
 				data-sly-text="${child.ctaLabel}">
 			</a>
             <a data-sly-test="${child.option=='Phone'}" 
 				class="link-btn link-lg ${child.linkStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'link-color-orange' : 'link-color-blue'} icon-text"
-				href="tel:${child.linkphonenumber}"> 
+				href="tel:${child.linkphonenumber ? child.linkphonenumber : '#'}"> 
 				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>${child.ctaLabel}
 			</a>
 		</p>

@@ -16,7 +16,7 @@ Add a comment to this line
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 /**
  * Validation for Granite Touch UI multifield component.
  *
@@ -90,13 +90,33 @@ Add a comment to this line
       min = $field.data('min');
       max = $field.data('max');
 
+      var $inputs = $field.find("input, textarea");
+
       if (value > max) {
           message="The field must contain "+max+" or less items.";
+          $inputs.each(function(index, input){
+              $input = $(input);
+              if($input.attr("type") === 'hidden') {
+		  	  	$input.attr("required", "required");
+              }
+          });
       } else if (value < min) {
           message="The field must contain "+min+" or more items.";
+          $inputs.each(function(index, input){
+              $input = $(input);
+              if($input.attr("type") === 'hidden') {
+		  	  	$input.attr("required", "required");
+              }
+          });
       } else {
         el.setCustomValidity(null);
         el.updateErrorUI();
+          $inputs.each(function(index, input){
+              $input = $(input);
+              if($input.attr("type") === 'hidden') {
+                  $input.removeAttr("required");
+              }
+          });
       }
         return message;
     },
