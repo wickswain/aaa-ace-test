@@ -21,150 +21,135 @@ import java.util.ListIterator;
 import javax.jcr.RepositoryException;
 
 /**
- * Editorial service implementation class. Responsible to construct the query and get the results
- * back to provider class.
- * 
+ * Editorial service implementation class. Responsible to construct the query
+ * and get the results back to provider class.
+ *
  * @author yogesh.mahajan
  *
  */
-
 @Component
 @Service(EditorialArticleService.class)
 public class EditorialArticleServiceImpl implements EditorialArticleService {
 
-    @Reference
-    QueryService queryService;
+	@Reference
+	QueryService queryService;
 
-    private final Logger log = LoggerFactory.getLogger(getClass());
+	/**
+	 * Logger variable.
+	 */
+	private final Logger log = LoggerFactory.getLogger(getClass());
 
-    static String sqlWhereClause = " WHERE ISDESCENDANTNODE(parent, '<<path>>') ";
+	/**
+	 * SQL where clause string.
+	 */
+	static String sqlWhereClause = " WHERE ISDESCENDANTNODE(parent, '<<path>>') ";
 
-    static String sqlTagClause = " child.[cq:tags]='<<tag>>' ";
+	/**
+	 * SQL tag clause string.
+	 */
+	static String sqlTagClause = " child.[cq:tags]='<<tag>>' ";
 
-    /*
-     * Sample Query: static String sqlStatement = "SELECT child.* FROM [cq:Page] AS parent " +
-     * "INNER JOIN [nt:base] AS child ON ISCHILDNODE(child,parent) " +
-     * "WHERE ISDESCENDANTNODE(parent, '<<path>>') " +
-     * "AND (child.[cq:tags]='AAA:region-tx' or child.[cq:tags]='AAA:eastways')" +
-     * "ORDER BY child.popularity,child.[jcr:created] desc";
-     */
+	@Override
+	public List<EditorialCardBean> getEditorialArticles(String path, List<String> searchTagList,
+			boolean usePopularity) {
+		log.debug("Executing getEditorialArticles method with parameters Path: {}, Search Tags: {}, UsePopularity: {}",
+				path, searchTagList, usePopularity);
 
-    @Override
-    public List<EditorialCardBean> getEditorialArticles(String path, List<String> searchTagList,
-            boolean usePopularity) {
+		// List to be returned
+		List<EditorialCardBean> cards = new ArrayList<EditorialCardBean>();
 
-        log.debug("Executing getEditorialArticles with parameters Path {}, "
-                + "Search Tags: {}, UsePopularity: {}", path, searchTagList, usePopularity);
+		// construct the query
+		String sqlQueryStr = getQueryString(path, searchTagList, usePopularity);
 
-        // List to be returned
-        List<EditorialCardBean> cards = new ArrayList<EditorialCardBean>();
+		// Return empty list, let caller deal with it
+		if (StringUtils.isEmpty(sqlQueryStr)) {
+			log.warn("Could not fetch articles due to empty sql generated, return empty list");
+			return cards;
+		}
 
-        // construct the query
-        String sqlQueryStr = getQueryString(path, searchTagList, usePopularity);
+		log.debug("Executing query statement {}", sqlQueryStr);
 
-        if (StringUtils.isEmpty(sqlQueryStr)) {
+		// Result of the query
+		List<Resource> resourceList;
+		try {
+			resourceList = queryService.getResultResources(sqlQueryStr, 3);
 
-            log.warn("Could not fetch articles due to empty sql generated, return empty list");
+			log.debug("Query service returned {} results", resourceList.size());
 
-            // Return empty list, let caller deal with it
-            return cards;
-        }
+			// loop over the result resource list and construct bean list
+			for (Resource resource : resourceList) {
+				EditorialCardBean card = new EditorialCardBean();
 
-        log.debug("Executing query statement {}", sqlQueryStr);
+				log.debug("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
+				/*
+				 * Assuming here, the query returns good articles which have
+				 * title, description and image TODO: Modify query to have not
+				 * null check on these properties after article template is
+				 * final.
+				 */
+				ValueMap valueMap = resource.getValueMap();
 
-        // Result of the query
-        List<Resource> resourceList;
-        try {
+				card.setTitle(valueMap.get("jcr:title", String.class));
+				card.setDescription(valueMap.get("jcr:description", String.class));
+				card.setImagePath(valueMap.get("fileReference", String.class));
+				card.setImageAltText(valueMap.get("altText", String.class));
+				// goto Parent resource to get the page path.
+				card.setArticlePath(resource.getParent().getPath());
 
-            resourceList = queryService.getResultResources(sqlQueryStr, 3);
+				cards.add(card);
+			}
 
-        } catch (RepositoryException e) {
+			log.debug("Returning Editorial Card bean: " + cards.toString());
 
-            log.error("Could not retrieve articles ", e);
+		} catch (RepositoryException e) {
+			log.error("Could not retrieve articles ", e);
+			return cards; // Return empty list, let caller deal with it
+		}
 
-            // Return empty list, let caller deal with it
-            return cards;
+		return cards;
+	}
 
-        }
+	private String getQueryString(String path, List<String> searchTagList, Boolean usePopularity) {
+		// Path is null, dangerous to run query without path restriction. Let
+		// caller handle null.
+		if (StringUtils.isEmpty(path)) {
+			log.warn("Path is not available returning null");
+			return null;
+		}
 
-        log.debug("Query service returned {} results", resourceList.size());
+		StringBuffer sqlStringBuffer = new StringBuffer();
 
-        // loop over the result resource list and construct bean list
-        for (Resource resource : resourceList) {
-            
-            EditorialCardBean card = new EditorialCardBean();
+		// build sql statement add select
+		sqlStringBuffer.append(Constants.SQL_SELECT_CLAUSE);
 
-            log.debug("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
-            
-            ValueMap valueMap = resource.getValueMap();
+		// add where, replace path
+		sqlStringBuffer.append(StringUtils.replace(sqlWhereClause, "<<path>>", path));
 
-            /*Assuming here, the query returns good articles which have title, description and image
-            TODO: Modify query to have not null check on these properties after article template is
-            final.  
-            */
-            
-            card.setTitle(valueMap.get("jcr:title", String.class));
+		// loop over tag list and add them one by one
+		if (searchTagList != null && !searchTagList.isEmpty()) {
+			sqlStringBuffer.append(Constants.AND);
 
-            card.setDescription(valueMap.get("jcr:description", String.class));
+			ListIterator<String> tagStrIterator = searchTagList.listIterator();
 
-            card.setImagePath(valueMap.get("fileReference", String.class));
+			while (tagStrIterator.hasNext()) {
+				sqlStringBuffer.append(StringUtils.replace(sqlTagClause, "<<tag>>", tagStrIterator.next()));
 
-            card.setImageAltText(valueMap.get("altText", String.class));
+				if (tagStrIterator.nextIndex() != searchTagList.size()) {
+					sqlStringBuffer.append(Constants.OR);
+				}
+			}
+		}
 
-            card.setArticlePath(resource.getPath());
+		// add sorting
+		sqlStringBuffer.append(Constants.SQL_ORDER_BY);
 
-            cards.add(card);
-        }
+		if (usePopularity) {
+			sqlStringBuffer.append(" child.popularity ").append(Constants.COMMA);
+		}
 
-        log.debug("Returning Editorial Card bean: " + cards.toString());
+		sqlStringBuffer.append(" child.[jcr:created] desc ");
 
-        return cards;
-    }
-
-    private String getQueryString(String path, List<String> searchTagList, Boolean usePopularity) {
-        
-        //Path is null, dangerous to run query without path restriction.
-        //Let caller handle null.
-        if (StringUtils.isEmpty(path)) {
-            log.warn("Path is not available returning null");
-            return null;
-        }
-
-        StringBuffer sqlStringBuffer = new StringBuffer();
-
-        // build sql statement
-        // add select
-        sqlStringBuffer.append(Constants.SQL_SELECT_CLAUSE);
-
-        // add where, replace path
-        sqlStringBuffer.append(StringUtils.replace(sqlWhereClause, "<<path>>", path));
-
-        // loop over tag list and add them one by one
-        if (searchTagList != null && !searchTagList.isEmpty()) {
-            sqlStringBuffer.append(Constants.AND);
-
-            ListIterator<String> tagStrIterator = searchTagList.listIterator();
-
-            while (tagStrIterator.hasNext()) {
-                sqlStringBuffer.append(StringUtils.replace(sqlTagClause, "<<tag>>",
-                        tagStrIterator.next()));
-
-                if (tagStrIterator.nextIndex() != searchTagList.size()) {
-                    sqlStringBuffer.append(Constants.OR);
-                }
-            }
-        }
-
-        // add sorting
-        sqlStringBuffer.append(Constants.SQL_ORDER_BY);
-
-        if (usePopularity) {
-            sqlStringBuffer.append(" child.popularity ").append(Constants.COMMA);
-        }
-
-        sqlStringBuffer.append(" child.[jcr:created] desc ");
-
-        return sqlStringBuffer.toString();
-    }
+		return sqlStringBuffer.toString();
+	}
 
 }
