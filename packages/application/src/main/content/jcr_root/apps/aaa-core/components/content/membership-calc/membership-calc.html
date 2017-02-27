@@ -80,6 +80,7 @@
 						<div class="membership-discount-details">
 							<span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
 							 <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
+							 	<sly data-sly-use.decimalProvider="${'com.aaa.ace.sightly.providers.MembershipCalculatorProvider' @ childResource=child}" />							 
 								<div class="item">
 									<div class="table-block">
 										<div class="services-title roboto-medium font-g table-cell">
@@ -90,14 +91,14 @@
 										</div>
 										<div class="price font-g table-cell">
 											<span class="position-rel">
-												<span  data-sly-text= "${'{0}{1}' @ format =['$',child.actualPrice ? child.actualPrice :'0']}" class="discount-price font-h" >	
+												<span  data-sly-text= "${'{0}{1}' @ format =['$',decimalProvider.actPrice ? decimalProvider.actPrice :'0']}" class="discount-price font-h" >	
 												</span>
-												$${child.discountPrice}
+												$${decimalProvider.disPrice}
 											</span>
 										</div>
 										<div class="total-price font-g table-cell">
 											<span class="position-rel">
-												<span  data-sly-text ="${'{0}{1}' @ format =['$',child.itemizedSavings ? child.itemizedSavings :'0'] }"class="title-saved font-h">${child.savingsLabel}</span>
+												<span  data-sly-text ="${'{0}{1}' @ format =['$',decimalProvider.itemSavings ? decimalProvider.itemSavings :'0'] }"class="title-saved font-h">${child.savingsLabel}</span>
 											</span>
 										</div>
 									</div>
