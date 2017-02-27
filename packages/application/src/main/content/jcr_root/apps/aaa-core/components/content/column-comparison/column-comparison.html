@@ -28,11 +28,11 @@
 
         <!--Two Column Option-->
         <div data-sly-test="${(properties.columnCount == '2')}">
-            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 pull-left col-compare-container-padding">
+            <div class="col-md-5 col-lg-5 col-sm-6 col-xs-12 pull-left col-compare-container-padding">
                 <sly data-sly-resource="${ @path='leftColumnDouble', resourceType='/apps/aaa-core/components/content/column-comparison/column-container'}" />
             </div>
 
-            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 pull-right col-compare-container-padding">
+            <div class="col-md-5 col-lg-5 col-sm-6 col-xs-12 pull-right col-compare-container-padding">
                 <sly data-sly-resource="${ @path='rightColumnDouble', resourceType='/apps/aaa-core/components/content/column-comparison/column-container'}" />
             </div>
         </div>
