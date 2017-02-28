@@ -90,11 +90,21 @@
 	                    
 	                    <div class='rs_button_row'>
 	                        <button type="submit" class="rs_search" data-rs_ga_track='["click",["Searchbox - home page", "Submit"]]' title='Search'>SEARCH</button>
-	                        <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-	                        <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-	                        <a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
-	                        <span> | </span>
-	                        <a href="https://secure.rezserver.com/home/?refid=${properties.refId ? properties.refId : '5776'}&refclickid=travel_widget_advanced-search">Advanced Search</a>
+
+							<sly data-sly-test.hotelReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <a target="${properties.hMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.hMyReservationLink ? properties.hMyReservationLink : hotelReservationLink}">${properties.hMyReservationLinkLabel ? properties.hMyReservationLinkLabel : 'My Reservations'}</a>
+
+                            <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+
+                            <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                            <span> | </span>
+
+							<sly data-sly-test.hotelAdvanceSearchLink="https://secure.rezserver.com/home/?refid=${properties.refId ? properties.refId : '5776'}&refclickid=travel_widget_advanced-search"/>
+                            <a target="${properties.hAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            	href="${properties.hAdvanceSearchLink ? properties.hAdvanceSearchLink : hotelAdvanceSearchLink}">${properties.hAdvanceSearchLinkLabel ? properties.hAdvanceSearchLinkLabel : 'Advanced Search'}</a>
 	                    </div>
 	                    <input type="hidden" name="ace_redirect" value="true">
 	                    <div class='clear'></div>
@@ -115,7 +125,8 @@
 	                        
 	                        <div class="multi-link">
 	                            <span> | </span>
-	                            <a href="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Multi City</a>
+	                            <a href="${properties.fMultiCityLink ? properties.fMultiCityLink : '#'}"
+	                               target="${properties.fMultiCityLinkNewTabFlag == 'true' ? '_blank' : '_self'}">${properties.fMultiCityLinkLabel ? properties.fMultiCityLinkLabel : 'Multi City'}</a>
 	                        </div>
 	                        
 	                        <div class="clear"></div>
@@ -199,11 +210,21 @@
 	
 	                        <div class="rs_button_row">
 	                            <button type="submit" class="rs_search">SEARCH</button>
-	                            <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-	                            <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-	                        	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
-	                            <span> | </span>
-	                            <a href="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
+
+                                <sly data-sly-test.flightReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<a target="${properties.fMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               	   href="${properties.fMyReservationLink ? properties.fMyReservationLink : flightReservationLink}">${properties.fMyReservationLinkLabel ? properties.fMyReservationLinkLabel : 'My Reservations'}</a>
+
+                                <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+
+                                <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                                	href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                                <span> | </span>
+
+                                <sly data-sly-test.flightAdvanceSearchLink="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<a target="${properties.fAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            		href="${properties.fAdvanceSearchLink ? properties.fAdvanceSearchLink : flightAdvanceSearchLink}">${properties.fAdvanceSearchLinkLabel ? properties.fAdvanceSearchLinkLabel : 'Advanced Search'}</a>
 	                        </div>
 	                    </div>
 	                    
@@ -284,11 +305,21 @@
 	
 	                        <div class="rs_button_row">
 	                            <button type="submit" class="rs_search">SEARCH</button>
-	                            <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-	                            <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-	                        	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
-	                            <span> | </span>
-	                            <a href="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
+
+                                <sly data-sly-test.flightsReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<a target="${properties.fMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               	   href="${properties.fMyReservationLink ? properties.fMyReservationLink : flightsReservationLink}">${properties.fMyReservationLinkLabel ? properties.fMyReservationLinkLabel : 'My Reservations'}</a>
+
+                                <span data-sly-test="${properties.fhLinkFlag}"> | </span>
+
+                                <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                                	href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                                <span> | </span>
+
+                                <sly data-sly-test.flightAdvanceSearchLink="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<a target="${properties.fAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            		href="${properties.fAdvanceSearchLink ? properties.fAdvanceSearchLink : flightAdvanceSearchLink}">${properties.fAdvanceSearchLinkLabel ? properties.fAdvanceSearchLinkLabel : 'Advanced Search'}</a>
 	                        </div>
 	                        <input type="hidden" name="ace_redirect" value="true">
 	                    </div>
@@ -346,11 +377,22 @@
 	                    
 	                    <div class="rs_button_row">
 	                        <button type="submit" class="rs_search">SEARCH</button>
-	                        <a href="https://secure.rezserver.com/car/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-	                        <span> | </span>
-	                        <a href="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}">Promo Code</a>
-	                        <span> | </span>
-	                        <a href="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
+
+                            <sly data-sly-test.carsReservationLink="https://secure.rezserver.com/car/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <a target="${properties.cMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.cMyReservationLink ? properties.cMyReservationLink : carsReservationLink}">${properties.cMyReservationLinkLabel ? properties.cMyReservationLinkLabel : 'My Reservations'}</a>
+
+                            <span> | </span>
+
+                            <sly data-sly-test.carsPromoLink="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <a target="${properties.cPromoLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.cPromoLink ? properties.cPromoLink : carsPromoLink}">${properties.cPromoLinkLabel ? properties.cPromoLinkLabel : 'Heartz Promo Code'}</a>
+
+                            <span> | </span>
+
+                            <sly data-sly-test.carsAdvanceSearchLink="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <a target="${properties.cAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            	href="${properties.cAdvanceSearchLink ? properties.cAdvanceSearchLink : carsAdvanceSearchLink}">${properties.cAdvanceSearchLinkLabel ? properties.cAdvanceSearchLinkLabel : 'Advanced Search'}</a>
 	                    </div>
 	                    <input type="hidden" name="ace_redirect" value="true">
 	                    <div class="clear"></div>
@@ -359,7 +401,7 @@
 	                    <div class="rs_chk_out_display"></div>
 	                </form>
 	
-	                <form name="cruise"
+	                <form name="cruise" target="_blank"
 	                    class="rs_cruise_form ${properties.tabType == 'cruises' ? '' : 'rs_searchbox_hide'}"
 	                    action="https://ww1.aaa.com/scripts/WebObjects.dll/AAAOnline"
 	                    onsubmit="if(checkCruise($(this))){ return true; } else { return false; }"
@@ -540,6 +582,7 @@
 	                    id="vacation-form" name="vp" method="get"
 	                    action="${properties.vacationsLink ? properties.vacationsLink : '#'}">
 	
+						<input type="hideen" id="vcOpeninNewTabflag" name="vcOpeninNewTabflag" value="${properties.vcLinkNewTabFlag ? properties.vcLinkNewTabFlag : 'false'}">
 	                    <div class="rs_form_row vacation_row">
 	                        <div class="vacation_destination">
 	                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>

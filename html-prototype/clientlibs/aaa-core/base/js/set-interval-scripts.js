@@ -417,10 +417,12 @@ var interval = setInterval(function() {
             
             $('.rs_chk_out').change(function() {
                 $('.rs_chk_out').val($(this).val());
+                e.preventDefault();
             });
             
             $('.rs_chk_in').change(function() {
                 $('.rs_chk_in').val($(this).val());
+                e.preventDefault();
             });
             
             $('#mvp-keywords').click(function() {
@@ -434,6 +436,7 @@ var interval = setInterval(function() {
                 var mvp_end = $('.rs_chk_out').val();
                 var mvp_kw = $('#mvp-keywords').val();
                 var action = $(".rs_mvp_form").attr('action');
+                var openInNewtab = $("#vcOpeninNewTabflag").val();
                 
                 if (mvp_kw == "Destination / Keyword") {
                     mvp_kw = "";
@@ -447,7 +450,14 @@ var interval = setInterval(function() {
                     mvp_end = "";
                 }
                 
-                window.location.href = action + "?keyword=" + mvp_kw + "&start=" + mvp_start + "&end=" + mvp_end + "";
+                var url = action + "?keyword=" + mvp_kw + "&start=" + mvp_start + "&end=" + mvp_end + "";
+                if(openInNewtab) {
+                	var win = window.open(url, '_blank');
+                	win.focus();
+                } else {
+                	window.location.href = url;
+                }
+                
                 return false;
             });
             

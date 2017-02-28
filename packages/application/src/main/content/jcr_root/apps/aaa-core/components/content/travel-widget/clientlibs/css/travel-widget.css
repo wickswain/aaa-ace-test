@@ -4,6 +4,19 @@
 	background-position: bottom;
 }
 
+
+.rs_hotel_form{
+	margin-top:52.5px;
+}
+@media only screen and (min-width:1087px) {
+	.rs_hotel_form{
+		margin-top:59.5px;
+	}
+}
+.rs_cruise_form {
+	margin-top:52.5px;
+}
+
 .rs_searchbox_hide {
   display: none;
 }
@@ -818,6 +831,10 @@ background-position-x: 200px;
     bottom: 144px;
     width: 45%;
   }
+  .rs_car_form .rs_button_row {
+    padding-top: 41px;
+	padding-bottom: 48px;
+  }
   .rs_button_row {
     padding-top: 25px;
   }
@@ -939,7 +956,7 @@ background-position-x: 200px;
     background-position:260px;
   }
   .rs_cruise_form .rs_button_row {
-    padding-bottom: 15px;
+    padding-bottom: 51px;
     padding-top: 35px;
   }
   .rs_cruise_form .rs_search {
