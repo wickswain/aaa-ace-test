@@ -309,7 +309,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for my reservation option."
                                 fieldLabel="My Reservation Link Label"
-                                name="./hMyReservationLinkLabel"/>
+                                name="./hMyReservationLinkLabel"
+                                value="My Reservations"/>
                             <reservationlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -328,7 +329,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for Advance Search option."
                                 fieldLabel="Advance Search Link Label"
-                                name="./hAdvanceSearchLinkLabel"/>
+                                name="./hAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
                             <advancesearchlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -363,7 +365,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for multy city option in Flights tab."
                                 fieldLabel="Multy City Link Label"
-                                name="./fMultiCityLinkLabel"/>
+                                name="./fMultiCityLinkLabel"
+                                value="Multi City"/>
                             <multycitylink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -382,7 +385,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for my reservation option."
                                 fieldLabel="My Reservation Link Label"
-                                name="./fMyReservationLinkLabel"/>
+                                name="./fMyReservationLinkLabel"
+                                value="My Reservations"/>
                             <reservationlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -401,7 +405,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for Advance Search option."
                                 fieldLabel="Advance Search Link Label"
-                                name="./fAdvanceSearchLinkLabel"/>
+                                name="./fAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
                             <advancesearchlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -471,7 +476,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for my reservation option."
                                 fieldLabel="My Reservation Link Label"
-                                name="./cMyReservationLinkLabel"/>
+                                name="./cMyReservationLinkLabel"
+                                value="My Reservations"/>
                             <reservationlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -490,7 +496,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for promo code option."
                                 fieldLabel="Promo Code Link Label"
-                                name="./cPromoLinkLabel"/>
+                                name="./cPromoLinkLabel"
+                                value="Heartz Promo Code"/>
                             <promolink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
@@ -509,7 +516,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldDescription="Author the link label for Advance Search option."
                                 fieldLabel="Advance Search Link Label"
-                                name="./cAdvanceSearchLinkLabel"/>
+                                name="./cAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
                             <advancesearchlink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
