@@ -1,11 +1,8 @@
 package com.aaa.ace.sightly.providers;
 
 import java.text.NumberFormat;
-
-import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
