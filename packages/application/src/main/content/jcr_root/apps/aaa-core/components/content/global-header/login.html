@@ -27,11 +27,9 @@
 <a data-sly-test="${!user.isLoggedIn}"
    target="${properties.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
    href="${user.signInURL}"
-   id="user-login">
-    <img data-sly-test="${properties.icon2Path}"
+   id="user-login"><img data-sly-test="${properties.icon2Path}"
          src="${properties.icon2Path}" title="${properties.icon2Alt}" 
-         alt="${properties.icon2Alt}" class="lock-icon"/>
-        ${properties.rightLink2Label}
+         alt="${properties.icon2Alt}" class="lock-icon"/>${properties.rightLink2Label}
 </a>
 
 <a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" 

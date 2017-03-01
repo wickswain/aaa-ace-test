@@ -218,6 +218,10 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldLabel="Savings Label"
                                                     name="./savingsLabel"/>
+                                                <hidden-field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="./hiddenField"/>
                                             </items>
                                         </column>
                                     </items>

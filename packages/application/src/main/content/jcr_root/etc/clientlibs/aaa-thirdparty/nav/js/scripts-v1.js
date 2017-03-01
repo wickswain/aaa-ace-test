@@ -3,36 +3,77 @@ $(function() {
 	var landingpagepath = "";
 	var searchlandingpagepath = "/search-results.html";
 	var joinpagepath = "";
-	var logoimagepath = "images/acsc-logo.png";
-	
+    var logoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/orbit-logo.png";
+    var califLogoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/acsc-logo.png";
+
 	// Environment information can be updated here.
 	var protocol = "http://";
 	var environment = "www";
 	var subdomain = ".aaaprod.axis41.net";
-	
+
+    var validRegions = ['texas', 'calif', 'hawaii','newmexico','northernnewengland','alabama', 'tidewater', 'autoclubmo', 'eastcentral']
+
 	var defaultregionname = "calif";
-    
+
 	function getRegionName() {
-    	var regionName = defaultregionname;
-        var host = window.location.hostname;
-	    
+
+		//Get region in cookie
+        var regionInCookie = getCookie('aaa-region');
+
+        //Get region from referrer if available
+        //var host = window.location.hostname;
+        var host = document.referrer;
+        var regionInReferrer;
+
+
 	    if (host) {
 	        host = host.split('.');
-	        if(host.length >= 2) {
-	            regionName = host[1];            	
+	        if(host.length >= 3) {
+	            regionInReferrer = host[1];            	
 	        }            
 	    }
-	    
-	    return regionName;
+
+		//if referrer is present and valid, it has higher priority as user might have changed the region
+        if(regionInReferrer && ($.inArray(regionInReferrer, validRegions)>=0 ))
+        {
+			//set it in cookie and return it. 
+			setCookie('aaa-region' , regionInReferrer, 1/24);
+            return regionInReferrer;
+
+        }else
+        {
+            //referrer is not present or invalid, use from cookie if present
+            if (regionInCookie){
+				return regionInCookie;
+            }else
+            {
+				//set default in cookie untill we get from referrer 
+				setCookie('aaa-region' , defaultregionname, 1/24);
+
+            }
+        }
+
+	    return defaultregionname;
     }
+
 	var regionname = getRegionName();
-	
+
 	function getHostName() {
         return protocol + environment + "." + regionname + subdomain;
     }
 	var hostname = getHostName();
+
+	var logoPath = "";
+    if (regionname === 'calif')
+    {
+        logoPath = califLogoImagePath;
+    }else
+    {
+        logoPath = logoImagePath;
+    }
+
 	
-	$('#logo-link').find('img').attr('src', logoimagepath);
+	$('#logo-link').find('img').attr('src', logoPath);
     $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
     $('#m-user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
 	$('#logo-link').attr('href', hostname + landingpagepath);
@@ -128,6 +169,29 @@ $(function() {
         $("#search-hide, .m-close-icon").show();
         e.preventDefault();
     });
-    
+
     $(".advance-search").hide();
+
+    function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
 });
