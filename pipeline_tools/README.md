@@ -47,4 +47,3 @@ Once you get the yaml file set up, you're good to go!
 
 The AWS integration is split into two parts. The first, `security_group.py`, is a Python script that allows and revokes access to target instances from the host it is run on. The second, `run_build.sh`, is a bash script that wraps whatever build command it is supplied with the appropriate calls to `security_group.py`.
 
-test
