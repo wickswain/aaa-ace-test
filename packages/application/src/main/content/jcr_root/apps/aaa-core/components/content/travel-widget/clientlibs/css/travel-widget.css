@@ -4,7 +4,9 @@
 	background-position: bottom;
 }
 
-
+select::-ms-expand {
+    display: none;
+  }
 .rs_hotel_form{
 	margin-top:52.5px;
 }
@@ -14,7 +16,7 @@
 	}
 }
 .rs_cruise_form {
-	margin-top:52.5px;
+	margin-top:52px;
 }
 
 .rs_searchbox_hide {
@@ -73,6 +75,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  cursor:pointer;
 }
 
 .rs_products .mobile-tab {
@@ -554,7 +557,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_car_half {
   float: left;
-  width: 49.5%;
+  width: 49.5% !important;
   margin-right: 1%;
   vertical-align: middle;
   *float: left;
@@ -563,7 +566,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .rs_dropoff {
   border-left: none;
   margin-left: -6px;
-  margin-bottom: 28px;
+  margin-bottom: -7px;
   width: 102.5%;
   position: relative;
   bottom: -28px;
@@ -578,14 +581,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: inline-block;
   position: relative;
   left: -15px;
-  bottom: 33px;
+  bottom: -2px;
 }
 
 .car_location_row {
   width: 40%;
   display: inline-block;
 }
-
+.rs_form_row.rs_pickup_div {
+    float: left;
+    width:98%;
+}
+.rs_car_form .rs_button_row {
+	margin-top: -9px;
+}
 .rs_car_form .rs_date {
   display: inline-block;
   width: 29%;
@@ -831,12 +840,16 @@ background-position-x: 200px;
     bottom: 144px;
     width: 45%;
   }
-  .rs_car_form .rs_button_row {
-    padding-top: 41px;
-	padding-bottom: 48px;
-  }
   .rs_button_row {
     padding-top: 25px;
+  }
+  .rs_car_form .rs_button_row {
+    padding-top: 41px;
+	padding-bottom: 49px;
+  }
+  .rs_hotel_form .rs_button_row {
+    padding-top: 24px;
+	margin-bottom: 29px;
   }
   .rs_air_form .rs_form_row {
     width: 100%;
@@ -896,7 +909,7 @@ background-position-x: 200px;
   }
   .rs_dropoff {
     margin-left: -9px;
-    width: 102%;
+    width: 98.5%;
     margin-bottom: 27px;
   }
   .rs_car_form .rs_date {
@@ -956,11 +969,11 @@ background-position-x: 200px;
     background-position:260px;
   }
   .rs_cruise_form .rs_button_row {
-    padding-bottom: 51px;
-    padding-top: 35px;
+    padding-bottom: 49px;
+    padding-top: 38px;
   }
   .rs_cruise_form .rs_search {
-    width: 40%;
+    width: 30%;
   }
   .vacation_destination {
     width: 100%;
@@ -1095,7 +1108,7 @@ background-position-x: 200px;
   }
   #car_options {
     width: 100%;
-    margin: 0;
+    margin: 0 0 24px 0;
     font-size: 14px;
   }
   .rs_car_option {
@@ -1110,12 +1123,12 @@ background-position-x: 200px;
   }
   .rs_dropoff {
     margin-left: -5px;
-    margin-bottom: 23px;
-    width: 103%;
+    margin-bottom: 16.5px;
+    width: 99.5%;
     bottom: -24px;
   }
   .rs_dropoff_div::after {
-    bottom: 33px;
+    bottom: 26px;
   }
   .rs_car_form .rs_date {
     padding-top: 15px;
@@ -1170,7 +1183,7 @@ background-position-x: 200px;
     right: 40px;
   }
   .rs_cruise_form .rs_search {
-    width: 70%;
+    width: 73%;
   }
   .vacation_date::after {
     display: none;
@@ -1188,12 +1201,6 @@ background-position-x: 200px;
     .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
         width: 37%;
     }
-}
-
-@media only screen and (max-width:730px) {
-  /*.searchWrapper {
-    width: 390px;
-  }*/
 }
 
 
@@ -1560,10 +1567,61 @@ background-position-x: 200px;
 	.searchWrapper {
 		width: 700px;
 	}
+	.rs_dropoff_div::after {
+	  bottom: 5px;
+	}
+	.rs_dropoff {
+	  margin-bottom: 0px;
+	}
+	.rs_form_row.rs_pickup_div {
+	    margin-bottom: 6px;
+	}
+	.rs_car_option {
+	  padding: 0 0 18.5px 0;
+	}
+	
 }
 @media only screen and (min-width:1025px) {
 	.cruise_date  .cruise_year {
 		background-position-x: 200px;
 		background-position: 52px;
+	}
+}
+
+@media only screen and (max-width:730px) {
+  /*.searchWrapper {
+    width: 390px;
+  }*/
+	.rs_hotel_form {
+	 	margin-top:64.5px;
+	}
+	.rs_hotel_form .rs_button_row {
+	  padding-top: 62px;
+	   
+	}
+	.rs_cruise_form {
+	   margin-top: 0px;
+	}
+	.rs_cruise_form .rs_button_row {
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+		padding-top: 33px;
+	}
+	
+	.rs_air_form {
+	    margin-top:11px;
+	}
+	.rs_air_form .rs_button_row {
+		padding-top: 62.5px;
+	}
+	.rs_car_form .rs_car_options{
+	    margin-bottom: 24px;
+	}
+	.rs_car_form {
+	    margin-top:11px;
+	}
+	.rs_car_form .rs_button_row {
+		padding-top: 63px;
+		padding-bottom: 0px;
 	}
 }
