@@ -12,11 +12,11 @@ select::-ms-expand {
 }
 @media only screen and (min-width:1087px) {
 	.rs_hotel_form{
-		margin-top:59.5px;
+		margin-top:61.5px;
 	}
 }
 .rs_cruise_form {
-	margin-top:52px;
+	margin-top:55px;
 }
 
 .rs_searchbox_hide {
