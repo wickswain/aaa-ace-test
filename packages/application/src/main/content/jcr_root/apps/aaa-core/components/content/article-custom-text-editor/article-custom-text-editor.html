@@ -1,0 +1,36 @@
+<!--/*
+
+    Article Custom Text Editor Component.
+    ----------------------------------------------------------------
+
+    This particular component can be used with article hub.
+
+    Default Behavior:NA
+
+    Required Fields:NA    
+
+*/-->
+
+<!-- Placeholder Content
+============================================= -->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.text}"
+	 data-emptytext="Author the Article Custom Text Editor component here."
+	 src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+	 alt="Article Custom Text Editor" />
+
+<!-- #placeholder-content end -->
+
+<!-- Article Custom Text Editor Content
+============================================= -->
+
+<div id="${properties.jumpLinkId}" class="article-text">
+      <div class="custom-article-text" style="background-color:${properties.backgroundColor @ context='styleToken'}; color:${properties.fontColor @ context='styleToken'}">
+		  ${properties.text @ context='html'}
+			  <div data-sly-test="${properties.includeCTA}"
+				   data-sly-resource="${@path='cta', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
+				   data-sly-unwrap="${wcmmode.disabled}">
+			  </div>
+	  </div>
+</div>
+
+<!-- #article custom text editor-content end -->
