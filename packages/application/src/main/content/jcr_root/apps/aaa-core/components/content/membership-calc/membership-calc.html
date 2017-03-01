@@ -48,7 +48,7 @@
 							<div class="col-sm-7 roboto-light font-g">
 								<h2>${properties.yearlySavingsText}</h2>
 							</div>
-							<div data-sly-text="${'{0}{1}' @ format =['$',yearlySavingsDecimalLimit.decimalLimtvalue ? yearlySavingsDecimalLimit.decimalLimtvalue :'0'] }"
+							<div data-sly-text="${'{0}{1}' @ format =['$', yearlySavingsDecimalLimit.decimalLimtvalue ? yearlySavingsDecimalLimit.decimalLimtvalue :'0'] }"
 							 	 class="col-sm-5 roboto-medium font-b text-right">
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 								<h2>${properties.aaaMembershipText}</h2>
 						   </div>
 						   <div  class="col-sm-5 roboto-medium font-b text-right">
-							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-$',  aaasMembershipChargeDecimalLimit.decimalLimtvalue] }" />
+							    <sly data-sly-test.temp="${ '{0}{1}'  @ format=['-$', aaasMembershipChargeDecimalLimit.decimalLimtvalue] }" />
 								<sly data-sly-text="${aaasMembershipChargeDecimalLimit.decimalLimtvalue ?  temp :'$0' }" />
 							</div>
 						</div>
@@ -67,7 +67,7 @@
 							<div class="col-sm-6 pull-left">
 								<div class="total-saving-price roboto-medium font-g MC-horizontal-space">${properties.totalSavingsText}</div>
 							</div>
-							<div data-sly-text="${'{0}{1}' @ format =['$',totalSavingsDecimalLimit.decimalLimtvalue ? totalSavingsDecimalLimit.decimalLimtvalue :'0'] }" class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium pull-right">
+							<div data-sly-text="${'{0}{1}' @ format =['$', totalSavingsDecimalLimit.decimalLimtvalue ? totalSavingsDecimalLimit.decimalLimtvalue :'0'] }" class="col-sm-6 price-total MC-horizontal-space text-right roboto-medium pull-right">
 			
 							</div>
 						</div>
@@ -93,7 +93,7 @@
 										</div>
 										<div class="price font-g table-cell">
 											<span class="position-rel">
-											<sly data-sly-use.actualPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.actualPrice}" />
+												<sly data-sly-use.actualPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.actualPrice}" />
 												<span  data-sly-text= "${'{0}{1}' @ format =['$',actualPriceDecimalLimit.decimalLimtvalue ? actualPriceDecimalLimit.decimalLimtvalue :'0']}" class="discount-price font-h" >	
 												</span>
 												<sly data-sly-use.discountPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.discountPrice}" />
@@ -102,7 +102,7 @@
 										</div>
 										<div class="total-price font-g table-cell">
 											<span class="position-rel">
-											<sly data-sly-use.itemizedSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.itemizedSavings}" />
+												<sly data-sly-use.itemizedSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.itemizedSavings}" />
 												<span  data-sly-text ="${'{0}{1}' @ format =['$',itemizedSavingsDecimalLimit.decimalLimtvalue ? itemizedSavingsDecimalLimit.decimalLimtvalue :'0'] }"class="title-saved font-h">${child.savingsLabel}</span>
 											</span>
 										</div>
