@@ -3,8 +3,8 @@ $(function() {
 	var landingpagepath = "";
 	var searchlandingpagepath = "/search-results.html";
 	var joinpagepath = "";
-    var logoImagePath = "http://pub1.aaaprod.axis41.net:4503/content/dam/ace/logo/orbit-logo.png";
-    var califLogoImagePath = "http://pub1.aaaprod.axis41.net:4503/content/dam/ace/logo/acsc-logo.png";
+    var logoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/orbit-logo.png";
+    var califLogoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/acsc-logo.png";
 
 	// Environment information can be updated here.
 	var protocol = "http://";
