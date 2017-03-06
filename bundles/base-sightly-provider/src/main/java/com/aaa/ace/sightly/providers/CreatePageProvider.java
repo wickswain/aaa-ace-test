@@ -23,31 +23,22 @@ public class CreatePageProvider extends WCMUsePojo {
 	@Override
 	public void activate() throws Exception {
 
-		String nonPurgingPath = null;
-		String pageName = null;
-		String template = null;
-		String pageTitle = null;
-		String resourceType = null;
-		Session session = null;
 		Page newPage = null;
 		Page checkPage = null;
-		Page currentPage = null;
 		Node jcrNode = null;
 		Node pageNode = null;
 		String pagePath = null;
 		String slash = "/";
-		PageManager pageManager = null;
+		Session session = getResourceResolver().adaptTo(Session.class);
+		PageManager pageManager = getPageManager();
+		Page currentPage = getCurrentPage();
+		String pageName = currentPage.getName();
+		String pageTitle = currentPage.getTitle();
+		String template = get("template", String.class);
+		String nonPurgingPath = get("nonpurgingpath", String.class);
+		String resourceType = get("resourcetype", String.class);
 
 		logger.debug("CreatePageProvider started()");
-
-		session = getResourceResolver().adaptTo(Session.class);
-		pageManager = getPageManager();
-		currentPage = getCurrentPage();
-		pageName = currentPage.getName();
-		pageTitle = currentPage.getTitle();
-		nonPurgingPath = get("nonpurgingpath", String.class);
-		template = get("template", String.class);
-		resourceType = get("resourcetype", String.class);
 
 		pagePath = nonPurgingPath + slash + pageName;
 		checkPage = pageManager.getPage(pagePath);
