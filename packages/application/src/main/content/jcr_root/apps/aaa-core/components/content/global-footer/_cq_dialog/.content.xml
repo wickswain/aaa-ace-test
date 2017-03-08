@@ -65,6 +65,10 @@
                                                     name="./newTabFlag"
                                                     text="Open in new window?"
                                                     value="{Boolean}true"/>
+                                                <hidden-field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="./hiddenField"/>
                                             </items>
                                         </column>
                                     </items>
@@ -128,6 +132,10 @@
                                                     name="./newTabFlag"
                                                     text="Open in new window?"
                                                     value="{Boolean}true"/>
+                                                <hidden-field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="./hiddenField1"/>
                                             </items>
                                         </column>
                                     </items>
@@ -191,6 +199,10 @@
                                                     name="./newTabFlag"
                                                     text="Open in new window?"
                                                     value="{Boolean}true"/>
+                                                <hidden-field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="./hiddenField2"/>
                                             </items>
                                         </column>
                                     </items>
@@ -289,7 +301,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
                                 class="full-width"
                                 fieldDescription="Click 'Add field' to add a new item"
-                                fieldLabel="Social Media">
+                                fieldLabel="Social Media"
+                                max="3">
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
@@ -329,6 +342,10 @@
                                                     name="./newTabFlag"
                                                     text="Open in new window?"
                                                     value="{Boolean}true"/>
+                                                <hidden-field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="./hiddenField3"/>
                                             </items>
                                         </column>
                                     </items>

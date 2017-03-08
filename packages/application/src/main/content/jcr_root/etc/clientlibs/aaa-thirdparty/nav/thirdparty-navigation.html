@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AAA</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/css/fonts-v1.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/css/style-v1.css" />
+        
+    <script type="text/javascript" src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/js/bootstrap.min.js"></script>
+</head>
+
+<body class="font-g">
+    <!-- The Main Wrapper
+    ============================================= -->
+	
+    <div id="pagewrapper" class="clearfix container-custom">
+        <header id="page-header" class="navbar-fixed-top">
+            <div class="header-bar">
+                <div id="global-header">
+                    <div class="row top-header" id="top-header">
+                        <div class="col-xs-4 col-md-5 text-right col-md-push-7"> 
+                            <span class="menu">
+                                <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>MORE
+                            </span>
+                            
+                            <ul class="nav-list-inline font-h dropdown hidden-xs hidden-sm">
+                                <li id="nav-links"> 
+                                    <a href="#" id="find-a-branch-link">Find a Branch</a>
+                                    <span class="pipe">|</span>
+                                    
+                                    <a href="#" id="user-login">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/lock-icon.png" alt="lock" title="lock" class="lock-icon">Sign In
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="btn-style btn-sm btn-color-blue form-control font-h input-group search-btn icon-text">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-search " aria-hidden="true"></i>Search</span>
+                                    </span>
+                                </li>
+                            </ul>
+                            
+                            <div class="expand-searchbar" style="width: 20%; opacity: 0;">
+                                <div class="input-group search-bar">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="search" class="form-control font-h" id="searchKey" name="searchKey" placeholder="Search..." />
+                                    <span class="input-group-addon">
+                                        <i class="close-icon" id="d-close-searchbar">+</i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center col-xs-4 col-md-2">
+                            <div class="brand">
+                                <a href="#" id="logo-link"><img src="" title="Home" alt="AAA" class="img-responsive" /></a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-4 col-md-5 col-md-pull-7">
+                            <ul class="nav-list-inline font-h dropdown roadside-text ">
+                                <li> 
+                                    <a href="#" id="truck-link" style="background-image:url('http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/truck-white-xs.png')">Roadside Assistance</a> 
+                                    <span class="pipe hidden-xs hidden-sm">|</span> 
+                                    <a href="#" id="contact-us-link" class="link2 hidden-xs hidden-sm">Contact Us</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <div class="navigation-bar">
+                <div class="slideboxer">
+                    <div class="backslide hidden-md hidden-lg">
+                        <span class="close-icon"> <i>+</i> </span>
+                    </div>
+                    
+                    <div class="search-label hidden-md hidden-lg font-h">
+                        <span class="m-close-icon"> <i>+</i> </span>
+                        <div class="input-group" id="search-hide">
+                            <span class="input-group-addon ">
+                                <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                            </span>Search...
+                        </div>
+                    </div>
+                    
+                    <div class="advance-search hidden-md hidden-lg">
+                        <form>
+                            <div class="input-group search-bar">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                </span>
+                                <input type="search" class="form-control font-h" id="m-searchKey" name="m-searchKey" placeholder="Search..." />
+                                <span class="input-group-addon">
+                                    <i class="close-icon"  id="m-close-searchbar">+</i>
+                                </span>
+                            </div>
+                            <input type="button" id="m-search-btn" title="GO" value="GO" class="btn-style btn-sm btn-border btn-color-blue" />
+                        </form>
+                    </div>
+                    
+                    <div class="slide-nav">
+                        <div class="search-overlay"></div>
+                        
+                        <div class="header-bar">
+                            <div class="m-user-details">
+                                <div class="sign-join-in hidden-md hidden-lg">
+                                	<a href="#" id="m-user-login" class="user-login">
+                                		<img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/lock-icon.png" alt="lock" title="lock" class="lock-icon">SIGN IN
+                                	</a>
+                                    <a href="javascript:void(0);" id="m-join-btn" class="link-btn link-color-blue link-lg">JOIN</a> 
+                                </div>
+                                <div class="contact-find hidden-md hidden-lg">
+                                    <a href="#" id="m-find-a-branch-link" class="link1">Find a Branch</a>
+                                    <a href="#" id="m-contact-us-link" class="link2">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <nav class="navbar navbar-default globalnav">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" id="nav-0" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/member-icon.png" alt="Membership" class="icon-link hidden-lg hidden-md">Membership
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-1" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/insurance-icon.png" alt="Insurance" class="icon-link hidden-lg hidden-md">Insurance
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-2" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/travel-icon.png" alt="Travel" class="icon-link hidden-lg hidden-md">Travel
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-3" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/disp-icon.png" alt="Discounts & Rewards" class="icon-link hidden-lg hidden-md">Discounts & Rewards
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-4" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/activi-icon.png" alt="Activities" class="icon-link hidden-lg hidden-md">Activities
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-5" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/auto-icon.png" alt="Automotive" class="icon-link hidden-lg hidden-md">Automotive
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" id="nav-6" class="active">
+                                        <img src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/images/finan-icon.png" alt="Financial" class="icon-link hidden-lg hidden-md">Financial
+                                    </a>
+                                </li>
+                                <li class="hidden-xs hidden-sm">
+                                    <a href="javascript:void(0);" id="nav-7" class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">Join</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="overlay"></div>
+    </div>
+    
+    <script type="text/javascript" src="http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/nav/js/scripts-v1.js"></script>
+    
+	
+	
+</body>
+</html>

@@ -8,5 +8,26 @@ import org.apache.sling.api.resource.ResourceResolver;
  *
  */
 public interface PageSuffixResolverService {
-    String resolveLinkURL(final ResourceResolver resolver, final String link);
+
+	/**
+	 * Gets the valid link URL.
+	 *
+	 * @param resolver
+	 *            the resourceResolver
+	 * @param link
+	 *            the link
+	 * @return String
+	 */
+	String resolveLinkURL(final ResourceResolver resolver, final String link);
+
+	/**
+	 * Gets the valid link map URL using the etc map configuration.
+	 *
+	 * @param resolver
+	 *            the resourceResolver
+	 * @param link
+	 *            the link
+	 * @return String
+	 */
+	String resolveLinkMapURL(final ResourceResolver resolver, final String link);
 }

@@ -11,551 +11,612 @@
 
 <!-- Travel Widget Content
 ============================================= -->
-<div class="travel-widget-container" style="background: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');">
-	<div class="travel-widget-search-lable">
-		<h5 data-sly-test="${properties.title}" data-sly-text="${properties.title}" class="roboto-slab-bold font-a"></h5>
-    </div>
-    
-    <div class="travel-widget">
-        <input type="hidden" name="club_number" id="club_number" value="${properties.clubCode}"/>
-        <input type="hidden" name="ref_id" id="ref_id" value="${properties.refId ? properties.refId : '5776'}"/>
-        
-        <div class="searchWrapper">
-            <div id="rs_multi" class='rs_searchbox'>
-                <ul class="rs_products">
-                    <li class="rs_tabs ${properties.tabType ? (properties.tabType == 'hotels' ? 'highlight_tab' : '') : 'highlight_tab'}"
-                        data-tab="rs_hotel_form" id="tabHotel">
-                        <p>Hotels</p>
-                    </li>
-                    <li class="rs_tabs ${properties.tabType == 'flights' ? 'highlight_tab' : ''}"
-                        data-tab="rs_air_form" id="tabAir">
-                        <p>Flights</p>
-                    </li>
-                    <li class="rs_tabs ${properties.tabType == 'cars' ? 'highlight_tab' : ''}"
-                        data-tab="rs_car_form" id="tabCar">
-                        <p>Cars</p>
-                    </li>
-                    <li class="rs_tabs ${properties.tabType == 'cruises' ? 'highlight_tab' : ''}"
-                        data-tab="rs_cruise_form" id="tabCruise">
-                        <p>Cruises</p>
-                    </li>
-                    <li class="rs_tabs last_tab ${properties.tabType == 'vacations' ? 'highlight_tab' : ''}"
-                        data-tab="rs_mvp_form" id="tabVP">
-                        <p class="desktop-tablet-tab">Vacations</p>
-                        <p class="mobile-tab">Vacation</p>
-                    </li>
-                    <div class="clear"></div>
-                </ul>
-    
-                <div class="form-holder">
-                    <form name="hotel" class="rs_hotel_form ${properties.tabType ? (properties.tabType == 'hotels' ? '' : 'rs_searchbox_hide') : ''}">
-                          <input type="hidden" name="refclickid" value="travel_widget">
-                        <div class='rs_form_row'>
-                            <div class="hotel_trip">
-                                <label class="field_label">Where to?</label> 
-                                <input name="query" class="rs_autosuggest" type="text" title="Enter City or Airport"
-                                       autocomplete="off" placeholder="City or Airport" onclick='this.value="";'
-                                       data-rs_ga_track='["change",["Searchbox - home page", "Autosuggest"]]'>
-                            </div>
-                            
-                            <div class='rs_suggest'></div>
-                            
-                            <div class="date_field">
-                                <label class="field_label">Date</label>
-                                <div class="date_select">
-                                    <input name="check_in" class="rs_chk_in" type='text' autocomplete="off" placeholder="Check In" readonly>
-                                    <input name="check_out" class="rs_chk_out" type='text' autocomplete="off" placeholder="Check Out" readonly>
-                                </div>
-                            </div>
-                            
-                            <div class="rooms_and_guests">
-                                <label class="field_label">Details</label>
-                                <select class="rs_rooms" name="rooms" title='Number of Rooms' data-rs_ga_track='["change",["Searchbox - home page", "Rooms"]]'></select>
-                                <select name="adults" class="rs_guests rs_select_box js_guest_select"></select>
-                            </div>
-                        </div>
-                        
-                        <div class="clear"></div>
-                        
-                        <div class='rs_button_row'>
-                            <button type="submit" class="rs_search" data-rs_ga_track='["click",["Searchbox - home page", "Submit"]]' title='Search'>SEARCH</button>
-                            <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+<div id="${properties.jumpLinkId}" style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}'); background-color: ${properties.backgroundColor @ context='styleToken'};"
+	 class="travel-widget-container">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-10">
+				<div style="color:${properties.titleFontColor @ context='styleToken'};" class="travel-widget-search-lable">
+					<sly data-sly-test="${properties.headLineRTE}" data-sly-resource="${'headline-text' @ resourceType = '/apps/aaa-core/components/content/rte'}"/>
+		    	</div>
+			</div>
+			
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+
+	<div class="travel-widget">
+	    <input type="hidden" name="club_number" id="club_number" value="${properties.clubCode}"/>
+	    <input type="hidden" name="ref_id" id="ref_id" value="${properties.refId ? properties.refId : '5776'}"/>
+	    
+	    <sly data-sly-test.refID="${properties.refId ? properties.refId : '5776'}"/>
+	    
+	    <div class="searchWrapper">
+	        <div id="rs_multi" class='rs_searchbox'>
+	            <ul class="rs_products">
+	                <li class="rs_tabs ${properties.tabType ? (properties.tabType == 'hotels' ? 'highlight_tab' : '') : 'highlight_tab'}"
+	                    data-tab="rs_hotel_form" id="tabHotel">
+	                    <p>Hotels</p>
+	                </li>
+	                <li class="rs_tabs ${properties.tabType == 'flights' ? 'highlight_tab' : ''}"
+	                    data-tab="rs_air_form" id="tabAir">
+	                    <p>Flights</p>
+	                </li>
+	                <li class="rs_tabs ${properties.tabType == 'cars' ? 'highlight_tab' : ''}"
+	                    data-tab="rs_car_form" id="tabCar">
+	                    <p>Cars</p>
+	                </li>
+	                <li class="rs_tabs ${properties.tabType == 'cruises' ? 'highlight_tab' : ''}"
+	                    data-tab="rs_cruise_form" id="tabCruise">
+	                    <p>Cruises</p>
+	                </li>
+	                <li class="rs_tabs last_tab ${properties.tabType == 'vacations' ? 'highlight_tab' : ''}"
+	                    data-tab="rs_mvp_form" id="tabVP">
+	                    <p class="desktop-tablet-tab">Vacations</p>
+	                    <p class="mobile-tab">Vacation</p>
+	                </li>
+	                <div class="clear"></div>
+	            </ul>
+	
+	            <div class="form-holder">
+	                <form name="hotel" class="rs_hotel_form ${properties.tabType ? (properties.tabType == 'hotels' ? '' : 'rs_searchbox_hide') : ''}">
+	                      <input type="hidden" name="refclickid" value="travel_widget">
+	                    <div class='rs_form_row'>
+	                        <div class="hotel_trip">
+	                            <label class="field_label">Where to?</label> 
+	                            <input name="query" class="rs_autosuggest" type="text" title="Enter City or Airport"
+	                                   autocomplete="off" placeholder="City or Airport" onclick='this.value="";'
+	                                   data-rs_ga_track='["change",["Searchbox - home page", "Autosuggest"]]'>
+	                        </div>
+	                        
+	                        <div class='rs_suggest'></div>
+	                        
+	                        <div class="date_field">
+	                            <label class="field_label">Date</label>
+	                            <div class="date_select">
+	                                <input name="check_in" class="rs_chk_in" type='text' autocomplete="off" placeholder="Check In" readonly>
+	                                <input name="check_out" class="rs_chk_out" type='text' autocomplete="off" placeholder="Check Out" readonly>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="rooms_and_guests">
+	                            <label class="field_label">Details</label>
+	                            <select class="rs_rooms" name="rooms" title='Number of Rooms' data-rs_ga_track='["change",["Searchbox - home page", "Rooms"]]'></select>
+	                            <select name="adults" class="rs_guests rs_select_box js_guest_select"></select>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="clear"></div>
+	                    
+	                    <div class='rs_button_row'>
+	                        <button type="submit" class="rs_search" data-rs_ga_track='["click",["Searchbox - home page", "Submit"]]' title='Search'>SEARCH</button>
+
+							<sly data-sly-test.deafultHotelReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <sly data-sly-test.hotelReservationLink="${'{0}?refid={1}' @ format = [properties.hMyReservationLink, refID]}"/>
+                            <a target="${properties.hMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.hMyReservationLink ? hotelReservationLink : deafultHotelReservationLink}">${properties.hMyReservationLinkLabel ? properties.hMyReservationLinkLabel : 'My Reservations'}</a>
+
                             <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-                            <a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                            <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
                             <span> | </span>
-                            <a href="https://secure.rezserver.com/home/?refid=${properties.refId ? properties.refId : '5776'}&refclickid=travel_widget_advanced-search">Advanced Search</a>
-                        </div>
-                        <input type="hidden" name="ace_redirect" value="true">
-                        <div class='clear'></div>
-                    </form>
-    
-                    <form name="air" class="air rs_air_form ${properties.tabType == 'flights' ? '' : 'rs_searchbox_hide'}">
-                          <input type="hidden" name="refclickid" value="travel_widget">
-                        <div class="rs_air_options">
-                            <label class="rs_air_type rs_air_highlight" for="round-trip">
-                                <input type="radio" class="round-trip" name="air-radio" id="round-trip" checked> 
-                                <i></i> Round Trip
-                            </label>
-                            
-                            <label class="rs_air_type" for="one-way">
-                                <input type="radio" class="one-way" name="air-radio" id="one-way">
-                                <i></i> One way
-                            </label>
-                            
-                            <div class="multi-link">
-                                <span> | </span>
-                                <a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Multi City</a>
-                            </div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                        
-                        <div id="air_round_trip">
-                            <div class="air_trip">
-                                <label class="field_label">Where to?</label>
-                                <input name="rs_o_city" class="from rs_autosuggest rs_from" placeholder='Origin' autocomplete="off">
-                                <input name="rs_d_city" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
-                            </div>
-                            
-                            <div class="date_and_travelers">
-                                <div class="date_field">
-                                    <label class="field_label">Date</label>
-                                    <div class="date_select">
-                                        <input name="rs_chk_in" class="air-date rs_chk_in" placeholder="Departing" readonly>
-                                        <input name="rs_chk_out" class="air-date rs_chk_out" placeholder="Returning" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="rs_rooms" id="air_travelers">
-                                <label class="field_label">Travelers</label>
-                                
-                                <div class="traveler_select">
-                                    <div id="round-drop" class="dropbtn"></div>
-                                    
-                                    <div class="dropdown-content" id="round-content">
-                                        <div class="cabin_options">
-                                            <button class="prevClass" style="display: inline-block;"></button>
-                                            
-                                            <select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="round-class">
-                                                <option value="economy">Economy</option>
-                                                <option value="premium">Premium</option>
-                                                <option value="business">Business</option>
-                                                <option value="first">First</option>
-                                            </select>
-                                            
-                                            <button class="nextClass" style="display: inline-block;"></button>
-                                        </div>
-                                        
-                                        <div class="traveler_line"></div>
-                                        
-                                        <div class="traveler_options">
-                                            <div class="adult_travelers">
-                                                <label class="field_label">
-                                                    <span class="adult_label">Adult</span>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="min_button"></button>
-                                                    </span>
-                                                    
-                                                    <input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="plus_button"></button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            
-                                            <div class="child_travelers">
-                                                <label class="field_label">
-                                                    <span class="adult_label">Child</span>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="min_button"></button>
-                                                    </span>
-                                                    
-                                                    <input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="plus_button"></button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="rs_button_row">
-                                <button type="submit" class="rs_search">SEARCH</button>
-                                <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+
+							<sly data-sly-test.defaultHotelAdvanceSearchLink="https://secure.rezserver.com/home/?refid=${properties.refId ? properties.refId : '5776'}&refclickid=travel_widget_advanced-search"/>
+                            <sly data-sly-test.hotelAdvanceSearchLink="${'{0}?refid={1}&refclickid=travel_widget_advanced-search' @ format = [properties.hAdvanceSearchLink, refID]}"/>
+                            <a target="${properties.hAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            	href="${properties.hAdvanceSearchLink ? hotelAdvanceSearchLink : defaultHotelAdvanceSearchLink}">${properties.hAdvanceSearchLinkLabel ? properties.hAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+	                    </div>
+	                    <input type="hidden" name="ace_redirect" value="true">
+	                    <div class='clear'></div>
+	                </form>
+	
+	                <form name="air" class="air rs_air_form ${properties.tabType == 'flights' ? '' : 'rs_searchbox_hide'}">
+	                      <input type="hidden" name="refclickid" value="travel_widget">
+	                    <div class="rs_air_options">
+	                        <label class="rs_air_type rs_air_highlight" for="round-trip">
+	                            <input type="radio" class="round-trip" name="air-radio" id="round-trip" checked> 
+	                            <i></i> Round Trip
+	                        </label>
+	                        
+	                        <label class="rs_air_type" for="one-way">
+	                            <input type="radio" class="one-way" name="air-radio" id="one-way">
+	                            <i></i> One way
+	                        </label>
+	                        
+	                        <div class="multi-link">
+	                            <span> | </span>
+	                            <a href="${properties.fMultiCityLink ? properties.fMultiCityLink : '#'}"
+	                               target="${properties.fMultiCityLinkNewTabFlag == 'true' ? '_blank' : '_self'}">${properties.fMultiCityLinkLabel ? properties.fMultiCityLinkLabel : 'Multi City'}</a>
+	                        </div>
+	                        
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+	                    <div id="air_round_trip">
+	                        <div class="air_trip">
+	                            <label class="field_label">Where to?</label>
+	                            <input name="rs_o_city" class="from rs_autosuggest rs_from" placeholder='Origin' autocomplete="off">
+	                            <input name="rs_d_city" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
+	                        </div>
+	                        
+	                        <div class="date_and_travelers">
+	                            <div class="date_field">
+	                                <label class="field_label">Date</label>
+	                                <div class="date_select">
+	                                    <input name="rs_chk_in" class="air-date rs_chk_in" placeholder="Departing" readonly>
+	                                    <input name="rs_chk_out" class="air-date rs_chk_out" placeholder="Returning" readonly>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="rs_rooms" id="air_travelers">
+	                            <label class="field_label">Travelers</label>
+	                            
+	                            <div class="traveler_select">
+	                                <div id="round-drop" class="dropbtn"></div>
+	                                
+	                                <div class="dropdown-content" id="round-content">
+	                                    <div class="cabin_options">
+	                                        <button class="prevClass" style="display: inline-block;"></button>
+	                                        
+	                                        <select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="round-class">
+	                                            <option value="economy">Economy</option>
+	                                            <option value="premium">Premium</option>
+	                                            <option value="business">Business</option>
+	                                            <option value="first">First</option>
+	                                        </select>
+	                                        
+	                                        <button class="nextClass" style="display: inline-block;"></button>
+	                                    </div>
+	                                    
+	                                    <div class="traveler_line"></div>
+	                                    
+	                                    <div class="traveler_options">
+	                                        <div class="adult_travelers">
+	                                            <label class="field_label">
+	                                                <span class="adult_label">Adult</span>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+	                                                
+	                                                <input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+	                                            </label>
+	                                        </div>
+	                                        
+	                                        <div class="child_travelers">
+	                                            <label class="field_label">
+	                                                <span class="adult_label">Child</span>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+	                                                
+	                                                <input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+	                                            </label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	
+	                        <div class="rs_button_row">
+	                            <button type="submit" class="rs_search">SEARCH</button>
+
+                                <sly data-sly-test.defaultFlightReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<sly data-sly-test.flightReservationLink="${'{0}?refid={1}' @ format = [properties.fMyReservationLink, refID]}"/>
+                            	<a target="${properties.fMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               	   href="${properties.fMyReservationLink ? flightReservationLink : defaultFlightReservationLink}">${properties.fMyReservationLinkLabel ? properties.fMyReservationLinkLabel : 'My Reservations'}</a>
+
                                 <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-                            	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                                <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                                	href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
                                 <span> | </span>
-                                <a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
-                            </div>
-                        </div>
-                        
-                        <div id="air_one_way">
-                            <div class="air_trip">
-                                <label class="field_label">Where to?</label>
-                                <input name="rs_o_city1" class="from rs_autosuggest rs_from" placeholder='Origin' onclick='$(this).val("");' autocomplete="off"> 
-                                <input name="rs_d_city1" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
-                            </div>
-                            
-                            <div class="date_and_travelers">
-                                <div class="date_field">
-                                    <label class="field_label">Date</label>
-                                    <div class="date_select rs_date">
-                                        <input name="rs_chk_in1" class="rs_chk_in" placeholder="Departing" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="rs_rooms" id="air_travelers">
-                                <label class="field_label">Travelers</label>
-                                
-                                <div class="traveler_select">
-                                    <div id="one-drop" class="dropbtn"></div>
-                                    
-                                    <div class="dropdown-content" id="one-content">
-                                        <div class="cabin_options">
-                                            <button class="prevClass" style="display: inline-block;"></button>
-                                            
-                                            <select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="one-class">
-                                                <option value="economy">Economy</option>
-                                                <option value="premium">Premium</option>
-                                                <option value="business">Business</option>
-                                                <option value="first">First</option>
-                                            </select>
-                                            
-                                            <button class="nextClass" style="display: inline-block;"></button>
-                                        </div>
-                                        
-                                        <div class="traveler_line"></div>
-                                        
-                                        <div class="traveler_options">
-                                            <div class="adult_travelers">
-                                                <label class="field_label">
-                                                    <span class="adult_label">Adult</span>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="min_button"></button>
-                                                    </span>
-                                                    
-                                                    <input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="plus_button"></button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            
-                                            <div class="child_travelers">
-                                                <label class="field_label">
-                                                    <span class="adult_label">Child</span>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="min_button"></button>
-                                                    </span>
-                                                    
-                                                    <input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
-                                                    
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="plus_button"></button>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="rs_button_row">
-                                <button type="submit" class="rs_search">SEARCH</button>
-                                <a href="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+
+                                <sly data-sly-test.defaultFlightAdvanceSearchLink="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<sly data-sly-test.flightAdvanceSearchLink="${'{0}?refid={1}' @ format = [properties.fAdvanceSearchLink, refID]}"/>
+                            	<a target="${properties.fAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            		href="${properties.fAdvanceSearchLink ? flightAdvanceSearchLink : defaultFlightAdvanceSearchLink}">${properties.fAdvanceSearchLinkLabel ? properties.fAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+	                        </div>
+	                    </div>
+	                    
+	                    <div id="air_one_way">
+	                        <div class="air_trip">
+	                            <label class="field_label">Where to?</label>
+	                            <input name="rs_o_city1" class="from rs_autosuggest rs_from" placeholder='Origin' onclick='$(this).val("");' autocomplete="off"> 
+	                            <input name="rs_d_city1" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
+	                        </div>
+	                        
+	                        <div class="date_and_travelers">
+	                            <div class="date_field">
+	                                <label class="field_label">Date</label>
+	                                <div class="date_select rs_date">
+	                                    <input name="rs_chk_in1" class="rs_chk_in" placeholder="Departing" readonly>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="rs_rooms" id="air_travelers">
+	                            <label class="field_label">Travelers</label>
+	                            
+	                            <div class="traveler_select">
+	                                <div id="one-drop" class="dropbtn"></div>
+	                                
+	                                <div class="dropdown-content" id="one-content">
+	                                    <div class="cabin_options">
+	                                        <button class="prevClass" style="display: inline-block;"></button>
+	                                        
+	                                        <select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="one-class">
+	                                            <option value="economy">Economy</option>
+	                                            <option value="premium">Premium</option>
+	                                            <option value="business">Business</option>
+	                                            <option value="first">First</option>
+	                                        </select>
+	                                        
+	                                        <button class="nextClass" style="display: inline-block;"></button>
+	                                    </div>
+	                                    
+	                                    <div class="traveler_line"></div>
+	                                    
+	                                    <div class="traveler_options">
+	                                        <div class="adult_travelers">
+	                                            <label class="field_label">
+	                                                <span class="adult_label">Adult</span>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+	                                                
+	                                                <input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+	                                            </label>
+	                                        </div>
+	                                        
+	                                        <div class="child_travelers">
+	                                            <label class="field_label">
+	                                                <span class="adult_label">Child</span>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+	                                                
+	                                                <input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
+	                                                
+	                                                <span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+	                                            </label>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	
+	                        <div class="rs_button_row">
+	                            <button type="submit" class="rs_search">SEARCH</button>
+
+                                <sly data-sly-test.defaultFlightsReservationLink="https://secure.rezserver.com/hotels/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<sly data-sly-test.flightsReservationLink="${'{0}?refid={1}' @ format = [properties.fMyReservationLink, refID]}"/>
+                            	<a target="${properties.fMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               	   href="${properties.fMyReservationLink ? flightsReservationLink : defaultFlightsReservationLink}">${properties.fMyReservationLinkLabel ? properties.fMyReservationLinkLabel : 'My Reservations'}</a>
+
                                 <span data-sly-test="${properties.fhLinkFlag}"> | </span>
-                            	<a data-sly-test="${properties.fhLinkFlag}" href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
+                                <a data-sly-test="${properties.fhLinkFlag}" target="${properties.fhLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                                	href="${properties.fhLink ? properties.fhLink : '#'}">Flight + Hotel Packages</a>
+
                                 <span> | </span>
-                                <a href="http://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
-                            </div>
-                            <input type="hidden" name="ace_redirect" value="true">
-                        </div>
-                    </form>
-    
-                    <form name="car" class="rs_car_form ${properties.tabType == 'cars' ? '' : 'rs_searchbox_hide'}">
-                        <div class="rs_car_options" id="car_options">
-                            <div class="rs_car_option rs_car_highlight">
-                                <label for='rs_same' class='inline'>
-                                    <input type='radio' onclick="sameLocation();" class='inline' name="rs_location" id='rs_same' checked /> 
-                                    <i></i> Same Location
-                                </label>
-                            </div>
-                            
-                            <div class="rs_car_option">
-                                <label for='rs_different' class='inline'>
-                                    <input type='radio' onclick="differentLocation();" class='inline' name="rs_location" id='rs_different' />
-                                    <i></i> Different Location
-                                </label>
-                            </div>
-                            
-                            <div class="clear"></div>
-                        </div>
-    
-                        <div class="clear"></div>
-                        
-                        <div class="car_location_row">
-                            <div class="rs_form_row rs_pickup_div">
-                                <label class="field_label">Location</label>
-                                <input class="rs_pickup rs_autosuggest" name="rs_pu_city" autocomplete="off" placeholder="Pick Up" onclick='$(this).val("");'>
-                            </div>
-                            
-                            <div class="rs_form_row rs_dropoff_div rs_car_half rs_no_margin">
-                                <input class="rs_dropoff rs_autosuggest" name="rs_do_city" autocomplete="off" placeholder="Return" onclick='$(this).val("");'>
-                            </div>
-                        </div>
-                        
-                        <div class="rs_form_row rs_date rs_chk_in_row">
-                            <label class="field_label">Pick Up</label>
-                            
-                            <div class='rs_date_input_container date_select'>
-                                <input name="rs_pu_date" class="rs_chk_in" placeholder="Select Date" readonly>
-                                <select name="rs_pu_time" class="rs_time_in rs_time"></select>
-                            </div>
-                        </div>
-                        
-                        <div class="rs_form_row rs_date rs_chk_in_row">
-                            <label class="field_label">Drop Off</label>
-                            
-                            <div class='rs_date_input_container date_select'>
-                                <input name="rs_do_date" class="rs_chk_out" placeholder="Select Date" readonly>
-                                <select name="rs_do_time" class="rs_time_out rs_time"></select>
-                            </div>
-                        </div>
-                        
-                        <div class="rs_button_row">
-                            <button type="submit" class="rs_search">SEARCH</button>
-                            <a href="https://secure.rezserver.com/car/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+
+                                <sly data-sly-test.dafaultFlightAdvanceSearchLink="https://secure.rezserver.com/flights/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            	<sly data-sly-test.flightAdvanceSearchLink="${'{0}?refid={1}' @ format = [properties.fAdvanceSearchLink, refID]}"/>
+                            	<a target="${properties.fAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            		href="${properties.fAdvanceSearchLink ? flightAdvanceSearchLink : dafaultFlightAdvanceSearchLink}">${properties.fAdvanceSearchLinkLabel ? properties.fAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+	                        </div>
+	                        <input type="hidden" name="ace_redirect" value="true">
+	                    </div>
+	                </form>
+	
+	                <form name="car" class="rs_car_form ${properties.tabType == 'cars' ? '' : 'rs_searchbox_hide'}">
+	                    <div class="rs_car_options" id="car_options">
+	                        <div class="rs_car_option rs_car_highlight">
+	                            <label for='rs_same' class='inline'>
+	                                <input type='radio' onclick="sameLocation();" class='inline' name="rs_location" id='rs_same' checked /> 
+	                                <i></i> Same Location
+	                            </label>
+	                        </div>
+	                        
+	                        <div class="rs_car_option">
+	                            <label for='rs_different' class='inline'>
+	                                <input type='radio' onclick="differentLocation();" class='inline' name="rs_location" id='rs_different' />
+	                                <i></i> Different Location
+	                            </label>
+	                        </div>
+	                        
+	                        <div class="clear"></div>
+	                    </div>
+	
+	                    <div class="clear"></div>
+	                    
+	                    <div class="car_location_row">
+	                        <div class="rs_form_row rs_pickup_div">
+	                            <label class="field_label">Location</label>
+	                            <input class="rs_pickup rs_autosuggest" name="rs_pu_city" autocomplete="off" placeholder="Pick Up" onclick='$(this).val("");'>
+	                        </div>
+	                        
+	                        <div class="rs_form_row rs_dropoff_div rs_car_half rs_no_margin">
+	                            <input class="rs_dropoff rs_autosuggest" name="rs_do_city" autocomplete="off" placeholder="Return" onclick='$(this).val("");'>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="rs_form_row rs_date rs_chk_in_row">
+	                        <label class="field_label">Pick Up</label>
+	                        
+	                        <div class='rs_date_input_container date_select'>
+	                            <input name="rs_pu_date" class="rs_chk_in" placeholder="Select Date" readonly>
+	                            <select name="rs_pu_time" class="rs_time_in rs_time"></select>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="rs_form_row rs_date rs_chk_in_row">
+	                        <label class="field_label">Drop Off</label>
+	                        
+	                        <div class='rs_date_input_container date_select'>
+	                            <input name="rs_do_date" class="rs_chk_out" placeholder="Select Date" readonly>
+	                            <select name="rs_do_time" class="rs_time_out rs_time"></select>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="rs_button_row">
+	                        <button type="submit" class="rs_search">SEARCH</button>
+
+                            <sly data-sly-test.defaultCarsReservationLink="https://secure.rezserver.com/car/help/review/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <sly data-sly-test.carsReservationLink="${'{0}?refid={1}' @ format = [properties.cMyReservationLink, refID]}"/>
+                            <a target="${properties.cMyReservationNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.cMyReservationLink ? carsReservationLink : defaultCarsReservationLink}">${properties.cMyReservationLinkLabel ? properties.cMyReservationLinkLabel : 'My Reservations'}</a>
+
                             <span> | </span>
-                            <a href="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}">Promo Code</a>
+
+                            <sly data-sly-test.defaultCarsPromoLink="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <sly data-sly-test.carsPromoLink="${'{0}?refid={1}' @ format = [properties.cPromoLink, refID]}"/>
+                            <a target="${properties.cPromoLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                               href="${properties.cPromoLink ? carsPromoLink : defaultCarsPromoLink}">${properties.cPromoLinkLabel ? properties.cPromoLinkLabel : 'Heartz Promo Code'}</a>
+
                             <span> | </span>
-                            <a href="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}">Advanced Search</a>
-                        </div>
-                        <input type="hidden" name="ace_redirect" value="true">
-                        <div class="clear"></div>
-                        
-                        <div class="rs_chk_in_display"></div>
-                        <div class="rs_chk_out_display"></div>
-                    </form>
-    
-                    <form name="cruise"
-                        class="rs_cruise_form ${properties.tabType == 'cruises' ? '' : 'rs_searchbox_hide'}"
-                        action="https://ww1.aaa.com/scripts/WebObjects.dll/AAAOnline"
-                        onsubmit="if(checkCruise($(this))){ return true; } else { return false; }"
-                        method="get">
-                        <input type="hidden" name="dur" value="0">
-                        <input type="hidden" name="association" value="AAA">
-                        <input type="hidden" name="cobrand" value="10000">
-                        <input type="hidden" name="club" value="${properties.clubCode}">
-                        <input type="hidden" name="HBTRACK" value="TRCRS">
-                        <input type="hidden" name="PID" value="412">
-                        <input type="hidden" name="page" value="PartnerRedirect">
-    
-                        <div class="rs_form_row">
-                            <div class="cruise_destination">
-                                <label class="field_label">Destination</label>
-                                
-                                <select name="destination_ids[]" class="rs_cruise_box ">
-                                    <option value="0">All Destinations</option>
-                                    <option value="1">Africa</option>
-                                    <option value="2">Alaska</option>
-                                    <option value="79">Antarctic</option>
-                                    <option value="3">Asia</option>
-                                    <option value="4">Australia/New Zealand</option>
-                                    <option value="5">Bahamas</option>
-                                    <option value="7">Bermuda</option>
-                                    <option value="55">Brazil</option>
-                                    <option value="10">Canada/New England</option>
-                                    <option value="45">Caribbean</option>
-                                    <option value="12">Caribbean, Eastern</option>
-                                    <option value="11">Caribbean, Southern</option>
-                                    <option value="13">Caribbean, Western</option>
-                                    <option value="602">China</option>
-                                    <option value="14">Costa Rica</option>
-                                    <option value="47">Europe</option>
-                                    <option value="17">Far East</option>
-                                    <option value="53">Greece</option>
-                                    <option value="19">Hawaii</option>
-                                    <option value="21">India</option>
-                                    <option value="22">Mediterranean</option>
-                                    <option value="83">Mediterranean - Western</option>
-                                    <option value="23">Mexican Baja/Riviera</option>
-                                    <option value="15">Northern Europe</option>
-                                    <option value="49">Nowhere</option>
-                                    <option value="50">Pacific Coastal</option>
-                                    <option value="30">Panama Canal</option>
-                                    <option value="52">Russia</option>
-                                    <option value="34">South America</option>
-                                    <option value="35">South Pacific</option>
-                                    <option value="36">Tahiti</option>
-                                    <option value="38">Transatlantic</option>
-                                    <option value="39">Transcanal</option>
-                                    <option value="40">Transpacific</option>
-                                    <option value="63">U. S. Atlantic Coast</option>
-                                    <option value="29">U. S. Pacific Coast</option>
-                                    <option value="16">Western Europe</option>
-                                    <option value="42">World Cruise</option>
+
+                            <sly data-sly-test.defaultCarsAdvanceSearchLink="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
+                            <sly data-sly-test.carsAdvanceSearchLink="${'{0}?refid={1}' @ format = [properties.cAdvanceSearchLink, refID]}"/>
+                            <a target="${properties.cAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+                            	href="${properties.cAdvanceSearchLink ? carsAdvanceSearchLink : defaultCarsAdvanceSearchLink}">${properties.cAdvanceSearchLinkLabel ? properties.cAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+	                    </div>
+	                    <input type="hidden" name="ace_redirect" value="true">
+	                    <div class="clear"></div>
+	                    
+	                    <div class="rs_chk_in_display"></div>
+	                    <div class="rs_chk_out_display"></div>
+	                </form>
+	
+	                <form name="cruise" target="_blank"
+	                    class="rs_cruise_form ${properties.tabType == 'cruises' ? '' : 'rs_searchbox_hide'}"
+	                    action="https://ww1.aaa.com/scripts/WebObjects.dll/AAAOnline"
+	                    onsubmit="if(checkCruise($(this))){ return true; } else { return false; }"
+	                    method="get">
+	                    <input type="hidden" name="dur" value="0">
+	                    <input type="hidden" name="association" value="AAA">
+	                    <input type="hidden" name="cobrand" value="10000">
+	                    <input type="hidden" name="club" value="${properties.clubCode}">
+	                    <input type="hidden" name="HBTRACK" value="TRCRS">
+	                    <input type="hidden" name="PID" value="412">
+	                    <input type="hidden" name="page" value="PartnerRedirect">
+	
+	                    <div class="rs_form_row">
+	                        <div class="cruise_destination">
+	                            <label class="field_label">Destination</label>
+	                            
+	                            <select name="destination_ids[]" class="rs_cruise_box ">
+	                                <option value="0">All Destinations</option>
+	                                <option value="1">Africa</option>
+	                                <option value="2">Alaska</option>
+	                                <option value="79">Antarctic</option>
+	                                <option value="3">Asia</option>
+	                                <option value="4">Australia/New Zealand</option>
+	                                <option value="5">Bahamas</option>
+	                                <option value="7">Bermuda</option>
+	                                <option value="55">Brazil</option>
+	                                <option value="10">Canada/New England</option>
+	                                <option value="45">Caribbean</option>
+	                                <option value="12">Caribbean, Eastern</option>
+	                                <option value="11">Caribbean, Southern</option>
+	                                <option value="13">Caribbean, Western</option>
+	                                <option value="602">China</option>
+	                                <option value="14">Costa Rica</option>
+	                                <option value="47">Europe</option>
+	                                <option value="17">Far East</option>
+	                                <option value="53">Greece</option>
+	                                <option value="19">Hawaii</option>
+	                                <option value="21">India</option>
+	                                <option value="22">Mediterranean</option>
+	                                <option value="83">Mediterranean - Western</option>
+	                                <option value="23">Mexican Baja/Riviera</option>
+	                                <option value="15">Northern Europe</option>
+	                                <option value="49">Nowhere</option>
+	                                <option value="50">Pacific Coastal</option>
+	                                <option value="30">Panama Canal</option>
+	                                <option value="52">Russia</option>
+	                                <option value="34">South America</option>
+	                                <option value="35">South Pacific</option>
+	                                <option value="36">Tahiti</option>
+	                                <option value="38">Transatlantic</option>
+	                                <option value="39">Transcanal</option>
+	                                <option value="40">Transpacific</option>
+	                                <option value="63">U. S. Atlantic Coast</option>
+	                                <option value="29">U. S. Pacific Coast</option>
+	                                <option value="16">Western Europe</option>
+	                                <option value="42">World Cruise</option>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="cruise_vendor">
+	                            <label class="field_label">Cruise Line</label>
+	                            <select name="vendor_ids[]" class="rs_cruise_box ">
+	                                <option value="0">All Cruise Lines</option>
+	                                <option value="70">Ama Waterways</option>
+	                                <option value="1591">Azamara Cruises</option>
+	                                <option value="1">Carnival Cruise Lines</option>
+	                                <option value="2">Celebrity Cruises</option>
+	                                <option value="3">Crystal Cruises</option>
+	                                <option value="17">Cunard Line</option>
+	                                <option value="20">Disney Cruise Line</option>
+	                                <option value="4">Holland America Line</option>
+	                                <option value="5">Norwegian Cruise Line</option>
+	                                <option value="61">Oceania Cruises</option>
+	                                <option value="6">Princess Cruises</option>
+	                                <option value="7">Regent Seven Seas Cruises</option>
+	                                <option value="8">Royal Caribbean Cruise Line</option>
+	                                <option value="18">Seabourn Cruise Line</option>
+	                                <option value="83">Uniworld River Cruises</option>
+	                                <option value="59">Viking River Cruises</option>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="cruise_length">
+	                            <label class="field_label">Duration</label>
+	                            <select name="cruise_length_options" class="rs_cruise_box">
+	                                <option value="0-9999" selected="selected">Any Length</option>
+	                                <option value="2-6">2 - 6 Days</option>
+	                                <option value="7-9">7 - 9 Days</option>
+	                                <option value="10-14">10 - 14 Days</option>
+	                                <option value="15-9999">14+ Days</option>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="cruise_date">
+	                            <label class="field_label">Date</label>
+	                            
+                                <select name="start_date[month]" class="rs_cruise_box cruise_month">
+                                    <option value="0" selected="selected">Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
                                 </select>
-                            </div>
-                            
-                            <div class="cruise_vendor">
-                                <label class="field_label">Cruise Line</label>
-                                <select name="vendor_ids[]" class="rs_cruise_box ">
-                                    <option value="0">All Cruise Lines</option>
-                                    <option value="70">Ama Waterways</option>
-                                    <option value="1591">Azamara Cruises</option>
-                                    <option value="1">Carnival Cruise Lines</option>
-                                    <option value="2">Celebrity Cruises</option>
-                                    <option value="3">Crystal Cruises</option>
-                                    <option value="17">Cunard Line</option>
-                                    <option value="20">Disney Cruise Line</option>
-                                    <option value="4">Holland America Line</option>
-                                    <option value="5">Norwegian Cruise Line</option>
-                                    <option value="61">Oceania Cruises</option>
-                                    <option value="6">Princess Cruises</option>
-                                    <option value="7">Regent Seven Seas Cruises</option>
-                                    <option value="8">Royal Caribbean Cruise Line</option>
-                                    <option value="18">Seabourn Cruise Line</option>
-                                    <option value="83">Uniworld River Cruises</option>
-                                    <option value="59">Viking River Cruises</option>
+	                            
+                                <select name="start_date[year]" class="rs_cruise_box cruise_year">
+                                    <option value="Year" selected="selected">Year</option>
                                 </select>
-                            </div>
-                            
-                            <div class="cruise_length">
-                                <label class="field_label">Duration</label>
-                                <select name="cruise_length_options" class="rs_cruise_box">
-                                    <option value="0-9999" selected="selected">Any Length</option>
-                                    <option value="2-6">2 - 6 Days</option>
-                                    <option value="7-9">7 - 9 Days</option>
-                                    <option value="10-14">10 - 14 Days</option>
-                                    <option value="15-9999">14+ Days</option>
-                                </select>
-                            </div>
-                            
-                            <div class="cruise_date">
-                                <label class="field_label">Date</label>
-                                
-                                <span class="cruise_month_select"> 
-                                    <select name="start_date[month]" class="rs_cruise_box cruise_month">
-                                        <option value="0" selected="selected">Month</option>
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
-                                    </select>
-                                </span>
-                                
-                                <span class="cruise_year_select">
-                                    <select name="start_date[year]" class="rs_cruise_box cruise_year">
-                                        <option value="Year" selected="selected">Year</option>
-                                    </select>
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <input type="hidden" name="ace_redirect" value="true">
-                        
-                        <div class="clear"></div>
-                        
-                        <div class="rs_button_row">
-                            <button type="submit" class="rs_search" title='Search'>SEARCH</button>
-                        </div>
-                        
-                        <div class="clear"></div>
-                    </form>
-    
-                    <form name="vp" class="rs_vp_form rs_searchbox_hide">
-                        <div class="rs_form_row">
-                            <input name="rs_o_city" class="from rs_autosuggest rs_from" value='From' onclick='$(this).val("");' autocomplete="off">
-                        </div>
-                        
-                        <div class="rs_form_row">
-                            <input name="rs_d_city" class="to rs_autosuggest rs_to" value='To' onclick='$(this).val("");' autocomplete="off">
-                        </div>
-                        
-                        <div class="clear"></div>
-                        
-                        <div class="rs_form_row rs_date rs_chk_in_row">
-                            <div class='rs_date_input_container'>
-                                <input name="rs_chk_in" class="rs_chk_in" value="mm/dd/yyyy" readonly>
-                            </div>
-                        </div>
-    
-                        <div class="rs_form_row rs_date rs_chk_in_row">
-                            <div class='rs_date_input_container'>
-                                <input name="rs_chk_out" class="rs_chk_out" value="mm/dd/yyyy" readonly>
-                            </div>
-                        </div>
-    
-                        <div class="rs_form_row rs_rooms_row">
-                            <select name="rs_adults" class="rs_adults_input pax"></select>
-                        </div>
-                        
-                        <div class="rs_form_row rs_rooms_row">
-                            <select name="rs_children" class="rs_child_input pax"></select>
-                        </div>
-                        
-                        <div class="rs_form_row rs_rooms_row">
-                            <select class="rooms" name="rs_rooms"></select>
-                        </div>
-                        
-                        <div class="rs_button_row">
-                            <button type="submit" class="rs_search">Search</button>
-                            <a href="https://secure.rezserver.com/vp/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
-                        </div>
-                        
-                        <input type="hidden" name="ace_redirect" value="true">
-                        
-                        <div id="childrens_ages"></div>
-                        <div class="rs_chk_in_display"></div>
-                        <div class="rs_chk_out_display"></div>
-                    </form>
-    
-                    <form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
-                        id="vacation-form" name="hotel" method="get"
-                        action="https://southernnewengland.membervacationportal.com/">
-                        <script src="https://southernnewengland.membervacationportal.com/widgets/form.min.js?club=1"></script>
-                        <div class="rs_form_row vacation_row">
-                            <div class="vacation_destination">
-                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                                <label class="field_label">Destination</label>
-                                <input class="mvp-form-control" id="mvp-keywords" name="keyword" type="text" autocomplete="off" placeholder="Walt Disney World, etc" onclick='$(this).val("");'>
-                            </div>
-                            
-                            <div class='rs_date_input_container vacation_date'>
-                                <label class="field_label">Date</label>
-                                <input name="start" class="rs_chk_in" id="mvps" placeholder="Start" readonly>
-                                <input name="end" class="rs_chk_out" id="mvpe" placeholder="End" readonly>
-                            </div>
-                        </div>
-                        
-                        <div class="rs_button_row">
-                            <button type="submit" class="rs_search">SEARCH</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="clear"></div>
-        </div>
-    </div>
+	                        </div>
+	                    </div>
+	                    
+	                    <input type="hidden" name="ace_redirect" value="true">
+	                    
+	                    <div class="clear"></div>
+	                    
+	                    <div class="rs_button_row">
+	                        <button type="submit" class="rs_search" title='Search'>SEARCH</button>
+	                    </div>
+	                    
+	                    <div class="clear"></div>
+	                </form>
+	
+	                <form name="mvp" class="rs_vp_form rs_searchbox_hide">
+	                    <div class="rs_form_row">
+	                        <input name="rs_o_city" class="from rs_autosuggest rs_from" value='From' onclick='$(this).val("");' autocomplete="off">
+	                    </div>
+	                    
+	                    <div class="rs_form_row">
+	                        <input name="rs_d_city" class="to rs_autosuggest rs_to" value='To' onclick='$(this).val("");' autocomplete="off">
+	                    </div>
+	                    
+	                    <div class="clear"></div>
+	                    
+	                    <div class="rs_form_row rs_date rs_chk_in_row">
+	                        <div class='rs_date_input_container'>
+	                            <input name="rs_chk_in" class="rs_chk_in" value="mm/dd/yyyy" readonly>
+	                        </div>
+	                    </div>
+	
+	                    <div class="rs_form_row rs_date rs_chk_in_row">
+	                        <div class='rs_date_input_container'>
+	                            <input name="rs_chk_out" class="rs_chk_out" value="mm/dd/yyyy" readonly>
+	                        </div>
+	                    </div>
+	
+	                    <div class="rs_form_row rs_rooms_row">
+	                        <select name="rs_adults" class="rs_adults_input pax"></select>
+	                    </div>
+	                    
+	                    <div class="rs_form_row rs_rooms_row">
+	                        <select name="rs_children" class="rs_child_input pax"></select>
+	                    </div>
+	                    
+	                    <div class="rs_form_row rs_rooms_row">
+	                        <select class="rooms" name="rs_rooms"></select>
+	                    </div>
+	                    
+	                    <div class="rs_button_row">
+	                        <button type="submit" class="rs_search">Search</button>
+	                        <a href="https://secure.rezserver.com/vp/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+	                    </div>
+	                    
+	                    <input type="hidden" name="ace_redirect" value="true">
+	                    
+	                    <div id="childrens_ages"></div>
+	                    <div class="rs_chk_in_display"></div>
+	                    <div class="rs_chk_out_display"></div>
+	                </form>
+	
+	                <form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
+	                    id="vacation-form" name="vp" method="get"
+	                    action="${properties.vacationsLink ? properties.vacationsLink : '#'}">
+	
+						<input type="hideen" id="vcOpeninNewTabflag" name="vcOpeninNewTabflag" value="${properties.vcLinkNewTabFlag ? properties.vcLinkNewTabFlag : 'false'}">
+	                    <div class="rs_form_row vacation_row">
+	                        <div class="vacation_destination">
+	                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+	                            <label class="field_label">Destination</label>
+	                            <input class="mvp-form-control" id="mvp-keywords" name="keyword" type="text" autocomplete="off" placeholder="Walt Disney World, etc" onclick='$(this).val("");'>
+	                        </div>
+	                        
+	                        <div class='rs_date_input_container vacation_date'>
+	                            <label class="field_label">Date</label>
+	                            <input name="rs_chk_in" class="rs_chk_in" placeholder="Start" readonly>
+	                            <input name="rs_chk_out" class="rs_chk_out" placeholder="End" readonly>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="rs_button_row">
+	                        <button type="submit" class="rs_search">SEARCH</button>
+	                    </div>
+	                </form>
+	            </div>
+	        </div>
+	        
+	        <div class="clear"></div>
+	    </div>
+	</div>
 </div>
 <!-- #travel-widget-content end -->

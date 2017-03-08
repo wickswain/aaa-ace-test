@@ -56,6 +56,26 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 	/** Default log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass());
 
+	private static final String DEFAULT_ARTICLE_SEARCH_PATH = "/content/ace-www";
+
+	private static final String DEFAULT_ARTICLE_TEMPLATE = "/apps/ace-www/templates/article";
+
+	ResourceResolver resourceResolver = null;
+
+	Session session = null;
+
+	// path on which articles would be searched
+	String path;
+
+	// template for articles
+	String template;
+
+	@Property(label = "Article Search Path", description = "The path on which articles should be search. Should be as specific possible for efficient query.", unbounded = PropertyUnbounded.DEFAULT, value = DEFAULT_ARTICLE_SEARCH_PATH)
+	private static final String ARTICLE_SEARCH_PATH_NAME = "articles.search.path";
+
+	@Property(label = "Article Template", description = "The AEM template used to create article pages.", unbounded = PropertyUnbounded.DEFAULT, value = DEFAULT_ARTICLE_TEMPLATE)
+	private static final String ARTICLE_TEMPLATE_NAME = "articles.search.template";
+
 	@Reference
 	private QueryBuilder builder;
 
@@ -64,26 +84,6 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 
 	@Reference
 	private ResourceResolverFactory resolverFactory;
-
-	ResourceResolver resourceResolver = null;
-
-	Session session = null;
-
-	private static final String DEFAULT_ARTICLE_SEARCH_PATH = "/content/ace-www";
-
-	private static final String DEFAULT_ARTICLE_TEMPLATE = "/apps/ace-www/templates/article";
-
-	@Property(label = "Article Search Path", description = "The path on which articles should be search. Should be as specific possible for efficient query.", unbounded = PropertyUnbounded.DEFAULT, value = DEFAULT_ARTICLE_SEARCH_PATH)
-	private static final String ARTICLE_SEARCH_PATH_NAME = "articles.search.path";
-
-	@Property(label = "Article Template", description = "The AEM template used to create article pages.", unbounded = PropertyUnbounded.DEFAULT, value = DEFAULT_ARTICLE_TEMPLATE)
-	private static final String ARTICLE_TEMPLATE_NAME = "articles.search.template";
-
-	// path on which articles would be searched
-	String path;
-
-	// template for articles
-	String template;
 
 	/**
 	 * Allocating resolver and session objects to be used for query.
@@ -96,7 +96,6 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 	protected void activate(ComponentContext ctx) throws LoginException {
 
 		try {
-
 			/*
 			 * Get resource resolver with system user, making service name for
 			 * mapper generic so that it can be used at other components as
@@ -165,7 +164,7 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 		searchInfo.put("noOfResult", hitsPerPage);
 
 		returnJSON.accumulate("searchInformation", searchInfo);
-		
+
 		log.debug("Search Results: " + result.getHits());
 
 		if (!result.getHits().isEmpty()) {
@@ -187,7 +186,7 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 
 				item.put("path", path);
 				item.put("link",
-						pageResolver.resolveLinkURL(resourceResolver, hit.getResource().getParent().getPath()));
+						pageResolver.resolveLinkMapURL(resourceResolver, hit.getResource().getParent().getPath()));
 
 				item.put("authorName", properties.get("authorName"));
 				item.put("articleLogoImage", properties.get("articleLogoImage"));
@@ -199,12 +198,10 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 				if (null != articleHeroResource) {
 					item.put("articleImage", articleHeroResource.getValueMap().get("articleImage"));
 					item.put("articleImageAltText", articleHeroResource.getValueMap().get("alttext"));
-
 				}
 
 				items.put(item);
 			}
-
 			// add items to outer JSON
 			returnJSON.accumulate("items", items);
 		}

@@ -1,3 +1,56 @@
+.travel-widget-container {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+select::-ms-expand {
+    display: none;
+  }
+.rs_hotel_form{
+	margin-top:52.5px;
+}
+@media only screen and (min-width:1087px) {
+	.rs_hotel_form{
+		margin-top:59.5px;
+	}
+	.rs_hotel_form .rs_button_row {
+		/*padding-top: 45px;*/
+	}
+	.rs_cruise_form .rs_button_row {
+	  /*padding-bottom: 25px;
+	  padding-top: 46px;*/
+	}
+	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
+	    width: 396px;
+	    position: absolute;
+	}
+	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
+	    width: 302px;
+	    position: absolute;
+	}
+	.rs_air_form .rs_suggest .rs_suggest_absolute {
+	    width: 446px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_suggest .rs_suggest_absolute {
+	    width: 395px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+	    left: -200px;
+	}
+	.rs_car_form .rs_car_half .rs_dropoff{
+	    margin-bottom: 28px;
+	}
+	.rs_car_form .rs_car_half::after{
+	    bottom: 31px;
+	}
+}
+.rs_cruise_form {
+	margin-top:52px;
+}
+
 .rs_searchbox_hide {
   display: none;
 }
@@ -54,6 +107,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  cursor:pointer;
 }
 
 .rs_products .mobile-tab {
@@ -72,11 +126,12 @@
 
 .form-holder {
   background-color: white;
-  min-height: 160px;
+  min-height: 285px;
   padding: 20px;
   -webkit-border-radius: 0 0 2px 2px;
   -moz-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
+  margin-top: -1px;
 }
 
 .rs_no_margin {
@@ -473,10 +528,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_button_row {
   height: 74px;
-  padding-top: 45px;
+  /*padding-top: 45px;*/
   color: #c6c6c6;
-  margin-bottom: 30px;
-  margin-right: 10px;
+  /*margin-bottom: 30px;
+  margin-right: 10px;*/
+  position: absolute;
+  width: 94%;
+  bottom: 0;
 }
 
 .rs_button_row a {
@@ -535,7 +593,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_car_half {
   float: left;
-  width: 49.5%;
+  width: 49.5% !important;
   margin-right: 1%;
   vertical-align: middle;
   *float: left;
@@ -543,8 +601,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_dropoff {
   border-left: none;
-  margin-left: -5px;
-  margin-bottom: -30px;
+  margin-left: -6px;
+  margin-bottom: -7px;
   width: 102.5%;
   position: relative;
   bottom: -28px;
@@ -559,14 +617,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: inline-block;
   position: relative;
   left: -15px;
-  bottom: -5px;
+  bottom: -2px;
 }
 
 .car_location_row {
   width: 40%;
   display: inline-block;
 }
-
+.rs_form_row.rs_pickup_div {
+    float: left;
+    width:97.8%;
+}
+.rs_car_form .rs_button_row {
+	/*margin-top: -9px;*/
+}
 .rs_car_form .rs_date {
   display: inline-block;
   width: 29%;
@@ -646,14 +710,22 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 18%;
 }
 
-.cruise_destination select, .cruise_vendor select, .cruise_length select {
+.cruise_destination select, .cruise_vendor select, .cruise_length select, .cruise_date select {
   color: #1b1b1b;
   overflow: hidden;
   background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-y: 4px;
     background-position: 4px
 }
+.cruise_date .cruise_month {
+    background-position-x: 200px;
+    background-position: 110px;
+}
+ .cruise_date  .cruise_year{
+background-position-x: 200px;
+    background-position: 110px;
 
+                    }
 .cruise_destination select {
   background-position-x: 250px;
     background-position:250px;
@@ -709,7 +781,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .rs_cruise_form .rs_button_row {
-  padding-bottom: 25px;
+  /*padding-bottom: 25px;*/
 }
 
 .vacation_destination, .vacation_date {
@@ -772,6 +844,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width:1086px) {
+	.form-holder{
+	min-height: 392px;
+	}
   .searchWrapper {
     width: 700px;
   }
@@ -805,7 +880,15 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 45%;
   }
   .rs_button_row {
-    padding-top: 25px;
+    /*padding-top: 25px;*/
+  }
+  .rs_car_form .rs_button_row {
+    /*padding-top: 41px;
+	padding-bottom: 49px;*/
+  }
+  .rs_hotel_form .rs_button_row {
+    /*padding-top: 24px;
+	margin-bottom: 29px;*/
   }
   .rs_air_form .rs_form_row {
     width: 100%;
@@ -814,7 +897,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 100%;
   }
   .rs_air_form .date_and_travelers {
-    width: 50%;
+    width:49.9%;
   }
   .rs_air_form .date_field {
     width: 100%;
@@ -865,8 +948,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   }
   .rs_dropoff {
     margin-left: -9px;
-    width: 102%;
-    margin-bottom: -25px;
+    width: 98.5%;
+    margin-bottom: 27px;
   }
   .rs_car_form .rs_date {
     padding-top: 15px;
@@ -925,11 +1008,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     background-position:260px;
   }
   .rs_cruise_form .rs_button_row {
-    padding-bottom: 15px;
-    padding-top: 35px;
+    /*padding-bottom: 49px;
+    padding-top: 38px;*/
   }
   .rs_cruise_form .rs_search {
-    width: 40%;
+    width: 30%;
   }
   .vacation_destination {
     width: 100%;
@@ -951,6 +1034,32 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   #vacation-form .rs_search {
     width: 40%;
   }
+  
+  	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
+	    width: 638px;
+	    position: absolute;
+	}
+	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
+	    width: 302px;
+	    position: absolute;
+	}
+	.rs_air_form .rs_suggest .rs_suggest_absolute {
+	    width: 638px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_suggest .rs_suggest_absolute {
+	    width: 624px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+	    left: -322px;
+	}
+	.rs_car_form .rs_car_half .rs_dropoff{
+	    margin-bottom: 28px;
+	}
+	.rs_car_form .rs_car_half::after{
+	    bottom: 31px;
+	}
 }
 
 @media only screen and (max-width:844px) {
@@ -1004,8 +1113,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 100%;
   }
   .rs_button_row {
-    padding-top: 30px;
-    padding-bottom: 5px;
+    /*padding-top: 30px;
+    padding-bottom: 5px;*/
   }
   .rs_button_row a, .rs_button_row span {
     display: none;
@@ -1064,7 +1173,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   }
   #car_options {
     width: 100%;
-    margin: 0;
+    margin: 0 0 24px 0;
     font-size: 14px;
   }
   .rs_car_option {
@@ -1079,12 +1188,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   }
   .rs_dropoff {
     margin-left: -5px;
-    margin-bottom: 0px;
-    width: 103%;
+    margin-bottom: 16.5px;
+    width: 99.5%;
     bottom: -24px;
   }
   .rs_dropoff_div::after {
-    bottom: 10px;
+    bottom: 26px;
   }
   .rs_car_form .rs_date {
     padding-top: 15px;
@@ -1139,7 +1248,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     right: 40px;
   }
   .rs_cruise_form .rs_search {
-    width: 70%;
+    width: 73%;
   }
   .vacation_date::after {
     display: none;
@@ -1157,12 +1266,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
         width: 37%;
     }
-}
-
-@media only screen and (max-width:730px) {
-  /*.searchWrapper {
-    width: 390px;
-  }*/
 }
 
 
@@ -1202,7 +1305,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .rs_suggest .rs_suggest_absolute {
-  width: 439px;
+  width: 309px;
   position: absolute;
 }
 
@@ -1475,8 +1578,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 @media only screen and (max-width:720px) {
   .rs_suggest .rs_suggest_absolute {
-    width: 100% !important;
-    position: static !important;
+    width: 100%;
+    position: static;
   }
 
 }
@@ -1491,9 +1594,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
  .searchWrapper {
     width: 365px;
    }
-  .travel-widget-search-lable{
-     max-width: 266px;
-  }
  }
     .travel-widget-container{
         padding-bottom: 70px;
@@ -1502,7 +1602,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     }
     .travel-widget-search-lable{
          padding-bottom:70px;
-         text-align:center;
          margin:0 auto;
      }
 @media only screen and (min-width:768px) {
@@ -1531,6 +1630,96 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 @media only screen and (min-width:730px) and (max-width:1024px) {
 	.searchWrapper {
-        width: 700px;
-      }
- }
+		width: 700px;
+	}
+	.rs_dropoff_div::after {
+	  bottom: 5px;
+	}
+	.rs_dropoff {
+	  margin-bottom: 0px;
+	}
+	.rs_form_row.rs_pickup_div {
+	    margin-bottom: 6px;
+	}
+	.rs_car_option {
+	  padding: 0 0 18.5px 0;
+	}
+	
+}
+@media only screen and (min-width:1025px) {
+	.cruise_date  .cruise_year {
+		background-position-x: 200px;
+		background-position: 52px;
+	}
+}
+
+@media only screen and (max-width:730px) {
+  /*.searchWrapper {
+    width: 390px;
+  }*/
+	.form-holder {
+	    min-height: 488px;
+	}
+	.rs_hotel_form {
+	 	margin-top:64.5px;
+	}
+	.rs_hotel_form .rs_button_row {
+	  /*padding-top: 62px;*/
+	   
+	}
+	.rs_cruise_form {
+	   margin-top: 0px;
+	}
+	.rs_cruise_form .rs_button_row {
+		/*padding-bottom: 0px;
+		margin-bottom: 0px;
+		padding-top: 33px;*/
+	}
+	
+	.rs_air_form {
+	    margin-top:11px;
+	}
+	.rs_air_form .rs_button_row {
+		/*padding-top: 62.5px;*/
+	}
+	.rs_car_form .rs_car_options{
+	    margin-bottom: 24px;
+	}
+	.rs_car_form {
+	    margin-top:11px;
+	}
+	.rs_car_form .rs_button_row {
+		/*padding-top: 63px;
+		padding-bottom: 0px;*/
+	}
+	.rs_suggest .rs_suggest_absolute {
+	    width: 302px;
+	    position: absolute;
+	}
+	
+	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
+	    width: 303px;
+	    position: absolute;
+	}
+	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
+	    width: 302px;
+	    position: absolute;
+	}
+	.rs_air_form .rs_suggest .rs_suggest_absolute {
+	    width: 303px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_suggest .rs_suggest_absolute {
+	    width: 297px;
+	    position: absolute;
+	}
+	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+	    left: -153px;
+	}
+	.rs_car_form .rs_car_half .rs_dropoff{
+	    margin-bottom: 24px;
+	}
+	.rs_car_form .rs_car_half::after{
+	    bottom: 31px;
+	}
+}

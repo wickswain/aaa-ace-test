@@ -7,6 +7,7 @@
     <filter root="/apps/cq/contexthub/components/segment-page" />
     <filter root="/apps/cq/personalization/components/target" />
     <filter root="/etc/clientlibs/aaa-core" />
+    <filter root="/etc/clientlibs/aaa-thirdparty" />
     <filter root="/etc/config/aaa-core" />
     <filter root="/apps/ace-www/components" />
     <filter root="/apps/ace-www/templates" />

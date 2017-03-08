@@ -1,0 +1,18 @@
+<!--/*
+
+  	Non-Purging  PAGE
+  	------------------------------
+	Renders the content resource using the parsys
+
+*/-->
+
+<!-- Page Container
+============================================= -->
+<div id="page-container">
+
+      <div data-sly-resource="${ @path='refernce-par', resourceType='aaa-core/components/content/reference'}" ></div>
+
+     <sly data-sly-use.newPage= "${'com.aaa.ace.sightly.providers.CreatePageProvider' @ nonpurgingpath= pageProperties.nonpurgingpath || '/content/nonpurging/aaa' , template= pageProperties.templatepath  || '/apps/aaa-core/templates/generic',resourcetype= pageProperties.templatepath || '/apps/aaa-core/components/page/genericpage'}" />
+
+</div>
+<!-- #page-container ends -->

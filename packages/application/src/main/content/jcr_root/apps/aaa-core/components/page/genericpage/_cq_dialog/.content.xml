@@ -38,7 +38,7 @@
                                         sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                         fieldDescription="Please select the error page root path"
                                         fieldLabel="Error Page Root Path"
-                                        name="./errorPage"
+                                        name="./errorPages"
                                         rootPath="/content/ace-www/en/error"/>
                                 </items>
                             </column>
