@@ -4,7 +4,7 @@ $(function () {
     var aaapagepath = "";
     var fbpagepath = "";
     var twpagepath = "";
-    var logoimagepath = "images/aaa-white-logo-xs.png";
+    var logoimagepath = "http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/full-footer/images/aaa-white-logo-xs.png";
     // Environment information can be updated here.
     var protocol = "http://";
     var environment = "www";
@@ -22,10 +22,12 @@ $(function () {
         }
         return regionName;
     }
-    var regionname = getRegionName();
-
+    //var regionname = getRegionName();
+    var regionname = '';
+    
     function getHostName() {
-        return protocol + environment + "." + regionname + subdomain;
+        //return protocol + environment + "." + regionname + subdomain;
+    	return protocol + environment + subdomain;
     }
     var hostname = getHostName();
     $('#footer-logo').find('img').attr('src', logoimagepath);
