@@ -71,7 +71,8 @@
                                 sling:resourceType="granite/ui/components/foundation/form/multifield"
                                 class="full-width"
                                 fieldDescription="Click 'Add field' to add a new item"
-                                fieldLabel="Carousel Images">
+                                fieldLabel="Carousel Images"
+                                min="{Long}4">
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
