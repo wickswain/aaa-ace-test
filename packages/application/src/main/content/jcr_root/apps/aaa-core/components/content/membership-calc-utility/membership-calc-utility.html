@@ -1,0 +1,45 @@
+
+<!--/*
+
+    Membership Calculator Utility Component.
+    ----------------------------------------------------------------
+
+    The purpose of this component is to display the individual item savings
+     in the table
+
+*/-->
+
+<!--/* Placeholder Content 
+============================================= */-->
+<img data-sly-test="${(wcmmode.edit || wcmmode.design)}" data-emptytext="Author Individual Itemized savings Component Here." src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Author Individual Itemized savings Component Here." />
+
+<!--/*  #placeholder-content end  */-->
+
+<!-- Membership Calculator utility Content
+============================================= -->
+<div class="item">
+   <div class="table-block">
+      <div class="services-title roboto-medium font-g table-cell">
+         <div class="membership-icon">
+            <img src="${properties.itemizedIcon ? properties.itemizedIcon : ' '}" alt="${properties.iconAltText}" class="img-responsive">
+         </div>
+         ${properties.itemizedSavingsText}
+      </div>
+      <div class="price font-g table-cell">
+         <span class="position-rel">
+            <sly data-sly-use.actualPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.actualPrice}" />
+            <span  data-sly-text= "${'{0}{1}' @ format =['$',actualPriceDecimalLimit.decimalLimtvalue ? actualPriceDecimalLimit.decimalLimtvalue :'0']}" class="discount-price font-h" >	
+            </span>
+            <sly data-sly-use.discountPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.discountPrice}" />
+            <sly data-sly-text= "${'{0}{1}' @ format =['$',discountPriceDecimalLimit.decimalLimtvalue ? discountPriceDecimalLimit.decimalLimtvalue :'0']}" />
+         </span>
+      </div>
+      <div class="total-price font-g table-cell">
+         <span class="position-rel">
+            <sly data-sly-use.itemizedSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.itemizedSavings}" />
+            <span  data-sly-text ="${'{0}{1}' @ format =['$',itemizedSavingsDecimalLimit.decimalLimtvalue ? itemizedSavingsDecimalLimit.decimalLimtvalue :'0'] }"class="title-saved font-h">${properties.savingsLabel}</span>
+         </span>
+      </div>
+   </div>
+</div>
+<!--/* #membership-calculator-utility end */-->
