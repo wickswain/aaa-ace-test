@@ -22,7 +22,7 @@ public class NumberToSequenceArrayProvider extends WCMUsePojo {
 		int length = Integer.parseInt(number);
 		list = new ArrayList<Integer>();
 
-		for (int i = 0; i < length; i++) {
+		for (int i = 1; i <= length; i++) {
 			list.add(i);
 		}
 	}

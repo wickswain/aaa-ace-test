@@ -84,7 +84,7 @@
 						<div class="membership-discount-details">
 							<span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
                              <sly data-sly-list="${savingsList.list}">
-                                 <sly data-sly-test.temp="${'{0}{1}' @ format=['itemizedsaving-',item]}">
+                                 <sly data-sly-test.temp="${'{0}{1}' @ format=['mcfiledset/',item]}">
                                      <div data-sly-resource="${ @path= temp, resourceType='aaa-core/components/content/membership-calc-utility'}" ></div>
                                  </sly> 
                               </sly>
