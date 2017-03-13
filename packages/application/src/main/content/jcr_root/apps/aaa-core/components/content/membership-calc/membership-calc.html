@@ -30,7 +30,7 @@
 ============================================= -->
 <div data-sly-test="${properties.title}" id="${properties.jumpLinkId}" class="membership-calculator">
 	<div class="container" >
-		<div class="horizontal-space roboto-light font-b">
+		<div class="horizontal-space roboto-light font-b ${properties.titleAlignment ? properties.titleAlignment : 'text-center'}">
 			<h2 title=${properties.title}>${properties.title}</h2>
 		</div>
 		<div class="h-space-cal roboto-light font-g text-left">
