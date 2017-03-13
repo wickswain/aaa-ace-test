@@ -197,6 +197,26 @@
                                         name="./learnButtonId"/>
                                 </items>
                             </learnbutton-container>
+                            <headstyle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Head Style"
+                                name="./homeHead">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <Center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center (Default)"
+                                        value="text-center"/>
+                                    <Left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="text-left"/>
+                                    <Right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="text-right"/>
+                                </items>
+                            </headstyle>
                         </items>
                     </columns>
                 </items>
@@ -228,6 +248,8 @@
                             <ctaflag
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-alignment-showhide-target"
                                 fieldDescription="Please select the checkbox to enable the CTA button."
                                 name="./ctaFlag"
                                 text="Enable CTA Button?"
@@ -237,6 +259,37 @@
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./ctaFlag@Delete"
                                 value="{Boolean}true"/>
+                            <ctaStylee
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide button-alignment-showhide-target"
+                                name="./ctaStyle"
+                                showhidetargetvalue="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ctaStyle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="hide button-alignment-showhide-target"
+                                        fieldLabel="CTA Style"
+                                        name="./ctaStyle"
+                                        showhidetargetvalue="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <Center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center (Default)"
+                                                value="text-center"/>
+                                            <Left
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left"
+                                                value="text-left"/>
+                                            <Right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right"
+                                                value="text-right"/>
+                                        </items>
+                                    </ctaStyle>
+                                </items>
+                            </ctaStylee>
                         </items>
                     </columns>
                 </items>

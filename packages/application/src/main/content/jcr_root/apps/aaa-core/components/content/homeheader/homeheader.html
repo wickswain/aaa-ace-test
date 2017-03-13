@@ -24,16 +24,17 @@
 
 <!-- Home Header Content
 ============================================= -->
-	
-		<div id="${properties.jumpLinkId}" class="home-header ${wcmmode.disabled ? properties.headerSize : ''} text-center" data-sly-test="${!(isNotAuthored1 || isNotAuthored2)}">
+
+
+		<div id="${properties.jumpLinkId}" class="home-header ${wcmmode.disabled ? properties.headerSize : ''} " data-sly-test="${!(isNotAuthored1 || isNotAuthored2)}">
 			<div class="content">
 				<div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'}">
-                        <div class="margin-b roboto-medium font-a"> <span class="">${properties.title}</span></div>
-								<div class="horizontal-space roboto-light font-g text-left">
+                        <div class="margin-b roboto-medium font-a ${properties.homeHead}"> <span class="">${properties.title}</span></div>
+								<div class="horizontal-space roboto-light font-g ${properties.rteStyle}">
                                     <sly data-sly-test="${properties.rteFlag}"
                                          data-sly-resource="${'rte' @ resourceType = '/apps/aaa-core/components/content/rte'}" />					
 								</div> 
-                                <div data-sly-test="${properties.ctaFlag}"
+                                <div class="${properties.ctaStyle}" data-sly-test="${properties.ctaFlag}"
 									 data-sly-resource="${ @path='cta-button-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
                                      data-sly-unwrap="${wcmmode.disabled}">
 								</div>  
