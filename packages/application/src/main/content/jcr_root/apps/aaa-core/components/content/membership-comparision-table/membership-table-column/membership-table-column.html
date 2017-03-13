@@ -18,12 +18,12 @@
     </div>
     
     <div class="contentblock">
-        <h1 class="roboto-light" data-sly-text="${properties.title}"></h1>
+        <h1 class="roboto-light ${properties.titleAlignment ? properties.titleAlignment : 'text-center'}" data-sly-text="${properties.title}"></h1>
 	    <div class="roboto-light font-h subtitle-b-spacing text-left">
 	        <sly data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"/>
 	    </div>
     </div>
 	
-	<div data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}">
+	<div class="${properties.ctabuttonAlignment ? properties.ctabuttonAlignment : 'text-center'}" data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}">
 	</div>
 </div>
