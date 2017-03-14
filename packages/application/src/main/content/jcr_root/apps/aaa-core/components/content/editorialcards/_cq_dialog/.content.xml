@@ -97,6 +97,26 @@
                                 fieldDescription="Please enter title displayed on logo card."
                                 fieldLabel="Logo Card Title"
                                 name="./logoTitle"/>
+                            <logoTitleStyle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Logo Title Style"
+                                name="./logotitleStyle">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <Center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center (Default)"
+                                        value="text-center"/>
+                                    <Left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="text-left"/>
+                                    <Right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="text-right"/>
+                                </items>
+                            </logoTitleStyle>
                             <ctaflag
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/checkbox"
@@ -142,26 +162,6 @@
                                     </ctaStyle>
                                 </items>
                             </ctaStylee>
-                            <logoTitleStyle
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldLabel="Logo Title Style"
-                                name="./logotitleStyle">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <Center
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Center (Default)"
-                                        value="text-center"/>
-                                    <Left
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Left"
-                                        value="text-left"/>
-                                    <Right
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Right"
-                                        value="text-right"/>
-                                </items>
-                            </logoTitleStyle>
                         </items>
                     </columns>
                 </items>
