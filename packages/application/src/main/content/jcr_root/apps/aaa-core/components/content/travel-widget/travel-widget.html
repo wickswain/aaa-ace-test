@@ -398,12 +398,13 @@
                             <a target="${properties.cPromoLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
                                href="${properties.cPromoLink ? carsPromoLink : defaultCarsPromoLink}">${properties.cPromoLinkLabel ? properties.cPromoLinkLabel : 'Heartz Promo Code'}</a>
 
-                            <span> | </span>
-
-                            <sly data-sly-test.defaultCarsAdvanceSearchLink="https://secure.rezserver.com/car_rentals/home/?refid=${properties.refId ? properties.refId : '5776'}"/>
-                            <sly data-sly-test.carsAdvanceSearchLink="${'{0}?refid={1}' @ format = [properties.cAdvanceSearchLink, refID]}"/>
-                            <a target="${properties.cAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
-                            	href="${properties.cAdvanceSearchLink ? carsAdvanceSearchLink : defaultCarsAdvanceSearchLink}">${properties.cAdvanceSearchLinkLabel ? properties.cAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+							<sly data-sly-test="${properties.cAdvanceSearchLink}">
+	                            <span> | </span>
+	
+	                            <sly data-sly-test.carsAdvanceSearchLink="${'{0}?refid={1}' @ format = [properties.cAdvanceSearchLink, refID]}"/>
+	                            <a target="${properties.cAdvacneSearchLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
+	                            	href="${properties.cAdvanceSearchLink ? carsAdvanceSearchLink : defaultCarsAdvanceSearchLink}">${properties.cAdvanceSearchLinkLabel ? properties.cAdvanceSearchLinkLabel : 'Advanced Search'}</a>
+	                       	</sly>
 	                    </div>
 	                    <input type="hidden" name="ace_redirect" value="true">
 	                    <div class="clear"></div>
