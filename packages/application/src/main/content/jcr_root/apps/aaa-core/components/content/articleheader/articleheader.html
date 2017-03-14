@@ -34,7 +34,9 @@ The properties of the component are part of page properties so no dialog is prov
   	</ul>
   </div>
   <h2 class="font-a roboto-medium horizontal-space ${pageProperties.articleTitleAlignment ? pageProperties.articleTitleAlignment :'text-center'}" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
-	${pageProperties.text @ context='html'}
+	<div class="text-left">
+		${pageProperties.text @ context='html'}
+	</div>
  </div>
 
 <!--/* Article Header Stand Alone End */-->
