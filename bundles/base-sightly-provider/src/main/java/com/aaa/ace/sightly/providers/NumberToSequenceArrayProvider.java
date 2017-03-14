@@ -2,11 +2,13 @@ package com.aaa.ace.sightly.providers;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
- * This sightly provider is used to get the child resource properties of current
- * resource.
+ * This sightly provider is used to return an array of numbers by providing the
+ * the number as input
  *
  */
 public class NumberToSequenceArrayProvider extends WCMUsePojo {
@@ -18,17 +20,22 @@ public class NumberToSequenceArrayProvider extends WCMUsePojo {
 
 	@Override
 	public void activate() throws Exception {
-		String number = get("number", String.class);
-		int length = Integer.parseInt(number);
-		list = new ArrayList<Integer>();
 
-		for (int i = 1; i <= length; i++) {
-			list.add(i);
+		String number = get("number", String.class);
+		int length = 0;
+
+		if (StringUtils.isNotBlank(number)) {
+			length = Integer.parseInt(number);
+			list = new ArrayList<Integer>();
+
+			for (int i = 1; i <= length; i++) {
+				list.add(i);
+			}
 		}
 	}
 
 	/**
-	 * gets the list containing numbers
+	 * gets the array of numbers
 	 *
 	 * @return list
 	 */
