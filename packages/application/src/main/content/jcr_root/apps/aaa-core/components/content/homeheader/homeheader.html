@@ -27,10 +27,11 @@
 
 
 		<div id="${properties.jumpLinkId}" class="home-header ${wcmmode.disabled ? properties.headerSize : ''} " data-sly-test="${!(isNotAuthored1 || isNotAuthored2)}">
+		<div class="container">
 			<div class="content">
 				<div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'}">
                         <div class="margin-b roboto-medium font-a ${properties.homeHead}"> <span class="">${properties.title}</span></div>
-								<div class="horizontal-space roboto-light font-g ${properties.rteStyle}">
+								<div class="horizontal-space roboto-light font-g text-left">
                                     <sly data-sly-test="${properties.rteFlag}"
                                          data-sly-resource="${'rte' @ resourceType = '/apps/aaa-core/components/content/rte'}" />					
 								</div> 
@@ -40,6 +41,7 @@
 								</div>  
                 </div>
             </div>
+		  </div>
 
             <div data-sly-test.opacity="${properties.backgroundShade == 'white' ? 'rgba(255,255,255,{0})' : 'rgba(0,0,0,{0})' @ format=[properties.opacity]}"
                  style="background-color:${opacity @ context='styleToken'}"
