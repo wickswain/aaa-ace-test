@@ -27,6 +27,26 @@
                         fieldLabel="Icon Title/Label"
                         name="./icontitle"
                         required="{Boolean}true"/>
+                    <iconItemStyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="Icon Item Style"
+                        name="./iconItemStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Center
+                                jcr:primaryType="nt:unstructured"
+                                text="Center (Default)"
+                                value="text-center"/>
+                            <Left
+                                jcr:primaryType="nt:unstructured"
+                                text="Left"
+                                value="text-left"/>
+                            <Right
+                                jcr:primaryType="nt:unstructured"
+                                text="Right"
+                                value="text-right"/>
+                        </items>
+                    </iconItemStyle>
                     <iconalttext
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -44,6 +64,26 @@
                         sling:resourceType="granite/ui/components/foundation/form/hidden"
                         name="./rteFlag@Delete"
                         value="{Boolean}true"/>
+                    <ctaStyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="CTA Style"
+                        name="./itemCtaStyle">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Center
+                                jcr:primaryType="nt:unstructured"
+                                text="Center (Default)"
+                                value="text-center"/>
+                            <Left
+                                jcr:primaryType="nt:unstructured"
+                                text="Left"
+                                value="text-left"/>
+                            <Right
+                                jcr:primaryType="nt:unstructured"
+                                text="Right"
+                                value="text-right"/>
+                        </items>
+                    </ctaStyle>
                 </items>
             </column>
         </items>
