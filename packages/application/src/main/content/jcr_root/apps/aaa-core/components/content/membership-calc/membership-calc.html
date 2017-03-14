@@ -15,11 +15,12 @@
 <!--/* Placeholder Content 
 ============================================= */-->
 <img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.title}" data-emptytext="Author Membership Calculator Component Here." src="/libs/cq/ui/resources/0.gif" class="cq-placeholder" alt="Membership Calculator Component" />
+
 <!--/*  #placeholder-content end  */-->
 
 <!--/*  Global Sightly Provider Content  
 ============================================= */-->
-<sly data-sly-use.mcprovider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='mcfiledset'}" />
+<sly data-sly-use.savingsList="${'com.aaa.ace.sightly.providers.NumberToSequenceArrayProvider' @ number= properties.itemisednumber || '4'}" />
 <sly data-sly-use.yearlySavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.yearlySavings}" />
 <sly data-sly-use.aaasMembershipChargeDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.aaasMembershipCharge}" />
 <sly data-sly-use.totalSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.totalSavings}" />
@@ -82,33 +83,11 @@
 					<div class=" block-position">
 						<div class="membership-discount-details">
 							<span class="col-sm-12 title font-h">${properties.itemizedSavingsHeading}</span>
-							 <sly data-sly-list.child="${mcprovider.childResource.listChildren}">
-								<div class="item">
-									<div class="table-block">
-										<div class="services-title roboto-medium font-g table-cell">
-											<div class="membership-icon">
-												<img src="${child.itemizedIcon ? child.itemizedIcon : ' '}" alt="${child.iconAltText}" class="img-responsive">
-											</div>
-                                            	${child.itemizedSavingsText}
-										</div>
-										<div class="price font-g table-cell">
-											<span class="position-rel">
-												<sly data-sly-use.actualPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.actualPrice}" />
-												<span  data-sly-text= "${'{0}{1}' @ format =['$',actualPriceDecimalLimit.decimalLimtvalue ? actualPriceDecimalLimit.decimalLimtvalue :'0']}" class="discount-price font-h" >	
-												</span>
-												<sly data-sly-use.discountPriceDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.discountPrice}" />
-												$${discountPriceDecimalLimit.decimalLimtvalue}
-											</span>
-										</div>
-										<div class="total-price font-g table-cell">
-											<span class="position-rel">
-												<sly data-sly-use.itemizedSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=child.itemizedSavings}" />
-												<span  data-sly-text ="${'{0}{1}' @ format =['$',itemizedSavingsDecimalLimit.decimalLimtvalue ? itemizedSavingsDecimalLimit.decimalLimtvalue :'0'] }"class="title-saved font-h">${child.savingsLabel}</span>
-											</span>
-										</div>
-									</div>
-								</div>
-							</sly>
+                             <sly data-sly-list="${savingsList.list}">
+                                 <sly data-sly-test.temp="${'{0}{1}' @ format=['mcfiledset/',item]}">
+                                     <div data-sly-resource="${ @path= temp, resourceType='aaa-core/components/content/membership-calc-itemized-savings'}" ></div>
+                                 </sly> 
+                              </sly>
 						</div>
 					</div>
 				</div>
