@@ -593,8 +593,9 @@
 	                <form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
 	                    id="vacation-form" name="vp" method="get"
 	                    action="${properties.vacationsLink ? properties.vacationsLink : '#'}">
-	
-						<input type="hideen" id="vcOpeninNewTabflag" name="vcOpeninNewTabflag" value="${properties.vcLinkNewTabFlag ? properties.vcLinkNewTabFlag : 'false'}">
+						<input type="hidden" id="vcOpeninNewTabflag" name="vcOpeninNewTabflag" value="${properties.vcLinkNewTabFlag ? properties.vcLinkNewTabFlag : 'false'}">
+						<input type="hidden" id="scrollToInternal" value="${properties.scrollToInternal ? properties.scrollToInternal : 'false'}">
+						<input type="hidden" id="scrollvacationsID"  value="${properties.scrollvacationsID ? properties.scrollvacationsID : 'vacations'}">
 	                    <div class="rs_form_row vacation_row">
 	                        <div class="vacation_destination">
 	                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
@@ -615,8 +616,7 @@
 	                </form>
 	            </div>
 	        </div>
-	        
-	        <div class="clear"></div>
+	      <div class="clear"></div>
 	    </div>
 	</div>
 </div>
