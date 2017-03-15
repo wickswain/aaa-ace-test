@@ -30,14 +30,14 @@
 		<div class="container">
 			<div class="content">
 				<div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'}">
-                        <div class="margin-b roboto-medium font-a ${properties.homeHead}"> <span class="">${properties.title}</span></div>
+                        <div class="margin-b roboto-medium font-a ${properties.headTitleStyle}"> <span class="">${properties.title}</span></div>
 								<div class="horizontal-space roboto-light font-g text-left">
                                     <sly data-sly-test="${properties.rteFlag}"
                                          data-sly-resource="${'rte' @ resourceType = '/apps/aaa-core/components/content/rte'}" />					
 								</div> 
                                 <div class="${properties.ctaStyle}" data-sly-test="${properties.ctaFlag}"
 									 data-sly-resource="${ @path='cta-button-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
-                                     data-sly-unwrap="${wcmmode.disabled}">
+                                     ">
 								</div>  
                 </div>
             </div>
