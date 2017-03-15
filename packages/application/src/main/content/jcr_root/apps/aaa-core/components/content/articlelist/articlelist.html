@@ -13,7 +13,7 @@ This component renders a article list fetched from hub based on latest first.
 <sly data-sly-use.filterProvider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='filters'}" />
 
 <!-- Article List Starts Here -->
-<div class="container-fluid">
+<div class="container-fluid ${properties.filterAlignment ? properties.filterAlignment : 'text-left'}">
 <div class="row article-hub-section">
    	<div class="col-sm-1">
        	<div class="text-center hidden-sm hidden-md hidden-lg filter-link" id="article-filter-link"> 
