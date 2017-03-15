@@ -27,7 +27,7 @@
 ============================================= -->
 <div id="${properties.jumpLinkId}" data-sly-test="${properties.title}"
      style="background-color: ${properties.sectionBgColor ? properties.sectionBgColor : '' @ context='styleToken'};"
-     class="text-center horizontal-component-space roboto-light">
+     class="${properties.titleAlignment ? properties.titleAlignment : 'text-center' } horizontal-component-space roboto-light">
 
     <div style="color: ${properties.textColor ? properties.textColor : '' @ context='styleToken'};">
         <h2 class="horizontal-space font-b"
