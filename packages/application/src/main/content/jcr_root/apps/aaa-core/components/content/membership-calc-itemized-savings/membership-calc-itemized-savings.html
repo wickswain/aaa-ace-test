@@ -36,7 +36,8 @@
       <div class="total-price font-g table-cell">
          <span class="position-rel">
             <sly data-sly-use.itemizedSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.itemizedSavings}" />
-            <span  data-sly-text ="${'{0}{1}' @ format =['$',itemizedSavingsDecimalLimit.decimalLimtvalue ? itemizedSavingsDecimalLimit.decimalLimtvalue :'0'] }"class="title-saved font-h">${properties.savingsLabel}</span>
+            <span class="title-saved font-h">${properties.savingsLabel}</span>
+            <span  data-sly-text ="${'{0}{1}' @ format =['$',itemizedSavingsDecimalLimit.decimalLimtvalue ? itemizedSavingsDecimalLimit.decimalLimtvalue :'0'] }"class="title-saved font-h"></span>
          </span>
       </div>
    </div>
