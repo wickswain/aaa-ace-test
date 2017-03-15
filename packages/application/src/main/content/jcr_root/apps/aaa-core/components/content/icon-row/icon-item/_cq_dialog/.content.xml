@@ -30,7 +30,8 @@
                     <iconItemStyle
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/select"
-                        fieldLabel="Icon Item Style"
+                        fieldDescription="Please select Icon Item Title text alignment"
+                        fieldLabel="Icon Item Title Style"
                         name="./iconItemStyle">
                         <items jcr:primaryType="nt:unstructured">
                             <Center

@@ -22,6 +22,7 @@
                     <titleStyle
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Please select Title text alignment"
                         fieldLabel="Title Style"
                         name="./titleStyle">
                         <items jcr:primaryType="nt:unstructured">
