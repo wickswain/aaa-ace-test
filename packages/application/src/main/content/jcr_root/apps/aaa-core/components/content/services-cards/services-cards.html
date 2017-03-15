@@ -19,13 +19,13 @@
 
     <div class="container bottom-space">
 		<div class="text-center">
-			<div class="top-btm-space roboto-slab-bold font-b">
+			<div class="top-btm-space roboto-slab-bold font-b ${properties.titleAlignment ? properties.titleAlignment : 'text-center' }">
 				<h1 title="${properties.title}" data-sly-text="${properties.title}"
 					style="color:${properties.headerTitleTextFontColor @ context='styleToken'};">
 				</h1>
 			</div>
 		</div>
-		
+
 		<!-- List of the cards start here -->
 		<div data-sly-list.cardRowPath="${cardProvider.serviceCardRowPaths}" class="row">
 			<ul class="icon-sc-list" id="accordion">
