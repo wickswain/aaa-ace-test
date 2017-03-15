@@ -135,7 +135,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
                                 class="hide button-alignment-showhide-target"
-                                name="./ctaStyle"
                                 showhidetargetvalue="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
                                     <ctaStyle
