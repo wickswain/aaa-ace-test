@@ -52,9 +52,10 @@
                                 fieldLabel="Heading/Title"
                                 name="./heading"
                                 required="{Boolean}true"/>
-                            <titleStyle
+                            <headingTitleStyle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select title alignment"
                                 fieldLabel="Heading Title Style"
                                 name="./titleStyle">
                                 <items jcr:primaryType="nt:unstructured">
@@ -71,7 +72,7 @@
                                         text="Right"
                                         value="text-right"/>
                                 </items>
-                            </titleStyle>
+                            </headingTitleStyle>
                             <title-text-color
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
@@ -106,17 +107,17 @@
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./ctaFlag@Delete"
                                 value="{Boolean}true"/>
-                            <ctaStylee
+                            <ctaStyleContainer
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
                                 class="hide button-alignment-showhide-target"
-                                name="./ctaStyle"
                                 showhidetargetvalue="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
                                     <ctaStyle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/select"
                                         class="hide button-alignment-showhide-target"
+                                        fieldDescription="Please select CTA alignment"
                                         fieldLabel="CTA Style"
                                         name="./ctaStyle"
                                         showhidetargetvalue="{Boolean}true">
@@ -136,7 +137,7 @@
                                         </items>
                                     </ctaStyle>
                                 </items>
-                            </ctaStylee>
+                            </ctaStyleContainer>
                         </items>
                     </columns>
                 </items>
