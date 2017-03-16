@@ -29,6 +29,27 @@
                                 fieldDescription="Please enter heading or title."
                                 fieldLabel="Heading/Title"
                                 name="./title"/>
+                            <title-alignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select the alignment for heading/title"
+                                fieldLabel="Heading/Title Alignment"
+                                name="./titleAlignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center(Default)"
+                                        value="text-center"/>
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="text-left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="text-right"/>
+                                </items>
+                            </title-alignment>
                             <number-of-columns
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/numberfield"
