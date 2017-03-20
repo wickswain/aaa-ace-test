@@ -34,8 +34,9 @@
                             <headstyle
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldLabel="Head Style"
-                                name="./homeHead">
+                                fieldDescription="Please select head title text alignment"
+                                fieldLabel="Head Title Style"
+                                name="./headTitleStyle">
                                 <items jcr:primaryType="nt:unstructured">
                                     <Center
                                         jcr:primaryType="nt:unstructured"
@@ -259,17 +260,17 @@
                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./ctaFlag@Delete"
                                 value="{Boolean}true"/>
-                            <ctaStylee
+                            <ctaStyleContainer
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container"
                                 class="hide button-alignment-showhide-target"
-                                name="./ctaStyle"
                                 showhidetargetvalue="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
                                     <ctaStyle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/select"
                                         class="hide button-alignment-showhide-target"
+                                        fieldDescription="Please select cta alignment"
                                         fieldLabel="CTA Style"
                                         name="./ctaStyle"
                                         showhidetargetvalue="{Boolean}true">
@@ -289,7 +290,7 @@
                                         </items>
                                     </ctaStyle>
                                 </items>
-                            </ctaStylee>
+                            </ctaStyleContainer>
                         </items>
                     </columns>
                 </items>
