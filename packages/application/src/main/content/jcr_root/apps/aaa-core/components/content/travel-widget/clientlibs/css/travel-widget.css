@@ -1723,3 +1723,32 @@ background-position-x: 200px;
 	    bottom: 31px;
 	}
 }
+
+@media only screen and (max-width:480px) {
+
+  .searchWrapper {
+    width: 100%;
+  }
+  .rs_products li {
+    width:19.5%;
+  }
+  .rs_car_form .rs_time {
+  font-size: 16px;
+  background-position: 65px;
+  }
+  .rs_air_form .rs_air_options {
+    font-size: 12px;
+  }
+  .rs_air_options .multi-link {
+    margin-left:0px;
+  }
+  .rs_hotel_form .rs_cal table {
+    width:254px;
+  }
+  .rs_car_form .rs_cal table {
+    width:248px;
+  }
+  #car_options {
+    font-size: 12px;
+  }
+}
