@@ -25,7 +25,6 @@
 <!-- Footer CTA Content
 ============================================= -->
 
-
 <div id="${properties.jumpLinkId}" data-sly-test="${properties.heading}" title="${properties.altText}"
 	style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}');"
 	class="footer-column bottom-space top-space">
@@ -33,24 +32,23 @@
 		<div class="row" style="color: ${properties.textColor ? properties.textColor
  : '' @ context='styleToken'}">
 			<div class="col-md-2 col-sm-2"></div>
-			<div class="col-md-8 col-sm-8 ${properties.titleStyle} ">
+			<div class="col-md-8 col-sm-8 ${properties.titleStyle}">
 				<div class="horizontal-space roboto-light font-b">
 					<h2 title="${properties.heading}" data-sly-text="${properties.heading}">
                     </h2>
 				</div>
-
+                
 				<div class="horizontal-space2 roboto-light font-g text-left">
                     <sly data-sly-test="${properties.rteFlag}"
                      data-sly-resource="${'rte' @ resourceType = '/apps/aaa-core/components/content/rte'}"
-                     "/>					
+                     />					
 				</div>
-
+                
 				<div class="${properties.ctaStyle}" data-sly-test="${properties.ctaFlag}"
                      data-sly-resource="${ @path='cta-button-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
-                   ">
+                     >
                 </div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- Footer CTA Content end -->
