@@ -10,8 +10,8 @@
 
 */-->
 
-<!-- Placeholder Content
-============================================= -->
+<!--/* Placeholder Content
+============================================= */-->
 <sly data-sly-test.isNotAuthored1="${!(properties.title || properties.backgroundShade || properties.jumpLinkId || properties.headerSize || properties.textColor || properties.rteFlag || properties.ctaFlag || properties.opacity)}" />
 <sly data-sly-test.isNotAuthored2="${!(properties.showlearnbutton || properties.learnButtonId || properties.image || properties.imageorvideo || properties.video)}" />
 
@@ -20,7 +20,7 @@
 	src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
 	alt="Home Header Component" />
 
-<!-- #placeholder-content end -->
+<!--/* #placeholder-content end */-->
 
 <!-- Home Header Content
 ============================================= -->
@@ -43,10 +43,10 @@
         <div data-sly-test.opacity="${properties.backgroundShade == 'white' ? 'rgba(255,255,255,{0})' : 'rgba(0,0,0,{0})' @ format=[properties.opacity]}" style="background-color:${opacity @ context='styleToken'}" class="learn-link">
             <sly data-sly-test="${properties.showlearnbutton}">
                 <a href="#${properties.learnButtonId}" class="learn-btn font-h ">Learn<br>
-										<div class="bounce">
-                                            <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
-										</div>
-                                </a>
+                    <div class="bounce">
+                       <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
+   				    </div>
+                </a>
             </sly>
         </div>
     </div>
