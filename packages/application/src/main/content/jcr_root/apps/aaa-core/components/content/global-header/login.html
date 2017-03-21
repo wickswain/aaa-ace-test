@@ -22,6 +22,10 @@
         @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
 <!-- #sightly-global-objects-declaration end -->
 
+<input type="hidden" name="signInUrl" id="signInUrl" value="${signInLink.url}" />
+<input type="hidden" name="signOutUrl" id="signOutUrl" value="${signOutLink.url}" />
+ <input type="hidden" name="currentPage" id="currentPage" value="${currentPage.path}" />
+
 <!-- Login component
 ============================================= -->
 <a data-sly-test="${!user.isLoggedIn}"
@@ -34,7 +38,7 @@
 
 <a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" 
    aria-haspopup="true" aria-expanded="false" class="user-info">
-    <span class="restrict-characters">${user.firstName}</span>
+    <span class="restrict-characters" id="firstName">${user.firstName}</span>
     <i class="glyphicon glyphicon-chevron-down"></i>
     <span class="avatar">
         <img src="${properties.defaultAvatarPath}" alt="${properties.defaultAvatarAlt}"
@@ -57,7 +61,7 @@
             </a>
 	    </div>
 	    <div class="signout"> 
-	        <a href="${user.signOutURL}" data-sly-text="${properties.signOutLinkLabel}"
+	        <a href="${user.signOutURL}" data-sly-text="${properties.signOutLinkLabel}" id="user-loginout"
                class="link-btn link-lg link-color-orange link-reversed">
             </a>
 	    </div>

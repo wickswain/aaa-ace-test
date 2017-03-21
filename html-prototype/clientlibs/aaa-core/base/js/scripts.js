@@ -266,3 +266,31 @@ $('a').click(function() {
 		$(modalId).modal('show');
 	}
 });
+
+var signOutUrl = $("#signOutUrl").val();
+var signInUrl = $("#signInUrl").val();
+var currentPage = $("#currentPage").val();
+if (signInUrl != null && signOutUrl != null && currentPage != null) {
+    $.ajax({
+        type: "POST",
+        url: "/bin/aaa/userlogin",
+        dataType: 'json',
+        data: {
+            "signInUrl": signInUrl,
+            "signOutUrl": signOutUrl,
+            "currentPage": currentPage
+        },
+        success: function(result) {
+            if (result.isLoggedIn) {
+                $("#user-loginout").attr("href", result.signOutURL);
+                $("#firstName").text(result.firstName);
+
+            } else {
+                $("#user-login").attr("href", result.signInURL);
+
+            }
+
+        }
+
+    });
+}
