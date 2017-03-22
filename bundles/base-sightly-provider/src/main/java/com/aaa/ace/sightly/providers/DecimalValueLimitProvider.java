@@ -18,11 +18,17 @@ public class DecimalValueLimitProvider extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception {
+    	log.debug("inside DecimalValueLimitProvider");
+    	log.debug("attribute value"+get("value", String.class));
+    	if(get("value", String.class)!=null){
         String value = get("value", String.class);
         NumberFormat nf = NumberFormat.getInstance();
         Double tempValue = Double.parseDouble(value);
         nf.setMaximumFractionDigits(2);
         decimalLimtvalue = nf.format(tempValue);
+    	} else{
+    		log.error("Null Value");
+    	}
     }
     
     public String getDecimalLimtvalue() {

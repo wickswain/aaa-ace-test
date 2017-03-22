@@ -21,9 +21,9 @@
 <!--/*  Global Sightly Provider Content  
 ============================================= */-->
 <sly data-sly-use.savingsList="${'com.aaa.ace.sightly.providers.NumberToSequenceArrayProvider' @ number= properties.itemisednumber || '4'}" />
-<sly data-sly-use.yearlySavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.yearlySavings}" />
-<sly data-sly-use.aaasMembershipChargeDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.aaasMembershipCharge}" />
-<sly data-sly-use.totalSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.totalSavings}" />
+<sly data-sly-use.yearlySavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.yearlySavings || '0'}" />
+<sly data-sly-use.aaasMembershipChargeDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.aaasMembershipCharge || '0'}" />
+<sly data-sly-use.totalSavingsDecimalLimit="${'com.aaa.ace.sightly.providers.DecimalValueLimitProvider' @ value=properties.totalSavings || '0'}" />
 <!--/* #global-sightly-provider-content end */-->
 
 <!-- Membership Calculator Content
