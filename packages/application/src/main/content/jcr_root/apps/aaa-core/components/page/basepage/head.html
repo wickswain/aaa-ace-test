@@ -23,13 +23,12 @@
 	</sly>
 </sly>
 
+<sly data-sly-include="customheaderlibs.html" />
 <script src="//tags.tiqcdn.com/utag/aaa/main/prod/utag.sync.js"></script>
-
 <sly data-sly-call="${headlibRenderer.headlibs @ designPath=head.designPath}" />
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}" />
 <sly data-sly-include="author.html" />
 <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
-<sly data-sly-include="customheaderlibs.html" />
 
 <sly data-sly-use.favIcon="com.aaa.ace.sightly.providers.FavIconProvider" />
 <link data-sly-test="${favIcon.path}" rel="icon" type="image/vnd.microsoft.icon" href="${favIcon.path}">
