@@ -12,8 +12,7 @@ import com.adobe.cq.sightly.WCMUsePojo;
 
 public class DecimalValueLimitProvider extends WCMUsePojo {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(DecimalValueLimitProvider.class);
+	private static final Logger logger = LoggerFactory.getLogger(DecimalValueLimitProvider.class);
 
 	private String decimalLimtvalue;
 
