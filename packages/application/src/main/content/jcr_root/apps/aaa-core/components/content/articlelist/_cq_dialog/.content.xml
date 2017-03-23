@@ -35,27 +35,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Please enter filter label and tag to enable filters."
                                         sling:resourceType="granite/ui/components/foundation/form/fieldset"/>
-                                    <filters-alignment
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
-                                        fieldDescription="Please select the alignment for filters"
-                                        fieldLabel="Filters Alignment"
-                                        name="./filterAlignment">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <left
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Left(Default)"
-                                                value="text-left"/>
-                                            <center
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Center"
-                                                value="text-center"/>
-                                            <right
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Right"
-                                                value="text-right"/>
-                                        </items>
-                                    </filters-alignment>
                                     <Filter_x0020_1
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Filter 1"
