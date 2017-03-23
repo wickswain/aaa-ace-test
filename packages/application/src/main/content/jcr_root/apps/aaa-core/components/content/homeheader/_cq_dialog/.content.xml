@@ -35,7 +35,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
                                 fieldDescription="Please select head title text alignment"
-                                fieldLabel="Head Title Style"
+                                fieldLabel="Heading/Title Style"
                                 name="./headTitleStyle">
                                 <items jcr:primaryType="nt:unstructured">
                                     <Center
