@@ -5,7 +5,7 @@
     jcr:uuid="1fe879e1-50bd-4377-8946-bdde8a0e8c99"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Publish - Production - HI">
+    title="Publish - Review - HI">
     <metaData
         cq:lastModified="{Long}1486401262382"
         cq:lastModifiedBy="admin"
@@ -19,13 +19,13 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Publish page workflow on production for Hawaii region"
+            description="Publish page workflow on review for Hawaii region"
             title="Publish Page"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.aaa.ace.workflow.process.PublishPageProcess"
-                PROCESS_ARGS="path:/content/campaigns/ace-www/master/hawaii-region/hawaii"
+                PROCESS_ARGS="path:/content/campaigns/ace-www/master/hawaii-region/hawaii,agentId:wf-review"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2

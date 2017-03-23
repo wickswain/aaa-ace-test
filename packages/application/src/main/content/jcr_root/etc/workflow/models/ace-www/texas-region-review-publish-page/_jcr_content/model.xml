@@ -2,12 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:isCheckedOut="{Boolean}false"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="1fe879e1-50bd-4377-8946-bdde8a0e8c99"
+    jcr:uuid="7b956517-1bc9-4141-a8a9-0c4e89339935"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Publish - Production - HI">
+    title="Publish - Review - TX">
     <metaData
-        cq:lastModified="{Long}1486401262382"
+        cq:lastModified="{Long}1486401475635"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -19,13 +19,13 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Publish page workflow on production for Hawaii region"
+            description="Publish page workflow on review for Texas region"
             title="Publish Page"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.aaa.ace.workflow.process.PublishPageProcess"
-                PROCESS_ARGS="path:/content/campaigns/ace-www/master/hawaii-region/hawaii"
+                PROCESS_ARGS="path:/content/campaigns/ace-www/master/texas-region/texas,agentId:wf-review"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2
