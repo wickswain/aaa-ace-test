@@ -5,17 +5,19 @@
 W3C rules retrieved from:
 http://www.w3.org/TR/html401/struct/global.html
 -->
+
+<!-- AAA Changes newly added lines 61,62,238 -->
 	
 	
 <anti-samy-rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:noNamespaceSchemaLocation="antisamy.xsd">
-	
+
 	<directives>
 		<directive name="omitXmlDeclaration" value="true"/>
 		<directive name="omitDoctypeDeclaration" value="true"/>
 		<directive name="maxInputSize" value="200000"/>
 		<directive name="useXHTML" value="true"/>
-		<directive name="formatOutput" value="true"/>
+		<directive name="formatOutput" value="false"/>
 		<directive name="nofollowAnchors" value="false" />
 		<directive name="validateParamAsEmbed" value="true" />
 		<directive name="preserveSpace" value="true" />
@@ -56,9 +58,9 @@ http://www.w3.org/TR/html401/struct/global.html
 		<!-- Allow empty URL attributes with a '*'-quantifier instead of '+' for the first part of the regexp -->		
 		<regexp name="onsiteURL" value="([\p{L}\p{N}\\\.\#@\$%\+&amp;;\-_~,\?=/!\*\(\)]*|\#(\w)+)"/>
 		<regexp name="offsiteURL" value="(\s)*((ht|f)tp(s?)://|mailto:)[\p{L}\p{N}]+[\p{L}\p{N}\p{Zs}\.\#@\$%\+&amp;;:\-_~,\?=/!\*\(\)]*(\s)*"/>
-
+		<!-- AAA Tel Protocal changes -->
         <regexp name="telURL" value="tel:[0-9]+"/>
-		
+
 		<regexp name="boolean" value="(true|false)"/>
 		<regexp name="singlePrintable" value="[a-zA-Z0-9]{1}"/> <!-- \w allows the '_' character -->
 
@@ -124,6 +126,14 @@ http://www.w3.org/TR/html401/struct/global.html
 
 		<!-- This is where we specify what Flash src to allow -->
 		<regexp name="flashSites" value="http://(download\.macromedia\.com/pub|www\.macromedia\.com/(go|shockwave)|c\.brightcove\.com/services|gamevideos\.1up\.com/swf|www\.youtube\.com/v|vimeo\.com|www\.gametrailers\.com|videomedia\.ign\.com/ev|image\.com\.com/gamespot|www\.hulu\.com/embed|embed\.break\.com|player\.ordienetworks\.com/flash|www\.adultswim\.com/video/vplayer|www\.dailymotion\.com/swf|www\.ustream\.tv/flash/video|cdn-i\.dmdentertainment\.com|media\.mtvnservices\.com|www\.justin\.tv/widgets|www\.viddler\.com/(player|simple_on_site)|static\.twitter\.com/flash|www\.gamepro\.com/bin|www\.divshare\.com/flash|www\.facebook\.com/v)/.*"/>
+        
+        <!-- START: Additions for oembed inserts -->
+        <regexp name="iframesrc" value="^(http:|https:)?\/\/(www\.)?(((youtube|youtube-nocookie|vimeo|player\.vimeo|dailymotion|instagram|tumblr|twitter|wordpress|facebook|wikipedia|stackoverflow)(\.com))|(flickr\.com|flic\.kr))\/([A-Za-z0-9]).*"/>
+        <!-- END: Additions for oembed inserts -->
+        
+        <!-- Allow use of google fonts for rich text editor -->
+        <regexp name="googleFontURL" value="https:\/\/fonts\.googleapis\.com\/css\?family=[a-zA-Z0-9 ]+"/>
+
 	</common-regexps>
 	
 	<!-- 
@@ -145,7 +155,13 @@ http://www.w3.org/TR/html401/struct/global.html
 		
 
 		<!-- Common to all HTML tags  -->
-		
+
+        <attribute name="target">
+            <regexp-list>
+                <regexp value="[a-zA-Z0-9-_\$]+"/>
+            </regexp-list>
+        </attribute>
+
 		<attribute name="id" description="The 'id' of any HTML attribute should not contain anything besides letters and numbers">
 			<regexp-list>
 				<regexp name="htmlId"/>
@@ -213,7 +229,9 @@ http://www.w3.org/TR/html401/struct/global.html
 		 
 		 <!-- Anchor related -->
 		 
-		 <!--  onInvalid="filterTag" has been removed as per suggestion at OWASP SJ 2007 - just "name" is valid -->
+		 <!--  onInvalid="filterTag" has been removed as per suggestion at OWASP SJ 2007 - just "name" is valid -->\
+
+        <!-- AAA adding tel URL regular expression -->
 		<attribute name="href">
 			<regexp-list>
 				<regexp name="onsiteURL"/>
@@ -221,7 +239,7 @@ http://www.w3.org/TR/html401/struct/global.html
                 <regexp name="telURL"/>
 			</regexp-list>
 		</attribute>
-		
+
 		<attribute name="name">
 		 	<regexp-list>
 		 		
@@ -538,7 +556,24 @@ http://www.w3.org/TR/html401/struct/global.html
 		
 		<!-- Frame & related tags -->
 		
-		<tag name="iframe" action="remove"/>
+        <!-- START: Additions for oembed inserts -->
+        <tag name="iframe" action="validate">
+            <attribute name="src">
+                <regexp-list>
+                    <regexp name="iframesrc"/>
+                </regexp-list>
+            </attribute>
+            <attribute name="height">
+                <regexp-list><regexp name="number"/></regexp-list>
+            </attribute>
+            <attribute name="width">
+                <regexp-list><regexp name="number"/></regexp-list>
+            </attribute>
+            <attribute name="frameborder">
+                <regexp-list><regexp name="number"/></regexp-list>
+            </attribute>
+        </tag>
+        <!-- End: Additions for oembed inserts -->
 		<tag name="frameset" action="remove"/>
 		<tag name="frame" action="remove"/>
 		
@@ -793,7 +828,28 @@ http://www.w3.org/TR/html401/struct/global.html
 				</literal-list>
 			</attribute>
 			<attribute name="name"/>
-			
+            <attribute name="target" />
+            <attribute name="onclick">
+                <literal-list>
+                    <literal value="CQ_Analytics.Sitecatalyst.customTrack(this)"/>
+                </literal-list>
+            </attribute>
+            <attribute name="adhocenable">
+                <literal-list>
+                    <literal value="true"/>
+                    <literal value="false"/>
+                </literal-list>
+            </attribute>
+            <attribute name="adhocevents">
+                <regexp-list>
+                    <regexp name="anything"/>
+                </regexp-list>
+            </attribute>
+            <attribute name="adhocevars">
+                <regexp-list>
+                    <regexp name="anything"/>
+                </regexp-list>
+            </attribute>
 		</tag>
 
 		<tag name="map" action="validate"/>
@@ -822,6 +878,18 @@ http://www.w3.org/TR/html401/struct/global.html
 
 		<tag name="div" action="validate">
 			<attribute name="align"/>
+            <!-- START: Additions for oembed inserts -->
+            <attribute name="data-align">
+                <regexp-list>
+                    <regexp name="anything" />
+                </regexp-list>
+            </attribute>
+            <attribute name="data-resizetype">
+                <regexp-list>
+                    <regexp name="anything" />
+                </regexp-list>
+            </attribute>
+            <!-- END: Additions for oembed inserts -->
 		</tag>
 
 	
@@ -860,7 +928,12 @@ http://www.w3.org/TR/html401/struct/global.html
 		<tag name="link" action="validate">
 
 			<!-- <attribute name="href" onInvalid="removeTag"/>  -->
-			
+			<attribute name="href" onInvalid="removeTag">
+				<regexp-list>
+					<regexp name="googleFontURL"/>
+				</regexp-list>
+			</attribute>
+            
 			<attribute name="media"/>
 			
 			<attribute name="type" onInvalid="removeTag">
@@ -906,6 +979,8 @@ http://www.w3.org/TR/html401/struct/global.html
 
 		
 		<!-- Table tags (tbody, thead, tfoot)-->
+
+		<tag name="caption" action="validate"/>
 		
 		<tag name="thead" action="validate">
 			<attribute name="align"/>
@@ -1131,7 +1206,16 @@ http://www.w3.org/TR/html401/struct/global.html
 				</literal-list>
 			</attribute>
 		</tag>
-		
+
+		<!-- HTML5 semantic tags -->
+
+		<tag name="article" action="validate"/>
+        
+        <!-- START Image2 Plugin for CKEditor tags -->
+        <tag name="figure" action="validate"/>
+        <tag name="figcaption" action="validate"/>
+        <!-- END Image2 Plugin for CKEditor tags -->
+
 	</tag-rules>
 
 
@@ -2778,3 +2862,4 @@ http://www.w3.org/TR/html401/struct/global.html
     </allowed-empty-tags>
 
 </anti-samy-rules>
+
