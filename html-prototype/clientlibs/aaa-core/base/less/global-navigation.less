@@ -1,21 +1,17 @@
 // Global Navigation Component
-// 
 //
-
+//
 #page-header {
     transition: all 0.4s;
     border: 0;
 }
-
 #global-header {
     padding: 0px 20px;
 }
-
 .dark-bg {
     background: @color-blue none;
     padding: 20px;
 }
-
 .globalnav {
     .dropdown-menu {
         border: none;
@@ -27,13 +23,11 @@
         background: #fff;
     }
 }
-
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
     background: transparent;
 }
-
 .overlay {
     position: fixed;
     z-index: 99;
@@ -44,7 +38,6 @@
     right: 0;
     display: none;
 }
-
 .search-overlay {
     position: fixed;
     z-index: 99;
@@ -56,28 +49,22 @@
     bottom: 0;
     display: none;
 }
-
 .drawers-tiles,
 .drawers-tiles-list {
     transition: all 0.4s;
 }
-
 .bottom-tiles {
     transition: all 0.4s;
 }
-
 .slideboxer {
     width: 100%;
 }
-
 .search-label {
     width: 100%;
 }
-
 .dropdown {
     &.open {
-        .drawers-tiles,
-        .drawers-tiles-list {
+        .drawers-tiles, .drawers-tiles-list {
             margin-top: 0;
             opacity: 1;
         }
@@ -87,12 +74,10 @@
         }
     }
 }
-
 .open>a:focus {
     background: transparent;
 }
-
-@media (max-width:991px) {
+@media (max-width: 991px) {
     #page-header {
         top: 0px !important;
     }
@@ -307,6 +292,9 @@
                 text-transform: uppercase;
                 #user-login {
                     border-bottom: solid 1px #555;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
                 a {
                     color: #fff !important;
@@ -331,8 +319,7 @@
             }
             .contact-find {
                 border-bottom: 1px solid #e4e5e5;
-                .link1,
-                .link2 {
+                .link1, .link2 {
                     display: inline-block;
                     text-align: center;
                     font-size: 13px;
@@ -746,8 +733,7 @@
         display: none;
     }
 }
-
-@media (min-width:376px) {
+@media (min-width: 376px) {
     .roadside-block {
         .display-table {
             display: table;
@@ -783,22 +769,15 @@
         width: 375px;
     }
 }
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .roadside-text {
         #truck-link {
             max-width: 200px;
         }
     }
 }
-
-
-//   TABLET VERSION
-// 
-// 
-
+//   TABLET VERSION 
 @media (min-width: 992px) {
-    // Start Global Header
     .header-bar {
         background-color: @color-blue-primary-dark;
         max-width: 1700px;
@@ -1117,10 +1096,6 @@
     .roadside-block {
         display: none;
     }
-
-//Global Navigation
-//
-//
     .navigation-bar {
         max-width: 1700px;
         margin: 0 auto;
@@ -1142,6 +1117,12 @@
                 margin: 0 auto;
                 li {
                     float: none;
+                    &.join-btn {
+                        a {
+                            padding: 5px 15px;
+                            margin: 0px;
+                        }
+                    }
                     > a {
                         font-size: 13px;
                         letter-spacing: .08em;
@@ -1151,10 +1132,6 @@
                         transition: all 0.4s;
                         font-family: 'roboto';
                         font-weight: 500;
-                        &.join-btn {
-                            padding: 5px 15px;
-                            margin: 0px;
-                        }
                         &.active {
                             opacity: 1;
                         }
@@ -1376,19 +1353,16 @@
             }
         }
         .contact-find {
-            .link1,
-            .link2 {
+            .link1, .link2 {
                 display: block;
             }
         }
     }
-   
     .slideboxer {
         width: auto;
     }
 }
-
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
     .header-bar {
         .top-header {
             .user-info {
@@ -1399,7 +1373,6 @@
         }
     }
 }
-
 @media (min-width: 1700px) {
     .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawer-close {
         position: absolute;
@@ -1407,7 +1380,6 @@
         z-index: 1;
     }
 }
-
 .animation-tiles {
     transition: all 0.4s ease 0s;
     margin-top: -50px;
