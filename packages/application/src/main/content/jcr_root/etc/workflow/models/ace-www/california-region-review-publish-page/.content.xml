@@ -3,11 +3,11 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/default"
-        cq:lastModified="{Date}2017-02-06T22:40:25.618+05:30"
+        cq:lastModified="{Date}2017-02-06T22:38:01.558+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Publish - Production - AL"
+        jcr:title="Publish - Review - CA"
         sling:resourceType="cq/workflow/components/pages/model">
         <flow
             jcr:primaryType="nt:unstructured"
@@ -15,8 +15,8 @@
             <process
                 jcr:created="{Date}2017-02-03T20:50:38.518+05:30"
                 jcr:createdBy="admin"
-                jcr:description="Publish page workflow on production for Alabama region"
-                jcr:lastModified="{Date}2017-02-06T22:40:25.594+05:30"
+                jcr:description="Publish page workflow on review for California region"
+                jcr:lastModified="{Date}2017-02-06T22:38:01.553+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Publish Page"
@@ -24,7 +24,7 @@
                 <metaData
                     jcr:primaryType="nt:unstructured"
                     PROCESS="com.aaa.ace.workflow.process.PublishPageProcess"
-                    PROCESS_ARGS="path:/content/campaigns/ace-www/master/alabama-region/alabama"
+                    PROCESS_ARGS="path:/content/campaigns/ace-www/master/california-region/california,agentId:wf-review"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process>
         </flow>
