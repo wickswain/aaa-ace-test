@@ -23,13 +23,12 @@ import com.aaa.ace.common.Constants;
  * 
  * Returns the Login user personal information
  * 
+ * @author Sridhar M.
  */
 
 @SlingServlet(paths = { "/bin/aaa/userlogin" }, methods = { "GET", "POST" })
-@Properties({
-		@Property(name = "service.pid", value = "com.aaa.ace.servlets.UserLoginOneServlet", propertyPrivate = false),
-		@Property(name = "service.description", value = "SampleDescription", propertyPrivate = false),
-		@Property(name = "service.vendor", value = "SampleVendor", propertyPrivate = false) })
+@Properties({ @Property(name = "service.pid", value = "com.aaa.ace.servlets.LoginServlet", propertyPrivate = false),
+		@Property(name = "service.description", value = "Login Servlet", propertyPrivate = false) })
 public class LoginServlet extends SlingAllMethodsServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -56,6 +55,10 @@ public class LoginServlet extends SlingAllMethodsServlet {
 		signOutURL = constructURL(signOutURL, requestUrl, contentPath);
 		Cookie logInCookie = request.getCookie(Constants.COOKIE_ASPXAUTH);
 
+		log.info("start LoginServlet : contentPath :{},signInURL :{},signOutURL:{}", contentPath, signInURL,
+				signOutURL);
+		log.debug(" User loggined :{}", logInCookie);
+
 		if (logInCookie != null) {
 			isLoggedIn = true;
 			firstName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_FIRST_NAME, request);
@@ -70,11 +73,13 @@ public class LoginServlet extends SlingAllMethodsServlet {
 		} catch (Exception e) {
 			log.error("Error occurred in creating json :{}", e.getMessage());
 		}
-
 		// Get the JSON formatted data
 		String jsonData = obj.toString();
 		response.setContentType("application/json");
-		// Return the JSON formatted data
+
+		log.info("End LoginServlet, rseponse :{}", jsonData);
+
+		// Returns the user information
 		response.getWriter().write(jsonData);
 	}
 

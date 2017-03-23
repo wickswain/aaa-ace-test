@@ -282,8 +282,9 @@ if (signInUrl != null && signOutUrl != null && currentPage != null) {
         },
         success: function(result) {
             if (result.isLoggedIn) {
-                $("#user-loginout").attr("href", result.signOutURL);
+                $("#user-logout").attr("href", result.signOutURL);
                 $("#firstName").text(result.firstName);
+				 $("#firstName-profile").text(result.firstName);
 
             } else {
                 $("#user-login").attr("href", result.signInURL);
