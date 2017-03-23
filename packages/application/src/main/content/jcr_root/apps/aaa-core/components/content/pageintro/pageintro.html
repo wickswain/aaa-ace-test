@@ -20,9 +20,9 @@
 <div id="${properties.jumpLinkId}" style="background-color: ${properties.backgroundColor ? properties.backgroundColor : '' @ context='styleToken'};
             color: ${properties.fontColor ? properties.fontColor : '' @ context='styleToken'};"
      class="page-intro">
-     
+
     <div class="container">
-        <div class="horizontal-space font-c text-uppercase">
+        <div class="horizontal-space font-c text-uppercase ${properties.textAlignment ? properties.textAlignment :'text-center'} ">
             <sly data-sly-test="${properties.title}" data-sly-text="${properties.title}"/>
             <sly data-sly-test="${!properties.title}" 
                  data-sly-text="${currentPage.properties.navTitle ? currentPage.properties.navTitle : currentPage.title}"/>
@@ -36,11 +36,10 @@
             <sly data-sly-test="${properties.bodyCopyRTE}" data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}" />
         </div>
 
-        <div data-sly-test="${properties.ctaFlag}"
-             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"
-             data-sly-unwrap="${wcmmode.disabled}">
+        <div data-sly-test="${properties.ctaFlag}" class="${properties.ctaAlignment ? properties.ctaAlignment :'text-center' }"
+             data-sly-resource="${ @path='cta-button-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}">
         </div>
     </div>
-    
+
 </div>
 <!-- #page-intro-content end -->

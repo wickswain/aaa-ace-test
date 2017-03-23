@@ -23,10 +23,10 @@
     <!-- Comparison table heading container start -->
     <div class="container">
         <div class="membership-comparison-header horizontal-component-space">
-            <div class="horizontal-space roboto-medium font-a">
+            <div class="horizontal-space roboto-medium font-a ${properties.titleAlignment ? properties.titleAlignment : 'text-center'}">
             	<span data-sly-text="${properties.title}"></span>
             </div>
-            
+
             <div class="roboto-light font-g text-left">
                 <sly data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"/>
             </div>

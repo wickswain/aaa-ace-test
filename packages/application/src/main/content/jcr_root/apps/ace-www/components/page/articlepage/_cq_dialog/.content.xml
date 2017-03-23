@@ -109,16 +109,16 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                   <pubicationdate
+                                    <pubicationdate
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="/apps/aaa-core/granite/widgets/datepicker"
-                                        fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
-                                        fieldLabel="Article Issue Date"
-                                        name="./issueDate"
-                                        storedFormat="YYYY-MM-DD"
                                         displayedFormat="MMMM DD, YY"
                                         emptyText="September 09, 16"
-                                        minDate="1970-01-01" />
+                                        fieldDescription="This date will be displayed on article header. Ideally date when article was originally published in print "
+                                        fieldLabel="Article Issue Date"
+                                        minDate="1970-01-01"
+                                        name="./issueDate"
+                                        storedFormat="YYYY-MM-DD"/>
                                     <articleTitle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -134,7 +134,28 @@
                                         fieldDescription="Please enter article description"
                                         fieldLabel="Article description"
                                         path="/apps/aaa-core/components/content/rte/granite/items/text"/>
-                                   	<authorname
+                                    <articleTitle-alignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select alignment for article title"
+                                        fieldLabel="Article Title Alignment"
+                                        name="./articleTitleAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center(Default)"
+                                                value="text-center"/>
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left"
+                                                value="text-left"/>
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right"
+                                                value="text-right"/>
+                                        </items>
+                                    </articleTitle-alignment>
+                                    <authorname
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                                         defaultValue="Author Name"
@@ -143,7 +164,28 @@
                                         name="./authorName"
                                         required="{Boolean}true"
                                         value=""/>
-                                   <articlelogo
+                                    <authorname-alignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select alignment for author name"
+                                        fieldLabel="Author Name Alignment"
+                                        name="./authorNameAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center(Default)"
+                                                value="text-center"/>
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left"
+                                                value="text-left"/>
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right"
+                                                value="text-right"/>
+                                        </items>
+                                    </authorname-alignment>
+                                    <articlelogo
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/fileupload"
                                         allowUpload="{Boolean}false"
@@ -165,12 +207,12 @@
                                         fieldLabel="Alt Text"
                                         name="./articleLogoAltText"
                                         value="Article Logo Alt Text"/>
-									<jump-link-id
-										jcr:primaryType="nt:unstructured"
-										sling:resourceType="granite/ui/components/foundation/form/textfield"
-										fieldDescription="Please enter Jump Link Id"
-										fieldLabel="Jump Link Id"
-										name="./jumpLinkId"/>    
+                                    <jump-link-id
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Please enter Jump Link Id"
+                                        fieldLabel="Jump Link Id"
+                                        name="./jumpLinkId"/>
                                 </items>
                             </column>
                         </items>

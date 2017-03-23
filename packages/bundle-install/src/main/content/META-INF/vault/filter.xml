@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/ace-www/config" />
+    <filter root="/apps/ace-www/config.auhtor" />
+    <filter root="/apps/ace-www/config.dev" />
+    <filter root="/apps/ace-www/config.production" />
+    <filter root="/apps/ace-www/config.publish" />
+    <filter root="/apps/ace-www/config.publish.dev" />
+    <filter root="/apps/ace-www/config.publish.qa" />
+    <filter root="/apps/ace-www/config.qa" />
+    <filter root="/apps/ace-www/config.stage" />
 </workspaceFilter>

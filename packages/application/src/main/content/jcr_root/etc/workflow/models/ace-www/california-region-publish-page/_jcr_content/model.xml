@@ -5,7 +5,7 @@
     jcr:uuid="a663b385-9ebf-4dff-91da-627d11e5e765"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Publish Page [California]">
+    title="Publish - Production - CA">
     <metaData
         cq:lastModified="{Long}1486401045458"
         cq:lastModifiedBy="admin"
@@ -19,7 +19,7 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Publish page workflow for California region"
+            description="Publish page workflow on production for California region"
             title="Publish Page"
             type="PROCESS">
             <metaData

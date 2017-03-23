@@ -171,13 +171,8 @@
                         </div>
                     </li>
                     
-                    <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm">
-                        <sly data-sly-use.joinPage="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url=properties.joinBtnPath}" />
-                        <a href="${joinPage.url ? joinPage.url : ''  @ context='uri'}" 
-                           data-sly-text="${properties.joinBtnTitle? properties.joinBtnTitle : 'JOIN'}"
-                           target="${properties.joinLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
-                           class="btn-style btn-sm btn-border btn-color-blue btn-border-reversed join-btn">
-                        </a>
+                    <li data-sly-test="${itemList.last}" class="hidden-xs hidden-sm join-btn">
+                        <sly data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}"/>
                     </li>
                 </ul>
             </nav>

@@ -43,11 +43,27 @@
 						</filter>
 						
 						<filter>
-							<root>/apps/ace-www/config.prod</root>
+							<root>/apps/ace-www/config.auhtor</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.dev</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.production</root>
 						</filter>
 						
 						<filter>
 							<root>/apps/ace-www/config.publish</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.publish.dev</root>
+						</filter>
+						
+						<filter>
+							<root>/apps/ace-www/config.publish.qa</root>
 						</filter>
 						
 						<filter>
@@ -56,10 +72,6 @@
 						
 						<filter>
 							<root>/apps/ace-www/config.stage</root>
-						</filter>
-						
-						<filter>
-							<root>/apps/ace-www/config.uat</root>
 						</filter>
 					</filters>
 

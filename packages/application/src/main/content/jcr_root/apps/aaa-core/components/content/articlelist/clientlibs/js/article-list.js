@@ -244,7 +244,7 @@ $j(function ($) {
             	host = host + ":" + port;
             }
             
-            return "http://"+host
+            return window.location.protocol+"//"+host;
         }
         
     });

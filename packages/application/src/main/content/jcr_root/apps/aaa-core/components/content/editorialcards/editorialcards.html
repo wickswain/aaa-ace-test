@@ -16,7 +16,7 @@ This component renders four cards, first one logo card and 3 cards from article 
 
 		<!-- Top Header Starts Here -->
 		<div class="text-center">
-			<div class="horizontal-space roboto-light font-b">
+			<div class="horizontal-space roboto-light font-b ${properties.titleStyle}">
 				<h2 title="Article Title">${properties.title}</h2>
 			</div>
 			<div class="horizontal-space2 roboto-light font-g text-left">
@@ -31,10 +31,10 @@ This component renders four cards, first one logo card and 3 cards from article 
 				<div class="horizontal-space">
 					<img src="${properties.fileReference}" title="card-logo" alt="${properties.alt}" class="img-responsive">
 				</div>
-				<div class="side-spacing horizontal-space roboto-light font-g">
+				<div class="side-spacing horizontal-space roboto-light font-g ${properties.logotitleStyle}">
 					<h2 title="Logo Card Title">${properties.logoTitle @ context='html'}</h2>
 				</div>
-				<div class="side-spacing horizontal-space font-h">
+				<div class="side-spacing horizontal-space font-h ${properties.ctaStyle}">
 					<sly data-sly-test="${properties.ctaFlag}" 
                     	data-sly-resource="${ @path='logo-cta-button', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}" />
          		</div>

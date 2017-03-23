@@ -55,6 +55,13 @@ function populateYears() {
     };
 }
 
+function populateMonth() {
+    now = new Date();
+	month = now.getMonth();
+    month = month +1 ;
+    $('.cruise_month').val(month);
+}
+
 function generateCruiseDates() {
     var result = '',
         now = new Date(),
