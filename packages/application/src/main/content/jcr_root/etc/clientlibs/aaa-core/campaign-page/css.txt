@@ -1,6 +1,4 @@
 #base=css
 
-main.css
 responsive.css
-jquery-ui-1.8.17.custom.css
-smartbanner.css
+styles.css

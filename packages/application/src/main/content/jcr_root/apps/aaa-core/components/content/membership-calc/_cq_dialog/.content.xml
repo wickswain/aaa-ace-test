@@ -29,6 +29,27 @@
                                 fieldLabel="Title"
                                 name="./title"
                                 required="{Boolean}true"/>
+                            <mc-title-alignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select alignment for title "
+                                fieldLabel="Title Alignment"
+                                name="./titleAlignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center(Default)"
+                                        value="text-center"/>
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="text-left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="text-right"/>
+                                </items>
+                            </mc-title-alignment>
                             <mc-image
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/fileupload"
@@ -145,88 +166,32 @@
                                 fieldLabel="Itemized Savings Heading"
                                 name="./itemizedSavingsHeading"
                                 text="Itemized Savings area Heading"/>
-                            <mc-calculator
+                            <itemized-savings-number
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
                                 class="full-width"
-                                fieldDescription="Click 'Add field' to add a new item"
-                                fieldLabel="Membership Calculator"
-                                max="{Long}7"
-                                min="{Long}4">
-                                <field
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                    acs-commons-nested="NODE_STORE"
-                                    name="./mcfiledset">
-                                    <layout
+                                fieldDescription="Please select the itemized savings number"
+                                fieldLabel="Number of  Itemized savings"
+                                name="./itemisednumber">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <_x0034_
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <column
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/container">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <itemized-icon
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                                    fieldLabel="Itemized Icon"
-                                                    name="./itemizedIcon"
-                                                    rootPath="/content/dam"/>
-                                                <icon-alttext
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    fieldDescription="Please enter Icon Alt Text"
-                                                    fieldLabel="Icon Alt Text"
-                                                    name="./iconAltText"/>
-                                                <itemized-savings-area-title
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    fieldDescription="Please enter titletext"
-                                                    fieldLabel="Itemized Savings title"
-                                                    name="./itemizedSavingsText"
-                                                    required="{Boolean}true"
-                                                    text="Itemized Savings title"/>
-                                                <itemized-actual-price
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    activeValidation="{Boolean}true"
-                                                    fieldDescription="Please enter numbers only"
-                                                    fieldLabel="Actual Price"
-                                                    name="./actualPrice"
-                                                    pattern="number"
-                                                    text="Actual Price"/>
-                                                <itemized-discount-price
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    activeValidation="{Boolean}true"
-                                                    fieldDescription="Please enter numbers only"
-                                                    fieldLabel="Discount Price"
-                                                    name="./discountPrice"
-                                                    pattern="number"
-                                                    text="Discount Price"/>
-                                                <itemized-savings-area-number
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    activeValidation="{Boolean}true"
-                                                    fieldDescription="Please enter numbers only"
-                                                    fieldLabel="Itemized Savings"
-                                                    name="./itemizedSavings"
-                                                    pattern="number"
-                                                    text="Itemized Savings"/>
-                                                <savings-lable
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                    fieldLabel="Savings Label"
-                                                    name="./savingsLabel"/>
-                                                <hidden-field
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                                    name="./hiddenField"/>
-                                            </items>
-                                        </column>
-                                    </items>
-                                </field>
-                            </mc-calculator>
+                                        text="4"
+                                        value="4"/>
+                                    <_x0035_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="5"
+                                        value="5"/>
+                                    <_x0036_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="6"
+                                        value="6"/>
+                                    <_x0037_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="7"
+                                        value="7"/>
+                                </items>
+                            </itemized-savings-number>
                         </items>
                     </columns>
                 </items>

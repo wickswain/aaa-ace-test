@@ -87,6 +87,13 @@
                         <filter>
                             <root>/apps/cq/personalization/components/target</root>
                         </filter>
+                        <filter>
+                            <root>/apps/cq/linkchecker</root>
+                        </filter>
+                        <filter>
+                            <root>/apps/cq/xssprotection</root>
+                        </filter>
+                        
                     </filters>
                 </configuration>
             </plugin>

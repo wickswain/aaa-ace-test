@@ -560,6 +560,20 @@
                                 name="./vcLinkNewTabFlag"
                                 text="Vaations Link Open in new window?"
                                 value="{Boolean}true"/>
+                            <scrolltocomponent
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box to scroll to the internal content"
+                                name="./scrollToInternal"
+                                text="Scroll to Internal content?"
+                                value="{Boolean}true"/>
+                            <scrolltocomponentid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the scroll id to scroll to the internal content"
+                                fieldLabel="Scroll Id"
+                                name="./scrollvacationsID"
+                                value="vacationsid"/>
                         </items>
                     </columns>
                 </items>

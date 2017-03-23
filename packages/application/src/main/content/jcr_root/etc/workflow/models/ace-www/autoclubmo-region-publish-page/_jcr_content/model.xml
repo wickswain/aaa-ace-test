@@ -5,7 +5,7 @@
     jcr:uuid="aca36c64-683a-4e1f-a17a-8427f1e5f606"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Publish Page [Auto Club MO]">
+    title="Publish - Production - ACMO">
     <metaData
         cq:lastModified="{Long}1486401113537"
         cq:lastModifiedBy="admin"
@@ -19,7 +19,7 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Publish page workflow for Auto Club MO region"
+            description="Publish page workflow on production for Auto Club MO region"
             title="Publish Page"
             type="PROCESS">
             <metaData

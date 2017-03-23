@@ -5,7 +5,7 @@
     jcr:uuid="707793c9-b5d2-4d8a-8e01-aad49eb98e60"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Publish Page [Tide Water]">
+    title="Publish - Production - TW">
     <metaData
         cq:lastModified="{Long}1486401547863"
         cq:lastModifiedBy="admin"
@@ -19,7 +19,7 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Publish page workflow for Tide Water region"
+            description="Publish page workflow on production for Tide Water region"
             title="Publish Page"
             type="PROCESS">
             <metaData

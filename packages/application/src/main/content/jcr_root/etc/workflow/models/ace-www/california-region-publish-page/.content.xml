@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Publish Page [California]"
+        jcr:title="Publish - Production - CA"
         sling:resourceType="cq/workflow/components/pages/model">
         <flow
             jcr:primaryType="nt:unstructured"
@@ -15,7 +15,7 @@
             <process
                 jcr:created="{Date}2017-02-03T20:50:38.518+05:30"
                 jcr:createdBy="admin"
-                jcr:description="Publish page workflow for California region"
+                jcr:description="Publish page workflow on production for California region"
                 jcr:lastModified="{Date}2017-02-06T22:38:01.553+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
