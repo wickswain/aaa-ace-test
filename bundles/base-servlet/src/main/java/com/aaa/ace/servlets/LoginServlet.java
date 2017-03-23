@@ -90,13 +90,17 @@ public class LoginServlet extends SlingAllMethodsServlet {
 	 * @return
 	 */
 	private String getRequestURL(SlingHttpServletRequest request) {
+
 		String scheme = request.getScheme();
 		String serverName = request.getServerName();
 		int serverPort = request.getServerPort();
 
+		log.info("Entered getRequestURL()");
 		// Reconstruct original requesting URL
 		StringBuilder url = new StringBuilder();
 		url.append(scheme).append("://").append(serverName).append(":").append(serverPort);
+
+		log.info("End getRequestURL()");
 
 		return url.toString();
 	}
@@ -110,13 +114,16 @@ public class LoginServlet extends SlingAllMethodsServlet {
 	 * @return
 	 */
 	private String constructURL(String url, String requestURL, String currentPagePath) {
+
 		String finalURL = "";
-		log.debug("URL from CTA Provider: " + url);
+		log.info("Entered constructURL(), url:{} ", url);
 
 		if (StringUtils.isNotBlank(url)) {
 			finalURL = url + "?ReturnURL=" + requestURL + currentPagePath;
 			finalURL = (currentPagePath.endsWith(".html") ? finalURL : (finalURL + ".html"));
 		}
+
+		log.info("End constructURL()");
 		return finalURL;
 	}
 
@@ -126,6 +133,8 @@ public class LoginServlet extends SlingAllMethodsServlet {
 	private String fetchCookieValue(String cookieName, String key, SlingHttpServletRequest request) {
 		String cookieValue = "";
 		Cookie aceuser = request.getCookie(cookieName);
+
+		log.info("Entered fetchCookieValue()");
 
 		if (aceuser != null && StringUtils.isNotBlank(aceuser.getValue())) {
 			String[] cookieItems = aceuser.getValue().split(STRING_AND_SYMBOL);
@@ -137,6 +146,7 @@ public class LoginServlet extends SlingAllMethodsServlet {
 			}
 		}
 
+		log.info("End  fetchCookieValue(), cookieValue:{}", cookieValue);
 		return cookieValue;
 	}
 }
