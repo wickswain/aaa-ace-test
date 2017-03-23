@@ -284,7 +284,7 @@ if (signInUrl != null && signOutUrl != null && currentPage != null) {
             if (result.isLoggedIn) {
                 $("#user-logout").attr("href", result.signOutURL);
                 $("#firstName").text(result.firstName);
-				 $("#firstName-profile").text(result.firstName);
+                $("#firstName-profile").text(result.firstName);
 
             } else {
                 $("#user-login").attr("href", result.signInURL);
