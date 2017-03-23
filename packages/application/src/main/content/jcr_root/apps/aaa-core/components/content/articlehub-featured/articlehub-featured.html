@@ -41,7 +41,7 @@
 	     <div class="article-hero-header">
 	         <div class="article-hero " style="background-image:url('${articlehero.articleImage ? articlehero.articleImage : '' @ context='uri'}');" title="${articlehero.alttext}"></div>
              <div class="col-sm-1 hidden-sm hidden-xs"></div>
-	         <div class="article-header">
+	         <div class="article-header ${properties.headerAlignment ? properties.headerAlignment : 'text-center' }">
 	             <div class="article-info">
 	                 <ul class="list-inline font-e">
 	                     <li data-sly-test="${articlePage.properties.articleLogoImage}">
@@ -54,7 +54,9 @@
 	                 <h2 data-sly-test="${articlePage.properties.articleTitle}" class="roboto-light font-b" title="${articlePage.properties.articleTitle}">${articlePage.properties.articleTitle}</h2>
 	                 <p  data-sly-test="${articlePage.properties.text}" class="roboto-light font-g">${articlePage.properties.text @ context='html'}</p>
 	              </div>
+                  <div>
 	              <a href=${properties.artclepagePath}.html class="btn-style btn-lg btn-color-blue">Read</a>
+                  </div>
 	         </div>
 	 	</div>
 </div>

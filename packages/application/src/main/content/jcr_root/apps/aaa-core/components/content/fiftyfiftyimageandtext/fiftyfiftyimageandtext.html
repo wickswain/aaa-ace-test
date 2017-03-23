@@ -35,7 +35,7 @@
                 <div data-sly-test="${properties.headerIcon}" class="horizontal-space roboto-light font-b">
                 	<img src="${properties.headerIcon}" title="${properties.headerIconAltText}" alt="${properties.headerIconAltText}">
                 </div>
-                <div class="horizontal-space roboto-light font-b">
+                <div class="horizontal-space roboto-light font-b ${properties.headerTitleAlignment ? properties.headerTitleAlignment : 'text-center'}">
                     <h2 title="header title" 
                     	style="color:${properties.headerTitleTextFontColor ? properties.headerTitleTextFontColor : '' @ context='styleToken'};">
                     	<span data-sly-test="${properties.numberText}"
@@ -50,7 +50,7 @@
                 		class="horizontal-space roboto-light font-g text-left">
                     <sly data-sly-resource="${ @path='rte', resourceType='/apps/aaa-core/components/content/rte'}"/>
                 </div>
-                <div class="horizontal-space">
+                    <div class="horizontal-space ${properties.ctabuttonAlignment ? properties.ctabuttonAlignment : 'text-center'}">
                     <sly data-sly-resource="${ @path='cta-large', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-large'}"/>
                 </div>                                                                                
             </div>

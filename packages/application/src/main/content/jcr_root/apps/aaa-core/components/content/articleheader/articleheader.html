@@ -23,7 +23,7 @@ The properties of the component are part of page properties so no dialog is prov
 
  <!--/* Article Header Stand Alone */-->
  <div id="${properties.jumpLinkId}" class="article-header" data-sly-test="${isAuthored}">
-   <div class="article-info horizontal-space">
+   <div class="article-info horizontal-space ${pageProperties.authorNameAlignment ? pageProperties.authorNameAlignment :'text-center'}">
    	<ul class="list-inline font-e">
    		<li data-sly-test="${pageProperties.articleLogoImage}"><img src="${pageProperties.articleLogoImage}" alt="${pageProperties.articleLogoAltText}" height="20px" /></li>
    		<li>By ${pageProperties.authorName}</li>
@@ -33,8 +33,10 @@ The properties of the component are part of page properties so no dialog is prov
   		</li>
   	</ul>
   </div>
-  <h2 class="font-a roboto-medium horizontal-space" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
-	${pageProperties.text @ context='html'}
+  <h2 class="font-a roboto-medium horizontal-space ${pageProperties.articleTitleAlignment ? pageProperties.articleTitleAlignment :'text-center'}" title="${pageProperties.articleTitle || pageProperties.pageTitle}">${pageProperties.articleTitle || pageProperties.pageTitle}</h2> 
+	<div class="text-left">
+		${pageProperties.text @ context='html'}
+	</div>
  </div>
 
 <!--/* Article Header Stand Alone End */-->

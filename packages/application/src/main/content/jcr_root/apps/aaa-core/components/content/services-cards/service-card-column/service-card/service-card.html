@@ -13,7 +13,7 @@
                  <div class="icon-sc-image">
                  	<img src="${properties.image ? properties.image : ''}" title="${properties.altText}" alt="${properties.altText}" class="img-responsive">
                  </div>
-                 <div class="icon-sc-title roboto-medium font-f" style="color: ${properties.cardTitleTextFontColor ? properties.cardTitleTextFontColor : '' @ context='styleToken'}">
+                 <div class="icon-sc-title roboto-medium font-f ${properties.imgTitleAlignment ? properties.imgTitleAlignment : 'text-center'}" style="color: ${properties.cardTitleTextFontColor ? properties.cardTitleTextFontColor : '' @ context='styleToken'}">
                      ${properties.cardtitle}
                  </div>
              </a>
@@ -21,7 +21,7 @@
          <div class="panel-collapse collapse content" id="collapseOrderItems${currentNode.name}">
              <div class="service-card-info" style="color: ${properties.cardTextFontColor ? properties.cardTextFontColor : '' @ context='styleToken'}">
                  <div class="font-h text-left"> <sly data-sly-resource="${ @path='body-text', resourceType='/apps/aaa-core/components/content/rte'}"/></div>
-                 <div class="icon-sc-link font-h">
+                 <div class="icon-sc-link font-h ${properties.linkAlignment ? properties.linkAlignment : 'text-center'}">
                       <sly data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/ctabutton-small'}"/>
                  </div>
              </div>

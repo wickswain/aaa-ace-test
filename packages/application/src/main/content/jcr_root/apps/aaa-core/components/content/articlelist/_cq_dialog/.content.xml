@@ -154,7 +154,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/autocomplete/list"/>
                                             </filtertag>
                                         </items>
-                                    </Filter_x0020_4>                                                                        
+                                    </Filter_x0020_4>
                                     <Filter_x0020_5
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Filter 5"
@@ -334,7 +334,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/autocomplete/list"/>
                                             </filtertag>
                                         </items>
-                                    </Filter_x0020_10>                                                                                                                                                                                                                                                              
+                                    </Filter_x0020_10>
                                 </items>
                             </column>
                         </items>

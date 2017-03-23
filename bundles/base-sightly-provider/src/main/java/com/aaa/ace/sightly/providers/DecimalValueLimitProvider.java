@@ -12,20 +12,27 @@ import com.adobe.cq.sightly.WCMUsePojo;
 
 public class DecimalValueLimitProvider extends WCMUsePojo {
 
-    private static final Logger log = LoggerFactory.getLogger(DecimalValueLimitProvider.class);
+	private static final Logger logger = LoggerFactory.getLogger(DecimalValueLimitProvider.class);
 
-    private String decimalLimtvalue;
+	private String decimalLimtvalue;
 
-    @Override
-    public void activate() throws Exception {
-        String value = get("value", String.class);
-        NumberFormat nf = NumberFormat.getInstance();
-        Double tempValue = Double.parseDouble(value);
-        nf.setMaximumFractionDigits(2);
-        decimalLimtvalue = nf.format(tempValue);
-    }
-    
-    public String getDecimalLimtvalue() {
-        return decimalLimtvalue;
-    }
+	@Override
+	public void activate() throws Exception {
+		logger.info("Start of DecimalValueLimitProvider Sightly provider class activate method");
+		logger.debug("attribute value" + get("value", String.class));
+		String value = get("value", String.class);
+		if (value != null) {
+			NumberFormat nf = NumberFormat.getInstance();
+			Double tempValue = Double.parseDouble(value);
+			nf.setMaximumFractionDigits(2);
+			decimalLimtvalue = nf.format(tempValue);
+			logger.info("End of DecimalValueLimitProvider Sightly provider class activate method");
+		} else {
+			logger.debug("Null attribute value passed to DecimalValueLimitProvider Sightly provider class");
+		}
+	}
+
+	public String getDecimalLimtvalue() {
+		return decimalLimtvalue;
+	}
 }
