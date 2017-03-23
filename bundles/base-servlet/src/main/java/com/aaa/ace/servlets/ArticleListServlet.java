@@ -1,6 +1,7 @@
 package com.aaa.ace.servlets;
 
 import java.io.IOException;
+import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,9 +9,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.PropertyUnbounded;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -18,6 +21,8 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.apache.sling.commons.osgi.PropertiesUtil;
+import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,13 +34,16 @@ import com.aaa.ace.services.SearchService;
  * Passes the input from Ajax call to service and returns back the JSON search
  * result.
  */
+
+@Component(immediate = true, metatype = true, label = "AAA Artilce List Servlet")
 @Service
-@Component
 @Properties(value = {
-		@Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default"),
-		@Property(name = "sling.servlet.selectors", value = "articles"),
-		@Property(name = "sling.servlet.extensions", value = "json"),
-		@Property(name = "sling.servlet.methods", value = "GET") })
+		@Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default", propertyPrivate=true),
+		@Property(name = "sling.servlet.selectors", value = "articles", propertyPrivate=true),
+		@Property(name = "sling.servlet.extensions", value = "json", propertyPrivate=true),
+		@Property(name = "sling.servlet.methods", value = "GET", propertyPrivate=true),
+		@Property(name = "service.vendor", value = "com.aaa.ace.services"),
+	    @Property(name = "service.description", value = "com.aaa.ace.services AAA Article Servlet")})
 
 public class ArticleListServlet extends SlingAllMethodsServlet {
 	
@@ -47,12 +55,38 @@ public class ArticleListServlet extends SlingAllMethodsServlet {
 	
 	public static final String DEFAULT_TYPE = "jcr:content";
 	
+	public static final String CACHE_HEADER_NAME = "Cache-Control";
+	
+	public static final String CACHE_HEADER_SUFFIX = "public, max-age=";
+	
+	public static final String CACHE_HEADER_DEFAULT_MAX_AGE = "3200";
+	
+	//cache max age property 
+    @Property(label = "Cache Header Max Age", 
+    			description = "Response header Cache-Control Max Age value", 
+    			unbounded = PropertyUnbounded.DEFAULT, value = "3200"
+    			)
+    private static final String RESPONSE_CACHE_CONTROL_MAX_AGE = "cache.max.age";
+
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-
+    private String cacheHeader;
+    
 	@Reference
 	SearchService searchService;
 
+    @Activate
+    protected void activate(ComponentContext ctx) {
+        
+        final Dictionary<?, ?> properties = ctx.getProperties();
+        
+        String maxage = PropertiesUtil.toString(properties.get(RESPONSE_CACHE_CONTROL_MAX_AGE), CACHE_HEADER_DEFAULT_MAX_AGE);
+        
+        cacheHeader = CACHE_HEADER_SUFFIX + maxage;
+        
+        log.debug("Max age is {}, Cache Header is {} ", maxage, cacheHeader);
+    }
+	
 	@Override
 	protected final void doGet(final SlingHttpServletRequest request,
 			final SlingHttpServletResponse response) throws ServletException,
@@ -104,6 +138,11 @@ public class ArticleListServlet extends SlingAllMethodsServlet {
 			log.error("Exception in generating response ", e);
 			resultStr = getErrorResponse(e);
 		}
+		
+		
+		
+		log.debug("Setting Cache-Control header to " + cacheHeader);
+		response.setHeader(CACHE_HEADER_NAME, cacheHeader);
 		
 		log.debug("Returning response: {}", resultStr);
 		response.getWriter().write(resultStr);
