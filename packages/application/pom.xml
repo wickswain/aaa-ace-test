@@ -81,19 +81,44 @@
                         </filter>
 
                         <filter>
+                            <root>/etc/map.publish.dev/https</root>
+                        </filter>
+
+                        <filter>
+                            <root>/etc/map.publish.prod/https</root>
+                        </filter>
+
+                        <filter>
+                            <root>/etc/map.publish.qa/https</root>
+                        </filter>
+						
+                        <filter>
+                            <root>/etc/map.publish.review/https</root>
+                        </filter>
+
+                        <filter>
+                            <root>/etc/map.publish.stage/https</root>
+                        </filter>
+
+                        <filter>
+                            <root>/etc/map.publish.uat/https</root>
+                        </filter>
+
+                        <filter>
                             <root>/apps/cq/contexthub/components/segment-page</root>
                         </filter>
                         
                         <filter>
                             <root>/apps/cq/personalization/components/target</root>
                         </filter>
+						
                         <filter>
                             <root>/apps/cq/linkchecker</root>
                         </filter>
-                        <filter>
+                        
+						<filter>
                             <root>/apps/cq/xssprotection</root>
                         </filter>
-                        
                     </filters>
                 </configuration>
             </plugin>
