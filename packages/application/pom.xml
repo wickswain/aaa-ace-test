@@ -81,27 +81,27 @@
                         </filter>
 
                         <filter>
-                            <root>/etc/map.publish.dev</root>
+                            <root>/etc/map.publish.dev/https</root>
                         </filter>
 
                         <filter>
-                            <root>/etc/map.publish.prod</root>
+                            <root>/etc/map.publish.prod/https</root>
                         </filter>
 
                         <filter>
-                            <root>/etc/map.publish.qa</root>
+                            <root>/etc/map.publish.qa/https</root>
                         </filter>
 						
                         <filter>
-                            <root>/etc/map.publish.review</root>
+                            <root>/etc/map.publish.review/https</root>
                         </filter>
 
                         <filter>
-                            <root>/etc/map.publish.stage</root>
+                            <root>/etc/map.publish.stage/https</root>
                         </filter>
 
                         <filter>
-                            <root>/etc/map.publish.uat</root>
+                            <root>/etc/map.publish.uat/https</root>
                         </filter>
 
                         <filter>
