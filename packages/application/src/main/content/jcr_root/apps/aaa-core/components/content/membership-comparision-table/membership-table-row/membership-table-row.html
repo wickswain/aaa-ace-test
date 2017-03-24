@@ -34,7 +34,7 @@
 				${rowItemDescription2.childResource.text @ context='html'}
 			</span>
 			
-            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+            <a style="display: ${properties.showModalBox ? 'display' : 'none' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
 		    </a>
@@ -47,7 +47,7 @@
          		<sly data-sly-resource="${ @path='rowItemDescription2', resourceType = '/apps/aaa-core/components/content/rte'}"/>
          	</span>
          	
-            <a style="visibility: ${properties.showModalBox ? 'visible' : 'hidden' @ context='styleToken'};"
+            <a style="display: ${properties.showModalBox ? 'display' : 'none' @ context='styleToken'};"
                data-toggle="modal" data-body="${properties.text @ context = 'html'}" data-header="${properties.modalTitle}"
                href="${'#{0}' @ format = [tablerowprovider.modalID]}" class="btn-info">
 		    </a>

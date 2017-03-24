@@ -1,6 +1,7 @@
 package com.aaa.ace.servlets;
 
 import java.io.IOException;
+import java.net.URL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -8,15 +9,18 @@ import javax.servlet.http.Cookie;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aaa.ace.common.Constants;
+import com.aaa.ace.services.PageSuffixResolverService;
 
 /**
  * Login servlet.
@@ -39,6 +43,9 @@ public class LoginServlet extends SlingAllMethodsServlet {
 	private static final String COOKIE_ACEUSER = "aceuser";
 	private static final Logger log = LoggerFactory.getLogger(LoginServlet.class);
 
+	@Reference
+	private PageSuffixResolverService pageSuffixResolverService;
+
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
@@ -49,27 +56,40 @@ public class LoginServlet extends SlingAllMethodsServlet {
 		boolean isLoggedIn = false;
 		String firstName = null;
 		String lastName = null;
+		URL url = null;
 		JSONObject obj = new JSONObject();
 		String requestUrl = getRequestURL(request);
-		signInURL = constructURL(signInURL, requestUrl, contentPath);
-		signOutURL = constructURL(signOutURL, requestUrl, contentPath);
+		ResourceResolver resolver = request.getResourceResolver();
 		Cookie logInCookie = request.getCookie(Constants.COOKIE_ASPXAUTH);
 
 		log.info("start LoginServlet : contentPath :{},signInURL :{},signOutURL:{}", contentPath, signInURL,
 				signOutURL);
 		log.debug(" User loggined :{}", logInCookie);
-
-		if (logInCookie != null) {
-			isLoggedIn = true;
-			firstName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_FIRST_NAME, request);
-			lastName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_LAST_NAME, request);
-		}
+		
+		// gets the Map url from the etc configurations
+		contentPath = pageSuffixResolverService.resolveLinkMapURL(resolver, contentPath);
+		
+		log.debug("url from the map.publish contentPath :{}", contentPath);
 		try {
-			obj.put("isLoggedIn", isLoggedIn);
-			obj.put("firstName", firstName);
-			obj.put("lastName", lastName);
-			obj.put("signInURL", signInURL);
-			obj.put("signOutURL", signOutURL);
+			url = new URL(contentPath);
+
+			if (url != null && StringUtils.isNotBlank(url.getPath())) {
+
+				log.debug("url after removing domain from map.publish :{}", url.getPath());
+				signInURL = constructURL(signInURL, requestUrl, url.getPath());
+				signOutURL = constructURL(signOutURL, requestUrl, url.getPath());
+
+				if (logInCookie != null) {
+					isLoggedIn = true;
+					firstName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_FIRST_NAME, request);
+					lastName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_LAST_NAME, request);
+				}
+				obj.put("isLoggedIn", isLoggedIn);
+				obj.put("firstName", firstName);
+				obj.put("lastName", lastName);
+				obj.put("signInURL", signInURL);
+				obj.put("signOutURL", signOutURL);
+			}
 		} catch (Exception e) {
 			log.error("Error occurred in creating json :{}", e.getMessage());
 		}

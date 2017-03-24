@@ -39,7 +39,7 @@
                                         fieldDescription="Please select the error page root path"
                                         fieldLabel="Error Page Root Path"
                                         name="./errorPages"
-                                        rootPath="/content/ace-www/en/error"/>
+                                        rootPath="/content/ace-www"/>
                                 </items>
                             </column>
                         </items>
