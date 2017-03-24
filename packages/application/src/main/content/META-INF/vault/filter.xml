@@ -13,4 +13,10 @@
     <filter root="/apps/ace-www/templates" />
     <filter root="/etc/workflow/models/ace-www" />
     <filter root="/etc/workflow/ace-www" />
+	<filter root="/etc/map.publish.dev" />
+	<filter root="/etc/map.publish.prod" />
+	<filter root="/etc/map.publish.qa" />
+	<filter root="/etc/map.publish.review" />
+	<filter root="/etc/map.publish.stage" />
+	<filter root="/etc/map.publish.uat" />
 </workspaceFilter>
