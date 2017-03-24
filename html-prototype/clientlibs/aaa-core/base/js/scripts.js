@@ -286,11 +286,11 @@ if (signInUrl != null && signOutUrl != null && currentPage != null) {
 				$("#firstName").text(result.firstName);
 				$("#firstName-profile").text(result.firstName);
 				/*Mobile Login*/
-				$("#m-user-logout").attr("href", result.signOutURL);
-				$("#m-firstName").text(result.firstName);             
+				$(".m-user-details .avatar-details .signout #user-logout").attr("href", result.signOutURL);
+				$(".m-user-details .avatar-details .restrict-characters").text(result.firstName);             
             } else {
                 $("#user-login").attr("href", result.signInURL);
-				$("#m-user-login").attr("href", result.signInURL);			
+				$(".m-user-details .sign-join-in .user-login").attr("href", result.signInURL);			
             }
 
         }
