@@ -85,7 +85,7 @@
                                      title="${properties.defaultAvatarAlt}" class="img-responsive"/>
                             </div>
                             <div class="avatar-title font-f">
-                                <span data-sly-text="${user.firstName}" id="m-firstName" class="restrict-characters"></span>
+                                <span data-sly-text="${user.firstName}" id="firstName" class="restrict-characters"></span>
                             </div>
                             <div class="my-account">
                                 <a href="${accountLink.url}" data-sly-text="${properties.accountLinkLabel}"
@@ -94,7 +94,7 @@
                             </div>
                             <div class="signout">
                                 <a href="${user.signOutURL}" data-sly-text="${properties.signOutLinkLabel}"
-                                   class="link-btn link-lg link-color-orange link-reversed" id="m-user-logout">
+                                   class="link-btn link-lg link-color-orange link-reversed" id="user-logout">
                                 </a>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                     
                     <div data-sly-test="${!user.isLoggedIn}" class="sign-join-in hidden-md hidden-lg">
                         <a target="${properties.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-                           href="${user.signInURL}" id="m-user-login" class="user-login">
+                           href="${user.signInURL}" id="user-login" class="user-login">
                             <img data-sly-test="${properties.icon2Path}"
                                  src="${properties.icon2Path}" title="${properties.icon2Alt}" 
                                  alt="${properties.icon2Alt}" class="lock-icon"/>
