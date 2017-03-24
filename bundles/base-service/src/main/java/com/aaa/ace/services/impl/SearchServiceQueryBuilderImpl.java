@@ -3,11 +3,11 @@
  */
 package com.aaa.ace.services.impl;
 
+import java.net.URL;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 import org.apache.felix.scr.annotations.Activate;
@@ -132,10 +132,12 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 	 * 
 	 */
 	@Override
-	public String getSearchResultJSON(Map<String, String> searchInputMap) throws JSONException, RepositoryException {
+	public String getSearchResultJSON(Map<String, String> searchInputMap) throws JSONException, Exception {
 
 		// our final answer
 		JSONObject returnJSON = new JSONObject();
+		String link = null;
+		URL url = null;
 
 		// add configured path to query
 		searchInputMap.put("path", path);
@@ -178,16 +180,15 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 				ValueMap properties = hit.getProperties();
 
 				log.debug("Properties: " + properties);
+				link = pageResolver.resolveLinkMapURL(resourceResolver, hit.getResource().getParent().getPath());
+				url = new URL(link);
 
 				// Create items JSON object
 				JSONObject item = new JSONObject();
 
 				item.put("articleTitle", properties.get("articleTitle", String.class));
-
 				item.put("path", path);
-				item.put("link",
-						pageResolver.resolveLinkMapURL(resourceResolver, hit.getResource().getParent().getPath()));
-
+				item.put("link", url.getPath());
 				item.put("authorName", properties.get("authorName"));
 				item.put("articleLogoImage", properties.get("articleLogoImage"));
 				item.put("issueDate", properties.get("issueDate"));

@@ -283,12 +283,14 @@ if (signInUrl != null && signOutUrl != null && currentPage != null) {
         success: function(result) {
             if (result.isLoggedIn) {
                 $("#user-logout").attr("href", result.signOutURL);
-                $("#firstName").text(result.firstName);
-                $("#firstName-profile").text(result.firstName);
-
+				$("#firstName").text(result.firstName);
+				$("#firstName-profile").text(result.firstName);
+				/*Mobile Login*/
+				$("#m-user-logout").attr("href", result.signOutURL);
+				$("#m-firstName").text(result.firstName);             
             } else {
                 $("#user-login").attr("href", result.signInURL);
-
+				$("#m-user-login").attr("href", result.signInURL);			
             }
 
         }
