@@ -1,7 +1,6 @@
 @-ms-viewport {
     width: device-width;
 }
-
 .hide-text {
     font: 0/0 a;
     color: transparent;
@@ -17,7 +16,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 .visible-phone {
     display: none !important;
 }
@@ -70,15 +68,13 @@
     }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-    
     [class*="span"] {
         float: left;
         min-height: 1px;
         margin-left: 20px;
     }
-    
     .span12 {
-        width: 724px;
+        width: 100%;
     }
     .span11 {
         width: 662px;
@@ -323,7 +319,6 @@
         margin-left: 8.56353591160221%;
         *margin-left: 8.457152932878806%;
     }
-    
     .uneditable-input {
         margin-left: 0;
     }
@@ -333,7 +328,7 @@
     input.span12,
     textarea.span12,
     .uneditable-input.span12 {
-        width: 710px;
+        width: 100%;
     }
     input.span11,
     textarea.span11,
@@ -392,7 +387,6 @@
     }
 }
 @media (max-width: 767px) {
-    
     .dl-horizontal dt {
         float: none;
         clear: none;
@@ -402,11 +396,9 @@
     .dl-horizontal dd {
         margin-left: 0;
     }
-    
     .row-fluid {
         width: 100%;
     }
-    
     .thumbnails {
         margin-left: 0;
     }
@@ -459,11 +451,7 @@
     .controls-row [class*="span"]+[class*="span"] {
         margin-left: 0;
     }
-        
 }
-
-
-
 @media (max-width: 480px) {
     small {
         margin-top: 10px !important;
@@ -515,7 +503,6 @@
     }
 }
 @media (max-width: 767px) {
-    
     .flexslider {
         margin-top: 10px;
     }
@@ -586,7 +573,7 @@
         width: 228px;
     }
     .tablet-span12 {
-        width: 724px;
+        width: 100%;
     }
     .tablet-span12 {
         padding-bottom: 12px;
