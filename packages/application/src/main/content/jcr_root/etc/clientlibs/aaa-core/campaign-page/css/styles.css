@@ -6,9 +6,7 @@
     font-size: 13px;
     line-height: 18px;
     color: #4e4e4e;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    padding: 0 20px;
+    padding: 50px 20px;
 }
 .content span {
     float: left;
@@ -22,6 +20,9 @@
     vertical-align: middle;
     border: 0;
     -ms-interpolation-mode: bicubic;
+}
+.content #myhero {
+    background-size: cover !important;
 }
 .content .row {
     *zoom: 1;
@@ -374,5 +375,10 @@
     .offset10.nested-span,
     .offset11.nested-span {
         margin-left: 2%
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .content .btn {
+        padding: 6px;
     }
 }
