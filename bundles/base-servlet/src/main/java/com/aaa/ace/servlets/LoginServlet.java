@@ -1,7 +1,6 @@
 package com.aaa.ace.servlets;
 
 import java.io.IOException;
-import java.net.URL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -9,18 +8,15 @@ import javax.servlet.http.Cookie;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aaa.ace.common.Constants;
-import com.aaa.ace.services.PageSuffixResolverService;
 
 /**
  * Login servlet.
@@ -43,53 +39,28 @@ public class LoginServlet extends SlingAllMethodsServlet {
 	private static final String COOKIE_ACEUSER = "aceuser";
 	private static final Logger log = LoggerFactory.getLogger(LoginServlet.class);
 
-	@Reference
-	private PageSuffixResolverService pageSuffixResolverService;
-
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
 
-		String contentPath = (String) request.getParameter("currentPage");
-		String signInURL = (String) request.getParameter("signInUrl");
-		String signOutURL = (String) request.getParameter("signOutUrl");
 		boolean isLoggedIn = false;
 		String firstName = null;
 		String lastName = null;
-		URL url = null;
 		JSONObject obj = new JSONObject();
-		String requestUrl = getRequestURL(request);
-		ResourceResolver resolver = request.getResourceResolver();
 		Cookie logInCookie = request.getCookie(Constants.COOKIE_ASPXAUTH);
 
-		log.info("start LoginServlet : contentPath :{},signInURL :{},signOutURL:{}", contentPath, signInURL,
-				signOutURL);
-		log.debug(" User loggined :{}", logInCookie);
-		
-		// gets the Map url from the etc configurations
-		contentPath = pageSuffixResolverService.resolveLinkMapURL(resolver, contentPath);
-		
-		log.debug("url from the map.publish contentPath :{}", contentPath);
+		log.info("Start LoginServlet User loggined :{}", logInCookie);
+
+		if (logInCookie != null) {
+			isLoggedIn = true;
+			firstName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_FIRST_NAME, request);
+			lastName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_LAST_NAME, request);
+		}
 		try {
-			url = new URL(contentPath);
+			obj.put("isLoggedIn", isLoggedIn);
+			obj.put("firstName", firstName);
+			obj.put("lastName", lastName);
 
-			if (url != null && StringUtils.isNotBlank(url.getPath())) {
-
-				log.debug("url after removing domain from map.publish :{}", url.getPath());
-				signInURL = constructURL(signInURL, requestUrl, url.getPath());
-				signOutURL = constructURL(signOutURL, requestUrl, url.getPath());
-
-				if (logInCookie != null) {
-					isLoggedIn = true;
-					firstName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_FIRST_NAME, request);
-					lastName = fetchCookieValue(COOKIE_ACEUSER, PROPERTY_LAST_NAME, request);
-				}
-				obj.put("isLoggedIn", isLoggedIn);
-				obj.put("firstName", firstName);
-				obj.put("lastName", lastName);
-				obj.put("signInURL", signInURL);
-				obj.put("signOutURL", signOutURL);
-			}
 		} catch (Exception e) {
 			log.error("Error occurred in creating json :{}", e.getMessage());
 		}
@@ -97,54 +68,10 @@ public class LoginServlet extends SlingAllMethodsServlet {
 		String jsonData = obj.toString();
 		response.setContentType("application/json");
 
-		log.info("End LoginServlet, rseponse :{}", jsonData);
+		log.info("End LoginServlet, response :{}", jsonData);
 
 		// Returns the user information
 		response.getWriter().write(jsonData);
-	}
-
-	/**
-	 * Gets the request URL by appending the request scheme, host and port.
-	 *
-	 * @param request
-	 * @return
-	 */
-	private String getRequestURL(SlingHttpServletRequest request) {
-
-		String scheme = request.getScheme();
-		String serverName = request.getServerName();
-		int serverPort = request.getServerPort();
-
-		log.info("Entered getRequestURL()");
-		// Reconstruct original requesting URL
-		StringBuilder url = new StringBuilder();
-		url.append(scheme).append("://").append(serverName).append(":").append(serverPort);
-
-		log.info("End getRequestURL()");
-
-		return url.toString();
-	}
-
-	/**
-	 * Construct the Final URL.
-	 *
-	 * @param url
-	 * @param requestURL
-	 * @param currentPagePath
-	 * @return
-	 */
-	private String constructURL(String url, String requestURL, String currentPagePath) {
-
-		String finalURL = "";
-		log.info("Entered constructURL(), url:{} ", url);
-
-		if (StringUtils.isNotBlank(url)) {
-			finalURL = url + "?ReturnURL=" + requestURL + currentPagePath;
-			finalURL = (currentPagePath.endsWith(".html") ? finalURL : (finalURL + ".html"));
-		}
-
-		log.info("End constructURL()");
-		return finalURL;
 	}
 
 	/**
