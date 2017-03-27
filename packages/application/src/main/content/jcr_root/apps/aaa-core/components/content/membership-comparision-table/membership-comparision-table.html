@@ -1,17 +1,22 @@
-<!-- Sightly global objects declaration
-============================================= -->
+<!--/*
+    Membership Comparison Table component
+    ----------------------------------------------------------------
+    
+	This component is used to construct the comparison table.
+*/-->
 
-<sly data-sly-use.tableprovider="${'com.aaa.ace.sightly.providers.MembershipTableProvider'}"/>
+<!--/* Sightly global objects declaration
+============================================= */-->
+<sly data-sly-use.tableprovider="${'com.aaa.ace.sightly.providers.MembershipTableProvider'}" />
+<!--/* #sightly-global-objects-declaration end */-->
 
-<!-- #sightly-global-objects-declaration end -->
-
-<!-- Placeholder Content
-============================================= -->
+<!--/* Placeholder Content
+============================================= */-->
 <img data-sly-test="${(wcmmode.edit || wcmmode.design) && !properties.columnCount}"
     data-emptytext="Author Membership Comparison Table Component Here"
     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
     alt="Membership Comparison Table Component" />
-<!-- #placeholder-content end -->
+<!--/* #placeholder-content end */-->
 
 <!-- Membership Comparison Table
 ============================================= -->
@@ -90,4 +95,4 @@
     </div>
     <!-- Modal Box content end-->
 </div>
-<!-- #Membership Comparision Table-content end -->
+<!-- #membership-comparision-table-content end -->

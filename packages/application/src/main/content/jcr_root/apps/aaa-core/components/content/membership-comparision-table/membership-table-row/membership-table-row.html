@@ -4,29 +4,28 @@
     Hidden component that makes up the table row.
 */-->
 
-<!-- Sightly global objects declaration
-============================================= -->
+<!--/* Sightly global objects declaration
+============================================= */-->
 <sly data-sly-use.tablerowprovider="${'com.aaa.ace.sightly.providers.MembershipTableRowProvider'}" />
 <sly data-sly-use.icon1="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon1'}" />
 <sly data-sly-use.icon2="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon2'}" />
 <sly data-sly-use.icon3="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='icon3'}" />
 <sly data-sly-test.isAuthored="${properties.showModalBox || properties.enableCol1Text || properties.enableCol2Text || 
 								properties.enableCol3Text || icon1.childResource || icon2.childResource || icon3.childResource}" />
-<!-- #sightly-global-objects-declaration end -->
+<!--/* #sightly-global-objects-declaration end */-->
 
-<!-- Placeholder Content
-=============================================-->
+<!--/* Placeholder Content
+============================================= */-->
 <div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" 
 	 data-emptytext="Author Membership Table Row here"
      src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
      alt="Membership Comparison Table Row Component" style="align:center;">
 </div>
-<!-- #placeholder-content-end -->
+<!--/* #placeholder-content-end */-->
 
-<!-- Row Content
+<!-- Table Row Content
 =============================================-->
 <sly data-sly-test="${isAuthored}">
-
     <div class="row membership-cols roboto-light font-h hidden-md hidden-lg">
         <div class="col-md-3 col-sm-12 col-xs-12 icon-info text-center ${properties.alignTop ? 'align-top' : ''}">
 			<span class="text-center">
@@ -86,6 +85,5 @@
             </span>
         </div>
     </div>
-
 </sly>
-<!-- #row-content-end -->
+<!-- #table-row-content-end -->
