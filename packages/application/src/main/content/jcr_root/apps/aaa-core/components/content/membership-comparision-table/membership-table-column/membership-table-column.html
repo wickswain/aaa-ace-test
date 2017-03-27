@@ -1,20 +1,28 @@
 <!--/*
-    Membership Table Row component
+    Membership Table Column component
     ----------------------------------------------------------------
-    Hidden component that makes up the table row.
+    Hidden component that makes up the table columns.
 */-->
 
-<!-- Placeholder Content
-=============================================-->
-<sly data-sly-test.isAuthored="${properties.title || properties.headerImage}"></sly>
-<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}" data-emptytext="Author Membership Table Column here"
-     class="cq-placeholder" style="text-align: center;">
-</div>
+<!--/* Sightly global objects declaration
+============================================= */-->
+<sly data-sly-test.isAuthored="${properties.title || properties.headerImage}" />
+<!--/* #sightly-global-objects-declaration end */-->
 
-<div class="header" data-sly-test="${isAuthored}">
+<!--/* Placeholder Content
+============================================= */-->
+<div data-sly-test="${(wcmmode.edit || wcmmode.design) && !isAuthored}"
+	 data-emptytext="Author Membership Table Column here"
+     src="/libs/cq/ui/resources/0.gif" class="cq-placeholder"
+     alt="Membership Comparison Table Column Component" style="text-align: center;">
+</div>
+<!--/* #placeholder-content-end */-->
+
+<!-- Table Column Content
+=============================================-->
+<div data-sly-test="${isAuthored}" class="header">
     <div class="membership-comparison-img-height">
-        <img src="${properties.headerImage}" title="${properties.headerImageAltText}" 
-             alt="${properties.headerImageAltText}" class="img-responsive" />
+        <img src="${properties.headerImage}" title="${properties.headerImageAltText}" alt="${properties.headerImageAltText}" class="img-responsive" />
     </div>
     
     <div class="contentblock">
@@ -27,3 +35,4 @@
 	<div class="${properties.ctabuttonAlignment ? properties.ctabuttonAlignment : 'text-center'}" data-sly-resource="${ @path='cta-small', resourceType='/apps/aaa-core/components/content/ctabuttons/single-ctabutton-small'}">
 	</div>
 </div>
+<!-- #table-column-content-end -->
