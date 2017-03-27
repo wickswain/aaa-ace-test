@@ -272,27 +272,30 @@ var signOutUrl = $("#signOutUrl").val();
 var signInUrl = $("#signInUrl").val();
 
 if (signInUrl != null && signOutUrl != null) {
-    signOutUrl = signOutUrl + "?ReturnURL=" + currentPageUrl;
-    signInUrl = signInUrl + "?ReturnURL=" + currentPageUrl;
-	
-    $.ajax({
-        type: "POST",
-        url: "/bin/aaa/userlogin",
-        dataType: 'json',
-        success: function(result) {
-            if (result.isLoggedIn) {
-                $("#user-logout").attr("href",signOutUrl);
+	signOutUrl = signOutUrl + "?ReturnURL=" + currentPageUrl;
+	signInUrl = signInUrl + "?ReturnURL=" + currentPageUrl;
+
+	$.ajax({
+		type : "POST",
+		url : "/bin/aaa/userlogin",
+		dataType : 'json',
+		success : function(result) {
+			if (result.isLoggedIn) {
+				$("#user-logout").attr("href", signOutUrl);
 				$("#firstName").text(result.firstName);
 				$("#firstName-profile").text(result.firstName);
 				/*Mobile Login*/
-				$(".m-user-details .avatar-details .signout #user-logout").attr("href", signOutUrl);
-				$(".m-user-details .avatar-details .restrict-characters").text(result.firstName);             
-            } else {
-                $("#user-login").attr("href", signInUrl);
-				$(".m-user-details .sign-join-in .user-login").attr("href", signInUrl);			
-            }
+				$(".m-user-details .avatar-details .signout #user-logout")
+						.attr("href", signOutUrl);
+				$(".m-user-details .avatar-details .restrict-characters").text(
+						result.firstName);
+			} else {
+				$("#user-login").attr("href", signInUrl);
+				$(".m-user-details .sign-join-in .user-login").attr("href",
+						signInUrl);
+			}
 
-        }
+		}
 
-    });
+	});
 }
