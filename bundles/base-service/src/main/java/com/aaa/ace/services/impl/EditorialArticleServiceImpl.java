@@ -144,6 +144,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		// add where, replace path
 		sqlStringBuffer.append(StringUtils.replace(sqlTemplateClause, "<<template>>", DEFAULT_ARTICLE_TEMPLATE));
 
+		// check for popularity property existence
 		if (usePopularity) {
 			sqlStringBuffer.append(sqlPopularityClause);
 		}
