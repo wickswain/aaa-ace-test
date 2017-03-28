@@ -38,11 +38,26 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 	 * Logger variable.
 	 */
 	private static final Logger logger = LoggerFactory.getLogger(EditorialArticleServiceImpl.class);
+	
+	/**
+	 * Default article template.
+	 */
+	private static final String DEFAULT_ARTICLE_TEMPLATE = "/apps/ace-www/templates/article";
 
 	/**
 	 * SQL where clause string.
 	 */
 	static String sqlWhereClause = " WHERE ISDESCENDANTNODE(parent, '<<path>>') ";
+
+	/**
+	 * SQL template clause string.
+	 */
+	static String sqlTemplateClause = " AND child.[cq:template]='<<template>>' ";
+
+	/**
+	 * SQL popularity clause string.
+	 */
+	static String sqlPopularityClause = " AND child.[pagePopularity] IS NOT NULL ";
 
 	/**
 	 * SQL tag clause string.
@@ -67,7 +82,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 			return cards;
 		}
 
-		logger.debug("Executing query statement {}", sqlQueryStr);
+		logger.info("Executing query statement {}", sqlQueryStr);
 
 		// Result of the query
 		List<Resource> resourceList;
@@ -126,6 +141,13 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		// add where, replace path
 		sqlStringBuffer.append(StringUtils.replace(sqlWhereClause, "<<path>>", path));
 
+		// add where, replace path
+		sqlStringBuffer.append(StringUtils.replace(sqlTemplateClause, "<<template>>", DEFAULT_ARTICLE_TEMPLATE));
+
+		if (usePopularity) {
+			sqlStringBuffer.append(sqlPopularityClause);
+		}
+		
 		// loop over tag list and add them one by one
 		if (searchTagList != null && !searchTagList.isEmpty()) {
 			sqlStringBuffer.append(Constants.AND);
@@ -145,10 +167,10 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		sqlStringBuffer.append(Constants.SQL_ORDER_BY);
 
 		if (usePopularity) {
-			sqlStringBuffer.append(" child.pagePopularity ").append(Constants.COMMA);
+			sqlStringBuffer.append(" child.[pagePopularity] asc").append(Constants.COMMA);
 		}
-
-		sqlStringBuffer.append(" child.[jcr:created] desc ");
+		
+		sqlStringBuffer.append(" child.[jcr:created] desc");
 
 		return sqlStringBuffer.toString();
 	}
