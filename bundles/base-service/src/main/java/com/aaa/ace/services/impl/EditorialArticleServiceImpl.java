@@ -144,7 +144,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		sqlStringBuffer.append(Constants.SQL_ORDER_BY);
 
 		if (usePopularity) {
-			sqlStringBuffer.append(" child.popularity ").append(Constants.COMMA);
+			sqlStringBuffer.append(" child.pagePopularity ").append(Constants.COMMA);
 		}
 
 		sqlStringBuffer.append(" child.[jcr:created] desc ");
