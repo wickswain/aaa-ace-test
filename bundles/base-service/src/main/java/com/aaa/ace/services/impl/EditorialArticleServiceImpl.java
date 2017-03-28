@@ -1,9 +1,10 @@
 package com.aaa.ace.services.impl;
 
-import com.aaa.ace.beans.EditorialCardBean;
-import com.aaa.ace.common.Constants;
-import com.aaa.ace.services.EditorialArticleService;
-import com.aaa.ace.services.QueryService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+import javax.jcr.RepositoryException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Component;
@@ -14,15 +15,14 @@ import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-
-import javax.jcr.RepositoryException;
+import com.aaa.ace.beans.EditorialCardBean;
+import com.aaa.ace.common.Constants;
+import com.aaa.ace.services.EditorialArticleService;
+import com.aaa.ace.services.QueryService;
 
 /**
- * Editorial service implementation class. Responsible to construct the query
- * and get the results back to provider class.
+ * Editorial service implementation class. This class is responsible to
+ * construct the query and get the results back to the provider class.
  *
  * @author yogesh.mahajan
  *
@@ -37,7 +37,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 	/**
 	 * Logger variable.
 	 */
-	private final Logger log = LoggerFactory.getLogger(getClass());
+	private static final Logger logger = LoggerFactory.getLogger(EditorialArticleServiceImpl.class);
 
 	/**
 	 * SQL where clause string.
@@ -52,7 +52,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 	@Override
 	public List<EditorialCardBean> getEditorialArticles(String path, List<String> searchTagList,
 			boolean usePopularity) {
-		log.debug("Executing getEditorialArticles method with parameters Path: {}, Search Tags: {}, UsePopularity: {}",
+		logger.info("Start of getEditorialArticles method with parameters Path: {}, Search Tags: {}, UsePopularity: {}",
 				path, searchTagList, usePopularity);
 
 		// List to be returned
@@ -63,24 +63,24 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 
 		// Return empty list, let caller deal with it
 		if (StringUtils.isEmpty(sqlQueryStr)) {
-			log.warn("Could not fetch articles due to empty sql generated, return empty list");
+			logger.warn("Could not fetch articles due to empty sql generated, return empty list");
 			return cards;
 		}
 
-		log.debug("Executing query statement {}", sqlQueryStr);
+		logger.debug("Executing query statement {}", sqlQueryStr);
 
 		// Result of the query
 		List<Resource> resourceList;
 		try {
 			resourceList = queryService.getResultResources(sqlQueryStr, 3);
 
-			log.debug("Query service returned {} results", resourceList.size());
+			logger.debug("Query service returned {} results", resourceList.size());
 
 			// loop over the result resource list and construct bean list
 			for (Resource resource : resourceList) {
 				EditorialCardBean card = new EditorialCardBean();
 
-				log.debug("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
+				logger.debug("Fetching properties for resource {} at path {} ", resource.getName(), resource.getPath());
 				/*
 				 * Assuming here, the query returns good articles which have
 				 * title, description and image TODO: Modify query to have not
@@ -99,13 +99,14 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 				cards.add(card);
 			}
 
-			log.debug("Returning Editorial Card bean: " + cards.toString());
+			logger.debug("Returning Editorial Card bean: " + cards.toString());
 
 		} catch (RepositoryException e) {
-			log.error("Could not retrieve articles ", e);
+			logger.error("Could not retrieve articles ", e);
 			return cards; // Return empty list, let caller deal with it
 		}
 
+		logger.info("End of getEditorialArticles method: " + cards.toString());
 		return cards;
 	}
 
@@ -113,7 +114,7 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		// Path is null, dangerous to run query without path restriction. Let
 		// caller handle null.
 		if (StringUtils.isEmpty(path)) {
-			log.warn("Path is not available returning null");
+			logger.warn("Path is not available returning null");
 			return null;
 		}
 
