@@ -181,14 +181,17 @@ public class SearchServiceQueryBuilderImpl implements SearchService {
 
 				log.debug("Properties: " + properties);
 				link = pageResolver.resolveLinkMapURL(resourceResolver, hit.getResource().getParent().getPath());
-				url = new URL(link);
+
+				if (!link.startsWith("/")) {
+					url = new URL(link);
+				}
 
 				// Create items JSON object
 				JSONObject item = new JSONObject();
 
 				item.put("articleTitle", properties.get("articleTitle", String.class));
 				item.put("path", path);
-				item.put("link", url.getPath());
+				item.put("link", (url != null ? url.getPath() : link));
 				item.put("authorName", properties.get("authorName"));
 				item.put("articleLogoImage", properties.get("articleLogoImage"));
 				item.put("issueDate", properties.get("issueDate"));
