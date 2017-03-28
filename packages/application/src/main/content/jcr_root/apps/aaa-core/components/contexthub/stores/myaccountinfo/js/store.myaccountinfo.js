@@ -1,12 +1,13 @@
-/*
- *  MyAccount Information ContextHub Store
- *  ---------------------------------------
+/**
+ * MyAccount Information ContextHub Store
+ * ---------------------------------------
  * 
- *  This store holds the logged in user account information.
- *
+ * This store holds the logged in user account information.
+ * 
  */
 
-ContextHub.console.log(ContextHub.Shared.timestamp(),
+ContextHub.console
+		.log(ContextHub.Shared.timestamp(),
 				'[loading] contexthub.store.contexthub.myaccountinfo - store.myaccountinfo.js');
 
 (function($) {
@@ -15,44 +16,28 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
 	/**
 	 * Gets logged in user account information.
 	 * 
-     * @return requestInfo object.
+	 * @return requestInfo object.
 	 */
 	var getMyAccountInfo = function() {
 		var isLoggedIn = false;
-        var url = getHost() + "/user.loginstatus.json";
+		var url = "/user.loginstatus.json";
 
-        $.ajax({
-            type: 'GET',
-            url: url,
-            dataType: 'json',
-            success: function(response) { 
+		$.ajax({
+			type : 'GET',
+			url : url,
+			dataType : 'json',
+			success : function(response) {
 				isLoggedIn = response.isLoggedIn;
-            },
-            async: false
-        });
+			},
+			async : false
+		});
 
-        return {
+		return {
 			myaccountinfo : {
 				isloggedin : isLoggedIn
 			}
 		};
 	};
-
-    /**
-	 * Gets the host.
-	 * 
-	 */
-	function getHost() {
-        var host = window.location.hostname;
-        var port = window.location.port;
-
-        if (port) {
-            host = host + ":" + port;
-        }
-        
-        return "http://"+host
-    }
-
 
 	/**
 	 * MyAccount Information store.
@@ -60,7 +45,7 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
 	 * @constructor
 	 */
 	function MyAccountInfoStore(name, config) {
-        this.init(name, config);
+		this.init(name, config);
 
 		/**
 		 * MyAccount Information store
@@ -87,19 +72,19 @@ ContextHub.console.log(ContextHub.Shared.timestamp(),
 		 */
 		this.updateMyAccountInfo = function() {
 			var accountInfo = getMyAccountInfo();
-            this.setItem('myaccountinfo', accountInfo.myaccountinfo);
+			this.setItem('myaccountinfo', accountInfo.myaccountinfo);
 		};
 
 		// init
 		this.update();
-    }
+	}
 
 	/* Inherit from ContextHub.Store.PersistedStore */
 	ContextHub.Utils.inheritance.inherit(MyAccountInfoStore,
 			ContextHub.Store.PersistedStore);
 
 	/* Register Store */
-	ContextHub.Utils.storeCandidates.registerStoreCandidate(
-			MyAccountInfoStore, 'contexthub.myaccountinfo', 0);
+	ContextHub.Utils.storeCandidates.registerStoreCandidate(MyAccountInfoStore,
+			'contexthub.myaccountinfo', 0);
 
 }(ContextHubJQ));

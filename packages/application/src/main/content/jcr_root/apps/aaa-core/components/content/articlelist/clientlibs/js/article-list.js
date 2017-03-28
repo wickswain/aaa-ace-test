@@ -80,7 +80,7 @@ $j(function ($) {
             	filter = "&filter=" + articleFilterTagLocal;
             }
             
-            var url = getHost() + "/get.articles.json?start="+start+filter;
+            var url = "/get.articles.json?start=" + start + filter;
             $.getJSON(url, '', articleReceived);
         }
 
