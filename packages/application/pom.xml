@@ -57,7 +57,7 @@
                         </filter>
                         
                         <filter>
-                            <root>/etc/clientlibs/aaa-thirdparty/nav</root>
+                            <root>/etc/clientlibs/aaa-thirdparty</root>
                         </filter>
                         
                         <filter>
