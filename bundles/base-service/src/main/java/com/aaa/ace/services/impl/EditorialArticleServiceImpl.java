@@ -63,6 +63,16 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 	 * SQL tag clause string.
 	 */
 	static String sqlTagClause = " child.[cq:tags]='<<tag>>' ";
+	
+    /**
+     * String Open brace.
+     */
+    public static final String OPEN_BRACE = " ( ";
+
+    /**
+     * String Close brace.
+     */
+    public static final String CLOSE_BRACE = " ) ";
 
 	@Override
 	public List<EditorialCardBean> getEditorialArticles(String path, List<String> searchTagList,
@@ -153,6 +163,8 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 		if (searchTagList != null && !searchTagList.isEmpty()) {
 			sqlStringBuffer.append(Constants.AND);
 
+			sqlStringBuffer.append(OPEN_BRACE);
+			
 			ListIterator<String> tagStrIterator = searchTagList.listIterator();
 
 			while (tagStrIterator.hasNext()) {
@@ -162,6 +174,8 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 					sqlStringBuffer.append(Constants.OR);
 				}
 			}
+			
+			sqlStringBuffer.append(CLOSE_BRACE);
 		}
 
 		// add sorting
@@ -175,5 +189,5 @@ public class EditorialArticleServiceImpl implements EditorialArticleService {
 
 		return sqlStringBuffer.toString();
 	}
-
+	
 }
