@@ -1,23 +1,23 @@
-$(function() {
-	// Page paths information can be updated here.
-	var landingpagepath = "";
-	var searchlandingpagepath = "/search-results.html";
-	var joinpagepath = "";
-    var logoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/orbit-logo.png";
-    var califLogoImagePath = "http://www.aaaprod.axis41.net/content/dam/ace/logo/acsc-logo.png";
+$(function () {
+    // Page paths information can be updated here.
+    var landingpagepath = "";
+    var searchlandingpagepath = "/search-results.html";
+    var joinpagepath = "";
+    var logoImagePath = "//www.northernnewengland.aaa.com/content/dam/ace/logo/orbit-logo.png";
+    var califLogoImagePath = "//www.calif.aaa.com/content/dam/ace/logo/acsc-logo.png";
 
-	// Environment information can be updated here.
-	var protocol = "http://";
-	var environment = "www";
-	var subdomain = ".aaaprod.axis41.net";
+    // Environment information can be updated here.
+    var protocol = "//";
+    var environment = "www";
+    var subdomain = ".aaa.com";
 
-    var validRegions = ['texas', 'calif', 'hawaii','newmexico','northernnewengland','alabama', 'tidewater', 'autoclubmo', 'eastcentral']
+    var validRegions = ['texas', 'calif', 'hawaii', 'newmexico', 'northernnewengland', 'alabama', 'tidewater', 'autoclubmo', 'eastcentral', 'newsne-aaa', 'tx-aaa', 'newshi-aaa'];
+    var iPressRegions = ['newsne-aaa', 'tx-aaa', 'newshi-aaa'];
+    var defaultregionname = "calif";
 
-	var defaultregionname = "calif";
+    function getRegionName() {
 
-	function getRegionName() {
-
-		//Get region in cookie
+        //Get region in cookie
         var regionInCookie = getCookie('aaa-region');
 
         //Get region from referrer if available
@@ -26,63 +26,86 @@ $(function() {
         var regionInReferrer;
 
 
-	    if (host) {
-	        host = host.split('.');
-	        if(host.length >= 3) {
-	            regionInReferrer = host[1];            	
-	        }            
-	    }
+        if (host) {
+            host = host.split('.');
+            if (host.length >= 3) {
+                regionInReferrer = host[1];
+                if (!($.inArray(regionInReferrer, validRegions) >= 0 )) {
+                    regionInReferrer = host[0];
+                }
+            }
+        }
 
-		//if referrer is present and valid, it has higher priority as user might have changed the region
-        if(regionInReferrer && ($.inArray(regionInReferrer, validRegions)>=0 ))
-        {
-			//set it in cookie and return it. 
-			setCookie('aaa-region' , regionInReferrer, 1/24);
+        //if referrer is present and valid, it has higher priority as user might have changed the region
+        if (regionInReferrer && ($.inArray(regionInReferrer, validRegions) >= 0 )) {
+
+            ///ipress format check
+            if(($.inArray(regionInReferrer, iPressRegions) >= 0 )){
+                regionInReferrer = iPressFormat(regionInReferrer);
+            }
+
+            //set it in cookie and return it.
+            setCookie('aaa-region', regionInReferrer, 1 / 24);
             return regionInReferrer;
 
-        }else
-        {
+        } else {
             //referrer is not present or invalid, use from cookie if present
-            if (regionInCookie){
-				return regionInCookie;
-            }else
-            {
-				//set default in cookie untill we get from referrer 
-				setCookie('aaa-region' , defaultregionname, 1/24);
+            if (regionInCookie) {
+                return regionInCookie;
+            } else {
+                //set default in cookie untill we get from referrer
+                setCookie('aaa-region', defaultregionname, 1 / 24);
 
             }
         }
 
-	    return defaultregionname;
+        return defaultregionname;
     }
 
-	var regionname = getRegionName();
+    ///need to format NNE, TX, and HI to valid regions
+    function iPressFormat(region){
+        var validRegion;
+        switch(region){
+            case "newsne-aaa":
+                validRegion = "northernnewengland";
+                break;
+            case "tx-aaa":
+                validRegion = "texas";
+                break;
+            case "newshi-aaa":
+                validRegion = "hawaii";
+                break;
 
-	function getHostName() {
+        }
+        return validRegion;
+    }
+
+    var regionname = getRegionName();
+
+    function getHostName() {
         return protocol + environment + "." + regionname + subdomain;
     }
-	var hostname = getHostName();
 
-	var logoPath = "";
-    if (regionname === 'calif')
-    {
+    var hostname = getHostName();
+
+    var logoPath = "";
+    if (regionname === 'calif') {
         logoPath = califLogoImagePath;
-    }else
-    {
+    } else {
         logoPath = logoImagePath;
     }
 
-	
-	$('#logo-link').find('img').attr('src', logoPath);
+
+    $('#logo-link').find('img').attr('src', logoPath);
     $('#user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
     $('#m-user-login').attr('href', "http://apps." + regionname + ".aaa.com/aceapps/account/my-account");
-	$('#logo-link').attr('href', hostname + landingpagepath);
-	$('#find-a-branch-link').attr('href', 'http://locator.aaa.com/');
-	$('#m-find-a-branch-link').attr('href', 'http://locator.aaa.com/');
-	$('#contact-us-link').attr('href', hostname + '/contact-us.html');
-	$('#m-contact-us-link').attr('href', hostname + '/contact-us.html');
-	$('#truck-link').attr('href', hostname + '/automotive/roadside-assistance.html');
-    
+    $('#logo-link').attr('href', hostname + landingpagepath);
+    $('#find-a-branch-link').attr('href', 'http://locator.aaa.com/');
+    $('#m-find-a-branch-link').attr('href', 'http://locator.aaa.com/');
+    $('#contact-us-link').attr('href', hostname + '/contact-us.html');
+    $('#m-contact-us-link').attr('href', hostname + '/contact-us.html');
+    $('#truck-link').attr('href', hostname + '/automotive/roadside-assistance.html');
+
     // Need to remove the port number if it is not required once this code moves to production environment
     $('#nav-0').attr('href', hostname + landingpagepath + "?navigationLink=nav-0");
     $('#nav-1').attr('href', hostname + landingpagepath + "?navigationLink=nav-1");
@@ -96,7 +119,7 @@ $(function() {
 
     // Search functionality
     var searchkeyValue = "";
-    $("#searchKey").keyup(function(event) {
+    $("#searchKey").keyup(function (event) {
         if (event.keyCode == 13) {
             searchkeyValue = $("#searchKey").val();
             if (searchkeyValue) {
@@ -106,8 +129,8 @@ $(function() {
             }
         }
     });
-    
-    $("#m-searchKey").keyup(function(event) {
+
+    $("#m-searchKey").keyup(function (event) {
         if (event.keyCode == 13) {
             searchkeyValue = $("#m-searchKey").val();
             if (searchkeyValue) {
@@ -117,9 +140,9 @@ $(function() {
             }
         }
     });
-    
-    $("#m-search-btn").click(function(event) {
-    	searchkeyValue = $("#m-searchKey").val();
+
+    $("#m-search-btn").click(function (event) {
+        searchkeyValue = $("#m-searchKey").val();
         if (searchkeyValue) {
             window.location.href = hostname + searchlandingpagepath + '?q=' + searchkeyValue;
         } else {
@@ -127,13 +150,13 @@ $(function() {
         }
     });
 
-    $(".menu").click(function(e) {
+    $(".menu").click(function (e) {
         $(".navigation-bar, #search-hide").stop().fadeIn();
         $(".slideboxer").css("left", "0");
         e.preventDefault();
     });
-    
-    $(".m-close-icon").click(function(e) {
+
+    $(".m-close-icon").click(function (e) {
         $('.slideboxer').css('left', '-375px');
         $(".navigation-bar").stop().fadeOut();
         $('.slide-nav').removeAttr('style');
@@ -141,30 +164,30 @@ $(function() {
         $(".overlay").hide();
         e.preventDefault();
     });
-    
-    $('.search-btn').on('click', function(e) {
+
+    $('.search-btn').on('click', function (e) {
         $('.expand-searchbar').animate({
             opacity: '1',
             width: '70%'
         }, 500).prev().fadeOut();
         e.preventDefault();
     });
-    
-    $('.expand-searchbar #d-close-searchbar').parent().on('click', function(e) {
+
+    $('.expand-searchbar #d-close-searchbar').parent().on('click', function (e) {
         $('.expand-searchbar').animate({
             opacity: '0',
             width: '20%'
         }, 500).prev().fadeIn();
         e.preventDefault();
     });
-    
-    $("#search-hide").click(function(e) {
+
+    $("#search-hide").click(function (e) {
         $(".advance-search, .search-overlay").show();
         $("#search-hide, .m-close-icon").hide();
         e.preventDefault();
     });
-    
-    $(".advance-search #m-close-searchbar").click(function(e) {
+
+    $(".advance-search #m-close-searchbar").click(function (e) {
         $(".advance-search, .search-overlay").hide();
         $("#search-hide, .m-close-icon").show();
         e.preventDefault();
@@ -173,16 +196,16 @@ $(function() {
     $(".advance-search").hide();
 
     function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-	}
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
 
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
-        for(var i = 0; i < ca.length; i++) {
+        for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
