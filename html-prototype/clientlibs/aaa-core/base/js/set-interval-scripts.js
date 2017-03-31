@@ -349,11 +349,11 @@ var interval = setInterval(function() {
                 $radio.siblings('input[name="rs_hotel_options"]').data('waschecked', false);
             });
             $('.rad-area').hide();
-            $('.rs_chk_out').change(function() {
+            $('.rs_chk_out').change(function(e) {
                 $('.rs_chk_out').val($(this).val());
                 e.preventDefault();
             });
-            $('.rs_chk_in').change(function() {
+            $('.rs_chk_in').change(function(e) {
                 $('.rs_chk_in').val($(this).val());
                 e.preventDefault();
             });
