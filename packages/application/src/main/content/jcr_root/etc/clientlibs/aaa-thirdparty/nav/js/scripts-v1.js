@@ -25,6 +25,9 @@ $(function () {
         var host = document.referrer;
         var regionInReferrer;
 
+        if(host == ""){
+            host = window.location.hostname;
+        }
 
         if (host) {
             host = host.split('.');
