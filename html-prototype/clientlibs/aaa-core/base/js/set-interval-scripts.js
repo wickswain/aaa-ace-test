@@ -31,7 +31,6 @@ var interval = setInterval(function() {
         // Variables declaration starts
         var club_number = $('#club_number').val();
         var ref_id = $('#ref_id').val();
-        console.log('ref ID:' + ref_id);
         if (typeof ref_id === 'undefined') {
             var requestURL = window.location.hostname;
             if (requestURL.split('.').length > 2) {
@@ -349,11 +348,11 @@ var interval = setInterval(function() {
                 $radio.siblings('input[name="rs_hotel_options"]').data('waschecked', false);
             });
             $('.rad-area').hide();
-            $('.rs_chk_out').change(function() {
+            $('.rs_chk_out').change(function(e) {
                 $('.rs_chk_out').val($(this).val());
                 e.preventDefault();
             });
-            $('.rs_chk_in').change(function() {
+            $('.rs_chk_in').change(function(e) {
                 $('.rs_chk_in').val($(this).val());
                 e.preventDefault();
             });
