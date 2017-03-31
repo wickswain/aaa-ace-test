@@ -28,184 +28,267 @@ import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.day.cq.commons.Externalizer;
+import com.aaa.ace.services.PageSuffixResolverService;
+import com.aaa.ace.services.RegionDataService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 import com.day.cq.wcm.api.PageManager;
 
-
-
-@Component(metatype = true, label = "AAA ACE - Site Map Servlet",
-                description = "Page Site Map Servlet")
+/**
+ * The SiteMapServlet class defined to render the SiteMap structure for the
+ * given root of the site.
+ *
+ * @author bharath.kambam
+ *
+ */
+@Component(metatype = true, label = "AAA ACE - Site Map Servlet", description = "Render the SiteMap structure for the site in XML format.")
 @Service
 @SuppressWarnings("serial")
 @Properties(value = {
-                @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default",
-                                                                 propertyPrivate = true),
-                @Property(name = "sling.servlet.selectors", value = "sitemap",
-                                                                 propertyPrivate = true),
-                @Property(name = "sling.servlet.extensions", value = "xml",
-                                                                 propertyPrivate = true),
-                @Property(name = "sling.servlet.methods", value = "GET",
-                                                                 propertyPrivate = true) })
+		@Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default", propertyPrivate = true),
+		@Property(name = "sling.servlet.selectors", value = "sitemap", propertyPrivate = true),
+		@Property(name = "sling.servlet.extensions", value = "xml", propertyPrivate = true),
+		@Property(name = "sling.servlet.methods", value = "GET", propertyPrivate = true) })
 public final class SiteMapServlet extends SlingSafeMethodsServlet {
 
-    private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
+	/**
+	 * Logger constant variable.
+	 */
+	private static final Logger logger = LoggerFactory.getLogger(SiteMapServlet.class);
 
-    private static final boolean DEFAULT_INCLUDE_LAST_MODIFIED = false;
+	/**
+	 * Date format constant variable (yyyy-MM-dd).
+	 */
+	private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
 
-    private static final String DEFAULT_HOME_PAGE = "/content/ace-www";
-    
-    //default property to be used to exclude pages. 
-    private static final String DEFAULT_HIDE_IN_SITEMAP_PROPERTY = "hideInSitemap";
+	/**
+	 * Include last modified default flag constant.
+	 */
+	private static final boolean DEFAULT_INCLUDE_LAST_MODIFIED = false;
 
-    @Property(label = "Site Home Page", unbounded = PropertyUnbounded.DEFAULT,
-                    description = "The path of site home page, this will be used as the root page"
-                                    + " and all the child node of this "
-                                    + " path will be included in site map.",
-                    value = DEFAULT_HOME_PAGE)
-    private static final String PROP_SITE_HOME_PAGE = "site.root";
+	/**
+	 * Home page default constant.
+	 */
+	private static final String DEFAULT_HOME_PAGE = "/content/ace-www";
 
-    @Property(boolValue = DEFAULT_INCLUDE_LAST_MODIFIED, label = "Include Last Modified",
-                    description = "If true, the last modified value will be "
-                                    + "included in the sitemap.")
-    private static final String PROP_INCLUDE_LAST_MODIFIED = "include.lastmod";
+	/**
+	 * Hide in SiteMap property.
+	 */
+	private static final String DEFAULT_HIDE_IN_SITEMAP_PROPERTY = "hideInSitemap";
 
-    @Property(label = "Change Frequency Properties", unbounded = PropertyUnbounded.ARRAY,
-                    description = "The set of JCR property names which will contain "
-                                    + "the change frequency value.")
-    private static final String PROP_CHANGE_FREQUENCY_PROPERTIES = "changefreq.properties";
+	/**
+	 * NameSpace constant.
+	 */
+	private static final String NS = "http://www.sitemaps.org/schemas/sitemap/0.9";
 
-    @Property(label = "Priority Properties", unbounded = PropertyUnbounded.ARRAY,
-                    description = "The set of JCR property names which will contain "
-                                    + "the priority value.")
-    private static final String PROP_PRIORITY_PROPERTIES = "priority.properties";
+	/**
+	 * Include last modified flag.
+	 */
+	private boolean includeLastModified;
 
-    @Property(
-                    label = "Exclude from Sitemap Property",
-                    description = "The boolean [cq:Page]/jcr:content property name which indicates "
-                                    + "if the Page should be hidden from the Sitemap. "
-                                    + "Default value: hideInNav")
-    private static final String PROP_EXCLUDE_FROM_SITEMAP_PROPERTY = "exclude.property";
+	/**
+	 * Change frequency properties array.
+	 */
+	private String[] changefreqProperties;
 
-    private static final String NS = "http://www.sitemaps.org/schemas/sitemap/0.9";
+	/**
+	 * Priority properties array.
+	 */
+	private String[] priorityProperties;
 
-    protected final Logger log = LoggerFactory.getLogger(this.getClass());
+	/**
+	 * Exclude from SiteMap property.
+	 */
+	private String excludeFromSiteMapProperty;
 
-    @Reference
-    private Externalizer externalizer;
+	/**
+	 * Site root path variable.
+	 */
+	private String siteRootPath;
 
-    private boolean includeLastModified;
+	@Property(label = "Site Home Page", unbounded = PropertyUnbounded.DEFAULT, description = "The path of site home page, this will be used as the root page"
+			+ " and all the child node of this " + " path will be included in site map.", value = DEFAULT_HOME_PAGE)
+	private static final String PROP_SITE_HOME_PAGE = "site.root";
 
-    private String[] changefreqProperties;
+	@Property(boolValue = DEFAULT_INCLUDE_LAST_MODIFIED, label = "Include Last Modified", description = "If true, the last modified value will be "
+			+ "included in the sitemap.")
+	private static final String PROP_INCLUDE_LAST_MODIFIED = "include.lastmod";
 
-    private String[] priorityProperties;
+	@Property(label = "Change Frequency Properties", unbounded = PropertyUnbounded.ARRAY, description = "The set of JCR property names which will contain "
+			+ "the change frequency value.")
+	private static final String PROP_CHANGE_FREQUENCY_PROPERTIES = "changefreq.properties";
 
-    private String excludeFromSiteMapProperty;
+	@Property(label = "Priority Properties", unbounded = PropertyUnbounded.ARRAY, description = "The set of JCR property names which will contain "
+			+ "the priority value.")
+	private static final String PROP_PRIORITY_PROPERTIES = "priority.properties";
 
-    private String siteRootPath;
+	@Property(label = "Exclude from Sitemap Property", description = "The boolean [cq:Page]/jcr:content property name which indicates "
+			+ "if the Page should be hidden from the Sitemap. " + "Default value: hideInNav")
+	private static final String PROP_EXCLUDE_FROM_SITEMAP_PROPERTY = "exclude.property";
 
-    @Activate
-    protected void activate(Map<String, Object> properties) {
-        this.includeLastModified = PropertiesUtil.toBoolean(
-                        properties.get(PROP_INCLUDE_LAST_MODIFIED), DEFAULT_INCLUDE_LAST_MODIFIED);
-        this.changefreqProperties = PropertiesUtil.toStringArray(
-                        properties.get(PROP_CHANGE_FREQUENCY_PROPERTIES), new String[0]);
-        this.priorityProperties = PropertiesUtil.toStringArray(
-                        properties.get(PROP_PRIORITY_PROPERTIES), new String[0]);
-        this.excludeFromSiteMapProperty = PropertiesUtil.toString(
-                        properties.get(PROP_EXCLUDE_FROM_SITEMAP_PROPERTY),
-                        DEFAULT_HIDE_IN_SITEMAP_PROPERTY);
-        this.siteRootPath = PropertiesUtil.toString(properties.get(PROP_SITE_HOME_PAGE),
-                        DEFAULT_HOME_PAGE);
-    }
+	@Reference
+	private PageSuffixResolverService pageResolver;
 
-    @Override
-    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
-                    throws ServletException, IOException {
+	@Reference
+	private RegionDataService regionDataService;
 
-        response.setContentType(request.getResponseContentType());
-        ResourceResolver resourceResolver = request.getResourceResolver();
-        Resource homeResource = resourceResolver.getResource(siteRootPath);
-        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-        Page page = pageManager.getContainingPage(homeResource);
+	/**
+	 * Read and assign the configured properties on service.
+	 *
+	 * @param properties
+	 */
+	@Activate
+	protected void activate(Map<String, Object> properties) {
+		logger.info("Start of activate method in SiteMap servlet.");
 
-        XMLOutputFactory outputFactory = XMLOutputFactory.newFactory();
-        try {
-            XMLStreamWriter stream = outputFactory.createXMLStreamWriter(response.getWriter());
-            stream.writeStartDocument("1.0");
+		this.includeLastModified = PropertiesUtil.toBoolean(properties.get(PROP_INCLUDE_LAST_MODIFIED),
+				DEFAULT_INCLUDE_LAST_MODIFIED);
+		this.changefreqProperties = PropertiesUtil.toStringArray(properties.get(PROP_CHANGE_FREQUENCY_PROPERTIES),
+				new String[0]);
+		this.priorityProperties = PropertiesUtil.toStringArray(properties.get(PROP_PRIORITY_PROPERTIES), new String[0]);
+		this.excludeFromSiteMapProperty = PropertiesUtil.toString(properties.get(PROP_EXCLUDE_FROM_SITEMAP_PROPERTY),
+				DEFAULT_HIDE_IN_SITEMAP_PROPERTY);
+		this.siteRootPath = PropertiesUtil.toString(properties.get(PROP_SITE_HOME_PAGE), DEFAULT_HOME_PAGE);
 
-            stream.writeStartElement("", "urlset", NS);
-            stream.writeNamespace("", NS);
+		logger.info("End of activate method in SiteMap servlet.");
+	}
 
-            log.debug("Request local address " + request.getLocalAddr());
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.apache.sling.api.servlets.SlingSafeMethodsServlet#doGet(org.apache.
+	 * sling.api.SlingHttpServletRequest,
+	 * org.apache.sling.api.SlingHttpServletResponse)
+	 */
+	@Override
+	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
+			throws ServletException, IOException {
+		logger.info("Start of doGet method in SiteMap servlet.");
 
-            // first do the current page
-            write(page, stream, request);
+		response.setContentType(request.getResponseContentType());
 
-            boolean includeInvalid = false;
-            boolean includeHidden = true;
+		ResourceResolver resourceResolver = request.getResourceResolver();
+		Resource homeResource = resourceResolver.getResource(siteRootPath);
+		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+		Page page = pageManager.getContainingPage(homeResource);
 
-            for (Iterator<Page> children = page.listChildren(new PageFilter(includeInvalid,
-                            includeHidden), true); children.hasNext();) {
-                write(children.next(), stream, request);
-            }
+		XMLOutputFactory outputFactory = XMLOutputFactory.newFactory();
+		try {
+			XMLStreamWriter stream = outputFactory.createXMLStreamWriter(response.getWriter());
 
-            stream.writeEndElement();
+			stream.writeStartDocument("1.0");
+			stream.writeStartElement("", "urlset", NS);
+			stream.writeNamespace("", NS);
 
-            stream.writeEndDocument();
-        } catch (XMLStreamException e) {
-            throw new IOException(e);
-        }
-    }
+			// first do the current page
+			write(page, stream, request);
 
-    private void write(Page page, XMLStreamWriter stream, SlingHttpServletRequest request)
-                    throws XMLStreamException {
-        if (isExcluded(page)) {
-            return;
-        }
-        stream.writeStartElement(NS, "url");
+			boolean includeInvalid = false;
+			boolean includeHidden = true;
 
-        String loc = externalizer.absoluteLink(request, request.getScheme(),
-                        String.format("%s.html", page.getPath()));
+			for (Iterator<Page> children = page.listChildren(new PageFilter(includeInvalid, includeHidden),
+					true); children.hasNext();) {
+				write(children.next(), stream, request);
+			}
 
-        writeElement(stream, "loc", loc);
+			stream.writeEndElement();
 
-        if (includeLastModified) {
-            Calendar cal = page.getLastModified();
-            if (cal != null) {
-                writeElement(stream, "lastmod", DATE_FORMAT.format(cal));
-            }
-        }
+			stream.writeEndDocument();
+		} catch (XMLStreamException e) {
+			logger.error("Error occured during the XML creation." + e);
+			throw new IOException(e);
+		}
 
-        final ValueMap properties = page.getProperties();
-        writeFirstPropertyValue(stream, "changefreq", changefreqProperties, properties);
-        writeFirstPropertyValue(stream, "priority", priorityProperties, properties);
+		logger.info("End of doGet method in SiteMap servlet.");
+	}
 
-        stream.writeEndElement();
-    }
+	/**
+	 * Write the SiteMap in XML format.
+	 *
+	 * @param page
+	 * @param stream
+	 * @param request
+	 * @throws XMLStreamException
+	 */
+	private void write(Page page, XMLStreamWriter stream, SlingHttpServletRequest request) throws XMLStreamException {
+		// filter the pages
+		if (isExcluded(page)) {
+			return;
+		}
+		stream.writeStartElement(NS, "url");
 
-    private boolean isExcluded(final Page page) {
-        return page.getProperties().get(this.excludeFromSiteMapProperty, false);
-    }
+		String location = pageResolver.resolveLinkMapURL(request.getResourceResolver(), page.getPath());
+		String regionInURL = location.substring(location.indexOf(".") + 1,
+				location.indexOf(".", location.indexOf(".") + 1));
+		String regionInRequest = regionDataService.getRegionInfo(request);
 
-    private void writeFirstPropertyValue(final XMLStreamWriter stream, final String elementName,
-                    final String[] propertyNames, final ValueMap properties)
-                    throws XMLStreamException {
-        for (String prop : propertyNames) {
-            String value = properties.get(prop, String.class);
-            if (value != null) {
-                writeElement(stream, elementName, value);
-                break;
-            }
-        }
-    }
+		logger.debug("Region in URL:" + regionInURL);
+		logger.debug("Region In request:" + regionInRequest);
 
-    private void writeElement(final XMLStreamWriter stream, final String elementName,
-                    final String text) throws XMLStreamException {
-        stream.writeStartElement(NS, elementName);
-        stream.writeCharacters(text);
-        stream.writeEndElement();
-    }
+		location = location.replace(regionInURL, regionInRequest);
+
+		logger.debug("Location path in sitemap servlet after manipulation:" + location);
+
+		writeElement(stream, "loc", location);
+
+		if (includeLastModified) {
+			Calendar cal = page.getLastModified();
+			if (cal != null) {
+				writeElement(stream, "lastmod", DATE_FORMAT.format(cal));
+			}
+		}
+
+		final ValueMap properties = page.getProperties();
+		writeFirstPropertyValue(stream, "changefreq", changefreqProperties, properties);
+		writeFirstPropertyValue(stream, "priority", priorityProperties, properties);
+
+		stream.writeEndElement();
+	}
+
+	/**
+	 * Check for the valid pages.
+	 *
+	 * @param page
+	 * @return
+	 */
+	private boolean isExcluded(final Page page) {
+		return page.getProperties().get(this.excludeFromSiteMapProperty, false);
+	}
+
+	/**
+	 * Write first property value in XML.
+	 *
+	 * @param stream
+	 * @param elementName
+	 * @param propertyNames
+	 * @param properties
+	 * @throws XMLStreamException
+	 */
+	private void writeFirstPropertyValue(final XMLStreamWriter stream, final String elementName,
+			final String[] propertyNames, final ValueMap properties) throws XMLStreamException {
+		for (String prop : propertyNames) {
+			String value = properties.get(prop, String.class);
+			if (value != null) {
+				writeElement(stream, elementName, value);
+				break;
+			}
+		}
+	}
+
+	/**
+	 * Construct element.
+	 *
+	 * @param stream
+	 * @param elementName
+	 * @param text
+	 * @throws XMLStreamException
+	 */
+	private void writeElement(final XMLStreamWriter stream, final String elementName, final String text)
+			throws XMLStreamException {
+		stream.writeStartElement(NS, elementName);
+		stream.writeCharacters(text);
+		stream.writeEndElement();
+	}
 
 }
