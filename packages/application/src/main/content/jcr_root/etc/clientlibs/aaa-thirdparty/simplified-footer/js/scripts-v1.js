@@ -4,11 +4,11 @@ $(function () {
     var aaapagepath = "";
     var fbpagepath = "";
     var twpagepath = "";
-    var logoimagepath = "http://www.aaaprod.axis41.net/etc/clientlibs/aaa-thirdparty/full-footer/images/aaa-white-logo-xs.png";
+    var logoimagepath = "//www.nothernnewengland.aaa.com/etc/clientlibs/aaa-thirdparty/full-footer/images/aaa-white-logo-xs.png";
     // Environment information can be updated here.
-    var protocol = "http://";
+    var protocol = "//";
     var environment = "www";
-    var subdomain = ".aaaprod.axis41.net";
+    var subdomain = ".aaa.com";
     var defaultregionname = "calif";
 
     function getRegionName() {
