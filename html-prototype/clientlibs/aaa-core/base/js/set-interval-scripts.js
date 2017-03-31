@@ -31,7 +31,6 @@ var interval = setInterval(function() {
         // Variables declaration starts
         var club_number = $('#club_number').val();
         var ref_id = $('#ref_id').val();
-        console.log('ref ID:' + ref_id);
         if (typeof ref_id === 'undefined') {
             var requestURL = window.location.hostname;
             if (requestURL.split('.').length > 2) {
