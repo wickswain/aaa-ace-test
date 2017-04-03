@@ -19,6 +19,7 @@
         @ url = properties.rightLink1LinkTo}"/>
 <sly data-sly-use.searchPage="${'com.aaa.ace.sightly.providers.PathBrowserPropertyProvider' 
         @ link = properties.searchPagePath}" />
+<sly data-sly-use.tempPath="com.aaa.ace.sightly.providers.ErrorPageProvider"/>
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Header component
@@ -41,7 +42,9 @@
 	                      class="pipe">|</span>
 	                
 	                <!-- /* TODO: Profile section changes need to include */ -->
-	                <sly data-sly-include="login.html"/>
+	                <sly data-sly-test=${!tempPath.isErrorPage}>
+	                	<sly data-sly-include="login.html"/>
+	                </sly>
 	            </li>
 	            
 	            <li>

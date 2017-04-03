@@ -31,6 +31,7 @@
 <sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'
         @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
 <sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider"/>
+<sly data-sly-use.tempPath="com.aaa.ace.sightly.providers.ErrorPageProvider"/>
 <!-- #sightly-global-objects-declaration end -->
 
 <!-- Placeholder Content
@@ -77,6 +78,7 @@
             <div class="search-overlay"></div>
         
             <div class="header-bar">
+            <sly data-sly-test=${!tempPath.isErrorPage}>
                 <div class="m-user-details">
                     <div data-sly-test="${user.isLoggedIn}" class="profile-box hidden-md hidden-lg">
                         <div class="avatar-details">
@@ -129,6 +131,7 @@
                         </a>
                     </div>
                 </div>
+            </sly>
             </div>
         
             <nav class="navbar navbar-default globalnav">
