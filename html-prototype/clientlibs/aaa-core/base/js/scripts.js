@@ -52,7 +52,7 @@ $j(function($) {
     }
     footerResponse();
     //Sticky Navigation
-    var scrollTop = 0; //($('.sticky-nav').hasClass('sticky-nav')) ? parseInt($('.sticky-nav').offset().top) : 0;
+    var scrollTop = 0;
 
     //Home Header resize
     function headerResize() {
