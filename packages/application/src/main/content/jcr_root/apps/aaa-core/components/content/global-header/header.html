@@ -30,7 +30,7 @@
                 <li id="nav-links">
                     <a data-sly-test="${properties.rightLink1Label}" data-sly-text="${properties.rightLink1Label}" target="${properties.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}" href="${rightLink1.url}">
                     </a>
-                    <span data-sly-test="${properties.rightLink1Label}" class="pipe">|</span>
+                    <span data-sly-test="${properties.rightLink1Label && !templatePath.errorPageFlag}" class="pipe">|</span>
                     <!-- /* TODO: Profile section changes need to include */ -->
                     <sly data-sly-test=${!templatePath.errorPageFlag}>
                         <sly data-sly-include="login.html" />
