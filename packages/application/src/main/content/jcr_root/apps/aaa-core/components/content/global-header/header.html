@@ -40,7 +40,7 @@
                <span data-sly-test="${properties.rightLink1Label}"
                   class="pipe">|</span>
                <!-- /* TODO: Profile section changes need to include */ -->
-               <sly data-sly-test=${!templatePath.isErrorPage}>
+               <sly data-sly-test=${!templatePath.errorPageFlag}>
                   <sly data-sly-include="login.html"/>
                </sly>
             </li>
