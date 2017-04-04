@@ -79,9 +79,10 @@ $j(function ($) {
             {
             	filter = "&filter=" + articleFilterTagLocal;
             }
-            
+            if($("#articlelistid").val()=="true"){
             var url = "/get.articles.json?start=" + start + filter;
             $.getJSON(url, '', articleReceived);
+            }
         }
 
         function articleReceived(response) {
