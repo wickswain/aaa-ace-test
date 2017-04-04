@@ -18,7 +18,6 @@
 @color-orange-medium: #ff584d;
 @color-orange-light: #db3c31;
 @color-yellow: #ffcc33;
-
 /*Basic CSS Style*/
 
 html,
@@ -28,7 +27,6 @@ body {
     background: @color-gray-medium none;
     font-weight: 300;
 }
-
 h1,
 h2,
 h3,
@@ -41,7 +39,6 @@ p {
     font-family: inherit;
     font-size: inherit;
 }
-
 img,
 :hover,
 :focus,
@@ -49,46 +46,37 @@ a:hover,
 a:focus {
     outline: none;
 }
-
 a {
     color: @color-blue-primary-medium;
     text-decoration: none;
     font-family: inherit;
-    &:focus,
-    &:hover {
+    &:focus, &:hover {
         color: @color-blue-light;
     }
 }
-
 #page-container {
     background: @color-white none;
 }
-
 .dark-bg {
     background-color: @color-blue-primary-dark;
     padding: 20px 0;
     color: @color-white;
 }
-
 .alert-warning {
     background-color: @color-yellow;
 }
-
 .brand {
     display: inline-block;
     vertical-align: middle;
 }
-
 [data-toggle="collapse"] {
     cursor: pointer;
 }
-
 .icon-info .btn-info,
 .icon-info .btn-info:hover {
     background: transparent none;
     cursor: pointer;
 }
-
 .icon-info .btn-info:after {
     content: 'i';
     display: inline-block;
@@ -103,11 +91,9 @@ a {
     line-height: 14px;
     margin-left: 5px;
 }
-
-.modal-open{
-   	padding:0px !important;
+.modal-open {
+    padding: 0px !important;
 }
-
 .modal-header .close {
     margin-top: -80px;
     margin-right: -80px;
@@ -115,8 +101,6 @@ a {
     opacity: 1;
     font-weight: normal;
 }
-
-
 /*Spacing's*/
 
 @space-height: 400px;
@@ -127,24 +111,19 @@ a {
 .horizontal-space {
     margin-bottom: @space-sm;
 }
-
 .horizontal-space2 {
     margin-bottom: @space-lg - 60;
 }
-
 .side-spacing {
     padding: 0 @space-sm;
 }
-
 .min-spacing {
     margin-bottom: @space-xs;
 }
-
 .component-space,
 .top-space {
     padding-top: @space-lg;
 }
-
 .bottom-space {
     padding-bottom: @space-sm;
 }
