@@ -9,15 +9,16 @@ $j(function($) {
     var thirdPartyNav;
 
     function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-        // Pagination Controls 
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Pagination Controls 
     thirdPartyNav = getParameterByName('navigationLink');
     if (thirdPartyNav) {
         $("#page-container").hide();
@@ -63,10 +64,12 @@ $j(function($) {
             $('.navigation-bar .nav > li a').removeClass('deactive');
             $(".overlay").stop().fadeOut();
         }
+
         //Fixed Header - alignment
         $('#page-container').css('paddingTop', $('#page-header').outerHeight());
     }
     headerResize();
+
     //Home Header - jump link
     $('.home-header .learn-link a').click(function(e) {
         var hashtag = $(this.hash),
@@ -84,8 +87,11 @@ $j(function($) {
 
     // Nav Content handling 
     //Page Scroll
+
     $(window).scroll(function() {
+
         //Navigation Header offset
+
         if ($(this).scrollTop() >= 400 && $(window).width() > 768 && !thirdPartyNav) {
             $('header').css({
                 'top': '-' + $('#page-header').outerHeight() + 'px'
@@ -98,7 +104,9 @@ $j(function($) {
                 'top': '0px'
             });
         }
+
         //Sticky Nav scroll event
+
         $('.sticky-nav .dropdown-menu li > a').on('click', function(e) {
             var hashtag = $(this.hash),
                 $target = parseInt(hashtag.offset().top) - $('.sticky-navbar').outerHeight();
@@ -117,24 +125,27 @@ $j(function($) {
             }
         });
     });
+
     //Responsive
     $(window).resize(function() {
         headerResize();
         footerResponse();
     });
+
     //Navigation
     // Creates and store the cookie 
     function createCookie(name, value, days) {
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "; expires=" + date.toGMTString();
-            } else {
-                var expires = "";
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else {
+            var expires = "";
         }
-        // Navigation Close event 
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Navigation Close event 
     $('.drawer-close .close-icon').on('click', function(e) {
         if (!thirdPartyNav) {
             $("#page-container, #page-footer").stop().fadeIn();
@@ -147,6 +158,7 @@ $j(function($) {
         }
         e.preventDefault();
     });
+
     //Mobile Navigation Events
     var globalTab = "";
     $(".menu").click(function(e) {
