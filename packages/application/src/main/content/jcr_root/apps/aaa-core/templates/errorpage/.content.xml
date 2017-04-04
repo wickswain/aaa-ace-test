@@ -6,5 +6,5 @@
     ranking="{Long}300">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="/apps/aaa-core/components/page/errorpage"/>
+        sling:resourceType="/apps/aaa-core/components/page/basepage"/>
 </jcr:root>
