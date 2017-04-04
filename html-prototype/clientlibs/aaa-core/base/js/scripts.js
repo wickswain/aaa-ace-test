@@ -77,11 +77,6 @@ $j(function($) {
         e.preventDefault();
     });
 
-    $(".drawers-container li a").click(function(e) {
-        $("body").removeClass("modal-open");
-    });
-
-
     // Nav Content handling 
     //Page Scroll
     $(window).scroll(function() {
