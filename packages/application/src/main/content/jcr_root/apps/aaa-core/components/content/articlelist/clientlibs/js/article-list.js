@@ -219,17 +219,4 @@ $j(function($) {
         }
     }
 
-
-    /* Return domain to restrict region based search */
-    function getHost() {
-        var host = window.location.hostname;
-        var port = window.location.port;
-
-        if (port) {
-            host = host + ":" + port;
-        }
-
-        return window.location.protocol + "//" + host;
-    }
-
 });

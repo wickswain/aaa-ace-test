@@ -2,16 +2,15 @@
     
     Article List Component
     ==============================
-    
-    This component renders a article list fetched from hub based on latest first.
+
+    This component renders a article list fetched from hub based on filtertags.
     
 */-->
 
-<!-- Global JAVA USE declaration
-============================================= -->   
+<!--/* Global Sightly Provider Content
+============================================= */--> 
 <sly data-sly-use.filterProvider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='filters'}" />
-<!-- #global-JAVA-USE-declaration end -->
-
+<!--/* #global-sightly-provider-content end */-->
 
 <!-- Article List Content
 ============================================= -->
@@ -41,11 +40,13 @@
                     </div>
                     <div class="categorie-title hidden-xs">CATEGORIES</div>
                     <ul class="categorie-block" id="articleHub-categorie-block">
-                        <li><a href="javascript:void(0);" class="font-h active" data-filter-name="" data-filter-tag="">All</a>
+                        <li>
+                        	<a href="javascript:void(0);" class="font-h active" data-filter-name="" data-filter-tag="">All</a>
                         </li>
                         <sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
                             <sly data-sly-test="${filters.filterlabel && filters.filtertag}">
-                                <li><a href="javascript:void(0);" class="font-h" data-filter-name="${filters.filterlabel}" data-filter-tag="${filters.filtertag}">${filters.filterlabel}</a>
+                                <li>
+                                	<a href="javascript:void(0);" class="font-h" data-filter-name="${filters.filterlabel}" data-filter-tag="${filters.filtertag}">${filters.filterlabel}</a>
                                 </li>
                             </sly>
                         </sly>
@@ -56,5 +57,4 @@
         <div class="col-sm-1 hidden-sm hidden-xs"></div>
     </div>
 </div>
-<!-- #article-list-content end -->
-
+<!-- #Article-List end -->
