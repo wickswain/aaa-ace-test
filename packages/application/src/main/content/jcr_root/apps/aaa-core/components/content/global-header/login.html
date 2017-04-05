@@ -10,60 +10,44 @@
 
 */-->
 
-<!-- Sightly global objects declaration
-============================================= -->
-<sly data-sly-use.signInLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
-        @ url = properties.rightLink2LinkTo}"/>
-<sly data-sly-use.signOutLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
-        @ url = properties.signOutLinkTo}"/>
-<sly data-sly-use.accountLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' 
-        @ url = properties.accountLinkTo}"/>
-<sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'
-        @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
-<!-- #sightly-global-objects-declaration end -->
+<!--/* Sightly global objects declaration
+============================================= */-->
+<sly data-sly-use.signInLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url = properties.rightLink2LinkTo}"/>
+<sly data-sly-use.signOutLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url = properties.signOutLinkTo}"/>
+<sly data-sly-use.accountLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ url = properties.accountLinkTo}"/>
+<sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider' @ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
+<!--/* #sightly-global-objects-declaration end */-->
 
 <input type="hidden" name="signInUrl" id="signInUrl" value="${signInLink.url}" />
 <input type="hidden" name="signOutUrl" id="signOutUrl" value="${signOutLink.url}" />
 
 <!-- Login component
 ============================================= -->
-<a data-sly-test="${!user.isLoggedIn}"
-   target="${properties.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}"
-   href="${user.signInURL}"
-   id="user-login"><img data-sly-test="${properties.icon2Path}"
-         src="${properties.icon2Path}" title="${properties.icon2Alt}" 
-         alt="${properties.icon2Alt}" class="lock-icon"/>${properties.rightLink2Label}
+<a data-sly-test="${!user.isLoggedIn}" target="${properties.rightLink2NewTabFlag == 'true' ? '_blank' : '_self'}" href="${user.signInURL}" id="user-login">
+  	<img data-sly-test="${properties.icon2Path}" src="${properties.icon2Path}" title="${properties.icon2Alt}" alt="${properties.icon2Alt}" class="lock-icon" />${properties.rightLink2Label}
 </a>
-
-<a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" 
-   aria-haspopup="true" aria-expanded="false" class="user-info">
+<a data-sly-test="${user.isLoggedIn}" href="javascript:void(0);" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user-info">
     <span class="restrict-characters" id="firstName">${user.firstName}</span>
     <i class="glyphicon glyphicon-chevron-down"></i>
     <span class="avatar">
-        <img src="${properties.defaultAvatarPath}" alt="${properties.defaultAvatarAlt}"
-             title="${properties.defaultAvatarAlt}" class="img-responsive">
-    </span>
+		<img src="${properties.defaultAvatarPath}" alt="${properties.defaultAvatarAlt}" title="${properties.defaultAvatarAlt}" class="img-responsive">
+	</span>
 </a>
 
 <div class="profile-box dropdown-menu" aria-labelledby="user-info">
     <div class="avatar-details">
-	    <div data-sly-test="${properties.defaultAvatarPath}"
-	         class="avatar-pic">
-	        <img src="${properties.defaultAvatarPath}" alt="${properties.defaultAvatarAlt}"
-	             title="${properties.defaultAvatarAlt}" class="img-responsive">
-	    </div>
+        <div data-sly-test="${properties.defaultAvatarPath}" class="avatar-pic">
+            <img src="${properties.defaultAvatarPath}" alt="${properties.defaultAvatarAlt}" title="${properties.defaultAvatarAlt}" class="img-responsive">
+        </div>
         <div class="avatar-title font-f" id="firstName-profile">${user.firstName}</div>
-	    <div class="my-account ">
-	        <a target="${properties.accountLinkNewTabFlag == 'true' ? '_blank' : '_self'}"
-	           href="${accountLink.url}" data-sly-text="${properties.accountLinkLabel}"
-               class="btn-style btn-lg btn-border btn-border-reversed">
+        <div class="my-account ">
+            <a target="${properties.accountLinkNewTabFlag == 'true' ? '_blank' : '_self'}" href="${accountLink.url}" data-sly-text="${properties.accountLinkLabel}" class="btn-style btn-lg btn-border btn-border-reversed">
             </a>
-	    </div>
-	    <div class="signout"> 
-	        <a href="${user.signOutURL}" data-sly-text="${properties.signOutLinkLabel}" id="user-logout"
-               class="link-btn link-lg link-color-orange link-reversed">
+        </div>
+        <div class="signout">
+            <a href="${user.signOutURL}" data-sly-text="${properties.signOutLinkLabel}" id="user-logout" class="link-btn link-lg link-color-orange link-reversed">
             </a>
-	    </div>
+        </div>
     </div>
 </div>
 <!-- #login-component end -->
