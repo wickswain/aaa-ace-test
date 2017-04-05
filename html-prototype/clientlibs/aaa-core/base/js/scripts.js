@@ -80,10 +80,9 @@ $j(function($) {
         e.preventDefault();
     });
 
-    $(".drawers-container li a").click(function(e) {
-        $("body").removeClass("modal-open");
-    });
-
+  $(document).on('click', '.drawers-container li a', function(){
+     $("body").removeClass("modal-open");
+  });
 
     // Nav Content handling 
     //Page Scroll
