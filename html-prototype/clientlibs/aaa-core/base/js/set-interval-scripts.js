@@ -356,6 +356,15 @@ var interval = setInterval(function() {
                 $('.rs_chk_in').val($(this).val());
                 e.preventDefault();
             });
+            $(document).on('mouseover', '.rs_chk_in_box .rs_cal_table .rs_cal_day, .rs_chk_in1_box .rs_cal_table .rs_cal_day', function(){
+                $('.rs_chk_in').val('');
+            });
+            $(document).on('mouseover', '.rs_chk_out_box .rs_cal_table .rs_cal_day', function(){
+                $('.rs_chk_out').val('');
+            });
+            $(document).on('click', '.rs_cal_table .rs_cal_day', function(){
+                $('.rs_chk_out_box').css('display', 'none');
+            });
             $('#mvp-keywords').click(function() {
                 if ($(this).val() == "Destination / Keyword") {
                     $(this).val('');
