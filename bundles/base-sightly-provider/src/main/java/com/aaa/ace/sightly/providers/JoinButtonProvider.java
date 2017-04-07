@@ -1,9 +1,9 @@
 package com.aaa.ace.sightly.providers;
 
-import java.util.Iterator;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
@@ -11,36 +11,37 @@ import com.adobe.cq.sightly.WCMUsePojo;
  *
  */
 public class JoinButtonProvider extends WCMUsePojo {
+
+	/**
+	 * Logger object
+	 */
 	private static final Logger log = LoggerFactory.getLogger(JoinButtonProvider.class);
 
+	/**
+	 * GLOBAL_HEADER_PATH variable
+	 */
 	private static String GLOBAL_HEADER_PATH = "/content/ace-www/en/jcr:content/header-ipar/global_header";
 
 	/**
-	 * Join-Button path of Global header component.
+	 * Join-Button resource of Global header component.
 	 */
-	private Resource joinButtonPath;
+	private Resource joinButtonResource;
 
 	@Override
 	public void activate() throws Exception {
 		log.debug("Start of JoinButtonProvider class");
 
-		String resource = getResource().getPath();
-		if (GLOBAL_HEADER_PATH.equals(resource)) {
-			Iterator<Resource> listChildren = getResource().listChildren();
-			while (listChildren.hasNext()) {
-				Iterator<Resource> listChildren2 = listChildren.next().listChildren();
-				while (listChildren2.hasNext()) {
-					joinButtonPath = listChildren2.next();
-				}
-			}
+		String resourcePath = getResource().getPath();
+		if (GLOBAL_HEADER_PATH.equals(resourcePath)) {
+			joinButtonResource = getResource().getChild("cta-small").getChild("button1");
 		}
 		log.debug("End of JoinButtonProvider class");
 	}
 
 	/**
-	 * @return joinButtonPath
+	 * @return joinButtonResource
 	 */
-	public Resource getJoinButtonPath() {
-		return joinButtonPath;
+	public Resource getJoinButtonResource() {
+		return joinButtonResource;
 	}
 }
