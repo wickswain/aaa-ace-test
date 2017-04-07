@@ -1,6 +1,7 @@
 package com.aaa.ace.sightly.providers;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +34,13 @@ public class JoinButtonProvider extends WCMUsePojo {
 
 		String resourcePath = getResource().getPath();
 		if (GLOBAL_HEADER_PATH.equals(resourcePath)) {
-			joinButtonResource = getResource().getChild("cta-small").getChild("button1");
+			Resource ctaSmallResource = getResource().getChild("cta-small");
+			if (ctaSmallResource != null && !ResourceUtil.isNonExistingResource(ctaSmallResource)) {
+				Resource buttonResource = ctaSmallResource.getChild("button1");
+				if (buttonResource !=null && !ResourceUtil.isNonExistingResource(buttonResource)) {
+					joinButtonResource = buttonResource;
+				}
+			}
 		}
 		log.debug("End of JoinButtonProvider class");
 	}

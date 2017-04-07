@@ -36,7 +36,7 @@
         <div class="backslide hidden-md hidden-lg"></div>
         <div class="search-label hidden-md hidden-lg font-h">
             <span class="m-close-icon">
-         	<i>+</i>
+         		<i>+</i>
          	</span>
             <div class="input-group" id="search-hide">
                 <span class="input-group-addon ">
@@ -89,9 +89,11 @@
                             </a>
                         </sly>
                         <sly data-sly-use.joinPage="com.aaa.ace.sightly.providers.JoinButtonProvider" />
+                        <sly data-sly-test="${joinPage.joinButtonResource}">
                         <sly data-sly-use.joinLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = joinPage.joinButtonResource.valueMap.queryStringKey, url = joinPage.joinButtonResource.valueMap.urlPath, childResource = joinPage.joinButtonResource}" />
                         <a href="${joinPage.joinButtonResource.valueMap.urlPath ? joinLink.url : '' @ context='uri'}" data-sly-text="${joinPage.joinButtonResource.valueMap.ctaLabel ? joinPage.joinButtonResource.valueMap.ctaLabel : 'JOIN'}" target="${joinPage.joinButtonResource.valueMap.openNewTabFlag == 'true' ? '_blank' : '_self'}" class="link-btn link-color-blue link-lg">
                         </a>
+                        </sly>
                     </div>
                     <div class="contact-find hidden-md hidden-lg">
                         <a data-sly-test="${properties.rightLink1Label}" data-sly-text="${properties.rightLink1Label}" target="${properties.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}" href="${rightLink1.url}" class="link1">
