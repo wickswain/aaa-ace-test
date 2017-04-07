@@ -1,57 +1,60 @@
 <!--/*
+    
+    Article List Component
+    ==============================
 
-Article List Component
-==============================
-
-This component renders a article list fetched from hub based on latest first.
-
+    This component renders a article list fetched from hub based on filtertags.
+    
 */-->
 
-<!-- #placeholder is omitted since search result title is always displayed. -->
-
-<!--/* Global JAVA USE declaration. */-->
+<!--/* Global Sightly Provider Content
+============================================= */--> 
 <sly data-sly-use.filterProvider="${'com.aaa.ace.sightly.providers.ChildResourceProvider' @ child='filters'}" />
+<!--/* #global-sightly-provider-content end */-->
 
-<!-- Article List Starts Here -->
+<!-- Article List Content
+============================================= -->
 <div class="container-fluid">
-<div class="row article-hub-section">
-   	<div class="col-sm-1">
-       	<div class="text-center hidden-sm hidden-md hidden-lg filter-link" id="article-filter-link"> 
-       		<a href="javascript:void(0);" class="link-btn link-lg roboto-light font-e checked-list-item-main" id="article-checked-list-item-main">All Results</a>
-		</div>
-   	</div>
-   <div class="col-sm-6 col-md-7">
-       <!-- Error Message -->
-          <div class="error-message roboto-medium font-f" id="article-error-message"> </div>
-       
-       <div id="article-hub" class="article-hub">
-       		<!--/* By Default this div will be hidden, html will be added by js when response row is encountered. */-->
-       		<!--  ========================================================================================= -->
-		</div>
-       <div id="pagination-grid" class="pagination-grid horizontal-component-space"> </div>
-   </div>
-   <div class="col-sm-1 "></div>
-   <div class="col-sm-3 col-lg-2 no-padding">
-       <div class="filter-grid" id="article-filter-grid">
-           <div class="results-categories">
-               <div class="close-filter hidden-sm hidden-md hidden-lg">FILTERS<a href="javascript:void(0);" class="close-fliter-icon pull-right link-btn link-lg roboto-medium font-d" id="article-close-fliter-icon">X</a></div>
-               <div class="categorie-title hidden-xs">CATEGORIES</div>
-               <ul class="categorie-block" id="articleHub-categorie-block">
-                   <li><a href="javascript:void(0);" class="font-h active" data-filter-name="" data-filter-tag="">All</a></li>
-                   <sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
-                       <sly data-sly-test="${filters.filterlabel && filters.filtertag}">
-                           <li><a href="javascript:void(0);" 
-                           			class="font-h"
-                           			data-filter-name="${filters.filterlabel}" 
-                           			data-filter-tag="${filters.filtertag}">${filters.filterlabel}</a>
-                           </li>
-                       </sly> 
-                   </sly>                   
-               </ul>
-           </div>
-       </div>
-   </div>
-   <div class="col-sm-1 hidden-sm hidden-xs"></div>
+    <input id="articlelistid" type="hidden" value="true">
+    <div class="row article-hub-section">
+        <div class="col-sm-1">
+            <div class="text-center hidden-sm hidden-md hidden-lg filter-link" id="article-filter-link">
+                <a href="javascript:void(0);" class="link-btn link-lg roboto-light font-e checked-list-item-main" id="article-checked-list-item-main">All Results</a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-7">
+            <!-- Error Message -->
+            <div class="error-message roboto-medium font-f" id="article-error-message"> </div>
+
+            <div id="article-hub" class="article-hub">
+                <!--/* By Default this div will be hidden, html will be added by js when response row is encountered. */-->
+                <!--  ========================================================================================= -->
+            </div>
+            <div id="pagination-grid" class="pagination-grid horizontal-component-space"> </div>
+        </div>
+        <div class="col-sm-1 "></div>
+        <div class="col-sm-3 col-lg-2 no-padding">
+            <div class="filter-grid" id="article-filter-grid">
+                <div class="results-categories">
+                    <div class="close-filter hidden-sm hidden-md hidden-lg">FILTERS<a href="javascript:void(0);" class="close-fliter-icon pull-right link-btn link-lg roboto-medium font-d" id="article-close-fliter-icon">X</a>
+                    </div>
+                    <div class="categorie-title hidden-xs">CATEGORIES</div>
+                    <ul class="categorie-block" id="articleHub-categorie-block">
+                        <li>
+                        	<a href="javascript:void(0);" class="font-h active" data-filter-name="" data-filter-tag="">All</a>
+                        </li>
+                        <sly data-sly-list.filters="${filterProvider.childResource.listChildren}">
+                            <sly data-sly-test="${filters.filterlabel && filters.filtertag}">
+                                <li>
+                                	<a href="javascript:void(0);" class="font-h" data-filter-name="${filters.filterlabel}" data-filter-tag="${filters.filtertag}">${filters.filterlabel}</a>
+                                </li>
+                            </sly>
+                        </sly>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 hidden-sm hidden-xs"></div>
+    </div>
 </div>
-</div>
-<!--/* Article List End */-->
+<!-- #Article-List end -->

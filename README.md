@@ -103,4 +103,3 @@ If configurations are necessary for the new bundle, create a new `.xml` file in 
 
 	mvn clean install -PautoInstallPackage
 
-test
