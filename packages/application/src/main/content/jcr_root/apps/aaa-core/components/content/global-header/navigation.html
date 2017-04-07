@@ -90,8 +90,8 @@
                         </sly>
                         <sly data-sly-use.joinPage="com.aaa.ace.sightly.providers.JoinButtonProvider" />
 						<sly data-sly-use.joinLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = joinPage.joinButtonPath.valueMap.queryStringKey, url = joinPage.joinButtonPath.valueMap.urlPath, childResource = joinPage.joinButtonPath}" />
-    					<a href="${joinPage.joinButtonPath.valueMap.urlPath ? joinLink.url : '' @ context='uri'}" data-sly-text="${joinPage.joinButtonPath.valueMap.ctaLabel ? joinPage.joinButtonPath.valueMap.ctaLabel : 'JOIN'}" target="${joinPage.joinButtonPath.valueMap.openNewTabFlag == 'true' ? '_blank' : '_self'}" class="link-btn link-color-blue link-lg">
-    					</a>
+						<a href="${joinPage.joinButtonPath.valueMap.urlPath ? joinLink.url : '' @ context='uri'}" data-sly-text="${joinPage.joinButtonPath.valueMap.ctaLabel ? joinPage.joinButtonPath.valueMap.ctaLabel : 'JOIN'}" target="${joinPage.joinButtonPath.valueMap.openNewTabFlag == 'true' ? '_blank' : '_self'}" class="link-btn link-color-blue link-lg">
+						</a>
                     </div>
                     <div class="contact-find hidden-md hidden-lg">
                         <a data-sly-test="${properties.rightLink1Label}" data-sly-text="${properties.rightLink1Label}" target="${properties.rightLink1NewTabFlag == 'true' ? '_blank' : '_self'}" href="${rightLink1.url}" class="link1">
