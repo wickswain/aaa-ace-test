@@ -134,10 +134,7 @@ public class PublishPageProcess implements WorkflowProcess {
 			if (workflowData.getPayloadType().equals(Constants.JCR_PATH)) {
 				List<String> replicatePaths = new ArrayList<String>();
 				payloadPath = workflowData.getPayload().toString();
-				logger.debug("Workflow payload path: " + payloadPath);
-
-				replicatePaths.add(payloadPath);
-
+				
 				logger.debug("Replicate paths count Before: ", replicatePaths.size());
 
 				// replicate the reference assets in page
@@ -159,7 +156,10 @@ public class PublishPageProcess implements WorkflowProcess {
 						replicatePaths.add(hit.getPath());
 					}
 				}
-
+				logger.debug("Workflow payload path: " + payloadPath);
+				logger.info("Workflow payload path: " + payloadPath);
+				replicatePaths.add(payloadPath);
+				
 				logger.debug("Replicate paths count: ", replicatePaths.size());
 
 				if (agentID != null) {
