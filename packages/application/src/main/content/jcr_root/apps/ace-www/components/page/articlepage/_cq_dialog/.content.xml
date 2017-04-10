@@ -29,43 +29,43 @@
                                             <_x0031_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="1-Most Popular"
-                                                value="1"/>
+                                                value="0"/>
                                             <_x0032_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="2"
-                                                value="2"/>
+                                                value="1"/>
                                             <_x0033_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="3"
-                                                value="3"/>
+                                                value="2"/>
                                             <_x0034_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="4"
-                                                value="4"/>
+                                                value="3"/>
                                             <_x0035_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="5"
-                                                value="5"/>
+                                                value="4"/>
                                             <_x0036_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="6"
-                                                value="6"/>
+                                                value="5"/>
                                             <_x0037_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="7"
-                                                value="7"/>
+                                                value="6"/>
                                             <_x0038_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="8"
-                                                value="8"/>
+                                                value="7"/>
                                             <_x0039_
                                                 jcr:primaryType="nt:unstructured"
                                                 text="9"
-                                                value="9"/>
+                                                value="8"/>
                                             <_x0031_0
                                                 jcr:primaryType="nt:unstructured"
                                                 text="10"
-                                                value="10"/>
+                                                value="9"/>
                                         </items>
                                     </popularity>
                                     <articleimage
