@@ -29,7 +29,7 @@ $j(function($) {
         $("#page-container").show();
         $("footer").show();
     }
-    $('.search-btn').on('click', function(e) {a
+    $('.search-btn').on('click', function(e) {
         $('.expand-searchbar').animate({
             opacity: '1',
             width: '70%'
