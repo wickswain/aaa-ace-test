@@ -20,6 +20,7 @@
 <sly data-sly-use.user="${'com.aaa.ace.sightly.providers.UserLoginProvider'@ signInURL = signInLink.url, signOutURL = signOutLink.url}"/>
 <sly data-sly-use.navigationProvider="com.aaa.ace.sightly.providers.NavigationProvider"/>
 <sly data-sly-use.templatePath="com.aaa.ace.sightly.providers.TemplateUtilsProvider"/>
+<sly data-sly-use.joinPage="com.aaa.ace.sightly.providers.JoinButtonProvider" />
 <!--/* #sightly-global-objects-declaration end */-->
 
 <!--/* Placeholder Content
@@ -88,11 +89,9 @@
                                 <img data-sly-test="${properties.icon2Path}" src="${properties.icon2Path}" title="${properties.icon2Alt}" alt="${properties.icon2Alt}" class="lock-icon" /> ${properties.rightLink2Label}
                             </a>
                         </sly>
-                        <sly data-sly-use.joinPage="com.aaa.ace.sightly.providers.JoinButtonProvider" />
-                        <sly data-sly-test="${joinPage.joinButtonResource}">
-                        <sly data-sly-use.joinLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = joinPage.joinButtonResource.valueMap.queryStringKey, url = joinPage.joinButtonResource.valueMap.urlPath, childResource = joinPage.joinButtonResource}" />
-                        <a href="${joinPage.joinButtonResource.valueMap.urlPath ? joinLink.url : '' @ context='uri'}" data-sly-text="${joinPage.joinButtonResource.valueMap.ctaLabel ? joinPage.joinButtonResource.valueMap.ctaLabel : 'JOIN'}" target="${joinPage.joinButtonResource.valueMap.openNewTabFlag == 'true' ? '_blank' : '_self'}" class="link-btn link-color-blue link-lg">
-                        </a>
+                        <sly data-sly-test="${joinPage.joinButtonResource}" data-sly-use.joinLink="${'com.aaa.ace.sightly.providers.CTANavigationURLProvider' @ queryStringKey = joinPage.joinButtonResource.valueMap.queryStringKey, url = joinPage.joinButtonResource.valueMap.urlPath, childResource = joinPage.joinButtonResource}">
+                        	<a href="${joinPage.joinButtonResource.valueMap.urlPath ? joinLink.url : '' @ context='uri'}" data-sly-text="${joinPage.joinButtonResource.valueMap.ctaLabel ? joinPage.joinButtonResource.valueMap.ctaLabel : 'JOIN'}" target="${joinPage.joinButtonResource.valueMap.openNewTabFlag == 'true' ? '_blank' : '_self'}" class="link-btn link-color-blue link-lg">
+                        	</a>
                         </sly>
                     </div>
                     <div class="contact-find hidden-md hidden-lg">
