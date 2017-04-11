@@ -265,35 +265,29 @@ function jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime) {
     }
 }
 
-$(document).on('click', '.sticky-nav .dropdown-menu li > a', function(e) {
+$(document).on('click', '.sticky-nav .dropdown-menu li > a', function() {
     var hashtag = $(this.hash),
-        navbarHeight = $('.navbar-fixed-top').outerHeight(),
-        stickyNavbarHeight = $('.sticky-nav').outerHeight(),
+        navbarHeight = $('.navbar-fixed-top').height(),
+        stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 1000;
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-    e.preventDefault();
-    console.log("sticky-nav completed");
 });
 
-$(document).on('click', '.drawers-container li > a', function(e) {
+$(document).on('click', '.drawers-container li > a', function() {
     var hashtag = $(this.hash),
-        navbarHeight = $('.navbar-fixed-top').outerHeight(),
-        stickyNavbarHeight = $('.sticky-nav').outerHeight(),
+        navbarHeight = $('.navbar-fixed-top').height(),
+        stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
 
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-    e.preventDefault();
-    console.log("drawers-container completed");
 });
 
-$(document).ajaxComplete(function(e) {
+$(document).ajaxComplete(function() {
     var hashtag = window.location.hash,
-        navbarHeight = $('.navbar-fixed-top').outerHeight(),
-        stickyNavbarHeight = $('.sticky-nav').outerHeight(),
+        navbarHeight = $('.navbar-fixed-top').height(),
+        stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-    e.preventDefault();
-    console.log("ALL current AJAX calls have completed");
 });
 
 /**
