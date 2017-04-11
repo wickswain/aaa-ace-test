@@ -134,7 +134,7 @@ public class PublishPageProcess implements WorkflowProcess {
 			if (workflowData.getPayloadType().equals(Constants.JCR_PATH)) {
 				List<String> replicatePaths = new ArrayList<String>();
 				payloadPath = workflowData.getPayload().toString();
-				
+
 				logger.debug("Replicate paths count Before: ", replicatePaths.size());
 
 				// replicate the reference assets in page
@@ -156,10 +156,9 @@ public class PublishPageProcess implements WorkflowProcess {
 						replicatePaths.add(hit.getPath());
 					}
 				}
-				logger.debug("Workflow payload path: " + payloadPath);
 				logger.info("Workflow payload path: " + payloadPath);
 				replicatePaths.add(payloadPath);
-				
+
 				logger.debug("Replicate paths count: ", replicatePaths.size());
 
 				if (agentID != null) {
@@ -208,7 +207,7 @@ public class PublishPageProcess implements WorkflowProcess {
 	private ReplicationOptions getReplicationOptions(final String agentID) {
 		logger.info("PublishPageReviewProcess getReplicationOptions method starts.");
 		logger.debug("Replication Agent in WF: " + agentID);
-		
+
 		ReplicationOptions replicationOpts = new ReplicationOptions();
 
 		replicationOpts.setFilter(new AgentFilter() {
@@ -241,10 +240,12 @@ public class PublishPageProcess implements WorkflowProcess {
 				logger.debug("Campaign references retrieved for page {} on resource {} count is: {}", pagePath,
 						childResource.getPath(), results.size());
 
-				if (campaignResults == null) {
-					campaignResults = results;
-				} else {
-					campaignResults.addAll(results);
+				if (results != null) {
+					if (campaignResults == null) {
+						campaignResults = results;
+					} else {
+						campaignResults.addAll(results);
+					}
 				}
 			}
 		}
@@ -281,9 +282,11 @@ public class PublishPageProcess implements WorkflowProcess {
 				String location = resource.getValueMap().get("location", "");
 
 				if (StringUtils.isNotBlank(location)) {
-					List<Hit> temp = getCampaignResults(location, adminSession);
-					for (Hit hit : temp) {
-						campaignResults.add(hit);
+					List<Hit> results = getCampaignResults(location, adminSession);
+					if (results != null) {
+						for (Hit hit : results) {
+							campaignResults.add(hit);
+						}
 					}
 				}
 			}
