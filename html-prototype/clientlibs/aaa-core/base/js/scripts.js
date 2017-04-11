@@ -286,8 +286,13 @@ $(document).on('click', '.drawers-container li > a', function(e) {
             $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('deactive');
         }
         else{
-        e.preventDefault();
-        jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+            $('.slideboxer').css('left', '-375px');
+            $(".navigation-bar").stop().fadeOut();
+            $('.slide-nav').removeAttr('style');
+            $('.drawers-wrapper, .backslide, .tiles-list li > ul').hide();
+            $(".overlay").hide();
+            e.preventDefault();
+            jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
         }
 });
 
