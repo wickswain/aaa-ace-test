@@ -71,7 +71,9 @@ $j(function($) {
         $('#page-container').css('paddingTop', $('#page-header').outerHeight());
     }
     headerResize();
-
+    $(document).on('click', '.drawers-container li > a', function(e) {
+        $("body").removeClass("modal-open");
+    });
     //Home Header - jump link
     $('.home-header .learn-link a').click(function(e) {
         var hashtag = $(this.hash),
@@ -270,16 +272,18 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a', function(e) {
         swingTime = 1000;
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
     e.preventDefault();
+    console.log("sticky-nav completed");
 });
 
-$('.drawers-container li > a').on('click', function(e) {
+$(document).on('click', '.drawers-container li > a', function(e) {
     var hashtag = $(this.hash),
         navbarHeight = $('.navbar-fixed-top').outerHeight(),
         stickyNavbarHeight = $('.sticky-nav').outerHeight(),
         swingTime = 0;
-    
+
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
     e.preventDefault();
+    console.log("drawers-container completed");
 });
 
 $(document).ajaxComplete(function(e) {
@@ -289,15 +293,13 @@ $(document).ajaxComplete(function(e) {
         swingTime = 0;
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
     e.preventDefault();
+    console.log("ALL current AJAX calls have completed");
 });
 
 /**
  * Jump Link Target - End
  */
-$(document).on('click','.drawers-container li > a', function(e) {
-    $("body").removeClass("modal-open");
-    e.preventDefault();
-});
+
 
 $('a').click(function() {
     var modalId;
