@@ -273,7 +273,7 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a', function() {
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
 });
 
-$(document).on('click', '.drawers-container li > a', function() {
+$(document).on('click', '.drawers-container li > a', function(e) {
     var hashtag = $(this.hash),
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
