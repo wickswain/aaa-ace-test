@@ -277,7 +277,7 @@ $('.drawers-container li > a').on('click', function(e) {
         navbarHeight = $('.navbar-fixed-top').outerHeight(),
         stickyNavbarHeight = $('.sticky-nav').outerHeight(),
         swingTime = 0;
-    $("body").removeClass("modal-open");
+    
     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
     e.preventDefault();
 });
@@ -294,6 +294,10 @@ $(document).ajaxComplete(function(e) {
 /**
  * Jump Link Target - End
  */
+$(document).on('click','.drawers-container li > a', function(e) {
+    $("body").removeClass("modal-open");
+    e.preventDefault();
+});
 
 $('a').click(function() {
     var modalId;
