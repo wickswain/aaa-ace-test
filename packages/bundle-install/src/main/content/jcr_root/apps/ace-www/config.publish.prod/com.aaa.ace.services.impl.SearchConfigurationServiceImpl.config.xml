@@ -5,5 +5,5 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:OsgiConfig"
-    google.api.key="AIzaSyD0uRV_C5sQvMNqYKyUXrW_jQdspcn1PBE"
+    google.api.key="AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU"
     google.search.engine.id="001632313532509121004:ofuvokjcprq"/>
