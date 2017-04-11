@@ -284,6 +284,11 @@ $(document).on('click', '.drawers-container li > a', function(e) {
             $('.drawers-wrapper, .overlay').stop().fadeOut();
             $('.drawers-content').scrollTop(0);
             $('.navigation-bar .nav > li:not(:last-child) > a').not($(this)).removeClass('deactive');
+            $('.slideboxer').css('left', '-375px');
+            $(".navigation-bar").stop().fadeOut();
+            $('.slide-nav').removeAttr('style');
+            $('.drawers-wrapper, .backslide, .tiles-list li > ul').hide();
+            $(".overlay").hide();
         }
         else{
             $('.slideboxer').css('left', '-375px');
