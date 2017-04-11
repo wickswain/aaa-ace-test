@@ -278,8 +278,12 @@ $(document).on('click', '.drawers-container li > a', function() {
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
-
-    jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+        if($(this).attr('target') == '_blank'){
+        }
+        else{
+            e.preventDefault();
+            jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+        }
 });
 
 $(document).ajaxComplete(function() {
