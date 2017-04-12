@@ -21,10 +21,13 @@ $(function () {
         var regionInCookie = getCookie('aaa-region');
 
         //Get region from referrer if available
-        //var host = window.location.hostname;
-        var host = document.referrer;
+        var host = window.location.hostname;
+        //var host = document.referrer;
         var regionInReferrer;
 
+       /* if(host == ""){
+            host = window.location.hostname;
+        }*/
 
         if (host) {
             host = host.split('.');
