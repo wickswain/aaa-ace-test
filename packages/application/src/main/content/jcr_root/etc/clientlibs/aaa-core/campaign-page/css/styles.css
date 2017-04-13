@@ -404,7 +404,7 @@
     -moz-background-clip: padding-box;
     background-clip: padding-box;
     outline: 0;
-    display: block !important;
+    display:none;
     max-height: 550px;
     bottom: auto;
     right: auto;
