@@ -7,9 +7,9 @@
 */-->
 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"
-      data-sly-use.head="head.js"
-      data-sly-use.headlibRenderer="headlibs.html"
-      data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+	  data-sly-use.head="head.js"
+	  data-sly-use.headlibRenderer="headlibs.html"
+	  data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
 <meta name="keywords" content="${head.keywords}">
 <meta name="description" content="${head.description}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -25,6 +25,10 @@
 
 <sly data-sly-include="customheaderlibs.html" />
 <script src="//tags.tiqcdn.com/utag/aaa/main/prod/utag.sync.js"></script>
+<script type="text/javascript">
+    checkZip();
+</script>
+
 <sly data-sly-call="${headlibRenderer.headlibs @ designPath=head.designPath}" />
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}" />
 <sly data-sly-include="author.html" />
