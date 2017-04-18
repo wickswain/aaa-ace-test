@@ -1,5 +1,3 @@
 #base=js
 
-ace.zipcodechecker.js
-ace.frameworklibs.min.js
 modalpopup.js
