@@ -56,7 +56,7 @@ function isInAuthor()
 	
 	if(rurl != null)
 	{
-		if (rurl.indexOf('authcq') != -1)
+		if (rurl.indexOf('aut') != -1)
 			result = true;
 	}//if(rurl != null)
 	
