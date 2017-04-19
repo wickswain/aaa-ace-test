@@ -178,6 +178,7 @@ $j(function($) {
     }
     $('.backslide').click(function(e) {
         e.preventDefault();
+		$('.sub-title').next().hide();
         $('.backslide').text(globalTab);
         $(".slide-nav").css("left", "+=375px");
         ($(".slide-nav").css("left") == '-375px') ? $(this).hide(): $(this).show();
