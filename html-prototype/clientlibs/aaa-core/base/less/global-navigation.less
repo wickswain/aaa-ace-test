@@ -1,6 +1,5 @@
 // Global Navigation Component
 //
-//
 #page-header {
     transition: all 0.4s;
     border: 0;
@@ -844,6 +843,7 @@
                 cursor: pointer;
                 vertical-align: middle;
                 position: relative;
+                text-align: center;
                 &:hover {
                     text-decoration: none;
                 }
@@ -852,12 +852,14 @@
                     margin-left: 15px;
                 }
                 .restrict-characters {
-                    max-width: 65px;
+                    max-width: 50px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     float: left;
                     text-decoration: none;
+                    min-width: 33px;
+                    display: block;
                 }
             }
             .brand {
@@ -1381,10 +1383,22 @@
     }
 }
 @media (min-width: 1700px) {
-    .navigation-bar .navbar .navbar-nav li .drawers-wrapper .drawers-content .drawer-close {
-        position: absolute;
-        top: 20px;
-        z-index: 1;
+    .navigation-bar {
+        .navbar {
+            .navbar-nav {
+                li {
+                    .drawers-wrapper {
+                        .drawers-content {
+                            .drawer-close {
+                                position: absolute;
+                                top: 20px;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 .animation-tiles {
