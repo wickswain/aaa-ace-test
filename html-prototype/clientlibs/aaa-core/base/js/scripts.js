@@ -265,8 +265,7 @@ function jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime)
        $('html,body').stop().animate({
             scrollTop: 0
         }, 0, 'swing');       
-    }    
-	$("#ajaxStopCalls").remove();    
+    }    	   
 }
 
 $(document).on('click', '.sticky-nav .dropdown-menu li > a', function(e) {
