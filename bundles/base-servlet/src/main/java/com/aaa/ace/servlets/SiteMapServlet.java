@@ -210,12 +210,12 @@ public final class SiteMapServlet extends SlingSafeMethodsServlet {
         logger.info("End of doGet method in SiteMap servlet.");
     }
     
-  /**
-   *  Check for the region in property based on region in request to write the page
-   *  
-   *  @param page
-   *  @param request
-   *  */
+    /**
+     * Check for the region in property based on region in request to write the page
+     *  
+     * @param page
+     * @param request
+     */
     private boolean checkForHideInSiteMap(Page page, SlingHttpServletRequest request) {
 
         String regionInRequest = regionDataService.getRegionInfo(request);
