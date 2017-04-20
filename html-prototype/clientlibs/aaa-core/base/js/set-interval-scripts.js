@@ -129,6 +129,7 @@ var interval = setInterval(function() {
             }
         };
         //Variables declaration end
+        if($(".travel-widget").attr("class")!=undefined){
         $.getScript('https://secure.rezserver.com/public/js/searchbox/searchbox.min.js', function() {
             if ($('.travel-widget').length > 0) {
                 $('input[name=rs_adults]').val("1");
@@ -395,6 +396,7 @@ var interval = setInterval(function() {
                 return false;
             });
         });
+        }
         // Travel widget scripts end
         /**
          * Card Carousel
