@@ -129,7 +129,7 @@ var interval = setInterval(function() {
             }
         };
         //Variables declaration end
-        if($(".travel-widget").attr("class")!=undefined){
+        if ($(".travel-widget").attr("class") != undefined) {
             $.getScript('https://secure.rezserver.com/public/js/searchbox/searchbox.min.js', function() {
                 if ($('.travel-widget').length > 0) {
                     $('input[name=rs_adults]').val("1");
@@ -154,7 +154,7 @@ var interval = setInterval(function() {
                                 e.preventDefault();
                             } else if (url !== '#') {
                                 if (url.match("^/content")) {
-                                    url =url + ".html";
+                                    url = url + ".html";
                                 }
                                 if (openInNewtab == "true") {
                                     window.open(url, '_blank');
@@ -357,13 +357,13 @@ var interval = setInterval(function() {
                     $('.rs_chk_in').val($(this).val());
                     e.preventDefault();
                 });
-                $(document).on('mouseover', '.rs_chk_in_box .rs_cal_table .rs_cal_day, .rs_chk_in1_box .rs_cal_table .rs_cal_day', function(){
+                $(document).on('mouseover', '.rs_chk_in_box .rs_cal_table .rs_cal_day, .rs_chk_in1_box .rs_cal_table .rs_cal_day', function() {
                     $('.rs_chk_in').val('');
                 });
-                $(document).on('mouseover', '.rs_chk_out_box .rs_cal_table .rs_cal_day', function(){
+                $(document).on('mouseover', '.rs_chk_out_box .rs_cal_table .rs_cal_day', function() {
                     $('.rs_chk_out').val('');
                 });
-                $(document).on('click', '.rs_cal_table .rs_cal_day', function(){
+                $(document).on('click', '.rs_cal_table .rs_cal_day', function() {
                     $('.rs_chk_out_box').css('display', 'none');
                 });
                 $('#mvp-keywords').click(function() {
