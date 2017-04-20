@@ -181,15 +181,21 @@ public final class SiteMapServlet extends SlingSafeMethodsServlet {
 			stream.writeStartElement("", "urlset", NS);
 			stream.writeNamespace("", NS);
 
-			// first do the current page
-			write(page, stream, request);
+			// check for hide in sitemap property based on region in request and
+			// than write the current page
+			if (checkForHideInSiteMap(page, request)) {		
+				write(page, stream, request);
+			}
 
 			boolean includeInvalid = false;
 			boolean includeHidden = true;
 
 			for (Iterator<Page> children = page.listChildren(new PageFilter(includeInvalid, includeHidden),
 					true); children.hasNext();) {
-				write(children.next(), stream, request);
+				Page childPage = children.next();
+				if (checkForHideInSiteMap(childPage, request)) {
+					write(childPage, stream, request);
+				}
 			}
 
 			stream.writeEndElement();
@@ -202,6 +208,17 @@ public final class SiteMapServlet extends SlingSafeMethodsServlet {
 
 		logger.info("End of doGet method in SiteMap servlet.");
 	}
+	
+	private boolean checkForHideInSiteMap(Page page, SlingHttpServletRequest request) {
+			
+			String regionRequest = regionDataService.getRegionInfo(request);	
+			String forregioncheck=page.getProperties().get(regionRequest+"-region",String.class);
+		
+			if(forregioncheck != null && forregioncheck.equalsIgnoreCase("true")){	
+				return false;
+			}			
+			return true;
+		}
 
 	/**
 	 * Write the SiteMap in XML format.
