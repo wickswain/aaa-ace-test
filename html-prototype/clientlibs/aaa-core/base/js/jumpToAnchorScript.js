@@ -1,55 +1,42 @@
+/**
+ * Jump to Anchor with “finding Ajax components” approach.
+ */
 (function() {
     var numAjaxComp = 1; //Due to signUp ajaxCall
     var ajaxStopCalls = 0;
-    //Appending hidden element to page
-    $('body').append('<input id="ajaxStopCalls" data-id="' + ajaxStopCalls + '" type="hidden" >');
-
-    //Default Jump methord need ot execute when ther in ajaxCalls
+    $('body').append('<input id="ajaxStopCalls" data-id="' + ajaxStopCalls + '" type="hidden" >'); //Appending hidden element to page
     var hashtag = window.location.hash,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
-    jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-    //Default Jump methord end
-
-    //ajaxStop method strart
-    $(document).ajaxStop(function() {
-        var ajaxComponetCount = $('.ajaxComponent').length;
-        var numAjaxCompCount = numAjaxComp + ajaxComponetCount;
-        var jumpInterval = null;
-        var varCounter = 0;
-
-        console.log('ajaxComponent-length: ' + $('.ajaxComponent').length);
-        console.log('numAjaxComp: ' + numAjaxCompCount);
+    $(document).ajaxStop(function() { //ajaxStop method strart
+        var ajaxComponetCount = $('.ajaxComponent').length,
+            numAjaxCompCount,
+            jumpInterval = null,
+            varCounter = 0;
+        if (ajaxComponetCount == 0) {
+            numAjaxCompCount = numAjaxComp + 1;
+        } else {
+            numAjaxCompCount = numAjaxComp + ajaxComponetCount;
+        }
         ajaxStopCalls++;
-        console.log("ajaxStopCalls: " + ajaxStopCalls);
-
-        //Appending current ajaxStopCalls 
-        $("body").find("#ajaxStopCalls").attr('data-id', ajaxStopCalls);
-
-        //Check the no of ajaxStopCalls and Ajax Components
-        if (ajaxStopCalls == numAjaxCompCount) {
-
+        $("body").find("#ajaxStopCalls").attr('data-id', ajaxStopCalls); //Appending current ajaxStopCalls 
+        if (ajaxStopCalls == numAjaxCompCount) { //Check the no of ajaxStopCalls and Ajax Components
             var hiddenInputVal = $("body").find("#ajaxStopCalls").attr('data-id');
             var jumpFun = function() {
-
-                if (hiddenInputVal == varCounter) {
+                if (hiddenInputVal < varCounter) {
                     clearInterval(jumpInterval);
-                    console.log('Jump');
                     jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+                    $("#ajaxStopCalls").remove();
                 } else {
                     varCounter++;
-                    console.log('Interval');
                     var hiddenInput = $("#ajaxStopCalls").length;
                     if (hiddenInput == 0) {
                         clearInterval(jumpInterval);
-                        console.log(hiddenInput);
                     }
                 }
             };
             jumpInterval = setInterval(jumpFun, 1);
         }
     });
-    console.log('numAjaxComp: ' + numAjaxComp);
-    //ajaxStop method strart
 })();
