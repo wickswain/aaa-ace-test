@@ -260,8 +260,13 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .btn-style, .link-bt
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 1000;
-    jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-    e.preventDefault();
+    if($(this).attr('target') == '_self'){
+    	jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+    }
+    else {
+        jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
+    	e.preventDefault();
+	}
 });
 
 $(document).on('click', '.drawers-container li > a', function(e) {
