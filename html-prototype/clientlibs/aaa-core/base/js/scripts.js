@@ -255,7 +255,7 @@ function jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime)
     }
 }
 
-$(document).on('click', '.sticky-nav .dropdown-menu li > a', function(e) {
+$(document).on('click', '.sticky-nav .dropdown-menu li > a, .btn-style, .link-btn, .learn-btn', function(e) {
     var hashtag = $(this.hash),
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
@@ -265,6 +265,9 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a', function(e) {
 });
 
 $(document).on('click', '.drawers-container li > a', function(e) {
+    var hashtag = this.hash.substr(1);
+	var hreftag = $(this).attr('href');
+    var newHreftag = hreftag.split('#', 1)[0];
     var navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
@@ -278,7 +281,20 @@ $(document).on('click', '.drawers-container li > a', function(e) {
         $(".navigation-bar").stop().fadeOut();
         $('.slide-nav').removeAttr('style');
         $(".overlay").hide();
-    } else {
+    } 
+    else if ($(this).attr('target') == '_self' && hashtag.length > 0 ) {
+        var target = $(this).attr('href');
+        if (target.length != 0) {
+            var hashtagKey = this.hash;
+            jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime);
+        }
+        $('.slideboxer').css('left', '-375px');
+        $(".navigation-bar").hide();
+        $('.slide-nav').removeAttr('style');
+        $(".overlay").hide();
+        e.preventDefault();
+    }
+    else {
         var target = $(this).attr('href');
         if (target.length != 0) {
             var hashtagKey = this.hash;
