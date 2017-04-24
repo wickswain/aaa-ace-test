@@ -97,9 +97,9 @@ $j(function($) {
         }
         /*Sticky Nav scroll event*/
         ($(this).scrollTop() > scrollTop) ? $('.sticky-nav').addClass('navbar-fixed-top').show(): $('.sticky-nav').removeClass('navbar-fixed-top').hide();
-          if ($(window).width() < 992) {
+        if ($(window).width() < 992) {
             ($(this).scrollTop() > scrollTop) ? $('.brand').hide(): $('.brand').show();
-          }
+        }
     });
     /*Responsive*/
     $(window).resize(function() {
