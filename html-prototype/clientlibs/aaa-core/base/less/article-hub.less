@@ -1,107 +1,105 @@
-    /*****************************************
-Article Text Component
-*****************************************/
-    
-    .article-hub-section {
-        .article-hub {
-            .article-list {
-                padding-top: 30px;
-                padding-bottom: 30px;
-                &.with-img {
-                    border-bottom: 1px solid #cccccc;
-                    .imgblock {
-                        min-height: 220px;
-                        overflow: hidden;
-                        border-radius: 4px;
-                        position: relative;
-                        /*margin: 0 -20px;*/
-                        img {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            height: 100%;
-                        }
+// Article Text Component
+.article-hub-section {
+    .article-hub {
+        .article-list {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            &.with-img {
+                border-bottom: 1px solid #cccccc;
+                .imgblock {
+                    min-height: 220px;
+                    overflow: hidden;
+                    border-radius: 4px;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        height: 100%;
                     }
                 }
-                .article-info {
-                    color: @color-gray-lighter;
-                    /*padding-left: 20px;*/
-                    li {
-                        font-size: 12px;
-                        &:not(last-child) {
-                            padding-right: 15px;
-                        }
-                        a {
-                            color: @color-blue-primary-medium;
-                            padding-bottom: 0px;
-                            display: inline-block;
-                        }
-                        &.time {
-                            color: #95979a;
-                        }
-                    }
-                }
-                .list-title {
-                    padding-bottom: 15px;
-                    display: block;
-                }
-            }
-        }
-        .pagination-grid {
-            li {
-                list-style: none;
-            }
-        }
-        .no-padding {
-            padding-left: 0px;
-        }
-        .checked-list-item-main {
-            &:after {
-                content: "\e114";
-                font-family: 'Glyphicons Halflings';
-                font-size: 12px;
-                line-height: 14px;
-                position: relative;
-                top: 1px;
-                display: inline-block;
-                right: -5px;
-            }
-        }
-    }
-    /* Responsive styles */
-    
-    @media only screen and (min-width: 320px) {
-        .article-hub {
-            .imgblock {
-                margin-bottom: 30px;
             }
             .article-info {
-                padding-left: 0;
+                color: @color-gray-lighter;
                 li {
-                    &:first-child {
-                        display: block;
-                        margin-bottom: 15px;
+                    font-size: 12px;
+                    &:not(last-child) {
+                        padding-right: 15px;
                     }
-                    &:last-child {
-                        margin-bottom: 15px;
+                    a {
+                        color: @color-blue-primary-medium;
+                        padding-bottom: 0px;
+                        display: inline-block;
+                    }
+                    &.time {
+                        color: #95979a;
+                    }
+                    img {
+                        max-width: 140px;
+                        max-height: 25px;
                     }
                 }
             }
-            .list-btn {
-                margin-top: 30px;
+            .list-title {
+                padding-bottom: 15px;
+                display: block;
             }
         }
-        .filter-grid {
-            margin-top: 0;
-        }
-        .pagination-grid {
-            padding: 40px 0px;
+    }
+    .pagination-grid {
+        li {
+            list-style: none;
         }
     }
-    
-    @media only screen and (min-width: 768px) {
-        .article-hub-section .article-hub {
+    .no-padding {
+        padding-left: 0px;
+    }
+    .checked-list-item-main {
+        &:after {
+            content: "\e114";
+            font-family: 'Glyphicons Halflings';
+            font-size: 12px;
+            line-height: 14px;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            right: -5px;
+        }
+    }
+}
+// Responsive styles 
+@media only screen and (min-width: 320px) {
+    .article-hub {
+        .imgblock {
+            margin-bottom: 30px;
+        }
+        .article-info {
+            padding-left: 0;
+            li {
+                &:first-child {
+                    display: block;
+                    margin-bottom: 15px;
+                }
+                &:last-child {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .list-btn {
+            margin-top: 30px;
+        }
+    }
+    .filter-grid {
+        margin-top: 0;
+    }
+    .pagination-grid {
+        padding: 40px 0px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .article-hub-section {
+        .article-hub {
             .article-info {
                 li {
                     &:first-child {
@@ -120,66 +118,64 @@ Article Text Component
                 }
             }
         }
-        .filter-grid {
-            margin-top: 30px;
-            width: 200px;
-        }
     }
-    
-    @media only screen and (min-width: 992px) {
-        .article-hub {
-            .imgblock {
-                margin: 0 -20px;
-            }
-            .article-info {
-                padding-left: 20px;
-                margin-right: -20px;
-                li {
-                    &:first-child {
-                        display: block;
-                        margin-bottom: 15px;
-                    }
-                    &:last-child {
-                        margin-bottom: 15px;
-                    }
+    .filter-grid {
+        margin-top: 30px;
+        width: 200px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .article-hub {
+        .imgblock {
+            margin: 0 -20px;
+        }
+        .article-info {
+            padding-left: 20px;
+            margin-right: -20px;
+            li {
+                &:first-child {
+                    display: block;
+                    margin-bottom: 15px;
                 }
-            }
-        }
-        .filter-grid {
-            margin-top: 30px;
-            padding: 40px;
-            width: 100%;
-        }
-        .pagination-grid {
-            padding: 70px 0px;
-        }
-    }
-    
-    @media only screen and(min-width: 1200px) {
-        .article-hub {
-            .article-info {
-                li {
-                    &:first-child {
-                        display: inline-block;
-                        margin-bottom: 15px;
-                    }
-                    &:last-child {
-                        margin-bottom: 15px;
-                    }
+                &:last-child {
+                    margin-bottom: 15px;
                 }
             }
         }
     }
-    
-    @media (min-width:1400px) {
-        .article-hub {
-            .article-info {
-                li {
-                    &:first-child {
-                        display: inline-block;
-                        margin-bottom: 15px;
-                    }
+    .filter-grid {
+        margin-top: 30px;
+        padding: 40px;
+        width: 100%;
+    }
+    .pagination-grid {
+        padding: 70px 0px;
+    }
+}
+@media only screen and(min-width: 1200px) {
+    .article-hub {
+        .article-info {
+            li {
+                &:first-child {
+                    display: inline-block;
+                    margin-bottom: 15px;
+                }
+                &:last-child {
+                    margin-bottom: 15px;
                 }
             }
         }
     }
+}
+@media (min-width: 1400px) {
+    .article-hub {
+        .article-info {
+            li {
+                &:first-child {
+                    display: inline-block;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
