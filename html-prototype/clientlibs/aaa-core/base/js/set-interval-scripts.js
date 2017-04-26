@@ -19,6 +19,7 @@ var interval = setInterval(function() {
         showHideMembershipCols.call(this);
     });
     if (document.readyState === 'complete') {
+        return; //prevent old widget
         // Membership comparison script starts
         $(".membership-row-text, .membership-row-img, .icon-info").find("div").css("padding", "0px").css("border", "none").css("display", "inherit");
         $(".membership-row-text, .membership-row-img, .icon-info").find("span").css("padding", "0px").css("border", "none");
