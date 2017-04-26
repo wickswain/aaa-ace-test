@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Travel Widget"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <highlighttab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select the tab which is to be highlighted by default."
+                                fieldLabel="Select Highlight Tab"
+                                name="./tabType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hotels
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hotels (Default)"
+                                        value="hotels"/>
+                                    <flights
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Flights"
+                                        value="flights"/>
+                                    <cars
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cars"
+                                        value="cars"/>
+                                    <cruises
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cruises"
+                                        value="cruises"/>
+                                </items>
+                            </highlighttab>
+                            <headlinerte
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the checkbox to enable the rte."
+                                name="./headLineRTE"
+                                text="Enable RTE for Headline ?"
+                                value="{Boolean}true"/>
+                            <headeringfontcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/aaa-core/components/common/textfontcolors"
+                                fieldDescription="Choose font color for title."
+                                fieldLabel="Title Font Color"
+                                freestylePalette="{Boolean}true"
+                                name="./titleFontColor"/>
+                            <bgcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/aaa-core/granite/widgets/colorpicker"
+                                colorsPath="/etc/config/aaa-core/components/common/backgroundcolors"
+                                fieldDescription="Choose background color for travel widget component."
+                                fieldLabel="Background Color"
+                                freestylePalette="{Boolean}true"
+                                name="./backgroundColor"/>
+                            <bgimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Select backgroung image"
+                                fieldLabel="Image"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./file"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <alt-text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Alt Text"
+                                name="./altText"/>
+                        </items>
+                    </columns>
+                </items>
+            </basic>
+            <region
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Region Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <refid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select the associated option from the dropdown list."
+                                fieldLabel="Select Reference ID"
+                                name="./refId">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <calif
+                                        jcr:primaryType="nt:unstructured"
+                                        text="CA 5733"
+                                        value="5733"/>
+                                    <texas
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TX 5799"
+                                        value="5799"/>
+                                    <newmexico
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NM 5748"
+                                        value="5748"/>
+                                    <hawaii
+                                        jcr:primaryType="nt:unstructured"
+                                        text="HI 5738"
+                                        value="5738"/>
+                                    <nne
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NNE 5741"
+                                        value="5741"/>
+                                    <tw
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TW 5780"
+                                        value="5780"/>
+                                    <alabama
+                                        jcr:primaryType="nt:unstructured"
+                                        text="AL 5755"
+                                        value="5755"/>
+                                    <autoclubmo
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ACMO 5783"
+                                        value="5783"/>
+                                    <eastcentral
+                                        jcr:primaryType="nt:unstructured"
+                                        text="EC 5770"
+                                        value="5770"/>
+                                </items>
+                            </refid>
+                            <clubcode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select the associated option from the dropdown list."
+                                fieldLabel="Select Club Code"
+                                name="./clubCode">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <calif
+                                        jcr:primaryType="nt:unstructured"
+                                        text="CA 004"
+                                        value="004"/>
+                                    <texas
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TX 252"
+                                        value="252"/>
+                                    <newmexico
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NM 601"
+                                        value="601"/>
+                                    <hawaii
+                                        jcr:primaryType="nt:unstructured"
+                                        text="HI 018"
+                                        value="018"/>
+                                    <nne
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NNE 036"
+                                        value="036"/>
+                                    <tw
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TW 258"
+                                        value="258"/>
+                                    <alabama
+                                        jcr:primaryType="nt:unstructured"
+                                        text="AL 001"
+                                        value="001"/>
+                                    <autoclubmo
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ACMO 065"
+                                        value="065"/>
+                                    <eastcentral
+                                        jcr:primaryType="nt:unstructured"
+                                        text="EC 215"
+                                        value="215"/>
+                                </items>
+                            </clubcode>
+                            <partnercode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select the associated option from the dropdown list."
+                                fieldLabel="Select Partner Code"
+                                name="./partnerCode">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <calif
+                                        jcr:primaryType="nt:unstructured"
+                                        text="CA 53709"
+                                        value="53709"/>
+                                    <texas
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TX 58592"
+                                        value="58592"/>
+                                    <newmexico
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NM 58593"
+                                        value="58593"/>
+                                    <hawaii
+                                        jcr:primaryType="nt:unstructured"
+                                        text="HI 60996"
+                                        value="60996"/>
+                                    <nne
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NNE 67113"
+                                        value="67113"/>
+                                    <tw
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TW 35190"
+                                        value="35190"/>
+                                    <alabama
+                                        jcr:primaryType="nt:unstructured"
+                                        text="AL 1817"
+                                        value="1817"/>
+                                    <autoclubmo
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ACMO 21533"
+                                        value="21533"/>
+                                    <eastcentral
+                                        jcr:primaryType="nt:unstructured"
+                                        text="EC 31333"
+                                        value="31333"/>
+                                </items>
+                            </partnercode>
+                            <wsn
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Please select the associated option from the dropdown list."
+                                fieldLabel="Select Web Serial Number"
+                                name="./wsnCode">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <calif
+                                        jcr:primaryType="nt:unstructured"
+                                        text="CA 1001"
+                                        value="1001"/>
+                                    <texas
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TX 1280"
+                                        value="1280"/>
+                                    <newmexico
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NM 1281"
+                                        value="1281"/>
+                                    <hawaii
+                                        jcr:primaryType="nt:unstructured"
+                                        text="HI 1482"
+                                        value="1482"/>
+                                    <nne
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NNE 2732"
+                                        value="2732"/>
+                                    <tw
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TW 1167"
+                                        value="1167"/>
+                                    <alabama
+                                        jcr:primaryType="nt:unstructured"
+                                        text="AL 1116"
+                                        value="1116"/>
+                                    <autoclubmo
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ACMO 1183"
+                                        value="1183"/>
+                                    <eastcentral
+                                        jcr:primaryType="nt:unstructured"
+                                        text="EC 1198"
+                                        value="1198"/>
+                                </items>
+                            </wsn>
+                        </items>
+                    </columns>
+                </items>
+            </region>
+            <hotels
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Hotels Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <reservationlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for my reservation option."
+                                fieldLabel="My Reservation Link Label"
+                                name="./hMyReservationLinkLabel"
+                                value="My Reservations"/>
+                            <reservationlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for my reservation option."
+                                fieldLabel="My Reservation Link"
+                                name="./hMyReservationLink"/>
+                            <reservation_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if my reservation link has to open in new tab."
+                                name="./hMyReservationNewTabFlag"
+                                text="My Reservation Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <advancesearchlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for Advance Search option."
+                                fieldLabel="Advance Search Link Label"
+                                name="./hAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
+                            <advancesearchlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for Advance Search option."
+                                fieldLabel="Advance Search Link"
+                                name="./hAdvanceSearchLink"/>
+                            <search_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if Advance Search link has to open in new tab."
+                                name="./hAdvacneSearchLinkNewTabFlag"
+                                text="Advance Search Link Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </hotels>
+            <flights
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Flights Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <multycitylinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for multy city option in Flights tab."
+                                fieldLabel="Multy City Link Label"
+                                name="./fMultiCityLinkLabel"
+                                value="Multi City"/>
+                            <multycitylink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for multy city option in Flights tab."
+                                fieldLabel="Multy City Link"
+                                name="./fMultiCityLink"/>
+                            <mcopeninnewtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if the multy city flights link has to open in new tab."
+                                name="./fMultiCityLinkNewTabFlag"
+                                text="Multy City Flights Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <reservationlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for my reservation option."
+                                fieldLabel="My Reservation Link Label"
+                                name="./fMyReservationLinkLabel"
+                                value="My Reservations"/>
+                            <reservationlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for my reservation option."
+                                fieldLabel="My Reservation Link"
+                                name="./fMyReservationLink"/>
+                            <reservation_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if my reservation link has to open in new tab."
+                                name="./fMyReservationNewTabFlag"
+                                text="My Reservation Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <advancesearchlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for Advance Search option."
+                                fieldLabel="Advance Search Link Label"
+                                name="./fAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
+                            <advancesearchlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for Advance Search option."
+                                fieldLabel="Advance Search Link"
+                                name="./fAdvanceSearchLink"/>
+                            <search_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if Advance Search link has to open in new tab."
+                                name="./fAdvacneSearchLinkNewTabFlag"
+                                text="Advance Search Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <fhlinkflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".fh-link-hide-show"
+                                fieldDescription="Please select the checkbox to enable the Flights + Hotels link on Travel Widget."
+                                name="./fhLinkFlag"
+                                text="Enable Flights + Hotels Link?"
+                                value="{Boolean}true"/>
+                            <fhlinkflag_x0040_delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./fhLinkFlag@Delete"
+                                value="{Boolean}true"/>
+                            <fhlink-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide fh-link-hide-show"
+                                showhidetargetvalue="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fhpackagelink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Example (https://www.aaa.com/scripts/WebObjects.dll/AAAOnline?association=aaa&amp;club=004&amp;page=PartnerRedirect&amp;PID=403&amp;https://www.pleasantholidays.com/deeplink?pcode=53709&amp;wsn=1001&amp;p_type=FH&amp;g1a=2&amp;rf=&amp;d1=&amp;f1=)"
+                                        fieldLabel="Flights + Hotels Link"
+                                        name="./fhLink"/>
+                                    <openinnewtabflag
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        fieldDescription="Please select the check box if the flights + hotels link has to open in new tab."
+                                        name="./fhLinkNewTabFlag"
+                                        text="Open in new window?"
+                                        value="{Boolean}true"/>
+                                </items>
+                            </fhlink-container>
+                        </items>
+                    </columns>
+                </items>
+            </flights>
+            <cars
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Cars Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <reservationlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for my reservation option."
+                                fieldLabel="My Reservation Link Label"
+                                name="./cMyReservationLinkLabel"
+                                value="My Reservations"/>
+                            <reservationlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for my reservation option."
+                                fieldLabel="My Reservation Link"
+                                name="./cMyReservationLink"/>
+                            <reservation_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if my reservation link has to open in new tab."
+                                name="./cMyReservationNewTabFlag"
+                                text="My Reservation Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <promolinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for promo code option."
+                                fieldLabel="Promo Code Link Label"
+                                name="./cPromoLinkLabel"
+                                value="Heartz Promo Code"/>
+                            <promolink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for promo code option."
+                                fieldLabel="Promo Code Link"
+                                name="./cPromoLink"/>
+                            <promolinknewtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if promo code link has to open in new tab."
+                                name="./cPromoLinkNewTabFlag"
+                                text="Promo Code Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <advancesearchlinklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the link label for Advance Search option."
+                                fieldLabel="Advance Search Link Label"
+                                name="./cAdvanceSearchLinkLabel"
+                                value="Advance Search"/>
+                            <advancesearchlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author the link for Advance Search option."
+                                fieldLabel="Advance Search Link"
+                                name="./cAdvanceSearchLink"/>
+                            <search_x0040_newtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if Advance Search link has to open in new tab."
+                                name="./cAdvacneSearchLinkNewTabFlag"
+                                text="Advance Search Link Open in new window?"
+                                value="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </cars>
+            <vacation
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Vacations Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <vacationslink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Example [(CA - https://calif.membervacationportal.com/), (NNE - http://northernnewengland.discounts.aaa.com/category/vacationdeals/catIdStr/728/uSource/AAAVD)]"
+                                fieldLabel="Vacations Link"
+                                name="./vacationsLink"/>
+                            <vacationopeninnewtabflag
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box if the vacations link has to open in new tab."
+                                name="./vcLinkNewTabFlag"
+                                text="Vaations Link Open in new window?"
+                                value="{Boolean}true"/>
+                            <scrolltocomponent
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please select the check box to scroll to the internal content"
+                                name="./scrollToInternal"
+                                text="Scroll to Internal content?"
+                                value="{Boolean}true"/>
+                            <scrolltocomponentid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Author the scroll id to scroll to the internal content"
+                                fieldLabel="Scroll Id"
+                                name="./scrollvacationsID"
+                                value="vacationsid"/>
+                        </items>
+                    </columns>
+                </items>
+            </vacation>
+            <jumplink
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Jumplink "
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <jump-link-id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Please enter Jump Link Id"
+                                fieldLabel="Jump Link Id"
+                                name="./jumpLinkId"/>
+                        </items>
+                    </columns>
+                </items>
+            </jumplink>
+        </items>
+    </content>
+</jcr:root>
