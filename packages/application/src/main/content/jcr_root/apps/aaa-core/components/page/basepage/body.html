@@ -6,6 +6,8 @@
 
 */-->
 
+<sly data-sly-use.queryString="com.aaa.ace.sightly.providers.RequestQueryStringParametersProvider" />
+
 <div data-previewmode="${wcmmode.previewmode ? 'true' : 'false'}" class="font-g">
 	<div data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
 		 data-sly-unwrap>

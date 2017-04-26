@@ -149,7 +149,7 @@
                             <querystringkey
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldDescription="Please enter custom Query String Key separated by comma in case of multiple values, if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
                                 fieldLabel="Link-1 Custom Query String"
                                 name="./link1/queryStringKey"/>
                             <open-in-new-tab-flag

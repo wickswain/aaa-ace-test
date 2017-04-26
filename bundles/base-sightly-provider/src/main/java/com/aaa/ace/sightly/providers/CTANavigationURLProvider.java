@@ -1,17 +1,22 @@
 package com.aaa.ace.sightly.providers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
+import javax.servlet.http.Cookie;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.aaa.ace.common.Constants;
 import com.aaa.ace.services.PageSuffixResolverService;
 import com.aaa.ace.services.RegionDataService;
 import com.aaa.ace.services.RunmodeProviderService;
@@ -46,8 +51,12 @@ public class CTANavigationURLProvider extends WCMUsePojo {
     private static final String DOMAIN_PLACE_HOLDER = "[Domain]";
 
     private static final String CLUB_PLACE_HOLDER = "[ClubName]";
+    
+    private static final String TARGETER_COMPONENT_PATH ="/content/campaigns";
+    
+    private boolean isComponentTargeted = false;
 
-    private String url;
+	private String url;
 
     @Override
     public void activate() throws Exception {
@@ -56,6 +65,17 @@ public class CTANavigationURLProvider extends WCMUsePojo {
         String customQueryParamsString = get(QUERY_STRING_KEY, String.class);
         Resource childResource = get(CHILD_RESOURCE, Resource.class);
         url = get(URL_PROPERTY_NAME, String.class);
+        
+        if(childResource != null){
+        	String resourecPath = childResource.getPath();
+        	if(StringUtils.isNotBlank(resourecPath) && StringUtils.startsWith(resourecPath, TARGETER_COMPONENT_PATH))
+        	{
+        		isComponentTargeted=true;
+        	} else {
+        		
+        		isComponentTargeted=false;
+        	}
+        }
 
         // Fetch the query string parameters selected from the available list
         Value[] selectedQueryParams = fetchQueryStringParameters(childResource);
@@ -69,7 +89,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
             PageSuffixResolverService pageService = getSlingScriptHelper()
                     .getService(PageSuffixResolverService.class);
 
-            url = pageService.resolveLinkURL(getResourceResolver(), url);
+            url = pageService.resolveLinkMapURL(getResourceResolver(), url);
         } else if (StringUtils.isNotBlank(url) && url.contains(DOMAIN_PLACE_HOLDER)
                 && url.contains(CLUB_PLACE_HOLDER)) {
             // Fetch valid AAA APP URL.
@@ -173,33 +193,69 @@ public class CTANavigationURLProvider extends WCMUsePojo {
         return selectedCommonQueryStringKeyArray;
     }
 
-    /**
-     * Gets the final valid URL by appending the query parameters.
-     *
-     * @param key
-     * @param url
-     * @return
-     */
-    private String getQueryStringValueConcatenatedURL(String key, String url) {
-        log.debug("Start of getQueryStringValueConcatenatedURL method");
+	/**
+	 * Gets the final valid URL by appending the query parameters.
+	 *
+	 * @param key
+	 * @param url
+	 * @return
+	 */
+	private String getQueryStringValueConcatenatedURL(String key, String url) {
+		log.debug("Start of getQueryStringValueConcatenatedURL method");
 
-        if (StringUtils.isNotBlank(key)) {
-            if (getRequest().getParameter(key) != null) {
-                String queryStringValue = getRequest().getParameter(key);
-                log.debug("queryStringValue: " + queryStringValue);
+		if (isComponentTargeted) {
 
-                url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
-                        : url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER)
-                                .concat(queryStringValue);
-            } else {
-                log.debug("No Query String " + key + " found in the authored URL " + url);
-            }
-        }
+			Cookie queryStringCookie = getRequest().getCookie(Constants.QUERY_STRING_PARAMS_COOKIE);
+			if (StringUtils.isNotBlank(key) && queryStringCookie != null) {
+				Map<String, String> queryStringParams = fetchCookieValues(queryStringCookie);
 
-        log.debug("Query String Value Concatenated Final URL: " + url);
+				if (queryStringParams.containsKey(key)) {
+					String queryStringValue = queryStringParams.get(key);
+					log.debug("queryStringValue: " + queryStringValue);
 
-        return url;
-    }
+					url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
+							: url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER)
+									.concat(queryStringValue);
+				}
+			}
+
+		} else if (StringUtils.isNotBlank(key) && getRequest().getParameter(key) != null) {
+
+			log.debug("parameter key :" + getRequest().getParameter(key));
+			String queryStringValue = getRequest().getParameter(key);
+			log.debug("queryStringValue: " + queryStringValue);
+
+			url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
+					: url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER).concat(queryStringValue);
+
+		} else {
+			log.debug("No query string parameters found on request");
+		}
+
+		log.debug("Query String Value Concatenated Final URL: " + url);
+
+		return url;
+	}
+
+	/**
+	 * Gets the cookie values in Map
+	 *
+	 * @param cookieName
+	 */
+	private Map<String, String> fetchCookieValues(Cookie cookie) {
+		Map<String, String> cookieValues = new HashMap<String, String>();
+
+		if (cookie != null && StringUtils.isNotBlank(cookie.getValue())) {
+			String[] cookieItems = cookie.getValue().split(Constants.STRING_AND_SYMBOL);
+
+			for (String cookieItem : cookieItems) {
+				String[] queryParam = cookieItem.split("=");
+				cookieValues.put(queryParam[0].trim(), queryParam[1].trim());
+			}
+		}
+
+		return cookieValues;
+	}
 
     /**
      * Gets the valid AAA APP URL.
@@ -237,5 +293,13 @@ public class CTANavigationURLProvider extends WCMUsePojo {
     public String getUrl() {
         return url;
     }
+    
+    /**
+     *
+     * @return the isComponentTargeted
+     */
+    public boolean isComponentTargeted() {
+		return isComponentTargeted;
+	}
 
 }
