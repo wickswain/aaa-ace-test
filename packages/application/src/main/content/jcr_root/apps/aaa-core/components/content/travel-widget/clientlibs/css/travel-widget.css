@@ -1,54 +1,53 @@
 .travel-widget-container {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: bottom;
+  background-size: cover;
+  background: no-repeat bottom;
 }
 
 select::-ms-expand {
-    display: none;
-  }
+  display: none;
+}
 .rs_hotel_form{
-	margin-top:52.5px;
+  margin-top:52.5px;
 }
 @media only screen and (min-width:1087px) {
-	.rs_hotel_form{
-		margin-top:59.5px;
-	}
-	.rs_hotel_form .rs_button_row {
-		/*padding-top: 45px;*/
-	}
-	.rs_cruise_form .rs_button_row {
-	  /*padding-bottom: 25px;
-	  padding-top: 46px;*/
-	}
-	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
-	    width: 396px;
-	    position: absolute;
-	}
-	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
-	    width: 302px;
-	    position: absolute;
-	}
-	.rs_air_form .rs_suggest .rs_suggest_absolute {
-	    width: 446px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_suggest .rs_suggest_absolute {
-	    width: 395px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
-	    left: -200px;
-	}
-	.rs_car_form .rs_car_half .rs_dropoff{
-	    margin-bottom: 28px;
-	}
-	.rs_car_form .rs_car_half::after{
-	    bottom: 31px;
-	}
+  .rs_hotel_form{
+    margin-top:59.5px;
+  }
+  .rs_hotel_form .rs_button_row {
+    /*padding-top: 45px;*/
+  }
+  .rs_cruise_form .rs_button_row {
+    /*padding-bottom: 25px;
+    padding-top: 46px;*/
+  }
+  .rs_hotel_form .rs_suggest .rs_suggest_absolute {
+    width: 396px;
+    position: absolute;
+  }
+  .rs_cruise_form .rs_suggest .rs_suggest_absolute {
+    width: 302px;
+    position: absolute;
+  }
+  .rs_air_form .rs_suggest .rs_suggest_absolute {
+    width: 446px;
+    position: absolute;
+  }
+  .rs_car_form .rs_suggest .rs_suggest_absolute {
+    width: 395px;
+    position: absolute;
+  }
+  .rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+    left: -200px;
+  }
+  .rs_car_form .rs_car_half .rs_dropoff{
+    margin-bottom: 28px;
+  }
+  .rs_car_form .rs_car_half::after{
+    bottom: 31px;
+  }
 }
 .rs_cruise_form {
-	margin-top:52px;
+  margin-top:52px;
 }
 
 .rs_searchbox_hide {
@@ -68,7 +67,6 @@ select::-ms-expand {
 
 .rs_searchbox {
   width: 100%;
-  width: calc(100% - 22px);
   width: -webkit-calc(100% - 22px);
   margin: auto;
   padding: 0;
@@ -80,7 +78,7 @@ select::-ms-expand {
 
 .rs_searchbox label {
   font-weight: 400;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .rs_products {
@@ -145,9 +143,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 }
 
 .rs_autosuggest {
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
-  background-position: left 10px center !important;
-  background-repeat: no-repeat !important;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) no-repeat left 10px center !important;
   padding-left: 35px;
   border: 1px solid #cbc9c9;
   height: 50px;
@@ -170,8 +166,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 }
 
 .rs_hotel_form .rs_rooms, .rs_hotel_form .rs_guests {
-  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
-  background-position: right;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat right;
 }
 
 .rs_air_form .rs_air_options {
@@ -271,8 +266,7 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
   height: 100%;
   line-height: 47px;
   padding-left: 10px;
-  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
-  background-position: right;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat right;
 }
 
 #air_travelers .traveler_select .dropdown-content {
@@ -305,7 +299,6 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
   background-color: transparent;
   font-size: 16px;
   border-radius: 0;
-  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   position: relative;
@@ -319,7 +312,6 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
   width: 20%;
   font-size: 20px;
   border: none;
-  appearance: none;
   -moz-appearance: textfield;
   -webkit-appearance: none;
   vertical-align: top;
@@ -352,12 +344,9 @@ select, .rs_autosuggest, .rs_from, .rs_to, .rs_chk_in, .rs_chk_out, .rs_rooms, .
 #air_travelers .traveler_select .min_button, #air_travelers .traveler_select .plus_button {
   display: inline-block;
   border: none;
-  background: transparent;
-  background-position: left center;
-  background-repeat: no-repeat;
+  background: transparent no-repeat left center;
   width: 40px;
   height: 40px;
-  /*margin-left: -20px;*/
   padding: 0
 }
 
@@ -376,10 +365,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .prevClass {
   border: none;
-  background: transparent;
-  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_left_black.svg);
-  background-position: left center;
-  background-repeat: no-repeat;
+  background: transparent url(/etc/clientlibs/aaa-core/base/images/btn_arrow_left_black.svg) no-repeat left center;
   height: 14px;
   width: 27px;
   margin-left: -5px;
@@ -391,10 +377,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .nextClass {
   border: none;
-  background: transparent;
-  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_right_black.svg);
-  background-position: left center;
-  background-repeat: no-repeat;
+  background: transparent url(/etc/clientlibs/aaa-core/base/images/btn_arrow_right_black.svg) no-repeat left center;
   height: 14px;
   width: 27px;
   margin-left: -5px;
@@ -405,9 +388,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 49%;
   height: 51px;
   font-size: 18px;
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
-  background-position: left 10px center !important;
-  background-repeat: no-repeat !important;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) no-repeat left 10px center !important;
   padding-left: 35px;
 }
 
@@ -427,8 +408,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .air_trip::before {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg) no-repeat;
   height: 25px;
   width: 16px;
   display: inline-block;
@@ -472,8 +452,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .date_select::before {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg) no-repeat;
   height: 13px;
   width: 16px;
   display: inline-block;
@@ -494,13 +473,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_chk_in, .rs_chk_out {
   cursor: pointer;
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_dates.svg);
-  background-position: left 10px center;
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_dates.svg) no-repeat left 10px center;
   height: 48px;
   width: 46%;
   padding-left: 35px;
-  border-radius: 0px;
+  border-radius: 0;
   font-size: 18px;
 }
 
@@ -518,7 +495,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   height: 50px;
   border: 1px solid lightgrey;
   border-radius: 0;
-  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-left: 10px;
@@ -526,12 +502,85 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   font-size: 18px;
 }
 
+.rs_flight_pref_airline{
+  width: 45%;
+  margin-left: 3px;
+  height: 50px;
+  border: 1px solid lightgrey;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 10px;
+  font-size: 18px;
+  background: white url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat right;
+}
+
+.rs_hotel_sort_by{
+  width: 80%;
+  height: 50px;
+  border: 1px solid lightgrey;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 10px;
+  font-size: 18px;
+  background: white url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat right;
+  margin-bottom: 40px;
+}
+
+.rs_car_advanced_search{
+  padding-bottom: 100px;
+}
+
+.hertz_discount_label{
+  padding-left: 20px;
+}
+
+.hertz_discount_input{
+  font-size: 18px;
+  width: 95%;
+  padding-left: 10px;
+}
+
+.rs_tab_preload{
+  opacity: 0;
+  cursor: none;
+}
+
+.hotel_name_advanced_search{
+  font-size: 18px;
+  width: 80%;
+  padding-left: 10px;
+}
+
+.diamond_rating_icon{
+  width: 20px;
+  height: 13px;
+  padding: 0 2px;
+}
+
+.rs_adv_diamond_label{
+  padding-left: 5px;
+}
+
+.widget-preloader{
+  margin: 10px 0;
+}
+
+.rs_flight_pref_non_stop{
+  height: 50px;
+  background-color: white;
+  font-size: 18px;
+  float: right;
+  padding-right: 20px;
+}
+
+.rs_flight_advanced_options{
+  margin-bottom: 75px;
+}
+
 .rs_button_row {
   height: 74px;
-  /*padding-top: 45px;*/
   color: #c6c6c6;
-  /*margin-bottom: 30px;
-  margin-right: 10px;*/
   position: absolute;
   width: 94%;
   bottom: 0;
@@ -610,8 +659,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .rs_dropoff_div::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg) no-repeat;
   height: 25px;
   width: 16px;
   display: inline-block;
@@ -625,11 +673,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: inline-block;
 }
 .rs_form_row.rs_pickup_div {
-    float: left;
-    width:97.8%;
+  float: left;
+  width:97.8%;
 }
 .rs_car_form .rs_button_row {
-	/*margin-top: -9px;*/
+  /*margin-top: -9px;*/
 }
 .rs_car_form .rs_date {
   display: inline-block;
@@ -653,7 +701,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .rs_car_form .date_select select {
-  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -661,10 +708,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .rs_car_form .rs_time {
   font-size: 18px;
   overflow: hidden;
-  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-x: 70px;
   background-position-y: -5px;
-  background-position: 70px;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat 70px;
 }
 
 .rs_car_form .rs_chk_in, .rs_car_form .rs_chk_out {
@@ -682,7 +728,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .cruise_destination, .cruise_vendor, .cruise_length, .cruise_month, .cruise_year {
   height: 50px;
   display: inline-block;
-  padding: 7.2px 6px;
+  padding: 7px 6px;
 }
 
 .rs_cruise_form select {
@@ -691,8 +737,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   background-color: transparent;
   border: 1px solid #c6c6c6;
   width: 100%;
-  border-radius: 0px;
-  appearance: none;
+  border-radius: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-left: 10px;
@@ -713,32 +758,31 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .cruise_destination select, .cruise_vendor select, .cruise_length select, .cruise_date select {
   color: #1b1b1b;
   overflow: hidden;
-  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   background-position-y: 4px;
-    background-position: 4px
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat 4px;
 }
 .cruise_date .cruise_month {
-    background-position-x: 200px;
-    background-position: 110px;
+  background-position-x: 200px;
+  background-position: 110px;
 }
- .cruise_date  .cruise_year{
-background-position-x: 200px;
-    background-position: 110px;
+.cruise_date  .cruise_year{
+  background-position-x: 200px;
+  background-position: 110px;
 
-                    }
+}
 .cruise_destination select {
   background-position-x: 250px;
-    background-position:250px;
+  background-position:250px;
 }
 
 .cruise_vendor select {
   background-position-x: 200px;
-    background-position: 200px;
+  background-position: 200px;
 }
 
 .cruise_length select {
   background-position-x: 130px;
-    background-position: 130px;
+  background-position: 130px;
 }
 
 .rs_cruise_form .cruise_date {
@@ -753,8 +797,7 @@ background-position-x: 200px;
 
 .cruise_month_select::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   height: 25px;
   width: 27px;
   display: inline-block;
@@ -770,8 +813,7 @@ background-position-x: 200px;
 
 .cruise_year_select::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/btn_arrow_down_blue.svg) no-repeat;
   height: 25px;
   width: 27px;
   display: inline-block;
@@ -807,14 +849,12 @@ background-position-x: 200px;
 .vacation_destination input {
   width: 100%;
   padding-left: 35px;
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) !important;
-  background-position: left 10px center !important;
-  background-repeat: no-repeat !important;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_whereto_location_pin.svg) no-repeat left 10px center !important;
 }
 
 .vacation_date input {
   width: 49%;
-  margin-left: 0px
+  margin-left: 0;
 }
 
 .vacation_date .rs_chk_in {
@@ -828,8 +868,7 @@ background-position-x: 200px;
 
 .vacation_date::after {
   content: "";
-  background-image: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg);
-  background-repeat: no-repeat;
+  background: url(/etc/clientlibs/aaa-core/base/images/ic_oneway_arrow.svg) no-repeat;
   height: 25px;
   width: 16px;
   display: inline-block;
@@ -844,9 +883,9 @@ background-position-x: 200px;
 }
 
 @media only screen and (max-width:1086px) {
-	.form-holder{
-	min-height: 392px;
-	}
+  .form-holder{
+    min-height: 392px;
+  }
   .searchWrapper {
     width: 700px;
   }
@@ -955,11 +994,11 @@ background-position-x: 200px;
     padding-top: 15px;
     width: 50%;
     margin-left: -3px;
-    width: calc(48% + 8px);
+    /*width: calc(48% + 8px);*/
     padding-right: 3px;
   }
   .rs_car_form .date_select {
-    padding-right: 0px;
+    padding-right: 0;
   }
   .rs_date, .rs_people {
     width: 49.2%;
@@ -1034,32 +1073,32 @@ background-position-x: 200px;
   #vacation-form .rs_search {
     width: 40%;
   }
-  
-  	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
-	    width: 638px;
-	    position: absolute;
-	}
-	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
-	    width: 302px;
-	    position: absolute;
-	}
-	.rs_air_form .rs_suggest .rs_suggest_absolute {
-	    width: 638px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_suggest .rs_suggest_absolute {
-	    width: 624px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
-	    left: -322px;
-	}
-	.rs_car_form .rs_car_half .rs_dropoff{
-	    margin-bottom: 28px;
-	}
-	.rs_car_form .rs_car_half::after{
-	    bottom: 31px;
-	}
+
+  .rs_hotel_form .rs_suggest .rs_suggest_absolute {
+    width: 638px;
+    position: absolute;
+  }
+  .rs_cruise_form .rs_suggest .rs_suggest_absolute {
+    width: 302px;
+    position: absolute;
+  }
+  .rs_air_form .rs_suggest .rs_suggest_absolute {
+    width: 638px;
+    position: absolute;
+  }
+  .rs_car_form .rs_suggest .rs_suggest_absolute {
+    width: 624px;
+    position: absolute;
+  }
+  .rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+    left: -322px;
+  }
+  .rs_car_form .rs_car_half .rs_dropoff{
+    margin-bottom: 28px;
+  }
+  .rs_car_form .rs_car_half::after{
+    bottom: 31px;
+  }
 }
 
 @media only screen and (max-width:844px) {
@@ -1072,6 +1111,16 @@ background-position-x: 200px;
   /*.searchWrapper {
     width: 410px;
   }*/
+
+  .rs_flight_pref_airline{
+    font-size: 15px;
+  }
+
+  .rs_flight_pref_non_stop{
+    float: none;
+    padding-right: 0;
+  }
+
   .form-holder {
     border-radius: 0 0 4px 4px;
   }
@@ -1099,7 +1148,7 @@ background-position-x: 200px;
     width: 100%;
   }
   .rs_chk_in, .rs_chk_out {
-    margin-left: 0px;
+    margin-left: 0;
   }
   .rs_chk_out {
     border-left: 1px solid #cbc9c9;
@@ -1129,18 +1178,17 @@ background-position-x: 200px;
   .rs_air_form .rs_air_options {
     width: 100%;
     font-size: 14px;
-    margin-left: 0%;
+    margin-left: 0;
   }
   .rs_air_options label {
-    padding-right: 0px;
+    padding-right: 0;
   }
   .air_trip {
     width: 100%;
   }
   .air_trip::before {
     content: "";
-    background-image: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg);
-    background-repeat: no-repeat;
+    background: url(/etc/clientlibs/aaa-core/base/images/ic_round_trip_arrows.svg) no-repeat;
     height: 25px;
     width: 16px;
     display: inline-block;
@@ -1169,7 +1217,7 @@ background-position-x: 200px;
     position: static;
   }
   #air_round_trip .rs_rooms, #air_one_way .rs_rooms {
-    padding-left: 0px;
+    padding-left: 0;
   }
   #car_options {
     width: 100%;
@@ -1188,7 +1236,7 @@ background-position-x: 200px;
   }
   .rs_dropoff {
     margin-left: -5px;
-    margin-bottom: 16.5px;
+    margin-bottom: 17px;
     width: 99.5%;
     bottom: -24px;
   }
@@ -1228,7 +1276,7 @@ background-position-x: 200px;
   }
   .cruise_length select {
     background-position-x: 220px;
-	background-position: 250px;
+    background-position: 250px;
   }
   .rs_cruise_form .cruise_date {
     width: 100%;
@@ -1263,9 +1311,9 @@ background-position-x: 200px;
   #vacation-form .rs_search {
     width: 70%;
   }
-    .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
-        width: 37%;
-    }
+  .rs_car_form .rs_time_in, .rs_car_form .rs_time_out {
+    width: 37%;
+  }
 }
 
 
@@ -1406,23 +1454,23 @@ background-position-x: 200px;
 }
 
 .rs_suggest .icon_city {
-  background-position: 60px 0px;
+  background-position: 60px 0;
 }
 
 .rs_suggest .icon_region {
-  background-position: 30px 0px;
+  background-position: 30px 0;
 }
 
 .rs_suggest .icon_airport {
-  background-position: 15px 0px;
+  background-position: 15px 0;
 }
 
 .rs_suggest .icon_poi {
-  background-position: 0px 0px;
+  background-position: 0 0;
 }
 
 .rs_suggest .icon_hotel {
-  background-position: 45px 0px;
+  background-position: 45px 0;
 }
 
 .rs_suggest .rs_suggest_active .icon_city {
@@ -1438,7 +1486,7 @@ background-position-x: 200px;
 }
 
 .rs_suggest .rs_suggest_active .icon_poi {
-  background-position: 0px 13px;
+  background-position: 0 13px;
 }
 
 .rs_suggest .rs_suggest_active .icon_hotel {
@@ -1446,7 +1494,6 @@ background-position-x: 200px;
 }
 
 .rs_cal {
-  background-color: #fff;
   border: 1px solid #8b8b8b;
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -1455,7 +1502,6 @@ background-position-x: 200px;
   color: #333;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -1495,7 +1541,7 @@ background-position-x: 200px;
   position: absolute;
   cursor: pointer;
   font-size: 24px;
-  padding: 10px 0px 10px 10px;
+  padding: 10px 0 10px 10px;
   right: 0;
   line-height: 24px;
   top: 0;
@@ -1574,6 +1620,14 @@ background-position-x: 200px;
   right: auto;
   left: auto;
 }
+.hotels_advanced_search{
+  margin: 20px 0 50px 0;
+}
+
+.hotels_advanced_search_list{
+  padding: 10px;
+  list-style: none;
+}
 
 
 @media only screen and (max-width:720px) {
@@ -1587,141 +1641,145 @@ background-position-x: 200px;
 
 
 /*travel-widget-container*/
-    /*.searchWrapper {
-    width: 320px;
-   }*/
- @media only screen and (max-width:729px) {
- .searchWrapper {
+/*.searchWrapper {
+width: 320px;
+}*/
+@media only screen and (max-width:729px) {
+  .searchWrapper {
     width: 365px;
-   }
- }
-    .travel-widget-container{
-        padding-bottom: 70px;
-        padding-top: 70px;
-        background-repeat: no-repeat;
-    }
-    .travel-widget-search-lable{
-         padding-bottom:70px;
-         margin:0 auto;
-     }
+  }
+}
+.travel-widget-container{
+  padding-bottom: 70px;
+  padding-top: 70px;
+  background-repeat: no-repeat;
+}
+.travel-widget-search-lable{
+  padding-bottom:70px;
+  margin:0 auto;
+}
 @media only screen and (min-width:768px) {
 
-	.travel-widget-container{
-        padding-bottom: 100px;
-        padding-top: 100px;
+  .travel-widget-container{
+    padding-bottom: 100px;
+    padding-top: 100px;
 
-    }
-    .travel-widget-search-lable{
-         padding-bottom:100px;
-	}
+  }
+  .travel-widget-search-lable{
+    padding-bottom:100px;
+  }
 }
 @media only screen and (min-width:1500px) {
-	/*.searchWrapper {
-        width: 1054px;
-      }*/
-	.travel-widget-container{
-        padding-bottom: 130px;
-        padding-top: 130px;
+  /*.searchWrapper {
+      width: 1054px;
+    }*/
+  .travel-widget-container{
+    padding-bottom: 130px;
+    padding-top: 130px;
 
-    }
-    .travel-widget-search-lable{
-         padding-bottom:130px;
-	}
+  }
+  .travel-widget-search-lable{
+    padding-bottom:130px;
+  }
 }
 @media only screen and (min-width:730px) and (max-width:1024px) {
-	.searchWrapper {
-		width: 700px;
-	}
-	.rs_dropoff_div::after {
-	  bottom: 5px;
-	}
-	.rs_dropoff {
-	  margin-bottom: 0px;
-	}
-	.rs_form_row.rs_pickup_div {
-	    margin-bottom: 6px;
-	}
-	.rs_car_option {
-	  padding: 0 0 18.5px 0;
-	}
-	
+  .searchWrapper {
+    width: 700px;
+  }
+  .rs_dropoff_div::after {
+    bottom: 5px;
+  }
+  .rs_dropoff {
+    margin-bottom: 0;
+  }
+  .rs_form_row.rs_pickup_div {
+    margin-bottom: 6px;
+  }
+  .rs_car_option {
+    padding: 0 0 19px 0;
+  }
+
+  .rs_flight_pref_non_stop{
+    float: none;
+  }
+
 }
 @media only screen and (min-width:1025px) {
-	.cruise_date  .cruise_year {
-		background-position-x: 200px;
-		background-position: 52px;
-	}
+  .cruise_date  .cruise_year {
+    background-position-x: 200px;
+    background-position: 52px;
+  }
 }
 
 @media only screen and (max-width:730px) {
   /*.searchWrapper {
     width: 390px;
   }*/
-	.form-holder {
-	    min-height: 488px;
-	}
-	.rs_hotel_form {
-	 	margin-top:64.5px;
-	}
-	.rs_hotel_form .rs_button_row {
-	  /*padding-top: 62px;*/
-	   
-	}
-	.rs_cruise_form {
-	   margin-top: 0px;
-	}
-	.rs_cruise_form .rs_button_row {
-		/*padding-bottom: 0px;
-		margin-bottom: 0px;
-		padding-top: 33px;*/
-	}
-	
-	.rs_air_form {
-	    margin-top:11px;
-	}
-	.rs_air_form .rs_button_row {
-		/*padding-top: 62.5px;*/
-	}
-	.rs_car_form .rs_car_options{
-	    margin-bottom: 24px;
-	}
-	.rs_car_form {
-	    margin-top:11px;
-	}
-	.rs_car_form .rs_button_row {
-		/*padding-top: 63px;
-		padding-bottom: 0px;*/
-	}
-	.rs_suggest .rs_suggest_absolute {
-	    width: 302px;
-	    position: absolute;
-	}
-	
-	.rs_hotel_form .rs_suggest .rs_suggest_absolute {
-	    width: 303px;
-	    position: absolute;
-	}
-	.rs_cruise_form .rs_suggest .rs_suggest_absolute {
-	    width: 302px;
-	    position: absolute;
-	}
-	.rs_air_form .rs_suggest .rs_suggest_absolute {
-	    width: 303px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_suggest .rs_suggest_absolute {
-	    width: 297px;
-	    position: absolute;
-	}
-	.rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
-	    left: -153px;
-	}
-	.rs_car_form .rs_car_half .rs_dropoff{
-	    margin-bottom: 24px;
-	}
-	.rs_car_form .rs_car_half::after{
-	    bottom: 31px;
-	}
+  .form-holder {
+    min-height: 488px;
+  }
+  .rs_hotel_form {
+    margin-top:65px;
+  }
+  .rs_hotel_form .rs_button_row {
+    /*padding-top: 62px;*/
+
+  }
+  .rs_cruise_form {
+    margin-top: 0;
+  }
+  .rs_cruise_form .rs_button_row {
+    /*padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 33px;*/
+  }
+
+  .rs_air_form {
+    margin-top:11px;
+  }
+  .rs_air_form .rs_button_row {
+    /*padding-top: 62.5px;*/
+  }
+  .rs_car_form .rs_car_options{
+    margin-bottom: 24px;
+  }
+  .rs_car_form {
+    margin-top:11px;
+  }
+  .rs_car_form .rs_button_row {
+    /*padding-top: 63px;
+    padding-bottom: 0px;*/
+  }
+  .rs_suggest .rs_suggest_absolute {
+    width: 302px;
+    position: absolute;
+  }
+
+  .rs_hotel_form .rs_suggest .rs_suggest_absolute {
+    width: 303px;
+    position: absolute;
+  }
+  .rs_cruise_form .rs_suggest .rs_suggest_absolute {
+    width: 302px;
+    position: absolute;
+  }
+  .rs_air_form .rs_suggest .rs_suggest_absolute {
+    width: 303px;
+    position: absolute;
+  }
+  .rs_car_form .rs_suggest .rs_suggest_absolute {
+    width: 297px;
+    position: absolute;
+  }
+  .rs_car_form .rs_dropoff_div .rs_suggest .rs_suggest_absolute {
+    left: -153px;
+  }
+  .rs_car_form .rs_car_half .rs_dropoff{
+    margin-bottom: 24px;
+  }
+  .rs_car_form .rs_car_half::after{
+    bottom: 31px;
+  }
 }
 
 @media only screen and (max-width:480px) {
@@ -1733,14 +1791,14 @@ background-position-x: 200px;
     width:19.5%;
   }
   .rs_car_form .rs_time {
-  font-size: 16px;
-  background-position: 65px;
+    font-size: 16px;
+    background-position: 65px;
   }
   .rs_air_form .rs_air_options {
     font-size: 12px;
   }
   .rs_air_options .multi-link {
-    margin-left:0px;
+    margin-left:0;
   }
   .rs_hotel_form .rs_cal table {
     width:254px;
