@@ -275,22 +275,23 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .learn-btn', functio
 });
 
 $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
-    var selfAccessBtn;
-    var hashtag = this.hash.substr(1);
-    var hreftag = $(this).attr('href');
-    var newHreftag = hreftag.split('#', 1)[0];
-    var pathName = window.location.pathname;
-    var checkselfacc = newHreftag.includes(pathName);
+    var selfAccessBtn = 0,
+        hashtag = this.hash.substr(1),
+        hreftag = $(this).attr('href'),
+        newHreftag = hreftag.split('#', 1)[0],
+        pathName = window.location.pathname,
+        navbarHeight = $('.navbar-fixed-top').height(),
+        stickyNavbarHeight = $('.sticky-nav').height(),
+        swingTime = 0;
+
     if (newHreftag == '') {
         selfAccessBtn = 1;
-    } else if (newHreftag != '' && checkselfacc == true) {
+    } else if (newHreftag != '' && (newHreftag==pathName)) {
         selfAccessBtn = 1;
     } else {
         selfAccessBtn = 0;
-    }    
-    var navbarHeight = $('.navbar-fixed-top').height(),
-        stickyNavbarHeight = $('.sticky-nav').height(),
-        swingTime = 0;
+    }
+
     if ($(this).attr('target') == '_blank') {
         $("#page-container, #page-footer").stop().fadeIn();
         $("body").removeClass("modal-open");
