@@ -284,13 +284,10 @@ $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', func
     if (newHreftag == '') {
         selfAccessBtn = 1;
     } else if (newHreftag != '' && checkselfacc == true) {
-
         selfAccessBtn = 1;
     } else {
-
         selfAccessBtn = 0;
-    }
-    var matchUrl = newHreftag.includes(pathName);
+    }    
     var navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
