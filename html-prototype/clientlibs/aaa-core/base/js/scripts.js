@@ -261,7 +261,7 @@ function jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime)
     }
 }
 
-$(document).on('click', '.sticky-nav .dropdown-menu li > a, .link-btn, .learn-btn', function(e) {
+$(document).on('click', '.sticky-nav .dropdown-menu li > a, .learn-btn', function(e) {
     var hashtag = $(this.hash),
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
@@ -274,12 +274,23 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .link-btn, .learn-bt
     }
 });
 
-$(document).on('click', '.drawers-container li > a, .btn-style', function(e) {
+$(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
+    var selfAccessBtn;
     var hashtag = this.hash.substr(1);
     var hreftag = $(this).attr('href');
     var newHreftag = hreftag.split('#', 1)[0];
     var pathName = window.location.pathname;
-    var matchUrl = newHreftag.includes(pathName);    
+    var checkselfacc = newHreftag.includes(pathName);
+    if (newHreftag == '') {
+        selfAccessBtn = 1;
+    } else if (newHreftag != '' && checkselfacc == true) {
+
+        selfAccessBtn = 1;
+    } else {
+
+        selfAccessBtn = 0;
+    }
+    var matchUrl = newHreftag.includes(pathName);
     var navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
@@ -293,7 +304,7 @@ $(document).on('click', '.drawers-container li > a, .btn-style', function(e) {
         $(".navigation-bar").stop().fadeOut();
         $('.slide-nav').removeAttr('style');
         $(".overlay").hide();
-    } else if ($(this).attr('target') == '_self' && hashtag.length > 0 && (pathName == newHreftag || matchUrl == true)) {
+    } else if ($(this).attr('target') == '_self' && hashtag.length > 0 && selfAccessBtn == 1) {
         var target = $(this).attr('href');
         if (target.length != 0) {
             var hashtagKey = this.hash;
