@@ -52,7 +52,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 
     private static final String CLUB_PLACE_HOLDER = "[ClubName]";
     
-    private static final String TARGETER_COMPONENT_PATH ="/content/campaigns";
+    private static final String TARGETED_COMPONENT_PATH ="/content/campaigns";
     
     private boolean isComponentTargeted = false;
 
@@ -68,7 +68,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
         
         if(childResource != null){
         	String resourecPath = childResource.getPath();
-        	if(StringUtils.isNotBlank(resourecPath) && StringUtils.startsWith(resourecPath, TARGETER_COMPONENT_PATH))
+        	if(StringUtils.isNotBlank(resourecPath) && StringUtils.startsWith(resourecPath, TARGETED_COMPONENT_PATH))
         	{
         		isComponentTargeted=true;
         	} else {
