@@ -14,7 +14,7 @@ var _currentClub;
 var CLUBS = [
     {club: "alabama", clubCode: "001", refID: "5755", partnerCode: "1817", webSerial: "1116"},
     {club: "autoclubmo", clubCode: "065", refID: "5783", partnerCode: "21533", webSerial: "1183"},
-    {club: "california", clubCode: "004", refID: "5733", partnerCode: "53709", webSerial: "1001"},
+    {club: "calif", clubCode: "004", refID: "5733", partnerCode: "53709", webSerial: "1001"},
     {club: "eastcentral", clubCode: "215", refID: "5770", partnerCode: "31333", webSerial: "1198"},
     {club: "hawaii", clubCode: "018", refID: "5738", partnerCode: "60996", webSerial: "1482"},
     {club: "newmexico", clubCode: "061", refID: "5748", partnerCode: "58593", webSerial: "1281"},
