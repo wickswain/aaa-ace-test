@@ -2,7 +2,7 @@
  * Jump to Anchor with “noscript and target compere” approach.
  */
 (function() {
-	$('body').append('<input id="ajaxStopCalls" data-id="' + ajaxStopCalls + '" type="hidden" >'); //Appending hidden element to page
+	$('body').append('<input id="ajaxStopCalls" type="hidden" >'); //Appending hidden element to page
 		var hashtag = window.location.hash,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
