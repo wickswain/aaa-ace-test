@@ -238,8 +238,6 @@ $j(function($) {
 
 });
 
-var queryStringURLChanged = 0;
-
 function jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime) {
     var $target;
     if (hashtagKey && $(hashtagKey).length > 0) {
@@ -333,36 +331,51 @@ function getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag) {
 }
 
 $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
-	var selfAccessBtn = 0,
-	    hashtag = this.hash.substr(1),
-	    hrefURL = $(this).attr('href'),
-	    newHreftag = hrefURL.split('#', 1)[0],
-	    pathName = window.location.pathname,
-	    navbarHeight = $('.navbar-fixed-top').height(),
-	    stickyNavbarHeight = $('.sticky-nav').height(),
-	    swingTime = 0,
-	    queryString = $('#queryString').val();
-	
-	if ($('#queryString').val() && queryStringURLChanged == 0) {
-		var selectedQueryParamKeys = [],
-			customQueryParamKeys = [];
-	
-		if ($(this).attr('data-selectedparams')) {
-			selectedQueryParamKeys = $(this).attr("data-selectedparams").split(",");
-		}
-	
-		if ($(this).attr('data-customparams')) {
-			customQueryParamKeys = $(this).attr("data-customparams").split(",");
-		}
-	
-		var queryStringParams = queryString.split("&");
-		var finalURLWithQueryParams = fetchURLWithQueryParams(hrefURL, queryStringParams, selectedQueryParamKeys, customQueryParamKeys, hashtag.length > 0);
-	
-		$(this).attr('href', finalURLWithQueryParams);
-	
-	    // To prevent appending the request parameters from second time onwards set value to 1.
-	    queryStringURLChanged = 1;
-	}
+    var selfAccessBtn = 0,
+        hashtag = this.hash.substr(1),
+        hrefURL = $(this).attr('href'),
+        newHreftag = hrefURL.split('#', 1)[0],
+        pathName = window.location.pathname,
+        navbarHeight = $('.navbar-fixed-top').height(),
+        stickyNavbarHeight = $('.sticky-nav').height(),
+        swingTime = 0,
+        queryString = $('#queryString').val();
+
+    if ($('#queryString').val()) {
+    	var selectedQueryParamKeys = [],
+    		customQueryParamKeys = [],
+            URLchanged = 0;
+ 
+    	if ($(this).attr('data-selectedparams')) {
+    		selectedQueryParamKeys = $(this).attr("data-selectedparams").split(",");
+    	}
+
+    	if ($(this).attr('data-customparams')) {
+    		customQueryParamKeys = $(this).attr("data-customparams").split(",");
+    	}
+
+        // To prevent appending the request parameters from second time onwards set value to 1.
+        $.each(selectedQueryParamKeys, function( selectedQueryStringIndex, selectedQueryStringValue ) {
+            if (hrefURL.match(selectedQueryStringValue)) {
+                URLchanged = 1;
+            }
+        });
+
+        // To prevent appending the request parameters from second time onwards set value to 1.
+        $.each(customQueryParamKeys, function( customQueryStringIndex, customQueryStringValue ) {
+            if (hrefURL.match(customQueryStringValue)) {
+                URLchanged = 1;
+            }
+        });
+
+        if (URLchanged == 0) {
+    		var queryStringParams = queryString.split("&");
+    		var finalURLWithQueryParams = fetchURLWithQueryParams(hrefURL, queryStringParams, selectedQueryParamKeys, customQueryParamKeys, hashtag.length > 0);
+
+            $(this).attr('href', finalURLWithQueryParams);
+        }
+
+    }
 
     if (newHreftag == '') {
         selfAccessBtn = 1;
