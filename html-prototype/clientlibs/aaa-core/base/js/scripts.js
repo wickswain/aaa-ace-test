@@ -339,9 +339,10 @@ $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', func
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0,
-        queryString = $('#queryString').val();
+        queryString = window.location.search;
 
-    if ($('#queryString').val()) {
+    if (queryString !== '') {
+        queryString = queryString.split("?")[1];
     	var selectedQueryParamKeys = [],
     		customQueryParamKeys = [],
             URLchanged = 0;
