@@ -2,7 +2,7 @@
  * Jump to Anchor with “noscript and target compere” approach.
  */
 (function() {
-	$('body').append('<input id="ajaxStopCalls" type="hidden" >'); //Appending hidden element to page
+	$('body').append('<input id="ajaxStopCalls" type="hidden" >');
 		var hashtag = window.location.hash,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
@@ -20,13 +20,10 @@
                 clearInterval(newInterval);
                 jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
                 $("#ajaxStopCalls").remove();
-                console.log('On Jump  targetCount : ' + targetCount + ' noscriptCount : ' + noscriptCount);
             }
             else {
                 varCount++;
             }
-            console.log('Method Enter');
     };
     newInterval = setInterval(checkInterval, 100);
-    console.log('On Page Load targetCount: ' + targetCount + ' noscriptCount: ' + noscriptCount);
 })();
