@@ -274,15 +274,82 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .learn-btn', functio
     }
 });
 
+function fetchURLWithQueryParams(url, selectedQueryParams, customQueryParams) {
+	if (url !== null && url !== 'undefined' && url !== '') {
+		// Append the custom query parameters if any
+		if (customQueryParams !== '') {
+			for (int i = 0; i < customQueryParams.length; i++) {
+				url = getQueryStringValueConcatenatedURL(customQueryParams[i], url);
+			}
+		}
+
+		// Append the selected query parameters if any
+		if (selectedQueryParams !== '') {
+			for (int i = 0; i < selectedQueryParams.length; i++) {
+				url = getQueryStringValueConcatenatedURL(selectedQueryParams[i], url);
+			}
+		}
+	}
+	
+	return url;
+}
+
+function getQueryStringValueConcatenatedURL(key, url) {
+	
+	if (key != null) {
+
+		log.debug("parameter key :" + getRequest().getParameter(key));
+		String queryStringValue = getRequest().getParameter(key);
+		log.debug("queryStringValue: " + queryStringValue);
+
+		url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
+				: url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER).concat(queryStringValue);
+
+	} else {
+		log.debug("No query string parameters found on request");
+	}
+
+	log.debug("Query String Value Concatenated Final URL: " + url);
+
+	return url;
+}
+
+function fetchQueryStringKeysArray(queryString) {
+	var queryStringParams = null;
+	
+	if (queryString !== null && queryString !== 'undefined' && queryString !== '') {
+		queryStringParams = queryString.split("&");
+	}
+	
+	return queryStringParams;
+}
+
 $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
     var selfAccessBtn = 0,
         hashtag = this.hash.substr(1),
-        hreftag = $(this).attr('href'),
-        newHreftag = hreftag.split('#', 1)[0],
+        hrefURL = $(this).attr('href'),
+        newHreftag = hrefURL.split('#', 1)[0],
         pathName = window.location.pathname,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
-        swingTime = 0;
+        swingTime = 0,
+        queryString = $('#queryString').val();
+
+    if(queryString !== 'undefined' && queryString !== ''){
+    	var selectedQueryParamKeys = $(this).attr("data-selectedparams").split(","),
+        	customQueryParamKeys = $(this).attr("data-customparams").split(",");
+    	
+    	var queryStringParams = fetchQueryStringKeysArray(queryString);
+        
+    	if (queryStringParams != null) {
+    		var urlWithQueryParams = fetchURLWithQueryParams(hrefURL, selectedQueryParamKeys, customQueryParamKeys);
+            $(this).attr("href", urlWithQueryParams);
+    	}
+        
+        /*console.log("queryString" + queryString);
+		console.log("selectedQueryParamKeys" + selectedQueryParamKeys);
+        console.log("customQueryParamKeys" + customQueryParamKeys);*/
+    }
 
     if (newHreftag == '') {
         selfAccessBtn = 1;
