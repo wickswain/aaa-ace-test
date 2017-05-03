@@ -274,15 +274,108 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .learn-btn', functio
     }
 });
 
+function fetchURLWithQueryParams(url, queryStringParams, selectedQueryParams, customQueryParams, isHashTag) {
+    var hashtagValue = '';
+
+    if (isHashTag) {
+		hashtagValue = "#" + url.split('#')[1];
+    }
+
+	if (url !== '') {
+		// Append the custom query parameters if any
+        $.each(customQueryParams, function( index, value ) {
+            var customQueryParamValue = value;
+            
+            $.each(queryStringParams, function( queryStringIndex, queryStringValue ) {
+                if (queryStringValue.match(customQueryParamValue)) {
+                	url = getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag);
+                }
+            });
+		});
+
+		// Append the selected query parameters if any
+		$.each(selectedQueryParams, function( index, value ) {
+            var selectedQueryParamValue = value;
+            
+            $.each(queryStringParams, function( queryStringIndex, queryStringValue ) {
+                if (queryStringValue.match(selectedQueryParamValue)) {
+                    url = getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag);
+                }
+            });
+		});
+	}
+
+    if (isHashTag) {
+		url = url + hashtagValue;
+    }
+
+	return url;
+}
+
+function getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag) {
+	if (url.match("/?")) {
+        if (isHashTag) {
+			url = url.split('#', 1)[0] + "&" + queryStringValue;
+        } else {
+			url = url + "&" + queryStringValue;
+        }
+    } else {
+        if (isHashTag) {
+			url = [url.slice(0, url.indexOf('#')), "?" + queryStringValue].join('');
+        } else {
+			url = url + "?" + queryStringValue;
+        }
+    }
+
+	return url;
+}
+
 $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
     var selfAccessBtn = 0,
         hashtag = this.hash.substr(1),
-        hreftag = $(this).attr('href'),
-        newHreftag = hreftag.split('#', 1)[0],
+        hrefURL = $(this).attr('href'),
+        newHreftag = hrefURL.split('#', 1)[0],
         pathName = window.location.pathname,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
-        swingTime = 0;
+        swingTime = 0,
+        queryString = $('#queryString').val();
+
+    if ($('#queryString').val()) {
+    	var selectedQueryParamKeys = [],
+    		customQueryParamKeys = [],
+            URLchanged = 0;
+ 
+    	if ($(this).attr('data-selectedparams')) {
+    		selectedQueryParamKeys = $(this).attr("data-selectedparams").split(",");
+    	}
+
+    	if ($(this).attr('data-customparams')) {
+    		customQueryParamKeys = $(this).attr("data-customparams").split(",");
+    	}
+
+        // To prevent appending the request parameters from second time onwards set value to 1.
+        $.each(selectedQueryParamKeys, function( selectedQueryStringIndex, selectedQueryStringValue ) {
+            if (hrefURL.match(selectedQueryStringValue)) {
+                URLchanged = 1;
+            }
+        });
+
+        // To prevent appending the request parameters from second time onwards set value to 1.
+        $.each(customQueryParamKeys, function( customQueryStringIndex, customQueryStringValue ) {
+            if (hrefURL.match(customQueryStringValue)) {
+                URLchanged = 1;
+            }
+        });
+
+        if (URLchanged == 0) {
+    		var queryStringParams = queryString.split("&");
+    		var finalURLWithQueryParams = fetchURLWithQueryParams(hrefURL, queryStringParams, selectedQueryParamKeys, customQueryParamKeys, hashtag.length > 0);
+
+            $(this).attr('href', finalURLWithQueryParams);
+        }
+
+    }
 
     if (newHreftag == '') {
         selfAccessBtn = 1;

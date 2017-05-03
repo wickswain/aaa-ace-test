@@ -29,7 +29,9 @@
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''}"
 			href="${child.option=='Modal' ? child.buttonmodal : (result.url ? result.url : '#')  @ context='uri'}" data-toggle="${child.option=='Modal' ? 'modal' : ''}"
 			target="${child.openNewTabFlag == 'true' ? '_blank' : '_self'}"
-			data-sly-text="${child.ctaLabel}">
+			data-sly-text="${child.ctaLabel}"
+            data-selectedparams="${child.selectedQueryString ? child.selectedQueryString : ''}"
+            data-customparams="${child.queryStringKey ? child.queryStringKey : ''}">
 		</a> 
 		<a data-sly-test="${child.option=='Phone'}"
 			class="btn-style btn-sm ${child.buttonStyle} ${child.ctaColor == 'rgba(255,70,57,1)' ? 'btn-color-orange' : 'btn-color-blue'} ${child.uppercaseFlag ? 'text-uppercase btn-xs-size' : ''} icon-text"

@@ -1,19 +1,17 @@
 package com.aaa.ace.sightly.providers;
 
-import java.util.HashMap;
-import java.util.Map;
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
-import javax.servlet.http.Cookie;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.aaa.ace.common.Constants;
+
 import com.aaa.ace.services.PageSuffixResolverService;
 import com.aaa.ace.services.RegionDataService;
 import com.aaa.ace.services.RunmodeProviderService;
@@ -49,10 +47,6 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 
 	private static final String CLUB_PLACE_HOLDER = "[ClubName]";
 
-	private static final String TARGETED_COMPONENT_PATH = "/content/campaigns";
-
-	private boolean isComponentTargeted = false;
-
 	private String url;
 
 	@Override
@@ -62,15 +56,6 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 		String customQueryParamsString = get(QUERY_STRING_KEY, String.class);
 		Resource childResource = get(CHILD_RESOURCE, Resource.class);
 		url = get(URL_PROPERTY_NAME, String.class);
-
-		if (childResource != null) {
-			String resourecPath = childResource.getPath();
-			if (StringUtils.isNotBlank(resourecPath) && StringUtils.startsWith(resourecPath, TARGETED_COMPONENT_PATH)) {
-				isComponentTargeted = true;
-			} else {
-				isComponentTargeted = false;
-			}
-		}
 
 		// Fetch the query string parameters selected from the available list
 		Value[] selectedQueryParams = fetchQueryStringParameters(childResource);
@@ -193,22 +178,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 	private String getQueryStringValueConcatenatedURL(String key, String url) {
 		log.debug("Start of getQueryStringValueConcatenatedURL method");
 
-		if (isComponentTargeted) {
-
-			Cookie queryStringCookie = getRequest().getCookie(Constants.QUERY_STRING_PARAMS_COOKIE);
-			if (StringUtils.isNotBlank(key) && queryStringCookie != null) {
-				Map<String, String> queryStringParams = fetchCookieValues(queryStringCookie);
-
-				if (queryStringParams.containsKey(key)) {
-					String queryStringValue = queryStringParams.get(key);
-					log.debug("queryStringValue: " + queryStringValue);
-
-					url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
-							: url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER).concat(queryStringValue);
-				}
-			}
-
-		} else if (StringUtils.isNotBlank(key) && getRequest().getParameter(key) != null) {
+		if (StringUtils.isNotBlank(key) && getRequest().getParameter(key) != null) {
 
 			log.debug("parameter key :" + getRequest().getParameter(key));
 			String queryStringValue = getRequest().getParameter(key);
@@ -224,26 +194,6 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 		log.debug("Query String Value Concatenated Final URL: " + url);
 
 		return url;
-	}
-
-	/**
-	 * Gets the cookie values in Map
-	 *
-	 * @param cookieName
-	 */
-	private Map<String, String> fetchCookieValues(Cookie cookie) {
-		Map<String, String> cookieValues = new HashMap<String, String>();
-
-		if (cookie != null && StringUtils.isNotBlank(cookie.getValue())) {
-			String[] cookieItems = cookie.getValue().split(Constants.STRING_AND_SYMBOL);
-
-			for (String cookieItem : cookieItems) {
-				String[] queryParam = cookieItem.split("=");
-				cookieValues.put(queryParam[0].trim(), queryParam[1].trim());
-			}
-		}
-
-		return cookieValues;
 	}
 
 	/**
@@ -281,11 +231,4 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 		return url;
 	}
 
-	/**
-	 *
-	 * @return the isComponentTargeted
-	 */
-	public boolean isComponentTargeted() {
-		return isComponentTargeted;
-	}
 }
