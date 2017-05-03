@@ -238,6 +238,8 @@ $j(function($) {
 
 });
 
+var queryStringURLChanged = 0;
+
 function jumpLinkTarget(hashtagKey, navbarHeight, stickyNavbarHeight, swingTime) {
     var $target;
     if (hashtagKey && $(hashtagKey).length > 0) {
@@ -274,82 +276,93 @@ $(document).on('click', '.sticky-nav .dropdown-menu li > a, .learn-btn', functio
     }
 });
 
-function fetchURLWithQueryParams(url, selectedQueryParams, customQueryParams) {
-	if (url !== null && url !== 'undefined' && url !== '') {
+function fetchURLWithQueryParams(url, queryStringParams, selectedQueryParams, customQueryParams, isHashTag) {
+    var hashtagValue = '';
+
+    if (isHashTag) {
+		hashtagValue = "#" + url.split('#')[1];
+    }
+
+	if (url !== '') {
 		// Append the custom query parameters if any
-		if (customQueryParams !== '') {
-			for (int i = 0; i < customQueryParams.length; i++) {
-				url = getQueryStringValueConcatenatedURL(customQueryParams[i], url);
-			}
-		}
+        $.each(customQueryParams, function( index, value ) {
+            var customQueryParamValue = value;
+            
+            $.each(queryStringParams, function( queryStringIndex, queryStringValue ) {
+                if (queryStringValue.match(customQueryParamValue)) {
+                	url = getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag);
+                }
+            });
+		});
 
 		// Append the selected query parameters if any
-		if (selectedQueryParams !== '') {
-			for (int i = 0; i < selectedQueryParams.length; i++) {
-				url = getQueryStringValueConcatenatedURL(selectedQueryParams[i], url);
-			}
-		}
-	}
-	
-	return url;
-}
-
-function getQueryStringValueConcatenatedURL(key, url) {
-	
-	if (key != null) {
-
-		log.debug("parameter key :" + getRequest().getParameter(key));
-		String queryStringValue = getRequest().getParameter(key);
-		log.debug("queryStringValue: " + queryStringValue);
-
-		url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
-				: url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER).concat(queryStringValue);
-
-	} else {
-		log.debug("No query string parameters found on request");
+		$.each(selectedQueryParams, function( index, value ) {
+            var selectedQueryParamValue = value;
+            
+            $.each(queryStringParams, function( queryStringIndex, queryStringValue ) {
+                if (queryStringValue.match(selectedQueryParamValue)) {
+                    url = getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag);
+                }
+            });
+		});
 	}
 
-	log.debug("Query String Value Concatenated Final URL: " + url);
+    if (isHashTag) {
+		url = url + hashtagValue;
+    }
 
 	return url;
 }
 
-function fetchQueryStringKeysArray(queryString) {
-	var queryStringParams = null;
-	
-	if (queryString !== null && queryString !== 'undefined' && queryString !== '') {
-		queryStringParams = queryString.split("&");
-	}
-	
-	return queryStringParams;
+function getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag) {
+	if (url.match("/?")) {
+        if (isHashTag) {
+			url = url.split('#', 1)[0] + "&" + queryStringValue;
+        } else {
+			url = url + "&" + queryStringValue;
+        }
+    } else {
+        if (isHashTag) {
+			url = [url.slice(0, url.indexOf('#')), "?" + queryStringValue].join('');
+        } else {
+			url = url + "?" + queryStringValue;
+        }
+    }
+
+	return url;
 }
 
 $(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
-    var selfAccessBtn = 0,
-        hashtag = this.hash.substr(1),
-        hrefURL = $(this).attr('href'),
-        newHreftag = hrefURL.split('#', 1)[0],
-        pathName = window.location.pathname,
-        navbarHeight = $('.navbar-fixed-top').height(),
-        stickyNavbarHeight = $('.sticky-nav').height(),
-        swingTime = 0,
-        queryString = $('#queryString').val();
-
-    if(queryString !== 'undefined' && queryString !== ''){
-    	var selectedQueryParamKeys = $(this).attr("data-selectedparams").split(","),
-        	customQueryParamKeys = $(this).attr("data-customparams").split(",");
-    	
-    	var queryStringParams = fetchQueryStringKeysArray(queryString);
-        
-    	if (queryStringParams != null) {
-    		var urlWithQueryParams = fetchURLWithQueryParams(hrefURL, selectedQueryParamKeys, customQueryParamKeys);
-            $(this).attr("href", urlWithQueryParams);
-    	}
-        
-        /*console.log("queryString" + queryString);
-		console.log("selectedQueryParamKeys" + selectedQueryParamKeys);
-        console.log("customQueryParamKeys" + customQueryParamKeys);*/
-    }
+	var selfAccessBtn = 0,
+	    hashtag = this.hash.substr(1),
+	    hrefURL = $(this).attr('href'),
+	    newHreftag = hrefURL.split('#', 1)[0],
+	    pathName = window.location.pathname,
+	    navbarHeight = $('.navbar-fixed-top').height(),
+	    stickyNavbarHeight = $('.sticky-nav').height(),
+	    swingTime = 0,
+	    queryString = $('#queryString').val();
+	
+	if ($('#queryString').val() && queryStringURLChanged == 0) {
+		var selectedQueryParamKeys = [],
+			customQueryParamKeys = [];
+	
+		if ($(this).attr('data-selectedparams')) {
+			selectedQueryParamKeys = $(this).attr("data-selectedparams").split(",");
+		}
+	
+		if ($(this).attr('data-customparams')) {
+			customQueryParamKeys = $(this).attr("data-customparams").split(",");
+		}
+	
+		var queryStringParams = queryString.split("&");
+		var finalURLWithQueryParams = fetchURLWithQueryParams(hrefURL, queryStringParams, selectedQueryParamKeys, customQueryParamKeys, hashtag.length > 0);
+	
+		$(this).attr('href', finalURLWithQueryParams);
+	
+	    // To prevent appending the request parameters from second time onwards set value to 1.
+	    queryStringURLChanged = 1;
+	}
 
     if (newHreftag == '') {
         selfAccessBtn = 1;
