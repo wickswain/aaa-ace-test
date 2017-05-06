@@ -122,24 +122,7 @@
                     </filters>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.lesscss</groupId>
-                <artifactId>lesscss-maven-plugin</artifactId>
-                <version>1.7.0.1.1</version>
-                <configuration>
-                    <sourceDirectory>${jcrRoot}</sourceDirectory>
-                    <outputDirectory>${jcrRoot}</outputDirectory>
-                    <excludes />
-                    <compress>true</compress>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 
@@ -185,5 +168,65 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>compileLessInApplication</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.lesscss</groupId>
+                        <artifactId>lesscss-maven-plugin</artifactId>
+                        <version>1.7.0.1.1</version>
+                        <configuration>
+                            <sourceDirectory>${session.executionRootDirectory}/html-prototype/clientlibs/aaa-core</sourceDirectory>
+                            <outputDirectory>${session.executionRootDirectory}/html-prototype/clientlibs/aaa-core</outputDirectory>
+                            <excludes>
+                                <exclude>**/less/**</exclude>
+                            </excludes>
+                            <compress>true</compress>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>2.7</version>
+                        <executions>
+                            <execution>
+                                <id>copy-resources-1</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${session.executionRootDirectory}/packages/application/src/main/content/jcr_root/etc/clientlibs</outputDirectory>
+                                    <overwrite>true</overwrite>
+                                    <resources>
+                                        <resource>
+                                            <directory>${session.executionRootDirectory}/html-prototype/clientlibs</directory>
+                                            <excludes>
+                                                <exclude>**/*.less</exclude>
+                                                <exclude>**/less/**</exclude>
+                                            </excludes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 </project>
