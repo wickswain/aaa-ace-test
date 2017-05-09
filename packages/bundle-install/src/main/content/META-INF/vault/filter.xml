@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/ace-www/config" />
-    <filter root="/apps/ace-www/config.auhtor" />
+    <filter root="/apps/ace-www/config.author" />
     <filter root="/apps/ace-www/config.dev" />
     <filter root="/apps/ace-www/config.production" />
     <filter root="/apps/ace-www/config.publish" />
