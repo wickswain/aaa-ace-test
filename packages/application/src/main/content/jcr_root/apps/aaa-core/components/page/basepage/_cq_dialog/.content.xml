@@ -42,7 +42,7 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                         name="./northernnewengland-region"
-                                        text="Hide In Northern England"
+                                        text="Hide In Northern New England"
                                         value="{Boolean}true"/>
                                     <hidein-alabama
                                         jcr:primaryType="nt:unstructured"
@@ -54,19 +54,19 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                         name="./newmexico-region"
-                                        text="Hide In NewMexico"
+                                        text="Hide In New Mexico"
                                         value="{Boolean}true"/>
                                     <hidein-eastcentral
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                         name="./eastcentral-region"
-                                        text="Hide In EastCentral"
+                                        text="Hide In East Central"
                                         value="{Boolean}true"/>
                                     <hidein-autoclubmo
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                         name="./autoclubmo-region"
-                                        text="Hide In AutoClub"
+                                        text="Hide In Auto Club MO"
                                         value="{Boolean}true"/>
                                     <hidein-hawaii
                                         jcr:primaryType="nt:unstructured"
@@ -78,7 +78,7 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                         name="./tidewater-region"
-                                        text="Hide In TideWater"
+                                        text="Hide In Tide Water"
                                         value="{Boolean}true"/>
                                 </items>
                             </column>
