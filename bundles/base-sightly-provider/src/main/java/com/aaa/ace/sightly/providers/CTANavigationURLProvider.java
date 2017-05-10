@@ -1,5 +1,7 @@
 package com.aaa.ace.sightly.providers;
 
+import java.net.URI;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,21 +26,39 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 	private static final String DOMAIN_PLACE_HOLDER = "[Domain]";
 
 	private static final String CLUB_PLACE_HOLDER = "[ClubName]";
+	private static final String PAGE_SUFFIX = ".html";
+	private static final String SLASH = "/";
 
 	private String url;
 
 	@Override
 	public void activate() throws Exception {
-		log.debug("Start of CTANavigationURLProvider class");
 
 		url = get(URL_PROPERTY_NAME, String.class);
+		URI uri = null;
+		String[] urlArray = null;
+
+		log.info("Start of CTANavigationURLProvider class, url {}", url);
 
 		// Fetch valid URL.
 		if (StringUtils.isNotBlank(url) && url.startsWith(CONTENT_ROOT_PATH)) {
 			// Fetch valid internal URL.
 			PageSuffixResolverService pageService = getSlingScriptHelper().getService(PageSuffixResolverService.class);
+			
+			urlArray = url.split(PAGE_SUFFIX);
+			url = pageService.resolveLinkMapURL(getResourceResolver(), urlArray[0]);
 
-			url = pageService.resolveLinkMapURL(getResourceResolver(), url);
+			log.debug("urlprovider from map.publish :{}", url);
+			if (StringUtils.isNotBlank(url)) {
+				uri = new URI(url);
+				url = uri.getPath();
+				if (StringUtils.equalsIgnoreCase(url, SLASH + PAGE_SUFFIX)) {
+					url = SLASH;
+				}
+			}
+			if (urlArray.length > 1 && StringUtils.isNotBlank(urlArray[1])) {
+				url = url + urlArray[1];
+			}
 		} else if (StringUtils.isNotBlank(url) && url.contains(DOMAIN_PLACE_HOLDER)
 				&& url.contains(CLUB_PLACE_HOLDER)) {
 			// Fetch valid AAA APP URL.
@@ -51,7 +71,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 			url = getExternalAppURL(url, regionName, env);
 		}
 
-		log.debug("End of CTANavigationURLProvider class");
+		log.info("End of CTANavigationURLProvider url:{}", url);
 	}
 
 	/**
