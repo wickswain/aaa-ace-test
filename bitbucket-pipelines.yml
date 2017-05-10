@@ -31,7 +31,7 @@ pipelines:
     systems-build:
       - step:
           script:
-            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=52.2.152.26 -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password=$AEM_PROD -PautoInstallPackage -U" i-0bcb3415c346ed06a "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
+            - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=52.2.152.26 -Dcrx.port=4502 -Dcrx.userId=admin -Dcrx.password=$AEM_PROD -PautoInstallPackage -U" i-07da2f07b6b585909 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
 
             - pipeline_tools/run_build.sh "mvn clean install  -Dcrx.host=54.88.41.184 -Dcrx.port=4503 -Dcrx.userId=admin -Dcrx.password=$AEM_PROD -PautoInstallPackage -U" i-0d0e2e4efe639c469 "$AWS_ACCESS_KEY" "$AWS_SECRET_ACCESS_KEY"
 
