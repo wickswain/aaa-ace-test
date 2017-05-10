@@ -1,32 +1,42 @@
 /**
- * Jump to Anchor with “noscript and target compere” approach.
+ * Jump to Anchor with “noscript and target compare” approach.
  */
 (function() {
-	$('body').append('<input id="ajaxStopCalls" type="hidden" >'); //Appending hidden element to page
-		var hashtag = window.location.hash,
+    var hashtag = window.location.hash,
         navbarHeight = $('.navbar-fixed-top').height(),
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
-
-		var targetCount = $(document).find('.target').length * 2,
-    	noscriptCount = $(document).find("noscript").length,
-    	diffCount = noscriptCount - targetCount,
-    	newInterval = null,
-    	varCount = 0;
     
-		var checkInterval = function(){
-            var hiddenInputVal = $("body").find("#ajaxStopCalls");
-            if(noscriptCount == diffCount && hiddenInputVal.length != 'undefined'){
+    //$('body').append('<input id="ajaxStopCalls" type="hidden" >');
+    
+    if (hashtag) {
+        var targetCount = $(document).find('.target').length * 2,
+            noscriptCount = $(document).find("noscript").length,
+            diffCount = noscriptCount - targetCount,
+            newInterval = null,
+            varCount = 0;
+        
+        $(document).ajaxComplete(function () {
+            var _nsCount = $(document).find("noscript").length;
+         
+            console.log("No Script count in ajax complete: " + _nsCount);
+        });
+        
+        var checkInterval = function() {
+            var hiddenInputVal = $("body").find("#ajaxStopCalls"),
+            	noscriptCount = $(document).find("noscript").length;
+            console.log("No Script count in Interval: " + noscriptCount);
+            
+            if (noscriptCount <= diffCount) {
                 clearInterval(newInterval);
                 jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-                $("#ajaxStopCalls").remove();
-                console.log('On Jump  targetCount : ' + targetCount + ' noscriptCount : ' + noscriptCount);
-            }
-            else {
+                //$("#ajaxStopCalls").remove();
+            } else {
                 varCount++;
             }
-            console.log('Method Enter');
-    };
-    newInterval = setInterval(checkInterval, 100);
-    console.log('On Page Load targetCount: ' + targetCount + ' noscriptCount: ' + noscriptCount);
+        };
+        
+        newInterval = setInterval(checkInterval, 100);
+    }
+    
 })();
