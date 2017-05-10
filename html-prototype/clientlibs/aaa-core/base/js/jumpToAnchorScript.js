@@ -7,7 +7,7 @@
         stickyNavbarHeight = $('.sticky-nav').height(),
         swingTime = 0;
     
-    $('body').append('<input id="ajaxStopCalls" type="hidden" >');
+    //$('body').append('<input id="ajaxStopCalls" type="hidden" >');
     
     if (hashtag) {
         var targetCount = $(document).find('.target').length * 2,
@@ -27,10 +27,10 @@
             	noscriptCount = $(document).find("noscript").length;
             console.log("No Script count in Interval: " + noscriptCount);
             
-            if (noscriptCount == diffCount && hiddenInputVal.length != 'undefined') {
+            if (noscriptCount <= diffCount) {
                 clearInterval(newInterval);
                 jumpLinkTarget(hashtag, navbarHeight, stickyNavbarHeight, swingTime);
-                $("#ajaxStopCalls").remove();
+                //$("#ajaxStopCalls").remove();
             } else {
                 varCount++;
             }
