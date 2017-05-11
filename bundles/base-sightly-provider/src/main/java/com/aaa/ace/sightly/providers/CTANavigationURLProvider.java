@@ -38,7 +38,7 @@ public class CTANavigationURLProvider extends WCMUsePojo {
 			// Fetch valid internal URL.
 			PageSuffixResolverService pageService = getSlingScriptHelper().getService(PageSuffixResolverService.class);
 
-			url = pageService.resolveLinkMapURL(getResourceResolver(), url);
+			url = pageService.resolveLinkURL(getResourceResolver(), url);
 		} else if (StringUtils.isNotBlank(url) && url.contains(DOMAIN_PLACE_HOLDER)
 				&& url.contains(CLUB_PLACE_HOLDER)) {
 			// Fetch valid AAA APP URL.
