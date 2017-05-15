@@ -1,0 +1,896 @@
+<!--/*
+
+    NEW Travel Widget Component.
+    ----------------------------------------------------------------
+	Travel widget component
+
+    Default Behavior:
+    1. Hotels tab is highlighted by default.
+    
+*/-->
+
+<!-- Travel Widget Content
+============================================= -->
+<div id="${properties.jumpLinkId}" style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}'); background-color: ${properties.backgroundColor @ context='styleToken'};"
+	 class="travel-widget-container">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-10">
+				<div style="color:${properties.titleFontColor @ context='styleToken'};" class="travel-widget-search-label">
+					<sly data-sly-test="${properties.headLineRTE}" data-sly-resource="${'headline-text' @ resourceType = '/apps/aaa-core/components/content/rte'}"/>
+				</div>
+			</div>
+
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+
+	<div id="new-travel-widget-component" class="travel-widget">
+		<input type="hidden" name="club_number" id="club_number" value="0"/>
+		<input type="hidden" name="ref_id" id="ref_id" value="0"/>
+
+		<!--<sly data-sly-test.refID="${properties.refId ? properties.refId : '5776'}"/>-->
+
+		<div class="searchWrapper">
+			<div id="rs_multi" class='rs_searchbox'>
+				<ul class="rs_products">
+					<li class="rs_tabs rs_tab_preload highlight_tab"
+						data-tab="rs_hotel_form" id="tabHotel">
+						<p>Hotels</p>
+					</li>
+					<li class="rs_tabs rs_tab_preload" data-tab="rs_air_form" id="tabAir">
+						<p>Flights</p>
+					</li>
+					<li class="rs_tabs rs_tab_preload"
+						data-tab="rs_car_form" id="tabCar">
+						<p>Cars</p>
+					</li>
+					<li class="rs_tabs rs_tab_preload"
+						data-tab="rs_cruise_form" id="tabCruise">
+						<p>Cruises</p>
+					</li>
+					<div class="clear"></div>
+				</ul>
+
+				<div class="form-holder">
+					<div class="progress widget-preloader">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+						</div>
+					</div>
+					<form name="hotel" class="rs_hotel_form hidden ${properties.tabType ? (properties.tabType == 'hotels' ? '' : 'rs_searchbox_hide') : ''}">
+						<input type="hidden" name="refclickid" value="travel_widget">
+						<div class='rs_form_row'>
+							<div class="hotel_trip">
+								<label class="field_label">Where to?</label>
+								<input name="query" class="rs_autosuggest" type="text" title="Enter City or airport"
+									   autocomplete="off" placeholder="City or airport" onclick='this.value="";'
+									   data-rs_ga_track='["change",["Searchbox - home page", "Autosuggest"]]'>
+							</div>
+
+							<div class='rs_suggest'></div>
+
+							<div class="date_field">
+								<label class="field_label">Date</label>
+								<div class="date_select">
+									<input name="check_in" class="rs_chk_in" type='text' autocomplete="off" placeholder="Check in" readonly>
+									<input name="check_out" class="rs_chk_out" type='text' autocomplete="off" placeholder="Check out" readonly>
+								</div>
+							</div>
+
+							<div class="rooms_and_guests">
+								<label class="field_label">Details</label>
+								<select class="rs_rooms" name="rooms" title='Number of Rooms' data-rs_ga_track='["change",["Searchbox - home page", "Rooms"]]'></select>
+								<select name="adults" class="rs_guests rs_select_box js_guest_select"></select>
+							</div>
+
+							<!---->
+							<div class="hotels_advanced_search hidden">
+
+								<div class="rs_adv_row row">
+
+									<div class="rs_adv_amenities rs_adv_col col-md-3 col-lg-3">
+										<label class="rs_adv_label field_label">Amenities</label>
+										<ul class="hotels_advanced_search_list">
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity5" value="5">
+												<label for="amenity5" class="rs_adv_diamond_label">Free breakfast</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity6" value="6">
+												<label for="amenity6" class="rs_adv_diamond_label">Free Internet</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity15" value="15">
+												<label for="amenity15" class="rs_adv_diamond_label">Swimming pool</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity13" value="13">
+												<label for="amenity13" class="rs_adv_diamond_label">Pets allowed</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity4" value="4">
+												<label for="amenity4" class="rs_adv_diamond_label">Free airport shuttle</label>
+											</li>
+										</ul>
+									</div>
+									<div class="rs_adv_amenities rs_adv_second_amenities rs_adv_col col-md-3 col-lg-3">
+										<label class="rs_adv_label">&nbsp;</label>
+										<ul class="hotels_advanced_search_list">
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity10" value="10">
+												<label for="amenity10" class="rs_adv_diamond_label"><i class="rs_icon--parking"></i> Free parking</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity11" value="11">
+												<label for="amenity11" class="rs_adv_diamond_label">Accessible</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity9" value="9">
+												<label for="amenity9" class="rs_adv_diamond_label">Fitness center</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity2" value="2">
+												<label for="amenity2" class="rs_adv_diamond_label">Business center</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_amenity" type="checkbox" id="amenity12" value="12">
+												<label for="amenity12" class="rs_adv_diamond_label">Non-smoking</label>
+											</li>
+										</ul>
+									</div>
+									<div class="rs_adv_diamonds rs_adv_col col-md-3 col-lg-3">
+										<div class="rs_adv_label"><label class="field_label">Diamond rating</label></div>
+										<ul class="hotels_advanced_search_list">
+											<li>
+												<input class="rs_adv_checkbox rs_adv_diamond" type="checkbox" id="diamond5" value="5">
+												<label for="diamond5" class="rs_adv_diamond_label">
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+												</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_diamond" type="checkbox" id="diamond4" value="4">
+												<label for="diamond4" class="rs_adv_diamond_label">
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+												</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_diamond" type="checkbox" id="diamond3" value="3">
+												<label for="diamond3" class="rs_adv_diamond_label">
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+												</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_diamond" type="checkbox" id="diamond2" value="2">
+												<label for="diamond2" class="rs_adv_diamond_label">
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+												</label>
+											</li>
+											<li>
+												<input class="rs_adv_checkbox rs_adv_diamond" type="checkbox" id="diamond1" value="1">
+												<label for="diamond1" class="rs_adv_diamond_label">
+													<img class="diamond_rating_icon" src="/content/dam/ace/lob/travel/aaa_ratings_diamond_69x41_red.jpg" />
+												</label>
+											</li>
+										</ul>
+									</div>
+									<div class="rs_adv_large_col col-md-3 col-lg-3">
+										<label class="rs_adv_label field_label">Filter by</label>
+										<div class="rs_adv_filter_row">
+											<label class="rs_adv_inline_label">Hotel name:</label><div class="rs_adv_filter">
+											<input type="text" name="hotel_name" class="rs_adv_text_input hotel_name_advanced_search">
+										</div>
+										</div>
+										<div class="rs_adv_filter_row">
+											<label class="rs_adv_inline_label">Sort by:</label>
+											<div class="rs_adv_filter">
+												<select name="sort_order" class="rs_adv_select rs_hotel_sort_by">
+													<option value="" selected=""></option>
+													<option value="most_popular">Most popular</option>
+													<option value="distance">Distance</option>
+													<option value="low_price">Lowest price</option>
+													<option value="high_price">Highest price</option>
+													<option value="star_rating">Diamond rating</option>
+													<option value="guest_score">Guest score</option>
+													<option value="name">Hotel name</option>
+													<option value="promos_first">Promos first</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="clear"></div>
+
+						<div class='rs_button_row'>
+
+							<button type="submit" class="rs_search" data-rs_ga_track='["click",["Searchbox - home page", "Submit"]]' title='Search'>SEARCH</button>
+
+							<sly data-sly-test="${!properties.myReservationsToggle}">
+								<a target="_blank" href="http://www.aaa.com/MyTrips">My reservations</a>
+							</sly>
+
+							<sly data-sly-test="${!properties.flightHotelToggle}">
+								<span> | </span>
+								<a target="_blank" class="hotel_flight_hotel" href="">Flight + hotel packages</a>
+							</sly>
+
+							<sly data-sly-test="${!properties.advancedSearchToggleHotel}">
+								<span> | </span>
+								<a href="javascript:void(0);" class="advanced_search_link">Advanced search</a>
+							</sly>
+						</div>
+						<input type="hidden" name="ace_redirect" value="true">
+						<div class='clear'></div>
+					</form>
+
+					<form name="air" class="air rs_air_form ${properties.tabType == 'flights' ? '' : 'rs_searchbox_hide'}">
+						<input type="hidden" name="refclickid" value="travel_widget">
+						<div class="rs_air_options">
+							<label class="rs_air_type rs_air_highlight" for="round-trip">
+								<input type="radio" class="round-trip" name="air-radio" id="round-trip" checked>
+								<i></i> Round trip
+							</label>
+
+							<label class="rs_air_type" for="one-way">
+								<input type="radio" class="one-way" name="air-radio" id="one-way">
+								<i></i> One way
+							</label>
+
+							<div class="multi-link">
+								<span> | </span>
+								<a href="#" target="_blank">Multi city</a>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+						<div id="air_round_trip">
+							<div class="air_trip">
+								<label class="field_label">Where to?</label>
+								<input name="rs_o_city" class="from rs_autosuggest rs_from" placeholder='Origin' autocomplete="off">
+								<input name="rs_d_city" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
+							</div>
+
+							<div class="date_and_travelers">
+								<div class="date_field">
+									<label class="field_label">Date</label>
+									<div class="date_select">
+										<input name="rs_chk_in" class="air-date rs_chk_in" placeholder="Departing" readonly>
+										<input name="rs_chk_out" class="air-date rs_chk_out" placeholder="Returning" readonly>
+									</div>
+								</div>
+							</div>
+
+							<div class="rs_rooms " id="air_travelers">
+								<label class="field_label">Travelers</label>
+
+								<div class="traveler_select">
+									<div id="round-drop" class="dropbtn"></div>
+
+									<div class="dropdown-content" id="round-content">
+										<div class="cabin_options">
+											<button class="prevClass" style="display: inline-block;"></button>
+
+											<select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="round-class">
+												<option value="economy">Economy</option>
+												<option value="premium">Premium</option>
+												<option value="business">Business</option>
+												<option value="first">First</option>
+											</select>
+
+											<button class="nextClass" style="display: inline-block;"></button>
+										</div>
+
+										<div class="traveler_line"></div>
+
+										<div class="traveler_options">
+											<div class="adult_travelers">
+												<label class="field_label">
+													<span class="adult_label">Adult</span>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+
+													<input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+												</label>
+											</div>
+
+											<div class="child_travelers">
+												<label class="field_label">
+													<span class="adult_label">Child</span>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+
+													<input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="rs_flight_advanced_options hidden">
+								<label class="field_label">Preferred airline</label>
+								<select name="preferred_airline" class="rs_flight_pref_airline">
+									<option selected="selected" value="">No preference</option>
+									<option value="JP">Adria Airways</option>
+									<option value="A3">Aegean</option>
+									<option value="EI">Aer Lingus</option>
+									<option value="SU">Aeroflot-Russian Airlines</option>
+									<option value="2K">AeroGal</option>
+									<option value="AR">Aerolineas Argentinas</option>
+									<option value="VW">Aeromar Airlines</option>
+									<option value="AM">Aeromexico</option>
+									<option value="KC">Air Astana</option>
+									<option value="BT">Air Baltic</option>
+									<option value="BP">Air Botswana</option>
+									<option value="AC">Air Canada</option>
+									<option value="TX">Air Caraibes</option>
+									<option value="CA">Air China</option>
+									<option value="XK">Air Corsica</option>
+									<option value="UX">Air Europa</option>
+									<option value="AF">Air France</option>
+									<option value="AI">Air India</option>
+									<option value="KM">Air Malta</option>
+									<option value="MK">Air Mauritius</option>
+									<option value="NZ">Air New Zealand</option>
+									<option value="OG">Air Onix</option>
+									<option value="TN">Air Tahiti Nui</option>
+									<option value="TS">Air Transat</option>
+									<option value="AB">airberlin</option>
+									<option value="FL">AirTran Airways</option>
+									<option value="AS">Alaska Airlines</option>
+									<option value="AZ">Alitalia</option>
+									<option value="NH">All Nippon Airways</option>
+									<option value="AA">American Airlines</option>
+									<option value="OZ">Asiana Airlines</option>
+									<option value="OS">Austrian Airlines</option>
+									<option value="AV">Avianca</option>
+									<option value="9V">Aviones de Oriente C.A. (AVIOR)</option>
+									<option value="JV">Bearskin Airlines</option>
+									<option value="4B">Boutique Air</option>
+									<option value="BA">British Airways</option>
+									<option value="SN">Brussels Airlines</option>
+									<option value="BW">Caribbean Airlines</option>
+									<option value="V3">Carpatair</option>
+									<option value="CX">Cathay Pacific</option>
+									<option value="KX">Cayman Airways</option>
+									<option value="CI">China Airlines</option>
+									<option value="MU">China Eastern Airlines</option>
+									<option value="CZ">China Southern Airlines</option>
+									<option value="CM">Copa</option>
+									<option value="SS">Corsair</option>
+									<option value="CY">Cyprus Airways</option>
+									<option value="OK">Czech Airlines</option>
+									<option value="F7">Darwin Airline</option>
+									<option value="DL">Delta</option>
+									<option value="9H">Dutch Antilles Express</option>
+									<option value="MS">Egyptair</option>
+									<option value="LY">El Al</option>
+									<option value="EK">Emirates</option>
+									<option value="OV">Estonian Air</option>
+									<option value="ET">Ethiopian Airlines</option>
+									<option value="EY">Etihad Airways</option>
+									<option value="BR">EVA Airways</option>
+									<option value="FJ">Fiji Airways</option>
+									<option value="AY">Finnair</option>
+									<option value="BE">Flybe</option>
+									<option value="GA">Garuda</option>
+									<option value="G3">GOL Linhas Aereas Inteligentes</option>
+									<option value="GF">Gulf Air</option>
+									<option value="HU">Hainan Airlines</option>
+									<option value="HA">Hawaiian Airlines</option>
+									<option value="HX">Hong Kong Airlines</option>
+									<option value="IB">Iberia</option>
+									<option value="FI">Icelandair</option>
+									<option value="7I">Insel Air International</option>
+									<option value="4O">Interjet</option>
+									<option value="JL">Japan Airlines</option>
+									<option value="9W">Jet Airways</option>
+									<option value="B6">JetBlue Airways</option>
+									<option value="KQ">Kenya Airways</option>
+									<option value="IT">Kingfisher Airlines</option>
+									<option value="KL">KLM</option>
+									<option value="KE">Korean Air</option>
+									<option value="LR">LACSA</option>
+									<option value="LA">LAN Airlines</option>
+									<option value="4M">Lan Argentina</option>
+									<option value="XL">LAN Ecuador</option>
+									<option value="LP">LAN Peru</option>
+									<option value="QV">Lao Airlines</option>
+									<option value="LO">LOT-Polish Airlines</option>
+									<option value="LT">LTU</option>
+									<option value="LH">Lufthansa</option>
+									<option value="LG">Luxair</option>
+									<option value="MH">Malaysia Airlines</option>
+									<option value="IG">Meridiana fly</option>
+									<option value="ME">Middle East Airlines</option>
+									<option value="HG">Niki</option>
+									<option value="OA">Olympic</option>
+									<option value="WY">Oman Air</option>
+									<option value="KS">PenAir</option>
+									<option value="PR">Philippine Airlines</option>
+									<option value="PU">Pluna Lineas Aereas Uruguayas</option>
+									<option value="PD">Porter Airlines</option>
+									<option value="PW">PrecisionAir</option>
+									<option value="P0">Proflight Commuter</option>
+									<option value="QF">Qantas Airways</option>
+									<option value="QR">Qatar Airways</option>
+									<option value="AT">Royal Air Maroc</option>
+									<option value="RJ">Royal Jordanian</option>
+									<option value="S7">S7 Airlines</option>
+									<option value="SK">SAS</option>
+									<option value="S4">SATA Internacional</option>
+									<option value="SV">Saudi Arabian Airlines</option>
+									<option value="BB">Seaborne Airlines</option>
+									<option value="SC">Shandong Airlines</option>
+									<option value="ZH">Shenzhen Airlines</option>
+									<option value="3M">Silver Airways</option>
+									<option value="SQ">Singapore Airlines</option>
+									<option value="SA">South African Airways</option>
+									<option value="NK">Spirit Airlines</option>
+									<option value="SY">Sun Country Airlines</option>
+									<option value="PY">Surinam Airways</option>
+									<option value="LX">Swiss International Air Lines</option>
+									<option value="DT">TAAG Angola Airlines</option>
+									<option value="TA">TACA Airlines</option>
+									<option value="JJ">TAM Airlines</option>
+									<option value="TP">TAP Portugal</option>
+									<option value="RO">Tarom-Romanian Air Transport</option>
+									<option value="TG">Thai Airways International</option>
+									<option value="TJ">Tradewind Aviation</option>
+									<option value="UN">Transaero Airlines</option>
+									<option value="TK">Turkish Airlines</option>
+									<option value="PS">Ukraine International Airlines</option>
+									<option value="UA">UNITED</option>
+									<option value="US">US Airways</option>
+									<option value="UT">Utair Aviation</option>
+									<option value="VN">Vietnam Airlines</option>
+									<option value="VX">Virgin America</option>
+									<option value="VS">Virgin Atlantic</option>
+									<option value="VA">Virgin Australia</option>
+									<option value="V2">Vision Airlines</option>
+									<option value="Y4">Volaris</option>
+									<option value="WS">WestJet</option>
+									<option value="MF">Xiamen Airlines</option>
+									<option value="SE">XL Airways</option>
+								</select>
+
+								<div class="rs_flight_pref_non_stop">
+									<label><input type="checkbox" name="preferred_stops" value="0"><span class="rs_text_bold">Prefer nonstop flights</span></label>
+								</div>
+							</div>
+
+							<div class="rs_button_row">
+								<button type="submit" class="rs_search">SEARCH</button>
+
+								<sly data-sly-test="${!properties.myReservationsToggle}">
+									<a target="_blank" href="http://www.aaa.com/MyTrips">My reservations</a>
+								</sly>
+
+								<sly data-sly-test="${!properties.flightHotelToggle}">
+									<span> | </span>
+									<a target="_blank" class="hotel_flight_hotel" href="">Flight + hotel packages</a>
+								</sly>
+
+								<sly data-sly-test="${!properties.advancedSearchToggleFlight}">
+									<span> | </span>
+									<a href="javascript:void(0);" class="advanced_search_link">Advanced search</a>
+								</sly>
+							</div>
+						</div>
+
+						<div id="air_one_way">
+							<div class="air_trip">
+								<label class="field_label">Where to?</label>
+								<input name="rs_o_city1" class="from rs_autosuggest rs_from" placeholder='Origin' onclick='$(this).val("");' autocomplete="off">
+								<input name="rs_d_city1" class="to rs_autosuggest rs_to" placeholder='Destination' onclick='$(this).val("");' autocomplete="off">
+							</div>
+
+							<div class="date_and_travelers">
+								<div class="date_field">
+									<label class="field_label">Date</label>
+									<div class="date_select rs_date">
+										<input name="rs_chk_in1" class="rs_chk_in" placeholder="Departing" readonly>
+									</div>
+								</div>
+							</div>
+
+							<div class="rs_rooms" id="air_travelers">
+								<label class="field_label">Travelers</label>
+
+								<div class="traveler_select">
+									<div id="one-drop" class="dropbtn"></div>
+
+									<div class="dropdown-content" id="one-content">
+										<div class="cabin_options">
+											<button class="prevClass" style="display: inline-block;"></button>
+
+											<select style="display: inline-block;" name="cabin_class" class="cabin_select rs_select_box" id="one-class">
+												<option value="economy">Economy</option>
+												<option value="premium">Premium</option>
+												<option value="business">Business</option>
+												<option value="first">First</option>
+											</select>
+
+											<button class="nextClass" style="display: inline-block;"></button>
+										</div>
+
+										<div class="traveler_line"></div>
+
+										<div class="traveler_options">
+											<div class="adult_travelers">
+												<label class="field_label">
+													<span class="adult_label">Adult</span>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+
+													<input class="rs_adults_input pax" type="number" name="rs_adults" min="0" max="8" readonly>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+												</label>
+											</div>
+
+											<div class="child_travelers">
+												<label class="field_label">
+													<span class="adult_label">Child</span>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="min_button"></button>
+	                                                </span>
+
+													<input class="rs_adults_input pax" type="number" name="rs_children" min="0" max="8" readonly>
+
+													<span class="input-group-btn">
+	                                                    <button type="button" class="plus_button"></button>
+	                                                </span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="rs_button_row">
+								<button type="submit" class="rs_search">SEARCH</button>
+
+								<sly data-sly-test="${properties.fMyReservationLink}">
+									<a target="_blank"
+									   href="${properties.fMyReservationLink}">My Reservations</a>
+								</sly>
+
+								<sly data-sly-test="${properties.flightHotelToggle}">
+									<span> | </span>
+									<a target="_blank" class="hotel_flight_hotel" href="">Flight + hotel packages</a>
+								</sly>
+
+								<sly data-sly-test="${properties.fAdvanceSearchLink}">
+									<span> | </span>
+									<a target="_blank"
+									   href="#">Advanced search</a>
+								</sly>
+							</div>
+							<input type="hidden" name="ace_redirect" value="true">
+						</div>
+					</form>
+
+					<form name="car" class="rs_car_form ${properties.tabType == 'cars' ? '' : 'rs_searchbox_hide'}">
+						<div class="rs_car_options" id="car_options">
+							<div class="rs_car_option rs_car_highlight">
+								<label for='rs_same' class='inline'>
+									<input type='radio' onclick="sameLocation();" class='inline' name="rs_location" id='rs_same' checked />
+									<i></i> Same location
+								</label>
+							</div>
+
+							<div class="rs_car_option">
+								<label for='rs_different' class='inline'>
+									<input type='radio' onclick="differentLocation();" class='inline' name="rs_location" id='rs_different' />
+									<i></i> Different location
+								</label>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="car_location_row">
+							<div class="rs_form_row rs_pickup_div">
+								<label class="field_label">Location</label>
+								<input class="rs_pickup rs_autosuggest" name="rs_pu_city" autocomplete="off" placeholder="Pick up" onclick='$(this).val("");'>
+							</div>
+
+							<div class="rs_form_row rs_dropoff_div rs_car_half rs_no_margin">
+								<input class="rs_dropoff rs_autosuggest" name="rs_do_city" autocomplete="off" placeholder="Return" onclick='$(this).val("");'>
+							</div>
+						</div>
+
+						<div class="rs_form_row rs_date rs_chk_in_row">
+							<label class="field_label">Pick up</label>
+
+							<div class='rs_date_input_container date_select'>
+								<input name="rs_pu_date" class="rs_chk_in" placeholder="Select date" readonly>
+								<select name="rs_pu_time" class="rs_time_in rs_time"></select>
+							</div>
+						</div>
+
+						<div class="rs_form_row rs_date rs_chk_in_row">
+							<label class="field_label">Drop off</label>
+
+							<div class='rs_date_input_container date_select'>
+								<input name="rs_do_date" class="rs_chk_out" placeholder="Select date" readonly>
+								<select name="rs_do_time" class="rs_time_out rs_time"></select>
+							</div>
+						</div>
+
+						<div class="rs_button_row">
+							<button type="submit" class="rs_search">SEARCH</button>
+
+							<sly data-sly-test="${!properties.myReservationsToggle}">
+								<a target="_blank" href="http://www.aaa.com/MyTrips">My reservations</a>
+							</sly>
+
+							<sly data-sly-test="${properties.hertzPromo}">
+								<span> | </span>
+								<a href="javascript:void(0);" class="hertz_promo">Hertz promo code</a>
+							</sly>
+
+						</div>
+						<input type="hidden" name="ace_redirect" value="true">
+						<div class="clear"></div>
+						<div class="rs_car_advanced_search row hidden">
+							<label class="rs_adv_inline_label field_label hertz_discount_label">Hertz company discounts?</label>
+							<input id="rs_promotion" type="hidden" value="HZ" name="rs_company_code">
+							<div class="rs_searchbox__1_2 rs_searchbox__1_2--first rs_validation__class_target col-md-6">
+
+								<input type="text" id="rs_coupon_number" class="rs_coupon_number rs_input--text hotel_name_advanced_search" placeholder="Promotional coupon number" name="rs_coupon_number" data-rs_validate="hertzPromoCode" value="">
+							</div>
+							<div class="rs_searchbox__1_2 rs_validation__class_target col-md-6">
+								<input type="text" id="rs_car_discount_PP" class="rs_input--text hotel_name_advanced_search" placeholder="Hertz Gold Plus Rewards" name="car_discount_PP" data-rs_validate="hertzGoldNumber">
+							</div>
+						</div>
+
+
+						<div class="rs_chk_in_display"></div>
+						<div class="rs_chk_out_display"></div>
+					</form>
+
+					<form name="cruise" target="_blank"
+						  class="rs_cruise_form ${properties.tabType == 'cruises' ? '' : 'rs_searchbox_hide'}"
+						  action="https://ww1.aaa.com/scripts/WebObjects.dll/AAAOnline"
+						  onsubmit="if(checkCruise($(this))){ return true; } else { return false; }"
+						  method="get">
+						<input type="hidden" name="dur" value="0">
+						<input type="hidden" name="association" value="AAA">
+						<input type="hidden" name="cobrand" value="10000">
+						<input type="hidden" name="club" value="0000">
+						<input type="hidden" name="HBTRACK" value="TRCRS">
+						<input type="hidden" name="PID" value="412">
+						<input type="hidden" name="page" value="PartnerRedirect">
+
+						<div class="rs_form_row">
+							<div class="cruise_destination">
+								<label class="field_label">Destination</label>
+
+								<select name="destination_ids[]" class="rs_cruise_box ">
+									<option value="0">All destinations</option>
+									<option value="1">Africa</option>
+									<option value="2">Alaska</option>
+									<option value="79">Antarctic</option>
+									<option value="3">Asia</option>
+									<option value="4">Australia/New Zealand</option>
+									<option value="5">Bahamas</option>
+									<option value="7">Bermuda</option>
+									<option value="55">Brazil</option>
+									<option value="10">Canada/New England</option>
+									<option value="45">Caribbean</option>
+									<option value="12">Caribbean, Eastern</option>
+									<option value="11">Caribbean, Southern</option>
+									<option value="13">Caribbean, Western</option>
+									<option value="602">China</option>
+									<option value="14">Costa Rica</option>
+									<option value="47">Europe</option>
+									<option value="17">Far East</option>
+									<option value="53">Greece</option>
+									<option value="19">Hawaii</option>
+									<option value="21">India</option>
+									<option value="22">Mediterranean</option>
+									<option value="83">Mediterranean - Western</option>
+									<option value="23">Mexican Baja/Riviera</option>
+									<option value="15">Northern Europe</option>
+									<option value="50">Pacific Coastal</option>
+									<option value="30">Panama Canal</option>
+									<option value="52">Russia</option>
+									<option value="34">South America</option>
+									<option value="35">South Pacific</option>
+									<option value="36">Tahiti</option>
+									<option value="38">Transatlantic</option>
+									<option value="39">Transcanal</option>
+									<option value="40">Transpacific</option>
+									<option value="63">U. S. Atlantic Coast</option>
+									<option value="29">U. S. Pacific Coast</option>
+									<option value="16">Western Europe</option>
+									<option value="42">World Cruise</option>
+								</select>
+							</div>
+
+							<div class="cruise_vendor">
+								<label class="field_label">Cruise line</label>
+								<select name="vendor_ids[]" class="rs_cruise_box ">
+									<option value="0">All cruise lines</option>
+									<option value="70">Ama Waterways</option>
+									<option value="1591">Azamara Cruises</option>
+									<option value="1">Carnival Cruise Lines</option>
+									<option value="2">Celebrity Cruises</option>
+									<option value="3">Crystal Cruises</option>
+									<option value="17">Cunard Line</option>
+									<option value="20">Disney Cruise Line</option>
+									<option value="4">Holland America Line</option>
+									<option value="5">Norwegian Cruise Line</option>
+									<option value="61">Oceania Cruises</option>
+									<option value="6">Princess Cruises</option>
+									<option value="7">Regent Seven Seas Cruises</option>
+									<option value="8">Royal Caribbean Cruise Line</option>
+									<option value="18">Seabourn Cruise Line</option>
+									<option value="83">Uniworld River Cruises</option>
+									<option value="59">Viking River Cruises</option>
+								</select>
+							</div>
+
+							<div class="cruise_length">
+								<label class="field_label">Duration</label>
+								<select name="cruise_length_options" class="rs_cruise_box">
+									<option value="0-9999" selected="selected">Any length</option>
+									<option value="2-6">2 - 6 Days</option>
+									<option value="7-9">7 - 9 days</option>
+									<option value="10-14">10 - 14 days</option>
+									<option value="15-9999">14+ days</option>
+								</select>
+							</div>
+
+							<div class="cruise_date">
+								<label class="field_label">Date</label>
+
+								<select name="start_date[month]" class="rs_cruise_box cruise_month">
+									<option value="0" selected="selected">Month</option>
+									<option value="1">January</option>
+									<option value="2">February</option>
+									<option value="3">March</option>
+									<option value="4">April</option>
+									<option value="5">May</option>
+									<option value="6">June</option>
+									<option value="7">July</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">October</option>
+									<option value="11">November</option>
+									<option value="12">December</option>
+								</select>
+
+								<select name="start_date[year]" class="rs_cruise_box cruise_year">
+									<option value="Year" selected="selected">Year</option>
+								</select>
+							</div>
+						</div>
+
+						<input type="hidden" name="ace_redirect" value="true">
+
+						<div class="clear"></div>
+
+						<div class="rs_button_row">
+							<button type="submit" class="rs_search" title='Search'>SEARCH</button>
+						</div>
+
+						<div class="clear"></div>
+					</form>
+
+					<form name="mvp" class="rs_vp_form rs_searchbox_hide">
+						<div class="rs_form_row">
+							<input name="rs_o_city" class="from rs_autosuggest rs_from" value='From' onclick='$(this).val("");' autocomplete="off">
+						</div>
+
+						<div class="rs_form_row">
+							<input name="rs_d_city" class="to rs_autosuggest rs_to" value='To' onclick='$(this).val("");' autocomplete="off">
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="rs_form_row rs_date rs_chk_in_row">
+							<div class='rs_date_input_container'>
+								<input name="rs_chk_in" class="rs_chk_in" value="mm/dd/yyyy" readonly>
+							</div>
+						</div>
+
+						<div class="rs_form_row rs_date rs_chk_in_row">
+							<div class='rs_date_input_container'>
+								<input name="rs_chk_out" class="rs_chk_out" value="mm/dd/yyyy" readonly>
+							</div>
+						</div>
+
+						<div class="rs_form_row rs_rooms_row">
+							<select name="rs_adults" class="rs_adults_input pax"></select>
+						</div>
+
+						<div class="rs_form_row rs_rooms_row">
+							<select name="rs_children" class="rs_child_input pax"></select>
+						</div>
+
+						<div class="rs_form_row rs_rooms_row">
+							<select class="rooms" name="rs_rooms"></select>
+						</div>
+
+						<div class="rs_button_row">
+							<button type="submit" class="rs_search">Search</button>
+							<a href="https://secure.rezserver.com/vp/help/review/?refid=${properties.refId ? properties.refId : '5776'}">My Reservations</a>
+						</div>
+
+						<input type="hidden" name="ace_redirect" value="true">
+
+						<div id="childrens_ages"></div>
+						<div class="rs_chk_in_display"></div>
+						<div class="rs_chk_out_display"></div>
+					</form>
+
+					<form class="rs_mvp_form ${properties.tabType == 'vacations' ? '' : 'rs_searchbox_hide'}"
+						  id="vacation-form" name="vp" method="get"
+						  action="${properties.vacationsLink ? properties.vacationsLink : '#'}">
+						<input type="hidden" id="vcOpeninNewTabflag" name="vcOpeninNewTabflag" value="${properties.vcLinkNewTabFlag ? properties.vcLinkNewTabFlag : 'false'}">
+						<input type="hidden" id="scrollToInternal" value="${properties.scrollToInternal ? properties.scrollToInternal : 'false'}">
+						<input type="hidden" id="scrollvacationsID"  value="${properties.scrollvacationsID ? properties.scrollvacationsID : 'vacations'}">
+						<div class="rs_form_row vacation_row">
+							<div class="vacation_destination">
+								<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+								<label class="field_label">Destination</label>
+								<input class="mvp-form-control" id="mvp-keywords" name="keyword" type="text" autocomplete="off" placeholder="Walt Disney World, etc" onclick='$(this).val("");'>
+							</div>
+
+							<div class='rs_date_input_container vacation_date'>
+								<label class="field_label">Date</label>
+								<input name="rs_chk_in" class="rs_chk_in" placeholder="Start" readonly>
+								<input name="rs_chk_out" class="rs_chk_out" placeholder="End" readonly>
+							</div>
+						</div>
+
+						<div class="rs_button_row">
+							<button type="submit" class="rs_search">SEARCH</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- #travel-widget-content end -->

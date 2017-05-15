@@ -1,14 +1,6 @@
 package com.aaa.ace.sightly.providers;
 
-import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
-import javax.jcr.Property;
-import javax.jcr.RepositoryException;
-import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
-
 import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,219 +15,78 @@ import com.adobe.cq.sightly.WCMUsePojo;
  */
 public class CTANavigationURLProvider extends WCMUsePojo {
 
-    private static final Logger log = LoggerFactory.getLogger(CTANavigationURLProvider.class);
+	private static final Logger log = LoggerFactory.getLogger(CTANavigationURLProvider.class);
 
-    private static final String SELECTED_QUERY_STRING_PROPERTY = "selectedQueryString";
+	private static final String CONTENT_ROOT_PATH = "/content";
 
-    private static final String CONTENT_ROOT_PATH = "/content";
+	private static final String URL_PROPERTY_NAME = "url";
 
-    private static final String URL_PROPERTY_NAME = "url";
+	private static final String DOMAIN_PLACE_HOLDER = "[Domain]";
 
-    private static final String CHILD_RESOURCE = "childResource";
+	private static final String CLUB_PLACE_HOLDER = "[ClubName]";
 
-    private static final String QUERY_STRING_KEY = "queryStringKey";
+	private String url;
 
-    private static final String EQUALS_CHARACTER = "=";
+	@Override
+	public void activate() throws Exception {
+		log.debug("Start of CTANavigationURLProvider class");
 
-    private static final String AMPERSAND_CHARACTER = "&";
+		url = get(URL_PROPERTY_NAME, String.class);
 
-    private static final String EXCLAMATION_CHARACTER = "?";
+		// Fetch valid URL.
+		if (StringUtils.isNotBlank(url) && url.startsWith(CONTENT_ROOT_PATH)) {
+			// Fetch valid internal URL.
+			PageSuffixResolverService pageService = getSlingScriptHelper().getService(PageSuffixResolverService.class);
 
-    private static final String COMMA_DELIMITER = ",";
+			url = pageService.resolveLinkURL(getResourceResolver(), url);
+		} else if (StringUtils.isNotBlank(url) && url.contains(DOMAIN_PLACE_HOLDER)
+				&& url.contains(CLUB_PLACE_HOLDER)) {
+			// Fetch valid AAA APP URL.
+			RunmodeProviderService runmodeService = getSlingScriptHelper().getService(RunmodeProviderService.class);
+			RegionDataService regionService = getSlingScriptHelper().getService(RegionDataService.class);
 
-    private static final String DOMAIN_PLACE_HOLDER = "[Domain]";
+			String env = runmodeService.getEnvironmentInfo();
+			String regionName = regionService.getRegionInfo(getRequest());
 
-    private static final String CLUB_PLACE_HOLDER = "[ClubName]";
+			url = getExternalAppURL(url, regionName, env);
+		}
 
-    private String url;
+		log.debug("End of CTANavigationURLProvider class");
+	}
 
-    @Override
-    public void activate() throws Exception {
-        log.debug("Start of CTANavigationURLProvider class");
+	/**
+	 * Gets the valid AAA APP URL.
+	 *
+	 * @param url
+	 * @param regionName
+	 * @param env
+	 * @return
+	 */
+	public String getExternalAppURL(String url, String regionName, String env) {
+		log.debug("Start of getExternalAppURL method");
+		log.debug("URL: " + url);
+		log.debug("Region: " + regionName);
+		log.debug("Env: " + env);
 
-        String customQueryParamsString = get(QUERY_STRING_KEY, String.class);
-        Resource childResource = get(CHILD_RESOURCE, Resource.class);
-        url = get(URL_PROPERTY_NAME, String.class);
+		if (StringUtils.isNotBlank(url) && StringUtils.isNotBlank(regionName) && StringUtils.isNotBlank(env)) {
+			return url.replace(CTANavigationURLProvider.DOMAIN_PLACE_HOLDER, env)
+					.replace(CTANavigationURLProvider.CLUB_PLACE_HOLDER, regionName);
+		} else {
+			log.error("Error: Either URL or RegionName or Env received from component is empty or null");
+		}
 
-        // Fetch the query string parameters selected from the available list
-        Value[] selectedQueryParams = fetchQueryStringParameters(childResource);
+		log.debug("Final URL after replacing the placeholder: " + url);
 
-        // Fetch the query string parameters defined as custom
-        String[] customQueryParams = fetchCustomQueryStringParameters(customQueryParamsString);
+		return url;
+	}
 
-        // Fetch valid URL.
-        if (StringUtils.isNotBlank(url) && url.startsWith(CONTENT_ROOT_PATH)) {
-            // Fetch valid internal URL.
-            PageSuffixResolverService pageService = getSlingScriptHelper()
-                    .getService(PageSuffixResolverService.class);
-
-            url = pageService.resolveLinkURL(getResourceResolver(), url);
-        } else if (StringUtils.isNotBlank(url) && url.contains(DOMAIN_PLACE_HOLDER)
-                && url.contains(CLUB_PLACE_HOLDER)) {
-            // Fetch valid AAA APP URL.
-            RunmodeProviderService runmodeService = getSlingScriptHelper()
-                    .getService(RunmodeProviderService.class);
-            RegionDataService regionService = getSlingScriptHelper()
-                    .getService(RegionDataService.class);
-
-            String env = runmodeService.getEnvironmentInfo();
-            String regionName = regionService.getRegionInfo(getRequest());
-
-            url = getExternalAppURL(url, regionName, env);
-        }
-
-        // Fetch valid URL by appending the query parameters if any
-        fetchURLWithQueryParams(selectedQueryParams, customQueryParams);
-
-        log.debug("End of CTANavigationURLProvider class");
-    }
-
-    /**
-     * Gets the valid URL by appending the query parameters if any.
-     *
-     * @param selectedQueryParams
-     * @param customQueryParams
-     */
-    private void fetchURLWithQueryParams(Value[] selectedQueryParams, String[] customQueryParams) {
-        if (StringUtils.isNotBlank(url)) {
-            // Append the custom query parameters if any
-            if (customQueryParams != null) {
-                for (int i = 0; i < customQueryParams.length; i++) {
-                    if (StringUtils.isNotBlank(customQueryParams[i].trim())) {
-                        url = getQueryStringValueConcatenatedURL(customQueryParams[i].trim(), url);
-                    }
-                }
-            }
-
-            // Append the selected query parameters if any
-            if (selectedQueryParams.length > 0) {
-                for (int i = 0; i < selectedQueryParams.length; i++) {
-                    if (StringUtils.isNotBlank(selectedQueryParams[i].toString().trim())) {
-                        url = getQueryStringValueConcatenatedURL(
-                                selectedQueryParams[i].toString().trim(), url);
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Gets the custom query parameters array.
-     *
-     * @param customQueryParameterString
-     * @param keyArray
-     * @return
-     */
-    private String[] fetchCustomQueryStringParameters(String queryParameterString) {
-        String[] queryParamsArray = null;
-
-        if (StringUtils.isNotBlank(queryParameterString)) {
-            log.debug("Custom query string parameters from component are: " + queryParameterString);
-            queryParamsArray = queryParameterString.split(COMMA_DELIMITER);
-        }
-
-        return queryParamsArray;
-    }
-
-    /**
-     * Gets the selected query parameters.
-     * 
-     * @param selectedCommonQueryStringKeyArray
-     * @param childResource
-     * @return
-     * @throws RepositoryException
-     * @throws PathNotFoundException
-     * @throws ValueFormatException
-     */
-    private Value[] fetchQueryStringParameters(Resource childResource)
-            throws RepositoryException, PathNotFoundException, ValueFormatException {
-        Value[] selectedCommonQueryStringKeyArray = {};
-
-        if (childResource != null) {
-            log.debug("Child resource path: " + childResource.getPath());
-            Node propertiesNode = childResource.adaptTo(Node.class);
-
-            if (propertiesNode.hasProperty(SELECTED_QUERY_STRING_PROPERTY)) {
-                Property selectedCommonQuery = propertiesNode
-                        .getProperty(SELECTED_QUERY_STRING_PROPERTY);
-
-                if (selectedCommonQuery != null) {
-                    if (selectedCommonQuery.isMultiple()) {
-                        selectedCommonQueryStringKeyArray = selectedCommonQuery.getValues();
-                    } else {
-                        Value[] commonQuery = { selectedCommonQuery.getValue() };
-                        selectedCommonQueryStringKeyArray = commonQuery;
-                    }
-                }
-            }
-        }
-
-        return selectedCommonQueryStringKeyArray;
-    }
-
-    /**
-     * Gets the final valid URL by appending the query parameters.
-     *
-     * @param key
-     * @param url
-     * @return
-     */
-    private String getQueryStringValueConcatenatedURL(String key, String url) {
-        log.debug("Start of getQueryStringValueConcatenatedURL method");
-
-        if (StringUtils.isNotBlank(key)) {
-            if (getRequest().getParameter(key) != null) {
-                String queryStringValue = getRequest().getParameter(key);
-                log.debug("queryStringValue: " + queryStringValue);
-
-                url = (url.contains(EXCLAMATION_CHARACTER) ? url.concat(AMPERSAND_CHARACTER)
-                        : url.concat(EXCLAMATION_CHARACTER)).concat(key).concat(EQUALS_CHARACTER)
-                                .concat(queryStringValue);
-            } else {
-                log.debug("No Query String " + key + " found in the authored URL " + url);
-            }
-        }
-
-        log.debug("Query String Value Concatenated Final URL: " + url);
-
-        return url;
-    }
-
-    /**
-     * Gets the valid AAA APP URL.
-     *
-     * @param url
-     * @param regionName
-     * @param env
-     * @return
-     */
-    public String getExternalAppURL(String url, String regionName, String env) {
-        log.debug("Start of getExternalAppURL method");
-        log.debug("URL: " + url);
-        log.debug("Region: " + regionName);
-        log.debug("Env: " + env);
-
-        if (StringUtils.isNotBlank(url) && StringUtils.isNotBlank(regionName)
-                && StringUtils.isNotBlank(env)) {
-            return url.replace(CTANavigationURLProvider.DOMAIN_PLACE_HOLDER, env)
-                    .replace(CTANavigationURLProvider.CLUB_PLACE_HOLDER, regionName);
-        } else {
-            log.error(
-                    "Error: Either URL or RegionName or Env received from component is empty or null");
-        }
-
-        log.debug("Final URL after replacing the placeholder: " + url);
-
-        return url;
-    }
-
-    /**
-     * Gets the final URL.
-     *
-     * @return the url
-     */
-    public String getUrl() {
-        return url;
-    }
+	/**
+	 * Gets the final URL.
+	 *
+	 * @return the url
+	 */
+	public String getUrl() {
+		return url;
+	}
 
 }

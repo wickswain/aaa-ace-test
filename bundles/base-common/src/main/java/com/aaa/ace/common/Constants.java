@@ -110,6 +110,17 @@ public final class Constants {
      * User login cookie key.
      */
     public static final String COOKIE_ASPXAUTH = ".ASPXAUTH";
+    
+    /**
+     * Query String Parameters cookie key.
+     */
+    public static final String QUERY_STRING_PARAMS_COOKIE = "query-string-params";
+
+	/**
+     * Query String Parameters separator.
+     */
+    public static final String STRING_AND_SYMBOL = "&";
+
 
     /**
      * Instantiates a new constants.
