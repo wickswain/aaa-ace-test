@@ -12,7 +12,7 @@
 <!-- Travel Widget Content
 ============================================= -->
 <div id="${properties.jumpLinkId}" style="background-image: url('${properties.fileReference ? properties.fileReference : '' @ context='uri'}'); background-color: ${properties.backgroundColor @ context='styleToken'};"
-	 class="travel-widget-container">
+	 class="travel-widget-container ajaxComponent">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="travel-widget">
+	<div id="old-travel-widget-component" class="travel-widget">
 	    <input type="hidden" name="club_number" id="club_number" value="${properties.clubCode}"/>
 	    <input type="hidden" name="ref_id" id="ref_id" value="${properties.refId ? properties.refId : '5776'}"/>
 	    

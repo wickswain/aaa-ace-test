@@ -124,32 +124,72 @@
                                 multiple="{Boolean}true"
                                 name="./link1/selectedQueryString">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <campaigncode
+                                    <zip
                                         jcr:primaryType="nt:unstructured"
-                                        text="campaigncode"
-                                        value="campaigncode"/>
+                                        text="zip"
+                                        value="zip"/>
                                     <area
                                         jcr:primaryType="nt:unstructured"
                                         text="area"
                                         value="area"/>
-                                    <intcmp
-                                        jcr:primaryType="nt:unstructured"
-                                        text="intcmp"
-                                        value="intcmp"/>
                                     <cid
                                         jcr:primaryType="nt:unstructured"
                                         text="cid"
                                         value="cid"/>
-                                    <bcd
+                                    <device-id
                                         jcr:primaryType="nt:unstructured"
-                                        text="bcd"
-                                        value="bcd"/>
+                                        text="deviceid"
+                                        value="deviceid"/>
+                                    <tracking-code
+                                        jcr:primaryType="nt:unstructured"
+                                        text="TrackingCode"
+                                        value="TrackingCode"/>
+                                    <unique-id
+                                        jcr:primaryType="nt:unstructured"
+                                        text="UniqueID"
+                                        value="UniqueID"/>
+                                    <pmed
+                                        jcr:primaryType="nt:unstructured"
+                                        text="pmed"
+                                        value="pmed"/>
+                                    <ct-campaign
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ctcampaign"
+                                        value="ctcampaign"/>
+                                    <ct-kwd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ctkwd"
+                                        value="ctkwd"/>
+                                    <ct-match
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ctmatch"
+                                        value="ctmatch"/>
+                                    <ct-creative
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ctcreative"
+                                        value="ctcreative"/>
+                                    <ct-adpos
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ctadpos"
+                                        value="ctadpos"/>
+                                    <jid
+                                        jcr:primaryType="nt:unstructured"
+                                        text="jid"
+                                        value="jid"/>
+                                    <device-cd
+                                        jcr:primaryType="nt:unstructured"
+                                        text="devicecd"
+                                        value="devicecd"/>
+                                    <referer
+                                        jcr:primaryType="nt:unstructured"
+                                        text="referer"
+                                        value="referer"/>
                                 </items>
                             </querystringkeyselection>
                             <querystringkey
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldDescription="Please enter custom Query String Key if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
+                                fieldDescription="Please enter custom Query String Key separated by comma in case of multiple values, if the query string you want to author is not available in above dropdown, please note that it will affect site performance!"
                                 fieldLabel="Link-1 Custom Query String"
                                 name="./link1/queryStringKey"/>
                             <open-in-new-tab-flag

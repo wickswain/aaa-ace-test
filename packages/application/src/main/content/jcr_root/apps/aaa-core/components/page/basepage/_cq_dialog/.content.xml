@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <hideInSitemap
+                        cq:showOnCreate="{Boolean}false"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AAA"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <errorpages
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldDescription="Please select the error page root path"
+                                        fieldLabel="Error Page Root Path"
+                                        name="./errorPages"
+                                        rootPath="/content/ace-www"/>
+                                    <hidein-california
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./calif-region"
+                                        text="Hide In California"
+                                        value="{Boolean}true"/>
+                                    <hidein-texas
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./texas-region"
+                                        text="Hide In Texas"
+                                        value="{Boolean}true"/>
+                                    <hidein-northernnewengland
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./northernnewengland-region"
+                                        text="Hide In Northern New England"
+                                        value="{Boolean}true"/>
+                                    <hidein-alabama
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./alabama-region"
+                                        text="Hide In Alabama"
+                                        value="{Boolean}true"/>
+                                    <hidein-newmexico
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./newmexico-region"
+                                        text="Hide In New Mexico"
+                                        value="{Boolean}true"/>
+                                    <hidein-eastcentral
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./eastcentral-region"
+                                        text="Hide In East Central"
+                                        value="{Boolean}true"/>
+                                    <hidein-autoclubmo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./autoclubmo-region"
+                                        text="Hide In Auto Club MO"
+                                        value="{Boolean}true"/>
+                                    <hidein-hawaii
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hawaii-region"
+                                        text="Hide In Hawaii"
+                                        value="{Boolean}true"/>
+                                    <hidein-tidewater
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./tidewater-region"
+                                        text="Hide In Tide Water"
+                                        value="{Boolean}true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </hideInSitemap>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
