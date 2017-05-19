@@ -3,10 +3,6 @@
     cq:actions="[text:Article Text,edit,-,copymove,delete,insert]"
     cq:dialogMode="floating"
     jcr:primaryType="cq:EditConfig">
-    <cq:listeners
-        jcr:primaryType="cq:EditListenersConfig"
-        afteredit="REFRESH_PAGE"
-        aftermove="REFRESH_PAGE"/>
     <cq:inplaceEditing
         jcr:primaryType="cq:InplaceEditingConfig"
         active="{Boolean}true"
