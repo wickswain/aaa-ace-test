@@ -8,8 +8,4 @@
         active="{Boolean}true"
         configPath="/apps/aaa-core/components/content/rte/inplace-edit/items/text"
         editorType="text"/>
-    <cq:listeners
-        jcr:primaryType="cq:EditListenersConfig"
-        afteredit="REFRESH_PAGE"
-        aftermove="REFRESH_PAGE"/>
 </jcr:root>
