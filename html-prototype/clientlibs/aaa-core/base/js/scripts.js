@@ -406,6 +406,7 @@ $(document).on('click', '.drawers-container li > a, .tile-card, .btn-style, .lin
         $(".navigation-bar").hide();
         $('.slide-nav').removeAttr('style');
         $(".overlay").hide();
+        $("body").removeClass("modal-open");
         e.preventDefault();
     } else {
         $('.slideboxer').css('left', '-375px');
