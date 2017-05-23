@@ -330,7 +330,7 @@ function getQueryStringValueConcatenatedURL(queryStringValue, url, isHashTag) {
 	return url;
 }
 
-$(document).on('click', '.drawers-container li > a, .btn-style, .link-btn', function(e) {
+$(document).on('click', '.drawers-container li > a, .tile-card, .btn-style, .link-btn', function(e) {
     var selfAccessBtn = 0,
         hashtag = this.hash.substr(1),
         hrefURL = $(this).attr('href'),
