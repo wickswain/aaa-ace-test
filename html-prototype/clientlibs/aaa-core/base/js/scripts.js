@@ -415,7 +415,7 @@ $(document).on('click', '.drawers-container li > a, .tile-card, .btn-style, .lin
     }
 });
 
-$('a').click(function() {
+$(document).on("click", "a", function() {
     var modalId;
     var isModalLink = $(this).has('span.modal-popup');
 
